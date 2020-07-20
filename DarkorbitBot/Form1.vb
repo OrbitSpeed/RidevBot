@@ -56,10 +56,11 @@
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
 
-        ' button Load > User&&Pass '
+        ' button Load 1 > User&&Pass '
 
         Label1.Select()
-        Form2.Show()
+            Form2.Show()
+
 
     End Sub
 
@@ -84,7 +85,6 @@
         ' button Load > Saved '
 
         Label1.Select()
-        Form2.Show()
 
     End Sub
 
@@ -93,7 +93,6 @@
         ' button Load > SID login '
 
         Label1.Select()
-        Form2.Show()
 
     End Sub
 
@@ -145,6 +144,8 @@
 
         Label11.Visible = True
         Label12.Visible = False
+        Button11.Visible = True
+        Button4.Visible = False
 
     End Sub
 
@@ -154,6 +155,17 @@
 
         Label11.Visible = False
         Label12.Visible = True
+
+        Button11.Visible = False
+        Button4.Visible = True
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+        ' button Load 2 > User&&Pass '
+
+        Label1.Select()
 
     End Sub
 End Class
