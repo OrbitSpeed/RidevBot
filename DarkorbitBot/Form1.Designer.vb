@@ -32,9 +32,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button11 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -50,15 +48,17 @@ Partial Class Form1
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -182,22 +182,6 @@ Partial Class Form1
         Me.Button11.Text = "Load"
         Me.Button11.UseVisualStyleBackColor = True
         '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.Gray
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(0, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox2.TabIndex = 15
-        Me.TextBox2.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -206,21 +190,6 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(59, 13)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Password :"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.Gray
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(0, 32)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox1.TabIndex = 13
-        Me.TextBox1.Text = Global.DarkorbitBot.My.MySettings.Default.Username
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
         '
@@ -411,33 +380,6 @@ Partial Class Form1
         Me.Panel5.TabIndex = 19
         Me.Panel5.Visible = False
         '
-        'Button16
-        '
-        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.Location = New System.Drawing.Point(12, 109)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(232, 35)
-        Me.Button16.TabIndex = 20
-        Me.Button16.Text = "Official Launcher Browser"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Navy
-        Me.Label12.Location = New System.Drawing.Point(48, 127)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(161, 18)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "_________________"
-        Me.Label12.Visible = False
-        '
         'Button15
         '
         Me.Button15.Cursor = System.Windows.Forms.Cursors.Hand
@@ -476,6 +418,61 @@ Partial Class Form1
         Me.Panel6.TabIndex = 20
         Me.Panel6.Visible = False
         '
+        'Button16
+        '
+        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.Location = New System.Drawing.Point(12, 109)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(232, 35)
+        Me.Button16.TabIndex = 20
+        Me.Button16.Text = "Official Launcher Browser"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Navy
+        Me.Label12.Location = New System.Drawing.Point(48, 127)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(161, 18)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "_________________"
+        Me.Label12.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(12, 43)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(50, 13)
+        Me.Label13.TabIndex = 14
+        Me.Label13.Text = "License :"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(12, 121)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(43, 13)
+        Me.Label14.TabIndex = 16
+        Me.Label14.Text = "Status :"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(93, 121)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(82, 13)
+        Me.Label15.TabIndex = 17
+        Me.Label15.Text = "123456789ABC"
+        '
         'TextBox4
         '
         Me.TextBox4.BackColor = System.Drawing.Color.Gray
@@ -491,40 +488,43 @@ Partial Class Form1
         Me.TextBox4.Text = Global.DarkorbitBot.My.MySettings.Default.License
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label15
+        'TextBox2
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(93, 121)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(82, 13)
-        Me.Label15.TabIndex = 17
-        Me.Label15.Text = "123456789ABC"
+        Me.TextBox2.BackColor = System.Drawing.Color.Gray
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
+        Me.TextBox2.Location = New System.Drawing.Point(0, 86)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
+        Me.TextBox2.TabIndex = 15
+        Me.TextBox2.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label14
+        'TextBox1
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 121)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(43, 13)
-        Me.Label14.TabIndex = 16
-        Me.Label14.Text = "Status :"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(12, 43)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(50, 13)
-        Me.Label13.TabIndex = 14
-        Me.Label13.Text = "License :"
+        Me.TextBox1.BackColor = System.Drawing.Color.Gray
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(0, 32)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(256, 21)
+        Me.TextBox1.TabIndex = 13
+        Me.TextBox1.Text = Global.DarkorbitBot.My.MySettings.Default.Username
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(256, 234)
+        Me.ClientSize = New System.Drawing.Size(804, 501)
         Me.Controls.Add(Me.Button14)
         Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.Button7)

@@ -25,12 +25,12 @@ Partial Class Form2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,6 +57,24 @@ Partial Class Form2
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(256, 159)
         Me.Panel1.TabIndex = 12
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(36, 64)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(170, 123)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Label4"
         '
         'Button2
         '
@@ -106,24 +124,6 @@ Partial Class Form2
         Me.Label2.Size = New System.Drawing.Size(0, 18)
         Me.Label2.TabIndex = 16
         Me.Label2.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(129, 84)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Label4"
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(42, 94)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Form2
         '
