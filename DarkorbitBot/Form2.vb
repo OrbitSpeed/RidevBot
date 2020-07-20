@@ -28,19 +28,8 @@ Public Class Form2
 
         ' cherche le pseudo et le mot de passe dans la form1 -> dans User&&Pass '
         ' toujours ce referer a User&&Pass '
-
         StartWebBot()
-    End Sub
 
-    Private Sub Button_Close_Click(sender As Object, e As EventArgs) Handles Button_Close.Click
-
-        Dim result = MessageBox.Show("Voulez-vous vraiment fermer le bot ?", "RidevBot", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-
-        Else
-            Close()
-
-        End If
     End Sub
 
     ' se connecte et lance le jeu avec le clean ' 
@@ -69,20 +58,11 @@ Public Class Form2
 
     ' button reload '
     Private Sub Button_Reload_Click(sender As Object, e As EventArgs) Handles Button_Reload.Click
+
         Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
         WebBrowser1.Refresh()
+
         'StartWebBot()
     End Sub
 
-    Private Sub Button_SID_Click(sender As Object, e As EventArgs) Handles Button_SID.Click
-
-
-
-    End Sub
-
-    Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
-
-
-
-    End Sub
 End Class
