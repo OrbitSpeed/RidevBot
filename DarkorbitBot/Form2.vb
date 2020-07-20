@@ -12,4 +12,40 @@
         Label1.Visible = True
 
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+        Label1.Visible = True
+
+        Label3.Visible = False
+
+        Label1.Visible = True
+
+    End Sub
 End Class
