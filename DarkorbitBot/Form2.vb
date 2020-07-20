@@ -1,7 +1,16 @@
 ﻿Imports System.Text.RegularExpressions
 Imports AutoItX3Lib
+Imports System.Diagnostics
+Imports System.IO
+Imports System.Runtime.InteropServices
+Imports System.Data
+Imports System.Drawing.Graphics
+Imports System.ComponentModel
+Imports System.Windows.Forms.Application
+Imports System.Text
 
 Public Class Form2
+
     Dim server
     Dim AutoIt As New AutoItX3
 
@@ -24,6 +33,7 @@ Public Class Form2
     End Sub
 
     Private Sub Button_Close_Click(sender As Object, e As EventArgs) Handles Button_Close.Click
+
         Dim result = MessageBox.Show("Voulez-vous vraiment fermer le bot ?", "RidevBot", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
 
@@ -33,6 +43,7 @@ Public Class Form2
         End If
     End Sub
 
+    ' se connecte et lance le jeu avec le clean ' 
     Public Sub StartWebBot()
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") Then
 
@@ -56,6 +67,7 @@ Public Class Form2
 
     End Sub
 
+    ' button reload '
     Private Sub Button_Reload_Click(sender As Object, e As EventArgs) Handles Button_Reload.Click
         Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
         WebBrowser1.Refresh()
@@ -63,34 +75,14 @@ Public Class Form2
     End Sub
 
     Private Sub Button_SID_Click(sender As Object, e As EventArgs) Handles Button_SID.Click
-        If server IsNot vbNullString Then
-            BackPage_Form.WebBrowser1.Navigate("https://" + server + ".darkorbit.com/indexInternal.es?action=internalAuction")
-            BackPage_Form.Show()
 
-        End If
+
 
     End Sub
 
     Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
-        Dim A1 As Integer = (WebBrowser1.Location.X)
-        Dim A2 As Integer = (WebBrowser1.Location.Y)
-        Dim A22 As Integer = (A2 + 170)
-        Dim A3 As Integer = (WebBrowser1.Width)
-        Dim A31 As Integer = (A1 + 800)
-        Dim A4 As Integer = (WebBrowser1.Height)
-        Dim A41 As Integer = (A22 + 270)
 
-        Try
 
-            Dim SIMPLE = AutoIt.PixelSearch(A1, A22, A3, A4, 1321834, 5, 1)
-            FlatLabel1.Location = New Point(SIMPLE(0) + 7, SIMPLE(1) - 7)
-
-            AutoIt.ControlClick(Text, "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) + 7, SIMPLE(1) - 7)
-            'Wagonnet578 = 0
-
-        Catch Erreur As Exception
-            Console.Beep()
-        End Try
 
     End Sub
 End Class

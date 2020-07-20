@@ -25,12 +25,16 @@ Partial Class Form2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.FlatLabel1 = New DarkorbitBot.FlatLabel()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Button_SID = New DarkorbitBot.FlatButton()
         Me.Button_Reload = New DarkorbitBot.FlatButton()
         Me.Button_Close = New DarkorbitBot.FlatButton()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.FlatLabel1 = New DarkorbitBot.FlatLabel()
         Me.SuspendLayout()
         '
         'Label2
@@ -54,6 +58,50 @@ Partial Class Form2
         Me.WebBrowser1.ScrollBarsEnabled = False
         Me.WebBrowser1.Size = New System.Drawing.Size(891, 653)
         Me.WebBrowser1.TabIndex = 17
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(420, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 25
+        Me.TextBox1.Text = "0"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(526, 12)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 26
+        Me.TextBox2.Text = "0"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(420, 38)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.TabIndex = 25
+        Me.TextBox3.Text = "0"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(526, 38)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.TabIndex = 26
+        Me.TextBox4.Text = "0"
+        '
+        'FlatLabel1
+        '
+        Me.FlatLabel1.AutoSize = True
+        Me.FlatLabel1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel1.ForeColor = System.Drawing.Color.Red
+        Me.FlatLabel1.Location = New System.Drawing.Point(799, 5)
+        Me.FlatLabel1.Name = "FlatLabel1"
+        Me.FlatLabel1.Size = New System.Drawing.Size(19, 13)
+        Me.FlatLabel1.TabIndex = 24
+        Me.FlatLabel1.Text = "⚫"
         '
         'FlatButton1
         '
@@ -124,24 +172,16 @@ Partial Class Form2
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'FlatLabel1
-        '
-        Me.FlatLabel1.AutoSize = True
-        Me.FlatLabel1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel1.ForeColor = System.Drawing.Color.Red
-        Me.FlatLabel1.Location = New System.Drawing.Point(799, 5)
-        Me.FlatLabel1.Name = "FlatLabel1"
-        Me.FlatLabel1.Size = New System.Drawing.Size(19, 13)
-        Me.FlatLabel1.TabIndex = 24
-        Me.FlatLabel1.Text = "⚫"
-        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(891, 653)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.FlatLabel1)
         Me.Controls.Add(Me.FlatButton1)
         Me.Controls.Add(Me.Button_SID)
@@ -170,4 +210,8 @@ Partial Class Form2
     Friend WithEvents Button_SID As FlatButton
     Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatLabel1 As FlatLabel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
 End Class
