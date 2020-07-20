@@ -31,6 +31,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -59,7 +60,6 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -168,6 +168,22 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(256, 160)
         Me.Panel1.TabIndex = 10
+        '
+        'Button4
+        '
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(67, 123)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(86, 25)
+        Me.Button4.TabIndex = 20
+        Me.Button4.Text = "Load 2"
+        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
         '
         'Button11
         '
@@ -520,22 +536,6 @@ Partial Class Form1
         Me.Label13.Size = New System.Drawing.Size(50, 13)
         Me.Label13.TabIndex = 14
         Me.Label13.Text = "License :"
-        '
-        'Button4
-        '
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(67, 123)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(86, 25)
-        Me.Button4.TabIndex = 20
-        Me.Button4.Text = "Load 2"
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
         '
         'Form1
         '
