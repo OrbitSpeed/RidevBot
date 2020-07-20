@@ -48,7 +48,7 @@ Public Class Form2
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") Then
 
             WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form1.TextBox1.Text)
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form1.TextBox2.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form1.TextBox5.Text)
             For Each p As HtmlElement In WebBrowser1.Document.GetElementsByTagName("input")
                 If p.GetAttribute("type") = "submit" Then
                     p.InvokeMember("click")

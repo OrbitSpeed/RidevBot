@@ -26,7 +26,6 @@ Partial Class Form2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.FlatLabel1 = New DarkorbitBot.FlatLabel()
@@ -66,14 +65,6 @@ Partial Class Form2
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 25
         Me.TextBox1.Text = "0"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(526, 12)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 26
-        Me.TextBox2.Text = "0"
         '
         'TextBox3
         '
@@ -179,7 +170,7 @@ Partial Class Form2
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(891, 653)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox2)
+
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.FlatLabel1)
@@ -211,7 +202,7 @@ Partial Class Form2
     Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatLabel1 As FlatLabel
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
 End Class
