@@ -10,6 +10,6 @@
 
         Label3.Visible = False
         Label1.Visible = True
-        'testaze
+        'test
     End Sub
 End Class
