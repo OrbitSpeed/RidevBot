@@ -72,9 +72,25 @@ Public Class Form2
     End Sub
 
     Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
-        AutoIt.ControlClick(Text, "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 100, 100)
+        Dim A1 As Integer = (WebBrowser1.Location.X)
+        Dim A2 As Integer = (WebBrowser1.Location.Y)
+        Dim A22 As Integer = (A2 + 170)
+        Dim A3 As Integer = (WebBrowser1.Width)
+        Dim A31 As Integer = (A1 + 800)
+        Dim A4 As Integer = (WebBrowser1.Height)
+        Dim A41 As Integer = (A22 + 270)
 
-        'AutoIt.ControlClick("Form2", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, FlatTextBox1.Text, FlatTextBox2.Text)
-        'Wagonnet578 = 0
+        Try
+
+            Dim SIMPLE = AutoIt.PixelSearch(A1, A22, A3, A4, 1321834, 5, 1)
+            FlatLabel1.Location = New Point(SIMPLE(0) + 7, SIMPLE(1) - 7)
+
+            AutoIt.ControlClick(Text, "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) + 7, SIMPLE(1) - 7)
+            'Wagonnet578 = 0
+
+        Catch Erreur As Exception
+            Console.Beep()
+        End Try
+
     End Sub
 End Class

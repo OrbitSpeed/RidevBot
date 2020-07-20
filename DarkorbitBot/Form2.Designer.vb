@@ -30,6 +30,7 @@ Partial Class Form2
         Me.Button_Reload = New DarkorbitBot.FlatButton()
         Me.Button_Close = New DarkorbitBot.FlatButton()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.FlatLabel1 = New DarkorbitBot.FlatLabel()
         Me.SuspendLayout()
         '
         'Label2
@@ -123,12 +124,25 @@ Partial Class Form2
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
+        'FlatLabel1
+        '
+        Me.FlatLabel1.AutoSize = True
+        Me.FlatLabel1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel1.ForeColor = System.Drawing.Color.Red
+        Me.FlatLabel1.Location = New System.Drawing.Point(799, 5)
+        Me.FlatLabel1.Name = "FlatLabel1"
+        Me.FlatLabel1.Size = New System.Drawing.Size(19, 13)
+        Me.FlatLabel1.TabIndex = 24
+        Me.FlatLabel1.Text = "⚫"
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(891, 653)
+        Me.Controls.Add(Me.FlatLabel1)
         Me.Controls.Add(Me.FlatButton1)
         Me.Controls.Add(Me.Button_SID)
         Me.Controls.Add(Me.Button_Reload)
@@ -155,4 +169,5 @@ Partial Class Form2
     Friend WithEvents Button_Reload As FlatButton
     Friend WithEvents Button_SID As FlatButton
     Friend WithEvents FlatButton1 As FlatButton
+    Friend WithEvents FlatLabel1 As FlatLabel
 End Class
