@@ -1,9 +1,17 @@
-﻿Public Class Form1
+﻿Imports System.Runtime.InteropServices
+Imports System.Text.RegularExpressions
+
+Public Class Form1
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
     Public MouseDownX As Integer
     Public MouseDownY As Integer
+
+    <DllImport("wininet.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
+    Public Shared Function InternetSetCookie(lpszUrl As String,
+      lpszCookieName As String, lpszCookieData As String) As Boolean
+    End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -113,6 +121,14 @@
         ' button Load > SID login '
 
         Label1.Select()
+        Dim server1 = TextBox1.Text
+        Dim dosid = TextBox3.Text
+
+        InternetSetCookie("https://" + server1 + ".darkorbit.com/indexInternal.es?action=internalStart", "dosid", dosid & ";")
+
+        Form2.Show()
+        Form2.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        ' Form2.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
     End Sub
 
@@ -243,6 +259,14 @@
     End Sub
 
     Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
 
     End Sub
 End Class
