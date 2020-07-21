@@ -60,20 +60,20 @@ Partial Class Form1
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelConnection.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -477,10 +477,10 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.PanelConnection)
         Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Controls.Add(Me.Panel3)
-        Me.Panel4.Location = New System.Drawing.Point(0, 54)
+        Me.Panel4.Location = New System.Drawing.Point(0, 55)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(256, 221)
         Me.Panel4.TabIndex = 18
@@ -493,7 +493,7 @@ Partial Class Form1
         Me.Panel5.Controls.Add(Me.Button16)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.ForeColor = System.Drawing.Color.White
-        Me.Panel5.Location = New System.Drawing.Point(0, 54)
+        Me.Panel5.Location = New System.Drawing.Point(0, 55)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(256, 197)
         Me.Panel5.TabIndex = 19
@@ -565,11 +565,73 @@ Partial Class Form1
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.ForeColor = System.Drawing.Color.White
-        Me.Panel6.Location = New System.Drawing.Point(0, 54)
+        Me.Panel6.Location = New System.Drawing.Point(0, 55)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(256, 197)
         Me.Panel6.TabIndex = 20
         Me.Panel6.Visible = False
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.ForeColor = System.Drawing.Color.Black
+        Me.Label21.Location = New System.Drawing.Point(141, 98)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(35, 13)
+        Me.Label21.TabIndex = 25
+        Me.Label21.Text = "FREE"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(71, 98)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(64, 13)
+        Me.Label20.TabIndex = 24
+        Me.Label20.Text = "0d 00:00:00"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(12, 98)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(53, 13)
+        Me.Label19.TabIndex = 23
+        Me.Label19.Text = "Time left :"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(148, 72)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(35, 13)
+        Me.Label18.TabIndex = 22
+        Me.Label18.Text = "FREE"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(97, 72)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(45, 13)
+        Me.Label17.TabIndex = 21
+        Me.Label17.Text = "no Valid"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(159, 160)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(86, 25)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Verify"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TextBox4
         '
@@ -585,6 +647,25 @@ Partial Class Form1
         Me.TextBox4.TabIndex = 18
         Me.TextBox4.Text = Global.DarkorbitBot.My.MySettings.Default.License
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(61, 72)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(30, 13)
+        Me.Label15.TabIndex = 17
+        Me.Label15.Text = "Valid"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(12, 72)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(43, 13)
+        Me.Label14.TabIndex = 16
+        Me.Label14.Text = "Status :"
         '
         'Label13
         '
@@ -607,111 +688,6 @@ Partial Class Form1
         Me.Panel7.Size = New System.Drawing.Size(256, 18)
         Me.Panel7.TabIndex = 23
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(104, 18)
-        Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot 1.0"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(159, 160)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 25)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Verify"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 72)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(43, 13)
-        Me.Label14.TabIndex = 16
-        Me.Label14.Text = "Status :"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(61, 72)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(30, 13)
-        Me.Label15.TabIndex = 17
-        Me.Label15.Text = "Valid"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(97, 72)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(45, 13)
-        Me.Label17.TabIndex = 21
-        Me.Label17.Text = "no Valid"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(148, 72)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(35, 13)
-        Me.Label18.TabIndex = 22
-        Me.Label18.Text = "FREE"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(12, 98)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(53, 13)
-        Me.Label19.TabIndex = 23
-        Me.Label19.Text = "Time left :"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(71, 98)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(64, 13)
-        Me.Label20.TabIndex = 24
-        Me.Label20.Text = "0d 00:00:00"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(141, 98)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(35, 13)
-        Me.Label21.TabIndex = 25
-        Me.Label21.Text = "FREE"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(238, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 24
-        Me.PictureBox1.TabStop = False
-        '
         'FlatMini1
         '
         Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -725,6 +701,30 @@ Partial Class Form1
         Me.FlatMini1.TabIndex = 24
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(104, 18)
+        Me.Label16.TabIndex = 22
+        Me.Label16.Text = "RidevBot 1.0"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox1.Location = New System.Drawing.Point(238, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
@@ -740,9 +740,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
