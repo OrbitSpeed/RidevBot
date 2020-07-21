@@ -305,7 +305,7 @@
 
     End Sub
 
-    Private Sub FlatCheckBox3_CheckedChanged(sender As Object) Handles FlatCheckBox3.CheckedChanged
+    Private Sub FlatCheckBox3_CheckedChanged(sender As Object)
 
     End Sub
 End Class
