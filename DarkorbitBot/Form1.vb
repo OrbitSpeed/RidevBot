@@ -15,7 +15,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub UserAndPass_Button_Click(sender As Object, e As EventArgs) Handles UserAndPass_Button.Click
 
         ' Button 1 = User && Pass '
 
@@ -24,19 +24,19 @@
         Label4.Visible = False
         Label1.Select()
 
-        Panel1.Visible = True
+        PanelConnection.Visible = True
         Panel2.Visible = False
         Panel3.Visible = False
 
-        Button1.Enabled = False
-        Button2.Enabled = True
-        Button3.Enabled = True
+        UserAndPass_Button.Enabled = False
+        SID_Login_Button.Enabled = True
+        Saved_Button.Enabled = True
 
 
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub SID_Login_Button_Click(sender As Object, e As EventArgs) Handles SID_Login_Button.Click
 
         ' Button 1 = SID login '
 
@@ -45,17 +45,17 @@
         Label4.Visible = False
         Label1.Select()
 
-        Panel1.Visible = False
+        PanelConnection.Visible = False
         Panel2.Visible = True
         Panel3.Visible = False
 
-        Button1.Enabled = True
-        Button2.Enabled = False
-        Button3.Enabled = True
+        UserAndPass_Button.Enabled = True
+        SID_Login_Button.Enabled = False
+        Saved_Button.Enabled = True
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Saved_Button_Click(sender As Object, e As EventArgs) Handles Saved_Button.Click
 
         ' Button 1 = Saved '
 
@@ -64,17 +64,17 @@
         Label4.Visible = True
         Label1.Select()
 
-        Panel1.Visible = False
+        PanelConnection.Visible = False
         Panel2.Visible = False
         Panel3.Visible = True
 
-        Button1.Enabled = True
-        Button2.Enabled = True
-        Button3.Enabled = False
+        UserAndPass_Button.Enabled = True
+        SID_Login_Button.Enabled = True
+        Saved_Button.Enabled = False
 
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
         ' button Load 1 > User&&Pass '
 
@@ -116,7 +116,7 @@
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Credentials_Button_Click(sender As Object, e As EventArgs) Handles Credentials_Button.Click
 
         ' button credentials '
 
@@ -128,13 +128,13 @@
         Label9.Visible = False
         Label10.Visible = True
 
-        Button7.Enabled = False
-        Button13.Enabled = True
-        Button14.Enabled = True
+        Credentials_Button.Enabled = False
+        Portail_Button.Enabled = True
+        License_Button.Enabled = True
 
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Portail_Button_Click(sender As Object, e As EventArgs) Handles Portail_Button.Click
 
         ' button Portal '
 
@@ -146,13 +146,13 @@
         Label9.Visible = True
         Label10.Visible = False
 
-        Button7.Enabled = True
-        Button13.Enabled = False
-        Button14.Enabled = True
+        Credentials_Button.Enabled = True
+        Portail_Button.Enabled = False
+        License_Button.Enabled = True
 
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub License_Button_Click(sender As Object, e As EventArgs) Handles License_Button.Click
 
         ' button License '
 
@@ -164,9 +164,9 @@
         Label9.Visible = False
         Label10.Visible = False
 
-        Button7.Enabled = True
-        Button13.Enabled = True
-        Button14.Enabled = False
+        Credentials_Button.Enabled = True
+        Portail_Button.Enabled = True
+        License_Button.Enabled = False
 
     End Sub
 
@@ -176,7 +176,7 @@
 
         Label11.Visible = True
         Label12.Visible = False
-        Button11.Visible = True
+        Load_Button.Visible = True
         Button4.Visible = False
 
         Button15.Enabled = False
@@ -191,7 +191,7 @@
         Label11.Visible = False
         Label12.Visible = True
 
-        Button11.Visible = False
+        Load_Button.Visible = False
         Button4.Visible = True
 
         Button15.Enabled = True
