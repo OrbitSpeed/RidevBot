@@ -94,11 +94,11 @@
     <Compile Include="Themes\Flat UI Theme.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form_Start.vb">
+    <Compile Include="Form_Startup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Start.Designer.vb">
-      <DependentUpon>Form_Start.vb</DependentUpon>
+    <Compile Include="Form_Startup.Designer.vb">
+      <DependentUpon>Form_Startup.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Game.Designer.vb">
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="BackPage_Form.resx">
       <DependentUpon>BackPage_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Start.resx">
-      <DependentUpon>Form_Start.vb</DependentUpon>
+    <EmbeddedResource Include="Form_Startup.resx">
+      <DependentUpon>Form_Startup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Game.resx">
       <DependentUpon>Form_Game.vb</DependentUpon>

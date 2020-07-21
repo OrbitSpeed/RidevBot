@@ -125,7 +125,7 @@ Public Class Form_Startup
         Dim server1 = TextBox1.Text
         Dim dosid = TextBox3.Text
 
-        InternetSetCookie("https://" + server1 + ".darkorbit.com/indexInternal.es?action=internalStart", "dosid", dosid & ";")
+        InternetSetCookie("https://" + server1 + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", dosid & ";")
 
         Form_Game.Show()
         Form_Game.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
