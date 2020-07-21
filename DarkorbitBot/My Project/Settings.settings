@@ -11,5 +11,8 @@
     <Setting Name="License" Type="System.String" Scope="User">
       <Value Profile="(Default)">FREE</Value>
     </Setting>
+    <Setting Name="server" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

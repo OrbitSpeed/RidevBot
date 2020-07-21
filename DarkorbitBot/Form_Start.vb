@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 
-Public Class Form1
+Public Class Form_Startup
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -87,8 +87,8 @@ Public Class Form1
         ' button Load 1 > User&&Pass > RidevBot Browser '
 
         Label1.Select()
-        Form2.Show()
-        Form3.Show()
+        Form_Game.Show()
+        Form_Tools.Show()
 
 
     End Sub
@@ -127,8 +127,8 @@ Public Class Form1
 
         InternetSetCookie("https://" + server1 + ".darkorbit.com/indexInternal.es?action=internalStart", "dosid", dosid & ";")
 
-        Form2.Show()
-        Form2.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        Form_Game.Show()
+        Form_Game.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         ' Form2.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
     End Sub
@@ -269,5 +269,9 @@ Public Class Form1
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
 
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        CloseForm1.ShowDialog(Me)
     End Sub
 End Class

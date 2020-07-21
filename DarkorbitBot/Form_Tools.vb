@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class Form_Tools
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -40,4 +40,8 @@
 
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        CloseForm1.ShowDialog(Me)
+        'CloseForm1.Show()
+    End Sub
 End Class

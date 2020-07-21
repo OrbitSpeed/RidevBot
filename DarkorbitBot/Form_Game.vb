@@ -1,10 +1,12 @@
 ﻿Imports System.Text.RegularExpressions
 Imports AutoItX3Lib
 
-Public Class Form2
+Public Class Form_Game
 
     Dim server
     Dim AutoIt As New AutoItX3
+
+    Dim dosid As String
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -28,13 +30,11 @@ Public Class Form2
     Public Sub StartWebBot()
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") Then
 
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form1.Username_Textbox.Text)
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form1.Password_Textbox.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Username_Textbox.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Password_Textbox.Text)
             For Each p As HtmlElement In WebBrowser1.Document.GetElementsByTagName("input")
                 If p.GetAttribute("type") = "submit" Then
                     p.InvokeMember("click")
-
-
                 End If
             Next
 
@@ -43,7 +43,18 @@ Public Class Form2
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser1.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
             server = CheckRegex.Groups.Item(1).ToString
+
+            Dim testalacon = Regex.Match(WebBrowser1.DocumentText, "dosid=([^&^.']+)")
+            If testalacon.Success Then
+                Console.WriteLine(testalacon.Value.Split("=")(1))
+                dosid = testalacon.Value.Split("=")(1)
+
+                'MsgBox(dosid)
+            End If
+
+            'Launch the Start
             WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
         End If
 
     End Sub
