@@ -68,31 +68,31 @@ Partial Class Form2
         '
         'FlatButton1
         '
-        Me.FlatButton1.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(301, 0)
-        Me.FlatButton1.Name = "FlatButton1"
-        Me.FlatButton1.Rounded = False
-        Me.FlatButton1.Size = New System.Drawing.Size(111, 18)
-        Me.FlatButton1.TabIndex = 23
-        Me.FlatButton1.Text = "Click"
-        Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Button_Click.BackColor = System.Drawing.Color.Transparent
+        Me.Button_Click.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button_Click.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Click.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Button_Click.Location = New System.Drawing.Point(301, 0)
+        Me.Button_Click.Name = "FlatButton1"
+        Me.Button_Click.Rounded = False
+        Me.Button_Click.Size = New System.Drawing.Size(111, 18)
+        Me.Button_Click.TabIndex = 23
+        Me.Button_Click.Text = "Click"
+        Me.Button_Click.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Button_SID
         '
-        Me.Button_SID.BackColor = System.Drawing.Color.Transparent
-        Me.Button_SID.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button_SID.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_SID.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Button_SID.Location = New System.Drawing.Point(184, 0)
-        Me.Button_SID.Name = "Button_SID"
-        Me.Button_SID.Rounded = False
-        Me.Button_SID.Size = New System.Drawing.Size(111, 18)
-        Me.Button_SID.TabIndex = 22
-        Me.Button_SID.Text = "Background"
-        Me.Button_SID.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Button_Backpage.BackColor = System.Drawing.Color.Transparent
+        Me.Button_Backpage.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Backpage.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Button_Backpage.Location = New System.Drawing.Point(184, 0)
+        Me.Button_Backpage.Name = "Button_SID"
+        Me.Button_Backpage.Rounded = False
+        Me.Button_Backpage.Size = New System.Drawing.Size(111, 18)
+        Me.Button_Backpage.TabIndex = 22
+        Me.Button_Backpage.Text = "Background"
+        Me.Button_Backpage.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Button_Reload
         '
@@ -122,9 +122,9 @@ Partial Class Form2
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.FlatButton1)
+        Me.Panel7.Controls.Add(Me.Button_Click)
         Me.Panel7.Controls.Add(Me.FlatLabel1)
-        Me.Panel7.Controls.Add(Me.Button_SID)
+        Me.Panel7.Controls.Add(Me.Button_Backpage)
         Me.Panel7.Controls.Add(Me.FlatClose1)
         Me.Panel7.Controls.Add(Me.Button_Reload)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
