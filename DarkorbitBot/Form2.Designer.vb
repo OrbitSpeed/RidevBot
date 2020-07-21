@@ -27,6 +27,8 @@ Partial Class Form2
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Clickbutton = New DarkorbitBot.FlatButton()
+        Me.backpage = New DarkorbitBot.FlatButton()
         Me.FlatClose1 = New DarkorbitBot.FlatClose()
         Me.Button_Reload = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
@@ -54,45 +56,69 @@ Partial Class Form2
         Me.WebBrowser1.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser1.TabIndex = 17
         '
-        'FlatLabel1
+        'Label16
         '
-        Me.FlatLabel1.AutoSize = True
-        Me.FlatLabel1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel1.ForeColor = System.Drawing.Color.Red
-        Me.FlatLabel1.Location = New System.Drawing.Point(734, 2)
-        Me.FlatLabel1.Name = "FlatLabel1"
-        Me.FlatLabel1.Size = New System.Drawing.Size(19, 13)
-        Me.FlatLabel1.TabIndex = 24
-        Me.FlatLabel1.Text = "⚫"
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(2, 2)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(59, 13)
+        Me.Label16.TabIndex = 22
+        Me.Label16.Text = "RidevBot"
         '
-        'FlatButton1
+        'Panel7
         '
-        Me.Button_Click.BackColor = System.Drawing.Color.Transparent
-        Me.Button_Click.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button_Click.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Click.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Button_Click.Location = New System.Drawing.Point(301, 0)
-        Me.Button_Click.Name = "FlatButton1"
-        Me.Button_Click.Rounded = False
-        Me.Button_Click.Size = New System.Drawing.Size(111, 18)
-        Me.Button_Click.TabIndex = 23
-        Me.Button_Click.Text = "Click"
-        Me.Button_Click.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Clickbutton)
+        Me.Panel7.Controls.Add(Me.backpage)
+        Me.Panel7.Controls.Add(Me.Label16)
+        Me.Panel7.Controls.Add(Me.FlatClose1)
+        Me.Panel7.Controls.Add(Me.Button_Reload)
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(800, 18)
+        Me.Panel7.TabIndex = 27
         '
-        'Button_SID
+        'Clickbutton
         '
-        Me.Button_Backpage.BackColor = System.Drawing.Color.Transparent
-        Me.Button_Backpage.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Backpage.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Button_Backpage.Location = New System.Drawing.Point(184, 0)
-        Me.Button_Backpage.Name = "Button_SID"
-        Me.Button_Backpage.Rounded = False
-        Me.Button_Backpage.Size = New System.Drawing.Size(111, 18)
-        Me.Button_Backpage.TabIndex = 22
-        Me.Button_Backpage.Text = "Background"
-        Me.Button_Backpage.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Clickbutton.BackColor = System.Drawing.Color.Transparent
+        Me.Clickbutton.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Clickbutton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Clickbutton.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Clickbutton.Location = New System.Drawing.Point(301, 0)
+        Me.Clickbutton.Name = "Clickbutton"
+        Me.Clickbutton.Rounded = False
+        Me.Clickbutton.Size = New System.Drawing.Size(111, 18)
+        Me.Clickbutton.TabIndex = 24
+        Me.Clickbutton.Text = "Click"
+        Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'backpage
+        '
+        Me.backpage.BackColor = System.Drawing.Color.Transparent
+        Me.backpage.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.backpage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.backpage.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.backpage.Location = New System.Drawing.Point(184, 0)
+        Me.backpage.Name = "backpage"
+        Me.backpage.Rounded = False
+        Me.backpage.Size = New System.Drawing.Size(111, 18)
+        Me.backpage.TabIndex = 23
+        Me.backpage.Text = "Backpage"
+        Me.backpage.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatClose1
+        '
+        Me.FlatClose1.BackColor = System.Drawing.Color.White
+        Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.FlatClose1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
+        Me.FlatClose1.Location = New System.Drawing.Point(782, 0)
+        Me.FlatClose1.Name = "FlatClose1"
+        Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatClose1.TabIndex = 21
+        Me.FlatClose1.Text = "FlatClose1"
+        Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Button_Reload
         '
@@ -107,43 +133,6 @@ Partial Class Form2
         Me.Button_Reload.TabIndex = 21
         Me.Button_Reload.Text = "Reload"
         Me.Button_Reload.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 2)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(59, 13)
-        Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot"
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.Button_Click)
-        Me.Panel7.Controls.Add(Me.FlatLabel1)
-        Me.Panel7.Controls.Add(Me.Button_Backpage)
-        Me.Panel7.Controls.Add(Me.FlatClose1)
-        Me.Panel7.Controls.Add(Me.Button_Reload)
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(800, 18)
-        Me.Panel7.TabIndex = 27
-        '
-        'FlatClose1
-        '
-        Me.FlatClose1.BackColor = System.Drawing.Color.White
-        Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.FlatClose1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
-        Me.FlatClose1.Location = New System.Drawing.Point(782, 0)
-        Me.FlatClose1.Name = "FlatClose1"
-        Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatClose1.TabIndex = 21
-        Me.FlatClose1.Text = "FlatClose1"
-        Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form2
         '
@@ -177,4 +166,6 @@ Partial Class Form2
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents FlatClose1 As FlatClose
+    Friend WithEvents backpage As FlatButton
+    Friend WithEvents Clickbutton As FlatButton
 End Class

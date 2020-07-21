@@ -57,7 +57,7 @@ Public Class Form2
         'StartWebBot()
     End Sub
 
-    Private Sub Button_Backpage_Click(sender As Object, e As EventArgs) Handles Button_Backpage.Click
+    Private Sub backpage_Click(sender As Object, e As EventArgs) Handles backpage.Click
 
         ' ouverture de la maisonnette '
 
@@ -66,7 +66,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Button_Click_Click(sender As Object, e As EventArgs) Handles Button_Click.Click
+    Private Sub Clickbutton_Click(sender As Object, e As EventArgs) Handles Clickbutton.Click
 
         Try
 
@@ -88,7 +88,7 @@ Public Class Form2
 
         Catch ex As Exception
 
-        End Try
+    End Try
 
     End Sub
 End Class
