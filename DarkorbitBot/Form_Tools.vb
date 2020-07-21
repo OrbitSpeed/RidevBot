@@ -44,8 +44,9 @@
         Panel_GalaxyGates.Location = New Point(86, 18)
         Panel_Palladium.Location = New Point(86, 18)
         Panel_stats.Location = New Point(86, 18)
-        Panel7.Location = New Point(86, 18)
         Panel_rex.Location = New Point(86, 18)
+        Panel_divers.Location = New Point(86, 18)
+
         Me.Size = New Size(390, 324)
 
     End Sub
@@ -75,6 +76,15 @@
         Label4.Visible = False
         Label5.Visible = False
 
+        Panel_general.Visible = True
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
     End Sub
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
@@ -96,6 +106,15 @@
         Label3.Visible = False
         Label4.Visible = False
         Label5.Visible = False
+
+        Panel_general.Visible = False
+        Panel_Npc.Visible = True
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
     End Sub
 
@@ -119,6 +138,15 @@
         Label4.Visible = False
         Label5.Visible = False
 
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = True
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
     End Sub
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
@@ -140,6 +168,15 @@
         Label3.Visible = False
         Label4.Visible = False
         Label5.Visible = False
+
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = True
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
     End Sub
 
@@ -163,6 +200,15 @@
         Label4.Visible = False
         Label5.Visible = False
 
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = True
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
     End Sub
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
@@ -184,6 +230,15 @@
         Label3.Visible = True
         Label4.Visible = False
         Label5.Visible = False
+
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = True
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
 
     End Sub
@@ -208,6 +263,15 @@
         Label4.Visible = True
         Label5.Visible = False
 
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = True
+        Panel_divers.Visible = False
+
     End Sub
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
@@ -229,6 +293,15 @@
         Label3.Visible = False
         Label4.Visible = False
         Label5.Visible = True
+
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = True
 
     End Sub
 
