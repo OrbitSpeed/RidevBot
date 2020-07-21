@@ -27,7 +27,7 @@ Partial Class Form_Game
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.FlatButton3 = New DarkorbitBot.FlatButton()
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
@@ -35,7 +35,7 @@ Partial Class Form_Game
         Me.backpage = New DarkorbitBot.FlatButton()
         Me.Button_Reload = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -73,7 +73,7 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.PictureBox1)
+        Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.FlatButton3)
         Me.Panel7.Controls.Add(Me.FlatButton2)
         Me.Panel7.Controls.Add(Me.FlatButton1)
@@ -86,18 +86,18 @@ Partial Class Form_Game
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
         '
-        'PictureBox1
+        'PictureBox_Close
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
         '
         'FlatButton3
         '
@@ -201,7 +201,7 @@ Partial Class Form_Game
         Me.Text = "RidevBot"
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,5 +219,5 @@ Partial Class Form_Game
     Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatButton2 As FlatButton
     Friend WithEvents FlatButton3 As FlatButton
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox_Close As PictureBox
 End Class

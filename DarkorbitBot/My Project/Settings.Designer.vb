@@ -101,6 +101,17 @@ Namespace My
                 Me("server") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property UserAccounts() As Global.System.Collections.Specialized.StringCollection
+            Get
+                Return CType(Me("UserAccounts"),Global.System.Collections.Specialized.StringCollection)
+            End Get
+            Set
+                Me("UserAccounts") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

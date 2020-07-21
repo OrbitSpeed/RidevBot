@@ -53,7 +53,7 @@ Public Class Form_Game
             End If
 
             'Launch the Start
-            WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            WebBrowser1.Navigate("https://" + (server) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         ElseIf WebBrowser1.Url.ToString.Contains("authUser=291") Then
             Dim result = MessageBox.Show("Le compte est incorrect, veuillez vérifier les informations", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -187,5 +187,9 @@ Public Class Form_Game
 
         End Try
 
+    End Sub
+
+    Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
+        CloseForm.ShowDialog(Me)
     End Sub
 End Class

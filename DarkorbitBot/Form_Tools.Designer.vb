@@ -28,7 +28,7 @@ Partial Class Form_Tools
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Collector_Button = New System.Windows.Forms.Button()
         Me.NPC_Button = New System.Windows.Forms.Button()
@@ -47,6 +47,11 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel_general = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_LaunchGame = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.FlatCheckBox4 = New DarkorbitBot.FlatCheckBox()
+        Me.FlatCheckBox1 = New DarkorbitBot.FlatCheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -62,15 +67,10 @@ Partial Class Form_Tools
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.FlatCheckBox1 = New DarkorbitBot.FlatCheckBox()
-        Me.FlatCheckBox4 = New DarkorbitBot.FlatCheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button_LaunchGame = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -99,7 +99,7 @@ Partial Class Form_Tools
         Me.Panel7.Controls.Add(Me.PictureBox4)
         Me.Panel7.Controls.Add(Me.FlatMini1)
         Me.Panel7.Controls.Add(Me.PictureBox2)
-        Me.Panel7.Controls.Add(Me.PictureBox1)
+        Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.Label16)
         Me.Panel7.Controls.Add(Me.PictureBox3)
         Me.Panel7.Cursor = System.Windows.Forms.Cursors.SizeAll
@@ -147,18 +147,18 @@ Partial Class Form_Tools
         Me.PictureBox2.TabIndex = 33
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
+        'PictureBox_Close
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(1670, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 26
-        Me.PictureBox1.TabStop = False
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 26
+        Me.PictureBox_Close.TabStop = False
         '
         'PictureBox3
         '
@@ -403,6 +403,79 @@ Partial Class Form_Tools
         Me.Panel_general.Size = New System.Drawing.Size(304, 306)
         Me.Panel_general.TabIndex = 41
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.Enabled = False
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(10, 93)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(121, 44)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Modify no click zone"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button_LaunchGame
+        '
+        Me.Button_LaunchGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_LaunchGame.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_LaunchGame.Enabled = False
+        Me.Button_LaunchGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_LaunchGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_LaunchGame.ForeColor = System.Drawing.Color.White
+        Me.Button_LaunchGame.Location = New System.Drawing.Point(10, 140)
+        Me.Button_LaunchGame.Name = "Button_LaunchGame"
+        Me.Button_LaunchGame.Size = New System.Drawing.Size(121, 25)
+        Me.Button_LaunchGame.TabIndex = 26
+        Me.Button_LaunchGame.Text = "Launch game"
+        Me.Button_LaunchGame.UseVisualStyleBackColor = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Profil1", "Profil2", "Profil3", "etc etc..", "User&&pass"})
+        Me.ComboBox1.Location = New System.Drawing.Point(10, 58)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 5
+        '
+        'FlatCheckBox4
+        '
+        Me.FlatCheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox4.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox4.Checked = True
+        Me.FlatCheckBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox4.Location = New System.Drawing.Point(10, 35)
+        Me.FlatCheckBox4.Name = "FlatCheckBox4"
+        Me.FlatCheckBox4.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox4.Size = New System.Drawing.Size(121, 22)
+        Me.FlatCheckBox4.TabIndex = 4
+        Me.FlatCheckBox4.Text = "Auto login with :"
+        '
+        'FlatCheckBox1
+        '
+        Me.FlatCheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox1.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox1.Checked = True
+        Me.FlatCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox1.Location = New System.Drawing.Point(10, 10)
+        Me.FlatCheckBox1.Name = "FlatCheckBox1"
+        Me.FlatCheckBox1.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox1.Size = New System.Drawing.Size(274, 22)
+        Me.FlatCheckBox1.TabIndex = 1
+        Me.FlatCheckBox1.Text = "  Auto launch the game at program start"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -552,79 +625,6 @@ Partial Class Form_Tools
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "divers"
         '
-        'FlatCheckBox1
-        '
-        Me.FlatCheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.FlatCheckBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.FlatCheckBox1.BorderColor = System.Drawing.Color.White
-        Me.FlatCheckBox1.Checked = True
-        Me.FlatCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatCheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox1.Location = New System.Drawing.Point(10, 10)
-        Me.FlatCheckBox1.Name = "FlatCheckBox1"
-        Me.FlatCheckBox1.Options = DarkorbitBot.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox1.Size = New System.Drawing.Size(274, 22)
-        Me.FlatCheckBox1.TabIndex = 1
-        Me.FlatCheckBox1.Text = "  Auto launch the game at program start"
-        '
-        'FlatCheckBox4
-        '
-        Me.FlatCheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.FlatCheckBox4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.FlatCheckBox4.BorderColor = System.Drawing.Color.White
-        Me.FlatCheckBox4.Checked = True
-        Me.FlatCheckBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatCheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatCheckBox4.Location = New System.Drawing.Point(10, 35)
-        Me.FlatCheckBox4.Name = "FlatCheckBox4"
-        Me.FlatCheckBox4.Options = DarkorbitBot.FlatCheckBox._Options.Style1
-        Me.FlatCheckBox4.Size = New System.Drawing.Size(121, 22)
-        Me.FlatCheckBox4.TabIndex = 4
-        Me.FlatCheckBox4.Text = "Auto login with :"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.ForeColor = System.Drawing.Color.White
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Profil1", "Profil2", "Profil3", "etc etc..", "User&&pass"})
-        Me.ComboBox1.Location = New System.Drawing.Point(10, 58)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 5
-        '
-        'Button_LaunchGame
-        '
-        Me.Button_LaunchGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_LaunchGame.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_LaunchGame.Enabled = False
-        Me.Button_LaunchGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_LaunchGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_LaunchGame.ForeColor = System.Drawing.Color.White
-        Me.Button_LaunchGame.Location = New System.Drawing.Point(10, 140)
-        Me.Button_LaunchGame.Name = "Button_LaunchGame"
-        Me.Button_LaunchGame.Size = New System.Drawing.Size(121, 25)
-        Me.Button_LaunchGame.TabIndex = 26
-        Me.Button_LaunchGame.Text = "Launch game"
-        Me.Button_LaunchGame.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Enabled = False
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(10, 93)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 44)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Modify no click zone"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -665,7 +665,7 @@ Partial Class Form_Tools
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_general.ResumeLayout(False)
         Me.Panel_general.PerformLayout()
@@ -691,7 +691,7 @@ Partial Class Form_Tools
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents FlatMini1 As FlatMini
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents Collector_Button As Button
     Friend WithEvents NPC_Button As Button
     Friend WithEvents General_button As Button

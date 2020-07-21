@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class CloseForm1
+Partial Class CloseForm
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -22,7 +22,7 @@ Partial Class CloseForm1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CloseForm1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CloseForm))
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -30,6 +30,8 @@ Partial Class CloseForm1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.No_button = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button_CloseAllForm = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,7 +83,7 @@ Partial Class CloseForm1
         Me.Yes_button.Name = "Yes_button"
         Me.Yes_button.Size = New System.Drawing.Size(121, 35)
         Me.Yes_button.TabIndex = 26
-        Me.Yes_button.Text = "Yes, Close"
+        Me.Yes_button.Text = "Oui, fermer"
         Me.Yes_button.UseVisualStyleBackColor = False
         '
         'Label11
@@ -102,11 +104,11 @@ Partial Class CloseForm1
         Me.No_button.FlatAppearance.BorderSize = 0
         Me.No_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.No_button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.No_button.Location = New System.Drawing.Point(74, 108)
+        Me.No_button.Location = New System.Drawing.Point(74, 86)
         Me.No_button.Name = "No_button"
         Me.No_button.Size = New System.Drawing.Size(121, 47)
         Me.No_button.TabIndex = 28
-        Me.No_button.Text = "No, Go back"
+        Me.No_button.Text = "Non, revenir en arrière"
         Me.No_button.UseVisualStyleBackColor = False
         '
         'Label12
@@ -114,14 +116,40 @@ Partial Class CloseForm1
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(77, 138)
+        Me.Label12.Location = New System.Drawing.Point(77, 116)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(116, 18)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "____________"
         Me.Label12.Visible = False
         '
-        'CloseForm1
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(77, 170)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(116, 18)
+        Me.Label1.TabIndex = 29
+        Me.Label1.Text = "____________"
+        Me.Label1.Visible = False
+        '
+        'Button_CloseAllForm
+        '
+        Me.Button_CloseAllForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button_CloseAllForm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_CloseAllForm.FlatAppearance.BorderSize = 0
+        Me.Button_CloseAllForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_CloseAllForm.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_CloseAllForm.Location = New System.Drawing.Point(74, 140)
+        Me.Button_CloseAllForm.Name = "Button_CloseAllForm"
+        Me.Button_CloseAllForm.Size = New System.Drawing.Size(121, 47)
+        Me.Button_CloseAllForm.TabIndex = 28
+        Me.Button_CloseAllForm.Text = "Oui, fermer tout"
+        Me.Button_CloseAllForm.UseVisualStyleBackColor = False
+        '
+        'CloseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -129,12 +157,14 @@ Partial Class CloseForm1
         Me.ClientSize = New System.Drawing.Size(269, 199)
         Me.Controls.Add(Me.Yes_button)
         Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Button_CloseAllForm)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.No_button)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel7)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "CloseForm1"
+        Me.Name = "CloseForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Close"
         Me.TopMost = True
@@ -153,4 +183,6 @@ Partial Class CloseForm1
     Friend WithEvents Label11 As Label
     Friend WithEvents No_button As Button
     Friend WithEvents Label12 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button_CloseAllForm As Button
 End Class

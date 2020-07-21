@@ -272,6 +272,19 @@ Public Class Form_Startup
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        CloseForm1.ShowDialog(Me)
+        CloseForm.ShowDialog(Me)
+    End Sub
+
+    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseDown
+        Password_Textbox.UseSystemPasswordChar = False
+        PictureBox_PasswordHider.Image = My.Resources._remove_red_eye_90161
+    End Sub
+    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseUp
+        Password_Textbox.UseSystemPasswordChar = True
+        PictureBox_PasswordHider.Image = My.Resources.eye_off_icon_135658
+    End Sub
+
+    Private Sub FlatButton_Plus_Click(sender As Object, e As EventArgs) Handles FlatButton_Plus.Click
+        CheckedListBox_Account.Items.Add("testbite")
     End Sub
 End Class

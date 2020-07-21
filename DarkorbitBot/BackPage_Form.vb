@@ -39,4 +39,8 @@
     Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
 
     End Sub
+
+    Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
+        CloseForm.ShowDialog(Me)
+    End Sub
 End Class

@@ -36,7 +36,7 @@
 
     End Sub
 
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Panel_general.Location = New Point(86, 18)
         Panel_Npc.Location = New Point(86, 18)
@@ -47,12 +47,12 @@
         Panel_rex.Location = New Point(86, 18)
         Panel_divers.Location = New Point(86, 18)
 
-        Me.Size = New Size(390, 324)
-
+        Size = New Size(390, 324)
+        CenterToScreen()
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        CloseForm1.ShowDialog(Me)
+    Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
+        CloseForm.ShowDialog(Me)
         'CloseForm1.Show()
     End Sub
 

@@ -31,6 +31,7 @@ Partial Class Form_Startup
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PanelConnection = New System.Windows.Forms.Panel()
+        Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
         Me.Password_Textbox = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Load_Button = New System.Windows.Forms.Button()
@@ -46,6 +47,8 @@ Partial Class Form_Startup
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FlatButton_Plus = New DarkorbitBot.FlatButton()
+        Me.CheckedListBox_Account = New System.Windows.Forms.CheckedListBox()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Credentials_Button = New System.Windows.Forms.Button()
         Me.Portail_Button = New System.Windows.Forms.Button()
@@ -75,6 +78,7 @@ Partial Class Form_Startup
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PanelConnection.SuspendLayout()
+        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -176,6 +180,7 @@ Partial Class Form_Startup
         'PanelConnection
         '
         Me.PanelConnection.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PanelConnection.Controls.Add(Me.PictureBox_PasswordHider)
         Me.PanelConnection.Controls.Add(Me.Password_Textbox)
         Me.PanelConnection.Controls.Add(Me.TextBox2)
         Me.PanelConnection.Controls.Add(Me.Load_Button)
@@ -189,6 +194,16 @@ Partial Class Form_Startup
         Me.PanelConnection.Size = New System.Drawing.Size(256, 160)
         Me.PanelConnection.TabIndex = 10
         '
+        'PictureBox_PasswordHider
+        '
+        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.eye_off_icon_135658
+        Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(236, 88)
+        Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
+        Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(19, 18)
+        Me.PictureBox_PasswordHider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_PasswordHider.TabIndex = 22
+        Me.PictureBox_PasswordHider.TabStop = False
+        '
         'Password_Textbox
         '
         Me.Password_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -199,11 +214,11 @@ Partial Class Form_Startup
         Me.Password_Textbox.ForeColor = System.Drawing.Color.White
         Me.Password_Textbox.Location = New System.Drawing.Point(0, 86)
         Me.Password_Textbox.Name = "Password_Textbox"
-        Me.Password_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Password_Textbox.Size = New System.Drawing.Size(256, 21)
         Me.Password_Textbox.TabIndex = 21
         Me.Password_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.Password
         Me.Password_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Password_Textbox.UseSystemPasswordChar = True
         '
         'TextBox2
         '
@@ -369,6 +384,8 @@ Partial Class Form_Startup
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel3.Controls.Add(Me.FlatButton_Plus)
+        Me.Panel3.Controls.Add(Me.CheckedListBox_Account)
         Me.Panel3.Controls.Add(Me.Button12)
         Me.Panel3.ForeColor = System.Drawing.Color.White
         Me.Panel3.Location = New System.Drawing.Point(0, 37)
@@ -376,6 +393,32 @@ Partial Class Form_Startup
         Me.Panel3.Size = New System.Drawing.Size(256, 160)
         Me.Panel3.TabIndex = 11
         Me.Panel3.Visible = False
+        '
+        'FlatButton_Plus
+        '
+        Me.FlatButton_Plus.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton_Plus.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatButton_Plus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton_Plus.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.FlatButton_Plus.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.FlatButton_Plus.Location = New System.Drawing.Point(200, 12)
+        Me.FlatButton_Plus.Name = "FlatButton_Plus"
+        Me.FlatButton_Plus.Rounded = False
+        Me.FlatButton_Plus.Size = New System.Drawing.Size(24, 24)
+        Me.FlatButton_Plus.TabIndex = 21
+        Me.FlatButton_Plus.Text = "+"
+        Me.FlatButton_Plus.TextColor = System.Drawing.Color.Red
+        '
+        'CheckedListBox_Account
+        '
+        Me.CheckedListBox_Account.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckedListBox_Account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CheckedListBox_Account.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckedListBox_Account.FormattingEnabled = True
+        Me.CheckedListBox_Account.Location = New System.Drawing.Point(5, 12)
+        Me.CheckedListBox_Account.Name = "CheckedListBox_Account"
+        Me.CheckedListBox_Account.Size = New System.Drawing.Size(189, 92)
+        Me.CheckedListBox_Account.TabIndex = 20
         '
         'Button12
         '
@@ -479,9 +522,9 @@ Partial Class Form_Startup
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.PanelConnection)
+        Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Location = New System.Drawing.Point(0, 55)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(256, 221)
@@ -755,6 +798,7 @@ Partial Class Form_Startup
         Me.Text = "RidevBot"
         Me.PanelConnection.ResumeLayout(False)
         Me.PanelConnection.PerformLayout()
+        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -823,4 +867,7 @@ Partial Class Form_Startup
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents FlatMini1 As FlatMini
+    Friend WithEvents PictureBox_PasswordHider As PictureBox
+    Friend WithEvents FlatButton_Plus As FlatButton
+    Friend WithEvents CheckedListBox_Account As CheckedListBox
 End Class
