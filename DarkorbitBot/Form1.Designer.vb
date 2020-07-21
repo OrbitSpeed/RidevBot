@@ -23,48 +23,48 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.UserAndPass_Button = New System.Windows.Forms.Button()
+        Me.SID_Login_Button = New System.Windows.Forms.Button()
+        Me.Saved_Button = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PanelConnection = New System.Windows.Forms.Panel()
+        Me.Password_Textbox = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Load_Button = New System.Windows.Forms.Button()
+        Me.Password_Label = New System.Windows.Forms.Label()
+        Me.Username_Textbox = New System.Windows.Forms.TextBox()
+        Me.Usrname_Label = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Credentials_Button = New System.Windows.Forms.Button()
+        Me.Portail_Button = New System.Windows.Forms.Button()
+        Me.License_Button = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.FlatClose1 = New DarkorbitBot.FlatClose()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Panel1.SuspendLayout()
+        Me.FlatClose1 = New DarkorbitBot.FlatClose()
+        Me.PanelConnection.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -73,51 +73,51 @@ Partial Class Form1
         Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'UserAndPass_Button
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Enabled = False
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 35)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "User && Pass"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.UserAndPass_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.UserAndPass_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.UserAndPass_Button.Enabled = False
+        Me.UserAndPass_Button.FlatAppearance.BorderSize = 0
+        Me.UserAndPass_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UserAndPass_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserAndPass_Button.ForeColor = System.Drawing.Color.White
+        Me.UserAndPass_Button.Location = New System.Drawing.Point(0, 0)
+        Me.UserAndPass_Button.Name = "UserAndPass_Button"
+        Me.UserAndPass_Button.Size = New System.Drawing.Size(86, 35)
+        Me.UserAndPass_Button.TabIndex = 3
+        Me.UserAndPass_Button.Text = "User && Pass"
+        Me.UserAndPass_Button.UseVisualStyleBackColor = False
         '
-        'Button2
+        'SID_Login_Button
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(85, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(86, 35)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "SID login"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.SID_Login_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.SID_Login_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SID_Login_Button.FlatAppearance.BorderSize = 0
+        Me.SID_Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SID_Login_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SID_Login_Button.ForeColor = System.Drawing.Color.White
+        Me.SID_Login_Button.Location = New System.Drawing.Point(85, 0)
+        Me.SID_Login_Button.Name = "SID_Login_Button"
+        Me.SID_Login_Button.Size = New System.Drawing.Size(86, 35)
+        Me.SID_Login_Button.TabIndex = 4
+        Me.SID_Login_Button.Text = "SID login"
+        Me.SID_Login_Button.UseVisualStyleBackColor = False
         '
-        'Button3
+        'Saved_Button
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(170, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(86, 35)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Saved"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Saved_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Saved_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Saved_Button.FlatAppearance.BorderSize = 0
+        Me.Saved_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Saved_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Saved_Button.ForeColor = System.Drawing.Color.White
+        Me.Saved_Button.Location = New System.Drawing.Point(170, 0)
+        Me.Saved_Button.Name = "Saved_Button"
+        Me.Saved_Button.Size = New System.Drawing.Size(86, 35)
+        Me.Saved_Button.TabIndex = 5
+        Me.Saved_Button.Text = "Saved"
+        Me.Saved_Button.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -162,21 +162,99 @@ Partial Class Form1
         Me.Label4.Text = "_________"
         Me.Label4.Visible = False
         '
-        'Panel1
+        'PanelConnection
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel1.Controls.Add(Me.TextBox5)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.Button11)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(0, 37)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(256, 160)
-        Me.Panel1.TabIndex = 10
+        Me.PanelConnection.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PanelConnection.Controls.Add(Me.Password_Textbox)
+        Me.PanelConnection.Controls.Add(Me.TextBox2)
+        Me.PanelConnection.Controls.Add(Me.Load_Button)
+        Me.PanelConnection.Controls.Add(Me.Password_Label)
+        Me.PanelConnection.Controls.Add(Me.Username_Textbox)
+        Me.PanelConnection.Controls.Add(Me.Usrname_Label)
+        Me.PanelConnection.Controls.Add(Me.Button4)
+        Me.PanelConnection.ForeColor = System.Drawing.Color.White
+        Me.PanelConnection.Location = New System.Drawing.Point(0, 37)
+        Me.PanelConnection.Name = "PanelConnection"
+        Me.PanelConnection.Size = New System.Drawing.Size(256, 160)
+        Me.PanelConnection.TabIndex = 10
+        '
+        'Password_Textbox
+        '
+        Me.Password_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Password_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Password_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Password_Textbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Password_Textbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Password_Textbox.ForeColor = System.Drawing.Color.White
+        Me.Password_Textbox.Location = New System.Drawing.Point(0, 86)
+        Me.Password_Textbox.Name = "Password_Textbox"
+        Me.Password_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Password_Textbox.Size = New System.Drawing.Size(256, 21)
+        Me.Password_Textbox.TabIndex = 21
+        Me.Password_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.Password_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.Maroon
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
+        Me.TextBox2.Location = New System.Drawing.Point(0, 86)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
+        Me.TextBox2.TabIndex = 15
+        Me.TextBox2.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Load_Button
+        '
+        Me.Load_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Load_Button.FlatAppearance.BorderSize = 0
+        Me.Load_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Load_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Load_Button.Location = New System.Drawing.Point(159, 123)
+        Me.Load_Button.Name = "Load_Button"
+        Me.Load_Button.Size = New System.Drawing.Size(86, 25)
+        Me.Load_Button.TabIndex = 19
+        Me.Load_Button.Text = "Load"
+        Me.Load_Button.UseVisualStyleBackColor = True
+        '
+        'Password_Label
+        '
+        Me.Password_Label.AutoSize = True
+        Me.Password_Label.Location = New System.Drawing.Point(12, 70)
+        Me.Password_Label.Name = "Password_Label"
+        Me.Password_Label.Size = New System.Drawing.Size(59, 13)
+        Me.Password_Label.TabIndex = 14
+        Me.Password_Label.Text = "Password :"
+        '
+        'Username_Textbox
+        '
+        Me.Username_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Username_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Username_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Username_Textbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Username_Textbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Username_Textbox.ForeColor = System.Drawing.Color.White
+        Me.Username_Textbox.Location = New System.Drawing.Point(0, 32)
+        Me.Username_Textbox.Name = "Username_Textbox"
+        Me.Username_Textbox.Size = New System.Drawing.Size(256, 21)
+        Me.Username_Textbox.TabIndex = 13
+        Me.Username_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.Username
+        Me.Username_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Usrname_Label
+        '
+        Me.Usrname_Label.AutoSize = True
+        Me.Usrname_Label.Location = New System.Drawing.Point(12, 16)
+        Me.Usrname_Label.Name = "Usrname_Label"
+        Me.Usrname_Label.Size = New System.Drawing.Size(61, 13)
+        Me.Usrname_Label.TabIndex = 12
+        Me.Usrname_Label.Text = "Username :"
         '
         'Button4
         '
@@ -191,37 +269,6 @@ Partial Class Form1
         Me.Button4.Text = "Load"
         Me.Button4.UseVisualStyleBackColor = True
         Me.Button4.Visible = False
-        '
-        'Button11
-        '
-        Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.Location = New System.Drawing.Point(159, 123)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(86, 25)
-        Me.Button11.TabIndex = 19
-        Me.Button11.Text = "Load"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 70)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Password :"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 13)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Username :"
         '
         'Panel2
         '
@@ -295,51 +342,51 @@ Partial Class Form1
         Me.Button12.Text = "Load"
         Me.Button12.UseVisualStyleBackColor = True
         '
-        'Button7
+        'Credentials_Button
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button7.Enabled = False
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(0, 18)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(86, 35)
-        Me.Button7.TabIndex = 12
-        Me.Button7.Text = "Credentials"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.Credentials_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Credentials_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Credentials_Button.Enabled = False
+        Me.Credentials_Button.FlatAppearance.BorderSize = 0
+        Me.Credentials_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Credentials_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Credentials_Button.ForeColor = System.Drawing.Color.White
+        Me.Credentials_Button.Location = New System.Drawing.Point(0, 18)
+        Me.Credentials_Button.Name = "Credentials_Button"
+        Me.Credentials_Button.Size = New System.Drawing.Size(86, 35)
+        Me.Credentials_Button.TabIndex = 12
+        Me.Credentials_Button.Text = "Credentials"
+        Me.Credentials_Button.UseVisualStyleBackColor = False
         '
-        'Button13
+        'Portail_Button
         '
-        Me.Button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button13.FlatAppearance.BorderSize = 0
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button13.ForeColor = System.Drawing.Color.White
-        Me.Button13.Location = New System.Drawing.Point(86, 18)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(84, 35)
-        Me.Button13.TabIndex = 13
-        Me.Button13.Text = "Portal"
-        Me.Button13.UseVisualStyleBackColor = False
+        Me.Portail_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Portail_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Portail_Button.FlatAppearance.BorderSize = 0
+        Me.Portail_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Portail_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Portail_Button.ForeColor = System.Drawing.Color.White
+        Me.Portail_Button.Location = New System.Drawing.Point(86, 18)
+        Me.Portail_Button.Name = "Portail_Button"
+        Me.Portail_Button.Size = New System.Drawing.Size(84, 35)
+        Me.Portail_Button.TabIndex = 13
+        Me.Portail_Button.Text = "Portal"
+        Me.Portail_Button.UseVisualStyleBackColor = False
         '
-        'Button14
+        'License_Button
         '
-        Me.Button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button14.FlatAppearance.BorderSize = 0
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Location = New System.Drawing.Point(170, 18)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(86, 35)
-        Me.Button14.TabIndex = 14
-        Me.Button14.Text = "License"
-        Me.Button14.UseVisualStyleBackColor = False
+        Me.License_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.License_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.License_Button.FlatAppearance.BorderSize = 0
+        Me.License_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.License_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.License_Button.ForeColor = System.Drawing.Color.White
+        Me.License_Button.Location = New System.Drawing.Point(170, 18)
+        Me.License_Button.Name = "License_Button"
+        Me.License_Button.Size = New System.Drawing.Size(86, 35)
+        Me.License_Button.TabIndex = 14
+        Me.License_Button.Text = "License"
+        Me.License_Button.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -378,13 +425,13 @@ Partial Class Form1
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.Button3)
-        Me.Panel4.Controls.Add(Me.Button2)
-        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.Saved_Button)
+        Me.Panel4.Controls.Add(Me.SID_Login_Button)
+        Me.Panel4.Controls.Add(Me.UserAndPass_Button)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.Panel1)
+        Me.Panel4.Controls.Add(Me.PanelConnection)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Location = New System.Drawing.Point(0, 54)
@@ -405,32 +452,6 @@ Partial Class Form1
         Me.Panel5.Size = New System.Drawing.Size(256, 80)
         Me.Panel5.TabIndex = 19
         Me.Panel5.Visible = False
-        '
-        'Button16
-        '
-        Me.Button16.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.Location = New System.Drawing.Point(0, 36)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(256, 35)
-        Me.Button16.TabIndex = 20
-        Me.Button16.Text = "Official Launcher Browser"
-        Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(48, 54)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(161, 18)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "_________________"
-        Me.Label12.Visible = False
         '
         'Button15
         '
@@ -458,6 +479,32 @@ Partial Class Form1
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "____________"
         '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.Location = New System.Drawing.Point(0, 36)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(256, 35)
+        Me.Button16.TabIndex = 20
+        Me.Button16.Text = "Official Launcher Browser"
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(48, 54)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(161, 18)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "_________________"
+        Me.Label12.Visible = False
+        '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.TextBox4)
@@ -470,6 +517,21 @@ Partial Class Form1
         Me.Panel6.Size = New System.Drawing.Size(256, 221)
         Me.Panel6.TabIndex = 20
         Me.Panel6.Visible = False
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.ForeColor = System.Drawing.Color.White
+        Me.TextBox4.Location = New System.Drawing.Point(0, 59)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(256, 21)
+        Me.TextBox4.TabIndex = 18
+        Me.TextBox4.Text = Global.DarkorbitBot.My.MySettings.Default.License
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
@@ -499,56 +561,33 @@ Partial Class Form1
         Me.Label13.TabIndex = 14
         Me.Label13.Text = "License :"
         '
-        'TextBox4
+        'Panel7
         '
-        Me.TextBox4.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.White
-        Me.TextBox4.Location = New System.Drawing.Point(0, 59)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox4.TabIndex = 18
-        Me.TextBox4.Text = Global.DarkorbitBot.My.MySettings.Default.License
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Label16)
+        Me.Panel7.Controls.Add(Me.FlatClose1)
+        Me.Panel7.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(256, 18)
+        Me.Panel7.TabIndex = 23
         '
-        'TextBox2
+        'Label16
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.Maroon
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(0, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox2.TabIndex = 15
-        Me.TextBox2.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(0, 32)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox1.TabIndex = 13
-        Me.TextBox1.Text = Global.DarkorbitBot.My.MySettings.Default.Username
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label16.AutoSize = True
+        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(2, 2)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(59, 13)
+        Me.Label16.TabIndex = 22
+        Me.Label16.Text = "RidevBot"
         '
         'FlatClose1
         '
         Me.FlatClose1.BackColor = System.Drawing.Color.White
         Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.FlatClose1.Cursor = System.Windows.Forms.Cursors.Default
         Me.FlatClose1.Dock = System.Windows.Forms.DockStyle.Right
         Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
         Me.FlatClose1.Location = New System.Drawing.Point(238, 0)
@@ -558,51 +597,15 @@ Partial Class Form1
         Me.FlatClose1.Text = "FlatClose1"
         Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.FlatClose1)
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(256, 18)
-        Me.Panel7.TabIndex = 23
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 2)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(59, 13)
-        Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.ForeColor = System.Drawing.Color.White
-        Me.TextBox5.Location = New System.Drawing.Point(0, 86)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox5.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox5.TabIndex = 21
-        Me.TextBox5.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(256, 311)
-        Me.Controls.Add(Me.Button14)
-        Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.License_Button)
+        Me.Controls.Add(Me.Portail_Button)
+        Me.Controls.Add(Me.Credentials_Button)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label10)
@@ -620,8 +623,8 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RidevBot"
         Me.TopMost = True
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.PanelConnection.ResumeLayout(False)
+        Me.PanelConnection.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -638,28 +641,28 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents UserAndPass_Button As Button
+    Friend WithEvents SID_Login_Button As Button
+    Friend WithEvents Saved_Button As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PanelConnection As Panel
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents Password_Label As Label
+    Friend WithEvents Username_Textbox As TextBox
+    Friend WithEvents Usrname_Label As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button11 As Button
+    Friend WithEvents Load_Button As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button12 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button14 As Button
+    Friend WithEvents Credentials_Button As Button
+    Friend WithEvents Portail_Button As Button
+    Friend WithEvents License_Button As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
@@ -678,5 +681,5 @@ Partial Class Form1
     Friend WithEvents FlatClose1 As FlatClose
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Password_Textbox As TextBox
 End Class

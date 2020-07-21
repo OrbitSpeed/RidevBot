@@ -1,13 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
 Imports AutoItX3Lib
-Imports System.Diagnostics
-Imports System.IO
-Imports System.Runtime.InteropServices
-Imports System.Data
-Imports System.Drawing.Graphics
-Imports System.ComponentModel
-Imports System.Windows.Forms.Application
-Imports System.Text
 
 Public Class Form2
 
@@ -36,8 +28,8 @@ Public Class Form2
     Public Sub StartWebBot()
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") Then
 
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form1.TextBox1.Text)
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form1.TextBox5.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form1.Username_Textbox.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form1.Password_Textbox.Text)
             For Each p As HtmlElement In WebBrowser1.Document.GetElementsByTagName("input")
                 If p.GetAttribute("type") = "submit" Then
                     p.InvokeMember("click")
