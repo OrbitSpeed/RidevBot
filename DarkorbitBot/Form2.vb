@@ -65,4 +65,38 @@ Public Class Form2
         'StartWebBot()
     End Sub
 
+    Private Sub Button_SID_Click(sender As Object, e As EventArgs) Handles Button_SID.Click
+
+        ' ouverture de la maisonnette '
+
+        BackPage_Form.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.Show()
+
+    End Sub
+
+    Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
+
+        Try
+
+            Dim A1 As Integer = (WebBrowser1.Location.X)
+            Dim A2 As Integer = (WebBrowser1.Location.Y - 18)
+            Dim A3 As Integer = (WebBrowser1.Width)
+            Dim A4 As Integer = (WebBrowser1.Height)
+
+            Console.WriteLine(A1)
+            Console.WriteLine(A2)
+            Console.WriteLine(A3)
+            Console.WriteLine(A4)
+
+            Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 13369344, 0, 1)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0), SIMPLE(1))
+
+            Console.WriteLine(SIMPLE(0))
+            Console.WriteLine(SIMPLE(1))
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
