@@ -84,10 +84,11 @@ Public Class Form1
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
-        ' button Load 1 > User&&Pass '
+        ' button Load 1 > User&&Pass > RidevBot Browser '
 
         Label1.Select()
         Form2.Show()
+        Form3.Show()
 
 
     End Sub
@@ -217,7 +218,7 @@ Public Class Form1
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-        ' button Load 2 > User&&Pass '
+        ' button Load 2 > User&&Pass > Launcher'
 
         Label1.Select()
 

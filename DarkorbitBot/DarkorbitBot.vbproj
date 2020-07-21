@@ -79,6 +79,12 @@
     <Compile Include="BackPage_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Themes\Flat UI Theme.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -150,6 +159,186 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ios-rempli-50%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ios-rempli-50%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ios-rempli-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paramètres-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paramètres-de-porte-documents-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paramètres-de-surbalayage-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pause-au-carré-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rectangle-arrondi-tracé-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rectangle-arrondi-tracé-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rectangle-arrondi-tracé-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-répéter-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-répéter-une-fois-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-statistiques-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-suivant-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vérifié-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prometium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-remove-red-eye_90161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\51.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\53.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\54.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\57.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\58.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\70.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\72.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\73.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\82.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\91.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\92.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\93.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\255.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargoBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_off_icon_135658.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenBooty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-abeille-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-accueil-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrêter-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-carré-arrondi-100%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-carré-arrondi-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-case-à-cocher-vérifiée-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-détacher-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-direction-nord-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-effacer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-épingle-50%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fermer-la-fenêtre-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BackPage_Form
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Form3
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,27 +20,16 @@ Partial Class BackPage_Form
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BackPage_Form))
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.FlatMax1 = New DarkorbitBot.FlatMax()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(800, 600)
-        Me.WebBrowser1.TabIndex = 0
         '
         'Label16
         '
@@ -49,14 +38,13 @@ Partial Class BackPage_Form
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.Location = New System.Drawing.Point(2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(155, 18)
+        Me.Label16.Size = New System.Drawing.Size(147, 18)
         Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot Backpage"
+        Me.Label16.Text = "RidevBot tools 1.0"
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.FlatMax1)
         Me.Panel7.Controls.Add(Me.FlatMini1)
         Me.Panel7.Controls.Add(Me.PictureBox1)
         Me.Panel7.Controls.Add(Me.Label16)
@@ -64,21 +52,8 @@ Partial Class BackPage_Form
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(800, 18)
+        Me.Panel7.Size = New System.Drawing.Size(390, 18)
         Me.Panel7.TabIndex = 24
-        '
-        'FlatMax1
-        '
-        Me.FlatMax1.BackColor = System.Drawing.Color.White
-        Me.FlatMax1.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMax1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMax1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMax1.Location = New System.Drawing.Point(746, 0)
-        Me.FlatMax1.Name = "FlatMax1"
-        Me.FlatMax1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMax1.TabIndex = 31
-        Me.FlatMax1.Text = "FlatMax1"
-        Me.FlatMax1.TextColor = System.Drawing.Color.Black
         '
         'FlatMini1
         '
@@ -87,10 +62,10 @@ Partial Class BackPage_Form
         Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
         Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(764, 0)
+        Me.FlatMini1.Location = New System.Drawing.Point(354, 0)
         Me.FlatMini1.Name = "FlatMini1"
         Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 29
+        Me.FlatMini1.TabIndex = 25
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
@@ -100,24 +75,24 @@ Partial Class BackPage_Form
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(372, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
         '
-        'BackPage_Form
+        'Form3
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(800, 600)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(390, 450)
         Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.WebBrowser1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "BackPage_Form"
+        Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "BackPage_Form"
+        Me.Text = "RidevBot tools"
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -125,10 +100,8 @@ Partial Class BackPage_Form
 
     End Sub
 
-    Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents FlatMax1 As FlatMax
     Friend WithEvents FlatMini1 As FlatMini
     Friend WithEvents PictureBox1 As PictureBox
 End Class

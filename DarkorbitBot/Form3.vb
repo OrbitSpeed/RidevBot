@@ -1,4 +1,4 @@
-﻿Public Class BackPage_Form
+﻿Public Class Form3
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -33,10 +33,6 @@
         If e.Button = MouseButtons.Left Then
             BeingDragged = False
         End If
-
-    End Sub
-
-    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
 
     End Sub
 End Class

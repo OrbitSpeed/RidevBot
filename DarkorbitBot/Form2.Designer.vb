@@ -27,13 +27,15 @@ Partial Class Form2
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.FlatButton3 = New DarkorbitBot.FlatButton()
+        Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Clickbutton = New DarkorbitBot.FlatButton()
         Me.backpage = New DarkorbitBot.FlatButton()
-        Me.FlatClose1 = New DarkorbitBot.FlatClose()
         Me.Button_Reload = New DarkorbitBot.FlatButton()
-        Me.FlatButton2 = New DarkorbitBot.FlatButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel7.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -61,27 +63,56 @@ Partial Class Form2
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 2)
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(59, 13)
+        Me.Label16.Size = New System.Drawing.Size(172, 18)
         Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot"
+        Me.Label16.Text = "RidevBot Browser 1.0"
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.PictureBox1)
+        Me.Panel7.Controls.Add(Me.FlatButton3)
         Me.Panel7.Controls.Add(Me.FlatButton2)
         Me.Panel7.Controls.Add(Me.FlatButton1)
         Me.Panel7.Controls.Add(Me.Clickbutton)
         Me.Panel7.Controls.Add(Me.backpage)
         Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.FlatClose1)
         Me.Panel7.Controls.Add(Me.Button_Reload)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
+        '
+        'FlatButton3
+        '
+        Me.FlatButton3.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton3.Location = New System.Drawing.Point(690, 0)
+        Me.FlatButton3.Name = "FlatButton3"
+        Me.FlatButton3.Rounded = False
+        Me.FlatButton3.Size = New System.Drawing.Size(73, 18)
+        Me.FlatButton3.TabIndex = 28
+        Me.FlatButton3.Text = "Attack"
+        Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatButton2
+        '
+        Me.FlatButton2.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton2.Location = New System.Drawing.Point(605, 0)
+        Me.FlatButton2.Name = "FlatButton2"
+        Me.FlatButton2.Rounded = False
+        Me.FlatButton2.Size = New System.Drawing.Size(79, 18)
+        Me.FlatButton2.TabIndex = 25
+        Me.FlatButton2.Text = "Click NPC"
+        Me.FlatButton2.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'FlatButton1
         '
@@ -89,10 +120,10 @@ Partial Class Form2
         Me.FlatButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(418, 0)
+        Me.FlatButton1.Location = New System.Drawing.Point(508, 0)
         Me.FlatButton1.Name = "FlatButton1"
         Me.FlatButton1.Rounded = False
-        Me.FlatButton1.Size = New System.Drawing.Size(111, 18)
+        Me.FlatButton1.Size = New System.Drawing.Size(91, 18)
         Me.FlatButton1.TabIndex = 24
         Me.FlatButton1.Text = "Click Cargo"
         Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
@@ -103,10 +134,10 @@ Partial Class Form2
         Me.Clickbutton.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Clickbutton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Clickbutton.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Clickbutton.Location = New System.Drawing.Point(301, 0)
+        Me.Clickbutton.Location = New System.Drawing.Point(451, 0)
         Me.Clickbutton.Name = "Clickbutton"
         Me.Clickbutton.Rounded = False
-        Me.Clickbutton.Size = New System.Drawing.Size(111, 18)
+        Me.Clickbutton.Size = New System.Drawing.Size(51, 18)
         Me.Clickbutton.TabIndex = 24
         Me.Clickbutton.Text = "Click"
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
@@ -117,26 +148,13 @@ Partial Class Form2
         Me.backpage.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.backpage.Cursor = System.Windows.Forms.Cursors.Hand
         Me.backpage.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.backpage.Location = New System.Drawing.Point(184, 0)
+        Me.backpage.Location = New System.Drawing.Point(365, 0)
         Me.backpage.Name = "backpage"
         Me.backpage.Rounded = False
-        Me.backpage.Size = New System.Drawing.Size(111, 18)
+        Me.backpage.Size = New System.Drawing.Size(80, 18)
         Me.backpage.TabIndex = 23
         Me.backpage.Text = "Backpage"
         Me.backpage.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'FlatClose1
-        '
-        Me.FlatClose1.BackColor = System.Drawing.Color.White
-        Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.FlatClose1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
-        Me.FlatClose1.Location = New System.Drawing.Point(782, 0)
-        Me.FlatClose1.Name = "FlatClose1"
-        Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatClose1.TabIndex = 21
-        Me.FlatClose1.Text = "FlatClose1"
-        Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Button_Reload
         '
@@ -144,27 +162,26 @@ Partial Class Form2
         Me.Button_Reload.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Button_Reload.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button_Reload.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Button_Reload.Location = New System.Drawing.Point(67, 0)
+        Me.Button_Reload.Location = New System.Drawing.Point(297, 0)
         Me.Button_Reload.Name = "Button_Reload"
         Me.Button_Reload.Rounded = False
-        Me.Button_Reload.Size = New System.Drawing.Size(111, 18)
+        Me.Button_Reload.Size = New System.Drawing.Size(62, 18)
         Me.Button_Reload.TabIndex = 21
         Me.Button_Reload.Text = "Reload"
         Me.Button_Reload.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'FlatButton2
+        'PictureBox1
         '
-        Me.FlatButton2.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton2.Location = New System.Drawing.Point(535, 0)
-        Me.FlatButton2.Name = "FlatButton2"
-        Me.FlatButton2.Rounded = False
-        Me.FlatButton2.Size = New System.Drawing.Size(111, 18)
-        Me.FlatButton2.TabIndex = 25
-        Me.FlatButton2.Text = "Click NPC"
-        Me.FlatButton2.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox1.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabStop = False
         '
         'Form2
         '
@@ -182,9 +199,9 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "RidevBot"
-        Me.TopMost = True
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -197,9 +214,10 @@ Partial Class Form2
     Friend WithEvents FlatLabel1 As FlatLabel
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents FlatClose1 As FlatClose
     Friend WithEvents backpage As FlatButton
     Friend WithEvents Clickbutton As FlatButton
     Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatButton2 As FlatButton
+    Friend WithEvents FlatButton3 As FlatButton
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

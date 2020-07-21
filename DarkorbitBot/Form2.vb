@@ -81,6 +81,10 @@ Public Class Form2
             Console.WriteLine(A4)
 
             Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 1321834, 5, 1)
+
+
+            Console.WriteLine(SIMPLE)
+
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
 
             Console.WriteLine(SIMPLE(0))
@@ -106,6 +110,10 @@ Public Class Form2
             Console.WriteLine(A4)
 
             Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 1152991, 5, 1)
+
+
+            Console.WriteLine(SIMPLE)
+
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
 
             Console.WriteLine(SIMPLE(0))
@@ -126,8 +134,36 @@ Public Class Form2
 
             Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 13369344, 0, 1)
 
+
+            Console.WriteLine(result)
+
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, result(0) + 40, result(1) - 40)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+            '   AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub FlatButton3_Click(sender As Object, e As EventArgs) Handles FlatButton3.Click
+
+        Try
+            Dim A1 As Integer = (WebBrowser1.Location.X)
+            Dim A2 As Integer = (WebBrowser1.Location.Y - 18)
+            Dim A3 As Integer = (WebBrowser1.Width)
+            Dim A4 As Integer = (WebBrowser1.Height)
+
+            Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 6959164, 0, 1)
+
+            Console.WriteLine(result)
+            If result = 0 Then
+
+            Else
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+
+            End If
+
         Catch ex As Exception
 
         End Try
