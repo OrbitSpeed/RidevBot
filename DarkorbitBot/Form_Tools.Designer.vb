@@ -46,11 +46,40 @@ Partial Class Form_Tools
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel_general = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Panel_collector = New System.Windows.Forms.Panel()
+        Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel_Palladium = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Panel_stats = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Panel_rex = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Panel_divers = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.FlatCheckBox1 = New DarkorbitBot.FlatCheckBox()
+        Me.FlatCheckBox2 = New DarkorbitBot.FlatCheckBox()
+        Me.FlatCheckBox3 = New DarkorbitBot.FlatCheckBox()
+        Me.FlatCheckBox4 = New DarkorbitBot.FlatCheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_general.SuspendLayout()
+        Me.Panel_Npc.SuspendLayout()
+        Me.Panel_collector.SuspendLayout()
+        Me.Panel_GalaxyGates.SuspendLayout()
+        Me.Panel_Palladium.SuspendLayout()
+        Me.Panel_stats.SuspendLayout()
+        Me.Panel_rex.SuspendLayout()
+        Me.Panel_divers.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label16
@@ -77,7 +106,7 @@ Partial Class Form_Tools
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(390, 18)
+        Me.Panel7.Size = New System.Drawing.Size(1688, 18)
         Me.Panel7.TabIndex = 24
         '
         'PictureBox4
@@ -99,7 +128,7 @@ Partial Class Form_Tools
         Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
         Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(354, 0)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
         Me.FlatMini1.Name = "FlatMini1"
         Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
         Me.FlatMini1.TabIndex = 25
@@ -124,7 +153,7 @@ Partial Class Form_Tools
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(372, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(1670, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -263,7 +292,7 @@ Partial Class Form_Tools
         Me.Pirates_Button.Name = "Pirates_Button"
         Me.Pirates_Button.Size = New System.Drawing.Size(86, 35)
         Me.Pirates_Button.TabIndex = 33
-        Me.Pirates_Button.Text = "Pirates"
+        Me.Pirates_Button.Text = "Palladium"
         Me.Pirates_Button.UseVisualStyleBackColor = False
         '
         'Label2
@@ -359,12 +388,256 @@ Partial Class Form_Tools
         Me.Label5.Text = "__________"
         Me.Label5.Visible = False
         '
+        'Panel_general
+        '
+        Me.Panel_general.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_general.Controls.Add(Me.ComboBox1)
+        Me.Panel_general.Controls.Add(Me.FlatCheckBox4)
+        Me.Panel_general.Controls.Add(Me.FlatCheckBox3)
+        Me.Panel_general.Controls.Add(Me.FlatCheckBox2)
+        Me.Panel_general.Controls.Add(Me.FlatCheckBox1)
+        Me.Panel_general.Controls.Add(Me.Label6)
+        Me.Panel_general.ForeColor = System.Drawing.Color.White
+        Me.Panel_general.Location = New System.Drawing.Point(135, 36)
+        Me.Panel_general.Name = "Panel_general"
+        Me.Panel_general.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_general.TabIndex = 41
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(245, 275)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "General"
+        '
+        'Panel_Npc
+        '
+        Me.Panel_Npc.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Npc.Controls.Add(Me.Label7)
+        Me.Panel_Npc.ForeColor = System.Drawing.Color.White
+        Me.Panel_Npc.Location = New System.Drawing.Point(445, 36)
+        Me.Panel_Npc.Name = "Panel_Npc"
+        Me.Panel_Npc.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_Npc.TabIndex = 42
+        Me.Panel_Npc.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(10, 12)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(52, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Npc Killer"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(10, 12)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(47, 13)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "collector"
+        '
+        'Panel_collector
+        '
+        Me.Panel_collector.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_collector.Controls.Add(Me.Label11)
+        Me.Panel_collector.ForeColor = System.Drawing.Color.White
+        Me.Panel_collector.Location = New System.Drawing.Point(755, 36)
+        Me.Panel_collector.Name = "Panel_collector"
+        Me.Panel_collector.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_collector.TabIndex = 43
+        Me.Panel_collector.Visible = False
+        '
+        'Panel_GalaxyGates
+        '
+        Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_GalaxyGates.Controls.Add(Me.Label12)
+        Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(12, 348)
+        Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
+        Me.Panel_GalaxyGates.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_GalaxyGates.TabIndex = 44
+        Me.Panel_GalaxyGates.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(10, 12)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(67, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "GalaxyGates"
+        '
+        'Panel_Palladium
+        '
+        Me.Panel_Palladium.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Palladium.Controls.Add(Me.Label13)
+        Me.Panel_Palladium.ForeColor = System.Drawing.Color.White
+        Me.Panel_Palladium.Location = New System.Drawing.Point(322, 348)
+        Me.Panel_Palladium.Name = "Panel_Palladium"
+        Me.Panel_Palladium.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_Palladium.TabIndex = 45
+        Me.Panel_Palladium.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(10, 12)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(52, 13)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Palladium"
+        '
+        'Panel_stats
+        '
+        Me.Panel_stats.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_stats.Controls.Add(Me.Label14)
+        Me.Panel_stats.ForeColor = System.Drawing.Color.White
+        Me.Panel_stats.Location = New System.Drawing.Point(632, 348)
+        Me.Panel_stats.Name = "Panel_stats"
+        Me.Panel_stats.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_stats.TabIndex = 46
+        Me.Panel_stats.Visible = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(10, 12)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(31, 13)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "Stats"
+        '
+        'Panel_rex
+        '
+        Me.Panel_rex.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_rex.Controls.Add(Me.Label15)
+        Me.Panel_rex.ForeColor = System.Drawing.Color.White
+        Me.Panel_rex.Location = New System.Drawing.Point(942, 348)
+        Me.Panel_rex.Name = "Panel_rex"
+        Me.Panel_rex.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_rex.TabIndex = 47
+        Me.Panel_rex.Visible = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(10, 12)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(26, 13)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "Rex"
+        '
+        'Panel_divers
+        '
+        Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_divers.Controls.Add(Me.Label17)
+        Me.Panel_divers.ForeColor = System.Drawing.Color.White
+        Me.Panel_divers.Location = New System.Drawing.Point(1252, 348)
+        Me.Panel_divers.Name = "Panel_divers"
+        Me.Panel_divers.Size = New System.Drawing.Size(304, 306)
+        Me.Panel_divers.TabIndex = 48
+        Me.Panel_divers.Visible = False
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(10, 12)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(35, 13)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "divers"
+        '
+        'FlatCheckBox1
+        '
+        Me.FlatCheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox1.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox1.Checked = True
+        Me.FlatCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox1.Location = New System.Drawing.Point(10, 10)
+        Me.FlatCheckBox1.Name = "FlatCheckBox1"
+        Me.FlatCheckBox1.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox1.Size = New System.Drawing.Size(274, 22)
+        Me.FlatCheckBox1.TabIndex = 1
+        Me.FlatCheckBox1.Text = "  Auto launch the game at program start"
+        '
+        'FlatCheckBox2
+        '
+        Me.FlatCheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox2.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox2.Checked = True
+        Me.FlatCheckBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox2.Location = New System.Drawing.Point(10, 35)
+        Me.FlatCheckBox2.Name = "FlatCheckBox2"
+        Me.FlatCheckBox2.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox2.Size = New System.Drawing.Size(127, 22)
+        Me.FlatCheckBox2.TabIndex = 2
+        Me.FlatCheckBox2.Text = "Auto Update SID"
+        '
+        'FlatCheckBox3
+        '
+        Me.FlatCheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox3.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox3.Checked = True
+        Me.FlatCheckBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox3.Location = New System.Drawing.Point(10, 60)
+        Me.FlatCheckBox3.Name = "FlatCheckBox3"
+        Me.FlatCheckBox3.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox3.Size = New System.Drawing.Size(141, 22)
+        Me.FlatCheckBox3.TabIndex = 3
+        Me.FlatCheckBox3.Text = "Auto reconnect SID"
+        '
+        'FlatCheckBox4
+        '
+        Me.FlatCheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.FlatCheckBox4.BorderColor = System.Drawing.Color.White
+        Me.FlatCheckBox4.Checked = True
+        Me.FlatCheckBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatCheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatCheckBox4.Location = New System.Drawing.Point(10, 106)
+        Me.FlatCheckBox4.Name = "FlatCheckBox4"
+        Me.FlatCheckBox4.Options = DarkorbitBot.FlatCheckBox._Options.Style1
+        Me.FlatCheckBox4.Size = New System.Drawing.Size(121, 22)
+        Me.FlatCheckBox4.TabIndex = 4
+        Me.FlatCheckBox4.Text = "Auto login with :"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Profil1", "Profil2", "Profil3", "etc etc..", "User&&pass"})
+        Me.ComboBox1.Location = New System.Drawing.Point(10, 134)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 5
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.ClientSize = New System.Drawing.Size(390, 324)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1688, 673)
+        Me.Controls.Add(Me.Panel_divers)
+        Me.Controls.Add(Me.Panel_rex)
+        Me.Controls.Add(Me.Panel_stats)
+        Me.Controls.Add(Me.Panel_Palladium)
+        Me.Controls.Add(Me.Panel_GalaxyGates)
+        Me.Controls.Add(Me.Panel_collector)
+        Me.Controls.Add(Me.Panel_Npc)
+        Me.Controls.Add(Me.Panel_general)
         Me.Controls.Add(Me.Divers_Button)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Rex_Button)
@@ -393,6 +666,22 @@ Partial Class Form_Tools
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_general.ResumeLayout(False)
+        Me.Panel_general.PerformLayout()
+        Me.Panel_Npc.ResumeLayout(False)
+        Me.Panel_Npc.PerformLayout()
+        Me.Panel_collector.ResumeLayout(False)
+        Me.Panel_collector.PerformLayout()
+        Me.Panel_GalaxyGates.ResumeLayout(False)
+        Me.Panel_GalaxyGates.PerformLayout()
+        Me.Panel_Palladium.ResumeLayout(False)
+        Me.Panel_Palladium.PerformLayout()
+        Me.Panel_stats.ResumeLayout(False)
+        Me.Panel_stats.PerformLayout()
+        Me.Panel_rex.ResumeLayout(False)
+        Me.Panel_rex.PerformLayout()
+        Me.Panel_divers.ResumeLayout(False)
+        Me.Panel_divers.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -421,4 +710,25 @@ Partial Class Form_Tools
     Friend WithEvents Label4 As Label
     Friend WithEvents Divers_Button As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents Panel_general As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel_Npc As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Panel_collector As Panel
+    Friend WithEvents Panel_GalaxyGates As Panel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel_Palladium As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Panel_stats As Panel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Panel_rex As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Panel_divers As Panel
+    Friend WithEvents Label17 As Label
+    Friend WithEvents FlatCheckBox3 As FlatCheckBox
+    Friend WithEvents FlatCheckBox2 As FlatCheckBox
+    Friend WithEvents FlatCheckBox1 As FlatCheckBox
+    Friend WithEvents FlatCheckBox4 As FlatCheckBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

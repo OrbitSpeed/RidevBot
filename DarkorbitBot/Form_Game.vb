@@ -6,7 +6,7 @@ Public Class Form_Game
     Dim server
     Dim AutoIt As New AutoItX3
 
-    Dim dosid As String
+    Public dosid As String
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
