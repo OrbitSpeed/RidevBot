@@ -28,7 +28,7 @@ Public Class Form_Game
 
     ' se connecte et lance le jeu avec le clean ' 
     Public Sub StartWebBot()
-        If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") Then
+        If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") And Not WebBrowser1.Url.ToString.Contains("authUser=291") Then
 
             WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Username_Textbox.Text)
             WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Password_Textbox.Text)
@@ -55,8 +55,16 @@ Public Class Form_Game
             'Launch the Start
             WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
+        ElseIf WebBrowser1.Url.ToString.Contains("authUser=291") Then
+            Dim result = MessageBox.Show("Le compte est incorrect, veuillez vérifier les informations", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If result = DialogResult.OK Then
+                Form_Startup.Show()
+                BackPage_Form.Close()
+                Form_Tools.Close()
+                Close()
+            End If
         End If
-
+        'MsgBox(WebBrowser1.Url.ToString)
     End Sub
 
     ' button reload '
