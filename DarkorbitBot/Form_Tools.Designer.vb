@@ -26,7 +26,6 @@ Partial Class Form_Tools
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -84,6 +83,7 @@ Partial Class Form_Tools
         Me.CheckBox_LaunchGameAuto = New System.Windows.Forms.CheckBox()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cargoBox = New System.Windows.Forms.CheckBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,20 +138,6 @@ Partial Class Form_Tools
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 34
         Me.PictureBox4.TabStop = False
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'PictureBox2
         '
@@ -579,7 +565,7 @@ Partial Class Form_Tools
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(242, 10)
+        Me.Label11.Location = New System.Drawing.Point(3, 293)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(47, 13)
         Me.Label11.TabIndex = 0
@@ -879,6 +865,20 @@ Partial Class Form_Tools
         Me.CheckBox_cargoBox.TabIndex = 32
         Me.CheckBox_cargoBox.Text = "FROM_SHIP ( Cargo box )"
         Me.CheckBox_cargoBox.UseVisualStyleBackColor = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'Form_Tools
         '
