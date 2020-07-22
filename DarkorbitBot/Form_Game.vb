@@ -128,6 +128,7 @@ Public Class Form_Game
             Console.WriteLine(SIMPLE)
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
+            AutoIt.
 
             Console.WriteLine(SIMPLE(0))
             Console.WriteLine(SIMPLE(1))
@@ -187,6 +188,10 @@ Public Class Form_Game
 
         CloseForm.ShowDialog(Me)
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+
+    End Sub
+
+    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
 
     End Sub
 End Class

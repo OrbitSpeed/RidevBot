@@ -144,7 +144,7 @@ Partial Class Form_Game
         Me.Clickbutton.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Clickbutton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Clickbutton.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Clickbutton.Location = New System.Drawing.Point(451, 0)
+        Me.Clickbutton.Location = New System.Drawing.Point(180, 0)
         Me.Clickbutton.Name = "Clickbutton"
         Me.Clickbutton.Rounded = False
         Me.Clickbutton.Size = New System.Drawing.Size(51, 18)
