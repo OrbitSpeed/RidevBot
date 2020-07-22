@@ -128,7 +128,7 @@ Public Class Form_Game
             Console.WriteLine(SIMPLE)
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
-            AutoIt.
+            'AutoIt.
 
             Console.WriteLine(SIMPLE(0))
             Console.WriteLine(SIMPLE(1))

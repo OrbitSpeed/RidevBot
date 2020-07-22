@@ -25,11 +25,11 @@ Public Class Form_Startup
         Panel5.Location = New Point(0, 55)
         Panel6.Location = New Point(0, 55)
 
-        CenterToScreen()
 
         ' program started'
 
         Me.Size = New Size(256, 251)
+        CenterToScreen()
         Label1.Select()
 
         ' Profil 1
