@@ -47,9 +47,13 @@ Partial Class Form_Startup
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.FlatButton_Plus = New DarkorbitBot.FlatButton()
-        Me.CheckedListBox_Account = New System.Windows.Forms.CheckedListBox()
-        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button_profil1 = New System.Windows.Forms.Button()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Button_removeprofil = New System.Windows.Forms.Button()
+        Me.button_editprofil = New System.Windows.Forms.Button()
+        Me.Button_profil3 = New System.Windows.Forms.Button()
+        Me.Button_profil2 = New System.Windows.Forms.Button()
+        Me.Button_loadprofil = New System.Windows.Forms.Button()
         Me.Credentials_Button = New System.Windows.Forms.Button()
         Me.Portail_Button = New System.Windows.Forms.Button()
         Me.License_Button = New System.Windows.Forms.Button()
@@ -77,6 +81,8 @@ Partial Class Form_Startup
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.PanelConnection.SuspendLayout()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -384,54 +390,120 @@ Partial Class Form_Startup
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel3.Controls.Add(Me.FlatButton_Plus)
-        Me.Panel3.Controls.Add(Me.CheckedListBox_Account)
-        Me.Panel3.Controls.Add(Me.Button12)
+        Me.Panel3.Controls.Add(Me.Button_profil3)
+        Me.Panel3.Controls.Add(Me.Label24)
+        Me.Panel3.Controls.Add(Me.Button_profil2)
+        Me.Panel3.Controls.Add(Me.Label23)
+        Me.Panel3.Controls.Add(Me.Button_profil1)
+        Me.Panel3.Controls.Add(Me.Label22)
+        Me.Panel3.Controls.Add(Me.Button_removeprofil)
+        Me.Panel3.Controls.Add(Me.button_editprofil)
+        Me.Panel3.Controls.Add(Me.Button_loadprofil)
         Me.Panel3.ForeColor = System.Drawing.Color.White
         Me.Panel3.Location = New System.Drawing.Point(0, 37)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(256, 160)
+        Me.Panel3.Size = New System.Drawing.Size(256, 181)
         Me.Panel3.TabIndex = 11
         Me.Panel3.Visible = False
         '
-        'FlatButton_Plus
+        'Button_profil1
         '
-        Me.FlatButton_Plus.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton_Plus.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatButton_Plus.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton_Plus.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.FlatButton_Plus.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.FlatButton_Plus.Location = New System.Drawing.Point(200, 12)
-        Me.FlatButton_Plus.Name = "FlatButton_Plus"
-        Me.FlatButton_Plus.Rounded = False
-        Me.FlatButton_Plus.Size = New System.Drawing.Size(24, 24)
-        Me.FlatButton_Plus.TabIndex = 21
-        Me.FlatButton_Plus.Text = "+"
-        Me.FlatButton_Plus.TextColor = System.Drawing.Color.Red
+        Me.Button_profil1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_profil1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_profil1.FlatAppearance.BorderSize = 0
+        Me.Button_profil1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_profil1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_profil1.ForeColor = System.Drawing.Color.White
+        Me.Button_profil1.Location = New System.Drawing.Point(9, 18)
+        Me.Button_profil1.Name = "Button_profil1"
+        Me.Button_profil1.Size = New System.Drawing.Size(236, 35)
+        Me.Button_profil1.TabIndex = 20
+        Me.Button_profil1.Text = "Profil 1 = none"
+        Me.Button_profil1.UseVisualStyleBackColor = False
         '
-        'CheckedListBox_Account
+        'Label22
         '
-        Me.CheckedListBox_Account.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckedListBox_Account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CheckedListBox_Account.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckedListBox_Account.FormattingEnabled = True
-        Me.CheckedListBox_Account.Location = New System.Drawing.Point(5, 12)
-        Me.CheckedListBox_Account.Name = "CheckedListBox_Account"
-        Me.CheckedListBox_Account.Size = New System.Drawing.Size(189, 92)
-        Me.CheckedListBox_Account.TabIndex = 20
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.White
+        Me.Label22.Location = New System.Drawing.Point(7, 36)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(242, 18)
+        Me.Label22.TabIndex = 24
+        Me.Label22.Text = "__________________________"
+        Me.Label22.Visible = False
         '
-        'Button12
+        'Button_removeprofil
         '
-        Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.Location = New System.Drawing.Point(159, 123)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(86, 25)
-        Me.Button12.TabIndex = 19
-        Me.Button12.Text = "Load"
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.Button_removeprofil.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_removeprofil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_removeprofil.Enabled = False
+        Me.Button_removeprofil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_removeprofil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_removeprofil.Location = New System.Drawing.Point(67, 146)
+        Me.Button_removeprofil.Name = "Button_removeprofil"
+        Me.Button_removeprofil.Size = New System.Drawing.Size(75, 25)
+        Me.Button_removeprofil.TabIndex = 24
+        Me.Button_removeprofil.Text = "Remove"
+        Me.Button_removeprofil.UseVisualStyleBackColor = False
+        '
+        'button_editprofil
+        '
+        Me.button_editprofil.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.button_editprofil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.button_editprofil.Enabled = False
+        Me.button_editprofil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.button_editprofil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.button_editprofil.Location = New System.Drawing.Point(9, 146)
+        Me.button_editprofil.Name = "button_editprofil"
+        Me.button_editprofil.Size = New System.Drawing.Size(53, 25)
+        Me.button_editprofil.TabIndex = 23
+        Me.button_editprofil.Text = "Edit"
+        Me.button_editprofil.UseVisualStyleBackColor = False
+        '
+        'Button_profil3
+        '
+        Me.Button_profil3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_profil3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_profil3.FlatAppearance.BorderSize = 0
+        Me.Button_profil3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_profil3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_profil3.ForeColor = System.Drawing.Color.White
+        Me.Button_profil3.Location = New System.Drawing.Point(9, 90)
+        Me.Button_profil3.Name = "Button_profil3"
+        Me.Button_profil3.Size = New System.Drawing.Size(236, 35)
+        Me.Button_profil3.TabIndex = 22
+        Me.Button_profil3.Text = "Profil 3 = none"
+        Me.Button_profil3.UseVisualStyleBackColor = False
+        '
+        'Button_profil2
+        '
+        Me.Button_profil2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_profil2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_profil2.FlatAppearance.BorderSize = 0
+        Me.Button_profil2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_profil2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_profil2.ForeColor = System.Drawing.Color.White
+        Me.Button_profil2.Location = New System.Drawing.Point(9, 54)
+        Me.Button_profil2.Name = "Button_profil2"
+        Me.Button_profil2.Size = New System.Drawing.Size(236, 35)
+        Me.Button_profil2.TabIndex = 21
+        Me.Button_profil2.Text = "Profil 2 = none"
+        Me.Button_profil2.UseVisualStyleBackColor = False
+        '
+        'Button_loadprofil
+        '
+        Me.Button_loadprofil.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_loadprofil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_loadprofil.Enabled = False
+        Me.Button_loadprofil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_loadprofil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_loadprofil.Location = New System.Drawing.Point(159, 146)
+        Me.Button_loadprofil.Name = "Button_loadprofil"
+        Me.Button_loadprofil.Size = New System.Drawing.Size(86, 25)
+        Me.Button_loadprofil.TabIndex = 19
+        Me.Button_loadprofil.Text = "Load"
+        Me.Button_loadprofil.UseVisualStyleBackColor = False
         '
         'Credentials_Button
         '
@@ -771,6 +843,30 @@ Partial Class Form_Startup
         Me.Label16.TabIndex = 22
         Me.Label16.Text = "RidevBot 1.0"
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Location = New System.Drawing.Point(7, 72)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(242, 18)
+        Me.Label23.TabIndex = 25
+        Me.Label23.Text = "__________________________"
+        Me.Label23.Visible = False
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.White
+        Me.Label24.Location = New System.Drawing.Point(7, 108)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(242, 18)
+        Me.Label24.TabIndex = 26
+        Me.Label24.Text = "__________________________"
+        Me.Label24.Visible = False
+        '
         'Form_Startup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -802,6 +898,7 @@ Partial Class Form_Startup
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
@@ -834,7 +931,7 @@ Partial Class Form_Startup
     Friend WithEvents Label7 As Label
     Friend WithEvents Load_Button As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button12 As Button
+    Friend WithEvents Button_loadprofil As Button
     Friend WithEvents Credentials_Button As Button
     Friend WithEvents Portail_Button As Button
     Friend WithEvents License_Button As Button
@@ -868,6 +965,12 @@ Partial Class Form_Startup
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents FlatMini1 As FlatMini
     Friend WithEvents PictureBox_PasswordHider As PictureBox
-    Friend WithEvents FlatButton_Plus As FlatButton
-    Friend WithEvents CheckedListBox_Account As CheckedListBox
+    Friend WithEvents Button_removeprofil As Button
+    Friend WithEvents button_editprofil As Button
+    Friend WithEvents Button_profil3 As Button
+    Friend WithEvents Button_profil2 As Button
+    Friend WithEvents Button_profil1 As Button
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
 End Class

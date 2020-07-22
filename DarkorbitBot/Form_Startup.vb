@@ -109,7 +109,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button_loadprofil.Click
 
         ' button Load > Saved '
 
@@ -255,22 +255,6 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
-
-    End Sub
-
-    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         CloseForm.ShowDialog(Me)
     End Sub
@@ -284,7 +268,40 @@ Public Class Form_Startup
         PictureBox_PasswordHider.Image = My.Resources.eye_off_icon_135658
     End Sub
 
-    Private Sub FlatButton_Plus_Click(sender As Object, e As EventArgs) Handles FlatButton_Plus.Click
-        CheckedListBox_Account.Items.Add("testbite")
+    Private Sub Button_profil1_Click(sender As Object, e As EventArgs) Handles Button_profil1.Click
+
+        Label22.Visible = True
+        Label23.Visible = False
+        Label24.Visible = False
+
+        Button_profil1.Enabled = True
+        Button_profil2.Enabled = False
+        Button_profil3.Enabled = False
+
+
+    End Sub
+
+    Private Sub Button_profil2_Click(sender As Object, e As EventArgs) Handles Button_profil2.Click
+
+        Label22.Visible = False
+        Label23.Visible = True
+        Label24.Visible = False
+
+        Button_profil1.Enabled = False
+        Button_profil2.Enabled = True
+        Button_profil3.Enabled = False
+
+    End Sub
+
+    Private Sub Button_profil3_Click(sender As Object, e As EventArgs) Handles Button_profil3.Click
+
+        Label22.Visible = False
+        Label23.Visible = False
+        Label24.Visible = True
+
+        Button_profil1.Enabled = False
+        Button_profil2.Enabled = False
+        Button_profil3.Enabled = True
+
     End Sub
 End Class

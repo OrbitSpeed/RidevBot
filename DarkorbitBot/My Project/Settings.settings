@@ -17,5 +17,11 @@
     <Setting Name="UserAccounts" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="RexActive" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E</Value>
+    </Setting>
+    <Setting Name="GuardKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">R</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
