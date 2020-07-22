@@ -15,11 +15,66 @@ Public Class Form_Startup
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Panel4.Location = New Point(0, 55)
+        Panel4.Size = New Size(256, 221)
+
+        Panel3.Location = New Point(0, 37)
+        Panel2.Location = New Point(0, 37)
+        PanelConnection.Location = New Point(0, 37)
+
+        Panel5.Location = New Point(0, 55)
+        Panel6.Location = New Point(0, 55)
+
+        CenterToScreen()
+
         ' program started'
 
         Me.Size = New Size(256, 251)
-
         Label1.Select()
+
+        ' Profil 1
+        ' Profil 2
+        ' Profil 3
+        ' Current
+
+        If Form_Tools.CheckBox_AutoLogin.Checked = True Then
+
+            If Form_Tools.ComboBox_autologin.Text = "Profil 1" Then
+
+                Label1.Select()
+
+            Else
+                If Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
+
+                    Label1.Select()
+
+                Else
+                    If Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
+
+                        Label1.Select()
+
+                    Else
+                        If Form_Tools.ComboBox_autologin.Text = "Current" Then
+
+                            Label1.Select()
+                            Form_Game.Show()
+                            Form_Tools.Show()
+
+                        Else
+
+
+
+                        End If
+                    End If
+                End If
+            End If
+
+        Else
+
+
+
+        End If
+
 
     End Sub
 
@@ -85,11 +140,20 @@ Public Class Form_Startup
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
         ' button Load 1 > User&&Pass > RidevBot Browser '
+        If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
 
-        Label1.Select()
-        Form_Game.Show()
-        Form_Tools.Show()
+            Label1.Select()
+            Form_Game.Show()
+            Form_Tools.Show()
+            Me.Close()
 
+        Else
+
+            Label1.Select()
+            Form_Tools.Show()
+            Me.Close()
+
+        End If
 
     End Sub
 
@@ -130,6 +194,7 @@ Public Class Form_Startup
         Form_Game.Show()
         Form_Game.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         ' Form2.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+        Me.Close()
 
     End Sub
 
@@ -304,4 +369,5 @@ Public Class Form_Startup
         Button_profil3.Enabled = True
 
     End Sub
+
 End Class

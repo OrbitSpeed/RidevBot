@@ -49,6 +49,22 @@
 
         Size = New Size(390, 324)
         CenterToScreen()
+
+        If Form_Game.Visible = True Then
+
+            Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+
+        Else
+            If Form_Game.Visible = False Then
+
+                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+
+            Else
+
+
+            End If
+        End If
+
     End Sub
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
@@ -305,7 +321,48 @@
 
     End Sub
 
-    Private Sub FlatCheckBox3_CheckedChanged(sender As Object)
+    Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
+
+        If Form_Game.Visible = True Then
+
+            Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+            Label1.Select()
+            Form_Game.Show()
+
+        Else
+            If Form_Game.Visible = False Then
+
+                Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+                Label1.Select()
+                Form_Game.Show()
+
+            Else
+
+
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
+        If TextBox_Get_Server.Text = "" Then
+
+            MsgBox("actualiser d'abord le Game server en vous connectant a l'aide du button > Open RidevBot Browser ")
+
+        Else
+
+            BackPage_Form.WebBrowser1.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            BackPage_Form.Show()
+
+        End If
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Form_Startup.Show()
 
     End Sub
 End Class

@@ -32,8 +32,7 @@ Partial Class Form_Game
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Clickbutton = New DarkorbitBot.FlatButton()
-        Me.backpage = New DarkorbitBot.FlatButton()
-        Me.Button_Reload = New DarkorbitBot.FlatButton()
+        Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,9 +77,7 @@ Partial Class Form_Game
         Me.Panel7.Controls.Add(Me.FlatButton2)
         Me.Panel7.Controls.Add(Me.FlatButton1)
         Me.Panel7.Controls.Add(Me.Clickbutton)
-        Me.Panel7.Controls.Add(Me.backpage)
         Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.Button_Reload)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
@@ -155,33 +152,12 @@ Partial Class Form_Game
         Me.Clickbutton.Text = "Click"
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'backpage
+        'TextBox_getserver
         '
-        Me.backpage.BackColor = System.Drawing.Color.Transparent
-        Me.backpage.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.backpage.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.backpage.Location = New System.Drawing.Point(365, 0)
-        Me.backpage.Name = "backpage"
-        Me.backpage.Rounded = False
-        Me.backpage.Size = New System.Drawing.Size(80, 18)
-        Me.backpage.TabIndex = 23
-        Me.backpage.Text = "Backpage"
-        Me.backpage.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'Button_Reload
-        '
-        Me.Button_Reload.BackColor = System.Drawing.Color.Transparent
-        Me.Button_Reload.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button_Reload.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Reload.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Button_Reload.Location = New System.Drawing.Point(297, 0)
-        Me.Button_Reload.Name = "Button_Reload"
-        Me.Button_Reload.Rounded = False
-        Me.Button_Reload.Size = New System.Drawing.Size(62, 18)
-        Me.Button_Reload.TabIndex = 21
-        Me.Button_Reload.Text = "Reload"
-        Me.Button_Reload.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.TextBox_getserver.Location = New System.Drawing.Point(12, 32)
+        Me.TextBox_getserver.Name = "TextBox_getserver"
+        Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_getserver.TabIndex = 28
         '
         'Form_Game
         '
@@ -189,8 +165,9 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.TextBox_getserver)
+        Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -208,16 +185,15 @@ Partial Class Form_Game
     End Sub
     Friend WithEvents Label2 As Label
     Friend WithEvents WebBrowser1 As WebBrowser
-    Friend WithEvents Button_Reload As FlatButton
     Friend WithEvents Button_Backpage As FlatButton
     Friend WithEvents Button_Click As FlatButton
     Friend WithEvents FlatLabel1 As FlatLabel
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents backpage As FlatButton
     Friend WithEvents Clickbutton As FlatButton
     Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatButton2 As FlatButton
     Friend WithEvents FlatButton3 As FlatButton
     Friend WithEvents PictureBox_Close As PictureBox
+    Friend WithEvents TextBox_getserver As TextBox
 End Class

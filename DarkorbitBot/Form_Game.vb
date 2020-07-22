@@ -3,9 +3,9 @@ Imports AutoItX3Lib
 
 Public Class Form_Game
 
-    Dim server
-    Dim AutoIt As New AutoItX3
 
+    Dim AutoIt As New AutoItX3
+    Public server As String
     Public dosid As String
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -49,6 +49,18 @@ Public Class Form_Game
                 Console.WriteLine(testalacon.Value.Split("=")(1))
                 dosid = testalacon.Value.Split("=")(1)
 
+                Form_Tools.TextBox_Get_id.Text = "" &
+                (WebBrowser1.Document.GetElementById("header_top_id")).InnerText
+                Form_Tools.TextBox_Get_id.Text = Replace(Form_Tools.TextBox_Get_id.Text, " ", "")
+
+                Form_Tools.TextBox_Get_Dosid.Text = dosid
+                Form_Tools.TextBox_Get_Dosid.Text = Replace(Form_Tools.TextBox_Get_Dosid.Text, " ", "")
+
+                Form_Tools.TextBox_Get_Server.Text = server
+                Form_Tools.TextBox_Get_Server.Text = Replace(Form_Tools.TextBox_Get_Server.Text, " ", "")
+
+                TextBox_getserver.Text = server
+
                 'MsgBox(dosid)
             End If
 
@@ -65,24 +77,6 @@ Public Class Form_Game
             End If
         End If
         'MsgBox(WebBrowser1.Url.ToString)
-    End Sub
-
-    ' button reload '
-    Private Sub Button_Reload_Click(sender As Object, e As EventArgs) Handles Button_Reload.Click
-
-        Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
-        WebBrowser1.Refresh()
-
-        'StartWebBot()
-    End Sub
-
-    Private Sub backpage_Click(sender As Object, e As EventArgs) Handles backpage.Click
-
-        ' ouverture de la maisonnette '
-
-        BackPage_Form.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        BackPage_Form.Show()
-
     End Sub
 
     Private Sub Clickbutton_Click(sender As Object, e As EventArgs) Handles Clickbutton.Click
@@ -190,6 +184,9 @@ Public Class Form_Game
     End Sub
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
+
         CloseForm.ShowDialog(Me)
+        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+
     End Sub
 End Class

@@ -136,6 +136,126 @@ Namespace My
                 Me("GuardKey") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property AutoLogin() As Boolean
+            Get
+                Return CType(Me("AutoLogin"),Boolean)
+            End Get
+            Set
+                Me("AutoLogin") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property AutoLoginCombobox() As String
+            Get
+                Return CType(Me("AutoLoginCombobox"),String)
+            End Get
+            Set
+                Me("AutoLoginCombobox") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property LaunchGameatprogramstart() As Boolean
+            Get
+                Return CType(Me("LaunchGameatprogramstart"),Boolean)
+            End Get
+            Set
+                Me("LaunchGameatprogramstart") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Auto login with :")>  _
+        Public Property AutoLogin1() As String
+            Get
+                Return CType(Me("AutoLogin1"),String)
+            End Get
+            Set
+                Me("AutoLogin1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AutoLogin2() As Boolean
+            Get
+                Return CType(Me("AutoLogin2"),Boolean)
+            End Get
+            Set
+                Me("AutoLogin2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AutoLaunchGameAuto() As Boolean
+            Get
+                Return CType(Me("AutoLaunchGameAuto"),Boolean)
+            End Get
+            Set
+                Me("AutoLaunchGameAuto") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ActivatedRex() As Boolean
+            Get
+                Return CType(Me("ActivatedRex"),Boolean)
+            End Get
+            Set
+                Me("ActivatedRex") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("E")>  _
+        Public Property UseRex() As String
+            Get
+                Return CType(Me("UseRex"),String)
+            End Get
+            Set
+                Me("UseRex") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("R")>  _
+        Public Property GuardKey1() As String
+            Get
+                Return CType(Me("GuardKey1"),String)
+            End Get
+            Set
+                Me("GuardKey1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
+        Public Property RefreshGametick() As String
+            Get
+                Return CType(Me("RefreshGametick"),String)
+            End Get
+            Set
+                Me("RefreshGametick") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
