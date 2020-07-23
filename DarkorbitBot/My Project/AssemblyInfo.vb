@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Vérifiez les valeurs des attributs de l'assembly
 
-<Assembly: AssemblyTitle("DarkorbitBot")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("RidevBot")>
+<Assembly: AssemblyDescription("A great bot that do Vertex and Darkbot shit")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("DarkorbitBot")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyProduct("RidevBot")>
+<Assembly: AssemblyCopyright("Copyright © RidevBot 2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

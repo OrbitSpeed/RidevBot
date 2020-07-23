@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.DarkorbitBot.Form_Startup
+            Me.MainForm = Global.DarkorbitBot.AutoUpdater
         End Sub
     End Class
 End Namespace
