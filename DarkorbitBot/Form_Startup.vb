@@ -8,13 +8,9 @@ Public Class Form_Startup
     Public MouseDownX As Integer
     Public MouseDownY As Integer
 
-    <DllImport("wininet.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
-    Public Shared Function InternetSetCookie(lpszUrl As String,
-      lpszCookieName As String, lpszCookieData As String) As Boolean
-    End Function
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+#Region "Location and resize"
         Panel4.Location = New Point(0, 55)
         Panel4.Size = New Size(256, 221)
 
@@ -24,7 +20,7 @@ Public Class Form_Startup
 
         Panel5.Location = New Point(0, 55)
         Panel6.Location = New Point(0, 55)
-
+#End Region
 
         ' program started'
 
@@ -56,9 +52,14 @@ Public Class Form_Startup
                     Else
                         If Form_Tools.ComboBox_autologin.Text = "Current" Then
 
+                            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+                                Form_Game.Show()
+                            Else
+
+                            End If
                             Label1.Select()
-                            Form_Game.Show()
                             Form_Tools.Show()
+                            Close()
 
                         Else
 
@@ -186,13 +187,17 @@ Public Class Form_Startup
         ' button Load > SID login '
 
         Label1.Select()
-        Dim server1 = TextBox1.Text
-        Dim dosid = TextBox3.Text
+        Utils.server = TextBox1.Text
+        Utils.dosid = TextBox3.Text
 
-        InternetSetCookie("https://" + server1 + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", dosid & ";")
+        ' Inutile maintenant qu'on utilise la classe utils
+        'Dim server1 = TextBox1.Text
+        'Dim dosid = TextBox3.Text
+
+        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
 
         Form_Game.Show()
-        Form_Game.WebBrowser1.Navigate("https://" + ((server1)) + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        Form_Game.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         ' Form2.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
         Me.Close()
 

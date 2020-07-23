@@ -167,8 +167,8 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(517, 324)
 
+        Size = New Size(390, 324)
     End Sub
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
@@ -200,7 +200,7 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 324)
+        Size = New Size(517, 324)
 
     End Sub
 
@@ -339,43 +339,43 @@
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
-        If Form_Game.Visible = True Then
-
-            Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+        If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
+            Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
             Label1.Select()
-            Form_Game.Show()
 
-        Else
-            If Form_Game.Visible = False Then
-
-                Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-                Label1.Select()
+            If Utils.dosid IsNot vbNullString Then
+                Utils.connectWithCookie = True
+                'Form_Game.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart")
                 Form_Game.Show()
-
             Else
-
-
+                Form_Game.WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com")
+                Form_Game.Show()
             End If
+
+        ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
+            'Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+            Label1.Select()
+            Form_Game.WebBrowser1.Refresh()
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
+            'Form_Game.Show()
         End If
 
 
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+    Private Sub PictureBox_Backpage_Click(sender As Object, e As EventArgs) Handles PictureBox_Backpage.Click
 
-        If TextBox_Get_Server.Text = "" Then
-
+        If Utils.server = "" Then
             MsgBox("actualiser d'abord le Game server en vous connectant a l'aide du button > Open RidevBot Browser ")
-
         Else
-
-            BackPage_Form.WebBrowser1.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
             BackPage_Form.Show()
-
         End If
 
     End Sub
 
+
+#Region "Galaxy Gates Show"
     ' full = toute la gg 
     ' last = derniere piece
 
@@ -450,4 +450,5 @@
         WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=1&alpha=1&sample=1&multiplier=1")
 
     End Sub
+#End Region
 End Class

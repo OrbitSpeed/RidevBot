@@ -2,32 +2,37 @@
 Imports AutoItX3Lib
 
 Public Class Form_Game
-
-
     Dim AutoIt As New AutoItX3
-    Public server As String
-    Public dosid As String
+    'Public server As String
+    'Public dosid As String
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' quand on appuye sur load dans form1 '
-
+        ' quand on appuye sur load dans form1
         Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
 
-        WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
+        If Utils.connectWithCookie Then
+            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution", "dosid", Utils.dosid & ";")
+            WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+        Else
+            WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
+        End If
 
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
 
-        ' cherche le pseudo et le mot de passe dans la form1 -> dans User&&Pass '
-        ' toujours ce referer a User&&Pass '
+        ' cherche le pseudo et le mot de passe dans la form1 -> dans User&&Pass
+        ' toujours se referer a User&&Pass
         StartWebBot()
-
     End Sub
 
-    ' se connecte et lance le jeu avec le clean ' 
+    ' se connecte et lance le jeu avec le clean
     Public Sub StartWebBot()
+        If WebBrowser1.Url.ToString Is vbNullString Then
+            WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
+        End If
+
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") And Not WebBrowser1.Url.ToString.Contains("authUser=291") Then
 
             WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Username_Textbox.Text)
@@ -42,30 +47,29 @@ Public Class Form_Game
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser1.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-            server = CheckRegex.Groups.Item(1).ToString
+            Utils.server = CheckRegex.Groups.Item(1).ToString
 
             Dim testalacon = Regex.Match(WebBrowser1.DocumentText, "dosid=([^&^.']+)")
             If testalacon.Success Then
                 Console.WriteLine(testalacon.Value.Split("=")(1))
-                dosid = testalacon.Value.Split("=")(1)
+                Utils.dosid = testalacon.Value.Split("=")(1)
 
-                Form_Tools.TextBox_Get_id.Text = "" &
-                (WebBrowser1.Document.GetElementById("header_top_id")).InnerText
+                Form_Tools.TextBox_Get_id.Text = "" & (WebBrowser1.Document.GetElementById("header_top_id")).InnerText
                 Form_Tools.TextBox_Get_id.Text = Replace(Form_Tools.TextBox_Get_id.Text, " ", "")
 
-                Form_Tools.TextBox_Get_Dosid.Text = dosid
+                Form_Tools.TextBox_Get_Dosid.Text = Utils.dosid
                 Form_Tools.TextBox_Get_Dosid.Text = Replace(Form_Tools.TextBox_Get_Dosid.Text, " ", "")
 
-                Form_Tools.TextBox_Get_Server.Text = server
+                Form_Tools.TextBox_Get_Server.Text = Utils.server
                 Form_Tools.TextBox_Get_Server.Text = Replace(Form_Tools.TextBox_Get_Server.Text, " ", "")
 
-                TextBox_getserver.Text = server
+                TextBox_getserver.Text = Utils.server
 
                 'MsgBox(dosid)
             End If
 
             'Launch the Start
-            WebBrowser1.Navigate("https://" + (server) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            WebBrowser1.Navigate("https://" + (Utils.server) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         ElseIf WebBrowser1.Url.ToString.Contains("authUser=291") Then
             Dim result = MessageBox.Show("Le compte est incorrect, veuillez vérifier les informations", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -191,10 +195,6 @@ Public Class Form_Game
 
     End Sub
 
-    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
-
-    End Sub
-
     Private Sub FlatButton4_Click(sender As Object, e As EventArgs) Handles FlatButton4.Click
 
         Dim A1 As Integer = (WebBrowser1.Location.X)
@@ -253,4 +253,10 @@ Public Class Form_Game
 
 
     End Sub
+
+
+    Private Sub Form_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+    End Sub
+
 End Class
