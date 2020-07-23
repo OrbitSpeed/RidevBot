@@ -84,6 +84,13 @@ Partial Class Form_Tools
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cargoBox = New System.Windows.Forms.CheckBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,7 +210,7 @@ Partial Class Form_Tools
         Me.NPC_Button.Name = "NPC_Button"
         Me.NPC_Button.Size = New System.Drawing.Size(86, 35)
         Me.NPC_Button.TabIndex = 26
-        Me.NPC_Button.Text = "Npc's killer"
+        Me.NPC_Button.Text = "Npc's && box's"
         Me.NPC_Button.UseVisualStyleBackColor = False
         '
         'General_button
@@ -544,7 +551,14 @@ Partial Class Form_Tools
         'Panel_Npc
         '
         Me.Panel_Npc.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Npc.Controls.Add(Me.Label24)
+        Me.Panel_Npc.Controls.Add(Me.Label23)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox4)
         Me.Panel_Npc.Controls.Add(Me.Label7)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox3)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox_palladium)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox_cargoBox)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox_bonusBox)
         Me.Panel_Npc.ForeColor = System.Drawing.Color.White
         Me.Panel_Npc.Location = New System.Drawing.Point(445, 36)
         Me.Panel_Npc.Name = "Panel_Npc"
@@ -555,11 +569,11 @@ Partial Class Form_Tools
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(10, 12)
+        Me.Label7.Location = New System.Drawing.Point(184, 13)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 13)
+        Me.Label7.Size = New System.Drawing.Size(98, 13)
         Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Npc Killer"
+        Me.Label7.Text = "Npc Killer & collector"
         Me.Label7.Visible = False
         '
         'Label11
@@ -567,17 +581,16 @@ Partial Class Form_Tools
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(3, 293)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(47, 13)
+        Me.Label11.Size = New System.Drawing.Size(30, 13)
         Me.Label11.TabIndex = 0
-        Me.Label11.Text = "collector"
+        Me.Label11.Text = "Profil"
         Me.Label11.Visible = False
         '
         'Panel_collector
         '
         Me.Panel_collector.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_collector.Controls.Add(Me.CheckBox_cargoBox)
-        Me.Panel_collector.Controls.Add(Me.CheckBox_bonusBox)
-        Me.Panel_collector.Controls.Add(Me.CheckBox_palladium)
+        Me.Panel_collector.Controls.Add(Me.CheckBox5)
+        Me.Panel_collector.Controls.Add(Me.Label25)
         Me.Panel_collector.Controls.Add(Me.Label11)
         Me.Panel_collector.ForeColor = System.Drawing.Color.White
         Me.Panel_collector.Location = New System.Drawing.Point(755, 36)
@@ -667,6 +680,7 @@ Partial Class Form_Tools
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Indigo
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(71, 37)
         Me.Label18.Name = "Label18"
@@ -687,6 +701,7 @@ Partial Class Form_Tools
         'Panel_divers
         '
         Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_divers.Controls.Add(Me.CheckBox2)
         Me.Panel_divers.Controls.Add(Me.Label17)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
         Me.Panel_divers.Location = New System.Drawing.Point(1252, 348)
@@ -698,7 +713,7 @@ Partial Class Form_Tools
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(10, 12)
+        Me.Label17.Location = New System.Drawing.Point(156, 269)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(35, 13)
         Me.Label17.TabIndex = 0
@@ -740,7 +755,7 @@ Partial Class Form_Tools
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox1.BackColor = System.Drawing.Color.Indigo
         Me.CheckBox1.Checked = Global.DarkorbitBot.My.MySettings.Default.ActivatedRex
         Me.CheckBox1.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "ActivatedRex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -756,9 +771,12 @@ Partial Class Form_Tools
         '
         Me.CheckBox_bonusBox.AutoSize = True
         Me.CheckBox_bonusBox.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_bonusBox.Checked = True
+        Me.CheckBox_bonusBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_bonusBox.Enabled = False
         Me.CheckBox_bonusBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_bonusBox.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_bonusBox.Location = New System.Drawing.Point(15, 31)
+        Me.CheckBox_bonusBox.Location = New System.Drawing.Point(17, 83)
         Me.CheckBox_bonusBox.Name = "CheckBox_bonusBox"
         Me.CheckBox_bonusBox.Size = New System.Drawing.Size(133, 23)
         Me.CheckBox_bonusBox.TabIndex = 31
@@ -769,9 +787,10 @@ Partial Class Form_Tools
         '
         Me.CheckBox_palladium.AutoSize = True
         Me.CheckBox_palladium.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_palladium.Enabled = False
         Me.CheckBox_palladium.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_palladium.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_palladium.Location = New System.Drawing.Point(15, 10)
+        Me.CheckBox_palladium.Location = New System.Drawing.Point(17, 37)
         Me.CheckBox_palladium.Name = "CheckBox_palladium"
         Me.CheckBox_palladium.Size = New System.Drawing.Size(149, 23)
         Me.CheckBox_palladium.TabIndex = 30
@@ -857,13 +876,14 @@ Partial Class Form_Tools
         '
         Me.CheckBox_cargoBox.AutoSize = True
         Me.CheckBox_cargoBox.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_cargoBox.Enabled = False
         Me.CheckBox_cargoBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_cargoBox.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_cargoBox.Location = New System.Drawing.Point(15, 52)
+        Me.CheckBox_cargoBox.Location = New System.Drawing.Point(17, 106)
         Me.CheckBox_cargoBox.Name = "CheckBox_cargoBox"
-        Me.CheckBox_cargoBox.Size = New System.Drawing.Size(182, 23)
+        Me.CheckBox_cargoBox.Size = New System.Drawing.Size(131, 23)
         Me.CheckBox_cargoBox.TabIndex = 32
-        Me.CheckBox_cargoBox.Text = "FROM_SHIP ( Cargo box )"
+        Me.CheckBox_cargoBox.Text = "Aurus_box ( box )"
         Me.CheckBox_cargoBox.UseVisualStyleBackColor = False
         '
         'FlatMini1
@@ -879,6 +899,97 @@ Partial Class Form_Tools
         Me.FlatMini1.TabIndex = 25
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.BackColor = System.Drawing.Color.Indigo
+        Me.CheckBox2.Checked = Global.DarkorbitBot.My.MySettings.Default.ActivatedRex
+        Me.CheckBox2.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "ActivatedRex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox2.Location = New System.Drawing.Point(53, 12)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(147, 23)
+        Me.CheckBox2.TabIndex = 31
+        Me.CheckBox2.Text = "Auto Uprade Skylab"
+        Me.CheckBox2.UseVisualStyleBackColor = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Enabled = False
+        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox3.Location = New System.Drawing.Point(17, 60)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(182, 23)
+        Me.CheckBox3.TabIndex = 33
+        Me.CheckBox3.Text = "FROM_SHIP ( Cargo box )"
+        Me.CheckBox3.UseVisualStyleBackColor = False
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox4.Enabled = False
+        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox4.Location = New System.Drawing.Point(17, 129)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(141, 23)
+        Me.CheckBox4.TabIndex = 34
+        Me.CheckBox4.Text = "Bifenon_box ( box )"
+        Me.CheckBox4.UseVisualStyleBackColor = False
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.Black
+        Me.Label23.Location = New System.Drawing.Point(47, 10)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(76, 17)
+        Me.Label23.TabIndex = 35
+        Me.Label23.Text = "Collectable"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.Black
+        Me.Label24.Location = New System.Drawing.Point(47, 172)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(41, 17)
+        Me.Label24.TabIndex = 36
+        Me.Label24.Text = "Npc's"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.Black
+        Me.Label25.Location = New System.Drawing.Point(28, 19)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(220, 17)
+        Me.Label25.TabIndex = 36
+        Me.Label25.Text = "Box Collector Only ( current map )"
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox5.Location = New System.Drawing.Point(56, 39)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(95, 23)
+        Me.CheckBox5.TabIndex = 37
+        Me.CheckBox5.Text = "Select profil"
+        Me.CheckBox5.UseVisualStyleBackColor = False
         '
         'Form_Tools
         '
@@ -1005,5 +1116,12 @@ Partial Class Form_Tools
     Friend WithEvents Button2 As Button
     Friend WithEvents CheckBox_bonusBox As CheckBox
     Friend WithEvents CheckBox_palladium As CheckBox
-    Friend WithEvents CheckBox_cargoBox As CheckBox
+    Public WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Public WithEvents CheckBox_cargoBox As CheckBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents Label25 As Label
 End Class

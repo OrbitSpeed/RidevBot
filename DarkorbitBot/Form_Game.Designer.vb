@@ -28,11 +28,12 @@ Partial Class Form_Game
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.FlatButton3 = New DarkorbitBot.FlatButton()
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Clickbutton = New DarkorbitBot.FlatButton()
-        Me.TextBox_getserver = New System.Windows.Forms.TextBox()
+        Me.FlatButton4 = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,7 +43,7 @@ Partial Class Form_Game
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(694, 34)
+        Me.Label2.Location = New System.Drawing.Point(91, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 18)
         Me.Label2.TabIndex = 16
@@ -72,8 +73,8 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.FlatButton4)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
-        Me.Panel7.Controls.Add(Me.FlatButton3)
         Me.Panel7.Controls.Add(Me.FlatButton2)
         Me.Panel7.Controls.Add(Me.FlatButton1)
         Me.Panel7.Controls.Add(Me.Clickbutton)
@@ -96,19 +97,27 @@ Partial Class Form_Game
         Me.PictureBox_Close.TabIndex = 30
         Me.PictureBox_Close.TabStop = False
         '
+        'TextBox_getserver
+        '
+        Me.TextBox_getserver.Location = New System.Drawing.Point(12, 32)
+        Me.TextBox_getserver.Name = "TextBox_getserver"
+        Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_getserver.TabIndex = 28
+        '
         'FlatButton3
         '
         Me.FlatButton3.BackColor = System.Drawing.Color.Transparent
         Me.FlatButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.FlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton3.Location = New System.Drawing.Point(690, 0)
+        Me.FlatButton3.Location = New System.Drawing.Point(12, 58)
         Me.FlatButton3.Name = "FlatButton3"
         Me.FlatButton3.Rounded = False
         Me.FlatButton3.Size = New System.Drawing.Size(73, 18)
         Me.FlatButton3.TabIndex = 28
         Me.FlatButton3.Text = "Attack"
         Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatButton3.Visible = False
         '
         'FlatButton2
         '
@@ -116,12 +125,12 @@ Partial Class Form_Game
         Me.FlatButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.FlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton2.Location = New System.Drawing.Point(605, 0)
+        Me.FlatButton2.Location = New System.Drawing.Point(359, 0)
         Me.FlatButton2.Name = "FlatButton2"
         Me.FlatButton2.Rounded = False
-        Me.FlatButton2.Size = New System.Drawing.Size(79, 18)
+        Me.FlatButton2.Size = New System.Drawing.Size(147, 18)
         Me.FlatButton2.TabIndex = 25
-        Me.FlatButton2.Text = "Click NPC"
+        Me.FlatButton2.Text = "Click NPC + attack"
         Me.FlatButton2.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'FlatButton1
@@ -130,7 +139,7 @@ Partial Class Form_Game
         Me.FlatButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(508, 0)
+        Me.FlatButton1.Location = New System.Drawing.Point(262, 0)
         Me.FlatButton1.Name = "FlatButton1"
         Me.FlatButton1.Rounded = False
         Me.FlatButton1.Size = New System.Drawing.Size(91, 18)
@@ -147,17 +156,24 @@ Partial Class Form_Game
         Me.Clickbutton.Location = New System.Drawing.Point(180, 0)
         Me.Clickbutton.Name = "Clickbutton"
         Me.Clickbutton.Rounded = False
-        Me.Clickbutton.Size = New System.Drawing.Size(51, 18)
+        Me.Clickbutton.Size = New System.Drawing.Size(76, 18)
         Me.Clickbutton.TabIndex = 24
-        Me.Clickbutton.Text = "Click"
+        Me.Clickbutton.Text = "Click box"
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'TextBox_getserver
+        'FlatButton4
         '
-        Me.TextBox_getserver.Location = New System.Drawing.Point(12, 32)
-        Me.TextBox_getserver.Name = "TextBox_getserver"
-        Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_getserver.TabIndex = 28
+        Me.FlatButton4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton4.Location = New System.Drawing.Point(512, 0)
+        Me.FlatButton4.Name = "FlatButton4"
+        Me.FlatButton4.Rounded = False
+        Me.FlatButton4.Size = New System.Drawing.Size(254, 18)
+        Me.FlatButton4.TabIndex = 31
+        Me.FlatButton4.Text = "All in one + Move"
+        Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Game
         '
@@ -166,6 +182,7 @@ Partial Class Form_Game
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
         Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.FlatButton3)
         Me.Controls.Add(Me.TextBox_getserver)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label2)
@@ -196,4 +213,5 @@ Partial Class Form_Game
     Friend WithEvents FlatButton3 As FlatButton
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
+    Friend WithEvents FlatButton4 As FlatButton
 End Class

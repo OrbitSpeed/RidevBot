@@ -122,7 +122,7 @@ Public Class Form_Game
             Console.WriteLine(A3)
             Console.WriteLine(A4)
 
-            Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 1152991, 5, 1)
+            Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 16777030, 5, 1)
 
 
             Console.WriteLine(SIMPLE)
@@ -152,7 +152,7 @@ Public Class Form_Game
             Console.WriteLine(result)
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, result(0) + 40, result(1) - 40)
-            '   AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
         Catch ex As Exception
 
         End Try
@@ -161,26 +161,26 @@ Public Class Form_Game
 
     Private Sub FlatButton3_Click(sender As Object, e As EventArgs) Handles FlatButton3.Click
 
-        Try
-            Dim A1 As Integer = (WebBrowser1.Location.X)
-            Dim A2 As Integer = (WebBrowser1.Location.Y - 18)
-            Dim A3 As Integer = (WebBrowser1.Width)
-            Dim A4 As Integer = (WebBrowser1.Height)
+        'Try
+        '    Dim A1 As Integer = (WebBrowser1.Location.X)
+        '    Dim A2 As Integer = (WebBrowser1.Location.Y - 18)
+        '    Dim A3 As Integer = (WebBrowser1.Width)
+        '    Dim A4 As Integer = (WebBrowser1.Height)
 
-            Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 6959164, 0, 1)
+        '    Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 6959164, 0, 1)
 
-            Console.WriteLine(result)
-            If result = 0 Then
+        '    Console.WriteLine(result)
+        '    If result = 0 Then
 
-            Else
+        '    Else
 
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+        '        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
 
-            End If
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
     End Sub
 
@@ -192,6 +192,57 @@ Public Class Form_Game
     End Sub
 
     Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
+
+    End Sub
+
+    Private Sub FlatButton4_Click(sender As Object, e As EventArgs) Handles FlatButton4.Click
+
+        Dim A1 As Integer = (WebBrowser1.Location.X)
+        Dim A2 As Integer = (WebBrowser1.Location.Y - 18)
+        Dim A3 As Integer = (WebBrowser1.Width)
+        Dim A4 As Integer = (WebBrowser1.Height)
+
+        Dim A6 As Integer = 597 'x
+        Dim A61 As Integer = 486 'y
+        Dim A62 As Integer = 773 'xx
+        Dim A63 As Integer = 588 'yy
+
+        Try
+
+            Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 1321834, 5, 1)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
+
+        Catch aser2 As Exception
+            Try
+
+                Dim SIMPLE2 = AutoIt.PixelSearch(A1, A2, A3, A4, 16777030, 10, 1)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE2(0) - 0, SIMPLE2(1) - 0)
+
+            Catch aser3 As Exception
+
+                Try
+
+                    Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 13369344, 0, 1)
+
+
+                    Console.WriteLine(result)
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, result(0) + 40, result(1) - 40)
+                    AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+
+                Catch aser4 As Exception
+
+                    Dim random As New Random(), rndnbr As Integer
+                    rndnbr = random.Next(A6, A62)
+                    Dim random2 As New Random(), rndnbr2 As Integer
+                    rndnbr2 = random2.Next(A61, A63)
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
+
+                End Try
+            End Try
+        End Try
+
 
     End Sub
 End Class
