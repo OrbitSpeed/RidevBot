@@ -1187,12 +1187,12 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(281, 3)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(125, 14)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
         Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(163, 283)
         Me.WebBrowser_GGspinner.TabIndex = 40
         Me.WebBrowser_GGspinner.Visible = False
         '

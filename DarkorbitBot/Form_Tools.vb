@@ -101,6 +101,8 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
+        Size = New Size(390, 324)
+
     End Sub
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
@@ -131,6 +133,8 @@
         Panel_stats.Visible = False
         Panel_rex.Visible = False
         Panel_divers.Visible = False
+
+        Size = New Size(390, 324)
 
     End Sub
 
@@ -163,6 +167,8 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
+        Size = New Size(517, 324)
+
     End Sub
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
@@ -193,6 +199,8 @@
         Panel_stats.Visible = False
         Panel_rex.Visible = False
         Panel_divers.Visible = False
+
+        Size = New Size(390, 324)
 
     End Sub
 
@@ -225,6 +233,8 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
+        Size = New Size(390, 324)
+
     End Sub
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
@@ -255,6 +265,8 @@
         Panel_stats.Visible = True
         Panel_rex.Visible = False
         Panel_divers.Visible = False
+
+        Size = New Size(390, 324)
 
 
     End Sub
@@ -288,6 +300,8 @@
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
+        Size = New Size(390, 324)
+
     End Sub
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
@@ -318,6 +332,8 @@
         Panel_stats.Visible = False
         Panel_rex.Visible = False
         Panel_divers.Visible = True
+
+        Size = New Size(390, 324)
 
     End Sub
 
@@ -430,6 +446,8 @@
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
+
+        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=1&alpha=1&sample=1&multiplier=1")
 
     End Sub
 End Class
