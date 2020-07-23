@@ -213,35 +213,43 @@ Public Class Form_Game
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
 
         Catch aser2 As Exception
+
             Try
 
-                Dim SIMPLE2 = AutoIt.PixelSearch(A1, A2, A3, A4, 16777030, 10, 1)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE2(0) - 0, SIMPLE2(1) - 0)
+                Dim SIMPLE = AutoIt.PixelSearch(A1, A2, A3, A4, 1321834, 5, 1)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE(0) - 0, SIMPLE(1) - 0)
 
-            Catch aser3 As Exception
-
+            Catch aser77 As Exception
                 Try
 
-                    Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 13369344, 0, 1)
+                    Dim SIMPLE2 = AutoIt.PixelSearch(A1, A2, A3, A4, 16777030, 10, 1)
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, SIMPLE2(0) - 0, SIMPLE2(1) - 0)
+
+                Catch aser3 As Exception
+                    Try
+
+                        Dim result = AutoIt.PixelSearch(A1, A2, A3, A4, 13369344, 0, 1)
 
 
-                    Console.WriteLine(result)
+                        Console.WriteLine(result)
 
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, result(0) + 40, result(1) - 40)
-                    AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, result(0) + 40, result(1) - 40)
+                        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (1))
 
-                Catch aser4 As Exception
+                    Catch aser4 As Exception
 
-                    Dim random As New Random(), rndnbr As Integer
-                    rndnbr = random.Next(A6, A62)
-                    Dim random2 As New Random(), rndnbr2 As Integer
-                    rndnbr2 = random2.Next(A61, A63)
+                        Dim random As New Random(), rndnbr As Integer
+                        rndnbr = random.Next(A6, A62)
+                        Dim random2 As New Random(), rndnbr2 As Integer
+                        rndnbr2 = random2.Next(A61, A63)
 
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
 
+                    End Try
                 End Try
             End Try
         End Try
+
 
 
     End Sub

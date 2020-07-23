@@ -30,10 +30,10 @@ Partial Class Form_Game
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.FlatButton3 = New DarkorbitBot.FlatButton()
+        Me.FlatButton4 = New DarkorbitBot.FlatButton()
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Clickbutton = New DarkorbitBot.FlatButton()
-        Me.FlatButton4 = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -119,6 +119,20 @@ Partial Class Form_Game
         Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.FlatButton3.Visible = False
         '
+        'FlatButton4
+        '
+        Me.FlatButton4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton4.Location = New System.Drawing.Point(512, 0)
+        Me.FlatButton4.Name = "FlatButton4"
+        Me.FlatButton4.Rounded = False
+        Me.FlatButton4.Size = New System.Drawing.Size(142, 18)
+        Me.FlatButton4.TabIndex = 31
+        Me.FlatButton4.Text = "All in one + Move"
+        Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'FlatButton2
         '
         Me.FlatButton2.BackColor = System.Drawing.Color.Transparent
@@ -160,20 +174,6 @@ Partial Class Form_Game
         Me.Clickbutton.TabIndex = 24
         Me.Clickbutton.Text = "Click box"
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'FlatButton4
-        '
-        Me.FlatButton4.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton4.Location = New System.Drawing.Point(512, 0)
-        Me.FlatButton4.Name = "FlatButton4"
-        Me.FlatButton4.Rounded = False
-        Me.FlatButton4.Size = New System.Drawing.Size(254, 18)
-        Me.FlatButton4.TabIndex = 31
-        Me.FlatButton4.Text = "All in one + Move"
-        Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Game
         '
