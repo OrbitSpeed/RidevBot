@@ -10,43 +10,60 @@ Public Class AutoUpdater
     Dim WC As New WebClient
     Dim WC_Update_Version As New WebClient
     Dim WC_Update_ChangeLog As New WebClient
+    Dim WC_Check_Maintenance As New WebClient
 
     Public LastVersion As String '= WC.DownloadString("")
     Public LastChangeLog As String
+    Public Check_Maintenance As Boolean
 
     Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
+        FlatLabel_isUpdated.Select()
 
+        AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
+        WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
+        '---
         AddHandler WC_Update_Version.DownloadStringCompleted, AddressOf WC_Update_Version_DownloadStringCompleted
-        WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/qplm5okuue4ycac/LastVersion.txt?dl=1"))
+        WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/5ergvrkppscoupo/Version.txt?dl=1"))
         '---
         AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
-        WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/9qqo742mkyu1ate/ChangeLog.txt?dl=1"))
+        WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
     End Sub
-    Private Sub Continue_Loading()
-        'Après le form_load
-        'If File.Exists(FileToUpdate) Then
-        '    File.Delete(FileToUpdate)
-        'End If
-        'Update_Dialog()
+
+    Private Sub WC_Check_Maintenance_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
+        Try
+            Check_Maintenance = e.Result
+            If Check_Maintenance Then
+                Dim result = MessageBox.Show($"A maintenance is actually underway...{vbNewLine}Please, try again later.{vbNewLine}If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If result = DialogResult.OK Then
+                    Close()
+                Else
+                    Close()
+                End If
+            End If
+            FlatLabel_isUpdated.Select()
+        Catch ex As Exception
+            MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End Try
+
     End Sub
 
     Private Sub Update_Dialog()
         'Dans le cas où le programme n'est pas à jour
         'Timer_ChangeLog_Check.Stop()
         If Not File.Exists(FileUpdater) Then
-            'TODO
-            'PREND DANS MES RESSOURCES LAUTOUPDATER
-            'JE MEN CHARGE DE CA
-            'On extract le updater
-            File.WriteAllBytes(FileUpdater, My.Resources.MMD_Updater)
+            File.WriteAllBytes(FileUpdater, My.Resources.RidevBotUpdater)
         End If
 
         Dim result = MessageBox.Show("Une mise à jour est disponible (" & LastVersion & ")" & vbNewLine & vbNewLine & LastChangeLog & vbNewLine & vbNewLine & "-----------------------------------------------------------------" & vbNewLine & "Le logiciel va se mettre à jour automatiquement.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         If result = DialogResult.OK Then
             Process.Start(FileUpdater)
-            End
+            Close()
+        Else
+            Process.Start(FileUpdater)
+            Close()
         End If
     End Sub
 
@@ -54,11 +71,14 @@ Public Class AutoUpdater
         If Application.ProductVersion <> LastVersion Then
             Update_Dialog()
         Else
-            Form_Startup.ShowDialog(Me)
+            If File.Exists(FileUpdater) Then
+                File.Delete(FileUpdater)
+            End If
+            Form_Startup.Show()
+            Close()
         End If
         'Hide()
     End Sub
-
 
     Private Sub WC_Update_Version_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
@@ -69,12 +89,11 @@ Public Class AutoUpdater
                 FlatLabel_isUpdated.Text = "Vous n'êtes pas à jour"
                 FlatLabel_isUpdated.ForeColor = Color.DarkOrange
                 FlatLabel_isUpdated.Visible = True
-
             Else
                 FlatLabel_isUpdated.Visible = True
-
             End If
             Button_Update.Enabled = True
+            FlatLabel_isUpdated.Select()
         Catch ex As Exception
             MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
@@ -89,11 +108,15 @@ Public Class AutoUpdater
             LastChangeLog = e.Result
             FlatTextBox_Changelog.Text = e.Result
             Button_Update.Visible = True
+            FlatLabel_isUpdated.Select()
         Catch ex As Exception
             MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End
+            Close()
         End Try
         'Throw New NotImplementedException()
     End Sub
 
+    Private Sub FlatTextBox_Changelog_GotFocus(sender As Object, e As EventArgs) Handles FlatTextBox_Changelog.GotFocus
+        FlatLabel_isUpdated.Select()
+    End Sub
 End Class

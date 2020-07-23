@@ -24,12 +24,12 @@ Partial Class AutoUpdater
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AutoUpdater))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
-        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
-        Me.FlatTextBox_Changelog = New DarkorbitBot.FlatTextBox()
         Me.Button_Update = New System.Windows.Forms.Button()
+        Me.FlatTextBox_Changelog = New DarkorbitBot.FlatTextBox()
+        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,6 +40,45 @@ Partial Class AutoUpdater
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(368, 25)
         Me.Panel1.TabIndex = 0
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel2.Controls.Add(Me.FlatLabel_isUpdated)
+        Me.Panel2.Controls.Add(Me.FlatLabel_Version)
+        Me.Panel2.Location = New System.Drawing.Point(-1, 386)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(368, 25)
+        Me.Panel2.TabIndex = 1
+        '
+        'Button_Update
+        '
+        Me.Button_Update.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Update.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Update.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Update.ForeColor = System.Drawing.Color.White
+        Me.Button_Update.Location = New System.Drawing.Point(84, 344)
+        Me.Button_Update.Name = "Button_Update"
+        Me.Button_Update.Size = New System.Drawing.Size(194, 25)
+        Me.Button_Update.TabIndex = 33
+        Me.Button_Update.Text = "Verify if an update is available"
+        Me.Button_Update.UseVisualStyleBackColor = False
+        '
+        'FlatTextBox_Changelog
+        '
+        Me.FlatTextBox_Changelog.BackColor = System.Drawing.Color.Transparent
+        Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(12, 31)
+        Me.FlatTextBox_Changelog.MaxLength = 32767
+        Me.FlatTextBox_Changelog.Multiline = True
+        Me.FlatTextBox_Changelog.Name = "FlatTextBox_Changelog"
+        Me.FlatTextBox_Changelog.ReadOnly = True
+        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(339, 305)
+        Me.FlatTextBox_Changelog.TabIndex = 3
+        Me.FlatTextBox_Changelog.Text = "Downloading the changelog..."
+        Me.FlatTextBox_Changelog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.FlatTextBox_Changelog.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatTextBox_Changelog.UseSystemPasswordChar = False
         '
         'FlatLabel_Title
         '
@@ -55,28 +94,6 @@ Partial Class AutoUpdater
         Me.FlatLabel_Title.Text = "RidevBot AutoUpdater"
         Me.FlatLabel_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'FlatLabel_Version
-        '
-        Me.FlatLabel_Version.AutoSize = True
-        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Transparent
-        Me.FlatLabel_Version.Location = New System.Drawing.Point(258, 2)
-        Me.FlatLabel_Version.Name = "FlatLabel_Version"
-        Me.FlatLabel_Version.Size = New System.Drawing.Size(106, 19)
-        Me.FlatLabel_Version.TabIndex = 3
-        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel2.Controls.Add(Me.FlatLabel_isUpdated)
-        Me.Panel2.Controls.Add(Me.FlatLabel_Version)
-        Me.Panel2.Location = New System.Drawing.Point(-1, 386)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(368, 25)
-        Me.Panel2.TabIndex = 1
-        '
         'FlatLabel_isUpdated
         '
         Me.FlatLabel_isUpdated.AutoSize = True
@@ -90,34 +107,17 @@ Partial Class AutoUpdater
         Me.FlatLabel_isUpdated.Text = "Vous êtes à jour"
         Me.FlatLabel_isUpdated.Visible = False
         '
-        'FlatTextBox_Changelog
+        'FlatLabel_Version
         '
-        Me.FlatTextBox_Changelog.BackColor = System.Drawing.Color.Transparent
-        Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(12, 31)
-        Me.FlatTextBox_Changelog.MaxLength = 32767
-        Me.FlatTextBox_Changelog.Multiline = True
-        Me.FlatTextBox_Changelog.Name = "FlatTextBox_Changelog"
-        Me.FlatTextBox_Changelog.ReadOnly = False
-        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(339, 305)
-        Me.FlatTextBox_Changelog.TabIndex = 3
-        Me.FlatTextBox_Changelog.Text = "FlatTextBox1"
-        Me.FlatTextBox_Changelog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.FlatTextBox_Changelog.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.FlatTextBox_Changelog.UseSystemPasswordChar = False
-        '
-        'Button_Update
-        '
-        Me.Button_Update.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Update.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Update.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Update.ForeColor = System.Drawing.Color.White
-        Me.Button_Update.Location = New System.Drawing.Point(121, 344)
-        Me.Button_Update.Name = "Button_Update"
-        Me.Button_Update.Size = New System.Drawing.Size(120, 25)
-        Me.Button_Update.TabIndex = 33
-        Me.Button_Update.Text = "Update"
-        Me.Button_Update.UseVisualStyleBackColor = False
+        Me.FlatLabel_Version.AutoSize = True
+        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Transparent
+        Me.FlatLabel_Version.Location = New System.Drawing.Point(258, 2)
+        Me.FlatLabel_Version.Name = "FlatLabel_Version"
+        Me.FlatLabel_Version.Size = New System.Drawing.Size(106, 19)
+        Me.FlatLabel_Version.TabIndex = 3
+        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
         '
         'AutoUpdater
         '
