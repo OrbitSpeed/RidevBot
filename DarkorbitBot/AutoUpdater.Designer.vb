@@ -80,6 +80,7 @@ Partial Class AutoUpdater
         '
         Me.Button_Update.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Button_Update.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Update.Enabled = False
         Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Update.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Update.ForeColor = System.Drawing.Color.White
