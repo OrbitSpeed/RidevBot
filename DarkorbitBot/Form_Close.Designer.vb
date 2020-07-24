@@ -74,16 +74,16 @@ Partial Class CloseForm
         '
         'Yes_button
         '
-        Me.Yes_button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Yes_button.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Yes_button.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Yes_button.FlatAppearance.BorderSize = 0
         Me.Yes_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Yes_button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Yes_button.Location = New System.Drawing.Point(74, 45)
+        Me.Yes_button.Location = New System.Drawing.Point(12, 31)
         Me.Yes_button.Name = "Yes_button"
-        Me.Yes_button.Size = New System.Drawing.Size(121, 35)
+        Me.Yes_button.Size = New System.Drawing.Size(121, 47)
         Me.Yes_button.TabIndex = 26
-        Me.Yes_button.Text = "Oui, fermer"
+        Me.Yes_button.Text = "Yes, Close"
         Me.Yes_button.UseVisualStyleBackColor = False
         '
         'Label11
@@ -91,7 +91,7 @@ Partial Class CloseForm
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(77, 63)
+        Me.Label11.Location = New System.Drawing.Point(15, 61)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 18)
         Me.Label11.TabIndex = 27
@@ -99,16 +99,16 @@ Partial Class CloseForm
         '
         'No_button
         '
-        Me.No_button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.No_button.BackColor = System.Drawing.SystemColors.HotTrack
         Me.No_button.Cursor = System.Windows.Forms.Cursors.Hand
         Me.No_button.FlatAppearance.BorderSize = 0
         Me.No_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.No_button.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.No_button.Location = New System.Drawing.Point(74, 86)
+        Me.No_button.Location = New System.Drawing.Point(136, 31)
         Me.No_button.Name = "No_button"
         Me.No_button.Size = New System.Drawing.Size(121, 47)
         Me.No_button.TabIndex = 28
-        Me.No_button.Text = "Non, revenir en arrière"
+        Me.No_button.Text = "No, go back"
         Me.No_button.UseVisualStyleBackColor = False
         '
         'Label12
@@ -116,7 +116,7 @@ Partial Class CloseForm
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(77, 116)
+        Me.Label12.Location = New System.Drawing.Point(139, 61)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(116, 18)
         Me.Label12.TabIndex = 29
@@ -128,11 +128,11 @@ Partial Class CloseForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(77, 170)
+        Me.Label1.Location = New System.Drawing.Point(14, 124)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 18)
+        Me.Label1.Size = New System.Drawing.Size(242, 18)
         Me.Label1.TabIndex = 29
-        Me.Label1.Text = "____________"
+        Me.Label1.Text = "__________________________"
         Me.Label1.Visible = False
         '
         'Button_CloseAllForm
@@ -142,19 +142,19 @@ Partial Class CloseForm
         Me.Button_CloseAllForm.FlatAppearance.BorderSize = 0
         Me.Button_CloseAllForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_CloseAllForm.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_CloseAllForm.Location = New System.Drawing.Point(74, 140)
+        Me.Button_CloseAllForm.Location = New System.Drawing.Point(12, 94)
         Me.Button_CloseAllForm.Name = "Button_CloseAllForm"
-        Me.Button_CloseAllForm.Size = New System.Drawing.Size(121, 47)
+        Me.Button_CloseAllForm.Size = New System.Drawing.Size(245, 47)
         Me.Button_CloseAllForm.TabIndex = 28
-        Me.Button_CloseAllForm.Text = "Oui, fermer tout"
+        Me.Button_CloseAllForm.Text = "Yes, close everything"
         Me.Button_CloseAllForm.UseVisualStyleBackColor = False
         '
         'CloseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.ClientSize = New System.Drawing.Size(269, 199)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(269, 158)
         Me.Controls.Add(Me.Yes_button)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button_CloseAllForm)

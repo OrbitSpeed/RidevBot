@@ -71,6 +71,21 @@ Public Class Form_Game
                 Form_Tools.TextBox_Get_Server.Text = Utils.server
                 Form_Tools.TextBox_Get_Server.Text = Replace(Form_Tools.TextBox_Get_Server.Text, " ", "")
 
+                Form_Tools.TextBox_honorCurrent.Text = "" &
+            (WebBrowser1.Document.GetElementById("header_top_hnr")).InnerText
+
+                Form_Tools.TextBox_uridiumCurrent.Text = "" &
+            (WebBrowser1.Document.GetElementById("header_uri")).InnerText
+
+                Form_Tools.TextBox_creditCurrent.Text = "" &
+            (WebBrowser1.Document.GetElementById("header_credits")).InnerText
+
+                Form_Tools.TextBox_experienceCurrent.Text = "" &
+            (WebBrowser1.Document.GetElementById("header_top_exp")).InnerText
+
+                Form_Tools.TextBox_LevelCurrent.Text = "" &
+        (WebBrowser1.Document.GetElementById("header_top_level")).InnerText
+
                 TextBox_getserver.Text = Utils.server
 
                 'MsgBox(dosid)

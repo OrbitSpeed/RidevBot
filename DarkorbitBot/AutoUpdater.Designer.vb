@@ -93,7 +93,7 @@ Partial Class AutoUpdater
         '
         'FlatTextBox_Changelog
         '
-        Me.FlatTextBox_Changelog.BackColor = System.Drawing.Color.Transparent
+        Me.FlatTextBox_Changelog.BackColor = System.Drawing.SystemColors.HotTrack
         Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(12, 31)
         Me.FlatTextBox_Changelog.MaxLength = 32767
         Me.FlatTextBox_Changelog.Multiline = True
@@ -103,7 +103,7 @@ Partial Class AutoUpdater
         Me.FlatTextBox_Changelog.TabIndex = 3
         Me.FlatTextBox_Changelog.Text = "Downloading the changelog..."
         Me.FlatTextBox_Changelog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.FlatTextBox_Changelog.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatTextBox_Changelog.TextColor = System.Drawing.Color.White
         Me.FlatTextBox_Changelog.UseSystemPasswordChar = False
         '
         'FlatLabel_Title
@@ -125,7 +125,7 @@ Partial Class AutoUpdater
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(363, 410)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button_Update)
