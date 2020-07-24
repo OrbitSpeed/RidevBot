@@ -92,8 +92,8 @@ Public Class AutoUpdater
             Else
                 FlatLabel_isUpdated.Visible = True
             End If
-            Button_Update.Enabled = True
             FlatLabel_isUpdated.Select()
+            'Button_Update.Enabled = True
         Catch ex As Exception
             MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
@@ -109,6 +109,7 @@ Public Class AutoUpdater
             FlatTextBox_Changelog.Text = e.Result
             Button_Update.Visible = True
             FlatLabel_isUpdated.Select()
+            Button_Update.Enabled = True
         Catch ex As Exception
             MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Close()
