@@ -56,6 +56,16 @@
             Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         End If
 
+        If Utils.server = "" Then
+        Else
+            Utils.checkStats = True
+            BackPage_Form.Show()
+            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            BackPage_Form.WindowState = FormWindowState.Minimized
+
+        End If
+
+
     End Sub
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
@@ -190,21 +200,24 @@
         Panel_divers.Visible = False
 
         If Utils.server = "" Then
-
-            MsgBox("You must first login to the game before you can access the page")
-
-            General_button.Enabled = False
-            Label10.Visible = True
-            Panel_general.Visible = True
-            Size = New Size(390, 324)
-
+            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If result = DialogResult.OK Then
+                General_button.Enabled = False
+                Label10.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            Else
+                General_button.Enabled = False
+                Label10.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            End If
         Else
-
             Label1.Visible = True
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
             Size = New Size(581, 430)
-            TextBox_uridiumGGS = TextBox_uridiumCurrent
+            TextBox_uridiumGGS.Text = Utils.currentUridium
 
         End If
 
@@ -273,7 +286,19 @@
 
         If Utils.server = "" Then
 
-            MsgBox("You must first login to the game before you can access the page")
+            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If result = DialogResult.OK Then
+                General_button.Enabled = False
+                Label10.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            Else
+                General_button.Enabled = False
+                Label10.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            End If
+
 
             General_button.Enabled = False
             Label10.Visible = True
@@ -287,11 +312,10 @@
             Panel_stats.Visible = True
             Size = New Size(390, 438)
 
+            Utils.checkStats = True
             BackPage_Form.Show()
             BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
             BackPage_Form.WindowState = FormWindowState.Minimized
-
-            TextBox2.Text = "1"
 
         End If
 
@@ -413,77 +437,77 @@
 
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=12&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=12&type=full")
 
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=13&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
 
     End Sub
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=19&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=19&type=full")
 
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=8&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=8&type=full")
 
     End Sub
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=7&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=7&type=full")
 
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=6&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=6&type=full")
 
     End Sub
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=5&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
 
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=4&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
 
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=3&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
 
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=2&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=2&type=full")
 
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=1&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=1&type=full")
 
 
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=1&alpha=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=1&type=full")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=2&type=full")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=3&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=1&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=2&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
 
     End Sub
 
@@ -498,58 +522,109 @@
     Private Sub Button_epsion_GGS_Click(sender As Object, e As EventArgs) Handles Button_epsion_GGS.Click
 
         'delta
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=4&epsilon=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=4&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&epsilon=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
 
     End Sub
 
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
 
         ' espilon
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=5&delta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=5&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&delta=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
 
     End Sub
 
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
 
         'zeta
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=6&zeta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=6&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=6&zeta=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=6&type=full")
 
     End Sub
 
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
 
         ' kappa
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=7&kappa=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=7&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=7&kappa=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=7&type=full")
 
     End Sub
 
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
 
         'lambda
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=8&lambda=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=8&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=8&lambda=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=8&type=full")
 
     End Sub
 
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
 
         'kuiper
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=19&kuiper=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=19&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=19&kuiper=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=19&type=full")
 
     End Sub
 
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
 
         'hades
-        WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=13&hades=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=13&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=13&hades=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
 
     End Sub
+
+
+#Region "CheckBox Spin"
+    Private Sub CheckBox_Spin1_Click(sender As Object, e As EventArgs) Handles CheckBox_Spin1.Click
+        CheckBox_Spin1.Checked = True
+        CheckBox_spin5.Checked = False
+        CheckBox_spin10.Checked = False
+        CheckBox_spin100.Checked = False
+
+        CheckBox_Spin1.CheckState = CheckState.Checked
+        CheckBox_spin5.CheckState = CheckState.Unchecked
+        CheckBox_spin10.CheckState = CheckState.Unchecked
+        CheckBox_spin100.CheckState = CheckState.Unchecked
+    End Sub
+
+    Private Sub CheckBox_spin5_Click(sender As Object, e As EventArgs) Handles CheckBox_spin5.Click
+        CheckBox_Spin1.Checked = False
+        CheckBox_spin5.Checked = True
+        CheckBox_spin10.Checked = False
+        CheckBox_spin100.Checked = False
+
+        CheckBox_Spin1.CheckState = CheckState.Unchecked
+        CheckBox_spin5.CheckState = CheckState.Checked
+        CheckBox_spin10.CheckState = CheckState.Unchecked
+        CheckBox_spin100.CheckState = CheckState.Unchecked
+    End Sub
+
+    Private Sub CheckBox_spin10_Click(sender As Object, e As EventArgs) Handles CheckBox_spin10.Click
+        CheckBox_Spin1.Checked = False
+        CheckBox_spin5.Checked = False
+        CheckBox_spin10.Checked = True
+        CheckBox_spin100.Checked = False
+
+        CheckBox_Spin1.CheckState = CheckState.Unchecked
+        CheckBox_spin5.CheckState = CheckState.Unchecked
+        CheckBox_spin10.CheckState = CheckState.Checked
+        CheckBox_spin100.CheckState = CheckState.Unchecked
+    End Sub
+
+    Private Sub CheckBox_spin100_Click(sender As Object, e As EventArgs) Handles CheckBox_spin100.Click
+        CheckBox_Spin1.Checked = False
+        CheckBox_spin5.Checked = False
+        CheckBox_spin10.Checked = False
+        CheckBox_spin100.Checked = True
+
+        CheckBox_Spin1.CheckState = CheckState.Unchecked
+        CheckBox_spin5.CheckState = CheckState.Unchecked
+        CheckBox_spin10.CheckState = CheckState.Unchecked
+        CheckBox_spin100.CheckState = CheckState.Checked
+    End Sub
+#End Region
 
 #End Region
 End Class
