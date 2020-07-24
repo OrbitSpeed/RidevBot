@@ -132,7 +132,6 @@ Partial Class Form_Tools
         Me.TextBox20 = New System.Windows.Forms.TextBox()
         Me.TextBox21 = New System.Windows.Forms.TextBox()
         Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.CheckBox_Spin1 = New System.Windows.Forms.CheckBox()
@@ -1450,16 +1449,6 @@ Partial Class Form_Tools
         '
         'TextBox1
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(55, 148)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(37, 16)
-        Me.TextBox2.TabIndex = 56
-        Me.TextBox2.Text = "0"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button1
         '
