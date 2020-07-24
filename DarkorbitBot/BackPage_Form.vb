@@ -51,45 +51,36 @@
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
 
-        If WebBrowser1.Url.ToString.Contains("Start&prc=100") Then
-            If Form_Tools.TextBox2.Text = "1" Then
+        If WebBrowser1.Url.ToString.Contains("Start&prc=100") And Utils.checkStats Then
 
-                Form_Tools.TextBox_honorCurrent.Text = "" &
-        (WebBrowser1.Document.GetElementById("header_top_hnr")).InnerText
+            Utils.currentHonnor = "" & (WebBrowser1.Document.GetElementById("header_top_hnr")).InnerText
 
-                Form_Tools.TextBox_uridiumCurrent.Text = "" &
-        (WebBrowser1.Document.GetElementById("header_uri")).InnerText
+            Utils.currentUridium = "" & (WebBrowser1.Document.GetElementById("header_uri")).InnerText
 
-                Form_Tools.TextBox_creditCurrent.Text = "" &
-        (WebBrowser1.Document.GetElementById("header_credits")).InnerText
+            Utils.currentCredits = "" & (WebBrowser1.Document.GetElementById("header_credits")).InnerText
 
-                Form_Tools.TextBox_experienceCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_top_exp")).InnerText
+            Utils.currentXP = "" & (WebBrowser1.Document.GetElementById("header_top_exp")).InnerText
 
-                Form_Tools.TextBox_LevelCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_top_level")).InnerText
+            Utils.currentLevel = "" & (WebBrowser1.Document.GetElementById("header_top_level")).InnerText
 
-                WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalHallofFame&view=dailyRank")
+            WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalHallofFame&view=dailyRank")
 
-                Form_Tools.TextBox2.Text = "2"
+        ElseIf WebBrowser1.Url.ToString.Contains("internalHallofFame&view=dailyRank") And Utils.checkStats Then
 
-            End If
+            Utils.currentRankPoints = "" & (WebBrowser1.Document.GetElementById("hof_daily_points_points")).InnerText
+
+            Utils.updateStats()
+
+            'Form_Tools.TextBox_honorCurrent.Text = Utils.currentHonnor
+            'Form_Tools.TextBox_uridiumCurrent.Text = Utils.currentUridium
+            'Form_Tools.TextBox_creditCurrent.Text = Utils.currentCredits
+            'Form_Tools.TextBox_experienceCurrent.Text = Utils.currentXP
+            'Form_Tools.TextBox_LevelCurrent.Text = Utils.currentLevel
+            'Form_Tools.TextBox_RPCurrent.Text = Utils.currentRankPoints
+            Utils.checkStats = False
+
+            Me.Close()
+
         End If
-
-        If WebBrowser1.Url.ToString.Contains("internalHallofFame&view=dailyRank") Then
-            If Form_Tools.TextBox2.Text = "2" Then
-
-                Form_Tools.TextBox_RPCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("hof_daily_points_points")).InnerText
-
-                Form_Tools.TextBox2.Text = "0"
-                Me.Close()
-
-            End If
-        End If
-
-
-
-
     End Sub
 End Class

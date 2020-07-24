@@ -14,6 +14,8 @@ Public Class Form_Game
         If Utils.connectWithCookie Then
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution", "dosid", Utils.dosid & ";")
             WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+            Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
             Me.Show()
         Else
             WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
@@ -62,29 +64,21 @@ Public Class Form_Game
                 Console.WriteLine(testalacon.Value.Split("=")(1))
                 Utils.dosid = testalacon.Value.Split("=")(1)
 
-                Form_Tools.TextBox_Get_id.Text = "" & (WebBrowser1.Document.GetElementById("header_top_id")).InnerText
-                Form_Tools.TextBox_Get_id.Text = Replace(Form_Tools.TextBox_Get_id.Text, " ", "")
+                Form_Tools.TextBox_Get_id.Text = Replace(WebBrowser1.Document.GetElementById("header_top_id").InnerText, " ", "")
 
-                Form_Tools.TextBox_Get_Dosid.Text = Utils.dosid
-                Form_Tools.TextBox_Get_Dosid.Text = Replace(Form_Tools.TextBox_Get_Dosid.Text, " ", "")
+                Form_Tools.TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
 
-                Form_Tools.TextBox_Get_Server.Text = Utils.server
-                Form_Tools.TextBox_Get_Server.Text = Replace(Form_Tools.TextBox_Get_Server.Text, " ", "")
+                Form_Tools.TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
 
-                Form_Tools.TextBox_honorCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_top_hnr")).InnerText
+                Utils.currentHonnor = "" & (WebBrowser1.Document.GetElementById("header_top_hnr")).InnerText
 
-                Form_Tools.TextBox_uridiumCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_uri")).InnerText
+                Utils.currentUridium = "" & (WebBrowser1.Document.GetElementById("header_uri")).InnerText
 
-                Form_Tools.TextBox_creditCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_credits")).InnerText
+                Utils.currentCredits = "" & (WebBrowser1.Document.GetElementById("header_credits")).InnerText
 
-                Form_Tools.TextBox_experienceCurrent.Text = "" &
-            (WebBrowser1.Document.GetElementById("header_top_exp")).InnerText
+                Utils.currentXP = "" & (WebBrowser1.Document.GetElementById("header_top_exp")).InnerText
 
-                Form_Tools.TextBox_LevelCurrent.Text = "" &
-        (WebBrowser1.Document.GetElementById("header_top_level")).InnerText
+                Utils.currentLevel = "" & (WebBrowser1.Document.GetElementById("header_top_level")).InnerText
 
                 TextBox_getserver.Text = Utils.server
 
