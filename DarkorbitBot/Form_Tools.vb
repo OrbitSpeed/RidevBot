@@ -200,7 +200,7 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(517, 324)
+        Size = New Size(581, 430)
 
     End Sub
 
@@ -448,6 +448,13 @@
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         WebBrowser_GGspinner.Navigate(" https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + ((TextBox_Get_id.Text)) + "&action=multiEnergy&sid=" + ((TextBox_Get_Dosid.Text)) + "&gateID=1&alpha=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=1&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=2&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=3&type=full")
+
+    End Sub
+
+    Private Sub Panel_GalaxyGates_Paint(sender As Object, e As PaintEventArgs) Handles Panel_GalaxyGates.Paint
 
     End Sub
 #End Region
