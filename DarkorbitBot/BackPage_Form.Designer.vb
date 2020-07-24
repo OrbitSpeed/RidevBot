@@ -25,11 +25,11 @@ Partial Class BackPage_Form
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BackPage_Form))
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.Panel_Bar = New System.Windows.Forms.Panel()
         Me.FlatMax1 = New DarkorbitBot.FlatMax()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.Panel7.SuspendLayout()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.Panel_Bar.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,32 +53,19 @@ Partial Class BackPage_Form
         Me.Label16.TabIndex = 22
         Me.Label16.Text = "RidevBot Backpage"
         '
-        'Panel7
+        'Panel_Bar
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.FlatMax1)
-        Me.Panel7.Controls.Add(Me.FlatMini1)
-        Me.Panel7.Controls.Add(Me.PictureBox_Close)
-        Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(800, 18)
-        Me.Panel7.TabIndex = 24
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
+        Me.Panel_Bar.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Bar.Controls.Add(Me.FlatMax1)
+        Me.Panel_Bar.Controls.Add(Me.FlatMini1)
+        Me.Panel_Bar.Controls.Add(Me.PictureBox_Close)
+        Me.Panel_Bar.Controls.Add(Me.Label16)
+        Me.Panel_Bar.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel_Bar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel_Bar.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Bar.Name = "Panel_Bar"
+        Me.Panel_Bar.Size = New System.Drawing.Size(800, 18)
+        Me.Panel_Bar.TabIndex = 24
         '
         'FlatMax1
         '
@@ -107,19 +94,32 @@ Partial Class BackPage_Form
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
         'BackPage_Form
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(800, 600)
-        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel_Bar)
         Me.Controls.Add(Me.WebBrowser1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BackPage_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "BackPage_Form"
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
+        Me.Panel_Bar.ResumeLayout(False)
+        Me.Panel_Bar.PerformLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -127,7 +127,7 @@ Partial Class BackPage_Form
 
     Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents Label16 As Label
-    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel_Bar As Panel
     Friend WithEvents FlatMax1 As FlatMax
     Friend WithEvents FlatMini1 As FlatMini
     Friend WithEvents PictureBox_Close As PictureBox

@@ -14,8 +14,11 @@ Public Class Form_Game
         If Utils.connectWithCookie Then
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution", "dosid", Utils.dosid & ";")
             WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Me.Show()
         Else
             WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
+            Me.Show()
+            Me.Hide()
         End If
 
     End Sub
@@ -31,6 +34,9 @@ Public Class Form_Game
     Public Sub StartWebBot()
         If WebBrowser1.Url.ToString Is vbNullString Then
             WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com/")
+            Me.Show()
+            Me.Hide()
+
         End If
 
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") And Not WebBrowser1.Url.ToString.Contains("authUser=291") Then
@@ -42,6 +48,8 @@ Public Class Form_Game
                     p.InvokeMember("click")
                 End If
             Next
+            Me.Show()
+            Me.Hide()
 
         ElseIf WebBrowser1.Url.ToString.Contains("Start&prc=100") Then
 
@@ -69,7 +77,11 @@ Public Class Form_Game
             End If
 
             'Launch the Start
+            Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+            Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
             WebBrowser1.Navigate("https://" + (Utils.server) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+            Me.Show()
 
         ElseIf WebBrowser1.Url.ToString.Contains("authUser=291") Then
             Dim result = MessageBox.Show("Le compte est incorrect, veuillez vérifier les informations", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -79,6 +91,8 @@ Public Class Form_Game
                 Form_Tools.Close()
                 Close()
             End If
+        Else
+            Me.Show()
         End If
         'MsgBox(WebBrowser1.Url.ToString)
     End Sub
@@ -257,6 +271,7 @@ Public Class Form_Game
 
     Private Sub Form_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+        Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
     End Sub
 
 End Class

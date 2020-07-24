@@ -74,6 +74,7 @@ Partial Class Form_Tools
         Me.CheckBox_bonusBox = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel_collector = New System.Windows.Forms.Panel()
+        Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TextBox_GGS = New System.Windows.Forms.TextBox()
         Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
@@ -87,13 +88,20 @@ Partial Class Form_Tools
         Me.Button_Epsilon_GGS = New System.Windows.Forms.Button()
         Me.Button_epsion_GGS = New System.Windows.Forms.Button()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
-        Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.Button_stopSpin = New System.Windows.Forms.Button()
+        Me.Button_StartSpin = New System.Windows.Forms.Button()
+        Me.ComboBox_spinsize = New System.Windows.Forms.ComboBox()
+        Me.CheckBox_spinsize = New System.Windows.Forms.CheckBox()
+        Me.ComboBox_gatesSpinAuto = New System.Windows.Forms.ComboBox()
+        Me.CheckBox_spindelay = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_AutoSpinner = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_Placegatesauto = New System.Windows.Forms.CheckBox()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Button_kronos = New System.Windows.Forms.Button()
         Me.Button_hades = New System.Windows.Forms.Button()
-        Me.Button_kuiper = New System.Windows.Forms.Button()
         Me.Button_lambda = New System.Windows.Forms.Button()
+        Me.Button_kuiper = New System.Windows.Forms.Button()
         Me.Button_Kappa = New System.Windows.Forms.Button()
         Me.Button_zeta = New System.Windows.Forms.Button()
         Me.Button_epsilon = New System.Windows.Forms.Button()
@@ -102,6 +110,7 @@ Partial Class Form_Tools
         Me.Button_beta = New System.Windows.Forms.Button()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox_SpinDelay = New System.Windows.Forms.TextBox()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel_stats = New System.Windows.Forms.Panel()
@@ -115,15 +124,6 @@ Partial Class Form_Tools
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.CheckBox_AutoSpinner = New System.Windows.Forms.CheckBox()
-        Me.ComboBox_gatesSpinAuto = New System.Windows.Forms.ComboBox()
-        Me.CheckBox_Placegatesauto = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_spindelay = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_spinsize = New System.Windows.Forms.CheckBox()
-        Me.TextBox_SpinDelay = New System.Windows.Forms.TextBox()
-        Me.ComboBox_spinsize = New System.Windows.Forms.ComboBox()
-        Me.Button_StartSpin = New System.Windows.Forms.Button()
-        Me.Button_stopSpin = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -473,7 +473,7 @@ Partial Class Form_Tools
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(170, 195)
+        Me.Button2.Location = New System.Drawing.Point(170, 191)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 25)
         Me.Button2.TabIndex = 32
@@ -484,7 +484,7 @@ Partial Class Form_Tools
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label22.Location = New System.Drawing.Point(223, 170)
+        Me.Label22.Location = New System.Drawing.Point(223, 166)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(67, 19)
         Me.Label22.TabIndex = 31
@@ -497,7 +497,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RefreshGametick", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
-        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(182, 171)
+        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(182, 167)
         Me.TextBox_Refresh_Game.MaxLength = 3
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
@@ -513,7 +513,7 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "RefreshGameAuto", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(15, 167)
+        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(15, 163)
         Me.CheckBox_Refresh_Game.Name = "CheckBox_Refresh_Game"
         Me.CheckBox_Refresh_Game.Size = New System.Drawing.Size(164, 23)
         Me.CheckBox_Refresh_Game.TabIndex = 29
@@ -639,7 +639,7 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_LaunchGameRidevBrowser.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_LaunchGameRidevBrowser.ForeColor = System.Drawing.Color.White
-        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(14, 195)
+        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(14, 191)
         Me.Button_LaunchGameRidevBrowser.Name = "Button_LaunchGameRidevBrowser"
         Me.Button_LaunchGameRidevBrowser.Size = New System.Drawing.Size(153, 25)
         Me.Button_LaunchGameRidevBrowser.TabIndex = 26
@@ -824,6 +824,16 @@ Partial Class Form_Tools
         Me.Panel_collector.TabIndex = 43
         Me.Panel_collector.Visible = False
         '
+        'WebBrowser_GGspinner
+        '
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(49, 195)
+        Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
+        Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
+        Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
+        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(176, 70)
+        Me.WebBrowser_GGspinner.TabIndex = 40
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -996,16 +1006,6 @@ Partial Class Form_Tools
         Me.Button_ABG_GGS.Text = "Spin ABG"
         Me.Button_ABG_GGS.UseVisualStyleBackColor = False
         '
-        'WebBrowser_GGspinner
-        '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(49, 195)
-        Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
-        Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
-        Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(176, 70)
-        Me.WebBrowser_GGspinner.TabIndex = 40
-        '
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
@@ -1047,6 +1047,119 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
+        'Button_stopSpin
+        '
+        Me.Button_stopSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_stopSpin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
+        Me.Button_stopSpin.Location = New System.Drawing.Point(420, 370)
+        Me.Button_stopSpin.Name = "Button_stopSpin"
+        Me.Button_stopSpin.Size = New System.Drawing.Size(59, 25)
+        Me.Button_stopSpin.TabIndex = 60
+        Me.Button_stopSpin.Text = "Stop"
+        Me.Button_stopSpin.UseVisualStyleBackColor = False
+        '
+        'Button_StartSpin
+        '
+        Me.Button_StartSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_StartSpin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
+        Me.Button_StartSpin.Location = New System.Drawing.Point(201, 370)
+        Me.Button_StartSpin.Name = "Button_StartSpin"
+        Me.Button_StartSpin.Size = New System.Drawing.Size(59, 25)
+        Me.Button_StartSpin.TabIndex = 59
+        Me.Button_StartSpin.Text = "Start"
+        Me.Button_StartSpin.UseVisualStyleBackColor = False
+        '
+        'ComboBox_spinsize
+        '
+        Me.ComboBox_spinsize.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox_spinsize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox_spinsize.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_spinsize.ForeColor = System.Drawing.Color.White
+        Me.ComboBox_spinsize.FormattingEnabled = True
+        Me.ComboBox_spinsize.Items.AddRange(New Object() {"1", "5", "10", "100"})
+        Me.ComboBox_spinsize.Location = New System.Drawing.Point(106, 324)
+        Me.ComboBox_spinsize.Name = "ComboBox_spinsize"
+        Me.ComboBox_spinsize.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.ComboBox_spinsize.Size = New System.Drawing.Size(84, 21)
+        Me.ComboBox_spinsize.TabIndex = 58
+        Me.ComboBox_spinsize.Text = "1"
+        '
+        'CheckBox_spinsize
+        '
+        Me.CheckBox_spinsize.AutoSize = True
+        Me.CheckBox_spinsize.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_spinsize.Enabled = False
+        Me.CheckBox_spinsize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_spinsize.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_spinsize.Location = New System.Drawing.Point(16, 321)
+        Me.CheckBox_spinsize.Name = "CheckBox_spinsize"
+        Me.CheckBox_spinsize.Size = New System.Drawing.Size(84, 23)
+        Me.CheckBox_spinsize.TabIndex = 56
+        Me.CheckBox_spinsize.Text = "Spin size :"
+        Me.CheckBox_spinsize.UseVisualStyleBackColor = False
+        '
+        'ComboBox_gatesSpinAuto
+        '
+        Me.ComboBox_gatesSpinAuto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox_gatesSpinAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox_gatesSpinAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_gatesSpinAuto.ForeColor = System.Drawing.Color.White
+        Me.ComboBox_gatesSpinAuto.FormattingEnabled = True
+        Me.ComboBox_gatesSpinAuto.Items.AddRange(New Object() {"ABG", "Delta", "Epsilon", "Zeta", "Kappa", "Lambda", "Kuiper", "Hades"})
+        Me.ComboBox_gatesSpinAuto.Location = New System.Drawing.Point(106, 347)
+        Me.ComboBox_gatesSpinAuto.Name = "ComboBox_gatesSpinAuto"
+        Me.ComboBox_gatesSpinAuto.Size = New System.Drawing.Size(84, 21)
+        Me.ComboBox_gatesSpinAuto.TabIndex = 53
+        Me.ComboBox_gatesSpinAuto.Text = "ABG"
+        '
+        'CheckBox_spindelay
+        '
+        Me.CheckBox_spindelay.AutoSize = True
+        Me.CheckBox_spindelay.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_spindelay.Enabled = False
+        Me.CheckBox_spindelay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_spindelay.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_spindelay.Location = New System.Drawing.Point(16, 295)
+        Me.CheckBox_spindelay.Name = "CheckBox_spindelay"
+        Me.CheckBox_spindelay.Size = New System.Drawing.Size(132, 23)
+        Me.CheckBox_spindelay.TabIndex = 55
+        Me.CheckBox_spindelay.Text = "Spin delay ( ms ) :"
+        Me.CheckBox_spindelay.UseVisualStyleBackColor = False
+        '
+        'CheckBox_AutoSpinner
+        '
+        Me.CheckBox_AutoSpinner.AutoSize = True
+        Me.CheckBox_AutoSpinner.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoSpinner.Enabled = False
+        Me.CheckBox_AutoSpinner.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoSpinner.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_AutoSpinner.Location = New System.Drawing.Point(16, 344)
+        Me.CheckBox_AutoSpinner.Name = "CheckBox_AutoSpinner"
+        Me.CheckBox_AutoSpinner.Size = New System.Drawing.Size(91, 23)
+        Me.CheckBox_AutoSpinner.TabIndex = 52
+        Me.CheckBox_AutoSpinner.Text = "Auto spin :"
+        Me.CheckBox_AutoSpinner.UseVisualStyleBackColor = False
+        '
+        'CheckBox_Placegatesauto
+        '
+        Me.CheckBox_Placegatesauto.AutoSize = True
+        Me.CheckBox_Placegatesauto.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_Placegatesauto.Enabled = False
+        Me.CheckBox_Placegatesauto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_Placegatesauto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_Placegatesauto.Location = New System.Drawing.Point(16, 272)
+        Me.CheckBox_Placegatesauto.Name = "CheckBox_Placegatesauto"
+        Me.CheckBox_Placegatesauto.Size = New System.Drawing.Size(168, 23)
+        Me.CheckBox_Placegatesauto.TabIndex = 54
+        Me.CheckBox_Placegatesauto.Text = "Auto place Gates in x-1"
+        Me.CheckBox_Placegatesauto.UseVisualStyleBackColor = False
+        '
         'WebBrowser_galaxyGates
         '
         Me.WebBrowser_galaxyGates.Location = New System.Drawing.Point(197, 14)
@@ -1085,20 +1198,6 @@ Partial Class Form_Tools
         Me.Button_hades.Text = "Hades"
         Me.Button_hades.UseVisualStyleBackColor = False
         '
-        'Button_kuiper
-        '
-        Me.Button_kuiper.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_kuiper.ForeColor = System.Drawing.Color.White
-        Me.Button_kuiper.Location = New System.Drawing.Point(15, 192)
-        Me.Button_kuiper.Name = "Button_kuiper"
-        Me.Button_kuiper.Size = New System.Drawing.Size(126, 25)
-        Me.Button_kuiper.TabIndex = 35
-        Me.Button_kuiper.Text = "Kuiper"
-        Me.Button_kuiper.UseVisualStyleBackColor = False
-        '
         'Button_lambda
         '
         Me.Button_lambda.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1112,6 +1211,20 @@ Partial Class Form_Tools
         Me.Button_lambda.TabIndex = 34
         Me.Button_lambda.Text = "Lambda"
         Me.Button_lambda.UseVisualStyleBackColor = False
+        '
+        'Button_kuiper
+        '
+        Me.Button_kuiper.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kuiper.ForeColor = System.Drawing.Color.White
+        Me.Button_kuiper.Location = New System.Drawing.Point(15, 192)
+        Me.Button_kuiper.Name = "Button_kuiper"
+        Me.Button_kuiper.Size = New System.Drawing.Size(126, 25)
+        Me.Button_kuiper.TabIndex = 35
+        Me.Button_kuiper.Text = "Kuiper"
+        Me.Button_kuiper.UseVisualStyleBackColor = False
         '
         'Button_Kappa
         '
@@ -1220,6 +1333,19 @@ Partial Class Form_Tools
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "GalaxyGates"
         Me.Label12.Visible = False
+        '
+        'TextBox_SpinDelay
+        '
+        Me.TextBox_SpinDelay.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_SpinDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_SpinDelay.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_SpinDelay.Location = New System.Drawing.Point(152, 299)
+        Me.TextBox_SpinDelay.Name = "TextBox_SpinDelay"
+        Me.TextBox_SpinDelay.ReadOnly = True
+        Me.TextBox_SpinDelay.Size = New System.Drawing.Size(39, 22)
+        Me.TextBox_SpinDelay.TabIndex = 57
+        Me.TextBox_SpinDelay.Text = "100"
+        Me.TextBox_SpinDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel_Palladium
         '
@@ -1382,129 +1508,6 @@ Partial Class Form_Tools
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "divers"
         Me.Label17.Visible = False
-        '
-        'CheckBox_AutoSpinner
-        '
-        Me.CheckBox_AutoSpinner.AutoSize = True
-        Me.CheckBox_AutoSpinner.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoSpinner.Enabled = False
-        Me.CheckBox_AutoSpinner.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_AutoSpinner.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoSpinner.Location = New System.Drawing.Point(16, 344)
-        Me.CheckBox_AutoSpinner.Name = "CheckBox_AutoSpinner"
-        Me.CheckBox_AutoSpinner.Size = New System.Drawing.Size(91, 23)
-        Me.CheckBox_AutoSpinner.TabIndex = 52
-        Me.CheckBox_AutoSpinner.Text = "Auto spin :"
-        Me.CheckBox_AutoSpinner.UseVisualStyleBackColor = False
-        '
-        'ComboBox_gatesSpinAuto
-        '
-        Me.ComboBox_gatesSpinAuto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox_gatesSpinAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox_gatesSpinAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_gatesSpinAuto.ForeColor = System.Drawing.Color.White
-        Me.ComboBox_gatesSpinAuto.FormattingEnabled = True
-        Me.ComboBox_gatesSpinAuto.Items.AddRange(New Object() {"ABG", "Delta", "Epsilon", "Zeta", "Kappa", "Lambda", "Kuiper", "Hades"})
-        Me.ComboBox_gatesSpinAuto.Location = New System.Drawing.Point(106, 347)
-        Me.ComboBox_gatesSpinAuto.Name = "ComboBox_gatesSpinAuto"
-        Me.ComboBox_gatesSpinAuto.Size = New System.Drawing.Size(84, 21)
-        Me.ComboBox_gatesSpinAuto.TabIndex = 53
-        '
-        'CheckBox_Placegatesauto
-        '
-        Me.CheckBox_Placegatesauto.AutoSize = True
-        Me.CheckBox_Placegatesauto.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_Placegatesauto.Enabled = False
-        Me.CheckBox_Placegatesauto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_Placegatesauto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Placegatesauto.Location = New System.Drawing.Point(16, 272)
-        Me.CheckBox_Placegatesauto.Name = "CheckBox_Placegatesauto"
-        Me.CheckBox_Placegatesauto.Size = New System.Drawing.Size(168, 23)
-        Me.CheckBox_Placegatesauto.TabIndex = 54
-        Me.CheckBox_Placegatesauto.Text = "Auto place Gates in x-1"
-        Me.CheckBox_Placegatesauto.UseVisualStyleBackColor = False
-        '
-        'CheckBox_spindelay
-        '
-        Me.CheckBox_spindelay.AutoSize = True
-        Me.CheckBox_spindelay.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_spindelay.Enabled = False
-        Me.CheckBox_spindelay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_spindelay.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_spindelay.Location = New System.Drawing.Point(16, 295)
-        Me.CheckBox_spindelay.Name = "CheckBox_spindelay"
-        Me.CheckBox_spindelay.Size = New System.Drawing.Size(132, 23)
-        Me.CheckBox_spindelay.TabIndex = 55
-        Me.CheckBox_spindelay.Text = "Spin delay ( ms ) :"
-        Me.CheckBox_spindelay.UseVisualStyleBackColor = False
-        '
-        'CheckBox_spinsize
-        '
-        Me.CheckBox_spinsize.AutoSize = True
-        Me.CheckBox_spinsize.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_spinsize.Enabled = False
-        Me.CheckBox_spinsize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_spinsize.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_spinsize.Location = New System.Drawing.Point(16, 321)
-        Me.CheckBox_spinsize.Name = "CheckBox_spinsize"
-        Me.CheckBox_spinsize.Size = New System.Drawing.Size(84, 23)
-        Me.CheckBox_spinsize.TabIndex = 56
-        Me.CheckBox_spinsize.Text = "Spin size :"
-        Me.CheckBox_spinsize.UseVisualStyleBackColor = False
-        '
-        'TextBox_SpinDelay
-        '
-        Me.TextBox_SpinDelay.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_SpinDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_SpinDelay.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_SpinDelay.Location = New System.Drawing.Point(152, 299)
-        Me.TextBox_SpinDelay.Name = "TextBox_SpinDelay"
-        Me.TextBox_SpinDelay.ReadOnly = True
-        Me.TextBox_SpinDelay.Size = New System.Drawing.Size(39, 22)
-        Me.TextBox_SpinDelay.TabIndex = 57
-        Me.TextBox_SpinDelay.Text = "100"
-        Me.TextBox_SpinDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ComboBox_spinsize
-        '
-        Me.ComboBox_spinsize.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox_spinsize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox_spinsize.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_spinsize.ForeColor = System.Drawing.Color.White
-        Me.ComboBox_spinsize.FormattingEnabled = True
-        Me.ComboBox_spinsize.Items.AddRange(New Object() {"1", "5", "10", "100"})
-        Me.ComboBox_spinsize.Location = New System.Drawing.Point(106, 324)
-        Me.ComboBox_spinsize.Name = "ComboBox_spinsize"
-        Me.ComboBox_spinsize.Size = New System.Drawing.Size(84, 21)
-        Me.ComboBox_spinsize.TabIndex = 58
-        '
-        'Button_StartSpin
-        '
-        Me.Button_StartSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_StartSpin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_StartSpin.Location = New System.Drawing.Point(201, 370)
-        Me.Button_StartSpin.Name = "Button_StartSpin"
-        Me.Button_StartSpin.Size = New System.Drawing.Size(59, 25)
-        Me.Button_StartSpin.TabIndex = 59
-        Me.Button_StartSpin.Text = "Start"
-        Me.Button_StartSpin.UseVisualStyleBackColor = False
-        '
-        'Button_stopSpin
-        '
-        Me.Button_stopSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_stopSpin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_stopSpin.Location = New System.Drawing.Point(420, 370)
-        Me.Button_stopSpin.Name = "Button_stopSpin"
-        Me.Button_stopSpin.Size = New System.Drawing.Size(59, 25)
-        Me.Button_stopSpin.TabIndex = 60
-        Me.Button_stopSpin.Text = "Stop"
-        Me.Button_stopSpin.UseVisualStyleBackColor = False
         '
         'Form_Tools
         '

@@ -121,6 +121,9 @@
   <data name="cargoBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cargoBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connected.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="eye_off_icon_135658" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_off_icon_135658.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

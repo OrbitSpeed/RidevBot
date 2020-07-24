@@ -371,6 +371,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property connected() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("connected", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property eye_off_icon_135658() As System.Drawing.Bitmap

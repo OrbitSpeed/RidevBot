@@ -51,18 +51,9 @@
         CenterToScreen()
 
         If Form_Game.Visible = True Then
-
             Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-
         Else
-            If Form_Game.Visible = False Then
-
-                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-
-            Else
-
-
-            End If
+            Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         End If
 
     End Sub
@@ -72,6 +63,7 @@
         'CloseForm1.Show()
     End Sub
 
+#Region "Button"
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
         General_button.Enabled = False
@@ -336,20 +328,24 @@
         Size = New Size(390, 324)
 
     End Sub
+#End Region
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
         If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
-            Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+            Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
+            Button_LaunchGameRidevBrowser.Text = "Connecting..."
+            'Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
             Label1.Select()
 
             If Utils.dosid IsNot vbNullString Then
                 Utils.connectWithCookie = True
                 'Form_Game.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart")
                 Form_Game.Show()
+                Form_Game.Hide()
             Else
                 Form_Game.WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com")
-                Form_Game.Show()
+                'Form_Game.Show()
             End If
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
@@ -357,7 +353,9 @@
             Label1.Select()
             Form_Game.WebBrowser1.Refresh()
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
-            'Form_Game.Show()
+            Form_Game.Show()
+        Else
+            Button_LaunchGameRidevBrowser.Text = "Already connecting..."
         End If
 
 
@@ -443,6 +441,7 @@
 
         WebBrowser_galaxyGates.Navigate("https://" + ((TextBox_Get_Server.Text)) + ".darkorbit.com/jumpgate.php?userID=" + ((TextBox_Get_id.Text)) + "&gateID=1&type=full")
 
+
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
@@ -454,8 +453,5 @@
 
     End Sub
 
-    Private Sub Panel_GalaxyGates_Paint(sender As Object, e As PaintEventArgs) Handles Panel_GalaxyGates.Paint
-
-    End Sub
 #End Region
 End Class

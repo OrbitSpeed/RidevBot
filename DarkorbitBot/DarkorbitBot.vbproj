@@ -375,6 +375,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\connected.wav" />
     <None Include="Resources\RidevBotUpdater.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
