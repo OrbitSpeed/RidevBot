@@ -9,7 +9,7 @@ Public Class Form_Startup
     Public MouseDownY As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Console.WriteLine(Utils.NumberToHumanReadable(875425))
+        'Console.WriteLine(Utils.NumberToHumanReadable(875425))
 #Region "Location and resize"
         Panel4.Location = New Point(0, 55)
         Panel4.Size = New Size(256, 221)
@@ -24,6 +24,7 @@ Public Class Form_Startup
 
         ' program started'
 
+        Label_Title.Text = "RidevBot v" + Application.ProductVersion
         Me.Size = New Size(256, 251)
         CenterToScreen()
         Label1.Select()
@@ -187,8 +188,8 @@ Public Class Form_Startup
         ' button Load > SID login '
 
         Label1.Select()
-        Utils.server = TextBox1.Text
-        Utils.dosid = TextBox3.Text
+        Utils.server = TextBox_server.Text
+        Utils.dosid = TextBox_sid.Text
 
         ' Inutile maintenant qu'on utilise la classe utils
         'Dim server1 = TextBox1.Text
@@ -294,7 +295,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Panel7_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel7.MouseMove
+    Private Sub Panel7_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
 
         If BeingDragged = True Then
             Dim tmp As Point = New Point()
@@ -307,7 +308,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Panel7_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel7.MouseDown
+    Private Sub Panel7_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseDown
 
         If e.Button = MouseButtons.Left Then
             BeingDragged = True
@@ -317,7 +318,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Panel7_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel7.MouseUp
+    Private Sub Panel7_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseUp
 
         If e.Button = MouseButtons.Left Then
             BeingDragged = False
@@ -325,17 +326,17 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
         CloseForm.ShowDialog(Me)
     End Sub
 
     Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseDown
-        Password_Textbox.UseSystemPasswordChar = False
-        PictureBox_PasswordHider.Image = My.Resources._remove_red_eye_90161
+        Textbox_Password.UseSystemPasswordChar = False
+        PictureBox_PasswordHider.Image = My.Resources.img_eyeOpen
     End Sub
     Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseUp
-        Password_Textbox.UseSystemPasswordChar = True
-        PictureBox_PasswordHider.Image = My.Resources.eye_off_icon_135658
+        Textbox_Password.UseSystemPasswordChar = True
+        PictureBox_PasswordHider.Image = My.Resources.img_eyeClose
     End Sub
 
     Private Sub Button_profil1_Click(sender As Object, e As EventArgs) Handles Button_profil1.Click

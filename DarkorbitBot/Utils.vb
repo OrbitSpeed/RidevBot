@@ -24,7 +24,7 @@ Public Class Utils
     Public Shared currentHonnor As String = 0
     Public Shared currentRankPoints As String = 0
 
-    Public Shared Sub updateStats()
+    Public Shared Sub UpdateStats()
         If Not currentUridium = "0" Then
             Form_Tools.TextBox_creditCurrent.Text = currentCredits
             Form_Tools.TextBox_uridiumCurrent.Text = currentUridium

@@ -43,8 +43,8 @@ Public Class Form_Game
 
         If WebBrowser1.Url.ToString.Contains("22.bpsecure.com") And Not WebBrowser1.Url.ToString.Contains("authUser=291") Then
 
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Username_Textbox.Text)
-            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Password_Textbox.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Textbox_Username.Text)
+            WebBrowser1.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Textbox_Password.Text)
             For Each p As HtmlElement In WebBrowser1.Document.GetElementsByTagName("input")
                 If p.GetAttribute("type") = "submit" Then
                     p.InvokeMember("click")

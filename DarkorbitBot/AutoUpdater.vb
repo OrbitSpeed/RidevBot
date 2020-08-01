@@ -7,10 +7,10 @@ Public Class AutoUpdater
     Public FileUpdater As String = StartupPath + "\RidevBot_Updater.exe"
 
     'Update
-    Dim WC As New WebClient
-    Dim WC_Update_Version As New WebClient
-    Dim WC_Update_ChangeLog As New WebClient
-    Dim WC_Check_Maintenance As New WebClient
+    Private WC As New WebClient
+    Private WC_Update_Version As New WebClient
+    Private WC_Update_ChangeLog As New WebClient
+    Private WC_Check_Maintenance As New WebClient
 
     Public LastVersion As String '= WC.DownloadString("")
     Public LastChangeLog As String
@@ -107,8 +107,8 @@ Public Class AutoUpdater
         Try
             LastChangeLog = e.Result
             FlatTextBox_Changelog.Text = e.Result
-            Button_Update.Visible = True
             FlatLabel_isUpdated.Select()
+            Button_Update.Visible = True
             Button_Update.Enabled = True
         Catch ex As Exception
             MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -117,7 +117,4 @@ Public Class AutoUpdater
         'Throw New NotImplementedException()
     End Sub
 
-    Private Sub FlatTextBox_Changelog_GotFocus(sender As Object, e As EventArgs) Handles FlatTextBox_Changelog.GotFocus
-        FlatLabel_isUpdated.Select()
-    End Sub
 End Class

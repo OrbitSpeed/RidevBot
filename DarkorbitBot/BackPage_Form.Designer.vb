@@ -72,7 +72,7 @@ Partial Class BackPage_Form
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
         Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
         Me.PictureBox_Close.Name = "PictureBox_Close"
         Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)

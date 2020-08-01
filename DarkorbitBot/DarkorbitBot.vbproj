@@ -194,16 +194,16 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-ios-rempli-50%281%29.png" />
+    <None Include="Resources\img_play.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-ios-rempli-50%282%29.png" />
+    <None Include="Resources\img_cross.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-ios-rempli-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-paramètres-50.png" />
+    <None Include="Resources\img_settings.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-paramètres-de-porte-documents-50.png" />
@@ -212,7 +212,7 @@
     <None Include="Resources\icons8-paramètres-de-surbalayage-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-pause-au-carré-50.png" />
+    <None Include="Resources\img_pause.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-rectangle-arrondi-tracé-32.png" />
@@ -224,25 +224,25 @@
     <None Include="Resources\icons8-rectangle-arrondi-tracé-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-répéter-50.png" />
+    <None Include="Resources\img_repeat.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-répéter-une-fois-50.png" />
+    <None Include="Resources\img_repeat_one.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-statistiques-50.png" />
+    <None Include="Resources\img_stats.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-suivant-50.png" />
+    <None Include="Resources\img_suivant.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-vérifié-100.png" />
+    <None Include="Resources\img_verifie.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prometium.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\-remove-red-eye_90161.png" />
+    <None Include="Resources\img_eyeOpen.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3.jpg" />
@@ -335,16 +335,16 @@
     <None Include="Resources\cargoBox.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eye_off_icon_135658.png" />
+    <None Include="Resources\img_eyeClose.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\greenBooty.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-abeille-50.png" />
+    <None Include="Resources\img_abeille.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-accueil-50.png" />
+    <None Include="Resources\img_accueil.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-arrêter-24.png" />
@@ -356,22 +356,22 @@
     <None Include="Resources\icons8-carré-arrondi-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-case-à-cocher-vérifiée-30.png" />
+    <None Include="Resources\img_check_mark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-détacher-50.png" />
+    <None Include="Resources\img_unpin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-direction-nord-50.png" />
+    <None Include="Resources\img_north.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-effacer-64.png" />
+    <None Include="Resources\img_no.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-épingle-50%281%29.png" />
+    <None Include="Resources\img_pin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-fermer-la-fenêtre-50.png" />
+    <None Include="Resources\img_cross_full.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />

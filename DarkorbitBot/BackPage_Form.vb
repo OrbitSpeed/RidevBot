@@ -69,7 +69,7 @@
 
             Utils.currentRankPoints = "" & (WebBrowser1.Document.GetElementById("hof_daily_points_points")).InnerText
 
-            Utils.updateStats()
+            Utils.UpdateStats()
 
             'Form_Tools.TextBox_honorCurrent.Text = Utils.currentHonnor
             'Form_Tools.TextBox_uridiumCurrent.Text = Utils.currentUridium

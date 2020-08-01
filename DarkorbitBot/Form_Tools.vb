@@ -5,7 +5,9 @@
     Public MouseDownX As Integer
     Public MouseDownY As Integer
 
-    Private Sub Panel7_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel7.MouseMove
+
+#Region "Panel_Title (Move)"
+    Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
 
         If BeingDragged = True Then
             Dim tmp As Point = New Point()
@@ -18,7 +20,7 @@
 
     End Sub
 
-    Private Sub Panel7_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel7.MouseDown
+    Private Sub Panel_Title_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseDown
 
         If e.Button = MouseButtons.Left Then
             BeingDragged = True
@@ -28,13 +30,14 @@
 
     End Sub
 
-    Private Sub Panel7_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel7.MouseUp
+    Private Sub Panel_Title_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseUp
 
         If e.Button = MouseButtons.Left Then
             BeingDragged = False
         End If
 
     End Sub
+#End Region
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -421,8 +424,9 @@
 
     Private Sub PictureBox_Backpage_Click(sender As Object, e As EventArgs) Handles PictureBox_Backpage.Click
 
-        If Utils.server = "" Then
-            MsgBox("You must first login to the game before you can access the page")
+        If Utils.server = vbNull Then
+            MessageBox.Show("You must first login to the game before you can access the page", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Else
             BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
             BackPage_Form.Show()

@@ -24,7 +24,7 @@ Partial Class Form_Tools
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Tools))
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
@@ -51,7 +51,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel_Info = New System.Windows.Forms.Panel()
         Me.TextBox_Get_Server = New System.Windows.Forms.TextBox()
         Me.TextBox_Get_Dosid = New System.Windows.Forms.TextBox()
         Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
@@ -155,14 +155,14 @@ Partial Class Form_Tools
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_general.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -175,6 +175,7 @@ Partial Class Form_Tools
         Me.Panel4.SuspendLayout()
         Me.Panel_rex.SuspendLayout()
         Me.Panel_divers.SuspendLayout()
+        Me.Panel_MoveTitle.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label16
@@ -188,27 +189,20 @@ Partial Class Form_Tools
         Me.Label16.TabIndex = 22
         Me.Label16.Text = "RidevBot tools 1.0"
         '
-        'Panel7
+        'Panel_Title
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.PictureBox_Backpage)
-        Me.Panel7.Controls.Add(Me.FlatMini1)
-        Me.Panel7.Controls.Add(Me.PictureBox_Pause)
-        Me.Panel7.Controls.Add(Me.PictureBox_Close)
-        Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Controls.Add(Me.PictureBox_Start)
-        Me.Panel7.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1688, 18)
-        Me.Panel7.TabIndex = 24
+        Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Title.Name = "Panel_Title"
+        Me.Panel_Title.Size = New System.Drawing.Size(1688, 18)
+        Me.Panel_Title.TabIndex = 24
         '
         'PictureBox_Backpage
         '
         Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Backpage.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_accueil_50
         Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
         Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
         Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
@@ -220,7 +214,6 @@ Partial Class Form_Tools
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Pause.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_pause_au_carré_50
         Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
         Me.PictureBox_Pause.Name = "PictureBox_Pause"
         Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
@@ -233,7 +226,6 @@ Partial Class Form_Tools
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
         Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
         Me.PictureBox_Close.Name = "PictureBox_Close"
         Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
@@ -245,7 +237,6 @@ Partial Class Form_Tools
         '
         Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Start.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_suivant_50
         Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
         Me.PictureBox_Start.Name = "PictureBox_Start"
         Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
@@ -477,7 +468,7 @@ Partial Class Form_Tools
         Me.Panel_general.Controls.Add(Me.TextBox_Refresh_Game)
         Me.Panel_general.Controls.Add(Me.CheckBox_Refresh_Game)
         Me.Panel_general.Controls.Add(Me.ComboBox_autologin)
-        Me.Panel_general.Controls.Add(Me.Panel1)
+        Me.Panel_general.Controls.Add(Me.Panel_Info)
         Me.Panel_general.Controls.Add(Me.CheckBox_LaunchGameAuto)
         Me.Panel_general.Controls.Add(Me.Button_LaunchGameRidevBrowser)
         Me.Panel_general.Controls.Add(Me.CheckBox_AutoLogin)
@@ -516,7 +507,6 @@ Partial Class Form_Tools
         '
         Me.TextBox_Refresh_Game.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_Refresh_Game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_Refresh_Game.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RefreshGametick", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
         Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(182, 167)
@@ -524,15 +514,12 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
         Me.TextBox_Refresh_Game.TabIndex = 30
-        Me.TextBox_Refresh_Game.Text = Global.DarkorbitBot.My.MySettings.Default.RefreshGametick
         Me.TextBox_Refresh_Game.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'CheckBox_Refresh_Game
         '
         Me.CheckBox_Refresh_Game.AutoSize = True
         Me.CheckBox_Refresh_Game.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_Refresh_Game.Checked = Global.DarkorbitBot.My.MySettings.Default.RefreshGameAuto
-        Me.CheckBox_Refresh_Game.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "RefreshGameAuto", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(15, 163)
@@ -545,7 +532,6 @@ Partial Class Form_Tools
         'ComboBox_autologin
         '
         Me.ComboBox_autologin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox_autologin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "AutoLoginCombobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.ComboBox_autologin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox_autologin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_autologin.ForeColor = System.Drawing.Color.White
@@ -555,23 +541,22 @@ Partial Class Form_Tools
         Me.ComboBox_autologin.Name = "ComboBox_autologin"
         Me.ComboBox_autologin.Size = New System.Drawing.Size(143, 21)
         Me.ComboBox_autologin.TabIndex = 5
-        Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
         '
-        'Panel1
+        'Panel_Info
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.TextBox_Get_Server)
-        Me.Panel1.Controls.Add(Me.TextBox_Get_Dosid)
-        Me.Panel1.Controls.Add(Me.TextBox_Get_id)
-        Me.Panel1.Controls.Add(Me.Label20)
-        Me.Panel1.Controls.Add(Me.Label21)
-        Me.Panel1.Controls.Add(Me.Label19)
-        Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(14, 223)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(276, 70)
-        Me.Panel1.TabIndex = 28
+        Me.Panel_Info.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_Info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_Info.Controls.Add(Me.TextBox_Get_Server)
+        Me.Panel_Info.Controls.Add(Me.TextBox_Get_Dosid)
+        Me.Panel_Info.Controls.Add(Me.TextBox_Get_id)
+        Me.Panel_Info.Controls.Add(Me.Label20)
+        Me.Panel_Info.Controls.Add(Me.Label21)
+        Me.Panel_Info.Controls.Add(Me.Label19)
+        Me.Panel_Info.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel_Info.Location = New System.Drawing.Point(14, 223)
+        Me.Panel_Info.Name = "Panel_Info"
+        Me.Panel_Info.Size = New System.Drawing.Size(276, 70)
+        Me.Panel_Info.TabIndex = 28
         '
         'TextBox_Get_Server
         '
@@ -643,8 +628,6 @@ Partial Class Form_Tools
         '
         Me.CheckBox_LaunchGameAuto.AutoSize = True
         Me.CheckBox_LaunchGameAuto.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_LaunchGameAuto.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoLaunchGameAuto
-        Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoLaunchGameAuto", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 36)
@@ -672,8 +655,6 @@ Partial Class Form_Tools
         '
         Me.CheckBox_AutoLogin.AutoSize = True
         Me.CheckBox_AutoLogin.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoLogin.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoLogin2
-        Me.CheckBox_AutoLogin.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoLogin2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_AutoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_AutoLogin.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox_AutoLogin.Location = New System.Drawing.Point(15, 10)
@@ -1829,7 +1810,6 @@ Partial Class Form_Tools
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "GuardKey1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.White
         Me.TextBox1.Location = New System.Drawing.Point(192, 37)
@@ -1837,7 +1817,6 @@ Partial Class Form_Tools
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(32, 23)
         Me.TextBox1.TabIndex = 32
-        Me.TextBox1.Text = Global.DarkorbitBot.My.MySettings.Default.GuardKey1
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Username_Textbox
@@ -1845,7 +1824,6 @@ Partial Class Form_Tools
         Me.Username_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Username_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Username_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Username_Textbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "UseRex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.Username_Textbox.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Username_Textbox.ForeColor = System.Drawing.Color.White
         Me.Username_Textbox.Location = New System.Drawing.Point(192, 12)
@@ -1853,15 +1831,12 @@ Partial Class Form_Tools
         Me.Username_Textbox.Name = "Username_Textbox"
         Me.Username_Textbox.Size = New System.Drawing.Size(32, 23)
         Me.Username_Textbox.TabIndex = 31
-        Me.Username_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.UseRex
         Me.Username_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.BackColor = System.Drawing.Color.Indigo
-        Me.CheckBox1.Checked = Global.DarkorbitBot.My.MySettings.Default.ActivatedRex
-        Me.CheckBox1.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "ActivatedRex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox1.Location = New System.Drawing.Point(89, 9)
@@ -1908,8 +1883,6 @@ Partial Class Form_Tools
         '
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.BackColor = System.Drawing.Color.Indigo
-        Me.CheckBox2.Checked = Global.DarkorbitBot.My.MySettings.Default.ActivatedRex
-        Me.CheckBox2.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "ActivatedRex", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox2.Location = New System.Drawing.Point(53, 12)
@@ -1928,6 +1901,22 @@ Partial Class Form_Tools
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "divers"
         Me.Label17.Visible = False
+        '
+        'Panel_MoveTitle
+        '
+        Me.Panel_MoveTitle.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_MoveTitle.Controls.Add(Me.PictureBox_Backpage)
+        Me.Panel_MoveTitle.Controls.Add(Me.FlatMini1)
+        Me.Panel_MoveTitle.Controls.Add(Me.PictureBox_Pause)
+        Me.Panel_MoveTitle.Controls.Add(Me.PictureBox_Close)
+        Me.Panel_MoveTitle.Controls.Add(Me.Label16)
+        Me.Panel_MoveTitle.Controls.Add(Me.PictureBox_Start)
+        Me.Panel_MoveTitle.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel_MoveTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel_MoveTitle.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_MoveTitle.Name = "Panel_MoveTitle"
+        Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
+        Me.Panel_MoveTitle.TabIndex = 24
         '
         'FlatMini1
         '
@@ -1973,22 +1962,20 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel_Title)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RidevBot tools"
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_general.ResumeLayout(False)
         Me.Panel_general.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Panel_Info.ResumeLayout(False)
+        Me.Panel_Info.PerformLayout()
         Me.Panel_Npc.ResumeLayout(False)
         Me.Panel_Npc.PerformLayout()
         Me.Panel_collector.ResumeLayout(False)
@@ -2013,13 +2000,15 @@ Partial Class Form_Tools
         Me.Panel_rex.PerformLayout()
         Me.Panel_divers.ResumeLayout(False)
         Me.Panel_divers.PerformLayout()
+        Me.Panel_MoveTitle.ResumeLayout(False)
+        Me.Panel_MoveTitle.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label16 As Label
-    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel_Title As Panel
     Friend WithEvents FlatMini1 As FlatMini
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents Collector_Button As Button
@@ -2065,7 +2054,7 @@ Partial Class Form_Tools
     Friend WithEvents Label18 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Username_Textbox As TextBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel_Info As Panel
     Friend WithEvents TextBox_Get_Server As TextBox
     Friend WithEvents TextBox_Get_Dosid As TextBox
     Friend WithEvents TextBox_Get_id As TextBox
@@ -2151,4 +2140,5 @@ Partial Class Form_Tools
     Friend WithEvents Button1 As Button
     Friend WithEvents Label23 As Label
     Friend WithEvents ComboBox_autospin As ComboBox
+    Friend WithEvents Panel_MoveTitle As Panel
 End Class

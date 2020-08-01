@@ -32,20 +32,18 @@ Partial Class Form_Startup
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PanelConnection = New System.Windows.Forms.Panel()
         Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
-        Me.Password_Textbox = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Load_Button = New System.Windows.Forms.Button()
-        Me.Password_Label = New System.Windows.Forms.Label()
-        Me.Username_Textbox = New System.Windows.Forms.TextBox()
-        Me.Usrname_Label = New System.Windows.Forms.Label()
+        Me.Label_password = New System.Windows.Forms.Label()
+        Me.Textbox_Username = New System.Windows.Forms.TextBox()
+        Me.Label_username = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label_serverExemple = New System.Windows.Forms.Label()
+        Me.TextBox_server = New System.Windows.Forms.TextBox()
+        Me.Label_server = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox_sid = New System.Windows.Forms.TextBox()
+        Me.Label_sid = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button_profil3 = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -75,14 +73,15 @@ Partial Class Form_Startup
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox_license = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.FlatMini = New DarkorbitBot.FlatMini()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.Label_Title = New System.Windows.Forms.Label()
+        Me.Textbox_Password = New System.Windows.Forms.TextBox()
         Me.PanelConnection.SuspendLayout()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -90,8 +89,8 @@ Partial Class Form_Startup
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Title.SuspendLayout()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserAndPass_Button
@@ -187,13 +186,12 @@ Partial Class Form_Startup
         '
         Me.PanelConnection.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PanelConnection.Controls.Add(Me.PictureBox_PasswordHider)
-        Me.PanelConnection.Controls.Add(Me.Password_Textbox)
-        Me.PanelConnection.Controls.Add(Me.TextBox2)
         Me.PanelConnection.Controls.Add(Me.Load_Button)
-        Me.PanelConnection.Controls.Add(Me.Password_Label)
-        Me.PanelConnection.Controls.Add(Me.Username_Textbox)
-        Me.PanelConnection.Controls.Add(Me.Usrname_Label)
+        Me.PanelConnection.Controls.Add(Me.Label_password)
+        Me.PanelConnection.Controls.Add(Me.Textbox_Username)
+        Me.PanelConnection.Controls.Add(Me.Label_username)
         Me.PanelConnection.Controls.Add(Me.Button4)
+        Me.PanelConnection.Controls.Add(Me.Textbox_Password)
         Me.PanelConnection.ForeColor = System.Drawing.Color.White
         Me.PanelConnection.Location = New System.Drawing.Point(17, 222)
         Me.PanelConnection.Name = "PanelConnection"
@@ -202,45 +200,13 @@ Partial Class Form_Startup
         '
         'PictureBox_PasswordHider
         '
-        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.eye_off_icon_135658
+        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
         Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(236, 88)
         Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
         Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(19, 18)
         Me.PictureBox_PasswordHider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_PasswordHider.TabIndex = 22
         Me.PictureBox_PasswordHider.TabStop = False
-        '
-        'Password_Textbox
-        '
-        Me.Password_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Password_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Password_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Password_Textbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Password_Textbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Password_Textbox.ForeColor = System.Drawing.Color.White
-        Me.Password_Textbox.Location = New System.Drawing.Point(0, 86)
-        Me.Password_Textbox.Name = "Password_Textbox"
-        Me.Password_Textbox.Size = New System.Drawing.Size(256, 21)
-        Me.Password_Textbox.TabIndex = 21
-        Me.Password_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.Password_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Password_Textbox.UseSystemPasswordChar = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.Maroon
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(0, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(256, 21)
-        Me.TextBox2.TabIndex = 15
-        Me.TextBox2.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Load_Button
         '
@@ -255,38 +221,38 @@ Partial Class Form_Startup
         Me.Load_Button.Text = "Load"
         Me.Load_Button.UseVisualStyleBackColor = False
         '
-        'Password_Label
+        'Label_password
         '
-        Me.Password_Label.AutoSize = True
-        Me.Password_Label.Location = New System.Drawing.Point(12, 70)
-        Me.Password_Label.Name = "Password_Label"
-        Me.Password_Label.Size = New System.Drawing.Size(59, 13)
-        Me.Password_Label.TabIndex = 14
-        Me.Password_Label.Text = "Password :"
+        Me.Label_password.AutoSize = True
+        Me.Label_password.Location = New System.Drawing.Point(12, 70)
+        Me.Label_password.Name = "Label_password"
+        Me.Label_password.Size = New System.Drawing.Size(59, 13)
+        Me.Label_password.TabIndex = 14
+        Me.Label_password.Text = "Password :"
         '
-        'Username_Textbox
+        'Textbox_Username
         '
-        Me.Username_Textbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Username_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Username_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Username_Textbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Username_Textbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Username_Textbox.ForeColor = System.Drawing.Color.White
-        Me.Username_Textbox.Location = New System.Drawing.Point(0, 32)
-        Me.Username_Textbox.Name = "Username_Textbox"
-        Me.Username_Textbox.Size = New System.Drawing.Size(256, 21)
-        Me.Username_Textbox.TabIndex = 13
-        Me.Username_Textbox.Text = Global.DarkorbitBot.My.MySettings.Default.Username
-        Me.Username_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Textbox_Username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Textbox_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textbox_Username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Textbox_Username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Textbox_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_Username.ForeColor = System.Drawing.Color.White
+        Me.Textbox_Username.Location = New System.Drawing.Point(0, 32)
+        Me.Textbox_Username.Name = "Textbox_Username"
+        Me.Textbox_Username.Size = New System.Drawing.Size(256, 21)
+        Me.Textbox_Username.TabIndex = 13
+        Me.Textbox_Username.Text = Global.DarkorbitBot.My.MySettings.Default.Username
+        Me.Textbox_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Usrname_Label
+        'Label_username
         '
-        Me.Usrname_Label.AutoSize = True
-        Me.Usrname_Label.Location = New System.Drawing.Point(12, 16)
-        Me.Usrname_Label.Name = "Usrname_Label"
-        Me.Usrname_Label.Size = New System.Drawing.Size(61, 13)
-        Me.Usrname_Label.TabIndex = 12
-        Me.Usrname_Label.Text = "Username :"
+        Me.Label_username.AutoSize = True
+        Me.Label_username.Location = New System.Drawing.Point(12, 16)
+        Me.Label_username.Name = "Label_username"
+        Me.Label_username.Size = New System.Drawing.Size(61, 13)
+        Me.Label_username.TabIndex = 12
+        Me.Label_username.Text = "Username :"
         '
         'Button4
         '
@@ -305,12 +271,12 @@ Partial Class Form_Startup
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label_serverExemple)
+        Me.Panel2.Controls.Add(Me.TextBox_server)
+        Me.Panel2.Controls.Add(Me.Label_server)
         Me.Panel2.Controls.Add(Me.Button8)
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.TextBox_sid)
+        Me.Panel2.Controls.Add(Me.Label_sid)
         Me.Panel2.ForeColor = System.Drawing.Color.White
         Me.Panel2.Location = New System.Drawing.Point(17, 388)
         Me.Panel2.Name = "Panel2"
@@ -318,39 +284,39 @@ Partial Class Form_Startup
         Me.Panel2.TabIndex = 11
         Me.Panel2.Visible = False
         '
-        'Label6
+        'Label_serverExemple
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(67, 83)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(121, 13)
-        Me.Label6.TabIndex = 21
-        Me.Label6.Text = "Server example : fr1"
+        Me.Label_serverExemple.AutoSize = True
+        Me.Label_serverExemple.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_serverExemple.Location = New System.Drawing.Point(67, 83)
+        Me.Label_serverExemple.Name = "Label_serverExemple"
+        Me.Label_serverExemple.Size = New System.Drawing.Size(121, 13)
+        Me.Label_serverExemple.TabIndex = 21
+        Me.Label_serverExemple.Text = "Server exemple : fr1"
         '
-        'TextBox1
+        'TextBox_server
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(62, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox1.TabIndex = 20
-        Me.TextBox1.Text = Global.DarkorbitBot.My.MySettings.Default.server
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_server.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_server.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_server.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_server.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_server.ForeColor = System.Drawing.Color.White
+        Me.TextBox_server.Location = New System.Drawing.Point(62, 19)
+        Me.TextBox_server.Name = "TextBox_server"
+        Me.TextBox_server.Size = New System.Drawing.Size(46, 20)
+        Me.TextBox_server.TabIndex = 16
+        Me.TextBox_server.Text = Global.DarkorbitBot.My.MySettings.Default.server
+        Me.TextBox_server.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label5
+        'Label_server
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 23)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 13)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Server :"
+        Me.Label_server.AutoSize = True
+        Me.Label_server.Location = New System.Drawing.Point(12, 23)
+        Me.Label_server.Name = "Label_server"
+        Me.Label_server.Size = New System.Drawing.Size(44, 13)
+        Me.Label_server.TabIndex = 19
+        Me.Label_server.Text = "Server :"
         '
         'Button8
         '
@@ -365,27 +331,27 @@ Partial Class Form_Startup
         Me.Button8.Text = "Load"
         Me.Button8.UseVisualStyleBackColor = False
         '
-        'TextBox3
+        'TextBox_sid
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.White
-        Me.TextBox3.Location = New System.Drawing.Point(47, 45)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(197, 20)
-        Me.TextBox3.TabIndex = 17
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_sid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_sid.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_sid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_sid.ForeColor = System.Drawing.Color.White
+        Me.TextBox_sid.Location = New System.Drawing.Point(47, 45)
+        Me.TextBox_sid.Name = "TextBox_sid"
+        Me.TextBox_sid.Size = New System.Drawing.Size(197, 20)
+        Me.TextBox_sid.TabIndex = 17
+        Me.TextBox_sid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label7
+        'Label_sid
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 49)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "SID :"
+        Me.Label_sid.AutoSize = True
+        Me.Label_sid.Location = New System.Drawing.Point(12, 49)
+        Me.Label_sid.Name = "Label_sid"
+        Me.Label_sid.Size = New System.Drawing.Size(31, 13)
+        Me.Label_sid.TabIndex = 16
+        Me.Label_sid.Text = "SID :"
         '
         'Panel3
         '
@@ -701,7 +667,7 @@ Partial Class Form_Startup
         Me.Panel6.Controls.Add(Me.Label18)
         Me.Panel6.Controls.Add(Me.Label17)
         Me.Panel6.Controls.Add(Me.Button1)
-        Me.Panel6.Controls.Add(Me.TextBox4)
+        Me.Panel6.Controls.Add(Me.TextBox_license)
         Me.Panel6.Controls.Add(Me.Label15)
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Label13)
@@ -774,20 +740,20 @@ Partial Class Form_Startup
         Me.Button1.Text = "Verify"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'TextBox4
+        'TextBox_license
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.White
-        Me.TextBox4.Location = New System.Drawing.Point(0, 36)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(256, 20)
-        Me.TextBox4.TabIndex = 18
-        Me.TextBox4.Text = Global.DarkorbitBot.My.MySettings.Default.License
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_license.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_license.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_license.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_license.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_license.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_license.ForeColor = System.Drawing.Color.White
+        Me.TextBox_license.Location = New System.Drawing.Point(0, 36)
+        Me.TextBox_license.Name = "TextBox_license"
+        Me.TextBox_license.Size = New System.Drawing.Size(256, 20)
+        Me.TextBox_license.TabIndex = 18
+        Me.TextBox_license.Text = Global.DarkorbitBot.My.MySettings.Default.License
+        Me.TextBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
@@ -817,55 +783,71 @@ Partial Class Form_Startup
         Me.Label13.TabIndex = 14
         Me.Label13.Text = "License :"
         '
-        'Panel7
+        'Panel_Title
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.FlatMini1)
-        Me.Panel7.Controls.Add(Me.PictureBox1)
-        Me.Panel7.Controls.Add(Me.Label16)
-        Me.Panel7.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(256, 18)
-        Me.Panel7.TabIndex = 23
+        Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Title.Controls.Add(Me.FlatMini)
+        Me.Panel_Title.Controls.Add(Me.PictureBox_Close)
+        Me.Panel_Title.Controls.Add(Me.Label_Title)
+        Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Title.Name = "Panel_Title"
+        Me.Panel_Title.Size = New System.Drawing.Size(256, 18)
+        Me.Panel_Title.TabIndex = 23
         '
-        'PictureBox1
+        'FlatMini
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icons8_ios_rempli_50_2_
-        Me.PictureBox1.Location = New System.Drawing.Point(238, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 24
-        Me.PictureBox1.TabStop = False
+        Me.FlatMini.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini.Location = New System.Drawing.Point(220, 0)
+        Me.FlatMini.Name = "FlatMini"
+        Me.FlatMini.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini.TabIndex = 24
+        Me.FlatMini.Text = "FlatMini"
+        Me.FlatMini.TextColor = System.Drawing.Color.Black
         '
-        'Label16
+        'PictureBox_Close
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(104, 18)
-        Me.Label16.TabIndex = 22
-        Me.Label16.Text = "RidevBot 1.0"
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(238, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 24
+        Me.PictureBox_Close.TabStop = False
         '
-        'FlatMini1
+        'Label_Title
         '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(220, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 24
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        Me.Label_Title.AutoSize = True
+        Me.Label_Title.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label_Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Title.Location = New System.Drawing.Point(2, 0)
+        Me.Label_Title.Name = "Label_Title"
+        Me.Label_Title.Size = New System.Drawing.Size(140, 18)
+        Me.Label_Title.TabIndex = 22
+        Me.Label_Title.Text = "RidevBot v0.0.0.0"
+        '
+        'Textbox_Password
+        '
+        Me.Textbox_Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textbox_Password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Textbox_Password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Textbox_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_Password.ForeColor = System.Drawing.Color.White
+        Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
+        Me.Textbox_Password.Name = "Textbox_Password"
+        Me.Textbox_Password.Size = New System.Drawing.Size(256, 21)
+        Me.Textbox_Password.TabIndex = 21
+        Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Textbox_Password.UseSystemPasswordChar = True
         '
         'Form_Startup
         '
@@ -880,7 +862,7 @@ Partial Class Form_Startup
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel_Title)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
@@ -905,9 +887,9 @@ Partial Class Form_Startup
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Title.ResumeLayout(False)
+        Me.Panel_Title.PerformLayout()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -921,14 +903,13 @@ Partial Class Form_Startup
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents PanelConnection As Panel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Password_Label As Label
-    Friend WithEvents Username_Textbox As TextBox
-    Friend WithEvents Usrname_Label As Label
+    Friend WithEvents Label_password As Label
+    Friend WithEvents Textbox_Username As TextBox
+    Friend WithEvents Label_username As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox_sid As TextBox
+    Friend WithEvents Label_sid As Label
     Friend WithEvents Load_Button As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button_loadprofil As Button
@@ -946,14 +927,13 @@ Partial Class Form_Startup
     Friend WithEvents Button16 As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox_license As TextBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Password_Textbox As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel_Title As Panel
+    Friend WithEvents Label_Title As Label
+    Friend WithEvents TextBox_server As TextBox
+    Friend WithEvents Label_server As Label
+    Friend WithEvents Label_serverExemple As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
@@ -962,8 +942,8 @@ Partial Class Form_Startup
     Friend WithEvents Button1 As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents FlatMini1 As FlatMini
+    Friend WithEvents PictureBox_Close As PictureBox
+    Friend WithEvents FlatMini As FlatMini
     Friend WithEvents PictureBox_PasswordHider As PictureBox
     Friend WithEvents Button_removeprofil As Button
     Friend WithEvents button_editprofil As Button
@@ -973,4 +953,5 @@ Partial Class Form_Startup
     Friend WithEvents Label22 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label23 As Label
+    Friend WithEvents Textbox_Password As TextBox
 End Class
