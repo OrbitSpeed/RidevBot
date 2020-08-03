@@ -5,6 +5,8 @@
     Public MouseDownX As Integer
     Public MouseDownY As Integer
 
+    Public BackgroundWorkerAutospin As Boolean = False
+
 
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
@@ -88,14 +90,14 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = True
-        Label9.Visible = False
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = True
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = True
         Panel_Npc.Visible = False
@@ -121,14 +123,14 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = True
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = True
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = True
@@ -154,14 +156,14 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = True
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = True
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -186,13 +188,13 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -202,27 +204,28 @@
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        If Utils.server = "" Then
-            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            If result = DialogResult.OK Then
-                General_button.Enabled = False
-                Label10.Visible = True
-                Panel_general.Visible = True
-                Size = New Size(390, 324)
-            Else
-                General_button.Enabled = False
-                Label10.Visible = True
-                Panel_general.Visible = True
-                Size = New Size(390, 324)
-            End If
-        Else
-            Label1.Visible = True
+        'If Utils.server = "" Then
+        '    Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    If result = DialogResult.OK Then
+        '        General_button.Enabled = False
+        '        Label_buttonGeneral.Visible = True
+        '        Panel_general.Visible = True
+        '        Size = New Size(390, 324)
+        '    Else
+        '        General_button.Enabled = False
+        '        Label_buttonGeneral.Visible = True
+        '        Panel_general.Visible = True
+        '        Size = New Size(390, 324)
+        '    End If
+        'Else
+
+        Label_galaxygates.Visible = True
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
-            Size = New Size(581, 430)
-            TextBox_uridiumGGS.Text = Utils.currentUridium
+        Size = New Size(553, 622)
+        TextBox_uridiumGGS.Text = Utils.currentUridium
 
-        End If
+        ' End If
 
     End Sub
 
@@ -237,14 +240,14 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = True
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = True
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -269,13 +272,13 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label4.Visible = False
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -292,25 +295,25 @@
             Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             If result = DialogResult.OK Then
                 General_button.Enabled = False
-                Label10.Visible = True
+                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 324)
             Else
                 General_button.Enabled = False
-                Label10.Visible = True
+                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 324)
             End If
 
 
             General_button.Enabled = False
-            Label10.Visible = True
+            Label_buttonGeneral.Visible = True
             Panel_general.Visible = True
             Size = New Size(390, 324)
 
         Else
 
-            Label3.Visible = True
+            Label_buttonStats.Visible = True
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
             Size = New Size(390, 438)
@@ -335,14 +338,14 @@
         Rex_Button.Enabled = False
         Divers_Button.Enabled = True
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = True
-        Label5.Visible = False
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = True
+        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -368,14 +371,14 @@
         Rex_Button.Enabled = True
         Divers_Button.Enabled = False
 
-        Label10.Visible = False
-        Label9.Visible = False
-        Label8.Visible = False
-        Label1.Visible = False
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = False
-        Label5.Visible = True
+        Label_buttonGeneral.Visible = False
+        Label_ButtonNPCBOX.Visible = False
+        Label_ButtonINUTILE.Visible = False
+        Label_galaxygates.Visible = False
+        Label_buttonPALLADIUM.Visible = False
+        Label_buttonStats.Visible = False
+        Label_buttonREX.Visible = False
+        Label_ButtonDivers.Visible = True
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False
@@ -397,7 +400,7 @@
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             'Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-            Label1.Select()
+            Label_galaxygates.Select()
 
             If Utils.dosid IsNot vbNullString Then
                 Utils.connectWithCookie = True
@@ -411,7 +414,7 @@
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
             'Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-            Label1.Select()
+            Label_galaxygates.Select()
             Form_Game.WebBrowser1.Refresh()
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
             Form_Game.Show()
@@ -526,16 +529,16 @@
     Private Sub Button_epsion_GGS_Click(sender As Object, e As EventArgs) Handles Button_epsion_GGS.Click
 
         'delta
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&epsilon=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&delta=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
 
     End Sub
 
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
 
         ' espilon
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&delta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&epsilon=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
 
     End Sub
 
@@ -628,6 +631,57 @@
         CheckBox_spin10.CheckState = CheckState.Unchecked
         CheckBox_spin100.CheckState = CheckState.Checked
     End Sub
+
+    Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
+
+        BackgroundWorkerAutospin = True
+
+        If BackgroundWorkerAutospin = True Then
+
+            If BackgroundWorker_GGspinner.IsBusy = False Then
+                BackgroundWorker_GGspinner.RunWorkerAsync()
+            End If
+
+
+        End If
+
+    End Sub
+
+    Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
+
+        If BackgroundWorker_GGspinner.IsBusy = True Then
+
+            BackgroundWorkerAutospin = False
+
+        Else
+
+
+
+        End If
+
+    End Sub
+
+    Private Sub BackgroundWorker_GGspinner_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_GGspinner.RunWorkerCompleted
+
+        If BackgroundWorkerAutospin = True Then
+
+            BackgroundWorker_GGspinner.RunWorkerAsync()
+
+        Else
+
+
+        End If
+
+    End Sub
+
+    Private Sub BackgroundWorker_GGspinner_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_GGspinner.DoWork
+
+        '   Me.Invoke(New MethodInvoker(Sub() --------- ))
+
+
+
+    End Sub
+
 #End Region
 
 #End Region
