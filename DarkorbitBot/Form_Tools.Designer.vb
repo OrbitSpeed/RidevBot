@@ -81,6 +81,13 @@ Partial Class Form_Tools
         Me.Button_epsion_GGS = New System.Windows.Forms.Button()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Panel_PrepareGatesAuto = New System.Windows.Forms.Panel()
+        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
+        Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
+        Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
         Me.Label_autospin = New System.Windows.Forms.Label()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Panel_nombre_de_spin = New System.Windows.Forms.Panel()
@@ -104,6 +111,7 @@ Partial Class Form_Tools
         Me.Button_beta = New System.Windows.Forms.Button()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel_stats = New System.Windows.Forms.Panel()
@@ -157,14 +165,6 @@ Partial Class Form_Tools
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.BackgroundWorker_GGspinner = New System.ComponentModel.BackgroundWorker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
-        Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
-        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Panel_PrepareGatesAuto = New System.Windows.Forms.Panel()
-        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,6 +176,8 @@ Partial Class Form_Tools
         Me.Panel_collector.SuspendLayout()
         Me.Panel_Uridum_ExtraEnnergy_left.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
+        Me.Panel_PrepareGatesAuto.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel_nombre_de_spin.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
         Me.Panel_stats.SuspendLayout()
@@ -185,8 +187,6 @@ Partial Class Form_Tools
         Me.Panel_rex.SuspendLayout()
         Me.Panel_divers.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel_PrepareGatesAuto.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label16
@@ -953,6 +953,93 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
+        Me.TextBox2.Location = New System.Drawing.Point(197, 341)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(257, 251)
+        Me.TextBox2.TabIndex = 68
+        Me.TextBox2.Text = resources.GetString("TextBox2.Text")
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel_PrepareGatesAuto
+        '
+        Me.Panel_PrepareGatesAuto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_PrepareGatesAuto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_PrepareGatesAuto.Controls.Add(Me.CheckBox_PrepareGatesIfBuiled)
+        Me.Panel_PrepareGatesAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel_PrepareGatesAuto.Location = New System.Drawing.Point(15, 540)
+        Me.Panel_PrepareGatesAuto.Name = "Panel_PrepareGatesAuto"
+        Me.Panel_PrepareGatesAuto.Size = New System.Drawing.Size(175, 25)
+        Me.Panel_PrepareGatesAuto.TabIndex = 67
+        '
+        'CheckBox_PrepareGatesIfBuiled
+        '
+        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
+        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(6, 2)
+        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
+        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(169, 21)
+        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
+        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare Gates if builded"
+        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
+        Me.Panel1.Controls.Add(Me.TextBox_uridiumtokeepGGS)
+        Me.Panel1.Controls.Add(Me.Label_UridiumtoKeepGGS)
+        Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Location = New System.Drawing.Point(15, 461)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(176, 47)
+        Me.Panel1.TabIndex = 66
+        '
+        'CheckBox_UseOnlyEE_GGS
+        '
+        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
+        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_UseOnlyEE_GGS.Enabled = False
+        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(6, 20)
+        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
+        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(127, 21)
+        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
+        Me.CheckBox_UseOnlyEE_GGS.Text = "        Use only EE"
+        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
+        '
+        'TextBox_uridiumtokeepGGS
+        '
+        Me.TextBox_uridiumtokeepGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_uridiumtokeepGGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_uridiumtokeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_uridiumtokeepGGS.Location = New System.Drawing.Point(102, 4)
+        Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
+        Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(69, 15)
+        Me.TextBox_uridiumtokeepGGS.TabIndex = 5
+        Me.TextBox_uridiumtokeepGGS.Text = "10 000"
+        Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_UridiumtoKeepGGS
+        '
+        Me.Label_UridiumtoKeepGGS.AutoSize = True
+        Me.Label_UridiumtoKeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_UridiumtoKeepGGS.Location = New System.Drawing.Point(6, 4)
+        Me.Label_UridiumtoKeepGGS.Name = "Label_UridiumtoKeepGGS"
+        Me.Label_UridiumtoKeepGGS.Size = New System.Drawing.Size(97, 13)
+        Me.Label_UridiumtoKeepGGS.TabIndex = 1
+        Me.Label_UridiumtoKeepGGS.Text = "Uridium to keep :"
+        '
         'Label_autospin
         '
         Me.Label_autospin.AutoSize = True
@@ -1258,6 +1345,17 @@ Partial Class Form_Tools
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "GalaxyGates"
         Me.Label12.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(5, 316)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(458, 18)
+        Me.Label1.TabIndex = 65
+        Me.Label1.Text = "__________________________________________________"
         '
         'Panel_Palladium
         '
@@ -1933,106 +2031,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
-        'BackgroundWorker_GGspinner
-        '
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(5, 316)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(458, 18)
-        Me.Label1.TabIndex = 65
-        Me.Label1.Text = "__________________________________________________"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
-        Me.Panel1.Controls.Add(Me.TextBox_uridiumtokeepGGS)
-        Me.Panel1.Controls.Add(Me.Label_UridiumtoKeepGGS)
-        Me.Panel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(15, 461)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(176, 47)
-        Me.Panel1.TabIndex = 66
-        '
-        'TextBox_uridiumtokeepGGS
-        '
-        Me.TextBox_uridiumtokeepGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_uridiumtokeepGGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_uridiumtokeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_uridiumtokeepGGS.Location = New System.Drawing.Point(102, 4)
-        Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
-        Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(69, 15)
-        Me.TextBox_uridiumtokeepGGS.TabIndex = 5
-        Me.TextBox_uridiumtokeepGGS.Text = "10000"
-        Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_UridiumtoKeepGGS
-        '
-        Me.Label_UridiumtoKeepGGS.AutoSize = True
-        Me.Label_UridiumtoKeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_UridiumtoKeepGGS.Location = New System.Drawing.Point(6, 4)
-        Me.Label_UridiumtoKeepGGS.Name = "Label_UridiumtoKeepGGS"
-        Me.Label_UridiumtoKeepGGS.Size = New System.Drawing.Size(97, 13)
-        Me.Label_UridiumtoKeepGGS.TabIndex = 1
-        Me.Label_UridiumtoKeepGGS.Text = "Uridium to keep :"
-        '
-        'CheckBox_UseOnlyEE_GGS
-        '
-        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
-        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(6, 20)
-        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
-        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(127, 21)
-        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
-        Me.CheckBox_UseOnlyEE_GGS.Text = "        Use only EE"
-        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(197, 341)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(257, 251)
-        Me.TextBox2.TabIndex = 68
-        Me.TextBox2.Text = resources.GetString("TextBox2.Text")
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Panel_PrepareGatesAuto
-        '
-        Me.Panel_PrepareGatesAuto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_PrepareGatesAuto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_PrepareGatesAuto.Controls.Add(Me.CheckBox_PrepareGatesIfBuiled)
-        Me.Panel_PrepareGatesAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_PrepareGatesAuto.Location = New System.Drawing.Point(15, 540)
-        Me.Panel_PrepareGatesAuto.Name = "Panel_PrepareGatesAuto"
-        Me.Panel_PrepareGatesAuto.Size = New System.Drawing.Size(175, 25)
-        Me.Panel_PrepareGatesAuto.TabIndex = 67
-        '
-        'CheckBox_PrepareGatesIfBuiled
-        '
-        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
-        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(6, 2)
-        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
-        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(169, 21)
-        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
-        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare Gates if builded"
-        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
-        '
         'FlatMini1
         '
         Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2099,6 +2097,10 @@ Partial Class Form_Tools
         Me.Panel_Uridum_ExtraEnnergy_left.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
         Me.Panel_GalaxyGates.PerformLayout()
+        Me.Panel_PrepareGatesAuto.ResumeLayout(False)
+        Me.Panel_PrepareGatesAuto.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel_nombre_de_spin.ResumeLayout(False)
         Me.Panel_nombre_de_spin.PerformLayout()
         Me.Panel_Palladium.ResumeLayout(False)
@@ -2117,10 +2119,6 @@ Partial Class Form_Tools
         Me.Panel_divers.PerformLayout()
         Me.Panel_MoveTitle.ResumeLayout(False)
         Me.Panel_MoveTitle.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel_PrepareGatesAuto.ResumeLayout(False)
-        Me.Panel_PrepareGatesAuto.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

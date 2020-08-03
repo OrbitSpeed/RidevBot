@@ -636,8 +636,8 @@
 
 #Region "Spin Click"
     Public numberToSpin As String = 0
+    Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
-
 
         If BackgroundWorkerAutospin = False Then
             BackgroundWorkerAutospin = True
@@ -661,7 +661,32 @@
             End If
 
             If BackgroundWorkerAutospin = True Then
-                ClickGG("alpha", 250)
+                Dim data = ComboBox_autospin.Text
+                Select Case data
+                    Case "ABG"
+                        MsgBox(data)
+                    Case "Delta"
+                        MsgBox(data)
+                    Case "Epsilon"
+                        MsgBox(data)
+                    Case "Zeta"
+                        MsgBox(data)
+                    Case "Kappa"
+                        MsgBox(data)
+                    Case "Lambda"
+                        MsgBox(data)
+                    Case "Kuiper"
+                        MsgBox(data)
+                    Case "Hades"
+                        MsgBox(data)
+
+                    Case Else
+                        BackgroundWorkerAutospin = False
+                        MsgBox("Erreur, Aucune GG selectionnée")
+                End Select
+                If BackgroundWorkerAutospin = True Then
+                    ClickGG("alpha", 250)
+                End If
             End If
 
         Else
@@ -685,14 +710,17 @@
 
 
         If BackgroundWorkerAutospin = True Then
-            Console.WriteLine("Je fais le click")
-            Console.WriteLine("J'attends")
-            Await delay
-            Console.WriteLine("J'ai terminé le click")
+            'DoWork ici
+            uridiumToKeep = Utils.ReplaceAllFromTo(TextBox_uridiumtokeepGGS.Text, " ", "")
 
+
+
+            Await delay
+            'TODO: Verification uri et prepare gates
             ClickGG(portail, temps)
         End If
     End Sub
+
 
     'Private Async Function BackgroundWorker_GGspinner_RunWorkerCompletedAsync(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) As Task Handles BackgroundWorker_GGspinner.RunWorkerCompleted
 
@@ -775,4 +803,9 @@
 #End Region
 
 #End Region
+
+    Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
+        TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, " ")
+    End Sub
+
 End Class

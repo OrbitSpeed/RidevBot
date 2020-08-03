@@ -37,31 +37,43 @@ Public Class Utils
     End Sub
 
 #End Region
-    Public Shared Function NumberToHumanReadable(number As Integer)
-        Dim numberHuman As String = ""
-        Dim numberString As String = number.ToString
-        Dim revNumberString As String = StrReverse(numberString) 'on inverse le résultat
-        Dim newNumberString As String = ""
-        Dim first As Boolean = True
+    Public Shared Function NumberToHumanReadable(number As String, espacement As String)
+        If espacement = "" Then
+            Debug.WriteLine("espacement est NUL !!!!")
+            Return False
+        Else
+            Dim numberHuman As String = ""
+            Dim revNumberString As String = StrReverse(number) 'on inverse le résultat
+            Dim newNumberString As String = ""
+            Dim first As Boolean = True
 
-        For Each n As String In revNumberString
-            numberHuman = n + numberHuman
-            If numberHuman.Length = 3 Then
-                If first Then
-                    first = False
-                    ' permet d'éviter de mettre un point en trop
-                    newNumberString = numberHuman
-                    numberHuman = ""
-                Else
-                    'On met un point entre chaque nombre
-                    newNumberString = numberHuman + "." + newNumberString
-                    numberHuman = ""
+            For Each n As String In revNumberString
+                numberHuman = n + numberHuman
+                Console.WriteLine("avant:" + numberHuman)
+                If numberHuman.Length = 3 Then
+                    If first Then
+                        first = False
+                        ' permet d'éviter de mettre un point en trop
+                        newNumberString = numberHuman
+                        numberHuman = ""
+                    Else
+                        'On met un espacement entre chaque nombre
+                        newNumberString = numberHuman + espacement + newNumberString
+                        numberHuman = ""
+                    End If
                 End If
+                Console.WriteLine("apres:" + numberHuman)
+            Next
+            Return newNumberString
+        End If
 
-            End If
-        Next
+    End Function
 
-        Return newNumberString
+    Public Shared Function ReplaceAllFromTo(text As String, fromText As String, toText As String)
+        Dim newText As String
+        newText = text.Replace(fromText, toText)
+
+        Return newText
     End Function
 
 End Class
