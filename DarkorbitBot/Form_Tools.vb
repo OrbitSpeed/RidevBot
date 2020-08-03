@@ -7,7 +7,6 @@
 
     Public BackgroundWorkerAutospin As Boolean = False
 
-
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
 
@@ -438,10 +437,11 @@
     End Sub
 
 
-#Region "Galaxy Gates Show"
+#Region "Galaxy Gates"
     ' full = toute la gg 
     ' last = derniere piece
 
+#Region "GG Click Portail"
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=12&type=full")
@@ -581,6 +581,7 @@
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
 
     End Sub
+#End Region
 
 
 #Region "CheckBox Spin"
@@ -631,56 +632,145 @@
         CheckBox_spin10.CheckState = CheckState.Unchecked
         CheckBox_spin100.CheckState = CheckState.Checked
     End Sub
+#End Region
 
+#Region "Spin Click"
+    Public numberToSpin As String = 0
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
-        BackgroundWorkerAutospin = True
 
-        If BackgroundWorkerAutospin = True Then
+        If BackgroundWorkerAutospin = False Then
+            BackgroundWorkerAutospin = True
 
-            If BackgroundWorker_GGspinner.IsBusy = False Then
-                BackgroundWorker_GGspinner.RunWorkerAsync()
+            If CheckBox_Spin1.Checked = True Then
+                numberToSpin = 1
+
+            ElseIf CheckBox_spin5.Checked = True Then
+                numberToSpin = 5
+
+            ElseIf CheckBox_spin10.Checked = True Then
+                numberToSpin = 10
+
+            ElseIf CheckBox_spin100.Checked = True Then
+                numberToSpin = 100
+
+            Else
+                BackgroundWorkerAutospin = False
+                numberToSpin = 0
+                MsgBox("Selectionnez d'abord un nombre de spin a effectuer")
             End If
 
+            If BackgroundWorkerAutospin = True Then
+                ClickGG("alpha", 250)
+            End If
 
+        Else
+            MsgBox("Déjà lancé")
+            ' Console.WriteLine("Already used")
         End If
 
     End Sub
+
 
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
 
-        If BackgroundWorker_GGspinner.IsBusy = True Then
-
+        If BackgroundWorkerAutospin = True Then
             BackgroundWorkerAutospin = False
-
-        Else
-
-
-
         End If
 
     End Sub
 
-    Private Sub BackgroundWorker_GGspinner_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_GGspinner.RunWorkerCompleted
+    Private Async Sub ClickGG(portail As String, temps As Integer)
+        Dim delay = Task.Delay(temps)
+
 
         If BackgroundWorkerAutospin = True Then
+            Console.WriteLine("Je fais le click")
+            Console.WriteLine("J'attends")
+            Await delay
+            Console.WriteLine("J'ai terminé le click")
 
-            BackgroundWorker_GGspinner.RunWorkerAsync()
-
-        Else
-
-
+            ClickGG(portail, temps)
         End If
-
     End Sub
 
-    Private Sub BackgroundWorker_GGspinner_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_GGspinner.DoWork
+    'Private Async Function BackgroundWorker_GGspinner_RunWorkerCompletedAsync(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) As Task Handles BackgroundWorker_GGspinner.RunWorkerCompleted
 
-        '   Me.Invoke(New MethodInvoker(Sub() --------- ))
+    '    If BackgroundWorkerAutospin = True Then
+
+    '        'Dim delay = Task.Delay(5000)
+
+    '        'Dim sw = New Stopwatch()
+    '        'sw.Start()
+    '        'Console.WriteLine("TIC")
+    '        ''Console.WriteLine(sw.Elapsed)
+    '        ''Console.WriteLine(sw.Elapsed.TotalSeconds)
+    '        ''Console.WriteLine(sw.Elapsed.TotalMilliseconds)
+    '        'sw.Stop()
+    '        'Console.WriteLine("-------")
+    '        'Await delay
+    '        'Console.WriteLine("TAC")
+    '        ''Console.WriteLine(sw.Elapsed)
+    '        ''Console.WriteLine(sw.Elapsed.TotalSeconds)
+    '        ''Console.WriteLine(sw.Elapsed.TotalMilliseconds)
+    '        'Console.WriteLine("async: Running for {0} seconds", sw.Elapsed.TotalSeconds)
+    '        'Console.WriteLine("-------")
+    '        'Await delay
+
+
+    '        BackgroundWorker_GGspinner.RunWorkerAsync()
+
+    '    Else
+
+
+    '    End If
+
+    'End Function
+
+    'Public Check_Spin_Stats As String = 0
+
+    'Private Async Sub BackgroundWorker_GGspinner_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_GGspinner.DoWork
+
+    '    '   Me.Invoke(New MethodInvoker(Sub() --------- ))
+
+    '    If BackgroundWorkerAutospin = True Then
+
+    '        If CheckBox_Spin1.Checked = True Then
+    '            Check_Spin_Stats = 1
+
+
+    '        ElseIf CheckBox_spin5.Checked = True Then
+    '            Check_Spin_Stats = 5
+
+
+    '        ElseIf CheckBox_spin10.Checked = True Then
+    '            Check_Spin_Stats = 10
+
+
+    '        ElseIf CheckBox_spin100.Checked = True Then
+    '            Check_Spin_Stats = 100
+
+    '        Else
+
+    '            BackgroundWorkerAutospin = False
+    '            Check_Spin_Stats = 0
+    '            MsgBox("Selectionnez d'abord un nombre de spin a effectuer")
+
+    '        End If
+
+    '    End If
+
+    '    If BackgroundWorkerAutospin.CancellationPending = True Then
+    '        e.Cancel = True
+
+    '        MsgBox("Stopped.")
+    '    Else
 
 
 
-    End Sub
+    '    End If
+
+    'End Sub
 
 #End Region
 

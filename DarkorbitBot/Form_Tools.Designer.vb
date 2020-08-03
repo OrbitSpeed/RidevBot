@@ -2052,7 +2052,7 @@ Partial Class Form_Tools
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1688, 1023)
+        Me.ClientSize = New System.Drawing.Size(1688, 1100)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)
         Me.Controls.Add(Me.Panel_stats)
