@@ -650,17 +650,22 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
 
-        Dim html = WebBrowser_GGspinner.DocumentText.Clone
-        Console.WriteLine(html)
+        Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
+        TextBox_WinGGS.Text = html5
 
+        Dim mode = Regex.Match(TextBox_WinGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        Console.WriteLine(mode.Groups.Item(1).ToString)
 
-        'A tester
-        'Console.WriteLine("prout")
-        'Console.WriteLine(WebBrowser_GGspinner.Document.All)
-        ''A tester
+        Dim money = Regex.Match(TextBox_WinGGS.Text, "money<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        Console.WriteLine(money.Groups.Item(1).ToString)
 
-        'Dim testalacon = Regex.Match(WebBrowser_GGspinner.DocumentText, "<mode.*?>([\s\S]*?)<\/mode>") ' quel type de GG
-        'Console.WriteLine(testalacon.Groups.Item(0).ToString)
+        Dim spinamount_selected = Regex.Match(TextBox_WinGGS.Text, "spinamount_selected<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        Console.WriteLine(spinamount_selected.Groups.Item(1).ToString)
+
+        Dim energy_cost = Regex.Match(TextBox_WinGGS.Text, "energy_cost<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        Console.WriteLine(energy_cost.Groups.Item(1).ToString)
+
+        '  mode<\/SPAN><SPAN class="m">&gt;<\/SPAN><SPAN class="tx" .*?>([\s\S]*?)<\/SPAN>
 
         'Dim testalacon2 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<money.*?>([\s\S]*?)<\/money>") ' money en cours 
         'Console.WriteLine(testalacon2.Groups.Item(0).ToString)
@@ -673,7 +678,7 @@ Public Class Form_Tools
         'Console.WriteLine(testalacon4.Groups.Item(0).ToString)
 
 
-
+        ' <mode.*?>([\s\S]*?)<\/mode>
         '   <item type=""([\s\S]*?)""
         '  <span.*?>([\s\S]*?)<\/span>
 
