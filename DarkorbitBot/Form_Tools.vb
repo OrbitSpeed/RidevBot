@@ -650,23 +650,32 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
 
+        Dim html = WebBrowser_GGspinner.DocumentText.Clone
+        Console.WriteLine(html)
+
+
         'A tester
-        Console.WriteLine("prout")
-        Console.WriteLine(WebBrowser_GGspinner.Document.All)
-        'A tester
+        'Console.WriteLine("prout")
+        'Console.WriteLine(WebBrowser_GGspinner.Document.All)
+        ''A tester
 
-        Dim testalacon = Regex.Match(WebBrowser_GGspinner.DocumentText, "<mode.*?>([\s\S]*?)<\/mode>") ' quel type de GG
-        Console.WriteLine(testalacon.Groups.Item(0).ToString)
+        'Dim testalacon = Regex.Match(WebBrowser_GGspinner.DocumentText, "<mode.*?>([\s\S]*?)<\/mode>") ' quel type de GG
+        'Console.WriteLine(testalacon.Groups.Item(0).ToString)
 
-        Dim testalacon2 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<money.*?>([\s\S]*?)<\/money>") ' money en cours 
-        Console.WriteLine(testalacon2.Groups.Item(0).ToString)
+        'Dim testalacon2 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<money.*?>([\s\S]*?)<\/money>") ' money en cours 
+        'Console.WriteLine(testalacon2.Groups.Item(0).ToString)
 
-        Dim testalacon3 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<samples.*?>([\s\S]*?)<\/samples>") 'extra energy restant 
-        Console.WriteLine(testalacon3.Groups.Item(0).ToString)
+        'Dim testalacon3 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<samples.*?>([\s\S]*?)<\/samples>") 'extra energy restant 
+        'Console.WriteLine(testalacon3.Groups.Item(0).ToString)
 
         'Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<item.*?>([\s\S]*?)<\/items>")
-        Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<item type=""([\s\S]*?)""")
-        Console.WriteLine(testalacon4.Groups.Item(0).ToString)
+        'Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<span.*?>([\s\S]*?)<\/span>")
+        'Console.WriteLine(testalacon4.Groups.Item(0).ToString)
+
+
+
+        '   <item type=""([\s\S]*?)""
+        '  <span.*?>([\s\S]*?)<\/span>
 
         ' Console.WriteLine(WebBrowser_GGspinner.Document.GetElementById("line3").InnerText())
 
