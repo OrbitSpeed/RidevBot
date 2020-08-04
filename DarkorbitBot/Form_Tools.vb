@@ -54,6 +54,8 @@ Public Class Form_Tools
         Panel_rex.Location = New Point(86, 18)
         Panel_divers.Location = New Point(86, 18)
 
+        TextBox_ProfilSelected.Text = "Profil_" + Form_Startup.Textbox_Username.Text
+
         Size = New Size(390, 324)
         CenterToScreen()
 
@@ -449,11 +451,35 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=12&type=full")
 
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = False
+
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = False
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -461,11 +487,35 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=19&type=full")
 
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = False
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
+
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=8&type=full")
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = False
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -473,11 +523,35 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=7&type=full")
 
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = False
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
+
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=6&type=full")
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = False
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -485,11 +559,35 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
 
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = False
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
+
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = False
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -497,11 +595,35 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
 
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = False
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
+
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=2&type=full")
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = False
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -509,6 +631,17 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=1&type=full")
 
+        Button_Alpha.Enabled = False
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
     End Sub
 
@@ -549,7 +682,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
         'button open Login Box'
 
@@ -858,6 +991,23 @@ Public Class Form_Tools
         BackPage_Form.Show()
         BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         BackPage_Form.WindowState = FormWindowState.Minimized
+
+    End Sub
+
+    Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
+
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=1")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=2")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=3")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=4")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=5")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=6")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=7")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=8")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=19")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=13")
+
+        ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
 
     End Sub
 End Class
