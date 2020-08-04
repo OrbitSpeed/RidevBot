@@ -646,53 +646,9 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-        'Mettre dans un doc completed (pour gg snipper et ptet pour l'autre ?)
+
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
-
-        Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
-        TextBox_WinGGS.Text = html5
-
-        Dim mode = Regex.Match(TextBox_WinGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
-        Console.WriteLine(mode.Groups.Item(1).ToString)
-
-        Dim money = Regex.Match(TextBox_WinGGS.Text, "money<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
-        Console.WriteLine(money.Groups.Item(1).ToString)
-
-        Dim spinamount_selected = Regex.Match(TextBox_WinGGS.Text, "spinamount_selected<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
-        Console.WriteLine(spinamount_selected.Groups.Item(1).ToString)
-
-        Dim energy_cost = Regex.Match(TextBox_WinGGS.Text, "energy_cost<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
-        Console.WriteLine(energy_cost.Groups.Item(1).ToString)
-
-        '  mode<\/SPAN><SPAN class="m">&gt;<\/SPAN><SPAN class="tx" .*?>([\s\S]*?)<\/SPAN>
-
-        'Dim testalacon2 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<money.*?>([\s\S]*?)<\/money>") ' money en cours 
-        'Console.WriteLine(testalacon2.Groups.Item(0).ToString)
-
-        'Dim testalacon3 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<samples.*?>([\s\S]*?)<\/samples>") 'extra energy restant 
-        'Console.WriteLine(testalacon3.Groups.Item(0).ToString)
-
-        'Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<item.*?>([\s\S]*?)<\/items>")
-        'Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<span.*?>([\s\S]*?)<\/span>")
-        'Console.WriteLine(testalacon4.Groups.Item(0).ToString)
-
-
-        ' <mode.*?>([\s\S]*?)<\/mode>
-        '   <item type=""([\s\S]*?)""
-        '  <span.*?>([\s\S]*?)<\/span>
-
-        ' Console.WriteLine(WebBrowser_GGspinner.Document.GetElementById("line3").InnerText())
-
-        ' <item.*?>([\s\S]*?)<\/items>
-
-        'Console.WriteLine(testalacon.Groups.Item(6).ToString)
-        'Console.WriteLine(testalacon.Groups.Item(9).ToString)
-        'Console.WriteLine(testalacon.Groups.Item(99).ToString)
-        'Console.WriteLine(testalacon.Groups.Item(102).ToString)
-        'Console.WriteLine(testalacon.Groups.Item(105).ToString)
-        'Console.WriteLine(testalacon.Groups.Item(109).ToString)
-
 
     End Sub
 
@@ -1022,6 +978,47 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=13")
 
         ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
+
+    End Sub
+
+    Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
+
+        Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
+        TextBox_DebugGGS.Text = html5
+
+        Dim money = Regex.Match(TextBox_DebugGGS.Text, "money<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' money en cours d'utilisation
+        Console.WriteLine(money.Groups.Item(1).ToString)
+
+        Dim spinamount_selected = Regex.Match(TextBox_DebugGGS.Text, "spinamount_selected<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' nombre de spin utiliser
+        Console.WriteLine(spinamount_selected.Groups.Item(1).ToString)
+
+        Dim Winned = Regex.Match(TextBox_DebugGGS.Text, "type.*?>([\s\S]*?)<\/B>") ' winned into spin >>> type
+        TextBox_DebbugerGGS_2.Text = (Winned.Groups.Item(1).ToString)
+        TextBox_DebbugerGGS_2.Text = Replace(TextBox_DebbugerGGS_2.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(TextBox_DebbugerGGS_2.Text)
+
+        Dim Winned2 = Regex.Match(TextBox_DebugGGS.Text, "item_id.*?>([\s\S]*?) <\/ B >") ' winned into spin >>> item id
+        Console.WriteLine(Winned2.Groups.Item(1).ToString)
+
+        Dim Winned3 = Regex.Match(TextBox_DebugGGS.Text, "class=""t""> amount.*?>([\s\S]*?)<\/B>") ' winned into spin >>> amount
+        Console.WriteLine(Winned3.Groups.Item(1).ToString)
+
+        TextBox_WinGGS.Text = "<>" & vbCrLf &
+       "Spin amount selected : " + (spinamount_selected.Groups.Item(1).ToString) & vbCrLf
+
+
+
+
+
+
+
+
+
+
+
+
+        'Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        'Console.WriteLine(mode.Groups.Item(1).ToString)
 
     End Sub
 End Class

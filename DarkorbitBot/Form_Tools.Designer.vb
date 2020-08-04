@@ -150,7 +150,9 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
         Me.Label_ProfilSelected = New System.Windows.Forms.Label()
+        Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.TextBox_DebbugerGGS_2 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -712,12 +714,12 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(3, 3)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(275, 974)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
         Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(27, 25)
         Me.WebBrowser_GGspinner.TabIndex = 40
         '
         'Panel_Uridum_ExtraEnnergy_left
@@ -895,7 +897,6 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_PrepareGatesAuto)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_UridiumtoKeep)
@@ -938,7 +939,7 @@ Partial Class Form_Tools
         'TextBox_WinGGS
         '
         Me.TextBox_WinGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_WinGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_WinGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_WinGGS.ForeColor = System.Drawing.Color.White
         Me.TextBox_WinGGS.Location = New System.Drawing.Point(197, 341)
         Me.TextBox_WinGGS.Multiline = True
@@ -946,6 +947,7 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.ReadOnly = True
         Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 251)
         Me.TextBox_WinGGS.TabIndex = 68
+        Me.TextBox_WinGGS.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<>"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel_PrepareGatesAuto
@@ -1343,7 +1345,7 @@ Partial Class Form_Tools
         Me.Panel_Palladium.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Palladium.Controls.Add(Me.Label_PALADIUM_A_SUPPRIMER)
         Me.Panel_Palladium.ForeColor = System.Drawing.Color.White
-        Me.Panel_Palladium.Location = New System.Drawing.Point(513, 348)
+        Me.Panel_Palladium.Location = New System.Drawing.Point(485, 348)
         Me.Panel_Palladium.Name = "Panel_Palladium"
         Me.Panel_Palladium.Size = New System.Drawing.Size(304, 306)
         Me.Panel_Palladium.TabIndex = 45
@@ -1369,7 +1371,7 @@ Partial Class Form_Tools
         Me.Panel_stats.Controls.Add(Me.Label_STATS_A_SUPPRIMER)
         Me.Panel_stats.Controls.Add(Me.Panel_StatsCurrent)
         Me.Panel_stats.ForeColor = System.Drawing.Color.White
-        Me.Panel_stats.Location = New System.Drawing.Point(823, 348)
+        Me.Panel_stats.Location = New System.Drawing.Point(795, 348)
         Me.Panel_stats.Name = "Panel_stats"
         Me.Panel_stats.Size = New System.Drawing.Size(304, 341)
         Me.Panel_stats.TabIndex = 46
@@ -1748,7 +1750,7 @@ Partial Class Form_Tools
         Me.Panel_rex.Controls.Add(Me.CheckBox_Refresh_Game)
         Me.Panel_rex.Controls.Add(Me.Label8rex_A_SUPPRIMER)
         Me.Panel_rex.ForeColor = System.Drawing.Color.White
-        Me.Panel_rex.Location = New System.Drawing.Point(1133, 348)
+        Me.Panel_rex.Location = New System.Drawing.Point(1105, 348)
         Me.Panel_rex.Name = "Panel_rex"
         Me.Panel_rex.Size = New System.Drawing.Size(304, 306)
         Me.Panel_rex.TabIndex = 47
@@ -1823,6 +1825,19 @@ Partial Class Form_Tools
         Me.Label_ProfilSelected.TabIndex = 8
         Me.Label_ProfilSelected.Text = "Profil Selected : "
         '
+        'TextBox_DebugGGS
+        '
+        Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_DebugGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DebugGGS.ForeColor = System.Drawing.Color.White
+        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(12, 974)
+        Me.TextBox_DebugGGS.Multiline = True
+        Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
+        Me.TextBox_DebugGGS.ReadOnly = True
+        Me.TextBox_DebugGGS.Size = New System.Drawing.Size(257, 25)
+        Me.TextBox_DebugGGS.TabIndex = 69
+        Me.TextBox_DebugGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FlatMini1
         '
         Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -1837,12 +1852,26 @@ Partial Class Form_Tools
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
+        'TextBox_DebbugerGGS_2
+        '
+        Me.TextBox_DebbugerGGS_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_DebbugerGGS_2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DebbugerGGS_2.ForeColor = System.Drawing.Color.White
+        Me.TextBox_DebbugerGGS_2.Location = New System.Drawing.Point(12, 1005)
+        Me.TextBox_DebbugerGGS_2.Name = "TextBox_DebbugerGGS_2"
+        Me.TextBox_DebbugerGGS_2.ReadOnly = True
+        Me.TextBox_DebbugerGGS_2.Size = New System.Drawing.Size(257, 22)
+        Me.TextBox_DebbugerGGS_2.TabIndex = 70
+        Me.TextBox_DebbugerGGS_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1688, 1100)
+        Me.Controls.Add(Me.TextBox_DebbugerGGS_2)
+        Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)
         Me.Controls.Add(Me.Panel_stats)
@@ -1868,6 +1897,7 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Label_ButtonNPCBOX)
         Me.Controls.Add(Me.Label_buttonGeneral)
         Me.Controls.Add(Me.Panel_Title)
+        Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
@@ -2042,4 +2072,6 @@ Partial Class Form_Tools
     Friend WithEvents Button_ResetStats As Button
     Friend WithEvents TextBox_ProfilSelected As TextBox
     Friend WithEvents Label_ProfilSelected As Label
+    Friend WithEvents TextBox_DebugGGS As TextBox
+    Friend WithEvents TextBox_DebbugerGGS_2 As TextBox
 End Class
