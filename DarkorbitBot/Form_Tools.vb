@@ -1,4 +1,7 @@
-﻿Public Class Form_Tools
+﻿Imports System.Net
+Imports System.Text.RegularExpressions
+
+Public Class Form_Tools
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -219,8 +222,8 @@
         'Else
 
         Label_galaxygates.Visible = True
-            GalaxyGates_Button.Enabled = False
-            Panel_GalaxyGates.Visible = True
+        GalaxyGates_Button.Enabled = False
+        Panel_GalaxyGates.Visible = True
         Size = New Size(553, 622)
         TextBox_uridiumGGS.Text = Utils.currentUridium
 
@@ -291,7 +294,7 @@
 
         If Utils.server = "" Then
 
-            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim result = MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             If result = DialogResult.OK Then
                 General_button.Enabled = False
                 Label_buttonGeneral.Visible = True
@@ -315,7 +318,7 @@
             Label_buttonStats.Visible = True
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
-            Size = New Size(390, 438)
+            Size = New Size(390, 356)
 
             Utils.checkStats = True
             BackPage_Form.Show()
@@ -510,11 +513,39 @@
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-
+        'Mettre dans un doc completed (pour gg snipper et ptet pour l'autre ?)
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=1&type=full")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=2&type=full")
         WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
+
+        'A tester
+        Console.WriteLine("prout")
+        Console.WriteLine(WebBrowser_GGspinner.Document.All)
+        'A tester
+
+        Dim testalacon = Regex.Match(WebBrowser_GGspinner.DocumentText, "<mode.*?>([\s\S]*?)<\/mode>") ' quel type de GG
+        Console.WriteLine(testalacon.Groups.Item(0).ToString)
+
+        Dim testalacon2 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<money.*?>([\s\S]*?)<\/money>") ' money en cours 
+        Console.WriteLine(testalacon2.Groups.Item(0).ToString)
+
+        Dim testalacon3 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<samples.*?>([\s\S]*?)<\/samples>") 'extra energy restant 
+        Console.WriteLine(testalacon3.Groups.Item(0).ToString)
+
+        'Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<item.*?>([\s\S]*?)<\/items>")
+        Dim testalacon4 = Regex.Match(WebBrowser_GGspinner.DocumentText, "<item type=""([\s\S]*?)""")
+        Console.WriteLine(testalacon4.Groups.Item(0).ToString)
+
+        ' Console.WriteLine(WebBrowser_GGspinner.Document.GetElementById("line3").InnerText())
+
+        ' <item.*?>([\s\S]*?)<\/items>
+
+        'Console.WriteLine(testalacon.Groups.Item(6).ToString)
+        'Console.WriteLine(testalacon.Groups.Item(9).ToString)
+        'Console.WriteLine(testalacon.Groups.Item(99).ToString)
+        'Console.WriteLine(testalacon.Groups.Item(102).ToString)
+        'Console.WriteLine(testalacon.Groups.Item(105).ToString)
+        'Console.WriteLine(testalacon.Groups.Item(109).ToString)
+
 
     End Sub
 
@@ -808,4 +839,25 @@
         TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, " ")
     End Sub
 
+    Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
+
+        TextBox_uridiumCurrent.Text = 0
+        TextBox_creditCurrent.Text = 0
+        TextBox_honorCurrent.Text = 0
+        TextBox_experienceCurrent.Text = 0
+        TextBox_RPCurrent.Text = 0
+        TextBox_LevelCurrent.Text = 0
+
+        TextBox_uridiumEarned.Text = 0
+        TextBox_creditEarned.Text = 0
+        TextBox_honorEarned.Text = 0
+        TextBox_experienceEarned.Text = 0
+        TextBox_RPEarned.Text = 0
+
+        Utils.checkStats = True
+        BackPage_Form.Show()
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WindowState = FormWindowState.Minimized
+
+    End Sub
 End Class
