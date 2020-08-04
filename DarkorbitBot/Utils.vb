@@ -35,8 +35,8 @@ Public Class Utils
             Form_Tools.TextBox_RPCurrent.Text = currentRankPoints
         End If
     End Sub
-
 #End Region
+
     Public Shared Function NumberToHumanReadable(number As String, espacement As String)
         If espacement = "" Then
             Debug.WriteLine("espacement est NUL !!!!")
@@ -46,24 +46,38 @@ Public Class Utils
             Dim revNumberString As String = StrReverse(number) 'on inverse le résultat
             Dim newNumberString As String = ""
             Dim first As Boolean = True
+            Dim second As Boolean = True
 
             For Each n As String In revNumberString
                 numberHuman = n + numberHuman
-                Console.WriteLine("avant:" + numberHuman)
+                'Console.WriteLine("avant:" + numberHuman)
+
                 If numberHuman.Length = 3 Then
                     If first Then
                         first = False
-                        ' permet d'éviter de mettre un point en trop
-                        newNumberString = numberHuman
+                        'permet d'éviter de mettre un point en trop
+                        newNumberString = espacement + numberHuman
                         numberHuman = ""
                     Else
-                        'On met un espacement entre chaque nombre
-                        newNumberString = numberHuman + espacement + newNumberString
-                        numberHuman = ""
+                        If second Then
+                            second = False
+                            'On ne met pas un espacement entre chaque nombre car déjà mis dans first
+                            newNumberString = numberHuman + newNumberString
+                            Console.WriteLine("2nd>" + newNumberString)
+                            numberHuman = ""
+                        Else
+                            'On met un espacement entre chaque nombre car on en a plus
+                            newNumberString = numberHuman + espacement + newNumberString
+                            numberHuman = ""
+                        End If
+
                     End If
                 End If
-                Console.WriteLine("apres:" + numberHuman)
+                'Console.WriteLine("apres:" + numberHuman)
             Next
+            If Not numberHuman.Length = 0 Then
+                newNumberString = numberHuman + newNumberString
+            End If
             Return newNumberString
         End If
 

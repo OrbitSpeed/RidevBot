@@ -9,7 +9,10 @@ Public Class Form_Startup
     Public MouseDownY As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Console.WriteLine(Utils.NumberToHumanReadable(875425))
+        Console.WriteLine(Utils.NumberToHumanReadable("123456", " "))
+        Console.WriteLine(Utils.NumberToHumanReadable("1234567", " "))
+        Console.WriteLine(Utils.NumberToHumanReadable("12345678", " "))
+        Console.WriteLine(Utils.NumberToHumanReadable("123456789", " "))
 #Region "Location and resize"
         Panel4.Location = New Point(0, 55)
         Panel4.Size = New Size(256, 221)
