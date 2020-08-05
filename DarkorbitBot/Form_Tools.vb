@@ -231,10 +231,6 @@ Public Class Form_Tools
 
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
-        Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
-        TextBox_GGinfoGGS.Text = html107
-        Console.WriteLine(html107)
-
         ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
 
         ' End If
@@ -1129,6 +1125,27 @@ Public Class Form_Tools
 
 
 
+        ' id<\/SPAN><SPAN class="m">="<\/SPAN><B>1<\/B.*?>([\s\S]*?)<\/DIV>
+
+
     End Sub
 
+    Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGInfo.DocumentCompleted
+
+        Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
+        TextBox_GGinfoGGS.Text = html107
+        '   Console.WriteLine(html107)
+
+        Dim Alpha1 = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
+        TextBox_infoGGalpha1.Text = (Alpha1.Groups.Item(1).ToString)
+        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        Console.WriteLine(TextBox_infoGGalpha1.Text)
+
+        ' id<\/SPAN><SPAN class="m">="<\/SPAN><B>1<\/B.*?>([\s\S]*?) <\/ DIV >
+        ' </B><SPAN class="m">"</SPAN><SPAN class="m"> /&gt;</SPAN>
+
+    End Sub
 End Class
