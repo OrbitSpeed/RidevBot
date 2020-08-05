@@ -179,6 +179,7 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1000,6 +1001,7 @@ Partial Class Form_Tools
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_EarnedMCB25_GGS)
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_LOGFILE_Earned)
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_PLT2021_Earned)
+        Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label1)
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_Separator5_earned_GGS)
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_SAB50_Earned)
         Me.Panel_EarnedLaserRocketLogfile_GGS.Controls.Add(Me.Label_Separator4_earned_GGS)
@@ -1019,7 +1021,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedLogfile_GGS.AutoSize = True
         Me.Label_EarnedLogfile_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedLogfile_GGS.Location = New System.Drawing.Point(134, 104)
+        Me.Label_EarnedLogfile_GGS.Location = New System.Drawing.Point(79, 104)
         Me.Label_EarnedLogfile_GGS.Name = "Label_EarnedLogfile_GGS"
         Me.Label_EarnedLogfile_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedLogfile_GGS.TabIndex = 88
@@ -1029,7 +1031,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedPLT2021_GGS.AutoSize = True
         Me.Label_EarnedPLT2021_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedPLT2021_GGS.Location = New System.Drawing.Point(134, 84)
+        Me.Label_EarnedPLT2021_GGS.Location = New System.Drawing.Point(79, 84)
         Me.Label_EarnedPLT2021_GGS.Name = "Label_EarnedPLT2021_GGS"
         Me.Label_EarnedPLT2021_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedPLT2021_GGS.TabIndex = 87
@@ -1039,7 +1041,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedSAB50_GGS.AutoSize = True
         Me.Label_EarnedSAB50_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedSAB50_GGS.Location = New System.Drawing.Point(134, 64)
+        Me.Label_EarnedSAB50_GGS.Location = New System.Drawing.Point(79, 64)
         Me.Label_EarnedSAB50_GGS.Name = "Label_EarnedSAB50_GGS"
         Me.Label_EarnedSAB50_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedSAB50_GGS.TabIndex = 86
@@ -1049,7 +1051,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedUCB100_GGS.AutoSize = True
         Me.Label_EarnedUCB100_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedUCB100_GGS.Location = New System.Drawing.Point(134, 44)
+        Me.Label_EarnedUCB100_GGS.Location = New System.Drawing.Point(79, 44)
         Me.Label_EarnedUCB100_GGS.Name = "Label_EarnedUCB100_GGS"
         Me.Label_EarnedUCB100_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedUCB100_GGS.TabIndex = 85
@@ -1059,7 +1061,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedMCB50_GGS.AutoSize = True
         Me.Label_EarnedMCB50_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedMCB50_GGS.Location = New System.Drawing.Point(134, 24)
+        Me.Label_EarnedMCB50_GGS.Location = New System.Drawing.Point(79, 24)
         Me.Label_EarnedMCB50_GGS.Name = "Label_EarnedMCB50_GGS"
         Me.Label_EarnedMCB50_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedMCB50_GGS.TabIndex = 84
@@ -1069,7 +1071,7 @@ Partial Class Form_Tools
         '
         Me.Label_EarnedMCB25_GGS.AutoSize = True
         Me.Label_EarnedMCB25_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EarnedMCB25_GGS.Location = New System.Drawing.Point(134, 4)
+        Me.Label_EarnedMCB25_GGS.Location = New System.Drawing.Point(79, 4)
         Me.Label_EarnedMCB25_GGS.Name = "Label_EarnedMCB25_GGS"
         Me.Label_EarnedMCB25_GGS.Size = New System.Drawing.Size(13, 13)
         Me.Label_EarnedMCB25_GGS.TabIndex = 83
@@ -1102,9 +1104,9 @@ Partial Class Form_Tools
         Me.Label_Separator5_earned_GGS.ForeColor = System.Drawing.Color.White
         Me.Label_Separator5_earned_GGS.Location = New System.Drawing.Point(2, 84)
         Me.Label_Separator5_earned_GGS.Name = "Label_Separator5_earned_GGS"
-        Me.Label_Separator5_earned_GGS.Size = New System.Drawing.Size(251, 18)
+        Me.Label_Separator5_earned_GGS.Size = New System.Drawing.Size(263, 18)
         Me.Label_Separator5_earned_GGS.TabIndex = 77
-        Me.Label_Separator5_earned_GGS.Text = "___________________________"
+        Me.Label_Separator5_earned_GGS.Text = "_____________│______________"
         '
         'Label_SAB50_Earned
         '
@@ -1123,9 +1125,9 @@ Partial Class Form_Tools
         Me.Label_Separator4_earned_GGS.ForeColor = System.Drawing.Color.White
         Me.Label_Separator4_earned_GGS.Location = New System.Drawing.Point(2, 64)
         Me.Label_Separator4_earned_GGS.Name = "Label_Separator4_earned_GGS"
-        Me.Label_Separator4_earned_GGS.Size = New System.Drawing.Size(251, 18)
+        Me.Label_Separator4_earned_GGS.Size = New System.Drawing.Size(263, 18)
         Me.Label_Separator4_earned_GGS.TabIndex = 75
-        Me.Label_Separator4_earned_GGS.Text = "___________________________"
+        Me.Label_Separator4_earned_GGS.Text = "_____________│______________"
         '
         'Label_UCB100_Earned
         '
@@ -1144,9 +1146,9 @@ Partial Class Form_Tools
         Me.Label_Separator3_earned_GGS.ForeColor = System.Drawing.Color.White
         Me.Label_Separator3_earned_GGS.Location = New System.Drawing.Point(2, 44)
         Me.Label_Separator3_earned_GGS.Name = "Label_Separator3_earned_GGS"
-        Me.Label_Separator3_earned_GGS.Size = New System.Drawing.Size(251, 18)
+        Me.Label_Separator3_earned_GGS.Size = New System.Drawing.Size(263, 18)
         Me.Label_Separator3_earned_GGS.TabIndex = 73
-        Me.Label_Separator3_earned_GGS.Text = "___________________________"
+        Me.Label_Separator3_earned_GGS.Text = "_____________│______________"
         '
         'Label_MCB50_Earned
         '
@@ -1165,9 +1167,9 @@ Partial Class Form_Tools
         Me.Label_Separator2_earned_GGS.ForeColor = System.Drawing.Color.White
         Me.Label_Separator2_earned_GGS.Location = New System.Drawing.Point(2, 24)
         Me.Label_Separator2_earned_GGS.Name = "Label_Separator2_earned_GGS"
-        Me.Label_Separator2_earned_GGS.Size = New System.Drawing.Size(251, 18)
+        Me.Label_Separator2_earned_GGS.Size = New System.Drawing.Size(263, 18)
         Me.Label_Separator2_earned_GGS.TabIndex = 71
-        Me.Label_Separator2_earned_GGS.Text = "___________________________"
+        Me.Label_Separator2_earned_GGS.Text = "_____________│______________"
         '
         'Label_MCB25_Earned
         '
@@ -1186,9 +1188,9 @@ Partial Class Form_Tools
         Me.Label_Separator1_earned_GGS.ForeColor = System.Drawing.Color.White
         Me.Label_Separator1_earned_GGS.Location = New System.Drawing.Point(2, 4)
         Me.Label_Separator1_earned_GGS.Name = "Label_Separator1_earned_GGS"
-        Me.Label_Separator1_earned_GGS.Size = New System.Drawing.Size(251, 18)
+        Me.Label_Separator1_earned_GGS.Size = New System.Drawing.Size(263, 18)
         Me.Label_Separator1_earned_GGS.TabIndex = 66
-        Me.Label_Separator1_earned_GGS.Text = "___________________________"
+        Me.Label_Separator1_earned_GGS.Text = "_____________│______________"
         '
         'Label_prepareGates_Text
         '
@@ -1261,9 +1263,9 @@ Partial Class Form_Tools
         Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
         Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(6, 20)
         Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
-        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(127, 21)
+        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(141, 21)
         Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
-        Me.CheckBox_UseOnlyEE_GGS.Text = "        Use only EE"
+        Me.CheckBox_UseOnlyEE_GGS.Text = "         EE only         "
         Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
         '
         'TextBox_uridiumtokeepGGS
@@ -1275,7 +1277,7 @@ Partial Class Form_Tools
         Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
         Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(69, 15)
         Me.TextBox_uridiumtokeepGGS.TabIndex = 5
-        Me.TextBox_uridiumtokeepGGS.Text = "0"
+        Me.TextBox_uridiumtokeepGGS.Text = "10.000"
         Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_UridiumtoKeepGGS
@@ -2193,6 +2195,17 @@ Partial Class Form_Tools
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(2, 103)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(263, 18)
+        Me.Label1.TabIndex = 77
+        Me.Label1.Text = "_____________│______________"
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2438,4 +2451,5 @@ Partial Class Form_Tools
     Friend WithEvents Label_EarnedMCB25_GGS As Label
     Friend WithEvents WebBrowser_GGInfo As WebBrowser
     Friend WithEvents TextBox_GGinfoGGS As TextBox
+    Friend WithEvents Label1 As Label
 End Class

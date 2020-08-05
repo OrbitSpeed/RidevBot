@@ -239,6 +239,8 @@ Public Class Form_Tools
 
         ' End If
 
+        CenterToScreen()
+
     End Sub
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
@@ -853,7 +855,7 @@ Public Class Form_Tools
 
         If BackgroundWorkerAutospin = True Then
             'DoWork ici
-            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, " ", "")
+            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
 
 
 
@@ -1032,8 +1034,10 @@ Public Class Form_Tools
 
     End Sub
 
+
     Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
 
+#Region "Bordel"
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
         'Console.WriteLine(html5)
@@ -1121,6 +1125,9 @@ Public Class Form_Tools
         'TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_ExtraEnergy_GGS.Text = (TextBox_DebbugerGGS_5_EE.Text)
+#End Region
+
+
 
     End Sub
 
