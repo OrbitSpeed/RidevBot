@@ -663,16 +663,16 @@ Public Class Form_Tools
     Private Sub Button_epsion_GGS_Click(sender As Object, e As EventArgs) Handles Button_epsion_GGS.Click
 
         'delta
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&delta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&delta=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
 
     End Sub
 
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
 
-        ' espilon
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&epsilon=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
+        ' epsilon
+        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&epsilon=1&sample=1&multiplier=1")
+        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
 
     End Sub
 
@@ -1026,7 +1026,7 @@ Public Class Form_Tools
             TextBox_DebbugerGGS_2.Text = "Xenomit"
 
         ElseIf TextBox_DebbugerGGS_2.Text.Contains("part") AndAlso TextBox_DebbugerGGS_3.Text.Contains("") Then
-            TextBox_DebbugerGGS_2.Text = "A multiplier has been assigned"
+            TextBox_DebbugerGGS_2.Text = "A multiplier has assigned"
 
         ElseIf TextBox_DebbugerGGS_2.Text.Contains("nanohull") Then
             TextBox_DebbugerGGS_2.Text = "Nanohull"
