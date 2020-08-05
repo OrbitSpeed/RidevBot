@@ -965,13 +965,13 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_WinGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_WinGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_WinGGS.Location = New System.Drawing.Point(197, 341)
+        Me.TextBox_WinGGS.Location = New System.Drawing.Point(197, 482)
         Me.TextBox_WinGGS.Multiline = True
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
         Me.TextBox_WinGGS.ReadOnly = True
-        Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 251)
+        Me.TextBox_WinGGS.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 110)
         Me.TextBox_WinGGS.TabIndex = 68
-        Me.TextBox_WinGGS.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<>"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel_PrepareGatesAuto

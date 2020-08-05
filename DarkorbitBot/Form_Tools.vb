@@ -966,6 +966,9 @@ Public Class Form_Tools
 
     Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
+        'TODO ? :
+        'WebBrowser_GGspinner.Navigate(Utils.GGspinner(server, userid, sid, gate))
+
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=1")
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=2")
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=3")
@@ -977,7 +980,7 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=19")
         WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=13")
 
-        ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
+        'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
 
     End Sub
 
@@ -1010,6 +1013,9 @@ Public Class Form_Tools
         TextBox_DebbugerGGS_4.Text = Replace(TextBox_DebbugerGGS_4.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
         Console.WriteLine(TextBox_DebbugerGGS_4.Text)
 
+
+        'GGSpinner_EarnedType -- GGSpinner_EarnedID
+
         If TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("2") Then
             TextBox_DebbugerGGS_2.Text = "MCB-25"
 
@@ -1039,15 +1045,12 @@ Public Class Form_Tools
 
         End If
 
-        TextBox_WinGGS.Text = vbCrLf &
-            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" & vbCrLf
+        TextBox_WinGGS.Text = vbNewLine +
+            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" + TextBox_WinGGS.Text
 
         TextBox_uridiumGGS.Text = (money.Groups.Item(1).ToString)
         ' TextBox_ExtraEnergy_GGS.Text = extra ennergy Left
 
     End Sub
 
-    Private Sub TextBox_WinGGS_TextChanged(sender As Object, e As EventArgs) Handles TextBox_WinGGS.TextChanged
-
-    End Sub
 End Class

@@ -13,6 +13,7 @@ Public Class Form_Startup
         Console.WriteLine(Utils.NumberToHumanReadable("1234567", " "))
         Console.WriteLine(Utils.NumberToHumanReadable("12345678", " "))
         Console.WriteLine(Utils.NumberToHumanReadable("123456789", " "))
+
 #Region "Location and resize"
         Panel4.Location = New Point(0, 55)
         Panel4.Size = New Size(256, 221)
