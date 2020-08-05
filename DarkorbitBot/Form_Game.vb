@@ -64,6 +64,8 @@ Public Class Form_Game
                 Console.WriteLine(testalacon.Value.Split("=")(1))
                 Utils.dosid = testalacon.Value.Split("=")(1)
 
+                Utils.userid = Replace(WebBrowser1.Document.GetElementById("header_top_id").InnerText, " ", "")
+
                 Form_Tools.TextBox_Get_id.Text = Replace(WebBrowser1.Document.GetElementById("header_top_id").InnerText, " ", "")
 
                 Form_Tools.TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")

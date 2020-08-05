@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports System.Text.RegularExpressions
 
 Public Class Utils
 #Region "Cookie Manager"
@@ -10,6 +11,7 @@ Public Class Utils
 
 #Region "Déclarations"
     'Used everywhere
+    Public Shared userid As String
     Public Shared dosid As String
     Public Shared server As String
     Public Shared connectWithCookie As Boolean = False
@@ -38,56 +40,38 @@ Public Class Utils
 #End Region
 
     Public Shared Function NumberToHumanReadable(number As String, espacement As String)
-        If espacement = "" Then
+        If espacement.Length = 0 Then
             Debug.WriteLine("espacement est NUL !!!!")
             Return False
         Else
-            Dim numberHuman As String = ""
-            Dim revNumberString As String = StrReverse(number) 'on inverse le résultat
-            Dim newNumberString As String = ""
-            Dim first As Boolean = True
-            Dim second As Boolean = True
+            'Dim abc As String = number
+            'For i = 3 To number.Length Step 4
+            '    abc = abc.Insert(i, espacement)
+            'Next
+            'Return abc
+            number = StrReverse(number)
+            Dim dataToReturn = Regex.Replace(number, ".{3}", "$0" + espacement)
+            If dataToReturn.Substring(dataToReturn.Length - 1, 1) = espacement Then
+                'Si le dernier char est l'epacement alors
 
-            For Each n As String In revNumberString
-                numberHuman = n + numberHuman
-                'Console.WriteLine("avant:" + numberHuman)
+                Dim newData = dataToReturn.Substring(0, dataToReturn.Length - 1)
+                'On enlève le dernier char
 
-                If numberHuman.Length = 3 Then
-                    If first Then
-                        first = False
-                        'permet d'éviter de mettre un point en trop
-                        newNumberString = espacement + numberHuman
-                        numberHuman = ""
-                    Else
-                        If second Then
-                            second = False
-                            'On ne met pas un espacement entre chaque nombre car déjà mis dans first
-                            newNumberString = numberHuman + newNumberString
-                            Console.WriteLine("2nd>" + newNumberString)
-                            numberHuman = ""
-                        Else
-                            'On met un espacement entre chaque nombre car on en a plus
-                            newNumberString = numberHuman + espacement + newNumberString
-                            numberHuman = ""
-                        End If
-
-                    End If
-                End If
-                'Console.WriteLine("apres:" + numberHuman)
-            Next
-            If Not numberHuman.Length = 0 Then
-                newNumberString = numberHuman + newNumberString
+                dataToReturn = newData
+                'et on le renvoie
+                dataToReturn = StrReverse(dataToReturn)
+                Return dataToReturn
             End If
-            Return newNumberString
+            dataToReturn = StrReverse(dataToReturn)
+            Return dataToReturn
         End If
-
     End Function
 
-    Public Shared Function ReplaceAllFromTo(text As String, fromText As String, toText As String)
-        Dim newText As String
-        newText = text.Replace(fromText, toText)
-
-        Return newText
+    Public Shared Function PrepareGatesFunction(server As String, userid As String, dosid As String, gateid As Integer)
+        If server.Length = 0 Or userid.Length = 0 Or dosid.Length = 0 Or gateid = 0 Then
+            Return MsgBox("Erreur dans le code, tu as oublié de mettre une valeur dans PrepareGatesFunction")
+        End If
+        Return "https://" + server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + userid + "&sid=" + dosid + "&action=setupGate&gateID=" & gateid
     End Function
 
 End Class

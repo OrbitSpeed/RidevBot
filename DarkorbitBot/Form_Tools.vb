@@ -439,7 +439,7 @@ Public Class Form_Tools
 
     Private Sub PictureBox_Backpage_Click(sender As Object, e As EventArgs) Handles PictureBox_Backpage.Click
 
-        If Utils.server = vbNull Then
+        If Utils.server.Length = 0 Then
             MessageBox.Show("You must first login to the game before you can access the page", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
@@ -853,7 +853,7 @@ Public Class Form_Tools
 
         If BackgroundWorkerAutospin = True Then
             'DoWork ici
-            uridiumToKeep = Utils.ReplaceAllFromTo(TextBox_uridiumtokeepGGS.Text, " ", "")
+            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, " ", "")
 
 
 
@@ -947,7 +947,7 @@ Public Class Form_Tools
 #End Region
 
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
-        TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, " ")
+        TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
     End Sub
 
     Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
@@ -979,46 +979,53 @@ Public Class Form_Tools
 
         If Button_Alpha.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=1")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=1")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
 
         ElseIf Button_beta.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=2")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=2")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
 
         ElseIf Button_gamma.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=3")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=3")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
 
         ElseIf Button_delta.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=4")
+            'WebBrowser_GGspinner.Navigate("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=4")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
 
         ElseIf Button_epsilon.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=5")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=5")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
 
         ElseIf Button_zeta.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=6")
+            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=6")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
 
         ElseIf Button_Kappa.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=7")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=7")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
 
         ElseIf Button_lambda.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=8")
+            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=8")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
 
         ElseIf Button_hades.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=19")
+            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=19")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
 
         ElseIf Button_kuiper.Enabled = False Then
 
-            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=13")
-
-        Else
-
+            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=13")
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
         End If
 
         'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
@@ -1029,7 +1036,7 @@ Public Class Form_Tools
 
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
-        Console.WriteLine(html5)
+        'Console.WriteLine(html5)
 
         Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
         Console.WriteLine(mode.Groups.Item(1).ToString)
@@ -1106,7 +1113,13 @@ Public Class Form_Tools
         TextBox_WinGGS.Text = vbNewLine +
             "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" + TextBox_WinGGS.Text
 
-        TextBox_uridiumGGS.Text = (money.Groups.Item(1).ToString)
+        'Console.WriteLine("---DEBUG---")
+        'Console.WriteLine(money.Groups.Item(1).ToString)
+        'Console.WriteLine(Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, "."))
+        'Console.WriteLine("---DEBUG---")
+
+        'TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
+        TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_ExtraEnergy_GGS.Text = (TextBox_DebbugerGGS_5_EE.Text)
 
     End Sub
