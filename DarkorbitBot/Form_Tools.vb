@@ -229,6 +229,14 @@ Public Class Form_Tools
         Size = New Size(553, 622)
         TextBox_uridiumGGS.Text = Utils.currentUridium
 
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+
+        Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
+        TextBox_GGinfoGGS.Text = html107
+        Console.WriteLine(html107)
+
+        ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
+
         ' End If
 
     End Sub
@@ -969,16 +977,49 @@ Public Class Form_Tools
         'TODO ? :
         'WebBrowser_GGspinner.Navigate(Utils.GGspinner(server, userid, sid, gate))
 
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=1")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=2")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=3")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=4")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=5")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=6")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=7")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=8")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=19")
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + TextBox_Get_Dosid.Text + "&action=setupGate&gateID=13")
+        If Button_Alpha.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=1")
+
+        ElseIf Button_beta.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=2")
+
+        ElseIf Button_gamma.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=3")
+
+        ElseIf Button_delta.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=4")
+
+        ElseIf Button_epsilon.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=5")
+
+        ElseIf Button_zeta.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=6")
+
+        ElseIf Button_Kappa.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=7")
+
+        ElseIf Button_lambda.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=8")
+
+        ElseIf Button_hades.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=19")
+
+        ElseIf Button_kuiper.Enabled = False Then
+
+            WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=13")
+
+        Else
+
+        End If
 
         'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
 
@@ -988,6 +1029,7 @@ Public Class Form_Tools
 
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
+        Console.WriteLine(html5)
 
         Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
         Console.WriteLine(mode.Groups.Item(1).ToString)
@@ -997,6 +1039,11 @@ Public Class Form_Tools
 
         Dim spinamount_selected = Regex.Match(TextBox_DebugGGS.Text, "spinamount_selected<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' nombre de spin utiliser
         Console.WriteLine(spinamount_selected.Groups.Item(1).ToString)
+
+        Dim samples2 = Regex.Match(TextBox_DebugGGS.Text, "samples.*?>([\s\S]*?)<\/SPAN><SPAN class=""m"">") ' energy restante
+        TextBox_DebbugerGGS_5_EE.Text = (samples2.Groups.Item(1).ToString)
+        TextBox_DebbugerGGS_5_EE.Text = Replace(TextBox_DebbugerGGS_5_EE.Text, "<SPAN class=""m"">&gt;</SPAN><SPAN class=""tx"">", "")
+        Console.WriteLine(TextBox_DebbugerGGS_5_EE.Text)
 
         Dim Winned = Regex.Match(TextBox_DebugGGS.Text, "type.*?>([\s\S]*?)<\/B>") ' winned into spin >>> type
         TextBox_DebbugerGGS_2.Text = (Winned.Groups.Item(1).ToString)
@@ -1031,9 +1078,6 @@ Public Class Form_Tools
         ElseIf TextBox_DebbugerGGS_2.Text.Contains("ore") Then
             TextBox_DebbugerGGS_2.Text = "Xenomit"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("part") AndAlso TextBox_DebbugerGGS_3.Text.Contains("") Then
-            TextBox_DebbugerGGS_2.Text = "A multiplier has assigned"
-
         ElseIf TextBox_DebbugerGGS_2.Text.Contains("nanohull") Then
             TextBox_DebbugerGGS_2.Text = "Nanohull"
 
@@ -1043,13 +1087,27 @@ Public Class Form_Tools
         ElseIf TextBox_DebbugerGGS_2.Text.Contains("rocket") Then
             TextBox_DebbugerGGS_2.Text = "PLT-2021"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("voucher") Then
+            TextBox_DebbugerGGS_2.Text = "Mine"
+
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("part") Then
+            If TextBox_DebbugerGGS_3.Text.Contains("1") Or ("2") Or ("3") Or ("4") Or ("5") Or ("6") Or ("7") Or ("8") Or ("9") Or ("10") Or ("11") Or ("12") Or ("13") Or ("14") Or ("15") Or ("16") Or ("17") Or ("18") Or ("19") Or ("20") Or ("21") Then
+
+                TextBox_DebbugerGGS_2.Text = "part(s) found"
+
+            Else
+
+                TextBox_DebbugerGGS_2.Text = "Multiplier assigned"
+
+            End If
+
         End If
 
         TextBox_WinGGS.Text = vbNewLine +
             "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" + TextBox_WinGGS.Text
 
         TextBox_uridiumGGS.Text = (money.Groups.Item(1).ToString)
-        ' TextBox_ExtraEnergy_GGS.Text = extra ennergy Left
+        TextBox_ExtraEnergy_GGS.Text = (TextBox_DebbugerGGS_5_EE.Text)
 
     End Sub
 
