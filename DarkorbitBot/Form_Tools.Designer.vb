@@ -49,6 +49,8 @@ Partial Class Form_Tools
         Me.Button_OpenLoginPanel = New System.Windows.Forms.Button()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
+        Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
+        Me.Label_ProfilSelected = New System.Windows.Forms.Label()
         Me.TextBox_Get_Server = New System.Windows.Forms.TextBox()
         Me.TextBox_Get_Dosid = New System.Windows.Forms.TextBox()
         Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
@@ -68,7 +70,7 @@ Partial Class Form_Tools
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel_Uridum_ExtraEnnergy_left = New System.Windows.Forms.Panel()
-        Me.TextBox_GGS = New System.Windows.Forms.TextBox()
+        Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
         Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
         Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
         Me.Label_uridiumGGS = New System.Windows.Forms.Label()
@@ -148,11 +150,11 @@ Partial Class Form_Tools
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
-        Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
-        Me.Label_ProfilSelected = New System.Windows.Forms.Label()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.TextBox_DebbugerGGS_2 = New System.Windows.Forms.TextBox()
+        Me.TextBox_DebbugerGGS_3 = New System.Windows.Forms.TextBox()
+        Me.TextBox_DebbugerGGS_4 = New System.Windows.Forms.TextBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -518,6 +520,28 @@ Partial Class Form_Tools
         Me.Panel_Info.Size = New System.Drawing.Size(276, 93)
         Me.Panel_Info.TabIndex = 28
         '
+        'TextBox_ProfilSelected
+        '
+        Me.TextBox_ProfilSelected.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_ProfilSelected.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_ProfilSelected.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_ProfilSelected.Location = New System.Drawing.Point(106, 67)
+        Me.TextBox_ProfilSelected.Name = "TextBox_ProfilSelected"
+        Me.TextBox_ProfilSelected.ReadOnly = True
+        Me.TextBox_ProfilSelected.Size = New System.Drawing.Size(163, 15)
+        Me.TextBox_ProfilSelected.TabIndex = 9
+        Me.TextBox_ProfilSelected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_ProfilSelected
+        '
+        Me.Label_ProfilSelected.AutoSize = True
+        Me.Label_ProfilSelected.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_ProfilSelected.Location = New System.Drawing.Point(10, 67)
+        Me.Label_ProfilSelected.Name = "Label_ProfilSelected"
+        Me.Label_ProfilSelected.Size = New System.Drawing.Size(90, 13)
+        Me.Label_ProfilSelected.TabIndex = 8
+        Me.Label_ProfilSelected.Text = "Profil Selected : "
+        '
         'TextBox_Get_Server
         '
         Me.TextBox_Get_Server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -726,7 +750,7 @@ Partial Class Form_Tools
         '
         Me.Panel_Uridum_ExtraEnnergy_left.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_Uridum_ExtraEnnergy_left.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Uridum_ExtraEnnergy_left.Controls.Add(Me.TextBox_GGS)
+        Me.Panel_Uridum_ExtraEnnergy_left.Controls.Add(Me.TextBox_ExtraEnergy_GGS)
         Me.Panel_Uridum_ExtraEnnergy_left.Controls.Add(Me.TextBox_uridiumGGS)
         Me.Panel_Uridum_ExtraEnnergy_left.Controls.Add(Me.Label_ExtraEnergyGGS)
         Me.Panel_Uridum_ExtraEnnergy_left.Controls.Add(Me.Label_uridiumGGS)
@@ -736,18 +760,18 @@ Partial Class Form_Tools
         Me.Panel_Uridum_ExtraEnnergy_left.Size = New System.Drawing.Size(176, 25)
         Me.Panel_Uridum_ExtraEnnergy_left.TabIndex = 51
         '
-        'TextBox_GGS
+        'TextBox_ExtraEnergy_GGS
         '
-        Me.TextBox_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_GGS.Location = New System.Drawing.Point(118, 4)
-        Me.TextBox_GGS.Name = "TextBox_GGS"
-        Me.TextBox_GGS.ReadOnly = True
-        Me.TextBox_GGS.Size = New System.Drawing.Size(53, 15)
-        Me.TextBox_GGS.TabIndex = 6
-        Me.TextBox_GGS.Text = "-1"
-        Me.TextBox_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_ExtraEnergy_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_ExtraEnergy_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_ExtraEnergy_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_ExtraEnergy_GGS.Location = New System.Drawing.Point(118, 4)
+        Me.TextBox_ExtraEnergy_GGS.Name = "TextBox_ExtraEnergy_GGS"
+        Me.TextBox_ExtraEnergy_GGS.ReadOnly = True
+        Me.TextBox_ExtraEnergy_GGS.Size = New System.Drawing.Size(53, 15)
+        Me.TextBox_ExtraEnergy_GGS.TabIndex = 6
+        Me.TextBox_ExtraEnergy_GGS.Text = "-1"
+        Me.TextBox_ExtraEnergy_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_uridiumGGS
         '
@@ -1005,12 +1029,13 @@ Partial Class Form_Tools
         '
         Me.TextBox_uridiumtokeepGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_uridiumtokeepGGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_uridiumtokeepGGS.Enabled = False
         Me.TextBox_uridiumtokeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_uridiumtokeepGGS.Location = New System.Drawing.Point(102, 4)
         Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
         Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(69, 15)
         Me.TextBox_uridiumtokeepGGS.TabIndex = 5
-        Me.TextBox_uridiumtokeepGGS.Text = "10 000"
+        Me.TextBox_uridiumtokeepGGS.Text = "0"
         Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_UridiumtoKeepGGS
@@ -1803,28 +1828,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
-        'TextBox_ProfilSelected
-        '
-        Me.TextBox_ProfilSelected.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_ProfilSelected.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_ProfilSelected.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ProfilSelected.Location = New System.Drawing.Point(106, 67)
-        Me.TextBox_ProfilSelected.Name = "TextBox_ProfilSelected"
-        Me.TextBox_ProfilSelected.ReadOnly = True
-        Me.TextBox_ProfilSelected.Size = New System.Drawing.Size(163, 15)
-        Me.TextBox_ProfilSelected.TabIndex = 9
-        Me.TextBox_ProfilSelected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_ProfilSelected
-        '
-        Me.Label_ProfilSelected.AutoSize = True
-        Me.Label_ProfilSelected.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ProfilSelected.Location = New System.Drawing.Point(10, 67)
-        Me.Label_ProfilSelected.Name = "Label_ProfilSelected"
-        Me.Label_ProfilSelected.Size = New System.Drawing.Size(90, 13)
-        Me.Label_ProfilSelected.TabIndex = 8
-        Me.Label_ProfilSelected.Text = "Profil Selected : "
-        '
         'TextBox_DebugGGS
         '
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1837,6 +1840,42 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.Size = New System.Drawing.Size(257, 25)
         Me.TextBox_DebugGGS.TabIndex = 69
         Me.TextBox_DebugGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_DebbugerGGS_2
+        '
+        Me.TextBox_DebbugerGGS_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_DebbugerGGS_2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DebbugerGGS_2.ForeColor = System.Drawing.Color.White
+        Me.TextBox_DebbugerGGS_2.Location = New System.Drawing.Point(12, 1066)
+        Me.TextBox_DebbugerGGS_2.Name = "TextBox_DebbugerGGS_2"
+        Me.TextBox_DebbugerGGS_2.ReadOnly = True
+        Me.TextBox_DebbugerGGS_2.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox_DebbugerGGS_2.TabIndex = 70
+        Me.TextBox_DebbugerGGS_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_DebbugerGGS_3
+        '
+        Me.TextBox_DebbugerGGS_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_DebbugerGGS_3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DebbugerGGS_3.ForeColor = System.Drawing.Color.White
+        Me.TextBox_DebbugerGGS_3.Location = New System.Drawing.Point(96, 1066)
+        Me.TextBox_DebbugerGGS_3.Name = "TextBox_DebbugerGGS_3"
+        Me.TextBox_DebbugerGGS_3.ReadOnly = True
+        Me.TextBox_DebbugerGGS_3.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox_DebbugerGGS_3.TabIndex = 71
+        Me.TextBox_DebbugerGGS_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_DebbugerGGS_4
+        '
+        Me.TextBox_DebbugerGGS_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_DebbugerGGS_4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DebbugerGGS_4.ForeColor = System.Drawing.Color.White
+        Me.TextBox_DebbugerGGS_4.Location = New System.Drawing.Point(180, 1066)
+        Me.TextBox_DebbugerGGS_4.Name = "TextBox_DebbugerGGS_4"
+        Me.TextBox_DebbugerGGS_4.ReadOnly = True
+        Me.TextBox_DebbugerGGS_4.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox_DebbugerGGS_4.TabIndex = 72
+        Me.TextBox_DebbugerGGS_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'FlatMini1
         '
@@ -1852,24 +1891,14 @@ Partial Class Form_Tools
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
-        'TextBox_DebbugerGGS_2
-        '
-        Me.TextBox_DebbugerGGS_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_DebbugerGGS_2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_DebbugerGGS_2.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebbugerGGS_2.Location = New System.Drawing.Point(12, 1005)
-        Me.TextBox_DebbugerGGS_2.Name = "TextBox_DebbugerGGS_2"
-        Me.TextBox_DebbugerGGS_2.ReadOnly = True
-        Me.TextBox_DebbugerGGS_2.Size = New System.Drawing.Size(257, 22)
-        Me.TextBox_DebbugerGGS_2.TabIndex = 70
-        Me.TextBox_DebbugerGGS_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1688, 1100)
+        Me.Controls.Add(Me.TextBox_DebbugerGGS_4)
+        Me.Controls.Add(Me.TextBox_DebbugerGGS_3)
         Me.Controls.Add(Me.TextBox_DebbugerGGS_2)
         Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_divers)
@@ -2011,7 +2040,7 @@ Partial Class Form_Tools
     Friend WithEvents WebBrowser_galaxyGates As WebBrowser
     Friend WithEvents Button_kronos As Button
     Friend WithEvents Panel_Uridum_ExtraEnnergy_left As Panel
-    Friend WithEvents TextBox_GGS As TextBox
+    Friend WithEvents TextBox_ExtraEnergy_GGS As TextBox
     Friend WithEvents TextBox_uridiumGGS As TextBox
     Friend WithEvents Label_ExtraEnergyGGS As Label
     Friend WithEvents Label_uridiumGGS As Label
@@ -2074,4 +2103,6 @@ Partial Class Form_Tools
     Friend WithEvents Label_ProfilSelected As Label
     Friend WithEvents TextBox_DebugGGS As TextBox
     Friend WithEvents TextBox_DebbugerGGS_2 As TextBox
+    Friend WithEvents TextBox_DebbugerGGS_3 As TextBox
+    Friend WithEvents TextBox_DebbugerGGS_4 As TextBox
 End Class

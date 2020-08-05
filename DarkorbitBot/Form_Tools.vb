@@ -986,6 +986,9 @@ Public Class Form_Tools
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
 
+        Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
+        Console.WriteLine(mode.Groups.Item(1).ToString)
+
         Dim money = Regex.Match(TextBox_DebugGGS.Text, "money<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' money en cours d'utilisation
         Console.WriteLine(money.Groups.Item(1).ToString)
 
@@ -997,28 +1000,54 @@ Public Class Form_Tools
         TextBox_DebbugerGGS_2.Text = Replace(TextBox_DebbugerGGS_2.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
         Console.WriteLine(TextBox_DebbugerGGS_2.Text)
 
-        Dim Winned2 = Regex.Match(TextBox_DebugGGS.Text, "item_id.*?>([\s\S]*?) <\/ B >") ' winned into spin >>> item id
-        Console.WriteLine(Winned2.Groups.Item(1).ToString)
+        Dim Winned2 = Regex.Match(TextBox_DebugGGS.Text, "item_id.*?>([\s\S]*?)<\/B>") ' winned into spin >>> item id
+        TextBox_DebbugerGGS_3.Text = (Winned2.Groups.Item(1).ToString)
+        TextBox_DebbugerGGS_3.Text = Replace(TextBox_DebbugerGGS_3.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(TextBox_DebbugerGGS_3.Text)
 
         Dim Winned3 = Regex.Match(TextBox_DebugGGS.Text, "class=""t""> amount.*?>([\s\S]*?)<\/B>") ' winned into spin >>> amount
-        Console.WriteLine(Winned3.Groups.Item(1).ToString)
+        TextBox_DebbugerGGS_4.Text = (Winned3.Groups.Item(1).ToString)
+        TextBox_DebbugerGGS_4.Text = Replace(TextBox_DebbugerGGS_4.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(TextBox_DebbugerGGS_4.Text)
 
-        TextBox_WinGGS.Text = "<>" & vbCrLf &
-       "Spin amount selected : " + (spinamount_selected.Groups.Item(1).ToString) & vbCrLf
+        If TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("2") Then
+            TextBox_DebbugerGGS_2.Text = "MCB-25"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("3") Then
+            TextBox_DebbugerGGS_2.Text = "MCB-50"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("4") Then
+            TextBox_DebbugerGGS_2.Text = "UCB-100"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("5") Then
+            TextBox_DebbugerGGS_2.Text = "SAB-50"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("ore") Then
+            TextBox_DebbugerGGS_2.Text = "Xenomit"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("part") AndAlso TextBox_DebbugerGGS_3.Text.Contains("") Then
+            TextBox_DebbugerGGS_2.Text = "A multiplier has been assigned"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("nanohull") Then
+            TextBox_DebbugerGGS_2.Text = "Nanohull"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("logfile") Then
+            TextBox_DebbugerGGS_2.Text = "Logfile"
 
+        ElseIf TextBox_DebbugerGGS_2.Text.Contains("rocket") Then
+            TextBox_DebbugerGGS_2.Text = "PLT-2021"
 
+        End If
 
+        TextBox_WinGGS.Text = vbCrLf &
+            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" & vbCrLf
 
+        TextBox_uridiumGGS.Text = (money.Groups.Item(1).ToString)
+        ' TextBox_ExtraEnergy_GGS.Text = extra ennergy Left
 
-        'Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
-        'Console.WriteLine(mode.Groups.Item(1).ToString)
+    End Sub
+
+    Private Sub TextBox_WinGGS_TextChanged(sender As Object, e As EventArgs) Handles TextBox_WinGGS.TextChanged
 
     End Sub
 End Class
