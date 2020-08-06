@@ -45,6 +45,23 @@ Public Class Form_Tools
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
+        ' -----------------------------------------------
+
         Panel_general.Location = New Point(86, 18)
         Panel_Npc.Location = New Point(86, 18)
         Panel_collector.Location = New Point(86, 18)
@@ -462,7 +479,15 @@ Public Class Form_Tools
 #Region "GG Click Portail"
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=12&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=12&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -476,11 +501,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = False
 
+        Dim Chronos = Regex.Match(TextBox_GGinfoGGS.Text, "21.*?>([\s\S]*?)<\/DIV>") ' Info GG chronos
+        Dim DataChronos = (Chronos.Groups.Item(1).ToString)
+        DataChronos = Replace(DataChronos, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataChronos = Replace(DataChronos, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataChronos = Replace(DataChronos, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataChronos = Replace(DataChronos, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataChronos = Replace(DataChronos, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Chronos")
+        Console.WriteLine(DataChronos)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -494,11 +546,38 @@ Public Class Form_Tools
         Button_hades.Enabled = False
         Button_kronos.Enabled = True
 
+        Dim Hades = Regex.Match(TextBox_GGinfoGGS.Text, "45.*?>([\s\S]*?)<\/DIV>") ' Info GG hades
+        Dim DataHades = (Hades.Groups.Item(1).ToString)
+        DataHades = Replace(DataHades, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataHades = Replace(DataHades, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataHades = Replace(DataHades, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataHades = Replace(DataHades, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataHades = Replace(DataHades, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Hades")
+        Console.WriteLine(DataHades)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=19&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -512,11 +591,39 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Kuiper = Regex.Match(TextBox_GGinfoGGS.Text, "total<\/SPAN><SPAN class=""m"">=""<\/SPAN><B>100.*?>([\s\S]*?)<\/DIV>") ' Info GG kuiper
+        Dim DataKuiper = (Kuiper.Groups.Item(1).ToString)
+        DataKuiper = Replace(DataKuiper, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataKuiper = Replace(DataKuiper, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataKuiper = Replace(DataKuiper, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataKuiper = Replace(DataKuiper, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataKuiper = Replace(DataKuiper, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        DataKuiper = Replace(DataKuiper, "  total</SPAN><SPAN class="" m"">=""</SPAN><B>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Kuiper")
+        Console.WriteLine(DataKuiper)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=8&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -530,11 +637,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Lambda = Regex.Match(TextBox_GGinfoGGS.Text, "45.*?>([\s\S]*?)<\/DIV>") ' Info GG lambda
+        Dim DataLambda = (Lambda.Groups.Item(1).ToString)
+        DataLambda = Replace(DataLambda, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataLambda = Replace(DataLambda, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataLambda = Replace(DataLambda, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataLambda = Replace(DataLambda, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataLambda = Replace(DataLambda, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Lambda")
+        Console.WriteLine(DataLambda)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=7&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -548,11 +682,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Kappa = Regex.Match(TextBox_GGinfoGGS.Text, "120.*?>([\s\S]*?)<\/DIV>") ' Info GG kappa
+        Dim DataKappa = (Kappa.Groups.Item(1).ToString)
+        DataKappa = Replace(DataKappa, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataKappa = Replace(DataKappa, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataKappa = Replace(DataKappa, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataKappa = Replace(DataKappa, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataKappa = Replace(DataKappa, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("kappa")
+        Console.WriteLine(DataKappa)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=6&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -566,11 +727,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Zeta = Regex.Match(TextBox_GGinfoGGS.Text, "111.*?>([\s\S]*?)<\/DIV>") ' Info GG zeta
+        Dim DataZeta = (Zeta.Groups.Item(1).ToString)
+        DataZeta = Replace(DataZeta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataZeta = Replace(DataZeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataZeta = Replace(DataZeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataZeta = Replace(DataZeta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataZeta = Replace(DataZeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Zeta")
+        Console.WriteLine(DataZeta)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -584,11 +772,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Epsilon = Regex.Match(TextBox_GGinfoGGS.Text, "99.*?>([\s\S]*?)<\/DIV>") ' Info GG epsilon
+        Dim DataEpsilon = (Epsilon.Groups.Item(1).ToString)
+        DataEpsilon = Replace(DataEpsilon, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataEpsilon = Replace(DataEpsilon, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataEpsilon = Replace(DataEpsilon, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataEpsilon = Replace(DataEpsilon, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataEpsilon = Replace(DataEpsilon, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("epsilon")
+        Console.WriteLine(DataEpsilon)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -602,11 +817,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Delta = Regex.Match(TextBox_GGinfoGGS.Text, "128.*?>([\s\S]*?)<\/DIV>") ' Info GG Delta
+        Dim DataDelta = (Delta.Groups.Item(1).ToString)
+        DataDelta = Replace(DataDelta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataDelta = Replace(DataDelta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataDelta = Replace(DataDelta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataDelta = Replace(DataDelta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataDelta = Replace(DataDelta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Delta")
+        Console.WriteLine(DataDelta)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -620,11 +862,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Gamma = Regex.Match(TextBox_GGinfoGGS.Text, "82.*?>([\s\S]*?)<\/DIV>") ' Info GG gamma
+        Dim DataGamma = (Gamma.Groups.Item(1).ToString)
+        DataGamma = Replace(DataGamma, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataGamma = Replace(DataGamma, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Gamma")
+        Console.WriteLine(DataGamma)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=2&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = False
@@ -638,11 +907,38 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Beta = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
+        Dim DataBeta = (Beta.Groups.Item(1).ToString)
+        DataBeta = Replace(DataBeta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataBeta = Replace(DataBeta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Beta")
+        Console.WriteLine(DataBeta)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=1&type=full")
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+        Size = New Size(553, 622)
 
         Button_Alpha.Enabled = False
         Button_beta.Enabled = True
@@ -656,12 +952,105 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
+        Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
+        Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
+        DataAlpha = Replace(DataAlpha, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataAlpha = Replace(DataAlpha, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Alpha")
+        Console.WriteLine(DataAlpha)
+
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=1&alpha=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=3&type=full")
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kronos.Enabled = True
+        Button_hades.Enabled = True
+        Button_kuiper.Enabled = True
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+
+        Panel_infoPartGG2.Visible = True
+        Panel_infoPartGG3.Visible = True
+        Panel_infoPartGG_GG2.Visible = True
+        Panel_infoPartGG_GG3.Visible = True
+
+        Panel_GalaxyGates.Size = New Size(995, 514)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
+        Me.Size = New Size(1079, 532)
+
+        TextBox_WinGGS.Size = New Size(521, 162)
+        TextBox_WinGGS.Location = New Point(461, 340)
+
+        Label_Transition_GGS.Text = "_____________________________________________________________________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = True
+        WebBrowser_galaxyGates3.Visible = True
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+        WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+        WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+
+        Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
+        Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
+        DataAlpha = Replace(DataAlpha, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataAlpha = Replace(DataAlpha, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Alpha")
+        Console.WriteLine(DataAlpha)
+
+        Dim Beta = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
+        Dim DataBeta = (Beta.Groups.Item(1).ToString)
+        DataBeta = Replace(DataBeta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataBeta = Replace(DataBeta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Beta")
+        Console.WriteLine(DataBeta)
+
+        Dim Gamma = Regex.Match(TextBox_GGinfoGGS.Text, "82.*?>([\s\S]*?)<\/DIV>") ' Info GG gamma
+        Dim DataGamma = (Gamma.Groups.Item(1).ToString)
+        DataGamma = Replace(DataGamma, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataGamma = Replace(DataGamma, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataGamma = Replace(DataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Gamma")
+        Console.WriteLine(DataGamma)
+
+
+
+        'Button_Alpha.PerformClick()
+        'Button_beta.PerformClick()
+        'Button_Kappa.PerformClick()
+
+
+
 
     End Sub
 
@@ -673,59 +1062,173 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_epsion_GGS_Click(sender As Object, e As EventArgs) Handles Button_epsion_GGS.Click
+    Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
 
         'delta
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=4&delta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=4&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
+        Button_delta.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+
+
 
     End Sub
 
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
 
         ' epsilon
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=5&epsilon=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=5&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
+        Button_epsilon.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
 
         'zeta
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=6&zeta=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=6&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
+        Button_zeta.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
 
         ' kappa
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=7&kappa=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=7&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
+        Button_Kappa.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
 
         'lambda
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=8&lambda=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=8&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
+        Button_lambda.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
 
         'kuiper
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=19&kuiper=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=19&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&kuiper=1&sample=1&multiplier=1")
+        Button_kuiper.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
 
         'hades
-        WebBrowser_GGspinner.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=multiEnergy&sid=" + TextBox_Get_Dosid.Text + "&gateID=13&hades=1&sample=1&multiplier=1")
-        WebBrowser_galaxyGates.Navigate("https://" + TextBox_Get_Server.Text + ".darkorbit.com/jumpgate.php?userID=" + TextBox_Get_id.Text + "&gateID=13&type=full")
+
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
+        Panel_GalaxyGates.Size = New Size(467, 606)
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
+        Button_hades.PerformClick()
+        Size = New Size(553, 622)
+        TextBox_WinGGS.Size = New Size(439, 86)
+        TextBox_WinGGS.Location = New Point(15, 508)
+
+        Label_Transition_GGS.Text = "__________________________________________________"
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
 
     End Sub
 #End Region
@@ -1038,14 +1541,13 @@ Public Class Form_Tools
         ElseIf DataWinned.Contains("voucher") Then
             DataWinned = "Mine"
 
-        ElseIf DataWinned.Contains("part") Then
-            If DataWinned2.Contains("1") Or ("2") Or ("3") Or ("4") Or ("5") Or ("6") Or ("7") Or ("8") Or ("9") Or ("10") Or ("11") Or ("12") Or ("13") Or ("14") Or ("15") Or ("16") Or ("17") Or ("18") Or ("19") Or ("20") Or ("21") Then
+        Else
 
-                DataWinned = "part(s) found"
-
-            Else
+            If DataWinned.Contains("part") AndAlso DataWinned2 = Nothing Then
 
                 DataWinned = "Multiplier assigned"
+
+            Else DataWinned = "part found"
 
             End If
 
@@ -1053,6 +1555,48 @@ Public Class Form_Tools
 
         TextBox_WinGGS.Text = vbNewLine +
             "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
+
+        If DataWinned.Contains("MCB-25") Then
+
+            Label_MCB25_Earned.Text = Val(Label_MCB25_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("MCB-50") Then
+
+            Label_MCB50_Earned.Text = Val(Label_MCB50_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("UCB-100") Then
+
+            Label_UCB100_Earned.Text = Val(Label_UCB100_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("SAB-50") Then
+
+            Label_SAB50_Earned.Text = Val(Label_SAB50_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("Xenomit") Then
+
+            Label_Xenomit_Earned.Text = Val(Label_Xenomit_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("Nanohull") Then
+
+            Label_Nanohull_Earned.Text = Val(Label_Nanohull_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("Logfile") Then
+
+            Label_Logfile_Earned.Text = Val(Label_Logfile_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("PLT-2021") Then
+
+            Label_PLT2021_Earned.Text = Val(Label_PLT2021_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("Mine") Then
+
+            Label_Mine_Earned.Text = Val(Label_Mine_Earned.Text) + DataWinned3
+
+        ElseIf DataWinned.Contains("One part found") Then
+
+            Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
+
+        End If
 
         'Console.WriteLine("---DEBUG---")
         'Console.WriteLine(money.Groups.Item(1).ToString)
@@ -1075,7 +1619,6 @@ Public Class Form_Tools
 
         Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
         TextBox_GGinfoGGS.Text = html107
-        '   Console.WriteLine(html107)
 
         Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
         Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
@@ -1088,276 +1631,397 @@ Public Class Form_Tools
         Console.WriteLine("Alpha")
         Console.WriteLine(DataAlpha)
 
+        If Button_Alpha.Enabled = False Then
 
+#Region "AlphaSpinStats"
 
+            If DataAlpha.Contains("prepared1") Then
 
+                Label_infoPartGG_InMap.Text = "On map : 1"
 
+            ElseIf DataAlpha.Contains("prepared0") Then
 
-        If DataAlpha.Contains("lifePrice-1") Then
+                Label_infoPartGG_InMap.Text = "On map : 0"
 
-        ElseIf DataAlpha.Contains("lifePrice5000") Then
+            End If
 
-        ElseIf DataAlpha.Contains("lifePrice10000") Then
+            If DataAlpha.Contains("lifePrice-1") Then
 
-        ElseIf DataAlpha.Contains("lifePrice20000") Then
+                Button_buyLives.Text = "Build GG in first"
 
-        ElseIf DataAlpha.Contains("lifePrice40000") Then
+            Else Button_buyLives.Text = "Buy live"
 
-        ElseIf DataAlpha.Contains("lifePrice80000") Then
+            End If
 
-        ElseIf DataAlpha.Contains("lifePrice160000") Then
+            If DataAlpha.Contains("livesLeft5") Then
 
-        ElseIf DataAlpha.Contains("lifePrice320000") Then
+                Label_LivesLeft.Text = "Lives left : 5"
 
-        ElseIf DataAlpha.Contains("lifePrice640000") Then
+            ElseIf DataAlpha.Contains("livesLeft4") Then
 
-        ElseIf DataAlpha.Contains("lifePrice128000") Then
+                Label_LivesLeft.Text = "Lives left : 4"
+
+            ElseIf DataAlpha.Contains("livesLeft3") Then
+
+                Label_LivesLeft.Text = "Lives left : 3"
+
+            ElseIf DataAlpha.Contains("livesLeft2") Then
+
+                Label_LivesLeft.Text = "Lives left : 2"
+
+            ElseIf DataAlpha.Contains("livesLeft1") Then
+
+                Label_LivesLeft.Text = "Lives left : 1"
+
+            ElseIf DataAlpha.Contains("livesLeft0") Then
+
+                Label_LivesLeft.Text = "Lives left : 0"
+
+            ElseIf DataAlpha.Contains("livesLeft-1") Then
+
+                Label_LivesLeft.Text = "Lives left : -1"
+
+            End If
+
+            If DataAlpha.Contains("currentWave1") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 1 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave2") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 2 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave3") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 3 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave4") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 4 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave5") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 5 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave6") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 6 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave7") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 7 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave8") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 8 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave9") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 9 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave10") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 10 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave11") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 11 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave12") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 12 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave13") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 13 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave14") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 14 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave15") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 15 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave16") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 16 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave17") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 17 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave18") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 18 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave19") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 19 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave20") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 20 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave21") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 21 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave22") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 22 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave23") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 23 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave24") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 24 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave25") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 25 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave26") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 26 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave27") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 27 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave28") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 28 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave29") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 29 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave30") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 30 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave31") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 31 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave32") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 32 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave33") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 33 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave34") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 34 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave35") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 35 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave36") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 36 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave37") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 37 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave38") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 38 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave39") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 39 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave40") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 40 / 40"
+
+            ElseIf DataAlpha.Contains("currentWave0") Then
+
+                Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 40"
+
+            End If
+
+            If DataAlpha.Contains("current1") Then
+
+                Label_InfoPartGG.Text = "Part : 1 / 40"
+
+            ElseIf DataAlpha.Contains("current2") Then
+
+                Label_InfoPartGG.Text = "Part : 2 / 40"
+
+            ElseIf DataAlpha.Contains("current3") Then
+
+                Label_InfoPartGG.Text = "Part : 3 / 40"
+
+            ElseIf DataAlpha.Contains("current4") Then
+
+                Label_InfoPartGG.Text = "Part : 4 / 40"
+
+            ElseIf DataAlpha.Contains("current5") Then
+
+                Label_InfoPartGG.Text = "Part : 5 / 40"
+
+            ElseIf DataAlpha.Contains("current6") Then
+
+                Label_InfoPartGG.Text = "Part : 6 / 40"
+
+            ElseIf DataAlpha.Contains("current7") Then
+
+                Label_InfoPartGG.Text = "Part : 7 / 40"
+
+            ElseIf DataAlpha.Contains("current8") Then
+
+                Label_InfoPartGG.Text = "Part : 8 / 40"
+
+            ElseIf DataAlpha.Contains("current9") Then
+
+                Label_InfoPartGG.Text = "Part : 9 / 40"
+
+            ElseIf DataAlpha.Contains("current10") Then
+
+                Label_InfoPartGG.Text = "Part : 10 / 40"
+
+            ElseIf DataAlpha.Contains("current11") Then
+
+                Label_InfoPartGG.Text = "Part : 11 / 40"
+
+            ElseIf DataAlpha.Contains("current12") Then
+
+                Label_InfoPartGG.Text = "Part : 12 / 40"
+
+            ElseIf DataAlpha.Contains("current13") Then
+
+                Label_InfoPartGG.Text = "Part : 13 / 40"
+
+            ElseIf DataAlpha.Contains("current14") Then
+
+                Label_InfoPartGG.Text = "Part : 14 / 40"
+
+            ElseIf DataAlpha.Contains("current15") Then
+
+                Label_InfoPartGG.Text = "Part : 15 / 40"
+
+            ElseIf DataAlpha.Contains("current16") Then
+
+                Label_InfoPartGG.Text = "Part : 16 / 40"
+
+            ElseIf DataAlpha.Contains("current17") Then
+
+                Label_InfoPartGG.Text = "Part : 17 / 40"
+
+            ElseIf DataAlpha.Contains("current18") Then
+
+                Label_InfoPartGG.Text = "Part : 18 / 40"
+
+            ElseIf DataAlpha.Contains("current19") Then
+
+                Label_InfoPartGG.Text = "Part : 19 / 40"
+
+            ElseIf DataAlpha.Contains("current20") Then
+
+                Label_InfoPartGG.Text = "Part : 20 / 40"
+
+            ElseIf DataAlpha.Contains("current21") Then
+
+                Label_InfoPartGG.Text = "Part : 21 / 40"
+
+            ElseIf DataAlpha.Contains("current22") Then
+
+                Label_InfoPartGG.Text = "Part : 22 / 40"
+
+            ElseIf DataAlpha.Contains("current23") Then
+
+                Label_InfoPartGG.Text = "Part : 23 / 40"
+
+            ElseIf DataAlpha.Contains("current24") Then
+
+                Label_InfoPartGG.Text = "Part : 24 / 40"
+
+            ElseIf DataAlpha.Contains("current25") Then
+
+                Label_InfoPartGG.Text = "Part : 25 / 40"
+
+            ElseIf DataAlpha.Contains("current26") Then
+
+                Label_InfoPartGG.Text = "Part : 26 / 40"
+
+            ElseIf DataAlpha.Contains("current27") Then
+
+                Label_InfoPartGG.Text = "Part : 27 / 40"
+
+            ElseIf DataAlpha.Contains("current28") Then
+
+                Label_InfoPartGG.Text = "Part : 28 / 40"
+
+            ElseIf DataAlpha.Contains("current29") Then
+
+                Label_InfoPartGG.Text = "Part : 29 / 40"
+
+            ElseIf DataAlpha.Contains("current30") Then
+
+                Label_InfoPartGG.Text = "Part : 30 / 40"
+
+            ElseIf DataAlpha.Contains("current31") Then
+
+                Label_InfoPartGG.Text = "Part : 31 / 40"
+
+            ElseIf DataAlpha.Contains("current32") Then
+
+                Label_InfoPartGG.Text = "Part : 32 / 40"
+
+            ElseIf DataAlpha.Contains("current33") Then
+
+                Label_InfoPartGG.Text = "Part : 33 / 40"
+
+            ElseIf DataAlpha.Contains("current34") Then
+
+                Label_InfoPartGG.Text = "Part : 34 / 40"
+
+            ElseIf DataAlpha.Contains("current35") Then
+
+                Label_InfoPartGG.Text = "Part : 35 / 40"
+
+            ElseIf DataAlpha.Contains("current36") Then
+
+                Label_InfoPartGG.Text = "Part : 36 / 40"
+
+            ElseIf DataAlpha.Contains("current37") Then
+
+                Label_InfoPartGG.Text = "Part : 37 / 40"
+
+            ElseIf DataAlpha.Contains("current38") Then
+
+                Label_InfoPartGG.Text = "Part : 38 / 40"
+
+            ElseIf DataAlpha.Contains("current39") Then
+
+                Label_InfoPartGG.Text = "Part : 39 / 40"
+
+            ElseIf DataAlpha.Contains("current40") Then
+
+                Label_InfoPartGG.Text = "Part : 40 / 40"
+
+            ElseIf DataAlpha.Contains("current0") Then
+
+                Label_InfoPartGG.Text = "Part : 0 / 40"
+
+            End If
+
+#End Region
+
+        ElseIf Button_beta.Enabled = False Then
+
+        ElseIf Button_gamma.Enabled = False Then
 
         End If
-
-
-
-
-
-
-        If DataAlpha.Contains("prepared1") Then
-
-        ElseIf DataAlpha.Contains("prepared0") Then
-
-        End If
-
-
-
-
-
-
-        If DataAlpha.Contains("livesLeft5") Then
-
-        ElseIf DataAlpha.Contains("livesLeft4") Then
-
-        ElseIf DataAlpha.Contains("livesLeft3") Then
-
-        ElseIf DataAlpha.Contains("livesLeft2") Then
-
-        ElseIf DataAlpha.Contains("livesLeft1") Then
-
-        ElseIf DataAlpha.Contains("livesLeft0") Then
-
-        ElseIf DataAlpha.Contains("livesLeft-1") Then
-
-        End If
-
-
-
-
-
-
-
-
-        If DataAlpha.Contains("currentWave1") Then
-
-        ElseIf DataAlpha.Contains("currentWave2") Then
-
-        ElseIf DataAlpha.Contains("currentWave3") Then
-
-        ElseIf DataAlpha.Contains("currentWave4") Then
-
-        ElseIf DataAlpha.Contains("currentWave5") Then
-
-        ElseIf DataAlpha.Contains("currentWave6") Then
-
-        ElseIf DataAlpha.Contains("currentWave7") Then
-
-        ElseIf DataAlpha.Contains("currentWave8") Then
-
-        ElseIf DataAlpha.Contains("currentWave9") Then
-
-        ElseIf DataAlpha.Contains("currentWave10") Then
-
-        ElseIf DataAlpha.Contains("currentWave11") Then
-
-        ElseIf DataAlpha.Contains("currentWave12") Then
-
-        ElseIf DataAlpha.Contains("currentWave13") Then
-
-        ElseIf DataAlpha.Contains("currentWave14") Then
-
-        ElseIf DataAlpha.Contains("currentWave15") Then
-
-        ElseIf DataAlpha.Contains("currentWave16") Then
-
-        ElseIf DataAlpha.Contains("currentWave17") Then
-
-        ElseIf DataAlpha.Contains("currentWave18") Then
-
-        ElseIf DataAlpha.Contains("currentWave19") Then
-
-        ElseIf DataAlpha.Contains("currentWave20") Then
-
-        ElseIf DataAlpha.Contains("currentWave21") Then
-
-        ElseIf DataAlpha.Contains("currentWave22") Then
-
-        ElseIf DataAlpha.Contains("currentWave23") Then
-
-        ElseIf DataAlpha.Contains("currentWave24") Then
-
-        ElseIf DataAlpha.Contains("currentWave25") Then
-
-        ElseIf DataAlpha.Contains("currentWave26") Then
-
-        ElseIf DataAlpha.Contains("currentWave27") Then
-
-        ElseIf DataAlpha.Contains("currentWave28") Then
-
-        ElseIf DataAlpha.Contains("currentWave29") Then
-
-        ElseIf DataAlpha.Contains("currentWave30") Then
-
-        ElseIf DataAlpha.Contains("currentWave31") Then
-
-        ElseIf DataAlpha.Contains("currentWave32") Then
-
-        ElseIf DataAlpha.Contains("currentWave33") Then
-
-        ElseIf DataAlpha.Contains("currentWave34") Then
-
-        ElseIf DataAlpha.Contains("currentWave35") Then
-
-        ElseIf DataAlpha.Contains("currentWave36") Then
-
-        ElseIf DataAlpha.Contains("currentWave37") Then
-
-        ElseIf DataAlpha.Contains("currentWave38") Then
-
-        ElseIf DataAlpha.Contains("currentWave39") Then
-
-        ElseIf DataAlpha.Contains("currentWave40") Then
-
-        ElseIf DataAlpha.Contains("currentWave0") Then
-
-        End If
-
-
-
-
-
-
-
-
-        If DataAlpha.Contains("current1") Then
-
-        ElseIf DataAlpha.Contains("current2") Then
-
-        ElseIf DataAlpha.Contains("current3") Then
-
-        ElseIf DataAlpha.Contains("current4") Then
-
-        ElseIf DataAlpha.Contains("current5") Then
-
-        ElseIf DataAlpha.Contains("current6") Then
-
-        ElseIf DataAlpha.Contains("current7") Then
-
-        ElseIf DataAlpha.Contains("current8") Then
-
-        ElseIf DataAlpha.Contains("current9") Then
-
-        ElseIf DataAlpha.Contains("current10") Then
-
-        ElseIf DataAlpha.Contains("current11") Then
-
-        ElseIf DataAlpha.Contains("current12") Then
-
-        ElseIf DataAlpha.Contains("current13") Then
-
-        ElseIf DataAlpha.Contains("current14") Then
-
-        ElseIf DataAlpha.Contains("current15") Then
-
-        ElseIf DataAlpha.Contains("current16") Then
-
-        ElseIf DataAlpha.Contains("current17") Then
-
-        ElseIf DataAlpha.Contains("current18") Then
-
-        ElseIf DataAlpha.Contains("current19") Then
-
-        ElseIf DataAlpha.Contains("current20") Then
-
-        ElseIf DataAlpha.Contains("current21") Then
-
-        ElseIf DataAlpha.Contains("current22") Then
-
-        ElseIf DataAlpha.Contains("current23") Then
-
-        ElseIf DataAlpha.Contains("current24") Then
-
-        ElseIf DataAlpha.Contains("current25") Then
-
-        ElseIf DataAlpha.Contains("current26") Then
-
-        ElseIf DataAlpha.Contains("current27") Then
-
-        ElseIf DataAlpha.Contains("current28") Then
-
-        ElseIf DataAlpha.Contains("current29") Then
-
-        ElseIf DataAlpha.Contains("current30") Then
-
-        ElseIf DataAlpha.Contains("current31") Then
-
-        ElseIf DataAlpha.Contains("current32") Then
-
-        ElseIf DataAlpha.Contains("current33") Then
-
-        ElseIf DataAlpha.Contains("current34") Then
-
-        ElseIf DataAlpha.Contains("current35") Then
-
-        ElseIf DataAlpha.Contains("current36") Then
-
-        ElseIf DataAlpha.Contains("current37") Then
-
-        ElseIf DataAlpha.Contains("current38") Then
-
-        ElseIf DataAlpha.Contains("current39") Then
-
-        ElseIf DataAlpha.Contains("current40") Then
-
-        ElseIf DataAlpha.Contains("current0") Then
-
-        End If
-
-
-
-
-
-
-
-
-
-        Dim Beta = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
-        Dim DataBeta = (Beta.Groups.Item(1).ToString)
-        DataBeta = Replace(DataBeta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        DataBeta = Replace(DataBeta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Beta")
-        Console.WriteLine(DataBeta)
-
-        Dim Gamma = Regex.Match(TextBox_GGinfoGGS.Text, "82.*?>([\s\S]*?)<\/DIV>") ' Info GG gamma
-        Dim dataGamma = (Gamma.Groups.Item(1).ToString)
-        dataGamma = Replace(dataGamma, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        dataGamma = Replace(dataGamma, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Gamma")
-        Console.WriteLine(dataGamma)
 
         ' TextBox_infoGGbeta1
         ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
@@ -1372,6 +2036,22 @@ Public Class Form_Tools
     Private Sub PictureBox_close1_Click(sender As Object, e As EventArgs) Handles PictureBox_close1.Click
 
         CloseForm.ShowDialog(Me)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Label_MCB25_Earned.Text = 0
+        Label_MCB50_Earned.Text = 0
+        Label_UCB100_Earned.Text = 0
+        Label_SAB50_Earned.Text = 0
+        Label_PLT2021_Earned.Text = 0
+        Label_Part_Earned.Text = 0
+        Label_Xenomit_Earned.Text = 0
+        Label_Nanohull_Earned.Text = 0
+        Label_Mine_Earned.Text = 0
+        Label_Logfile_Earned.Text = 0
+
 
     End Sub
 End Class

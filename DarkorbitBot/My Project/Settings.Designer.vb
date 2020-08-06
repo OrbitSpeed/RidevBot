@@ -268,6 +268,126 @@ Namespace My
                 Me("RefreshGameAuto") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property MCB25() As String
+            Get
+                Return CType(Me("MCB25"),String)
+            End Get
+            Set
+                Me("MCB25") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property MCB50() As String
+            Get
+                Return CType(Me("MCB50"),String)
+            End Get
+            Set
+                Me("MCB50") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property UCB100() As String
+            Get
+                Return CType(Me("UCB100"),String)
+            End Get
+            Set
+                Me("UCB100") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property SAB50() As String
+            Get
+                Return CType(Me("SAB50"),String)
+            End Get
+            Set
+                Me("SAB50") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property PLT21() As String
+            Get
+                Return CType(Me("PLT21"),String)
+            End Get
+            Set
+                Me("PLT21") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Xenomit() As String
+            Get
+                Return CType(Me("Xenomit"),String)
+            End Get
+            Set
+                Me("Xenomit") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Mine() As String
+            Get
+                Return CType(Me("Mine"),String)
+            End Get
+            Set
+                Me("Mine") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Nanohull() As String
+            Get
+                Return CType(Me("Nanohull"),String)
+            End Get
+            Set
+                Me("Nanohull") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Part() As String
+            Get
+                Return CType(Me("Part"),String)
+            End Get
+            Set
+                Me("Part") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Logfile() As String
+            Get
+                Return CType(Me("Logfile"),String)
+            End Get
+            Set
+                Me("Logfile") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
