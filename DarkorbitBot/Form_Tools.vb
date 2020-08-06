@@ -1141,38 +1141,287 @@ Public Class Form_Tools
         TextBox_GGinfoGGS.Text = html107
         '   Console.WriteLine(html107)
 
-        Dim Alpha1 = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
-        TextBox_infoGGalpha1.Text = (Alpha1.Groups.Item(1).ToString)
-        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
+        Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
+        DataAlpha = Replace(DataAlpha, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataAlpha = Replace(DataAlpha, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Alpha")
-        Console.WriteLine(TextBox_infoGGalpha1.Text)
+        Console.WriteLine(DataAlpha)
 
-        Dim Beta1 = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
-        TextBox_infoGGbeta1.Text = (Beta1.Groups.Item(1).ToString)
-        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+
+
+
+
+
+        If DataAlpha.Contains("lifePrice-1") Then
+
+        ElseIf DataAlpha.Contains("lifePrice5000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice10000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice20000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice40000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice80000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice160000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice320000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice640000") Then
+
+        ElseIf DataAlpha.Contains("lifePrice128000") Then
+
+        End If
+
+
+
+
+
+
+        If DataAlpha.Contains("prepared1") Then
+
+        ElseIf DataAlpha.Contains("prepared0") Then
+
+        End If
+
+
+
+
+
+
+        If DataAlpha.Contains("livesLeft5") Then
+
+        ElseIf DataAlpha.Contains("livesLeft4") Then
+
+        ElseIf DataAlpha.Contains("livesLeft3") Then
+
+        ElseIf DataAlpha.Contains("livesLeft2") Then
+
+        ElseIf DataAlpha.Contains("livesLeft1") Then
+
+        ElseIf DataAlpha.Contains("livesLeft0") Then
+
+        ElseIf DataAlpha.Contains("livesLeft-1") Then
+
+        End If
+
+
+
+
+
+
+
+
+        If DataAlpha.Contains("currentWave1") Then
+
+        ElseIf DataAlpha.Contains("currentWave2") Then
+
+        ElseIf DataAlpha.Contains("currentWave3") Then
+
+        ElseIf DataAlpha.Contains("currentWave4") Then
+
+        ElseIf DataAlpha.Contains("currentWave5") Then
+
+        ElseIf DataAlpha.Contains("currentWave6") Then
+
+        ElseIf DataAlpha.Contains("currentWave7") Then
+
+        ElseIf DataAlpha.Contains("currentWave8") Then
+
+        ElseIf DataAlpha.Contains("currentWave9") Then
+
+        ElseIf DataAlpha.Contains("currentWave10") Then
+
+        ElseIf DataAlpha.Contains("currentWave11") Then
+
+        ElseIf DataAlpha.Contains("currentWave12") Then
+
+        ElseIf DataAlpha.Contains("currentWave13") Then
+
+        ElseIf DataAlpha.Contains("currentWave14") Then
+
+        ElseIf DataAlpha.Contains("currentWave15") Then
+
+        ElseIf DataAlpha.Contains("currentWave16") Then
+
+        ElseIf DataAlpha.Contains("currentWave17") Then
+
+        ElseIf DataAlpha.Contains("currentWave18") Then
+
+        ElseIf DataAlpha.Contains("currentWave19") Then
+
+        ElseIf DataAlpha.Contains("currentWave20") Then
+
+        ElseIf DataAlpha.Contains("currentWave21") Then
+
+        ElseIf DataAlpha.Contains("currentWave22") Then
+
+        ElseIf DataAlpha.Contains("currentWave23") Then
+
+        ElseIf DataAlpha.Contains("currentWave24") Then
+
+        ElseIf DataAlpha.Contains("currentWave25") Then
+
+        ElseIf DataAlpha.Contains("currentWave26") Then
+
+        ElseIf DataAlpha.Contains("currentWave27") Then
+
+        ElseIf DataAlpha.Contains("currentWave28") Then
+
+        ElseIf DataAlpha.Contains("currentWave29") Then
+
+        ElseIf DataAlpha.Contains("currentWave30") Then
+
+        ElseIf DataAlpha.Contains("currentWave31") Then
+
+        ElseIf DataAlpha.Contains("currentWave32") Then
+
+        ElseIf DataAlpha.Contains("currentWave33") Then
+
+        ElseIf DataAlpha.Contains("currentWave34") Then
+
+        ElseIf DataAlpha.Contains("currentWave35") Then
+
+        ElseIf DataAlpha.Contains("currentWave36") Then
+
+        ElseIf DataAlpha.Contains("currentWave37") Then
+
+        ElseIf DataAlpha.Contains("currentWave38") Then
+
+        ElseIf DataAlpha.Contains("currentWave39") Then
+
+        ElseIf DataAlpha.Contains("currentWave40") Then
+
+        ElseIf DataAlpha.Contains("currentWave0") Then
+
+        End If
+
+
+
+
+
+
+
+
+        If DataAlpha.Contains("current1") Then
+
+        ElseIf DataAlpha.Contains("current2") Then
+
+        ElseIf DataAlpha.Contains("current3") Then
+
+        ElseIf DataAlpha.Contains("current4") Then
+
+        ElseIf DataAlpha.Contains("current5") Then
+
+        ElseIf DataAlpha.Contains("current6") Then
+
+        ElseIf DataAlpha.Contains("current7") Then
+
+        ElseIf DataAlpha.Contains("current8") Then
+
+        ElseIf DataAlpha.Contains("current9") Then
+
+        ElseIf DataAlpha.Contains("current10") Then
+
+        ElseIf DataAlpha.Contains("current11") Then
+
+        ElseIf DataAlpha.Contains("current12") Then
+
+        ElseIf DataAlpha.Contains("current13") Then
+
+        ElseIf DataAlpha.Contains("current14") Then
+
+        ElseIf DataAlpha.Contains("current15") Then
+
+        ElseIf DataAlpha.Contains("current16") Then
+
+        ElseIf DataAlpha.Contains("current17") Then
+
+        ElseIf DataAlpha.Contains("current18") Then
+
+        ElseIf DataAlpha.Contains("current19") Then
+
+        ElseIf DataAlpha.Contains("current20") Then
+
+        ElseIf DataAlpha.Contains("current21") Then
+
+        ElseIf DataAlpha.Contains("current22") Then
+
+        ElseIf DataAlpha.Contains("current23") Then
+
+        ElseIf DataAlpha.Contains("current24") Then
+
+        ElseIf DataAlpha.Contains("current25") Then
+
+        ElseIf DataAlpha.Contains("current26") Then
+
+        ElseIf DataAlpha.Contains("current27") Then
+
+        ElseIf DataAlpha.Contains("current28") Then
+
+        ElseIf DataAlpha.Contains("current29") Then
+
+        ElseIf DataAlpha.Contains("current30") Then
+
+        ElseIf DataAlpha.Contains("current31") Then
+
+        ElseIf DataAlpha.Contains("current32") Then
+
+        ElseIf DataAlpha.Contains("current33") Then
+
+        ElseIf DataAlpha.Contains("current34") Then
+
+        ElseIf DataAlpha.Contains("current35") Then
+
+        ElseIf DataAlpha.Contains("current36") Then
+
+        ElseIf DataAlpha.Contains("current37") Then
+
+        ElseIf DataAlpha.Contains("current38") Then
+
+        ElseIf DataAlpha.Contains("current39") Then
+
+        ElseIf DataAlpha.Contains("current40") Then
+
+        ElseIf DataAlpha.Contains("current0") Then
+
+        End If
+
+
+
+
+
+
+
+
+
+        Dim Beta = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
+        Dim DataBeta = (Beta.Groups.Item(1).ToString)
+        DataBeta = Replace(DataBeta, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        DataBeta = Replace(DataBeta, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        DataBeta = Replace(DataBeta, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Beta")
-        Console.WriteLine(TextBox_infoGGbeta1.Text)
+        Console.WriteLine(DataBeta)
 
-        Dim Kuiper1 = Regex.Match(TextBox_GGinfoGGS.Text, "100.*?>([\s\S]*?)<\/DIV>") ' Info GG Kuiper
-        Dim data = (Beta1.Groups.Item(1).ToString)
-        data = Replace(data, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        data = Replace(data, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Dim Gamma = Regex.Match(TextBox_GGinfoGGS.Text, "82.*?>([\s\S]*?)<\/DIV>") ' Info GG gamma
+        Dim dataGamma = (Gamma.Groups.Item(1).ToString)
+        dataGamma = Replace(dataGamma, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        dataGamma = Replace(dataGamma, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        dataGamma = Replace(dataGamma, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
         Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Kuiper")
-        Console.WriteLine(data)
+        Console.WriteLine("Gamma")
+        Console.WriteLine(dataGamma)
 
         ' TextBox_infoGGbeta1
         ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
