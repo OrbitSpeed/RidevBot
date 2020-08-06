@@ -729,55 +729,7 @@ Public Class Form_Tools
 #End Region
 
 
-#Region "CheckBox Spin"
-    Private Sub CheckBox_Spin1_Click(sender As Object, e As EventArgs) 
-        CheckBox_Spin1.Checked = True
-        CheckBox_spin5.Checked = False
-        CheckBox_spin10.Checked = False
-        CheckBox_spin100.Checked = False
 
-        CheckBox_Spin1.CheckState = CheckState.Checked
-        CheckBox_spin5.CheckState = CheckState.Unchecked
-        CheckBox_spin10.CheckState = CheckState.Unchecked
-        CheckBox_spin100.CheckState = CheckState.Unchecked
-    End Sub
-
-    Private Sub CheckBox_spin5_Click(sender As Object, e As EventArgs) 
-        CheckBox_Spin1.Checked = False
-        CheckBox_spin5.Checked = True
-        CheckBox_spin10.Checked = False
-        CheckBox_spin100.Checked = False
-
-        CheckBox_Spin1.CheckState = CheckState.Unchecked
-        CheckBox_spin5.CheckState = CheckState.Checked
-        CheckBox_spin10.CheckState = CheckState.Unchecked
-        CheckBox_spin100.CheckState = CheckState.Unchecked
-    End Sub
-
-    Private Sub CheckBox_spin10_Click(sender As Object, e As EventArgs) 
-        CheckBox_Spin1.Checked = False
-        CheckBox_spin5.Checked = False
-        CheckBox_spin10.Checked = True
-        CheckBox_spin100.Checked = False
-
-        CheckBox_Spin1.CheckState = CheckState.Unchecked
-        CheckBox_spin5.CheckState = CheckState.Unchecked
-        CheckBox_spin10.CheckState = CheckState.Checked
-        CheckBox_spin100.CheckState = CheckState.Unchecked
-    End Sub
-
-    Private Sub CheckBox_spin100_Click(sender As Object, e As EventArgs) 
-        CheckBox_Spin1.Checked = False
-        CheckBox_spin5.Checked = False
-        CheckBox_spin10.Checked = False
-        CheckBox_spin100.Checked = True
-
-        CheckBox_Spin1.CheckState = CheckState.Unchecked
-        CheckBox_spin5.CheckState = CheckState.Unchecked
-        CheckBox_spin10.CheckState = CheckState.Unchecked
-        CheckBox_spin100.CheckState = CheckState.Checked
-    End Sub
-#End Region
 
 #Region "Spin Click"
     Public numberToSpin As String = 0
@@ -786,24 +738,6 @@ Public Class Form_Tools
 
         If BackgroundWorkerAutospin = False Then
             BackgroundWorkerAutospin = True
-
-            If CheckBox_Spin1.Checked = True Then
-                numberToSpin = 1
-
-            ElseIf CheckBox_spin5.Checked = True Then
-                numberToSpin = 5
-
-            ElseIf CheckBox_spin10.Checked = True Then
-                numberToSpin = 10
-
-            ElseIf CheckBox_spin100.Checked = True Then
-                numberToSpin = 100
-
-            Else
-                BackgroundWorkerAutospin = False
-                numberToSpin = 0
-                MsgBox("Selectionnez d'abord un nombre de spin a effectuer")
-            End If
 
             If BackgroundWorkerAutospin = True Then
                 Dim data = ComboBox_autospin.Text
