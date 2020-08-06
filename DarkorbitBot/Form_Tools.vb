@@ -75,6 +75,11 @@ Public Class Form_Tools
         End If
 
 
+        'TODO
+        'Pour les thèmes (prend uniquement dans le controle et pas dans un panel) (donc à faire)
+        'For Each b As Button In Me.Controls.OfType(Of Button)()
+        '    b.BackColor = Color.Red
+        'Next
     End Sub
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
