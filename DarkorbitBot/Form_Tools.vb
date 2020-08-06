@@ -730,7 +730,7 @@ Public Class Form_Tools
 
 
 #Region "CheckBox Spin"
-    Private Sub CheckBox_Spin1_Click(sender As Object, e As EventArgs) Handles CheckBox_Spin1.Click
+    Private Sub CheckBox_Spin1_Click(sender As Object, e As EventArgs) 
         CheckBox_Spin1.Checked = True
         CheckBox_spin5.Checked = False
         CheckBox_spin10.Checked = False
@@ -742,7 +742,7 @@ Public Class Form_Tools
         CheckBox_spin100.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub CheckBox_spin5_Click(sender As Object, e As EventArgs) Handles CheckBox_spin5.Click
+    Private Sub CheckBox_spin5_Click(sender As Object, e As EventArgs) 
         CheckBox_Spin1.Checked = False
         CheckBox_spin5.Checked = True
         CheckBox_spin10.Checked = False
@@ -754,7 +754,7 @@ Public Class Form_Tools
         CheckBox_spin100.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub CheckBox_spin10_Click(sender As Object, e As EventArgs) Handles CheckBox_spin10.Click
+    Private Sub CheckBox_spin10_Click(sender As Object, e As EventArgs) 
         CheckBox_Spin1.Checked = False
         CheckBox_spin5.Checked = False
         CheckBox_spin10.Checked = True
@@ -766,7 +766,7 @@ Public Class Form_Tools
         CheckBox_spin100.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub CheckBox_spin100_Click(sender As Object, e As EventArgs) Handles CheckBox_spin100.Click
+    Private Sub CheckBox_spin100_Click(sender As Object, e As EventArgs) 
         CheckBox_Spin1.Checked = False
         CheckBox_spin5.Checked = False
         CheckBox_spin10.Checked = False
@@ -1052,71 +1052,71 @@ Public Class Form_Tools
         Dim spinamount_selected = Regex.Match(TextBox_DebugGGS.Text, "spinamount_selected<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' nombre de spin utiliser
         Console.WriteLine(spinamount_selected.Groups.Item(1).ToString)
 
-        Dim samples2 = Regex.Match(TextBox_DebugGGS.Text, "samples.*?>([\s\S]*?)<\/SPAN><SPAN class=""m"">") ' energy restante
-        TextBox_DebbugerGGS_5_EE.Text = (samples2.Groups.Item(1).ToString)
-        TextBox_DebbugerGGS_5_EE.Text = Replace(TextBox_DebbugerGGS_5_EE.Text, "<SPAN class=""m"">&gt;</SPAN><SPAN class=""tx"">", "")
-        Console.WriteLine(TextBox_DebbugerGGS_5_EE.Text)
+        Dim samples = Regex.Match(TextBox_DebugGGS.Text, "samples.*?>([\s\S]*?)<\/SPAN><SPAN class=""m"">") ' energy restante
+        Dim DataSamples = (samples.Groups.Item(1).ToString)
+        DataSamples = Replace(DataSamples, "<SPAN class=""m"">&gt;</SPAN><SPAN class=""tx"">", "")
+        Console.WriteLine(DataSamples)
 
         Dim Winned = Regex.Match(TextBox_DebugGGS.Text, "type.*?>([\s\S]*?)<\/B>") ' winned into spin >>> type
-        TextBox_DebbugerGGS_2.Text = (Winned.Groups.Item(1).ToString)
-        TextBox_DebbugerGGS_2.Text = Replace(TextBox_DebbugerGGS_2.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
-        Console.WriteLine(TextBox_DebbugerGGS_2.Text)
+        Dim DataWinned = (Winned.Groups.Item(1).ToString)
+        DataWinned = Replace(DataWinned, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(DataWinned)
 
         Dim Winned2 = Regex.Match(TextBox_DebugGGS.Text, "item_id.*?>([\s\S]*?)<\/B>") ' winned into spin >>> item id
-        TextBox_DebbugerGGS_3.Text = (Winned2.Groups.Item(1).ToString)
-        TextBox_DebbugerGGS_3.Text = Replace(TextBox_DebbugerGGS_3.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
-        Console.WriteLine(TextBox_DebbugerGGS_3.Text)
+        Dim DataWinned2 = (Winned2.Groups.Item(1).ToString)
+        DataWinned2 = Replace(DataWinned2, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(DataWinned2)
 
         Dim Winned3 = Regex.Match(TextBox_DebugGGS.Text, "class=""t""> amount.*?>([\s\S]*?)<\/B>") ' winned into spin >>> amount
-        TextBox_DebbugerGGS_4.Text = (Winned3.Groups.Item(1).ToString)
-        TextBox_DebbugerGGS_4.Text = Replace(TextBox_DebbugerGGS_4.Text, "<SPAN class=""m"">=""</SPAN><B>", "")
-        Console.WriteLine(TextBox_DebbugerGGS_4.Text)
+        Dim DataWinned3 = (Winned3.Groups.Item(1).ToString)
+        DataWinned3 = Replace(DataWinned3, "<SPAN class=""m"">=""</SPAN><B>", "")
+        Console.WriteLine(DataWinned3)
 
 
         'GGSpinner_EarnedType -- GGSpinner_EarnedID
 
-        If TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("2") Then
-            TextBox_DebbugerGGS_2.Text = "MCB-25"
+        If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
+            DataWinned = "MCB-25"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("3") Then
-            TextBox_DebbugerGGS_2.Text = "MCB-50"
+        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("3") Then
+            DataWinned = "MCB-50"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("4") Then
-            TextBox_DebbugerGGS_2.Text = "UCB-100"
+        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("4") Then
+            DataWinned = "UCB-100"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("battery") AndAlso TextBox_DebbugerGGS_3.Text.Contains("5") Then
-            TextBox_DebbugerGGS_2.Text = "SAB-50"
+        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("5") Then
+            DataWinned = "SAB-50"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("ore") Then
-            TextBox_DebbugerGGS_2.Text = "Xenomit"
+        ElseIf DataWinned.Contains("ore") Then
+            DataWinned = "Xenomit"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("nanohull") Then
-            TextBox_DebbugerGGS_2.Text = "Nanohull"
+        ElseIf DataWinned.Contains("nanohull") Then
+            DataWinned = "Nanohull"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("logfile") Then
-            TextBox_DebbugerGGS_2.Text = "Logfile"
+        ElseIf DataWinned.Contains("logfile") Then
+            DataWinned = "Logfile"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("rocket") Then
-            TextBox_DebbugerGGS_2.Text = "PLT-2021"
+        ElseIf DataWinned.Contains("rocket") Then
+            DataWinned = "PLT-2021"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("voucher") Then
-            TextBox_DebbugerGGS_2.Text = "Mine"
+        ElseIf DataWinned.Contains("voucher") Then
+            DataWinned = "Mine"
 
-        ElseIf TextBox_DebbugerGGS_2.Text.Contains("part") Then
-            If TextBox_DebbugerGGS_3.Text.Contains("1") Or ("2") Or ("3") Or ("4") Or ("5") Or ("6") Or ("7") Or ("8") Or ("9") Or ("10") Or ("11") Or ("12") Or ("13") Or ("14") Or ("15") Or ("16") Or ("17") Or ("18") Or ("19") Or ("20") Or ("21") Then
+        ElseIf DataWinned.Contains("part") Then
+            If DataWinned2.Contains("1") Or ("2") Or ("3") Or ("4") Or ("5") Or ("6") Or ("7") Or ("8") Or ("9") Or ("10") Or ("11") Or ("12") Or ("13") Or ("14") Or ("15") Or ("16") Or ("17") Or ("18") Or ("19") Or ("20") Or ("21") Then
 
-                TextBox_DebbugerGGS_2.Text = "part(s) found"
+                DataWinned = "part(s) found"
 
             Else
 
-                TextBox_DebbugerGGS_2.Text = "Multiplier assigned"
+                DataWinned = "Multiplier assigned"
 
             End If
 
         End If
 
         TextBox_WinGGS.Text = vbNewLine +
-            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (TextBox_DebbugerGGS_2.Text) + " (" + (TextBox_DebbugerGGS_4.Text) + ")" + TextBox_WinGGS.Text
+            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
         'Console.WriteLine("---DEBUG---")
         'Console.WriteLine(money.Groups.Item(1).ToString)
@@ -1125,7 +1125,7 @@ Public Class Form_Tools
 
         'TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
-        TextBox_ExtraEnergy_GGS.Text = (TextBox_DebbugerGGS_5_EE.Text)
+        TextBox_ExtraEnergy_GGS.Text = (DataSamples)
 #End Region
 
 
@@ -1430,6 +1430,12 @@ Public Class Form_Tools
         ' </B><SPAN class="m">"</SPAN><SPAN class="m"> /&gt;</SPAN>
 
         ' BETA ET KUIPER BUGUUER , TCHEKER POURQUOI SA MERE LA PUTE !!!!
+
+    End Sub
+
+    Private Sub PictureBox_close1_Click(sender As Object, e As EventArgs) Handles PictureBox_close1.Click
+
+        CloseForm.ShowDialog(Me)
 
     End Sub
 End Class

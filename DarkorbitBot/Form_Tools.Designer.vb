@@ -24,7 +24,6 @@ Partial Class Form_Tools
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Tools))
         Me.Label_Tittle = New System.Windows.Forms.Label()
-        Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
@@ -83,7 +82,7 @@ Partial Class Form_Tools
         Me.Button_epsion_GGS = New System.Windows.Forms.Button()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_buyLives = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_CurrentWave = New System.Windows.Forms.Label()
@@ -99,11 +98,6 @@ Partial Class Form_Tools
         Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
         Me.Label_autospin = New System.Windows.Forms.Label()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
-        Me.Panel_nombre_de_spin = New System.Windows.Forms.Panel()
-        Me.CheckBox_spin100 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_spin10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_spin5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_Spin1 = New System.Windows.Forms.CheckBox()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
         Me.Button_StartSpin = New System.Windows.Forms.Button()
@@ -161,15 +155,14 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
-        Me.TextBox_DebbugerGGS_2 = New System.Windows.Forms.TextBox()
-        Me.TextBox_DebbugerGGS_3 = New System.Windows.Forms.TextBox()
-        Me.TextBox_DebbugerGGS_4 = New System.Windows.Forms.TextBox()
-        Me.TextBox_DebbugerGGS_5_EE = New System.Windows.Forms.TextBox()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
-        Me.TextBox_infoGGalpha1 = New System.Windows.Forms.TextBox()
         Me.Label_prepareGates_Text = New System.Windows.Forms.Label()
-        Me.TextBox_infoGGbeta1 = New System.Windows.Forms.TextBox()
+        Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -184,7 +177,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG.SuspendLayout()
         Me.Panel_PrepareGatesAuto.SuspendLayout()
         Me.Panel_UridiumtoKeep.SuspendLayout()
-        Me.Panel_nombre_de_spin.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
         Me.Panel_stats.SuspendLayout()
         Me.Panel_SavedStatsEarned.SuspendLayout()
@@ -193,6 +185,8 @@ Partial Class Form_Tools
         Me.Panel_rex.SuspendLayout()
         Me.Panel_divers.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
+        Me.Panel_Title.SuspendLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -205,16 +199,6 @@ Partial Class Form_Tools
         Me.Label_Tittle.Size = New System.Drawing.Size(147, 18)
         Me.Label_Tittle.TabIndex = 22
         Me.Label_Tittle.Text = "RidevBot tools 1.0"
-        '
-        'Panel_Title
-        '
-        Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
-        Me.Panel_Title.Name = "Panel_Title"
-        Me.Panel_Title.Size = New System.Drawing.Size(1688, 18)
-        Me.Panel_Title.TabIndex = 24
         '
         'PictureBox_Backpage
         '
@@ -736,7 +720,7 @@ Partial Class Form_Tools
         'Label_PANEL_A_SUPPRIMER
         '
         Me.Label_PANEL_A_SUPPRIMER.AutoSize = True
-        Me.Label_PANEL_A_SUPPRIMER.Location = New System.Drawing.Point(3, 293)
+        Me.Label_PANEL_A_SUPPRIMER.Location = New System.Drawing.Point(17, 5)
         Me.Label_PANEL_A_SUPPRIMER.Name = "Label_PANEL_A_SUPPRIMER"
         Me.Label_PANEL_A_SUPPRIMER.Size = New System.Drawing.Size(64, 13)
         Me.Label_PANEL_A_SUPPRIMER.TabIndex = 0
@@ -756,12 +740,12 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(12, 1033)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(13, 1005)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
         Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(119, 20)
+        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
         '
         'Panel_Uridum_ExtraEnnergy_left
@@ -775,7 +759,7 @@ Partial Class Form_Tools
         Me.Panel_Uridum_ExtraEnnergy_left.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_Uridum_ExtraEnnergy_left.Location = New System.Drawing.Point(15, 341)
         Me.Panel_Uridum_ExtraEnnergy_left.Name = "Panel_Uridum_ExtraEnnergy_left"
-        Me.Panel_Uridum_ExtraEnnergy_left.Size = New System.Drawing.Size(176, 25)
+        Me.Panel_Uridum_ExtraEnnergy_left.Size = New System.Drawing.Size(175, 25)
         Me.Panel_Uridum_ExtraEnnergy_left.TabIndex = 51
         '
         'TextBox_ExtraEnergy_GGS
@@ -939,20 +923,19 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button1)
+        Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
+        Me.Panel_GalaxyGates.Controls.Add(Me.Button_buyLives)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
-        Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_PrepareGatesAuto)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_UridiumtoKeep)
         Me.Panel_GalaxyGates.Controls.Add(Me.Label_autospin)
         Me.Panel_GalaxyGates.Controls.Add(Me.ComboBox_autospin)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Panel_nombre_de_spin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_stopSpin)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_StartSpin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_Uridum_ExtraEnnergy_left)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
+        Me.Panel_GalaxyGates.Controls.Add(Me.Button_StartSpin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Hades_GGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_kronos)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Zeta_GGS)
@@ -981,19 +964,19 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
-        'Button1
+        'Button_buyLives
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(16, 301)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(175, 25)
-        Me.Button1.TabIndex = 81
-        Me.Button1.Text = "Buy live : 5000 U."
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button_buyLives.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_buyLives.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_buyLives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_buyLives.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_buyLives.ForeColor = System.Drawing.Color.White
+        Me.Button_buyLives.Location = New System.Drawing.Point(15, 301)
+        Me.Button_buyLives.Name = "Button_buyLives"
+        Me.Button_buyLives.Size = New System.Drawing.Size(175, 25)
+        Me.Button_buyLives.TabIndex = 81
+        Me.Button_buyLives.Text = "Buy live : 5000 U."
+        Me.Button_buyLives.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -1069,12 +1052,12 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_WinGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_WinGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_WinGGS.Location = New System.Drawing.Point(197, 341)
+        Me.TextBox_WinGGS.Location = New System.Drawing.Point(27, 855)
         Me.TextBox_WinGGS.Multiline = True
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
         Me.TextBox_WinGGS.ReadOnly = True
         Me.TextBox_WinGGS.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 128)
+        Me.TextBox_WinGGS.Size = New System.Drawing.Size(439, 87)
         Me.TextBox_WinGGS.TabIndex = 68
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1084,7 +1067,7 @@ Partial Class Form_Tools
         Me.Panel_PrepareGatesAuto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_PrepareGatesAuto.Controls.Add(Me.CheckBox_PrepareGatesIfBuiled)
         Me.Panel_PrepareGatesAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_PrepareGatesAuto.Location = New System.Drawing.Point(15, 540)
+        Me.Panel_PrepareGatesAuto.Location = New System.Drawing.Point(15, 445)
         Me.Panel_PrepareGatesAuto.Name = "Panel_PrepareGatesAuto"
         Me.Panel_PrepareGatesAuto.Size = New System.Drawing.Size(175, 25)
         Me.Panel_PrepareGatesAuto.TabIndex = 67
@@ -1110,9 +1093,9 @@ Partial Class Form_Tools
         Me.Panel_UridiumtoKeep.Controls.Add(Me.TextBox_uridiumtokeepGGS)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_UridiumtoKeepGGS)
         Me.Panel_UridiumtoKeep.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_UridiumtoKeep.Location = New System.Drawing.Point(15, 461)
+        Me.Panel_UridiumtoKeep.Location = New System.Drawing.Point(15, 365)
         Me.Panel_UridiumtoKeep.Name = "Panel_UridiumtoKeep"
-        Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(176, 47)
+        Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(175, 47)
         Me.Panel_UridiumtoKeep.TabIndex = 66
         '
         'CheckBox_UseOnlyEE_GGS
@@ -1155,7 +1138,7 @@ Partial Class Form_Tools
         '
         Me.Label_autospin.AutoSize = True
         Me.Label_autospin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_autospin.Location = New System.Drawing.Point(13, 514)
+        Me.Label_autospin.Location = New System.Drawing.Point(14, 418)
         Me.Label_autospin.Name = "Label_autospin"
         Me.Label_autospin.Size = New System.Drawing.Size(77, 17)
         Me.Label_autospin.TabIndex = 64
@@ -1169,79 +1152,11 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.ForeColor = System.Drawing.Color.White
         Me.ComboBox_autospin.FormattingEnabled = True
         Me.ComboBox_autospin.Items.AddRange(New Object() {"ABG", "Delta", "Epsilon", "Zeta", "Kappa", "Lambda", "Kuiper", "Hades"})
-        Me.ComboBox_autospin.Location = New System.Drawing.Point(95, 514)
+        Me.ComboBox_autospin.Location = New System.Drawing.Point(94, 418)
         Me.ComboBox_autospin.Name = "ComboBox_autospin"
         Me.ComboBox_autospin.Size = New System.Drawing.Size(95, 21)
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
-        '
-        'Panel_nombre_de_spin
-        '
-        Me.Panel_nombre_de_spin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_nombre_de_spin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_nombre_de_spin.Controls.Add(Me.CheckBox_spin100)
-        Me.Panel_nombre_de_spin.Controls.Add(Me.CheckBox_spin10)
-        Me.Panel_nombre_de_spin.Controls.Add(Me.CheckBox_spin5)
-        Me.Panel_nombre_de_spin.Controls.Add(Me.CheckBox_Spin1)
-        Me.Panel_nombre_de_spin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_nombre_de_spin.Location = New System.Drawing.Point(15, 368)
-        Me.Panel_nombre_de_spin.Name = "Panel_nombre_de_spin"
-        Me.Panel_nombre_de_spin.Size = New System.Drawing.Size(176, 91)
-        Me.Panel_nombre_de_spin.TabIndex = 62
-        '
-        'CheckBox_spin100
-        '
-        Me.CheckBox_spin100.AutoSize = True
-        Me.CheckBox_spin100.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_spin100.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_spin100.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_spin100.Location = New System.Drawing.Point(6, 65)
-        Me.CheckBox_spin100.Name = "CheckBox_spin100"
-        Me.CheckBox_spin100.Size = New System.Drawing.Size(84, 21)
-        Me.CheckBox_spin100.TabIndex = 34
-        Me.CheckBox_spin100.Text = "Spin : 100"
-        Me.CheckBox_spin100.UseVisualStyleBackColor = False
-        '
-        'CheckBox_spin10
-        '
-        Me.CheckBox_spin10.AutoSize = True
-        Me.CheckBox_spin10.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_spin10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_spin10.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_spin10.Location = New System.Drawing.Point(6, 45)
-        Me.CheckBox_spin10.Name = "CheckBox_spin10"
-        Me.CheckBox_spin10.Size = New System.Drawing.Size(77, 21)
-        Me.CheckBox_spin10.TabIndex = 33
-        Me.CheckBox_spin10.Text = "Spin : 10"
-        Me.CheckBox_spin10.UseVisualStyleBackColor = False
-        '
-        'CheckBox_spin5
-        '
-        Me.CheckBox_spin5.AutoSize = True
-        Me.CheckBox_spin5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_spin5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_spin5.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_spin5.Location = New System.Drawing.Point(6, 25)
-        Me.CheckBox_spin5.Name = "CheckBox_spin5"
-        Me.CheckBox_spin5.Size = New System.Drawing.Size(70, 21)
-        Me.CheckBox_spin5.TabIndex = 32
-        Me.CheckBox_spin5.Text = "Spin : 5"
-        Me.CheckBox_spin5.UseVisualStyleBackColor = False
-        '
-        'CheckBox_Spin1
-        '
-        Me.CheckBox_Spin1.AutoSize = True
-        Me.CheckBox_Spin1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_Spin1.Checked = True
-        Me.CheckBox_Spin1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox_Spin1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_Spin1.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_Spin1.Location = New System.Drawing.Point(6, 5)
-        Me.CheckBox_Spin1.Name = "CheckBox_Spin1"
-        Me.CheckBox_Spin1.Size = New System.Drawing.Size(70, 21)
-        Me.CheckBox_Spin1.TabIndex = 31
-        Me.CheckBox_Spin1.Text = "Spin : 1"
-        Me.CheckBox_Spin1.UseVisualStyleBackColor = False
         '
         'Button_PrepareGates
         '
@@ -1250,7 +1165,7 @@ Partial Class Form_Tools
         Me.Button_PrepareGates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_PrepareGates.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_PrepareGates.ForeColor = System.Drawing.Color.White
-        Me.Button_PrepareGates.Location = New System.Drawing.Point(16, 268)
+        Me.Button_PrepareGates.Location = New System.Drawing.Point(15, 268)
         Me.Button_PrepareGates.Name = "Button_PrepareGates"
         Me.Button_PrepareGates.Size = New System.Drawing.Size(175, 31)
         Me.Button_PrepareGates.TabIndex = 61
@@ -1264,9 +1179,9 @@ Partial Class Form_Tools
         Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_stopSpin.Location = New System.Drawing.Point(105, 567)
+        Me.Button_stopSpin.Location = New System.Drawing.Point(140, 476)
         Me.Button_stopSpin.Name = "Button_stopSpin"
-        Me.Button_stopSpin.Size = New System.Drawing.Size(85, 25)
+        Me.Button_stopSpin.Size = New System.Drawing.Size(50, 25)
         Me.Button_stopSpin.TabIndex = 60
         Me.Button_stopSpin.Text = "Stop"
         Me.Button_stopSpin.UseVisualStyleBackColor = False
@@ -1278,9 +1193,9 @@ Partial Class Form_Tools
         Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_StartSpin.Location = New System.Drawing.Point(15, 567)
+        Me.Button_StartSpin.Location = New System.Drawing.Point(15, 476)
         Me.Button_StartSpin.Name = "Button_StartSpin"
-        Me.Button_StartSpin.Size = New System.Drawing.Size(85, 25)
+        Me.Button_StartSpin.Size = New System.Drawing.Size(123, 25)
         Me.Button_StartSpin.TabIndex = 59
         Me.Button_StartSpin.Text = "Start"
         Me.Button_StartSpin.UseVisualStyleBackColor = False
@@ -1936,7 +1851,7 @@ Partial Class Form_Tools
         'Labe_DIVERS__A_SUPPRIMER
         '
         Me.Labe_DIVERS__A_SUPPRIMER.AutoSize = True
-        Me.Labe_DIVERS__A_SUPPRIMER.Location = New System.Drawing.Point(156, 269)
+        Me.Labe_DIVERS__A_SUPPRIMER.Location = New System.Drawing.Point(3, 5)
         Me.Labe_DIVERS__A_SUPPRIMER.Name = "Labe_DIVERS__A_SUPPRIMER"
         Me.Labe_DIVERS__A_SUPPRIMER.Size = New System.Drawing.Size(35, 13)
         Me.Labe_DIVERS__A_SUPPRIMER.TabIndex = 0
@@ -1982,66 +1897,18 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.Multiline = True
         Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
         Me.TextBox_DebugGGS.ReadOnly = True
-        Me.TextBox_DebugGGS.Size = New System.Drawing.Size(257, 25)
+        Me.TextBox_DebugGGS.Size = New System.Drawing.Size(258, 13)
         Me.TextBox_DebugGGS.TabIndex = 69
         Me.TextBox_DebugGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox_DebbugerGGS_2
-        '
-        Me.TextBox_DebbugerGGS_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_DebbugerGGS_2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_DebbugerGGS_2.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebbugerGGS_2.Location = New System.Drawing.Point(12, 1005)
-        Me.TextBox_DebbugerGGS_2.Name = "TextBox_DebbugerGGS_2"
-        Me.TextBox_DebbugerGGS_2.ReadOnly = True
-        Me.TextBox_DebbugerGGS_2.Size = New System.Drawing.Size(78, 22)
-        Me.TextBox_DebbugerGGS_2.TabIndex = 70
-        Me.TextBox_DebbugerGGS_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_DebbugerGGS_3
-        '
-        Me.TextBox_DebbugerGGS_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_DebbugerGGS_3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_DebbugerGGS_3.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebbugerGGS_3.Location = New System.Drawing.Point(96, 1005)
-        Me.TextBox_DebbugerGGS_3.Name = "TextBox_DebbugerGGS_3"
-        Me.TextBox_DebbugerGGS_3.ReadOnly = True
-        Me.TextBox_DebbugerGGS_3.Size = New System.Drawing.Size(89, 22)
-        Me.TextBox_DebbugerGGS_3.TabIndex = 71
-        Me.TextBox_DebbugerGGS_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_DebbugerGGS_4
-        '
-        Me.TextBox_DebbugerGGS_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_DebbugerGGS_4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_DebbugerGGS_4.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebbugerGGS_4.Location = New System.Drawing.Point(191, 1005)
-        Me.TextBox_DebbugerGGS_4.Name = "TextBox_DebbugerGGS_4"
-        Me.TextBox_DebbugerGGS_4.ReadOnly = True
-        Me.TextBox_DebbugerGGS_4.Size = New System.Drawing.Size(78, 22)
-        Me.TextBox_DebbugerGGS_4.TabIndex = 72
-        Me.TextBox_DebbugerGGS_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_DebbugerGGS_5_EE
-        '
-        Me.TextBox_DebbugerGGS_5_EE.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_DebbugerGGS_5_EE.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_DebbugerGGS_5_EE.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebbugerGGS_5_EE.Location = New System.Drawing.Point(12, 1059)
-        Me.TextBox_DebbugerGGS_5_EE.Name = "TextBox_DebbugerGGS_5_EE"
-        Me.TextBox_DebbugerGGS_5_EE.ReadOnly = True
-        Me.TextBox_DebbugerGGS_5_EE.Size = New System.Drawing.Size(78, 22)
-        Me.TextBox_DebbugerGGS_5_EE.TabIndex = 73
-        Me.TextBox_DebbugerGGS_5_EE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'WebBrowser_GGInfo
         '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(137, 1033)
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(13, 1031)
         Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
         Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
         Me.WebBrowser_GGInfo.ScrollBarsEnabled = False
-        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(132, 20)
+        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGInfo.TabIndex = 74
         '
         'TextBox_GGinfoGGS
@@ -2049,24 +1916,13 @@ Partial Class Form_Tools
         Me.TextBox_GGinfoGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_GGinfoGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_GGinfoGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(192, 1059)
+        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(12, 989)
+        Me.TextBox_GGinfoGGS.Multiline = True
         Me.TextBox_GGinfoGGS.Name = "TextBox_GGinfoGGS"
         Me.TextBox_GGinfoGGS.ReadOnly = True
-        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(258, 10)
         Me.TextBox_GGinfoGGS.TabIndex = 75
         Me.TextBox_GGinfoGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_infoGGalpha1
-        '
-        Me.TextBox_infoGGalpha1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_infoGGalpha1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_infoGGalpha1.ForeColor = System.Drawing.Color.White
-        Me.TextBox_infoGGalpha1.Location = New System.Drawing.Point(498, 667)
-        Me.TextBox_infoGGalpha1.Name = "TextBox_infoGGalpha1"
-        Me.TextBox_infoGGalpha1.ReadOnly = True
-        Me.TextBox_infoGGalpha1.Size = New System.Drawing.Size(78, 22)
-        Me.TextBox_infoGGalpha1.TabIndex = 76
-        Me.TextBox_infoGGalpha1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_prepareGates_Text
         '
@@ -2078,17 +1934,78 @@ Partial Class Form_Tools
         Me.Label_prepareGates_Text.TabIndex = 80
         Me.Label_prepareGates_Text.Text = "For prepare click on its name"
         '
-        'TextBox_infoGGbeta1
+        'Panel_Title
         '
-        Me.TextBox_infoGGbeta1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_infoGGbeta1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_infoGGbeta1.ForeColor = System.Drawing.Color.White
-        Me.TextBox_infoGGbeta1.Location = New System.Drawing.Point(582, 667)
-        Me.TextBox_infoGGbeta1.Name = "TextBox_infoGGbeta1"
-        Me.TextBox_infoGGbeta1.ReadOnly = True
-        Me.TextBox_infoGGbeta1.Size = New System.Drawing.Size(78, 22)
-        Me.TextBox_infoGGbeta1.TabIndex = 81
-        Me.TextBox_infoGGbeta1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Title.Controls.Add(Me.FlatMini_reduction_de_formtools)
+        Me.Panel_Title.Controls.Add(Me.PictureBox_close1)
+        Me.Panel_Title.Controls.Add(Me.Label16)
+        Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
+        Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Title.Name = "Panel_Title"
+        Me.Panel_Title.Size = New System.Drawing.Size(1688, 18)
+        Me.Panel_Title.TabIndex = 24
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'PictureBox_close1
+        '
+        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1670, 0)
+        Me.PictureBox_close1.Name = "PictureBox_close1"
+        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_close1.TabIndex = 32
+        Me.PictureBox_close1.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(124, 18)
+        Me.Label16.TabIndex = 23
+        Me.Label16.Text = "RidevBot Tools"
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(197, 341)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 10
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(257, 160)
+        Me.TableLayoutPanel1.TabIndex = 82
         '
         'Form_Tools
         '
@@ -2096,15 +2013,10 @@ Partial Class Form_Tools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1688, 1100)
-        Me.Controls.Add(Me.TextBox_infoGGbeta1)
-        Me.Controls.Add(Me.TextBox_infoGGalpha1)
         Me.Controls.Add(Me.Label_prepareGates_Text)
         Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.WebBrowser_GGInfo)
-        Me.Controls.Add(Me.TextBox_DebbugerGGS_5_EE)
-        Me.Controls.Add(Me.TextBox_DebbugerGGS_4)
-        Me.Controls.Add(Me.TextBox_DebbugerGGS_3)
-        Me.Controls.Add(Me.TextBox_DebbugerGGS_2)
+        Me.Controls.Add(Me.TextBox_WinGGS)
         Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)
@@ -2161,8 +2073,6 @@ Partial Class Form_Tools
         Me.Panel_PrepareGatesAuto.PerformLayout()
         Me.Panel_UridiumtoKeep.ResumeLayout(False)
         Me.Panel_UridiumtoKeep.PerformLayout()
-        Me.Panel_nombre_de_spin.ResumeLayout(False)
-        Me.Panel_nombre_de_spin.PerformLayout()
         Me.Panel_Palladium.ResumeLayout(False)
         Me.Panel_Palladium.PerformLayout()
         Me.Panel_stats.ResumeLayout(False)
@@ -2179,13 +2089,15 @@ Partial Class Form_Tools
         Me.Panel_divers.PerformLayout()
         Me.Panel_MoveTitle.ResumeLayout(False)
         Me.Panel_MoveTitle.PerformLayout()
+        Me.Panel_Title.ResumeLayout(False)
+        Me.Panel_Title.PerformLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label_Tittle As Label
-    Friend WithEvents Panel_Title As Panel
     Friend WithEvents FlatMini1 As FlatMini
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents Collector_Button As Button
@@ -2292,11 +2204,6 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_honorCurrent As TextBox
     Friend WithEvents TextBox_creditCurrent As TextBox
     Friend WithEvents TextBox_uridiumCurrent As TextBox
-    Friend WithEvents Panel_nombre_de_spin As Panel
-    Friend WithEvents CheckBox_spin100 As CheckBox
-    Friend WithEvents CheckBox_spin10 As CheckBox
-    Friend WithEvents CheckBox_spin5 As CheckBox
-    Friend WithEvents CheckBox_Spin1 As CheckBox
     Friend WithEvents Button_PrepareGates As Button
     Friend WithEvents Label_autospin As Label
     Friend WithEvents ComboBox_autospin As ComboBox
@@ -2313,16 +2220,11 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_ProfilSelected As TextBox
     Friend WithEvents Label_ProfilSelected As Label
     Friend WithEvents TextBox_DebugGGS As TextBox
-    Friend WithEvents TextBox_DebbugerGGS_2 As TextBox
-    Friend WithEvents TextBox_DebbugerGGS_3 As TextBox
-    Friend WithEvents TextBox_DebbugerGGS_4 As TextBox
     Friend WithEvents Panel_SavedStatsEarned As Panel
     Friend WithEvents CheckBox_SavedStatsEarned As CheckBox
-    Friend WithEvents TextBox_DebbugerGGS_5_EE As TextBox
     Friend WithEvents WebBrowser_GGInfo As WebBrowser
     Friend WithEvents TextBox_GGinfoGGS As TextBox
-    Friend WithEvents TextBox_infoGGalpha1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_buyLives As Button
     Friend WithEvents Label_prepareGates_Text As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
@@ -2330,5 +2232,9 @@ Partial Class Form_Tools
     Friend WithEvents Panel_infoPartGG As Panel
     Friend WithEvents Label_infoPartGG_InMap As Label
     Friend WithEvents Label_InfoPartGG As Label
-    Friend WithEvents TextBox_infoGGbeta1 As TextBox
+    Friend WithEvents Panel_Title As Panel
+    Friend WithEvents Label16 As Label
+    Friend WithEvents FlatMini_reduction_de_formtools As FlatMini
+    Friend WithEvents PictureBox_close1 As PictureBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class
