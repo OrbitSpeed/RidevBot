@@ -37,11 +37,12 @@ Partial Class Form_Startup
         Me.Textbox_Username = New System.Windows.Forms.TextBox()
         Me.Label_username = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Textbox_Password = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label_serverExemple = New System.Windows.Forms.Label()
         Me.TextBox_server = New System.Windows.Forms.TextBox()
         Me.Label_server = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button_SID_Load = New System.Windows.Forms.Button()
         Me.TextBox_sid = New System.Windows.Forms.TextBox()
         Me.Label_sid = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -72,7 +73,7 @@ Partial Class Form_Startup
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_License_Verify = New System.Windows.Forms.Button()
         Me.TextBox_license = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -81,7 +82,6 @@ Partial Class Form_Startup
         Me.FlatMini = New DarkorbitBot.FlatMini()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.Label_Title = New System.Windows.Forms.Label()
-        Me.Textbox_Password = New System.Windows.Forms.TextBox()
         Me.PanelConnection.SuspendLayout()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -268,13 +268,29 @@ Partial Class Form_Startup
         Me.Button4.UseVisualStyleBackColor = False
         Me.Button4.Visible = False
         '
+        'Textbox_Password
+        '
+        Me.Textbox_Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textbox_Password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Textbox_Password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Textbox_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_Password.ForeColor = System.Drawing.Color.White
+        Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
+        Me.Textbox_Password.Name = "Textbox_Password"
+        Me.Textbox_Password.Size = New System.Drawing.Size(256, 21)
+        Me.Textbox_Password.TabIndex = 21
+        Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Textbox_Password.UseSystemPasswordChar = True
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel2.Controls.Add(Me.Label_serverExemple)
         Me.Panel2.Controls.Add(Me.TextBox_server)
         Me.Panel2.Controls.Add(Me.Label_server)
-        Me.Panel2.Controls.Add(Me.Button8)
+        Me.Panel2.Controls.Add(Me.Button_SID_Load)
         Me.Panel2.Controls.Add(Me.TextBox_sid)
         Me.Panel2.Controls.Add(Me.Label_sid)
         Me.Panel2.ForeColor = System.Drawing.Color.White
@@ -318,18 +334,18 @@ Partial Class Form_Startup
         Me.Label_server.TabIndex = 19
         Me.Label_server.Text = "Server :"
         '
-        'Button8
+        'Button_SID_Load
         '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(159, 123)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(86, 25)
-        Me.Button8.TabIndex = 18
-        Me.Button8.Text = "Load"
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.Button_SID_Load.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_SID_Load.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_SID_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_SID_Load.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_SID_Load.Location = New System.Drawing.Point(159, 123)
+        Me.Button_SID_Load.Name = "Button_SID_Load"
+        Me.Button_SID_Load.Size = New System.Drawing.Size(86, 25)
+        Me.Button_SID_Load.TabIndex = 18
+        Me.Button_SID_Load.Text = "Load"
+        Me.Button_SID_Load.UseVisualStyleBackColor = False
         '
         'TextBox_sid
         '
@@ -666,7 +682,7 @@ Partial Class Form_Startup
         Me.Panel6.Controls.Add(Me.Label19)
         Me.Panel6.Controls.Add(Me.Label18)
         Me.Panel6.Controls.Add(Me.Label17)
-        Me.Panel6.Controls.Add(Me.Button1)
+        Me.Panel6.Controls.Add(Me.Button_License_Verify)
         Me.Panel6.Controls.Add(Me.TextBox_license)
         Me.Panel6.Controls.Add(Me.Label15)
         Me.Panel6.Controls.Add(Me.Label14)
@@ -727,18 +743,18 @@ Partial Class Form_Startup
         Me.Label17.TabIndex = 21
         Me.Label17.Text = "no Valid"
         '
-        'Button1
+        'Button_License_Verify
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(159, 160)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 25)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Verify"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button_License_Verify.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_License_Verify.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_License_Verify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_License_Verify.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_License_Verify.Location = New System.Drawing.Point(159, 160)
+        Me.Button_License_Verify.Name = "Button_License_Verify"
+        Me.Button_License_Verify.Size = New System.Drawing.Size(86, 25)
+        Me.Button_License_Verify.TabIndex = 20
+        Me.Button_License_Verify.Text = "Verify"
+        Me.Button_License_Verify.UseVisualStyleBackColor = False
         '
         'TextBox_license
         '
@@ -833,22 +849,6 @@ Partial Class Form_Startup
         Me.Label_Title.TabIndex = 22
         Me.Label_Title.Text = "RidevBot v0.0.0.0"
         '
-        'Textbox_Password
-        '
-        Me.Textbox_Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Textbox_Password.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Textbox_Password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Textbox_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textbox_Password.ForeColor = System.Drawing.Color.White
-        Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
-        Me.Textbox_Password.Name = "Textbox_Password"
-        Me.Textbox_Password.Size = New System.Drawing.Size(256, 21)
-        Me.Textbox_Password.TabIndex = 21
-        Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Textbox_Password.UseSystemPasswordChar = True
-        '
         'Form_Startup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -911,7 +911,7 @@ Partial Class Form_Startup
     Friend WithEvents TextBox_sid As TextBox
     Friend WithEvents Label_sid As Label
     Friend WithEvents Load_Button As Button
-    Friend WithEvents Button8 As Button
+    Friend WithEvents Button_SID_Load As Button
     Friend WithEvents Button_loadprofil As Button
     Friend WithEvents Credentials_Button As Button
     Friend WithEvents Portail_Button As Button
@@ -939,7 +939,7 @@ Partial Class Form_Startup
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_License_Verify As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox_Close As PictureBox

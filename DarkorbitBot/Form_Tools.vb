@@ -54,7 +54,7 @@ Public Class Form_Tools
         Panel_rex.Location = New Point(86, 18)
         Panel_divers.Location = New Point(86, 18)
 
-        TextBox_ProfilSelected.Text = "Profil_" + Form_Startup.Textbox_Username.Text
+        TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
         Size = New Size(390, 324)
         CenterToScreen()
@@ -1142,10 +1142,40 @@ Public Class Form_Tools
         TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
         TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
         TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        TextBox_infoGGalpha1.Text = Replace(TextBox_infoGGalpha1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Alpha")
         Console.WriteLine(TextBox_infoGGalpha1.Text)
 
+        Dim Beta1 = Regex.Match(TextBox_GGinfoGGS.Text, "48.*?>([\s\S]*?)<\/DIV>") ' Info GG Beta
+        TextBox_infoGGbeta1.Text = (Beta1.Groups.Item(1).ToString)
+        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        TextBox_infoGGbeta1.Text = Replace(TextBox_infoGGbeta1.Text, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Beta")
+        Console.WriteLine(TextBox_infoGGbeta1.Text)
+
+        Dim Kuiper1 = Regex.Match(TextBox_GGinfoGGS.Text, "100.*?>([\s\S]*?)<\/DIV>") ' Info GG Kuiper
+        Dim data = (Beta1.Groups.Item(1).ToString)
+        data = Replace(data, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        data = Replace(data, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        data = Replace(data, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        Console.WriteLine("---DEBUG---")
+        Console.WriteLine("Kuiper")
+        Console.WriteLine(data)
+
+        ' TextBox_infoGGbeta1
+        ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
+        ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
         ' id<\/SPAN><SPAN class="m">="<\/SPAN><B>1<\/B.*?>([\s\S]*?) <\/ DIV >
         ' </B><SPAN class="m">"</SPAN><SPAN class="m"> /&gt;</SPAN>
+
+        ' BETA ET KUIPER BUGUUER , TCHEKER POURQUOI SA MERE LA PUTE !!!!
 
     End Sub
 End Class
