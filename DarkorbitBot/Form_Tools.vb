@@ -107,6 +107,13 @@ Public Class Form_Tools
 #Region "Button"
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
         General_button.Enabled = False
         NPC_Button.Enabled = True
         Collector_Button.Enabled = True
@@ -140,6 +147,13 @@ Public Class Form_Tools
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
         General_button.Enabled = True
         NPC_Button.Enabled = False
         Collector_Button.Enabled = True
@@ -172,6 +186,13 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles Collector_Button.Click
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -230,40 +251,48 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        'If Utils.server = "" Then
-        '    Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    If result = DialogResult.OK Then
-        '        General_button.Enabled = False
-        '        Label_buttonGeneral.Visible = True
-        '        Panel_general.Visible = True
-        '        Size = New Size(390, 324)
-        '    Else
-        '        General_button.Enabled = False
-        '        Label_buttonGeneral.Visible = True
-        '        Panel_general.Visible = True
-        '        Size = New Size(390, 324)
-        '    End If
-        'Else
+        If Utils.server = "" Then
+            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If result = DialogResult.OK Then
+                General_button.Enabled = False
+                Label_buttonGeneral.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            Else
+                General_button.Enabled = False
+                Label_buttonGeneral.Visible = True
+                Panel_general.Visible = True
+                Size = New Size(390, 324)
+            End If
+        Else
 
-        Label_galaxygates.Visible = True
-        GalaxyGates_Button.Enabled = False
-        Panel_GalaxyGates.Visible = True
-        Size = New Size(553, 622)
-        TextBox_uridiumGGS.Text = Utils.currentUridium
+            Label_galaxygates.Visible = True
+            GalaxyGates_Button.Enabled = False
+            Panel_GalaxyGates.Visible = True
+            Size = New Size(553, 622)
+            TextBox_uridiumGGS.Text = Utils.currentUridium
 
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+            WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
-        ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
+            ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
 
-        TextBox_WinGGS.Visible = True
+            TextBox_WinGGS.Visible = True
 
-        ' End If
+        End If
+
 
         CenterToScreen()
 
     End Sub
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -297,6 +326,13 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -363,6 +399,13 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
+
         General_button.Enabled = True
         NPC_Button.Enabled = True
         Collector_Button.Enabled = True
@@ -395,6 +438,13 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
+
+        WebBrowser_galaxyGates2.Visible = False
+        WebBrowser_galaxyGates3.Visible = False
+        Panel_infoPartGG2.Visible = False
+        Panel_infoPartGG3.Visible = False
+        Panel_infoPartGG_GG2.Visible = False
+        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -479,6 +529,8 @@ Public Class Form_Tools
 #Region "GG Click Portail"
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
 
+        WebBrowser_GGInfo.Refresh()
+
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
         Panel_infoPartGG_GG2.Visible = False
@@ -520,9 +572,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataChronos.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataChronos.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataChronos.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataChronos.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataChronos.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataChronos.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataChronos.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataChronos.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataChronos.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -565,9 +659,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataHades.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataHades.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataHades.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataHades.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataHades.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataHades.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataHades.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataHades.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataHades.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -611,9 +747,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataKuiper.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataKuiper.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataKuiper.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataKuiper.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataKuiper.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataKuiper.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataKuiper.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataKuiper.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataKuiper.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -656,9 +834,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataLambda.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataLambda.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataLambda.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataLambda.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataLambda.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataLambda.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataLambda.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataLambda.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataLambda.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -701,9 +921,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataKappa.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataKappa.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataKappa.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataKappa.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataKappa.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataKappa.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataKappa.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataKappa.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataKappa.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -746,9 +1008,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataZeta.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataZeta.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataZeta.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataZeta.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataZeta.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataZeta.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataZeta.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataZeta.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataZeta.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -791,9 +1095,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataEpsilon.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataEpsilon.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataEpsilon.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataEpsilon.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataEpsilon.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataEpsilon.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataEpsilon.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataEpsilon.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataEpsilon.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -836,9 +1182,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataDelta.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataDelta.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataDelta.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataDelta.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataDelta.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataDelta.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataDelta.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataDelta.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataDelta.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -881,9 +1269,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataGamma.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataGamma.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataGamma.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataGamma.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataGamma.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataGamma.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataGamma.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataGamma.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataGamma.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -926,9 +1356,51 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataBeta.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataBeta.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataBeta.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataBeta.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataBeta.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataBeta.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataBeta.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataBeta.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataBeta.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
+
+        WebBrowser_GGInfo.Refresh()
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -971,22 +1443,63 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
+        If DataAlpha.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataAlpha.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataAlpha.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataAlpha.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataAlpha.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataAlpha.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataAlpha.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataAlpha.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataAlpha.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
     End Sub
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
+        WebBrowser_GGInfo.Refresh()
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
         Button_delta.Enabled = True
         Button_epsilon.Enabled = True
         Button_zeta.Enabled = True
         Button_Kappa.Enabled = True
         Button_lambda.Enabled = True
-        Button_kronos.Enabled = True
-        Button_hades.Enabled = True
         Button_kuiper.Enabled = True
-
-        Button_Alpha.Enabled = True
-        Button_beta.Enabled = True
-        Button_gamma.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
 
         Panel_infoPartGG2.Visible = True
         Panel_infoPartGG3.Visible = True
@@ -1043,6 +1556,134 @@ Public Class Form_Tools
         Console.WriteLine("Gamma")
         Console.WriteLine(DataGamma)
 
+        If DataAlpha.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf DataAlpha.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+
+        If DataAlpha.Contains("livesLeft5") Then
+
+            Label_LivesLeft.Text = "Lives left : 5"
+
+        ElseIf DataAlpha.Contains("livesLeft4") Then
+
+            Label_LivesLeft.Text = "Lives left : 4"
+
+        ElseIf DataAlpha.Contains("livesLeft3") Then
+
+            Label_LivesLeft.Text = "Lives left : 3"
+
+        ElseIf DataAlpha.Contains("livesLeft2") Then
+
+            Label_LivesLeft.Text = "Lives left : 2"
+
+        ElseIf DataAlpha.Contains("livesLeft1") Then
+
+            Label_LivesLeft.Text = "Lives left : 1"
+
+        ElseIf DataAlpha.Contains("livesLeft0") Then
+
+            Label_LivesLeft.Text = "Lives left : 0"
+
+        ElseIf DataAlpha.Contains("livesLeft-1") Then
+
+            Label_LivesLeft.Text = "Lives left : -1"
+
+        End If
+
+        '________________________________________________________________
+
+
+
+        If DataBeta.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap2.Text = "On map : 1"
+
+        ElseIf DataBeta.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap2.Text = "On map : 0"
+
+        End If
+
+        If DataBeta.Contains("livesLeft5") Then
+
+            Label_LivesLeft2.Text = "Lives left : 5"
+
+        ElseIf DataBeta.Contains("livesLeft4") Then
+
+            Label_LivesLeft2.Text = "Lives left : 4"
+
+        ElseIf DataBeta.Contains("livesLeft3") Then
+
+            Label_LivesLeft2.Text = "Lives left : 3"
+
+        ElseIf DataBeta.Contains("livesLeft2") Then
+
+            Label_LivesLeft2.Text = "Lives left : 2"
+
+        ElseIf DataBeta.Contains("livesLeft1") Then
+
+            Label_LivesLeft2.Text = "Lives left : 1"
+
+        ElseIf DataBeta.Contains("livesLeft0") Then
+
+            Label_LivesLeft2.Text = "Lives left : 0"
+
+        ElseIf DataBeta.Contains("livesLeft-1") Then
+
+            Label_LivesLeft2.Text = "Lives left : -1"
+
+        End If
+
+
+        '_________________________________________________
+
+
+        If DataGamma.Contains("prepared1") Then
+
+            Label_infoPartGG_InMap3.Text = "On map : 1"
+
+        ElseIf DataGamma.Contains("prepared0") Then
+
+            Label_infoPartGG_InMap3.Text = "On map : 0"
+
+        End If
+
+        If DataGamma.Contains("livesLeft5") Then
+
+            Label_LivesLeft3.Text = "Lives left : 5"
+
+        ElseIf DataGamma.Contains("livesLeft4") Then
+
+            Label_LivesLeft3.Text = "Lives left : 4"
+
+        ElseIf DataGamma.Contains("livesLeft3") Then
+
+            Label_LivesLeft3.Text = "Lives left : 3"
+
+        ElseIf DataGamma.Contains("livesLeft2") Then
+
+            Label_LivesLeft3.Text = "Lives left : 2"
+
+        ElseIf DataGamma.Contains("livesLeft1") Then
+
+            Label_LivesLeft3.Text = "Lives left : 1"
+
+        ElseIf DataGamma.Contains("livesLeft0") Then
+
+            Label_LivesLeft3.Text = "Lives left : 0"
+
+        ElseIf DataGamma.Contains("livesLeft-1") Then
+
+            Label_LivesLeft3.Text = "Lives left : -1"
+
+        End If
+
 
 
         'Button_Alpha.PerformClick()
@@ -1083,8 +1724,6 @@ Public Class Form_Tools
 
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
-
-
 
     End Sub
 
@@ -1306,83 +1945,6 @@ Public Class Form_Tools
     End Sub
 
 
-    'Private Async Function BackgroundWorker_GGspinner_RunWorkerCompletedAsync(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) As Task Handles BackgroundWorker_GGspinner.RunWorkerCompleted
-
-    '    If BackgroundWorkerAutospin = True Then
-
-    '        'Dim delay = Task.Delay(5000)
-
-    '        'Dim sw = New Stopwatch()
-    '        'sw.Start()
-    '        'Console.WriteLine("TIC")
-    '        ''Console.WriteLine(sw.Elapsed)
-    '        ''Console.WriteLine(sw.Elapsed.TotalSeconds)
-    '        ''Console.WriteLine(sw.Elapsed.TotalMilliseconds)
-    '        'sw.Stop()
-    '        'Console.WriteLine("-------")
-    '        'Await delay
-    '        'Console.WriteLine("TAC")
-    '        ''Console.WriteLine(sw.Elapsed)
-    '        ''Console.WriteLine(sw.Elapsed.TotalSeconds)
-    '        ''Console.WriteLine(sw.Elapsed.TotalMilliseconds)
-    '        'Console.WriteLine("async: Running for {0} seconds", sw.Elapsed.TotalSeconds)
-    '        'Console.WriteLine("-------")
-    '        'Await delay
-
-
-    '        BackgroundWorker_GGspinner.RunWorkerAsync()
-
-    '    Else
-
-
-    '    End If
-
-    'End Function
-
-    'Public Check_Spin_Stats As String = 0
-
-    'Private Async Sub BackgroundWorker_GGspinner_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_GGspinner.DoWork
-
-    '    '   Me.Invoke(New MethodInvoker(Sub() --------- ))
-
-    '    If BackgroundWorkerAutospin = True Then
-
-    '        If CheckBox_Spin1.Checked = True Then
-    '            Check_Spin_Stats = 1
-
-
-    '        ElseIf CheckBox_spin5.Checked = True Then
-    '            Check_Spin_Stats = 5
-
-
-    '        ElseIf CheckBox_spin10.Checked = True Then
-    '            Check_Spin_Stats = 10
-
-
-    '        ElseIf CheckBox_spin100.Checked = True Then
-    '            Check_Spin_Stats = 100
-
-    '        Else
-
-    '            BackgroundWorkerAutospin = False
-    '            Check_Spin_Stats = 0
-    '            MsgBox("Selectionnez d'abord un nombre de spin a effectuer")
-
-    '        End If
-
-    '    End If
-
-    '    If BackgroundWorkerAutospin.CancellationPending = True Then
-    '        e.Cancel = True
-
-    '        MsgBox("Stopped.")
-    '    Else
-
-
-
-    '    End If
-
-    'End Sub
 
 #End Region
 
@@ -1416,61 +1978,38 @@ Public Class Form_Tools
 
     Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
-        'TODO ? :
-        'WebBrowser_GGspinner.Navigate(Utils.GGspinner(server, userid, sid, gate))
-
         If Button_Alpha.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=1")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
 
         ElseIf Button_beta.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=2")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
 
         ElseIf Button_gamma.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=3")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
 
         ElseIf Button_delta.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=4")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
 
         ElseIf Button_epsilon.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=5")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
 
         ElseIf Button_zeta.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=6")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
 
         ElseIf Button_Kappa.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=7")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
 
         ElseIf Button_lambda.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=8")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
 
         ElseIf Button_hades.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=19")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
 
         ElseIf Button_kuiper.Enabled = False Then
-
-            'WebBrowser_GGspinner.Navigate("https: //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + TextBox_Get_id.Text + "&sid=" + Utils.dosid + "&action=setupGate&gateID=13")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
         End If
 
-        'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=5
+        'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=1
 
     End Sub
 
@@ -1513,97 +2052,142 @@ Public Class Form_Tools
 
 
         'GGSpinner_EarnedType -- GGSpinner_EarnedID
+        Dim materalizer As String = 0
 
-        If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
-            DataWinned = "MCB-25"
+        If DataWinned = Nothing Then
 
-        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("3") Then
-            DataWinned = "MCB-50"
-
-        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("4") Then
-            DataWinned = "UCB-100"
-
-        ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("5") Then
-            DataWinned = "SAB-50"
-
-        ElseIf DataWinned.Contains("ore") Then
-            DataWinned = "Xenomit"
-
-        ElseIf DataWinned.Contains("nanohull") Then
-            DataWinned = "Nanohull"
-
-        ElseIf DataWinned.Contains("logfile") Then
-            DataWinned = "Logfile"
-
-        ElseIf DataWinned.Contains("rocket") Then
-            DataWinned = "PLT-2021"
-
-        ElseIf DataWinned.Contains("voucher") Then
-            DataWinned = "Mine"
+            materalizer = 0
 
         Else
 
-            If DataWinned.Contains("part") AndAlso DataWinned2 = Nothing Then
+            materalizer = 1
 
-                DataWinned = "Multiplier assigned"
+        End If
 
-            Else DataWinned = "part found"
+        If DataWinned2 = Nothing Then
+
+            materalizer = 0
+
+        Else
+
+            materalizer = 1
+
+        End If
+
+
+
+        If materalizer = 1 Then
+
+            If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
+                DataWinned = "MCB-25"
+
+            ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("3") Then
+                DataWinned = "MCB-50"
+
+            ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("4") Then
+                DataWinned = "UCB-100"
+
+            ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("5") Then
+                DataWinned = "SAB-50"
+
+            ElseIf DataWinned.Contains("ore") Then
+                DataWinned = "Xenomit"
+
+            ElseIf DataWinned.Contains("nanohull") Then
+                DataWinned = "Nanohull"
+
+            ElseIf DataWinned.Contains("logfile") Then
+                DataWinned = "Logfile"
+
+            ElseIf DataWinned.Contains("rocket") Then
+                DataWinned = "PLT-2021"
+
+            ElseIf DataWinned.Contains("voucher") Then
+                DataWinned = "Mine"
+
+            Else
+
+                If DataWinned.Contains("part") AndAlso DataWinned2 = Nothing Then
+
+                    DataWinned = "Multiplier assigned"
+
+                ElseIf DataWinned = "part found" Then
+
+                Else
+
+                End If
 
             End If
 
-        End If
 
-        TextBox_WinGGS.Text = vbNewLine +
-            "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text + vbNewLine
 
-        If DataWinned.Contains("MCB-25") Then
+        Else
 
-            Label_MCB25_Earned.Text = Val(Label_MCB25_Earned.Text) + DataWinned3
+            TextBox_WinGGS.Text = vbNewLine + "-----------------------" + vbNewLine +
+                             "Materializer locked" + vbNewLine +
+                                              "come back later" + vbNewLine +
+                                                                              "-----------------------" + vbNewLine
 
-        ElseIf DataWinned.Contains("MCB-50") Then
-
-            Label_MCB50_Earned.Text = Val(Label_MCB50_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("UCB-100") Then
-
-            Label_UCB100_Earned.Text = Val(Label_UCB100_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("SAB-50") Then
-
-            Label_SAB50_Earned.Text = Val(Label_SAB50_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("Xenomit") Then
-
-            Label_Xenomit_Earned.Text = Val(Label_Xenomit_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("Nanohull") Then
-
-            Label_Nanohull_Earned.Text = Val(Label_Nanohull_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("Logfile") Then
-
-            Label_Logfile_Earned.Text = Val(Label_Logfile_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("PLT-2021") Then
-
-            Label_PLT2021_Earned.Text = Val(Label_PLT2021_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("Mine") Then
-
-            Label_Mine_Earned.Text = Val(Label_Mine_Earned.Text) + DataWinned3
-
-        ElseIf DataWinned.Contains("One part found") Then
-
-            Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
+            'Button_ABG_GGS.Enabled = False
+            'Button_Delta_GGS.Enabled = False
+            'Button_Epsilon_GGS.Enabled = False
+            'Button_Zeta_GGS.Enabled = False
+            'Button_Kappa_GGS.Enabled = False
+            'Button_Lambda_GGS.Enabled = False
+            'Button_Hades_GGS.Enabled = False
+            'Button_Kuiper_GGS.Enabled = False
 
         End If
 
-        'Console.WriteLine("---DEBUG---")
-        'Console.WriteLine(money.Groups.Item(1).ToString)
-        'Console.WriteLine(Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, "."))
-        'Console.WriteLine("---DEBUG---")
+        If materalizer = 1 Then
 
-        'TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
+            If DataWinned.Contains("MCB-25") Then
+
+                Label_MCB25_Earned.Text = Val(Label_MCB25_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("MCB-50") Then
+
+                Label_MCB50_Earned.Text = Val(Label_MCB50_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("UCB-100") Then
+
+                Label_UCB100_Earned.Text = Val(Label_UCB100_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("SAB-50") Then
+
+                Label_SAB50_Earned.Text = Val(Label_SAB50_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("Xenomit") Then
+
+                Label_Xenomit_Earned.Text = Val(Label_Xenomit_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("Nanohull") Then
+
+                Label_Nanohull_Earned.Text = Val(Label_Nanohull_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("Logfile") Then
+
+                Label_Logfile_Earned.Text = Val(Label_Logfile_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("PLT-2021") Then
+
+                Label_PLT2021_Earned.Text = Val(Label_PLT2021_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("Mine") Then
+
+                Label_Mine_Earned.Text = Val(Label_Mine_Earned.Text) + DataWinned3
+
+            ElseIf DataWinned.Contains("One part found") Then
+
+                Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
+
+            End If
+
+        Else
+
+        End If
+
         TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_ExtraEnergy_GGS.Text = (DataSamples)
 #End Region
@@ -1620,416 +2204,379 @@ Public Class Form_Tools
         Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
         TextBox_GGinfoGGS.Text = html107
 
-        Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
-        Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
-        DataAlpha = Replace(DataAlpha, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
-        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
-        DataAlpha = Replace(DataAlpha, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
-        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Alpha")
-        Console.WriteLine(DataAlpha)
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
 
-        If Button_Alpha.Enabled = False Then
+        'Dim samples2 = Regex.Match(WebBrowser_GGInfo.Text, "samples.*?>([\s\S]*?)class=""t"">samples</SPAN>") ' energy restante
+        'Dim DataSamples2 = (samples2.Groups.Item(1).ToString)
+        '' DataSamples2 = Replace(DataSamples2, "</SPAN><SPAN class=""m"">&lt;/</SPAN><SPAN ", "")
+        '' DataSamples2 = Replace(DataSamples2, "<SPAN class=""m"">&gt;</SPAN><SPAN class=""tx"">", "")
+        'Console.WriteLine(DataSamples2)
 
-#Region "AlphaSpinStats"
+        '        Dim Alpha = Regex.Match(TextBox_GGinfoGGS.Text, "34.*?>([\s\S]*?)<\/DIV>") ' Info GG Alpha
+        '        Dim DataAlpha = (Alpha.Groups.Item(1).ToString)
+        '        DataAlpha = Replace(DataAlpha, "</SPAN><SPAN class=""m"">=""</SPAN><B>", "")
+        '        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        '        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
+        '        DataAlpha = Replace(DataAlpha, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
+        '        DataAlpha = Replace(DataAlpha, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        '        Console.WriteLine("---DEBUG---")
+        '        Console.WriteLine("Alpha")
+        '        Console.WriteLine(DataAlpha)
 
-            If DataAlpha.Contains("prepared1") Then
+        '        If Button_Alpha.Enabled = False Then
 
-                Label_infoPartGG_InMap.Text = "On map : 1"
+        '#Region "AlphaSpinStats"
 
-            ElseIf DataAlpha.Contains("prepared0") Then
 
-                Label_infoPartGG_InMap.Text = "On map : 0"
+        '            If DataAlpha.Contains("currentWave1") Then
 
-            End If
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 1 / 40"
 
-            If DataAlpha.Contains("lifePrice-1") Then
+        '            ElseIf DataAlpha.Contains("currentWave2") Then
 
-                Button_buyLives.Text = "Build GG in first"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 2 / 40"
 
-            Else Button_buyLives.Text = "Buy live"
+        '            ElseIf DataAlpha.Contains("currentWave3") Then
 
-            End If
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 3 / 40"
 
-            If DataAlpha.Contains("livesLeft5") Then
+        '            ElseIf DataAlpha.Contains("currentWave4") Then
 
-                Label_LivesLeft.Text = "Lives left : 5"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 4 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft4") Then
+        '            ElseIf DataAlpha.Contains("currentWave5") Then
 
-                Label_LivesLeft.Text = "Lives left : 4"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 5 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft3") Then
+        '            ElseIf DataAlpha.Contains("currentWave6") Then
 
-                Label_LivesLeft.Text = "Lives left : 3"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 6 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft2") Then
+        '            ElseIf DataAlpha.Contains("currentWave7") Then
 
-                Label_LivesLeft.Text = "Lives left : 2"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 7 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft1") Then
+        '            ElseIf DataAlpha.Contains("currentWave8") Then
 
-                Label_LivesLeft.Text = "Lives left : 1"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 8 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft0") Then
+        '            ElseIf DataAlpha.Contains("currentWave9") Then
 
-                Label_LivesLeft.Text = "Lives left : 0"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 9 / 40"
 
-            ElseIf DataAlpha.Contains("livesLeft-1") Then
+        '            ElseIf DataAlpha.Contains("currentWave10") Then
 
-                Label_LivesLeft.Text = "Lives left : -1"
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 10 / 40"
 
-            End If
+        '            ElseIf DataAlpha.Contains("currentWave11") Then
 
-            If DataAlpha.Contains("currentWave1") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 11 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 1 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave12") Then
 
-            ElseIf DataAlpha.Contains("currentWave2") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 12 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 2 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave13") Then
 
-            ElseIf DataAlpha.Contains("currentWave3") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 13 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 3 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave14") Then
 
-            ElseIf DataAlpha.Contains("currentWave4") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 14 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 4 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave15") Then
 
-            ElseIf DataAlpha.Contains("currentWave5") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 15 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 5 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave16") Then
 
-            ElseIf DataAlpha.Contains("currentWave6") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 16 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 6 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave17") Then
 
-            ElseIf DataAlpha.Contains("currentWave7") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 17 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 7 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave18") Then
 
-            ElseIf DataAlpha.Contains("currentWave8") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 18 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 8 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave19") Then
 
-            ElseIf DataAlpha.Contains("currentWave9") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 19 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 9 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave20") Then
 
-            ElseIf DataAlpha.Contains("currentWave10") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 20 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 10 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave21") Then
 
-            ElseIf DataAlpha.Contains("currentWave11") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 21 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 11 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave22") Then
 
-            ElseIf DataAlpha.Contains("currentWave12") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 22 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 12 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave23") Then
 
-            ElseIf DataAlpha.Contains("currentWave13") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 23 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 13 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave24") Then
 
-            ElseIf DataAlpha.Contains("currentWave14") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 24 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 14 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave25") Then
 
-            ElseIf DataAlpha.Contains("currentWave15") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 25 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 15 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave26") Then
 
-            ElseIf DataAlpha.Contains("currentWave16") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 26 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 16 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave27") Then
 
-            ElseIf DataAlpha.Contains("currentWave17") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 27 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 17 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave28") Then
 
-            ElseIf DataAlpha.Contains("currentWave18") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 28 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 18 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave29") Then
 
-            ElseIf DataAlpha.Contains("currentWave19") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 29 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 19 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave30") Then
 
-            ElseIf DataAlpha.Contains("currentWave20") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 30 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 20 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave31") Then
 
-            ElseIf DataAlpha.Contains("currentWave21") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 31 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 21 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave32") Then
 
-            ElseIf DataAlpha.Contains("currentWave22") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 32 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 22 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave33") Then
 
-            ElseIf DataAlpha.Contains("currentWave23") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 33 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 23 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave34") Then
 
-            ElseIf DataAlpha.Contains("currentWave24") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 34 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 24 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave35") Then
 
-            ElseIf DataAlpha.Contains("currentWave25") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 35 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 25 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave36") Then
 
-            ElseIf DataAlpha.Contains("currentWave26") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 36 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 26 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave37") Then
 
-            ElseIf DataAlpha.Contains("currentWave27") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 37 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 27 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave38") Then
 
-            ElseIf DataAlpha.Contains("currentWave28") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 38 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 28 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave39") Then
 
-            ElseIf DataAlpha.Contains("currentWave29") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 39 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 29 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave40") Then
 
-            ElseIf DataAlpha.Contains("currentWave30") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 40 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 30 / 40"
+        '            ElseIf DataAlpha.Contains("currentWave0") Then
 
-            ElseIf DataAlpha.Contains("currentWave31") Then
+        '                Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 40"
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 31 / 40"
+        '            End If
 
-            ElseIf DataAlpha.Contains("currentWave32") Then
+        '            If DataAlpha.Contains("current1") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 32 / 40"
+        '                Label_InfoPartGG.Text = "Part : 1 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave33") Then
+        '            ElseIf DataAlpha.Contains("current2") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 33 / 40"
+        '                Label_InfoPartGG.Text = "Part : 2 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave34") Then
+        '            ElseIf DataAlpha.Contains("current3") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 34 / 40"
+        '                Label_InfoPartGG.Text = "Part : 3 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave35") Then
+        '            ElseIf DataAlpha.Contains("current4") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 35 / 40"
+        '                Label_InfoPartGG.Text = "Part : 4 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave36") Then
+        '            ElseIf DataAlpha.Contains("current5") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 36 / 40"
+        '                Label_InfoPartGG.Text = "Part : 5 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave37") Then
+        '            ElseIf DataAlpha.Contains("current6") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 37 / 40"
+        '                Label_InfoPartGG.Text = "Part : 6 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave38") Then
+        '            ElseIf DataAlpha.Contains("current7") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 38 / 40"
+        '                Label_InfoPartGG.Text = "Part : 7 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave39") Then
+        '            ElseIf DataAlpha.Contains("current8") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 39 / 40"
+        '                Label_InfoPartGG.Text = "Part : 8 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave40") Then
+        '            ElseIf DataAlpha.Contains("current9") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 40 / 40"
+        '                Label_InfoPartGG.Text = "Part : 9 / 40"
 
-            ElseIf DataAlpha.Contains("currentWave0") Then
+        '            ElseIf DataAlpha.Contains("current10") Then
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 40"
+        '                Label_InfoPartGG.Text = "Part : 10 / 40"
 
-            End If
+        '            ElseIf DataAlpha.Contains("current11") Then
 
-            If DataAlpha.Contains("current1") Then
+        '                Label_InfoPartGG.Text = "Part : 11 / 40"
 
-                Label_InfoPartGG.Text = "Part : 1 / 40"
+        '            ElseIf DataAlpha.Contains("current12") Then
 
-            ElseIf DataAlpha.Contains("current2") Then
+        '                Label_InfoPartGG.Text = "Part : 12 / 40"
 
-                Label_InfoPartGG.Text = "Part : 2 / 40"
+        '            ElseIf DataAlpha.Contains("current13") Then
 
-            ElseIf DataAlpha.Contains("current3") Then
+        '                Label_InfoPartGG.Text = "Part : 13 / 40"
 
-                Label_InfoPartGG.Text = "Part : 3 / 40"
+        '            ElseIf DataAlpha.Contains("current14") Then
 
-            ElseIf DataAlpha.Contains("current4") Then
+        '                Label_InfoPartGG.Text = "Part : 14 / 40"
 
-                Label_InfoPartGG.Text = "Part : 4 / 40"
+        '            ElseIf DataAlpha.Contains("current15") Then
 
-            ElseIf DataAlpha.Contains("current5") Then
+        '                Label_InfoPartGG.Text = "Part : 15 / 40"
 
-                Label_InfoPartGG.Text = "Part : 5 / 40"
+        '            ElseIf DataAlpha.Contains("current16") Then
 
-            ElseIf DataAlpha.Contains("current6") Then
+        '                Label_InfoPartGG.Text = "Part : 16 / 40"
 
-                Label_InfoPartGG.Text = "Part : 6 / 40"
+        '            ElseIf DataAlpha.Contains("current17") Then
 
-            ElseIf DataAlpha.Contains("current7") Then
+        '                Label_InfoPartGG.Text = "Part : 17 / 40"
 
-                Label_InfoPartGG.Text = "Part : 7 / 40"
+        '            ElseIf DataAlpha.Contains("current18") Then
 
-            ElseIf DataAlpha.Contains("current8") Then
+        '                Label_InfoPartGG.Text = "Part : 18 / 40"
 
-                Label_InfoPartGG.Text = "Part : 8 / 40"
+        '            ElseIf DataAlpha.Contains("current19") Then
 
-            ElseIf DataAlpha.Contains("current9") Then
+        '                Label_InfoPartGG.Text = "Part : 19 / 40"
 
-                Label_InfoPartGG.Text = "Part : 9 / 40"
+        '            ElseIf DataAlpha.Contains("current20") Then
 
-            ElseIf DataAlpha.Contains("current10") Then
+        '                Label_InfoPartGG.Text = "Part : 20 / 40"
 
-                Label_InfoPartGG.Text = "Part : 10 / 40"
+        '            ElseIf DataAlpha.Contains("current21") Then
 
-            ElseIf DataAlpha.Contains("current11") Then
+        '                Label_InfoPartGG.Text = "Part : 21 / 40"
 
-                Label_InfoPartGG.Text = "Part : 11 / 40"
+        '            ElseIf DataAlpha.Contains("current22") Then
 
-            ElseIf DataAlpha.Contains("current12") Then
+        '                Label_InfoPartGG.Text = "Part : 22 / 40"
 
-                Label_InfoPartGG.Text = "Part : 12 / 40"
+        '            ElseIf DataAlpha.Contains("current23") Then
 
-            ElseIf DataAlpha.Contains("current13") Then
+        '                Label_InfoPartGG.Text = "Part : 23 / 40"
 
-                Label_InfoPartGG.Text = "Part : 13 / 40"
+        '            ElseIf DataAlpha.Contains("current24") Then
 
-            ElseIf DataAlpha.Contains("current14") Then
+        '                Label_InfoPartGG.Text = "Part : 24 / 40"
 
-                Label_InfoPartGG.Text = "Part : 14 / 40"
+        '            ElseIf DataAlpha.Contains("current25") Then
 
-            ElseIf DataAlpha.Contains("current15") Then
+        '                Label_InfoPartGG.Text = "Part : 25 / 40"
 
-                Label_InfoPartGG.Text = "Part : 15 / 40"
+        '            ElseIf DataAlpha.Contains("current26") Then
 
-            ElseIf DataAlpha.Contains("current16") Then
+        '                Label_InfoPartGG.Text = "Part : 26 / 40"
 
-                Label_InfoPartGG.Text = "Part : 16 / 40"
+        '            ElseIf DataAlpha.Contains("current27") Then
 
-            ElseIf DataAlpha.Contains("current17") Then
+        '                Label_InfoPartGG.Text = "Part : 27 / 40"
 
-                Label_InfoPartGG.Text = "Part : 17 / 40"
+        '            ElseIf DataAlpha.Contains("current28") Then
 
-            ElseIf DataAlpha.Contains("current18") Then
+        '                Label_InfoPartGG.Text = "Part : 28 / 40"
 
-                Label_InfoPartGG.Text = "Part : 18 / 40"
+        '            ElseIf DataAlpha.Contains("current29") Then
 
-            ElseIf DataAlpha.Contains("current19") Then
+        '                Label_InfoPartGG.Text = "Part : 29 / 40"
 
-                Label_InfoPartGG.Text = "Part : 19 / 40"
+        '            ElseIf DataAlpha.Contains("current30") Then
 
-            ElseIf DataAlpha.Contains("current20") Then
+        '                Label_InfoPartGG.Text = "Part : 30 / 40"
 
-                Label_InfoPartGG.Text = "Part : 20 / 40"
+        '            ElseIf DataAlpha.Contains("current31") Then
 
-            ElseIf DataAlpha.Contains("current21") Then
+        '                Label_InfoPartGG.Text = "Part : 31 / 40"
 
-                Label_InfoPartGG.Text = "Part : 21 / 40"
+        '            ElseIf DataAlpha.Contains("current32") Then
 
-            ElseIf DataAlpha.Contains("current22") Then
+        '                Label_InfoPartGG.Text = "Part : 32 / 40"
 
-                Label_InfoPartGG.Text = "Part : 22 / 40"
+        '            ElseIf DataAlpha.Contains("current33") Then
 
-            ElseIf DataAlpha.Contains("current23") Then
+        '                Label_InfoPartGG.Text = "Part : 33 / 40"
 
-                Label_InfoPartGG.Text = "Part : 23 / 40"
+        '            ElseIf DataAlpha.Contains("current34") Then
 
-            ElseIf DataAlpha.Contains("current24") Then
+        '                Label_InfoPartGG.Text = "Part : 34 / 40"
 
-                Label_InfoPartGG.Text = "Part : 24 / 40"
+        '            ElseIf DataAlpha.Contains("current35") Then
 
-            ElseIf DataAlpha.Contains("current25") Then
+        '                Label_InfoPartGG.Text = "Part : 35 / 40"
 
-                Label_InfoPartGG.Text = "Part : 25 / 40"
+        '            ElseIf DataAlpha.Contains("current36") Then
 
-            ElseIf DataAlpha.Contains("current26") Then
+        '                Label_InfoPartGG.Text = "Part : 36 / 40"
 
-                Label_InfoPartGG.Text = "Part : 26 / 40"
+        '            ElseIf DataAlpha.Contains("current37") Then
 
-            ElseIf DataAlpha.Contains("current27") Then
+        '                Label_InfoPartGG.Text = "Part : 37 / 40"
 
-                Label_InfoPartGG.Text = "Part : 27 / 40"
+        '            ElseIf DataAlpha.Contains("current38") Then
 
-            ElseIf DataAlpha.Contains("current28") Then
+        '                Label_InfoPartGG.Text = "Part : 38 / 40"
 
-                Label_InfoPartGG.Text = "Part : 28 / 40"
+        '            ElseIf DataAlpha.Contains("current39") Then
 
-            ElseIf DataAlpha.Contains("current29") Then
+        '                Label_InfoPartGG.Text = "Part : 39 / 40"
 
-                Label_InfoPartGG.Text = "Part : 29 / 40"
+        '            ElseIf DataAlpha.Contains("current40") Then
 
-            ElseIf DataAlpha.Contains("current30") Then
+        '                Label_InfoPartGG.Text = "Part : 40 / 40"
 
-                Label_InfoPartGG.Text = "Part : 30 / 40"
+        '            ElseIf DataAlpha.Contains("current0") Then
 
-            ElseIf DataAlpha.Contains("current31") Then
+        '                Label_InfoPartGG.Text = "Part : 0 / 40"
 
-                Label_InfoPartGG.Text = "Part : 31 / 40"
+        '            End If
 
-            ElseIf DataAlpha.Contains("current32") Then
+        '#End Region
 
-                Label_InfoPartGG.Text = "Part : 32 / 40"
+        '        End If
 
-            ElseIf DataAlpha.Contains("current33") Then
+        '____________ essai de me faire une fonction pour la alpha ! ps : enleve tout les apotrophe vers avant de déplier le déroulant ! Bon Weekend  ___________________
 
-                Label_InfoPartGG.Text = "Part : 33 / 40"
-
-            ElseIf DataAlpha.Contains("current34") Then
-
-                Label_InfoPartGG.Text = "Part : 34 / 40"
-
-            ElseIf DataAlpha.Contains("current35") Then
-
-                Label_InfoPartGG.Text = "Part : 35 / 40"
-
-            ElseIf DataAlpha.Contains("current36") Then
-
-                Label_InfoPartGG.Text = "Part : 36 / 40"
-
-            ElseIf DataAlpha.Contains("current37") Then
-
-                Label_InfoPartGG.Text = "Part : 37 / 40"
-
-            ElseIf DataAlpha.Contains("current38") Then
-
-                Label_InfoPartGG.Text = "Part : 38 / 40"
-
-            ElseIf DataAlpha.Contains("current39") Then
-
-                Label_InfoPartGG.Text = "Part : 39 / 40"
-
-            ElseIf DataAlpha.Contains("current40") Then
-
-                Label_InfoPartGG.Text = "Part : 40 / 40"
-
-            ElseIf DataAlpha.Contains("current0") Then
-
-                Label_InfoPartGG.Text = "Part : 0 / 40"
-
-            End If
-
-#End Region
-
-        ElseIf Button_beta.Enabled = False Then
-
-        ElseIf Button_gamma.Enabled = False Then
-
-        End If
-
-        ' TextBox_infoGGbeta1
-        ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
-        ' </B><SPAN class="m">"</SPAN><SPAN class="m">&gt;</SPAN>
-        ' id<\/SPAN><SPAN class="m">="<\/SPAN><B>1<\/B.*?>([\s\S]*?) <\/ DIV >
-        ' </B><SPAN class="m">"</SPAN><SPAN class="m"> /&gt;</SPAN>
-
-        ' BETA ET KUIPER BUGUUER , TCHEKER POURQUOI SA MERE LA PUTE !!!!
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
+        '____________ OCCUPE DE SA ___________________
 
     End Sub
 

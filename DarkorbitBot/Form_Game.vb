@@ -84,6 +84,15 @@ Public Class Form_Game
 
                 TextBox_getserver.Text = Utils.server
 
+                Form_Tools.Button_ABG_GGS.Enabled = True
+                Form_Tools.Button_Delta_GGS.Enabled = True
+                Form_Tools.Button_Epsilon_GGS.Enabled = True
+                Form_Tools.Button_Zeta_GGS.Enabled = True
+                Form_Tools.Button_Kappa_GGS.Enabled = True
+                Form_Tools.Button_Lambda_GGS.Enabled = True
+                Form_Tools.Button_Hades_GGS.Enabled = True
+                Form_Tools.Button_Kuiper_GGS.Enabled = True
+
                 'MsgBox(dosid)
             End If
 
