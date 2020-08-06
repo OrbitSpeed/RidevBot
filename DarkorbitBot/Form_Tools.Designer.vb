@@ -945,6 +945,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_buyLives)
+        Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_PrepareGatesAuto)
@@ -1072,7 +1073,7 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_WinGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_WinGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_WinGGS.Location = New System.Drawing.Point(27, 856)
+        Me.TextBox_WinGGS.Location = New System.Drawing.Point(15, 508)
         Me.TextBox_WinGGS.Multiline = True
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
         Me.TextBox_WinGGS.ReadOnly = True
@@ -2265,7 +2266,6 @@ Partial Class Form_Tools
         Me.ClientSize = New System.Drawing.Size(1688, 1100)
         Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.WebBrowser_GGInfo)
-        Me.Controls.Add(Me.TextBox_WinGGS)
         Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)

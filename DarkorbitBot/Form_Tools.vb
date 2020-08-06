@@ -238,6 +238,8 @@ Public Class Form_Tools
 
         ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
 
+        TextBox_WinGGS.Visible = True
+
         ' End If
 
         CenterToScreen()
