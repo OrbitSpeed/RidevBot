@@ -197,6 +197,7 @@ Partial Class Form_Tools
         Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Button_Refresh_Stats = New System.Windows.Forms.Button()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1907,6 +1908,7 @@ Partial Class Form_Tools
         'Panel_stats
         '
         Me.Panel_stats.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_stats.Controls.Add(Me.Button_Refresh_Stats)
         Me.Panel_stats.Controls.Add(Me.Panel_SavedStatsEarned)
         Me.Panel_stats.Controls.Add(Me.Button_ResetStats)
         Me.Panel_stats.Controls.Add(Me.Label_Stats_Earned)
@@ -1927,9 +1929,9 @@ Partial Class Form_Tools
         Me.Panel_SavedStatsEarned.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_SavedStatsEarned.Controls.Add(Me.CheckBox_SavedStatsEarned)
         Me.Panel_SavedStatsEarned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_SavedStatsEarned.Location = New System.Drawing.Point(130, 301)
+        Me.Panel_SavedStatsEarned.Location = New System.Drawing.Point(159, 301)
         Me.Panel_SavedStatsEarned.Name = "Panel_SavedStatsEarned"
-        Me.Panel_SavedStatsEarned.Size = New System.Drawing.Size(147, 25)
+        Me.Panel_SavedStatsEarned.Size = New System.Drawing.Size(131, 25)
         Me.Panel_SavedStatsEarned.TabIndex = 52
         '
         'CheckBox_SavedStatsEarned
@@ -1937,11 +1939,11 @@ Partial Class Form_Tools
         Me.CheckBox_SavedStatsEarned.AutoSize = True
         Me.CheckBox_SavedStatsEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckBox_SavedStatsEarned.Enabled = False
-        Me.CheckBox_SavedStatsEarned.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_SavedStatsEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_SavedStatsEarned.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_SavedStatsEarned.Location = New System.Drawing.Point(6, 1)
+        Me.CheckBox_SavedStatsEarned.Location = New System.Drawing.Point(6, 3)
         Me.CheckBox_SavedStatsEarned.Name = "CheckBox_SavedStatsEarned"
-        Me.CheckBox_SavedStatsEarned.Size = New System.Drawing.Size(131, 21)
+        Me.CheckBox_SavedStatsEarned.Size = New System.Drawing.Size(124, 19)
         Me.CheckBox_SavedStatsEarned.TabIndex = 51
         Me.CheckBox_SavedStatsEarned.Text = "Save Earnad Stats"
         Me.CheckBox_SavedStatsEarned.UseVisualStyleBackColor = False
@@ -1953,11 +1955,11 @@ Partial Class Form_Tools
         Me.Button_ResetStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_ResetStats.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_ResetStats.ForeColor = System.Drawing.Color.White
-        Me.Button_ResetStats.Location = New System.Drawing.Point(29, 301)
+        Me.Button_ResetStats.Location = New System.Drawing.Point(14, 301)
         Me.Button_ResetStats.Name = "Button_ResetStats"
-        Me.Button_ResetStats.Size = New System.Drawing.Size(95, 25)
+        Me.Button_ResetStats.Size = New System.Drawing.Size(61, 25)
         Me.Button_ResetStats.TabIndex = 50
-        Me.Button_ResetStats.Text = "Reset Stats"
+        Me.Button_ResetStats.Text = "Reset"
         Me.Button_ResetStats.UseVisualStyleBackColor = False
         '
         'Label_Stats_Earned
@@ -2473,6 +2475,20 @@ Partial Class Form_Tools
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "RidevBot Tools"
         '
+        'Button_Refresh_Stats
+        '
+        Me.Button_Refresh_Stats.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_Refresh_Stats.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Refresh_Stats.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Refresh_Stats.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Refresh_Stats.ForeColor = System.Drawing.Color.White
+        Me.Button_Refresh_Stats.Location = New System.Drawing.Point(77, 301)
+        Me.Button_Refresh_Stats.Name = "Button_Refresh_Stats"
+        Me.Button_Refresh_Stats.Size = New System.Drawing.Size(80, 25)
+        Me.Button_Refresh_Stats.TabIndex = 54
+        Me.Button_Refresh_Stats.Text = "Refresh"
+        Me.Button_Refresh_Stats.UseVisualStyleBackColor = False
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2745,4 +2761,5 @@ Partial Class Form_Tools
     Friend WithEvents Label_infoPartGG_InMap2 As Label
     Friend WithEvents Label_InfoPartGG2 As Label
     Friend WithEvents WebBrowser_galaxyGates2 As WebBrowser
+    Friend WithEvents Button_Refresh_Stats As Button
 End Class

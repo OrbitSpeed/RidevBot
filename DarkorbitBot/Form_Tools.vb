@@ -7,6 +7,23 @@ Public Class Form_Tools
     Public BeingDragged As Boolean = False
     Public MouseDownX As Integer
     Public MouseDownY As Integer
+    Public Calculator As String
+
+    Public UridiumCalculator As String
+    Public CreditCalculator As String
+    Public HonorCalculator As String
+    Public ExpCalculator As String
+    Public RPCalculator As String
+    Public UridiumCalculator2 As String
+    Public CreditCalculator2 As String
+    Public HonorCalculator2 As String
+    Public ExpCalculator2 As String
+    Public RPCalculator2 As String
+    Public UridiumCalculator3 As String
+    Public CreditCalculator3 As String
+    Public HonorCalculator3 As String
+    Public ExpCalculator3 As String
+    Public RPCalculator3 As String
 
     Public BackgroundWorkerAutospin As Boolean = False
 
@@ -44,6 +61,8 @@ Public Class Form_Tools
 #End Region
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Calculator = 1
 
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
@@ -359,7 +378,6 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
 
-
         If Utils.server = "" Then
 
             Dim result = MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -392,6 +410,35 @@ Public Class Form_Tools
             BackPage_Form.Show()
             BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
             BackPage_Form.WindowState = FormWindowState.Minimized
+
+            If Calculator = 1 Then
+
+                UridiumCalculator = Val(TextBox_uridiumCurrent.Text)
+                CreditCalculator = Val(TextBox_creditCurrent.Text)
+                HonorCalculator = Val(TextBox_honorCurrent.Text)
+                ExpCalculator = Val(TextBox_experienceCurrent.Text)
+                RPCalculator = Val(TextBox_RPCurrent.Text)
+
+                Calculator = 2
+            End If
+
+            UridiumCalculator3 = Val(TextBox_uridiumCurrent.Text)
+            CreditCalculator3 = Val(TextBox_creditCurrent.Text)
+            HonorCalculator3 = Val(TextBox_honorCurrent.Text)
+            ExpCalculator3 = Val(TextBox_experienceCurrent.Text)
+            RPCalculator3 = Val(TextBox_RPCurrent.Text)
+
+            UridiumCalculator2 = (UridiumCalculator3) - (UridiumCalculator)
+            CreditCalculator2 = (CreditCalculator3) - (CreditCalculator)
+            HonorCalculator2 = (HonorCalculator3) - (HonorCalculator)
+            ExpCalculator2 = (ExpCalculator3) - (ExpCalculator)
+            RPCalculator2 = (RPCalculator3) - (RPCalculator)
+
+            TextBox_uridiumEarned.Text = UridiumCalculator2
+            TextBox_creditEarned.Text = CreditCalculator2
+            TextBox_honorEarned.Text = HonorCalculator2
+            TextBox_experienceEarned.Text = ExpCalculator2
+            TextBox_RPEarned.Text = RPCalculator2
 
         End If
 
@@ -610,6 +657,10 @@ Public Class Form_Tools
 
             Label_LivesLeft.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
+
         End If
 
     End Sub
@@ -696,6 +747,10 @@ Public Class Form_Tools
         ElseIf DataHades.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -785,6 +840,10 @@ Public Class Form_Tools
 
             Label_LivesLeft.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
+
         End If
 
     End Sub
@@ -871,6 +930,10 @@ Public Class Form_Tools
         ElseIf DataLambda.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -959,6 +1022,10 @@ Public Class Form_Tools
 
             Label_LivesLeft.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
+
         End If
 
     End Sub
@@ -1045,6 +1112,10 @@ Public Class Form_Tools
         ElseIf DataZeta.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -1133,6 +1204,10 @@ Public Class Form_Tools
 
             Label_LivesLeft.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
+
         End If
 
     End Sub
@@ -1219,6 +1294,10 @@ Public Class Form_Tools
         ElseIf DataDelta.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -1307,6 +1386,10 @@ Public Class Form_Tools
 
             Label_LivesLeft.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
+
         End If
 
     End Sub
@@ -1368,31 +1451,35 @@ Public Class Form_Tools
 
         If DataBeta.Contains("livesLeft5") Then
 
-            Label_LivesLeft.Text = "Lives left : 5"
+            Label_LivesLeft2.Text = "Lives left : 5"
 
         ElseIf DataBeta.Contains("livesLeft4") Then
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            Label_LivesLeft2.Text = "Lives left : 4"
 
         ElseIf DataBeta.Contains("livesLeft3") Then
 
-            Label_LivesLeft.Text = "Lives left : 3"
+            Label_LivesLeft2.Text = "Lives left : 3"
 
         ElseIf DataBeta.Contains("livesLeft2") Then
 
-            Label_LivesLeft.Text = "Lives left : 2"
+            Label_LivesLeft2.Text = "Lives left : 2"
 
         ElseIf DataBeta.Contains("livesLeft1") Then
 
-            Label_LivesLeft.Text = "Lives left : 1"
+            Label_LivesLeft2.Text = "Lives left : 1"
 
         ElseIf DataBeta.Contains("livesLeft0") Then
 
-            Label_LivesLeft.Text = "Lives left : 0"
+            Label_LivesLeft2.Text = "Lives left : 0"
 
         ElseIf DataBeta.Contains("livesLeft-1") Then
 
-            Label_LivesLeft.Text = "Lives left : -1"
+            Label_LivesLeft2.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft2.Text = "Lives left : 5+"
 
         End If
 
@@ -1453,6 +1540,8 @@ Public Class Form_Tools
 
         End If
 
+
+
         If DataAlpha.Contains("livesLeft5") Then
 
             Label_LivesLeft.Text = "Lives left : 5"
@@ -1480,6 +1569,10 @@ Public Class Form_Tools
         ElseIf DataAlpha.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -1566,6 +1659,7 @@ Public Class Form_Tools
 
         End If
 
+
         If DataAlpha.Contains("livesLeft5") Then
 
             Label_LivesLeft.Text = "Lives left : 5"
@@ -1593,6 +1687,10 @@ Public Class Form_Tools
         ElseIf DataAlpha.Contains("livesLeft-1") Then
 
             Label_LivesLeft.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -1638,6 +1736,10 @@ Public Class Form_Tools
 
             Label_LivesLeft2.Text = "Lives left : -1"
 
+        Else
+
+            Label_LivesLeft2.Text = "Lives left : 5+"
+
         End If
 
 
@@ -1653,6 +1755,7 @@ Public Class Form_Tools
             Label_infoPartGG_InMap3.Text = "On map : 0"
 
         End If
+
 
         If DataGamma.Contains("livesLeft5") Then
 
@@ -1681,6 +1784,10 @@ Public Class Form_Tools
         ElseIf DataGamma.Contains("livesLeft-1") Then
 
             Label_LivesLeft3.Text = "Lives left : -1"
+
+        Else
+
+            Label_LivesLeft3.Text = "Lives left : 5+"
 
         End If
 
@@ -1956,6 +2063,7 @@ Public Class Form_Tools
 
     Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
 
+        Calculator = 1
         TextBox_uridiumCurrent.Text = 0
         TextBox_creditCurrent.Text = 0
         TextBox_honorCurrent.Text = 0
@@ -2052,7 +2160,7 @@ Public Class Form_Tools
 
 
         'GGSpinner_EarnedType -- GGSpinner_EarnedID
-        Dim materalizer As String = 0
+        Dim materalizer As String
 
         If DataWinned = Nothing Then
 
@@ -2599,6 +2707,38 @@ Public Class Form_Tools
         Label_Mine_Earned.Text = 0
         Label_Logfile_Earned.Text = 0
 
+
+    End Sub
+
+    Private Sub CheckBox_SavedStatsEarned_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_SavedStatsEarned.CheckedChanged
+
+        If CheckBox_SavedStatsEarned.Checked = True Then
+
+
+            TextBox_uridiumEarned.DataBindings.Add(New Binding("0", TextBox_uridiumEarned, "Height"))
+            TextBox_creditEarned.DataBindings.Add(New Binding("0", TextBox_creditEarned, "Height"))
+            TextBox_honorEarned.DataBindings.Add(New Binding("0", TextBox_honorEarned, "Height"))
+            TextBox_experienceEarned.DataBindings.Add(New Binding("0", TextBox_experienceEarned, "Height"))
+            TextBox_RPEarned.DataBindings.Add(New Binding("0", TextBox_RPEarned, "Height"))
+
+        Else
+
+            TextBox_uridiumEarned.DataBindings.Clear()
+            TextBox_creditEarned.DataBindings.Clear()
+            TextBox_honorEarned.DataBindings.Clear()
+            TextBox_experienceEarned.DataBindings.Clear()
+            TextBox_RPEarned.DataBindings.Clear()
+
+        End If
+
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
+
+        Utils.checkStats = True
+        BackPage_Form.Show()
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WindowState = FormWindowState.Minimized
 
     End Sub
 End Class
