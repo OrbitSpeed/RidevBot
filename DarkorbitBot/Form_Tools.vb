@@ -629,40 +629,24 @@ Public Class Form_Tools
 
         End If
 
-        If DataChronos.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataChronos, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataChronos.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataChronos.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataChronos.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataChronos.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataChronos.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataChronos.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
-
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
@@ -720,38 +704,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataHades.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataHades, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataHades.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataHades.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataHades.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataHades.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataHades.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataHades.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -812,40 +781,24 @@ Public Class Form_Tools
 
         End If
 
-        If DataKuiper.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataKuiper, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataKuiper.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataKuiper.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataKuiper.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataKuiper.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataKuiper.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataKuiper.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
-
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
@@ -903,38 +856,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataLambda.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataLambda, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataLambda.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataLambda.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataLambda.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataLambda.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataLambda.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataLambda.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -994,38 +932,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataKappa.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataKappa, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataKappa.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataKappa.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataKappa.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataKappa.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataKappa.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataKappa.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1085,38 +1008,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataZeta.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataZeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataZeta.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataZeta.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataZeta.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataZeta.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataZeta.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataZeta.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1176,38 +1084,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataEpsilon.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataEpsilon, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataEpsilon.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataEpsilon.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataEpsilon.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataEpsilon.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataEpsilon.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataEpsilon.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1267,38 +1160,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataDelta.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataDelta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataDelta.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataDelta.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataDelta.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataDelta.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataDelta.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataDelta.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1358,38 +1236,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataGamma.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataGamma.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataGamma.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataGamma.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataGamma.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataGamma.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataGamma.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1449,38 +1312,23 @@ Public Class Form_Tools
 
         End If
 
-        If DataBeta.Contains("livesLeft5") Then
+        Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeft)
 
-            Label_LivesLeft2.Text = "Lives left : 5"
+        If Not regex_livesLeft.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeft > 5 Then
 
-        ElseIf DataBeta.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft2.Text = "Lives left : 4"
+            ElseIf regex_livesLeft = -1 Then
 
-        ElseIf DataBeta.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft2.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
 
-        ElseIf DataBeta.Contains("livesLeft2") Then
-
-            Label_LivesLeft2.Text = "Lives left : 2"
-
-        ElseIf DataBeta.Contains("livesLeft1") Then
-
-            Label_LivesLeft2.Text = "Lives left : 1"
-
-        ElseIf DataBeta.Contains("livesLeft0") Then
-
-            Label_LivesLeft2.Text = "Lives left : 0"
-
-        ElseIf DataBeta.Contains("livesLeft-1") Then
-
-            Label_LivesLeft2.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft2.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1540,40 +1388,23 @@ Public Class Form_Tools
 
         End If
 
+        Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeftAlpha)
 
+        If Not regex_livesLeftAlpha.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeftAlpha > 5 Then
 
-        If DataAlpha.Contains("livesLeft5") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft.Text = "Lives left : 5"
+            ElseIf regex_livesLeftAlpha = -1 Then
 
-        ElseIf DataAlpha.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft.Text = "Lives left : 4"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
 
-        ElseIf DataAlpha.Contains("livesLeft3") Then
-
-            Label_LivesLeft.Text = "Lives left : 3"
-
-        ElseIf DataAlpha.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataAlpha.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataAlpha.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataAlpha.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
-
+            End If
         End If
 
     End Sub
@@ -1659,38 +1490,24 @@ Public Class Form_Tools
 
         End If
 
+        Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeftAlpha)
 
-        If DataAlpha.Contains("livesLeft5") Then
+        If Not regex_livesLeftAlpha.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeftAlpha > 5 Then
 
-            Label_LivesLeft.Text = "Lives left : 5"
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-        ElseIf DataAlpha.Contains("livesLeft4") Then
+            ElseIf regex_livesLeftAlpha = -1 Then
 
-            Label_LivesLeft.Text = "Lives left : 4"
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-        ElseIf DataAlpha.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
 
-            Label_LivesLeft.Text = "Lives left : 3"
+            End If
 
-        ElseIf DataAlpha.Contains("livesLeft2") Then
-
-            Label_LivesLeft.Text = "Lives left : 2"
-
-        ElseIf DataAlpha.Contains("livesLeft1") Then
-
-            Label_LivesLeft.Text = "Lives left : 1"
-
-        ElseIf DataAlpha.Contains("livesLeft0") Then
-
-            Label_LivesLeft.Text = "Lives left : 0"
-
-        ElseIf DataAlpha.Contains("livesLeft-1") Then
-
-            Label_LivesLeft.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft.Text = "Lives left : 5+"
 
         End If
 
@@ -1708,40 +1525,26 @@ Public Class Form_Tools
 
         End If
 
-        If DataBeta.Contains("livesLeft5") Then
+        Dim regex_livesLeftBeta = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeftBeta)
 
-            Label_LivesLeft2.Text = "Lives left : 5"
+        If Not regex_livesLeftBeta.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeftBeta > 5 Then
 
-        ElseIf DataBeta.Contains("livesLeft4") Then
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-            Label_LivesLeft2.Text = "Lives left : 4"
+            ElseIf regex_livesLeftBeta = -1 Then
 
-        ElseIf DataBeta.Contains("livesLeft3") Then
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-            Label_LivesLeft2.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftBeta
 
-        ElseIf DataBeta.Contains("livesLeft2") Then
+            End If
 
-            Label_LivesLeft2.Text = "Lives left : 2"
-
-        ElseIf DataBeta.Contains("livesLeft1") Then
-
-            Label_LivesLeft2.Text = "Lives left : 1"
-
-        ElseIf DataBeta.Contains("livesLeft0") Then
-
-            Label_LivesLeft2.Text = "Lives left : 0"
-
-        ElseIf DataBeta.Contains("livesLeft-1") Then
-
-            Label_LivesLeft2.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft2.Text = "Lives left : 5+"
 
         End If
-
 
         '_________________________________________________
 
@@ -1757,41 +1560,25 @@ Public Class Form_Tools
         End If
 
 
-        If DataGamma.Contains("livesLeft5") Then
 
-            Label_LivesLeft3.Text = "Lives left : 5"
+        Dim regex_livesLeftGamma = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        Console.WriteLine("DEBUG = " + regex_livesLeftGamma)
 
-        ElseIf DataGamma.Contains("livesLeft4") Then
+        If Not regex_livesLeftGamma.Length = 0 Then
+            'Le regex contient quelque chose
+            If regex_livesLeftGamma > 5 Then
 
-            Label_LivesLeft3.Text = "Lives left : 4"
+                Label_LivesLeft.Text = "Lives left : 5+"
 
-        ElseIf DataGamma.Contains("livesLeft3") Then
+            ElseIf regex_livesLeftGamma = -1 Then
 
-            Label_LivesLeft3.Text = "Lives left : 3"
+                Label_LivesLeft.Text = "Lives left : -1"
+            Else
 
-        ElseIf DataGamma.Contains("livesLeft2") Then
+                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftGamma
 
-            Label_LivesLeft3.Text = "Lives left : 2"
-
-        ElseIf DataGamma.Contains("livesLeft1") Then
-
-            Label_LivesLeft3.Text = "Lives left : 1"
-
-        ElseIf DataGamma.Contains("livesLeft0") Then
-
-            Label_LivesLeft3.Text = "Lives left : 0"
-
-        ElseIf DataGamma.Contains("livesLeft-1") Then
-
-            Label_LivesLeft3.Text = "Lives left : -1"
-
-        Else
-
-            Label_LivesLeft3.Text = "Lives left : 5+"
-
+            End If
         End If
-
-
 
         'Button_Alpha.PerformClick()
         'Button_beta.PerformClick()
@@ -1978,8 +1765,6 @@ Public Class Form_Tools
 
     End Sub
 #End Region
-
-
 
 
 #Region "Spin Click"
@@ -2233,9 +2018,9 @@ Public Class Form_Tools
         Else
 
             TextBox_WinGGS.Text = vbNewLine + "-----------------------" + vbNewLine +
-                             "Materializer locked" + vbNewLine +
-                                              "come back later" + vbNewLine +
-                                                                              "-----------------------" + vbNewLine
+                "Materializer locked" + vbNewLine +
+                "come back later" + vbNewLine +
+                "-----------------------" + vbNewLine
 
             'Button_ABG_GGS.Enabled = False
             'Button_Delta_GGS.Enabled = False
