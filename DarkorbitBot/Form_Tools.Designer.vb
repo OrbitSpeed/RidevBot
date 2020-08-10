@@ -64,9 +64,12 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Label_NPC_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.label_Update = New System.Windows.Forms.Label()
         Me.Panel_collector = New System.Windows.Forms.Panel()
+        Me.Panel_LogetUpdate = New System.Windows.Forms.Panel()
+        Me.TextBox_LogUpdate = New System.Windows.Forms.TextBox()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel_Uridum_ExtraEnnergy_left = New System.Windows.Forms.Panel()
         Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
@@ -152,6 +155,7 @@ Partial Class Form_Tools
         Me.Label_GG_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Label_Transition_GGS = New System.Windows.Forms.Label()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.Label_PALADIUM_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_stats = New System.Windows.Forms.Panel()
         Me.Button_Refresh_Stats = New System.Windows.Forms.Button()
@@ -188,6 +192,13 @@ Partial Class Form_Tools
         Me.Panel_rex = New System.Windows.Forms.Panel()
         Me.Label8rex_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_divers = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
@@ -198,17 +209,6 @@ Partial Class Form_Tools
         Me.Label16 = New System.Windows.Forms.Label()
         Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.Panel_LogetUpdate = New System.Windows.Forms.Panel()
-        Me.TextBox_LogUpdate = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,6 +217,7 @@ Partial Class Form_Tools
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
+        Me.Panel_LogetUpdate.SuspendLayout()
         Me.Panel_Uridum_ExtraEnnergy_left.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
         Me.Panel_infoPartGG_GG3.SuspendLayout()
@@ -238,7 +239,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_LogetUpdate.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -761,6 +761,19 @@ Partial Class Form_Tools
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
         '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox4.Location = New System.Drawing.Point(18, 272)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(130, 23)
+        Me.CheckBox4.TabIndex = 37
+        Me.CheckBox4.Text = "Collect BonusBox"
+        Me.CheckBox4.UseVisualStyleBackColor = False
+        '
         'Label_NPC_A_SUPPRIMER
         '
         Me.Label_NPC_A_SUPPRIMER.AutoSize = True
@@ -792,6 +805,30 @@ Partial Class Form_Tools
         Me.Panel_collector.Size = New System.Drawing.Size(304, 306)
         Me.Panel_collector.TabIndex = 43
         Me.Panel_collector.Visible = False
+        '
+        'Panel_LogetUpdate
+        '
+        Me.Panel_LogetUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_LogetUpdate.Controls.Add(Me.TextBox_LogUpdate)
+        Me.Panel_LogetUpdate.Location = New System.Drawing.Point(12, 0)
+        Me.Panel_LogetUpdate.Name = "Panel_LogetUpdate"
+        Me.Panel_LogetUpdate.Size = New System.Drawing.Size(292, 306)
+        Me.Panel_LogetUpdate.TabIndex = 1
+        '
+        'TextBox_LogUpdate
+        '
+        Me.TextBox_LogUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_LogUpdate.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_LogUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_LogUpdate.ForeColor = System.Drawing.Color.White
+        Me.TextBox_LogUpdate.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox_LogUpdate.Multiline = True
+        Me.TextBox_LogUpdate.Name = "TextBox_LogUpdate"
+        Me.TextBox_LogUpdate.ReadOnly = True
+        Me.TextBox_LogUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox_LogUpdate.Size = New System.Drawing.Size(286, 300)
+        Me.TextBox_LogUpdate.TabIndex = 6
+        Me.TextBox_LogUpdate.Text = resources.GetString("TextBox_LogUpdate.Text")
         '
         'WebBrowser_GGspinner
         '
@@ -1911,6 +1948,19 @@ Partial Class Form_Tools
         Me.Panel_Palladium.TabIndex = 45
         Me.Panel_Palladium.Visible = False
         '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox5.Location = New System.Drawing.Point(46, 270)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(129, 23)
+        Me.CheckBox5.TabIndex = 38
+        Me.CheckBox5.Text = "Collect Palladium"
+        Me.CheckBox5.UseVisualStyleBackColor = False
+        '
         'Label_PALADIUM_A_SUPPRIMER
         '
         Me.Label_PALADIUM_A_SUPPRIMER.AutoSize = True
@@ -2385,6 +2435,97 @@ Partial Class Form_Tools
         Me.Panel_divers.TabIndex = 48
         Me.Panel_divers.Visible = False
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Original", "grey"})
+        Me.ComboBox2.Location = New System.Drawing.Point(162, 240)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(65, 21)
+        Me.ComboBox2.TabIndex = 38
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox6.Location = New System.Drawing.Point(25, 237)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(131, 23)
+        Me.CheckBox6.TabIndex = 37
+        Me.CheckBox6.Text = "Active Color mod"
+        Me.CheckBox6.UseVisualStyleBackColor = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox3.Location = New System.Drawing.Point(25, 102)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(204, 23)
+        Me.CheckBox3.TabIndex = 36
+        Me.CheckBox3.Text = "Continue botting if no gg left"
+        Me.CheckBox3.UseVisualStyleBackColor = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Promerium", "Seprom"})
+        Me.ComboBox1.Location = New System.Drawing.Point(173, 59)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(65, 21)
+        Me.ComboBox1.TabIndex = 35
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(133, 60)
+        Me.TextBox1.MaxLength = 3
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(34, 22)
+        Me.TextBox1.TabIndex = 34
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox2.Location = New System.Drawing.Point(25, 56)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(102, 23)
+        Me.CheckBox2.TabIndex = 33
+        Me.CheckBox2.Text = "Send to Ship"
+        Me.CheckBox2.UseVisualStyleBackColor = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox1.Location = New System.Drawing.Point(25, 37)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(200, 23)
+        Me.CheckBox1.TabIndex = 32
+        Me.CheckBox1.Text = "Update Skylab Automatically"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        '
         'Labe_DIVERS__A_SUPPRIMER
         '
         Me.Labe_DIVERS__A_SUPPRIMER.AutoSize = True
@@ -2416,7 +2557,7 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_DebugGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_DebugGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(12, 974)
+        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(12, 965)
         Me.TextBox_DebugGGS.Multiline = True
         Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
         Me.TextBox_DebugGGS.ReadOnly = True
@@ -2439,11 +2580,11 @@ Partial Class Form_Tools
         Me.TextBox_GGinfoGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_GGinfoGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_GGinfoGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(12, 989)
+        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(12, 984)
         Me.TextBox_GGinfoGGS.Multiline = True
         Me.TextBox_GGinfoGGS.Name = "TextBox_GGinfoGGS"
         Me.TextBox_GGinfoGGS.ReadOnly = True
-        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(258, 10)
+        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(258, 18)
         Me.TextBox_GGinfoGGS.TabIndex = 75
         Me.TextBox_GGinfoGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -2512,147 +2653,6 @@ Partial Class Form_Tools
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
-        'Panel_LogetUpdate
-        '
-        Me.Panel_LogetUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_LogetUpdate.Controls.Add(Me.TextBox_LogUpdate)
-        Me.Panel_LogetUpdate.Location = New System.Drawing.Point(12, 0)
-        Me.Panel_LogetUpdate.Name = "Panel_LogetUpdate"
-        Me.Panel_LogetUpdate.Size = New System.Drawing.Size(292, 306)
-        Me.Panel_LogetUpdate.TabIndex = 1
-        '
-        'TextBox_LogUpdate
-        '
-        Me.TextBox_LogUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_LogUpdate.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_LogUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_LogUpdate.ForeColor = System.Drawing.Color.White
-        Me.TextBox_LogUpdate.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox_LogUpdate.Multiline = True
-        Me.TextBox_LogUpdate.Name = "TextBox_LogUpdate"
-        Me.TextBox_LogUpdate.ReadOnly = True
-        Me.TextBox_LogUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox_LogUpdate.Size = New System.Drawing.Size(286, 300)
-        Me.TextBox_LogUpdate.TabIndex = 6
-        Me.TextBox_LogUpdate.Text = resources.GetString("TextBox_LogUpdate.Text")
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox1.Location = New System.Drawing.Point(25, 37)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(200, 23)
-        Me.CheckBox1.TabIndex = 32
-        Me.CheckBox1.Text = "Update Skylab Automatically"
-        Me.CheckBox1.UseVisualStyleBackColor = False
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox2.Location = New System.Drawing.Point(25, 56)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(102, 23)
-        Me.CheckBox2.TabIndex = 33
-        Me.CheckBox2.Text = "Send to Ship"
-        Me.CheckBox2.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(133, 60)
-        Me.TextBox1.MaxLength = 3
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(34, 22)
-        Me.TextBox1.TabIndex = 34
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.ForeColor = System.Drawing.Color.White
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Promerium", "Seprom"})
-        Me.ComboBox1.Location = New System.Drawing.Point(173, 59)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(65, 21)
-        Me.ComboBox1.TabIndex = 35
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox3.Location = New System.Drawing.Point(25, 102)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(204, 23)
-        Me.CheckBox3.TabIndex = 36
-        Me.CheckBox3.Text = "Continue botting if no gg left"
-        Me.CheckBox3.UseVisualStyleBackColor = False
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox4.Location = New System.Drawing.Point(18, 272)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(130, 23)
-        Me.CheckBox4.TabIndex = 37
-        Me.CheckBox4.Text = "Collect BonusBox"
-        Me.CheckBox4.UseVisualStyleBackColor = False
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox5.Location = New System.Drawing.Point(46, 270)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(129, 23)
-        Me.CheckBox5.TabIndex = 38
-        Me.CheckBox5.Text = "Collect Palladium"
-        Me.CheckBox5.UseVisualStyleBackColor = False
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox6.Location = New System.Drawing.Point(25, 237)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(131, 23)
-        Me.CheckBox6.TabIndex = 37
-        Me.CheckBox6.Text = "Active Color mod"
-        Me.CheckBox6.UseVisualStyleBackColor = False
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.ForeColor = System.Drawing.Color.White
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Original", "grey"})
-        Me.ComboBox2.Location = New System.Drawing.Point(162, 240)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(65, 21)
-        Me.ComboBox2.TabIndex = 38
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2705,6 +2705,8 @@ Partial Class Form_Tools
         Me.Panel_Npc.PerformLayout()
         Me.Panel_collector.ResumeLayout(False)
         Me.Panel_collector.PerformLayout()
+        Me.Panel_LogetUpdate.ResumeLayout(False)
+        Me.Panel_LogetUpdate.PerformLayout()
         Me.Panel_Uridum_ExtraEnnergy_left.ResumeLayout(False)
         Me.Panel_Uridum_ExtraEnnergy_left.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
@@ -2746,8 +2748,6 @@ Partial Class Form_Tools
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Title.PerformLayout()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_LogetUpdate.ResumeLayout(False)
-        Me.Panel_LogetUpdate.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

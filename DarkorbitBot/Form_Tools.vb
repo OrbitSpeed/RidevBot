@@ -24,7 +24,7 @@ Public Class Form_Tools
     Public HonorCalculator3 As String
     Public ExpCalculator3 As String
     Public RPCalculator3 As String
-    Public ABG As String = 0
+    Public ABG As Boolean = False
 
     Public BackgroundWorkerAutospin As Boolean = False
 
@@ -300,7 +300,7 @@ Public Class Form_Tools
 
         End If
 
-
+        ''''''''''''''''''''''''''
         CenterToScreen()
 
     End Sub
@@ -524,7 +524,6 @@ Public Class Form_Tools
         Size = New Size(390, 324)
 
     End Sub
-#End Region
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
@@ -556,6 +555,7 @@ Public Class Form_Tools
 
 
     End Sub
+#End Region
 
     Private Sub PictureBox_Backpage_Click(sender As Object, e As EventArgs) Handles PictureBox_Backpage.Click
 
@@ -576,10 +576,14 @@ Public Class Form_Tools
 
 #Region "GG Click Portail"
 
+    Dim PartAlpha As String
+    Dim PartBeta As String
+    Dim PartGamma As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
-        ABG = "1"
+        ABG = True
 
+        'Standard
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
         Button_Alpha.Enabled = True
@@ -601,6 +605,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(995, 514)
 
+        'Click Spin
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
         Me.Size = New Size(1079, 532)
 
@@ -612,131 +617,144 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = True
         WebBrowser_galaxyGates3.Visible = True
 
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-        WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' Info GG Alpha
+        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
+        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
+        If DataAlpha Is Nothing Or DataBeta Is Nothing Or DataGamma Is Nothing Then
+            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text + vbNewLine
+        Else
 
-        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 34) ' Info GG Alpha
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Alpha")
-        Console.WriteLine(DataAlpha)
+            If PartAlpha Is Nothing Then
+                PartAlpha = Utils.getCurrentPart(DataAlpha)
+                PartBeta = Utils.getCurrentPart(DataBeta)
+                PartGamma = Utils.getCurrentPart(DataGamma)
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+                WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+                WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+            End If
 
-        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 48) ' Info GG Beta
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Beta")
-        Console.WriteLine(DataBeta)
+            If PartAlpha <> Utils.getCurrentPart(DataAlpha) Then
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+                PartAlpha = Utils.getCurrentPart(DataAlpha)
 
-        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 82) ' Info GG gamma
-        Console.WriteLine("---DEBUG---")
-        Console.WriteLine("Gamma")
-        Console.WriteLine(DataGamma)
+            ElseIf PartBeta <> Utils.getCurrentPart(DataBeta) Then
+                WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+                PartBeta = Utils.getCurrentPart(DataBeta)
 
-        If DataAlpha.Contains("prepared1") Then
-
-            Label_infoPartGG_InMap.Text = "On map : 1"
-
-        ElseIf DataAlpha.Contains("prepared0") Then
-
-            Label_infoPartGG_InMap.Text = "On map : 0"
-
-        End If
-
-        Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-        Console.WriteLine("DEBUG = " + regex_livesLeftAlpha)
-
-        If Not regex_livesLeftAlpha.Length = 0 Then
-            'Le regex contient quelque chose
-            If regex_livesLeftAlpha > 5 Then
-
-                Label_LivesLeft.Text = "Lives left : 5+"
-
-            ElseIf regex_livesLeftAlpha = -1 Then
-
-                Label_LivesLeft.Text = "Lives left : -1"
-            Else
-
-                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
+            ElseIf PartGamma <> Utils.getCurrentPart(DataGamma) Then
+                WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+                PartGamma = Utils.getCurrentPart(DataGamma)
 
             End If
 
 
-        End If
+            If DataAlpha.Contains("prepared1") Then
 
-        '________________________________________________________________
+                Label_infoPartGG_InMap.Text = "On map : 1"
+
+            ElseIf DataAlpha.Contains("prepared0") Then
+
+                Label_infoPartGG_InMap.Text = "On map : 0"
+
+            End If
+
+            Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+            Console.WriteLine("DEBUG = " + regex_livesLeftAlpha)
+
+            If Not regex_livesLeftAlpha.Length = 0 Then
+                'Le regex contient quelque chose
+                If regex_livesLeftAlpha > 5 Then
+
+                    Label_LivesLeft.Text = "Lives left : 5+"
+
+                ElseIf regex_livesLeftAlpha = -1 Then
+
+                    Label_LivesLeft.Text = "Lives left : -1"
+                Else
+
+                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
+
+                End If
+
+
+            End If
+
+            '________________________________________________________________
 
 
 
-        If DataBeta.Contains("prepared1") Then
+            If DataBeta.Contains("prepared1") Then
 
-            Label_infoPartGG_InMap2.Text = "On map : 1"
+                Label_infoPartGG_InMap2.Text = "On map : 1"
 
-        ElseIf DataBeta.Contains("prepared0") Then
+            ElseIf DataBeta.Contains("prepared0") Then
 
-            Label_infoPartGG_InMap2.Text = "On map : 0"
+                Label_infoPartGG_InMap2.Text = "On map : 0"
 
-        End If
+            End If
 
-        Dim regex_livesLeftBeta = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-        Console.WriteLine("DEBUG = " + regex_livesLeftBeta)
+            Dim regex_livesLeftBeta = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+            Console.WriteLine("DEBUG = " + regex_livesLeftBeta)
 
-        If Not regex_livesLeftBeta.Length = 0 Then
-            'Le regex contient quelque chose
-            If regex_livesLeftBeta > 5 Then
+            If Not regex_livesLeftBeta.Length = 0 Then
+                'Le regex contient quelque chose
+                If regex_livesLeftBeta > 5 Then
 
-                Label_LivesLeft.Text = "Lives left : 5+"
+                    Label_LivesLeft2.Text = "Lives left : 5+"
 
-            ElseIf regex_livesLeftBeta = -1 Then
+                ElseIf regex_livesLeftBeta = -1 Then
 
-                Label_LivesLeft.Text = "Lives left : -1"
-            Else
+                    Label_LivesLeft2.Text = "Lives left : -1"
+                Else
 
-                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftBeta
+                    Label_LivesLeft2.Text = "Lives left : " + regex_livesLeftBeta
+
+                End If
+
+
+            End If
+
+            '_________________________________________________
+
+
+            If DataGamma.Contains("prepared1") Then
+
+                Label_infoPartGG_InMap3.Text = "On map : 1"
+
+            ElseIf DataGamma.Contains("prepared0") Then
+
+                Label_infoPartGG_InMap3.Text = "On map : 0"
 
             End If
 
 
-        End If
 
-        '_________________________________________________
+            Dim regex_livesLeftGamma = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+            Console.WriteLine("DEBUG = " + regex_livesLeftGamma)
 
+            If Not regex_livesLeftGamma.Length = 0 Then
+                'Le regex contient quelque chose
+                If regex_livesLeftGamma > 5 Then
 
-        If DataGamma.Contains("prepared1") Then
+                    Label_LivesLeft3.Text = "Lives left : 5+"
 
-            Label_infoPartGG_InMap3.Text = "On map : 1"
+                ElseIf regex_livesLeftGamma = -1 Then
 
-        ElseIf DataGamma.Contains("prepared0") Then
+                    Label_LivesLeft3.Text = "Lives left : -1"
+                Else
 
-            Label_infoPartGG_InMap3.Text = "On map : 0"
+                    Label_LivesLeft3.Text = "Lives left : " + regex_livesLeftGamma
 
-        End If
-
-
-
-        Dim regex_livesLeftGamma = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-        Console.WriteLine("DEBUG = " + regex_livesLeftGamma)
-
-        If Not regex_livesLeftGamma.Length = 0 Then
-            'Le regex contient quelque chose
-            If regex_livesLeftGamma > 5 Then
-
-                Label_LivesLeft.Text = "Lives left : 5+"
-
-            ElseIf regex_livesLeftGamma = -1 Then
-
-                Label_LivesLeft.Text = "Lives left : -1"
-            Else
-
-                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftGamma
-
+                End If
             End If
+
+            'Button_Alpha.PerformClick()
+            'Button_beta.PerformClick()
+            'Button_Kappa.PerformClick()
+
+
+
         End If
-
-        'Button_Alpha.PerformClick()
-        'Button_beta.PerformClick()
-        'Button_Kappa.PerformClick()
-
-
-
 
     End Sub
 
@@ -766,7 +784,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 34)
+        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Alpha")
         Console.WriteLine(DataAlpha)
@@ -830,7 +848,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 48) ' Info GG Beta
+        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Beta")
         Console.WriteLine(DataBeta)
@@ -900,7 +918,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 82) ' Info GG gamma
+        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Gamma")
         Console.WriteLine(DataGamma)
@@ -970,7 +988,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 128) ' Info GG Delta
+        Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Delta")
         Console.WriteLine(DataDelta)
@@ -1040,7 +1058,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = False
 
-        Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 21) ' Info GG chronos
+        Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "chronos") ' Info GG chronos
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Chronos")
         Console.WriteLine(DataChronos)
@@ -1110,7 +1128,7 @@ Public Class Form_Tools
         Button_hades.Enabled = False
         Button_kronos.Enabled = True
 
-        Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 45) ' Info GG hades
+        Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
 
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Hades")
@@ -1251,7 +1269,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 45) ' Info GG lambda
+        Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Lambda")
         Console.WriteLine(DataLambda)
@@ -1321,7 +1339,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 120) ' Info GG kappa
+        Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("kappa")
         Console.WriteLine(DataKappa)
@@ -1391,7 +1409,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 111) ' Info GG zeta
+        Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("Zeta")
         Console.WriteLine(DataZeta)
@@ -1461,7 +1479,7 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 99) ' Info GG epsilon
+        Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("epsilon")
         Console.WriteLine(DataEpsilon)
@@ -1825,7 +1843,7 @@ Public Class Form_Tools
 
 
     Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
-
+        'Après le click
 #Region "Bordel"
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
@@ -1860,33 +1878,35 @@ Public Class Form_Tools
         DataWinned3 = Replace(DataWinned3, "<SPAN class=""m"">=""</SPAN><B>", "")
         Console.WriteLine(DataWinned3)
 
-
-        'GGSpinner_EarnedType -- GGSpinner_EarnedID
-        Dim materalizer As String
-
-        If DataWinned = Nothing Then
-
-            materalizer = 0
-
+        If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
+            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text + vbNewLine
         Else
+            'GGSpinner_EarnedType -- GGSpinner_EarnedID
+            'Dim materializer As String
 
-            materalizer = 1
+            'If DataWinned = Nothing Then
 
-        End If
+            '    materializer = 0
 
-        If DataWinned2 = Nothing Then
+            'Else
 
-            materalizer = 0
+            '    materializer = 1
 
-        Else
+            'End If
 
-            materalizer = 1
+            'If DataWinned2 = Nothing Then
 
-        End If
+            '    materializer = 0
+
+            'Else
+
+            '    materializer = 1
+
+            'End If
 
 
 
-        If materalizer = 1 Then
+            'If materializer = 1 Then
 
             If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
                 DataWinned = "MCB-25"
@@ -1929,15 +1949,18 @@ Public Class Form_Tools
 
             End If
 
+            'If TextBox_WinGGS.Text.Contains("Materializer locked") Then
+            '    TextBox_WinGGS.Text = ""
+            'End If
 
             TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text + vbNewLine
 
-        Else
+            '  Else
 
-            TextBox_WinGGS.Text = vbNewLine + "-----------------------" + vbNewLine +
-                "Materializer locked" + vbNewLine +
-                "come back later" + vbNewLine +
-                "-----------------------" + vbNewLine
+            'TextBox_WinGGS.Text = vbNewLine + "-----------------------" + vbNewLine +
+            '        "Materializer locked" + vbNewLine +
+            '        "come back later" + vbNewLine +
+            '        "-----------------------" + vbNewLine
 
             'Button_ABG_GGS.Enabled = False
             'Button_Delta_GGS.Enabled = False
@@ -1948,9 +1971,9 @@ Public Class Form_Tools
             'Button_Hades_GGS.Enabled = False
             'Button_Kuiper_GGS.Enabled = False
 
-        End If
+            '  End If
 
-        If materalizer = 1 Then
+            '  If materializer = 1 Then
 
             If DataWinned.Contains("MCB-25") Then
 
@@ -1994,13 +2017,15 @@ Public Class Form_Tools
 
             End If
 
-        Else
+            '  Else
+
+            '  End If
+
+            TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
+            TextBox_ExtraEnergy_GGS.Text = (DataSamples)
+
 
         End If
-
-        TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
-        TextBox_ExtraEnergy_GGS.Text = (DataSamples)
-
 #End Region
 
 
@@ -2009,34 +2034,34 @@ Public Class Form_Tools
     End Sub
 
     Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGInfo.DocumentCompleted
+        'Lors du click "Galaxy Gates"
 
-        Dim CheckABG As String = 0
         Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
         TextBox_GGinfoGGS.Text = html107
 
-        Dim samples2 = Regex.Match(WebBrowser_GGInfo.Text, "samples.*?>([\s\S]*?)class=""t"">samples</SPAN>") ' energy restante
-        Dim DataSamples2 = (samples2.Groups.Item(1).ToString)
+        Dim DataSamples2 = Regex.Match(TextBox_GGinfoGGS.Text, "<SPAN class=""m"">&lt;<\/SPAN>(<SPAN class=""t"">samples.*?>[\s\S]*?)class=""t"">samples<\/SPAN>").Groups.Item(1).ToString ' energy restante
+
+        DataSamples2 = DataSamples2.Replace("<SPAN Class=""t" > "", "")
+        DataSamples2 = DataSamples2.Replace("</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
+        DataSamples2 = DataSamples2.Replace("<SPAN Class=""tx"">", "")
+        DataSamples2 = DataSamples2.Replace("</SPAN><SPAN class=""m"">&lt;/</SPAN><SPAN", "")
+        DataSamples2 = DataSamples2.Replace("<SPAN class=""t"">", "")
+        DataSamples2 = DataSamples2.Replace("<SPAN class=""tx"">", "")
+
+        Dim EERestant = Regex.Match(DataSamples2, "samples.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        TextBox_ExtraEnergy_GGS.Text = EERestant
+
         Console.WriteLine(DataSamples2)
 
-        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 34)
-        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 48)
-        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 82)
-        Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 128)
-        Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 99)
-        Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 111)
-        Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 120)
-        Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 45) ' ATTENTION
-        Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 21)
-        Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 45) ' ATTENTION
-        Dim DataHKuiper = Utils.getRegexGG(TextBox_GGinfoGGS.Text, 100)
         Console.WriteLine("---DEBUG---")
         Console.WriteLine("---GGInfo_DocumentCompleted---")
-        Console.WriteLine("Alpha")
-        Console.WriteLine(DataAlpha)
+        'Console.WriteLine("Alpha")
+        'Console.WriteLine(DataAlpha)
 
         If Button_Alpha.Enabled = False Then
 
 #Region "AlphaSpinStats"
+            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
             Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
             'On récupère avec une function la currentWave (utilisant un regexp)
             'Ensuite on le récup
@@ -2046,7 +2071,7 @@ Public Class Form_Tools
             Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
             Console.WriteLine("DEBUG = " + regex_totalWave)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 'Les 2 regex contiennent quelque chose, on défini
 
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
@@ -2058,7 +2083,7 @@ Public Class Form_Tools
             Console.WriteLine("DEBUG = " + regex_currentPart)
 
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
                 'Le regex contient quelque chose
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
@@ -2070,10 +2095,11 @@ Public Class Form_Tools
         ElseIf Button_beta.Enabled = False Then
 
 #Region "BetaSpinStats"
+            Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta")
             Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
             Dim regex_totalWave = Utils.getTotalWave(DataBeta)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2082,7 +2108,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 48"
@@ -2094,10 +2120,11 @@ Public Class Form_Tools
         ElseIf Button_gamma.Enabled = False Then
 
 #Region "GammaSpinStats"
+            Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma")
             Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
             Dim regex_totalWave = Utils.getTotalWave(DataGamma)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2106,7 +2133,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 82"
@@ -2115,86 +2142,87 @@ Public Class Form_Tools
             End If
 
 #End Region
-        ElseIf ABG = "1" Then
+        ElseIf ABG = True Then
 
 #Region "AlphaBetaGammaSpinStats"
 
-            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
+            Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta")
+            Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma")
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Dim regex_currentWaveAlpha = Utils.getCurrentWave(DataAlpha)
+            Dim regex_totalWaveAlpha = Utils.getTotalWave(DataAlpha)
+            Dim regex_currentPartAlpha = Utils.getCurrentPart(DataAlpha)
+
+            If Not regex_currentWaveAlpha = "?" AndAlso Not regex_totalWaveAlpha = "?" Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWaveAlpha + " / " + regex_totalWaveAlpha
 
             Else
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
             End If
 
-            Dim Alpharegex_currentPart = Utils.getCurrentPart(DataDelta)
 
-            If Not Alpharegex_currentPart.Length = 0 Then
+            If Not regex_currentPartAlpha = "?" Then
 
-                Label_InfoPartGG.Text = "Part : " + Alpharegex_currentPart + " / 34"
+                Label_InfoPartGG.Text = "Part : " + regex_currentPartAlpha + " / 34"
             Else
                 Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
             End If
-            ABG = "2"
 
-            If ABG = "2" Then
+            '-----------------------------
 
-                Dim regex_currentWaveBeta = Utils.getCurrentWave(DataBeta)
-                Dim regex_totalWavBetae = Utils.getTotalWave(DataBeta)
+            Dim regex_currentWaveBeta = Utils.getCurrentWave(DataBeta)
+            Dim regex_totalWavBeta = Utils.getTotalWave(DataBeta)
+            Dim regex_currentPartBeta = Utils.getCurrentPart(DataBeta)
 
-                If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
-                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+            If Not regex_currentWaveBeta = "?" AndAlso Not regex_totalWavBeta = "?" Then
+                Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWaveBeta + " / " + regex_totalWavBeta
 
-                Else
-                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                Dim Betaregex_currentPart = Utils.getCurrentPart(DataBeta)
-
-                If Not Betaregex_currentPart.Length = 0 Then
-
-                    Label_InfoPartGG2.Text = "Part : " + Betaregex_currentPart + " / 48"
-                Else
-                    Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
-                End If
-                ABG = "3"
-
+            Else
+                Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "?"
             End If
 
-            If ABG = "3" Then
 
-                Dim regex_currentWaveGamma = Utils.getCurrentWave(DataGamma)
-                Dim regex_totalWaveGamma = Utils.getTotalWave(DataGamma)
+            If Not regex_currentPartBeta = "?" Then
 
-                If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
-                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                Dim Gammaregex_currentPart = Utils.getCurrentPart(DataGamma)
-
-                If Not Gammaregex_currentPart.Length = 0 Then
-
-                    Label_InfoPartGG3.Text = "Part : " + Gammaregex_currentPart + " / 82"
-                Else
-                    Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
-                End If
-
+                Label_InfoPartGG2.Text = "Part : " + regex_currentPartBeta + " / 48"
+            Else
+                Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
             End If
-            ABG = "0"
+
+            '--------------------------
+
+            Dim regex_currentWaveGamma = Utils.getCurrentWave(DataGamma)
+            Dim regex_totalWaveGamma = Utils.getTotalWave(DataGamma)
+            Dim regex_currentPartGamma = Utils.getCurrentPart(DataGamma)
+
+            If Not regex_currentWaveGamma = "?" AndAlso Not regex_totalWaveGamma = "?" Then
+                Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWaveGamma + " / " + regex_totalWaveGamma
+
+            Else
+                Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+
+            If Not regex_currentPartGamma = "?" Then
+
+                Label_InfoPartGG3.Text = "Part : " + regex_currentPartGamma + " / 82"
+            Else
+                Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
+            End If
+
+            ABG = False
 #End Region
 
         ElseIf Button_delta.Enabled = False Then
 
 #Region "DeltaSpinStats"
+            Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta")
             Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
             Dim regex_totalWave = Utils.getTotalWave(DataDelta)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2203,7 +2231,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
@@ -2215,20 +2243,21 @@ Public Class Form_Tools
         ElseIf Button_epsilon.Enabled = False Then
 
 #Region "EpsilonSpinStats"
+            Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon")
+
             Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
             Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
+            Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
             End If
 
-            Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
 
-            If Not regex_currentPart.Length = 0 Then
-
+            If Not regex_currentPart = "?" Then
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 99"
             Else
@@ -2239,10 +2268,12 @@ Public Class Form_Tools
         ElseIf Button_zeta.Enabled = False Then
 
 #Region "ZetaSpinStats"
+            Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta")
+
             Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
             Dim regex_totalWave = Utils.getTotalWave(DataZeta)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2251,7 +2282,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 111"
@@ -2263,10 +2294,11 @@ Public Class Form_Tools
         ElseIf Button_kappa.Enabled = False Then
 
 #Region "KappaSpinStats"
+            Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa")
             Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
             Dim regex_totalWave = Utils.getTotalWave(DataKappa)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2275,7 +2307,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 120"
@@ -2287,10 +2319,12 @@ Public Class Form_Tools
         ElseIf Button_lambda.Enabled = False Then
 
 #Region "LambdaSpinStats"
+            Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda")
+
             Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
             Dim regex_totalWave = Utils.getTotalWave(DataLambda)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2299,7 +2333,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
@@ -2311,10 +2345,12 @@ Public Class Form_Tools
         ElseIf Button_kronos.Enabled = False Then
 
 #Region "ChronosSpinStats"
+            Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "chronos")
+
             Dim regex_currentWave = Utils.getCurrentWave(DataChronos)
             Dim regex_totalWave = Utils.getTotalWave(DataChronos)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2323,7 +2359,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataChronos)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 21"
@@ -2335,10 +2371,12 @@ Public Class Form_Tools
         ElseIf Button_hades.Enabled = False Then
 
 #Region "HadesSpinStats"
+            Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades")
+
             Dim regex_currentWave = Utils.getCurrentWave(DataHades)
             Dim regex_totalWave = Utils.getTotalWave(DataHades)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
@@ -2347,7 +2385,7 @@ Public Class Form_Tools
 
             Dim regex_currentPart = Utils.getCurrentPart(DataHades)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
@@ -2359,19 +2397,21 @@ Public Class Form_Tools
         ElseIf Button_kuiper.Enabled = False Then
 
 #Region "KuiperSpinStats"
-            Dim regex_currentWave = Utils.getCurrentWave(DataHKuiper)
-            Dim regex_totalWave = Utils.getTotalWave(DataHKuiper)
+            Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
 
-            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+            Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
+            Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
+
+            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
             Else
                 Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
             End If
 
-            Dim regex_currentPart = Utils.getCurrentPart(DataHKuiper)
+            Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
 
-            If Not regex_currentPart.Length = 0 Then
+            If Not regex_currentPart = "?" Then
 
 
                 Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 100"

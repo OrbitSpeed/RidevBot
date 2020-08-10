@@ -217,7 +217,7 @@ Partial Class Form_Startup
         Me.Load_Button.Location = New System.Drawing.Point(159, 123)
         Me.Load_Button.Name = "Load_Button"
         Me.Load_Button.Size = New System.Drawing.Size(86, 25)
-        Me.Load_Button.TabIndex = 19
+        Me.Load_Button.TabIndex = 15
         Me.Load_Button.Text = "Load"
         Me.Load_Button.UseVisualStyleBackColor = False
         '
@@ -279,7 +279,7 @@ Partial Class Form_Startup
         Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
         Me.Textbox_Password.Name = "Textbox_Password"
         Me.Textbox_Password.Size = New System.Drawing.Size(256, 21)
-        Me.Textbox_Password.TabIndex = 21
+        Me.Textbox_Password.TabIndex = 14
         Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
         Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.Textbox_Password.UseSystemPasswordChar = True
