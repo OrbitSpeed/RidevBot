@@ -621,7 +621,7 @@ Public Class Form_Tools
         Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
         Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
         If DataAlpha Is Nothing Or DataBeta Is Nothing Or DataGamma Is Nothing Then
-            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text + vbNewLine
+            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text
         Else
 
             If PartAlpha Is Nothing Then
@@ -1879,7 +1879,7 @@ Public Class Form_Tools
         Console.WriteLine(DataWinned3)
 
         If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
-            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text + vbNewLine
+            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text
         Else
             'GGSpinner_EarnedType -- GGSpinner_EarnedID
             'Dim materializer As String
@@ -1953,7 +1953,7 @@ Public Class Form_Tools
             '    TextBox_WinGGS.Text = ""
             'End If
 
-            TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text + vbNewLine
+            TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
             '  Else
 
@@ -2022,7 +2022,7 @@ Public Class Form_Tools
             '  End If
 
             TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
-            TextBox_ExtraEnergy_GGS.Text = (DataSamples)
+            TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(DataSamples, ".")
 
 
         End If
@@ -2049,7 +2049,7 @@ Public Class Form_Tools
         DataSamples2 = DataSamples2.Replace("<SPAN class=""tx"">", "")
 
         Dim EERestant = Regex.Match(DataSamples2, "samples.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-        TextBox_ExtraEnergy_GGS.Text = EERestant
+        TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(EERestant, ".")
 
         Console.WriteLine(DataSamples2)
 
@@ -2482,6 +2482,12 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Panel_collector_Paint(sender As Object, e As PaintEventArgs) Handles Panel_collector.Paint
+
+    End Sub
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
+
+        '  Button_Update
 
     End Sub
 End Class

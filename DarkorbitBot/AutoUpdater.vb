@@ -17,6 +17,7 @@ Public Class AutoUpdater
     Public Check_Maintenance As Boolean
 
     Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
 
@@ -43,7 +44,7 @@ Public Class AutoUpdater
             End If
             FlatLabel_isUpdated.Select()
         Catch ex As Exception
-            MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
 
@@ -56,7 +57,7 @@ Public Class AutoUpdater
             File.WriteAllBytes(FileUpdater, My.Resources.RidevBotUpdater)
         End If
 
-        Dim result = MessageBox.Show("Une mise à jour est disponible (" & LastVersion & ")" & vbNewLine & vbNewLine & LastChangeLog & vbNewLine & vbNewLine & "-----------------------------------------------------------------" & vbNewLine & "Le logiciel va se mettre à jour automatiquement.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim result = MessageBox.Show("A new update is available (" & LastVersion & ")" & vbNewLine & vbNewLine & LastChangeLog & vbNewLine & vbNewLine & "-----------------------------------------------------------------" & vbNewLine & "The bot will now update.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         If result = DialogResult.OK Then
             Process.Start(FileUpdater)
@@ -75,6 +76,7 @@ Public Class AutoUpdater
                 File.Delete(FileUpdater)
             End If
             Form_Startup.Show()
+
             Close()
         End If
         'Hide()
@@ -86,7 +88,7 @@ Public Class AutoUpdater
             LastVersion = e.Result
             If Application.ProductVersion <> LastVersion Then
                 'different
-                FlatLabel_isUpdated.Text = "Vous n'êtes pas à jour"
+                FlatLabel_isUpdated.Text = "You are not up to date"
                 FlatLabel_isUpdated.ForeColor = Color.DarkOrange
                 FlatLabel_isUpdated.Visible = True
             Else
@@ -95,7 +97,7 @@ Public Class AutoUpdater
             FlatLabel_isUpdated.Select()
             'Button_Update.Enabled = True
         Catch ex As Exception
-            MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
 
@@ -110,8 +112,16 @@ Public Class AutoUpdater
             FlatLabel_isUpdated.Select()
             Button_Update.Visible = True
             Button_Update.Enabled = True
+            Form_Tools.TextBox_Changelog.Text = e.Result
+
+            If My.Settings.AutoUpdate = True Then
+
+                Button_Update.PerformClick()
+
+            End If
+
         Catch ex As Exception
-            MessageBox.Show($"Impossible de récuperer la dernière version du logiciel.{vbNewLine}Le logiciel va se fermer.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Close()
         End Try
         'Throw New NotImplementedException()

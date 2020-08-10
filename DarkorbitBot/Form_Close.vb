@@ -6,7 +6,10 @@
     End Sub
     Private Sub Yes_button_Click(sender As Object, e As EventArgs) Handles Yes_button.Click
         'MsgBox(formToClose)
+        Form_Tools.TopMost = True
+        Form_Tools.TopMost = False
         Owner.Close()
+        Close()
     End Sub
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
@@ -18,10 +21,10 @@
     End Sub
 
     Private Sub Button_CloseAllForm_Click(sender As Object, e As EventArgs) Handles Button_CloseAllForm.Click
-        Form_Tools.Close()
-        Form_Game.Close()
-        BackPage_Form.Close()
         Form_Startup.Close()
+        BackPage_Form.Close()
+        Form_Game.Close()
+        Form_Tools.Close()
         Close()
     End Sub
 End Class

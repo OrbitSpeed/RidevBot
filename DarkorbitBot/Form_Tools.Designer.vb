@@ -69,7 +69,7 @@ Partial Class Form_Tools
         Me.label_Update = New System.Windows.Forms.Label()
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.Panel_LogetUpdate = New System.Windows.Forms.Panel()
-        Me.TextBox_LogUpdate = New System.Windows.Forms.TextBox()
+        Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel_Uridum_ExtraEnnergy_left = New System.Windows.Forms.Panel()
         Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
@@ -194,7 +194,7 @@ Partial Class Form_Tools
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
@@ -546,6 +546,7 @@ Partial Class Form_Tools
         'ComboBox_autologin
         '
         Me.ComboBox_autologin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox_autologin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "AutoLoginCombobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.ComboBox_autologin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox_autologin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_autologin.ForeColor = System.Drawing.Color.White
@@ -555,6 +556,7 @@ Partial Class Form_Tools
         Me.ComboBox_autologin.Name = "ComboBox_autologin"
         Me.ComboBox_autologin.Size = New System.Drawing.Size(143, 21)
         Me.ComboBox_autologin.TabIndex = 5
+        Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
         '
         'Panel_Info
         '
@@ -666,6 +668,8 @@ Partial Class Form_Tools
         '
         Me.CheckBox_LaunchGameAuto.AutoSize = True
         Me.CheckBox_LaunchGameAuto.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_LaunchGameAuto.Checked = Global.DarkorbitBot.My.MySettings.Default.LaunchGameatprogramstart
+        Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "LaunchGameatprogramstart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 36)
@@ -693,6 +697,9 @@ Partial Class Form_Tools
         '
         Me.CheckBox_AutoLogin.AutoSize = True
         Me.CheckBox_AutoLogin.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoLogin.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoLogin
+        Me.CheckBox_AutoLogin.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_AutoLogin.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoLogin", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_AutoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_AutoLogin.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CheckBox_AutoLogin.Location = New System.Drawing.Point(15, 10)
@@ -717,7 +724,7 @@ Partial Class Form_Tools
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
         Me.Label_Minutes_Avant_Refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label_Minutes_Avant_Refresh.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(214, 270)
+        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(214, 121)
         Me.Label_Minutes_Avant_Refresh.Name = "Label_Minutes_Avant_Refresh"
         Me.Label_Minutes_Avant_Refresh.Size = New System.Drawing.Size(67, 19)
         Me.Label_Minutes_Avant_Refresh.TabIndex = 31
@@ -729,7 +736,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
-        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(173, 271)
+        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(173, 122)
         Me.TextBox_Refresh_Game.MaxLength = 3
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
@@ -742,7 +749,7 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(6, 267)
+        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(6, 118)
         Me.CheckBox_Refresh_Game.Name = "CheckBox_Refresh_Game"
         Me.CheckBox_Refresh_Game.Size = New System.Drawing.Size(164, 23)
         Me.CheckBox_Refresh_Game.TabIndex = 29
@@ -809,26 +816,26 @@ Partial Class Form_Tools
         'Panel_LogetUpdate
         '
         Me.Panel_LogetUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_LogetUpdate.Controls.Add(Me.TextBox_LogUpdate)
+        Me.Panel_LogetUpdate.Controls.Add(Me.TextBox_Changelog)
         Me.Panel_LogetUpdate.Location = New System.Drawing.Point(12, 0)
         Me.Panel_LogetUpdate.Name = "Panel_LogetUpdate"
         Me.Panel_LogetUpdate.Size = New System.Drawing.Size(292, 306)
         Me.Panel_LogetUpdate.TabIndex = 1
         '
-        'TextBox_LogUpdate
+        'TextBox_Changelog
         '
-        Me.TextBox_LogUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_LogUpdate.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_LogUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_LogUpdate.ForeColor = System.Drawing.Color.White
-        Me.TextBox_LogUpdate.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox_LogUpdate.Multiline = True
-        Me.TextBox_LogUpdate.Name = "TextBox_LogUpdate"
-        Me.TextBox_LogUpdate.ReadOnly = True
-        Me.TextBox_LogUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox_LogUpdate.Size = New System.Drawing.Size(286, 300)
-        Me.TextBox_LogUpdate.TabIndex = 6
-        Me.TextBox_LogUpdate.Text = resources.GetString("TextBox_LogUpdate.Text")
+        Me.TextBox_Changelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_Changelog.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_Changelog.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Changelog.ForeColor = System.Drawing.Color.White
+        Me.TextBox_Changelog.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox_Changelog.Multiline = True
+        Me.TextBox_Changelog.Name = "TextBox_Changelog"
+        Me.TextBox_Changelog.ReadOnly = True
+        Me.TextBox_Changelog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox_Changelog.Size = New System.Drawing.Size(286, 300)
+        Me.TextBox_Changelog.TabIndex = 6
+        Me.TextBox_Changelog.Text = "       A very white changelog in a blue background"
         '
         'WebBrowser_GGspinner
         '
@@ -2419,7 +2426,7 @@ Partial Class Form_Tools
         Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_divers.Controls.Add(Me.ComboBox2)
         Me.Panel_divers.Controls.Add(Me.CheckBox6)
-        Me.Panel_divers.Controls.Add(Me.CheckBox3)
+        Me.Panel_divers.Controls.Add(Me.CheckBox_AutoUpdate)
         Me.Panel_divers.Controls.Add(Me.ComboBox1)
         Me.Panel_divers.Controls.Add(Me.TextBox1)
         Me.Panel_divers.Controls.Add(Me.CheckBox2)
@@ -2443,7 +2450,7 @@ Partial Class Form_Tools
         Me.ComboBox2.ForeColor = System.Drawing.Color.White
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Original", "grey"})
-        Me.ComboBox2.Location = New System.Drawing.Point(162, 240)
+        Me.ComboBox2.Location = New System.Drawing.Point(162, 91)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(65, 21)
         Me.ComboBox2.TabIndex = 38
@@ -2454,25 +2461,28 @@ Partial Class Form_Tools
         Me.CheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox6.Location = New System.Drawing.Point(25, 237)
+        Me.CheckBox6.Location = New System.Drawing.Point(25, 88)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(131, 23)
         Me.CheckBox6.TabIndex = 37
         Me.CheckBox6.Text = "Active Color mod"
         Me.CheckBox6.UseVisualStyleBackColor = False
         '
-        'CheckBox3
+        'CheckBox_AutoUpdate
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox3.Location = New System.Drawing.Point(25, 102)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(204, 23)
-        Me.CheckBox3.TabIndex = 36
-        Me.CheckBox3.Text = "Continue botting if no gg left"
-        Me.CheckBox3.UseVisualStyleBackColor = False
+        Me.CheckBox_AutoUpdate.AutoSize = True
+        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
+        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(16, 273)
+        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
+        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(140, 23)
+        Me.CheckBox_AutoUpdate.TabIndex = 36
+        Me.CheckBox_AutoUpdate.Text = "Auto check update"
+        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
         '
         'ComboBox1
         '
@@ -2929,10 +2939,10 @@ Partial Class Form_Tools
     Friend WithEvents WebBrowser_galaxyGates2 As WebBrowser
     Friend WithEvents Button_Refresh_Stats As Button
     Friend WithEvents Panel_LogetUpdate As Panel
-    Friend WithEvents TextBox_LogUpdate As TextBox
+    Friend WithEvents TextBox_Changelog As TextBox
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox_AutoUpdate As CheckBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents CheckBox2 As CheckBox
