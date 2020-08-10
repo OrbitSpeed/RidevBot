@@ -2145,19 +2145,19 @@ Public Class Form_Tools
                 Dim regex_totalWavBetae = Utils.getTotalWave(DataBeta)
 
                 If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
                 Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "?"
                 End If
 
                 Dim Betaregex_currentPart = Utils.getCurrentPart(DataBeta)
 
                 If Not Betaregex_currentPart.Length = 0 Then
 
-                    Label_InfoPartGG.Text = "Part : " + Betaregex_currentPart + " / 48"
+                    Label_InfoPartGG2.Text = "Part : " + Betaregex_currentPart + " / 48"
                 Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 48"
+                    Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
                 End If
                 ABG = "3"
 
@@ -2169,24 +2169,218 @@ Public Class Form_Tools
                 Dim regex_totalWaveGamma = Utils.getTotalWave(DataGamma)
 
                 If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
                 Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
                 End If
 
                 Dim Gammaregex_currentPart = Utils.getCurrentPart(DataGamma)
 
                 If Not Gammaregex_currentPart.Length = 0 Then
 
-                    Label_InfoPartGG.Text = "Part : " + Gammaregex_currentPart + " / 82"
+                    Label_InfoPartGG3.Text = "Part : " + Gammaregex_currentPart + " / 82"
                 Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 82"
+                    Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
                 End If
 
             End If
             ABG = "0"
 #End Region
+
+        ElseIf Button_delta.Enabled = False Then
+
+#Region "DeltaSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
+            Dim regex_totalWave = Utils.getTotalWave(DataDelta)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 128"
+            End If
+
+#End Region
+        ElseIf Button_epsilon.Enabled = False Then
+
+#Region "EpsilonSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
+            Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 99"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 99"
+            End If
+
+#End Region
+        ElseIf Button_zeta.Enabled = False Then
+
+#Region "ZetaSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
+            Dim regex_totalWave = Utils.getTotalWave(DataZeta)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 111"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 111"
+            End If
+
+#End Region
+        ElseIf Button_kappa.Enabled = False Then
+
+#Region "KappaSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
+            Dim regex_totalWave = Utils.getTotalWave(DataKappa)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 120"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 120"
+            End If
+
+#End Region
+        ElseIf Button_lambda.Enabled = False Then
+
+#Region "LambdaSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
+            Dim regex_totalWave = Utils.getTotalWave(DataLambda)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
+            End If
+
+#End Region
+        ElseIf Button_kronos.Enabled = False Then
+
+#Region "ChronosSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataChronos)
+            Dim regex_totalWave = Utils.getTotalWave(DataChronos)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataChronos)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 21"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 21"
+            End If
+
+#End Region
+        ElseIf Button_hades.Enabled = False Then
+
+#Region "HadesSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataHades)
+            Dim regex_totalWave = Utils.getTotalWave(DataHades)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataHades)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
+            End If
+
+#End Region
+        ElseIf Button_kuiper.Enabled = False Then
+
+#Region "KuiperSpinStats"
+            Dim regex_currentWave = Utils.getCurrentWave(DataHKuiper)
+            Dim regex_totalWave = Utils.getTotalWave(DataHKuiper)
+
+            If Not regex_currentWave.Length = 0 AndAlso Not regex_totalWave.Length = 0 Then
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+            Else
+                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            End If
+
+            Dim regex_currentPart = Utils.getCurrentPart(DataHKuiper)
+
+            If Not regex_currentPart.Length = 0 Then
+
+
+                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 100"
+            Else
+                Label_InfoPartGG.Text = "Part : " + "?" + " / 100"
+            End If
+
+#End Region
+
         End If
 
 
