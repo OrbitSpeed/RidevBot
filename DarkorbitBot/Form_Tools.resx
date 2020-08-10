@@ -117,6 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TextBox_LogUpdate.Text" xml:space="preserve">
+    <value>Changelog v. 1.2
+
+    * Modifying GalaxyGates spinner ( reloaded )
+    * Added AutoUpdater ( #downloads )
+    * Improvements and fixes
+
+
+Changelog v. 1.1
+
+    * Added new system for GalaxyGates spinner ( reloaded )
+    * Added system stats ( reloaded )
+    * New GUI ( DevTools &gt; RidevBot )
+    * New login system
+    * Added DataBidings to loginform
+    * Added box collector ( beta )
+    * Added Npc killer ( beta ) 
+    * Added logic for Bot 
+( 4 vote for « closest &gt; Npc &gt;box » )
+    * Added autologin
+    * Added profil system
+    * Auto dosid system
+    * Sid connexion
+    * Improvements and fixes</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
