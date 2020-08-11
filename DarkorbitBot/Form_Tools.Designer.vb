@@ -535,7 +535,7 @@ Partial Class Form_Tools
         Me.Button_OpenLoginPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_OpenLoginPanel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_OpenLoginPanel.ForeColor = System.Drawing.Color.White
-        Me.Button_OpenLoginPanel.Location = New System.Drawing.Point(170, 170)
+        Me.Button_OpenLoginPanel.Location = New System.Drawing.Point(170, 178)
         Me.Button_OpenLoginPanel.Name = "Button_OpenLoginPanel"
         Me.Button_OpenLoginPanel.Size = New System.Drawing.Size(120, 25)
         Me.Button_OpenLoginPanel.TabIndex = 32
@@ -566,7 +566,7 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(15, 58)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(15, 54)
         Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
         Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(156, 23)
         Me.CheckBox_AutoUpdate.TabIndex = 36
@@ -586,7 +586,7 @@ Partial Class Form_Tools
         Me.Panel_Info.Controls.Add(Me.Label_Dosid)
         Me.Panel_Info.Controls.Add(Me.Label_ID)
         Me.Panel_Info.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Info.Location = New System.Drawing.Point(14, 202)
+        Me.Panel_Info.Location = New System.Drawing.Point(14, 210)
         Me.Panel_Info.Name = "Panel_Info"
         Me.Panel_Info.Size = New System.Drawing.Size(276, 93)
         Me.Panel_Info.TabIndex = 28
@@ -687,7 +687,7 @@ Partial Class Form_Tools
         Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "LaunchGameatprogramstart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 34)
+        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 32)
         Me.CheckBox_LaunchGameAuto.Name = "CheckBox_LaunchGameAuto"
         Me.CheckBox_LaunchGameAuto.Size = New System.Drawing.Size(227, 23)
         Me.CheckBox_LaunchGameAuto.TabIndex = 7
@@ -701,7 +701,7 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_LaunchGameRidevBrowser.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_LaunchGameRidevBrowser.ForeColor = System.Drawing.Color.White
-        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(14, 170)
+        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(14, 178)
         Me.Button_LaunchGameRidevBrowser.Name = "Button_LaunchGameRidevBrowser"
         Me.Button_LaunchGameRidevBrowser.Size = New System.Drawing.Size(153, 25)
         Me.Button_LaunchGameRidevBrowser.TabIndex = 26
@@ -789,7 +789,7 @@ Partial Class Form_Tools
         Me.CheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox4.Location = New System.Drawing.Point(18, 272)
+        Me.CheckBox4.Location = New System.Drawing.Point(12, 280)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(130, 23)
         Me.CheckBox4.TabIndex = 37
@@ -942,7 +942,6 @@ Partial Class Form_Tools
         Me.Button_Kuiper_GGS.TabIndex = 49
         Me.Button_Kuiper_GGS.Text = "Spin"
         Me.Button_Kuiper_GGS.UseVisualStyleBackColor = False
-        Me.Button_Kuiper_GGS.Visible = False
         '
         'Button_Lambda_GGS
         '

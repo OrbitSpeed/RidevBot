@@ -49,24 +49,28 @@ Public Class Utils
             '    abc = abc.Insert(i, espacement)
             'Next
             'Return abc
-            If Not number.Length = 0 Then
-                number = StrReverse(number)
-                Dim dataToReturn = Regex.Replace(number, ".{3}", "$0" + espacement)
-                If dataToReturn.Substring(dataToReturn.Length - 1, 1) = espacement Then
-                    'Si le dernier char est l'epacement alors
+            If number = Nothing Then
+            Else
+                If Not number.Length = 0 Then
+                    number = StrReverse(number)
+                    Dim dataToReturn = Regex.Replace(number, ".{3}", "$0" + espacement)
+                    If dataToReturn.Substring(dataToReturn.Length - 1, 1) = espacement Then
+                        'Si le dernier char est l'epacement alors
 
-                    Dim newData = dataToReturn.Substring(0, dataToReturn.Length - 1)
-                    'On enlève le dernier char
+                        Dim newData = dataToReturn.Substring(0, dataToReturn.Length - 1)
+                        'On enlève le dernier char
 
-                    dataToReturn = newData
-                    'et on le renvoie
+                        dataToReturn = newData
+                        'et on le renvoie
+                        dataToReturn = StrReverse(dataToReturn)
+                        Return dataToReturn
+                    End If
                     dataToReturn = StrReverse(dataToReturn)
                     Return dataToReturn
                 End If
-                dataToReturn = StrReverse(dataToReturn)
-                Return dataToReturn
+                Return number
             End If
-            Return number
+
         End If
     End Function
 
