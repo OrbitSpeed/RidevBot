@@ -2973,4 +2973,9 @@ Public Class Form_Tools
     Private Sub Panel_general_Paint(sender As Object, e As PaintEventArgs) Handles Panel_general.Paint
 
     End Sub
+
+    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
+
+
+    End Sub
 End Class
