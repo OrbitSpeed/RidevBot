@@ -37,6 +37,7 @@ Public Class Form_Tools
             tmp.X = Me.Location.X + (e.X - MouseDownX)
             tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
             Me.Location = tmp
+
             tmp = Nothing
         End If
 
@@ -579,13 +580,15 @@ Public Class Form_Tools
     Dim PartAlpha As String
     Dim PartBeta As String
     Dim PartGamma As String
+    Public AlphaBetaGammaReupload As String
+    Public AlphaBetaGammaReupload2 As String
+    Public AlphaBetaGammaReupload3 As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         ABG = True
 
         Button_ABG_GGS.Enabled = False
 
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
 
         Panel_infoPartGG2.Visible = True
@@ -601,422 +604,471 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(461, 340)
 
         Label_Transition_GGS.Text = "_____________________________________________________________________________________________________________"
-        Button_Alpha.Enabled = False
-        Button_beta.Enabled = False
-        Button_gamma.Enabled = False
-        Button_delta.Enabled = True
-        Button_epsilon.Enabled = True
-        Button_zeta.Enabled = True
-        Button_Kappa.Enabled = True
-        Button_lambda.Enabled = True
-        Button_kuiper.Enabled = True
-        Button_hades.Enabled = True
-        Button_kronos.Enabled = True
 
-        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' Info GG Alpha
-        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
-        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
-
-#Region "DataAlpha"
-
-        If DataAlpha = Nothing Then
-        Else
-
-            If DataAlpha.Contains("prepared1") Then
-                Label_infoPartGG_InMap.Text = "On map : 1"
-
-            ElseIf DataAlpha.Contains("prepared0") Then
-                Label_infoPartGG_InMap.Text = "On map : 0"
-
-            End If
-
-            Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeftAlpha.Length = 0 Then
-
-                If regex_livesLeftAlpha > 5 Then
-                    Label_LivesLeft.Text = "Lives left : 5+"
-
-                ElseIf regex_livesLeftAlpha = -1 Then
-                    Label_LivesLeft.Text = "Lives left : -1"
-
-                Else
-                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
-
-                End If
-            End If
-
-            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-            Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-            Else
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-            End If
-
-            If Not regex_currentPart = "?" Then
-
-                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
-            Else
-                Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
-            End If
-
-        End If
-#End Region
-        '________________________________________________________________
-
-#Region "DataBeta"
-        If DataBeta = Nothing Then
-        Else
-
-            If DataBeta.Contains("prepared1") Then
-
-                Label_infoPartGG_InMap2.Text = "On map : 1"
-
-            ElseIf DataBeta.Contains("prepared0") Then
-
-                Label_infoPartGG_InMap2.Text = "On map : 0"
-
-            End If
-
-            Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeft.Length = 0 Then
-
-                If regex_livesLeft > 5 Then
-                    Label_LivesLeft2.Text = "Lives left : 5+"
-
-                ElseIf regex_livesLeft = -1 Then
-                    Label_LivesLeft2.Text = "Lives left : -1"
-                Else
-                    Label_LivesLeft2.Text = "Lives left : " + regex_livesLeft
-
-                End If
-            End If
-
-            Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-            Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-            Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-            Else
-                Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "Unknown"
-            End If
-
-            If Not regex_currentPart = "?" Then
-
-
-                Label_InfoPartGG2.Text = "Part : " + regex_currentPart + " / 48"
-            Else
-                Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
-            End If
-
-        End If
-#End Region
-        '_________________________________________________
-
-#Region "DataGamma"
-        If DataGamma = Nothing Then
-        Else
-
-            If DataGamma.Contains("prepared1") Then
-
-                Label_infoPartGG_InMap3.Text = "On map : 1"
-
-            ElseIf DataGamma.Contains("prepared0") Then
-
-                Label_infoPartGG_InMap3.Text = "On map : 0"
-
-            End If
-
-            Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeft.Length = 0 Then
-
-                If regex_livesLeft > 5 Then
-                    Label_LivesLeft3.Text = "Lives left : 5+"
-
-                ElseIf regex_livesLeft = -1 Then
-                    Label_LivesLeft3.Text = "Lives left : -1"
-                Else
-                    Label_LivesLeft3.Text = "Lives left : " + regex_livesLeft
-
-                End If
-            End If
-
-            Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-            Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-            Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-            Else
-                Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
-            End If
-
-            If Not regex_currentPart = "?" Then
-
-
-                Label_InfoPartGG3.Text = "Part : " + regex_currentPart + " / 82"
-            Else
-                Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
-            End If
-
-        End If
-#End Region
-
-        If DataAlpha Is Nothing Or DataBeta Is Nothing Or DataGamma Is Nothing Then
-            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text
-        Else
-            'WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-            'WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-            'WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-        End If
+        AlphaBetaGammaReupload = 1
+        AlphaBetaGammaReupload2 = 1
+        AlphaBetaGammaReupload3 = 1
+        Button_Alpha.PerformClick()
+        Button_beta.PerformClick()
+        Button_gamma.PerformClick()
 
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
-        Size = New Size(553, 622)
-
-        Label_Transition_GGS.Text = "__________________________________________________"
-        Button_Alpha.Enabled = False
-        Button_beta.Enabled = True
-        Button_gamma.Enabled = True
-        Button_delta.Enabled = True
-        Button_epsilon.Enabled = True
-        Button_zeta.Enabled = True
-        Button_Kappa.Enabled = True
-        Button_lambda.Enabled = True
-        Button_kuiper.Enabled = True
-        Button_hades.Enabled = True
-        Button_kronos.Enabled = True
 
         Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
 
-        If DataAlpha = Nothing Then
-        Else
+        If AlphaBetaGammaReupload2 = 0 Then
 
-            If DataAlpha.Contains("prepared1") Then
-                Label_infoPartGG_InMap.Text = "On map : 1"
+            Panel_infoPartGG2.Visible = False
+            Panel_infoPartGG3.Visible = False
+            Panel_infoPartGG_GG2.Visible = False
+            Panel_infoPartGG_GG3.Visible = False
+            WebBrowser_galaxyGates2.Visible = False
+            WebBrowser_galaxyGates3.Visible = False
 
-            ElseIf DataAlpha.Contains("prepared0") Then
-                Label_infoPartGG_InMap.Text = "On map : 0"
+            Panel_GalaxyGates.Size = New Size(467, 606)
+            TextBox_WinGGS.Size = New Size(439, 86)
+            TextBox_WinGGS.Location = New Point(15, 508)
+            Size = New Size(553, 622)
 
-            End If
+            Label_Transition_GGS.Text = "__________________________________________________"
 
-            Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeftAlpha.Length = 0 Then
+            Button_Alpha.Enabled = False
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = True
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
 
-                If regex_livesLeftAlpha > 5 Then
-                    Label_LivesLeft.Text = "Lives left : 5+"
+            If DataAlpha = Nothing Then
+            Else
 
-                ElseIf regex_livesLeftAlpha = -1 Then
-                    Label_LivesLeft.Text = "Lives left : -1"
+                If DataAlpha.Contains("prepared1") Then
+                    Label_infoPartGG_InMap.Text = "On map : 1"
 
-                Else
-                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
+                ElseIf DataAlpha.Contains("prepared0") Then
+                    Label_infoPartGG_InMap.Text = "On map : 0"
 
                 End If
+
+                Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeftAlpha.Length = 0 Then
+
+                    If regex_livesLeftAlpha > 5 Then
+                        Label_LivesLeft.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeftAlpha = -1 Then
+                        Label_LivesLeft.Text = "Lives left : -1"
+
+                    Else
+                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+                Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                Else
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
+                Else
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
+                End If
+
             End If
 
-            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-            Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+        Else
 
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = True
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
+
+            If DataAlpha = Nothing Then
             Else
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+
+                If DataAlpha.Contains("prepared1") Then
+                    Label_infoPartGG_InMap.Text = "On map : 1"
+
+                ElseIf DataAlpha.Contains("prepared0") Then
+                    Label_infoPartGG_InMap.Text = "On map : 0"
+
+                End If
+
+                Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeftAlpha.Length = 0 Then
+
+                    If regex_livesLeftAlpha > 5 Then
+                        Label_LivesLeft.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeftAlpha = -1 Then
+                        Label_LivesLeft.Text = "Lives left : -1"
+
+                    Else
+                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+                Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                Else
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
+                Else
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
+                End If
+
+                AlphaBetaGammaReupload2 = 0
+
             End If
 
-            If Not regex_currentPart = "?" Then
-
-                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
-            Else
-                Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
-            End If
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
         End If
 
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        '
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
-        Size = New Size(553, 622)
-
-
-        Label_Transition_GGS.Text = "__________________________________________________"
-        Button_Alpha.Enabled = True
-        Button_beta.Enabled = False
-        Button_gamma.Enabled = True
-        Button_delta.Enabled = True
-        Button_epsilon.Enabled = True
-        Button_zeta.Enabled = True
-        Button_Kappa.Enabled = True
-        Button_lambda.Enabled = True
-        Button_kuiper.Enabled = True
-        Button_hades.Enabled = True
-        Button_kronos.Enabled = True
-
         Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
 
+        If AlphaBetaGammaReupload3 = 0 Then
 
-        If DataBeta = Nothing Then
-        Else
+            Panel_infoPartGG2.Visible = False
+            Panel_infoPartGG3.Visible = False
+            Panel_infoPartGG_GG2.Visible = False
+            Panel_infoPartGG_GG3.Visible = False
+            WebBrowser_galaxyGates2.Visible = False
+            WebBrowser_galaxyGates3.Visible = False
 
-            If DataBeta.Contains("prepared1") Then
+            Panel_GalaxyGates.Size = New Size(467, 606)
+            TextBox_WinGGS.Size = New Size(439, 86)
+            TextBox_WinGGS.Location = New Point(15, 508)
+            Size = New Size(553, 622)
 
-                Label_infoPartGG_InMap.Text = "On map : 1"
+            Label_Transition_GGS.Text = "__________________________________________________"
 
-            ElseIf DataBeta.Contains("prepared0") Then
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = False
+            Button_gamma.Enabled = True
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
 
-                Label_infoPartGG_InMap.Text = "On map : 0"
+            If DataBeta = Nothing Then
+            Else
 
-            End If
+                If DataBeta.Contains("prepared1") Then
 
-            Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeft.Length = 0 Then
+                    Label_infoPartGG_InMap.Text = "On map : 1"
 
-                If regex_livesLeft > 5 Then
-                    Label_LivesLeft.Text = "Lives left : 5+"
+                ElseIf DataBeta.Contains("prepared0") Then
 
-                ElseIf regex_livesLeft = -1 Then
-                    Label_LivesLeft.Text = "Lives left : -1"
-                Else
-                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+                    Label_infoPartGG_InMap.Text = "On map : 0"
 
                 End If
+
+                Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeft.Length = 0 Then
+
+                    If regex_livesLeft > 5 Then
+                        Label_LivesLeft.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeft = -1 Then
+                        Label_LivesLeft.Text = "Lives left : -1"
+                    Else
+                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
+                Dim regex_totalWave = Utils.getTotalWave(DataBeta)
+                Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+                Else
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "Unknown"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 48"
+                Else
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 48"
+                End If
+
             End If
 
-            Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-            Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-            Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
 
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
+        Else
+
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = True
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
+
+            If DataBeta = Nothing Then
             Else
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "Unknown"
+
+                If DataBeta.Contains("prepared1") Then
+
+                    Label_infoPartGG_InMap2.Text = "On map : 1"
+
+                ElseIf DataBeta.Contains("prepared0") Then
+
+                    Label_infoPartGG_InMap2.Text = "On map : 0"
+
+                End If
+
+                Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeft.Length = 0 Then
+
+                    If regex_livesLeft > 5 Then
+                        Label_LivesLeft2.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeft = -1 Then
+                        Label_LivesLeft2.Text = "Lives left : -1"
+                    Else
+                        Label_LivesLeft2.Text = "Lives left : " + regex_livesLeft
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
+                Dim regex_totalWave = Utils.getTotalWave(DataBeta)
+                Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+                Else
+                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "Unknown"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+
+                    Label_InfoPartGG2.Text = "Part : " + regex_currentPart + " / 48"
+                Else
+                    Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
+                End If
+
+                AlphaBetaGammaReupload3 = 0
+
             End If
 
-            If Not regex_currentPart = "?" Then
 
-
-                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 48"
-            Else
-                Label_InfoPartGG.Text = "Part : " + "?" + " / 48"
-            End If
+            WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
         End If
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
-        Size = New Size(553, 622)
-
-        Label_Transition_GGS.Text = "__________________________________________________"
-        Button_Alpha.Enabled = True
-        Button_beta.Enabled = True
-        Button_gamma.Enabled = False
-        Button_delta.Enabled = True
-        Button_epsilon.Enabled = True
-        Button_zeta.Enabled = True
-        Button_Kappa.Enabled = True
-        Button_lambda.Enabled = True
-        Button_kuiper.Enabled = True
-        Button_hades.Enabled = True
-        Button_kronos.Enabled = True
 
         Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
 
-        If DataGamma = Nothing Then
-        Else
+        If AlphaBetaGammaReupload = 0 Then
 
-            If DataGamma.Contains("prepared1") Then
+            Panel_infoPartGG2.Visible = False
+            Panel_infoPartGG3.Visible = False
+            Panel_infoPartGG_GG2.Visible = False
+            Panel_infoPartGG_GG3.Visible = False
+            WebBrowser_galaxyGates2.Visible = False
+            WebBrowser_galaxyGates3.Visible = False
 
-                Label_infoPartGG_InMap.Text = "On map : 1"
+            Panel_GalaxyGates.Size = New Size(467, 606)
+            TextBox_WinGGS.Size = New Size(439, 86)
+            TextBox_WinGGS.Location = New Point(15, 508)
+            Size = New Size(553, 622)
 
-            ElseIf DataGamma.Contains("prepared0") Then
+            Label_Transition_GGS.Text = "__________________________________________________"
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = False
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
 
-                Label_infoPartGG_InMap.Text = "On map : 0"
+            If DataGamma = Nothing Then
+            Else
 
-            End If
+                If DataGamma.Contains("prepared1") Then
 
-            Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeft.Length = 0 Then
+                    Label_infoPartGG_InMap.Text = "On map : 1"
 
-                If regex_livesLeft > 5 Then
-                    Label_LivesLeft.Text = "Lives left : 5+"
+                ElseIf DataGamma.Contains("prepared0") Then
 
-                ElseIf regex_livesLeft = -1 Then
-                    Label_LivesLeft.Text = "Lives left : -1"
-                Else
-                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+                    Label_infoPartGG_InMap.Text = "On map : 0"
 
                 End If
+
+                Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeft.Length = 0 Then
+
+                    If regex_livesLeft > 5 Then
+                        Label_LivesLeft.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeft = -1 Then
+                        Label_LivesLeft.Text = "Lives left : -1"
+                    Else
+                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
+                Dim regex_totalWave = Utils.getTotalWave(DataGamma)
+                Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+                Else
+                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 82"
+                Else
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 82"
+                End If
+
             End If
 
-            Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-            Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-            Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
 
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
+        Else
+
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = True
+            Button_delta.Enabled = True
+            Button_epsilon.Enabled = True
+            Button_zeta.Enabled = True
+            Button_Kappa.Enabled = True
+            Button_lambda.Enabled = True
+            Button_kuiper.Enabled = True
+            Button_hades.Enabled = True
+            Button_kronos.Enabled = True
+
+            If DataGamma = Nothing Then
             Else
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+
+                If DataGamma.Contains("prepared1") Then
+
+                    Label_infoPartGG_InMap3.Text = "On map : 1"
+
+                ElseIf DataGamma.Contains("prepared0") Then
+
+                    Label_infoPartGG_InMap3.Text = "On map : 0"
+
+                End If
+
+                Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+                If Not regex_livesLeft.Length = 0 Then
+
+                    If regex_livesLeft > 5 Then
+                        Label_LivesLeft3.Text = "Lives left : 5+"
+
+                    ElseIf regex_livesLeft = -1 Then
+                        Label_LivesLeft3.Text = "Lives left : -1"
+                    Else
+                        Label_LivesLeft3.Text = "Lives left : " + regex_livesLeft
+
+                    End If
+                End If
+
+                Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
+                Dim regex_totalWave = Utils.getTotalWave(DataGamma)
+                Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+
+                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+                Else
+                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
+                End If
+
+                If Not regex_currentPart = "?" Then
+
+
+                    Label_InfoPartGG3.Text = "Part : " + regex_currentPart + " / 82"
+                Else
+                    Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
+                End If
+
+                AlphaBetaGammaReupload = 0
+
             End If
 
-            If Not regex_currentPart = "?" Then
 
-
-                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 82"
-            Else
-                Label_InfoPartGG.Text = "Part : " + "?" + " / 82"
-            End If
+            WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
         End If
 
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-        '
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
@@ -1685,16 +1737,14 @@ Public Class Form_Tools
 
 #Region "Button Click GGS"
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
-        '
+
         'delta
+
         Button_delta.Enabled = True
         Button_Delta_GGS.Enabled = False
         Button_delta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-
-        '
 
     End Sub
 
@@ -1702,14 +1752,11 @@ Public Class Form_Tools
 
         ' epsilon
 
-
         Button_epsilon.Enabled = True
         Button_Epsilon_GGS.Enabled = False
         Button_epsilon.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-
 
     End Sub
 
@@ -1721,7 +1768,6 @@ Public Class Form_Tools
         Button_zeta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
     End Sub
 
@@ -1734,8 +1780,6 @@ Public Class Form_Tools
         Button_Kappa.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-
 
     End Sub
 
@@ -1748,8 +1792,6 @@ Public Class Form_Tools
         Button_lambda.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-
 
     End Sub
 
@@ -1763,7 +1805,6 @@ Public Class Form_Tools
         Button_kuiper.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&kuiper=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
     End Sub
 
@@ -1775,7 +1816,6 @@ Public Class Form_Tools
         Button_hades.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
     End Sub
 #End Region
@@ -1957,34 +1997,8 @@ Public Class Form_Tools
         Console.WriteLine(DataWinned3)
 
         If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
-            TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + "Materializer locked !"
         Else
-            'GGSpinner_EarnedType -- GGSpinner_EarnedID
-            'Dim materializer As String
-
-            'If DataWinned = Nothing Then
-
-            '    materializer = 0
-
-            'Else
-
-            '    materializer = 1
-
-            'End If
-
-            'If DataWinned2 = Nothing Then
-
-            '    materializer = 0
-
-            'Else
-
-            '    materializer = 1
-
-            'End If
-
-
-
-            'If materializer = 1 Then
 
             If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
                 DataWinned = "MCB-25"
@@ -2027,31 +2041,8 @@ Public Class Form_Tools
 
             End If
 
-            'If TextBox_WinGGS.Text.Contains("Materializer locked") Then
-            '    TextBox_WinGGS.Text = ""
-            'End If
-
             TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
-            '  Else
-
-            'TextBox_WinGGS.Text = vbNewLine + "-----------------------" + vbNewLine +
-            '        "Materializer locked" + vbNewLine +
-            '        "come back later" + vbNewLine +
-            '        "-----------------------" + vbNewLine
-
-            'Button_ABG_GGS.Enabled = False
-            'Button_Delta_GGS.Enabled = False
-            'Button_Epsilon_GGS.Enabled = False
-            'Button_Zeta_GGS.Enabled = False
-            'Button_Kappa_GGS.Enabled = False
-            'Button_Lambda_GGS.Enabled = False
-            'Button_Hades_GGS.Enabled = False
-            'Button_Kuiper_GGS.Enabled = False
-
-            '  End If
-
-            '  If materializer = 1 Then
 
             If DataWinned.Contains("MCB-25") Then
 
@@ -2095,16 +2086,10 @@ Public Class Form_Tools
 
             End If
 
-            '  Else
-
-            '  End If
-
             TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
             TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(DataSamples, ".")
 
-
         End If
-
 
         Button_ABG_GGS.Enabled = True
         Button_Delta_GGS.Enabled = True
@@ -2119,10 +2104,9 @@ Public Class Form_Tools
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
 
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+
 #End Region
-
-
-        ' id<\/SPAN><SPAN class="m">="<\/SPAN><B>1<\/B.*?>([\s\S]*?)<\/DIV>
 
     End Sub
 
@@ -2206,6 +2190,10 @@ Public Class Form_Tools
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
 
         '  Button_Update
+
+    End Sub
+
+    Private Sub Panel_general_Paint(sender As Object, e As PaintEventArgs) Handles Panel_general.Paint
 
     End Sub
 End Class
