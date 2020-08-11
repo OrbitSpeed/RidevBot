@@ -47,8 +47,9 @@ Partial Class Form_Tools
         Me.Panel_general = New System.Windows.Forms.Panel()
         Me.Button_OpenLoginPanel = New System.Windows.Forms.Button()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
-        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
+        Me.TextBox_timeticks = New System.Windows.Forms.TextBox()
+        Me.Label_timeticks = New System.Windows.Forms.Label()
         Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
         Me.Label_ProfilSelected = New System.Windows.Forms.Label()
         Me.TextBox_Get_Server = New System.Windows.Forms.TextBox()
@@ -61,10 +62,13 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser = New System.Windows.Forms.Button()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
         Me.Label_GENERAL_A_SUPPRIMER = New System.Windows.Forms.Label()
+        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Label_Minutes_Avant_Refresh = New System.Windows.Forms.Label()
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Label_NPC_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.label_Update = New System.Windows.Forms.Label()
@@ -128,10 +132,14 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG = New System.Windows.Forms.Panel()
         Me.Label_infoPartGG_InMap = New System.Windows.Forms.Label()
         Me.Label_InfoPartGG = New System.Windows.Forms.Label()
-        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
         Me.Panel_UridiumtoKeep = New System.Windows.Forms.Panel()
-        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
+        Me.Label_spintime_GGS = New System.Windows.Forms.Label()
+        Me.TextBox_spintimes_GGS = New System.Windows.Forms.TextBox()
         Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
+        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
@@ -187,6 +195,7 @@ Partial Class Form_Tools
         Me.Label_honorCurrent = New System.Windows.Forms.Label()
         Me.Label_experienceCurrent = New System.Windows.Forms.Label()
         Me.Panel_rex = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label8rex_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -197,23 +206,14 @@ Partial Class Form_Tools
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.TextBox_spintimes_GGS = New System.Windows.Forms.TextBox()
-        Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label_spintime_GGS = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.TextBox_timeticks = New System.Windows.Forms.TextBox()
-        Me.Label_timeticks = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -561,22 +561,6 @@ Partial Class Form_Tools
         Me.ComboBox_autologin.TabIndex = 5
         Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
         '
-        'CheckBox_AutoUpdate
-        '
-        Me.CheckBox_AutoUpdate.AutoSize = True
-        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
-        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(70, 288)
-        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
-        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(156, 23)
-        Me.CheckBox_AutoUpdate.TabIndex = 36
-        Me.CheckBox_AutoUpdate.Text = "AutoUpdate software"
-        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
-        '
         'Panel_Info
         '
         Me.Panel_Info.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -596,6 +580,29 @@ Partial Class Form_Tools
         Me.Panel_Info.Name = "Panel_Info"
         Me.Panel_Info.Size = New System.Drawing.Size(276, 113)
         Me.Panel_Info.TabIndex = 28
+        '
+        'TextBox_timeticks
+        '
+        Me.TextBox_timeticks.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks.Location = New System.Drawing.Point(59, 87)
+        Me.TextBox_timeticks.Name = "TextBox_timeticks"
+        Me.TextBox_timeticks.ReadOnly = True
+        Me.TextBox_timeticks.Size = New System.Drawing.Size(210, 15)
+        Me.TextBox_timeticks.TabIndex = 11
+        Me.TextBox_timeticks.Text = "00 : 00 : 00"
+        Me.TextBox_timeticks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_timeticks
+        '
+        Me.Label_timeticks.AutoSize = True
+        Me.Label_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_timeticks.Location = New System.Drawing.Point(11, 87)
+        Me.Label_timeticks.Name = "Label_timeticks"
+        Me.Label_timeticks.Size = New System.Drawing.Size(35, 13)
+        Me.Label_timeticks.TabIndex = 10
+        Me.Label_timeticks.Text = "Time "
         '
         'TextBox_ProfilSelected
         '
@@ -740,6 +747,22 @@ Partial Class Form_Tools
         Me.Label_GENERAL_A_SUPPRIMER.Text = "General"
         Me.Label_GENERAL_A_SUPPRIMER.Visible = False
         '
+        'CheckBox_AutoUpdate
+        '
+        Me.CheckBox_AutoUpdate.AutoSize = True
+        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
+        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(70, 288)
+        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
+        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(156, 23)
+        Me.CheckBox_AutoUpdate.TabIndex = 36
+        Me.CheckBox_AutoUpdate.Text = "AutoUpdate software"
+        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
+        '
         'Label_Minutes_Avant_Refresh
         '
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
@@ -790,6 +813,33 @@ Partial Class Form_Tools
         Me.Panel_Npc.Size = New System.Drawing.Size(304, 315)
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox3.Location = New System.Drawing.Point(16, 39)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(245, 23)
+        Me.CheckBox3.TabIndex = 39
+        Me.CheckBox3.Text = "Use REX ( Rex settings in panel Rex )"
+        Me.CheckBox3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(15, 13)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(219, 25)
+        Me.Button2.TabIndex = 38
+        Me.Button2.Text = "Modify no click zone ( minimap )"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'CheckBox4
         '
@@ -951,7 +1001,6 @@ Partial Class Form_Tools
         Me.Button_Kuiper_GGS.TabIndex = 49
         Me.Button_Kuiper_GGS.Text = "Spin"
         Me.Button_Kuiper_GGS.UseVisualStyleBackColor = False
-        Me.Button_Kuiper_GGS.Visible = False
         '
         'Button_Lambda_GGS
         '
@@ -1616,19 +1665,6 @@ Partial Class Form_Tools
         Me.Label_InfoPartGG.TabIndex = 77
         Me.Label_InfoPartGG.Text = "Part : 0 / 0"
         '
-        'CheckBox_PrepareGatesIfBuiled
-        '
-        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
-        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(5, 79)
-        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
-        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(169, 21)
-        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
-        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare Gates if builded"
-        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
-        '
         'Panel_UridiumtoKeep
         '
         Me.Panel_UridiumtoKeep.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1648,18 +1684,47 @@ Partial Class Form_Tools
         Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(175, 105)
         Me.Panel_UridiumtoKeep.TabIndex = 66
         '
-        'CheckBox_UseOnlyEE_GGS
+        'Label2
         '
-        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
-        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(5, 60)
-        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
-        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(141, 21)
-        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
-        Me.CheckBox_UseOnlyEE_GGS.Text = "         EE only         "
-        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, 42)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(91, 13)
+        Me.Label2.TabIndex = 92
+        Me.Label2.Text = "Auto Spin with :"
+        '
+        'Label_Spintimes_MS_text
+        '
+        Me.Label_Spintimes_MS_text.AutoSize = True
+        Me.Label_Spintimes_MS_text.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Spintimes_MS_text.Location = New System.Drawing.Point(133, 22)
+        Me.Label_Spintimes_MS_text.Name = "Label_Spintimes_MS_text"
+        Me.Label_Spintimes_MS_text.Size = New System.Drawing.Size(22, 13)
+        Me.Label_Spintimes_MS_text.TabIndex = 6
+        Me.Label_Spintimes_MS_text.Text = "ms"
+        '
+        'Label_spintime_GGS
+        '
+        Me.Label_spintime_GGS.AutoSize = True
+        Me.Label_spintime_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_spintime_GGS.Location = New System.Drawing.Point(6, 22)
+        Me.Label_spintime_GGS.Name = "Label_spintime_GGS"
+        Me.Label_spintime_GGS.Size = New System.Drawing.Size(62, 13)
+        Me.Label_spintime_GGS.TabIndex = 37
+        Me.Label_spintime_GGS.Text = "Spin time :"
+        '
+        'TextBox_spintimes_GGS
+        '
+        Me.TextBox_spintimes_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_spintimes_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_spintimes_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_spintimes_GGS.Location = New System.Drawing.Point(74, 21)
+        Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
+        Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(53, 16)
+        Me.TextBox_spintimes_GGS.TabIndex = 5
+        Me.TextBox_spintimes_GGS.Text = "2000"
+        Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_uridiumtokeepGGS
         '
@@ -1672,6 +1737,32 @@ Partial Class Form_Tools
         Me.TextBox_uridiumtokeepGGS.TabIndex = 5
         Me.TextBox_uridiumtokeepGGS.Text = "10.000"
         Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'CheckBox_PrepareGatesIfBuiled
+        '
+        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
+        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(5, 79)
+        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
+        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(169, 21)
+        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
+        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare Gates if builded"
+        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
+        '
+        'CheckBox_UseOnlyEE_GGS
+        '
+        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
+        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(5, 60)
+        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
+        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(141, 21)
+        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
+        Me.CheckBox_UseOnlyEE_GGS.Text = "         EE only         "
+        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
         '
         'Label_UridiumtoKeepGGS
         '
@@ -1804,7 +1895,6 @@ Partial Class Form_Tools
         Me.Button_kuiper.TabIndex = 35
         Me.Button_kuiper.Text = "Kuiper"
         Me.Button_kuiper.UseVisualStyleBackColor = False
-        Me.Button_kuiper.Visible = False
         '
         'Button_Kappa
         '
@@ -2396,6 +2486,20 @@ Partial Class Form_Tools
         Me.Panel_rex.TabIndex = 47
         Me.Panel_rex.Visible = False
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(15, 13)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(190, 25)
+        Me.Button3.TabIndex = 39
+        Me.Button3.Text = "Modify no click zone ( Rex )"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Label8rex_A_SUPPRIMER
         '
         Me.Label8rex_A_SUPPRIMER.AutoSize = True
@@ -2530,6 +2634,20 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        '
         'TextBox_DebugGGS
         '
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -2579,6 +2697,20 @@ Partial Class Form_Tools
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
         '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
         'PictureBox_close1
         '
         Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2602,140 +2734,6 @@ Partial Class Form_Tools
         Me.Label16.Size = New System.Drawing.Size(124, 18)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "RidevBot Tools"
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 31
-        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
-        '
-        'TextBox_spintimes_GGS
-        '
-        Me.TextBox_spintimes_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_spintimes_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_spintimes_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_spintimes_GGS.Location = New System.Drawing.Point(74, 21)
-        Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
-        Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(53, 16)
-        Me.TextBox_spintimes_GGS.TabIndex = 5
-        Me.TextBox_spintimes_GGS.Text = "2000"
-        Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_Spintimes_MS_text
-        '
-        Me.Label_Spintimes_MS_text.AutoSize = True
-        Me.Label_Spintimes_MS_text.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Spintimes_MS_text.Location = New System.Drawing.Point(133, 22)
-        Me.Label_Spintimes_MS_text.Name = "Label_Spintimes_MS_text"
-        Me.Label_Spintimes_MS_text.Size = New System.Drawing.Size(22, 13)
-        Me.Label_Spintimes_MS_text.TabIndex = 6
-        Me.Label_Spintimes_MS_text.Text = "ms"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(5, 42)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 13)
-        Me.Label2.TabIndex = 92
-        Me.Label2.Text = "Auto Spin with :"
-        '
-        'Label_spintime_GGS
-        '
-        Me.Label_spintime_GGS.AutoSize = True
-        Me.Label_spintime_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_spintime_GGS.Location = New System.Drawing.Point(6, 22)
-        Me.Label_spintime_GGS.Name = "Label_spintime_GGS"
-        Me.Label_spintime_GGS.Size = New System.Drawing.Size(62, 13)
-        Me.Label_spintime_GGS.TabIndex = 37
-        Me.Label_spintime_GGS.Text = "Spin time :"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(15, 13)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(219, 25)
-        Me.Button2.TabIndex = 38
-        Me.Button2.Text = "Modify no click zone ( minimap )"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox3.Location = New System.Drawing.Point(16, 39)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(245, 23)
-        Me.CheckBox3.TabIndex = 39
-        Me.CheckBox3.Text = "Use REX ( Rex settings in panel Rex )"
-        Me.CheckBox3.UseVisualStyleBackColor = False
-        '
-        'TextBox_timeticks
-        '
-        Me.TextBox_timeticks.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks.Location = New System.Drawing.Point(59, 87)
-        Me.TextBox_timeticks.Name = "TextBox_timeticks"
-        Me.TextBox_timeticks.ReadOnly = True
-        Me.TextBox_timeticks.Size = New System.Drawing.Size(210, 15)
-        Me.TextBox_timeticks.TabIndex = 11
-        Me.TextBox_timeticks.Text = "00 : 00 : 00"
-        Me.TextBox_timeticks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_timeticks
-        '
-        Me.Label_timeticks.AutoSize = True
-        Me.Label_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_timeticks.Location = New System.Drawing.Point(11, 87)
-        Me.Label_timeticks.Name = "Label_timeticks"
-        Me.Label_timeticks.Size = New System.Drawing.Size(35, 13)
-        Me.Label_timeticks.TabIndex = 10
-        Me.Label_timeticks.Text = "Time "
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(15, 13)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(190, 25)
-        Me.Button3.TabIndex = 39
-        Me.Button3.Text = "Modify no click zone ( Rex )"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form_Tools
         '

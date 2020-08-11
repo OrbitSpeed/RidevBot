@@ -2001,7 +2001,7 @@ Public Class Form_Tools
         Button_Kuiper_GGS.Enabled = False
         Button_kuiper.PerformClick()
 
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&kuiper=1&sample=1&multiplier=1")
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&streuner=1&sample=1&multiplier=1")
 
     End Sub
 
@@ -2176,6 +2176,7 @@ Public Class Form_Tools
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
         'Console.WriteLine(html5)
+        Clipboard.SetText(html5)
 
         Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
         Console.WriteLine(mode.Groups.Item(1).ToString)
