@@ -211,8 +211,8 @@ Partial Class Form_Tools
         Me.Label_spintime_GGS = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox_timeticks = New System.Windows.Forms.TextBox()
+        Me.Label_timeticks = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -581,8 +581,8 @@ Partial Class Form_Tools
         '
         Me.Panel_Info.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_Info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Info.Controls.Add(Me.TextBox2)
-        Me.Panel_Info.Controls.Add(Me.Label1)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks)
+        Me.Panel_Info.Controls.Add(Me.Label_timeticks)
         Me.Panel_Info.Controls.Add(Me.TextBox_ProfilSelected)
         Me.Panel_Info.Controls.Add(Me.Label_ProfilSelected)
         Me.Panel_Info.Controls.Add(Me.TextBox_Get_Server)
@@ -2700,28 +2700,28 @@ Partial Class Form_Tools
         Me.CheckBox3.Text = "Use REX ( Rex settings in panel Rex )"
         Me.CheckBox3.UseVisualStyleBackColor = False
         '
-        'TextBox2
+        'TextBox_timeticks
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(59, 87)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(210, 15)
-        Me.TextBox2.TabIndex = 11
-        Me.TextBox2.Text = "00 : 00 : 00"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_timeticks.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks.Location = New System.Drawing.Point(59, 87)
+        Me.TextBox_timeticks.Name = "TextBox_timeticks"
+        Me.TextBox_timeticks.ReadOnly = True
+        Me.TextBox_timeticks.Size = New System.Drawing.Size(210, 15)
+        Me.TextBox_timeticks.TabIndex = 11
+        Me.TextBox_timeticks.Text = "00 : 00 : 00"
+        Me.TextBox_timeticks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label1
+        'Label_timeticks
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(11, 87)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Time "
+        Me.Label_timeticks.AutoSize = True
+        Me.Label_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_timeticks.Location = New System.Drawing.Point(11, 87)
+        Me.Label_timeticks.Name = "Label_timeticks"
+        Me.Label_timeticks.Size = New System.Drawing.Size(35, 13)
+        Me.Label_timeticks.TabIndex = 10
+        Me.Label_timeticks.Text = "Time "
         '
         'Button3
         '
@@ -3019,8 +3019,8 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_spintimes_GGS As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label_spintime_GGS As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox_timeticks As TextBox
+    Friend WithEvents Label_timeticks As Label
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
