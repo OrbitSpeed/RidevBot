@@ -300,7 +300,7 @@ Public Class Form_Tools
 
         End If
 
-        ''''''''''''''''''''''''''
+        '
         CenterToScreen()
 
     End Sub
@@ -617,6 +617,8 @@ Public Class Form_Tools
         Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
         Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
 
+#Region "DataAlpha"
+
         If DataAlpha = Nothing Then
         Else
 
@@ -662,8 +664,10 @@ Public Class Form_Tools
             End If
 
         End If
+#End Region
         '________________________________________________________________
 
+#Region "DataBeta"
         If DataBeta = Nothing Then
         Else
 
@@ -711,8 +715,10 @@ Public Class Form_Tools
             End If
 
         End If
+#End Region
         '_________________________________________________
 
+#Region "DataGamma"
         If DataGamma = Nothing Then
         Else
 
@@ -760,24 +766,14 @@ Public Class Form_Tools
             End If
 
         End If
+#End Region
 
-        Dim limited = 0
         If DataAlpha Is Nothing Or DataBeta Is Nothing Or DataGamma Is Nothing Then
-            limited = 1
-        End If
-
-        If limited = 1 Then
-
             TextBox_WinGGS.Text = vbNewLine + "(" + "ERROR" + ") " + "You are rate limited" + TextBox_WinGGS.Text
-            limited = 0
-
         Else
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-            WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-            WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-
-
+            'WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+            'WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+            'WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
         End If
 
     End Sub
@@ -858,8 +854,7 @@ Public Class Form_Tools
         End If
 
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        '''
-
+        '
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
@@ -1675,12 +1670,12 @@ Public Class Form_Tools
         End If
 
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
-        ''''
+        '
 
     End Sub
 #End Region
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
+    Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
         'button open Login Box'
 
@@ -1699,7 +1694,7 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
-        '''
+        '
 
     End Sub
 
