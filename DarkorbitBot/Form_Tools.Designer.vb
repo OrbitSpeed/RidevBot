@@ -121,7 +121,6 @@ Partial Class Form_Tools
         Me.Label_PLT2021 = New System.Windows.Forms.Label()
         Me.Label_MCB50 = New System.Windows.Forms.Label()
         Me.Label_MCB25 = New System.Windows.Forms.Label()
-        Me.Button_buyLives = New System.Windows.Forms.Button()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
         Me.Panel_infoPartGG_GG = New System.Windows.Forms.Panel()
         Me.Label_LivesLeft = New System.Windows.Forms.Label()
@@ -129,13 +128,11 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG = New System.Windows.Forms.Panel()
         Me.Label_infoPartGG_InMap = New System.Windows.Forms.Label()
         Me.Label_InfoPartGG = New System.Windows.Forms.Label()
-        Me.Panel_PrepareGatesAuto = New System.Windows.Forms.Panel()
         Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
         Me.Panel_UridiumtoKeep = New System.Windows.Forms.Panel()
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
         Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
-        Me.Label_autospin = New System.Windows.Forms.Label()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
@@ -208,6 +205,10 @@ Partial Class Form_Tools
         Me.Label16 = New System.Windows.Forms.Label()
         Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.TextBox_spintimes_GGS = New System.Windows.Forms.TextBox()
+        Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label_spintime_GGS = New System.Windows.Forms.Label()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -225,7 +226,6 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
-        Me.Panel_PrepareGatesAuto.SuspendLayout()
         Me.Panel_UridiumtoKeep.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
         Me.Panel_stats.SuspendLayout()
@@ -1044,14 +1044,10 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates2)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_buyLives)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG_GG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Panel_PrepareGatesAuto)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_UridiumtoKeep)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Label_autospin)
-        Me.Panel_GalaxyGates.Controls.Add(Me.ComboBox_autospin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_stopSpin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_Uridum_ExtraEnnergy_left)
@@ -1527,20 +1523,6 @@ Partial Class Form_Tools
         Me.Label_MCB25.TabIndex = 81
         Me.Label_MCB25.Text = "MCB-25"
         '
-        'Button_buyLives
-        '
-        Me.Button_buyLives.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_buyLives.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_buyLives.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_buyLives.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_buyLives.ForeColor = System.Drawing.Color.White
-        Me.Button_buyLives.Location = New System.Drawing.Point(15, 301)
-        Me.Button_buyLives.Name = "Button_buyLives"
-        Me.Button_buyLives.Size = New System.Drawing.Size(175, 25)
-        Me.Button_buyLives.TabIndex = 81
-        Me.Button_buyLives.Text = "Buy live"
-        Me.Button_buyLives.UseVisualStyleBackColor = False
-        '
         'TextBox_WinGGS
         '
         Me.TextBox_WinGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1624,24 +1606,13 @@ Partial Class Form_Tools
         Me.Label_InfoPartGG.TabIndex = 77
         Me.Label_InfoPartGG.Text = "Part : 0 / 0"
         '
-        'Panel_PrepareGatesAuto
-        '
-        Me.Panel_PrepareGatesAuto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_PrepareGatesAuto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_PrepareGatesAuto.Controls.Add(Me.CheckBox_PrepareGatesIfBuiled)
-        Me.Panel_PrepareGatesAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_PrepareGatesAuto.Location = New System.Drawing.Point(15, 445)
-        Me.Panel_PrepareGatesAuto.Name = "Panel_PrepareGatesAuto"
-        Me.Panel_PrepareGatesAuto.Size = New System.Drawing.Size(175, 25)
-        Me.Panel_PrepareGatesAuto.TabIndex = 67
-        '
         'CheckBox_PrepareGatesIfBuiled
         '
         Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
         Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(6, 2)
+        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(5, 79)
         Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
         Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(169, 21)
         Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
@@ -1652,13 +1623,19 @@ Partial Class Form_Tools
         '
         Me.Panel_UridiumtoKeep.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_UridiumtoKeep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_UridiumtoKeep.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.Label2)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_Spintimes_MS_text)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_spintime_GGS)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.TextBox_spintimes_GGS)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.TextBox_uridiumtokeepGGS)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.CheckBox_PrepareGatesIfBuiled)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_UridiumtoKeepGGS)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.ComboBox_autospin)
         Me.Panel_UridiumtoKeep.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_UridiumtoKeep.Location = New System.Drawing.Point(15, 365)
         Me.Panel_UridiumtoKeep.Name = "Panel_UridiumtoKeep"
-        Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(175, 47)
+        Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(175, 105)
         Me.Panel_UridiumtoKeep.TabIndex = 66
         '
         'CheckBox_UseOnlyEE_GGS
@@ -1667,7 +1644,7 @@ Partial Class Form_Tools
         Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(6, 20)
+        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(5, 60)
         Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
         Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(141, 21)
         Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
@@ -1696,16 +1673,6 @@ Partial Class Form_Tools
         Me.Label_UridiumtoKeepGGS.TabIndex = 1
         Me.Label_UridiumtoKeepGGS.Text = "Uridium to keep :"
         '
-        'Label_autospin
-        '
-        Me.Label_autospin.AutoSize = True
-        Me.Label_autospin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_autospin.Location = New System.Drawing.Point(14, 418)
-        Me.Label_autospin.Name = "Label_autospin"
-        Me.Label_autospin.Size = New System.Drawing.Size(77, 17)
-        Me.Label_autospin.TabIndex = 64
-        Me.Label_autospin.Text = "Auto Spin :"
-        '
         'ComboBox_autospin
         '
         Me.ComboBox_autospin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1714,9 +1681,9 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.ForeColor = System.Drawing.Color.White
         Me.ComboBox_autospin.FormattingEnabled = True
         Me.ComboBox_autospin.Items.AddRange(New Object() {"ABG", "Delta", "Epsilon", "Zeta", "Kappa", "Lambda", "Kuiper", "Hades"})
-        Me.ComboBox_autospin.Location = New System.Drawing.Point(94, 418)
+        Me.ComboBox_autospin.Location = New System.Drawing.Point(96, 39)
         Me.ComboBox_autospin.Name = "ComboBox_autospin"
-        Me.ComboBox_autospin.Size = New System.Drawing.Size(95, 21)
+        Me.ComboBox_autospin.Size = New System.Drawing.Size(74, 21)
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
         '
@@ -1729,7 +1696,7 @@ Partial Class Form_Tools
         Me.Button_PrepareGates.ForeColor = System.Drawing.Color.White
         Me.Button_PrepareGates.Location = New System.Drawing.Point(15, 268)
         Me.Button_PrepareGates.Name = "Button_PrepareGates"
-        Me.Button_PrepareGates.Size = New System.Drawing.Size(175, 31)
+        Me.Button_PrepareGates.Size = New System.Drawing.Size(175, 47)
         Me.Button_PrepareGates.TabIndex = 61
         Me.Button_PrepareGates.Text = "Prepare Gates"
         Me.Button_PrepareGates.UseVisualStyleBackColor = False
@@ -1738,7 +1705,6 @@ Partial Class Form_Tools
         '
         Me.Button_stopSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_stopSpin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_stopSpin.Enabled = False
         Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
@@ -1763,7 +1729,6 @@ Partial Class Form_Tools
         '
         Me.Button_StartSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_StartSpin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_StartSpin.Enabled = False
         Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
@@ -1941,14 +1906,15 @@ Partial Class Form_Tools
         'Label_Transition_GGS
         '
         Me.Label_Transition_GGS.AutoSize = True
-        Me.Label_Transition_GGS.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Transition_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Transition_GGS.ForeColor = System.Drawing.Color.White
-        Me.Label_Transition_GGS.Location = New System.Drawing.Point(5, 316)
+        Me.Label_Transition_GGS.Location = New System.Drawing.Point(1, 322)
         Me.Label_Transition_GGS.Name = "Label_Transition_GGS"
-        Me.Label_Transition_GGS.Size = New System.Drawing.Size(989, 18)
+        Me.Label_Transition_GGS.Size = New System.Drawing.Size(993, 13)
         Me.Label_Transition_GGS.TabIndex = 65
-        Me.Label_Transition_GGS.Text = "_________________________________________________________________________________" &
-    "____________________________"
+        Me.Label_Transition_GGS.Text = "____ Galaxy Gates Spinner _______________________________________________________" &
+    "________________________________________________________________________________" &
+    "___________________________________"
         '
         'Panel_Palladium
         '
@@ -2653,6 +2619,48 @@ Partial Class Form_Tools
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
+        'TextBox_spintimes_GGS
+        '
+        Me.TextBox_spintimes_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_spintimes_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_spintimes_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_spintimes_GGS.Location = New System.Drawing.Point(74, 21)
+        Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
+        Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(53, 16)
+        Me.TextBox_spintimes_GGS.TabIndex = 5
+        Me.TextBox_spintimes_GGS.Text = "2000"
+        Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_Spintimes_MS_text
+        '
+        Me.Label_Spintimes_MS_text.AutoSize = True
+        Me.Label_Spintimes_MS_text.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Spintimes_MS_text.Location = New System.Drawing.Point(133, 22)
+        Me.Label_Spintimes_MS_text.Name = "Label_Spintimes_MS_text"
+        Me.Label_Spintimes_MS_text.Size = New System.Drawing.Size(22, 13)
+        Me.Label_Spintimes_MS_text.TabIndex = 6
+        Me.Label_Spintimes_MS_text.Text = "ms"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, 42)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(91, 13)
+        Me.Label2.TabIndex = 92
+        Me.Label2.Text = "Auto Spin with :"
+        '
+        'Label_spintime_GGS
+        '
+        Me.Label_spintime_GGS.AutoSize = True
+        Me.Label_spintime_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_spintime_GGS.Location = New System.Drawing.Point(6, 22)
+        Me.Label_spintime_GGS.Name = "Label_spintime_GGS"
+        Me.Label_spintime_GGS.Size = New System.Drawing.Size(62, 13)
+        Me.Label_spintime_GGS.TabIndex = 37
+        Me.Label_spintime_GGS.Text = "Spin time :"
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2723,8 +2731,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.PerformLayout()
         Me.Panel_infoPartGG.ResumeLayout(False)
         Me.Panel_infoPartGG.PerformLayout()
-        Me.Panel_PrepareGatesAuto.ResumeLayout(False)
-        Me.Panel_PrepareGatesAuto.PerformLayout()
         Me.Panel_UridiumtoKeep.ResumeLayout(False)
         Me.Panel_UridiumtoKeep.PerformLayout()
         Me.Panel_Palladium.ResumeLayout(False)
@@ -2859,7 +2865,6 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_creditCurrent As TextBox
     Friend WithEvents TextBox_uridiumCurrent As TextBox
     Friend WithEvents Button_PrepareGates As Button
-    Friend WithEvents Label_autospin As Label
     Friend WithEvents ComboBox_autospin As ComboBox
     Friend WithEvents Panel_MoveTitle As Panel
     Friend WithEvents Label_Transition_GGS As Label
@@ -2868,7 +2873,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox_UseOnlyEE_GGS As CheckBox
     Friend WithEvents TextBox_uridiumtokeepGGS As TextBox
     Friend WithEvents Label_UridiumtoKeepGGS As Label
-    Friend WithEvents Panel_PrepareGatesAuto As Panel
     Friend WithEvents CheckBox_PrepareGatesIfBuiled As CheckBox
     Friend WithEvents Button_ResetStats As Button
     Friend WithEvents TextBox_ProfilSelected As TextBox
@@ -2878,7 +2882,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox_SavedStatsEarned As CheckBox
     Friend WithEvents WebBrowser_GGInfo As WebBrowser
     Friend WithEvents TextBox_GGinfoGGS As TextBox
-    Friend WithEvents Button_buyLives As Button
     Friend WithEvents Panel_infoPartGG_GG As Panel
     Friend WithEvents Label_LivesLeft As Label
     Friend WithEvents Label_infoPartGG_CurrentWave As Label
@@ -2936,4 +2939,8 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents Label_Spintimes_MS_text As Label
+    Friend WithEvents TextBox_spintimes_GGS As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label_spintime_GGS As Label
 End Class
