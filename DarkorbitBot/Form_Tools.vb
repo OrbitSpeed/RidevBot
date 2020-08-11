@@ -106,7 +106,7 @@ Public Class Form_Tools
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
         CenterToScreen()
 
         If Form_Game.Visible = True Then
@@ -174,7 +174,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
 
     End Sub
 
@@ -214,7 +215,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
 
     End Sub
 
@@ -255,7 +257,9 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
+
     End Sub
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
@@ -290,12 +294,12 @@ Public Class Form_Tools
                 General_button.Enabled = False
                 Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
-                Size = New Size(390, 324)
+                Size = New Size(390, 333)
             Else
                 General_button.Enabled = False
                 Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
-                Size = New Size(390, 324)
+                Size = New Size(390, 333)
             End If
         Else
 
@@ -354,7 +358,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
 
     End Sub
 
@@ -399,19 +404,19 @@ Public Class Form_Tools
                 General_button.Enabled = False
                 Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
-                Size = New Size(390, 324)
+                Size = New Size(390, 333)
             Else
                 General_button.Enabled = False
                 Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
-                Size = New Size(390, 324)
+                Size = New Size(390, 333)
             End If
 
 
             General_button.Enabled = False
             Label_buttonGeneral.Visible = True
             Panel_general.Visible = True
-            Size = New Size(390, 324)
+            Size = New Size(390, 333)
 
         Else
 
@@ -456,6 +461,8 @@ Public Class Form_Tools
 
         End If
 
+        CenterToScreen()
+
     End Sub
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
@@ -494,7 +501,8 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
 
     End Sub
 
@@ -534,7 +542,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-        Size = New Size(390, 324)
+        Size = New Size(390, 333)
+        CenterToScreen()
 
     End Sub
 
@@ -711,9 +720,9 @@ Public Class Form_Tools
 
                 If Not regex_currentPart = "?" Then
 
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
                 Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
                 End If
 
             End If
@@ -761,9 +770,9 @@ Public Class Form_Tools
 
                 If Not regex_currentPart = "?" Then
 
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
+                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
                 Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
+                    Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
                 End If
 
             End If
@@ -2070,7 +2079,10 @@ Public Class Form_Tools
 
 
         If BackgroundWorkerAutospin = True Then
+
             'DoWork ici
+
+
             uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
 
 
@@ -2219,12 +2231,12 @@ Public Class Form_Tools
             ElseIf DataWinned.Contains("voucher") Then
                 DataWinned = "Mine"
 
-            Else
+            ElseIf DataWinned.Contains("part") Then
 
-                If DataWinned.Contains("part") AndAlso DataWinned2 = Nothing Then
-                    DataWinned = "Multiplier assigned"
+                DataWinned = "Part/ Multiplier assigned"
 
-                    If Button_delta.Enabled = False Then
+
+                If Button_delta.Enabled = False Then
 
                         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
                         Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
@@ -2675,9 +2687,9 @@ Public Class Form_Tools
 
                             If Not regex_currentPart = "?" Then
 
-                                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 40"
+                                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
                             Else
-                                Label_InfoPartGG.Text = "Part : " + "?" + " / 40"
+                                Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
                             End If
 
                             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
@@ -2790,86 +2802,60 @@ Public Class Form_Tools
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     End If
 
-
-
-                ElseIf DataWinned = "part found" Then
-
-                Else
-
-                End If
-
+            Else
             End If
+
+        End If
 
             TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
 
-            If DataWinned.Contains("MCB-25") Then
+        If DataWinned.Contains("MCB-25") Then
 
-                Label_MCB25_Earned.Text = Val(Label_MCB25_Earned.Text) + DataWinned3
+            Label_MCB25_Earned.Text = Val(Label_MCB25_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("MCB-50") Then
+        ElseIf DataWinned.Contains("MCB-50") Then
 
-                Label_MCB50_Earned.Text = Val(Label_MCB50_Earned.Text) + DataWinned3
+            Label_MCB50_Earned.Text = Val(Label_MCB50_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("UCB-100") Then
+        ElseIf DataWinned.Contains("UCB-100") Then
 
-                Label_UCB100_Earned.Text = Val(Label_UCB100_Earned.Text) + DataWinned3
+            Label_UCB100_Earned.Text = Val(Label_UCB100_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("SAB-50") Then
+        ElseIf DataWinned.Contains("SAB-50") Then
 
-                Label_SAB50_Earned.Text = Val(Label_SAB50_Earned.Text) + DataWinned3
+            Label_SAB50_Earned.Text = Val(Label_SAB50_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("Xenomit") Then
+        ElseIf DataWinned.Contains("Xenomit") Then
 
-                Label_Xenomit_Earned.Text = Val(Label_Xenomit_Earned.Text) + DataWinned3
+            Label_Xenomit_Earned.Text = Val(Label_Xenomit_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("Nanohull") Then
+        ElseIf DataWinned.Contains("Nanohull") Then
 
-                Label_Nanohull_Earned.Text = Val(Label_Nanohull_Earned.Text) + DataWinned3
+            Label_Nanohull_Earned.Text = Val(Label_Nanohull_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("Logfile") Then
+        ElseIf DataWinned.Contains("Logfile") Then
 
-                Label_Logfile_Earned.Text = Val(Label_Logfile_Earned.Text) + DataWinned3
+            Label_Logfile_Earned.Text = Val(Label_Logfile_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("PLT-2021") Then
+        ElseIf DataWinned.Contains("PLT-2021") Then
 
-                Label_PLT2021_Earned.Text = Val(Label_PLT2021_Earned.Text) + DataWinned3
+            Label_PLT2021_Earned.Text = Val(Label_PLT2021_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("Mine") Then
+        ElseIf DataWinned.Contains("Mine") Then
 
-                Label_Mine_Earned.Text = Val(Label_Mine_Earned.Text) + DataWinned3
+            Label_Mine_Earned.Text = Val(Label_Mine_Earned.Text) + DataWinned3
 
-            ElseIf DataWinned.Contains("One part found") Then
+        ElseIf DataWinned.Contains("Part/ Multiplier assigned") Then
 
-                Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
+            Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
 
             End If
 
             TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
             TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(DataSamples, ".")
-
-        End If
 
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
@@ -2930,6 +2916,7 @@ Public Class Form_Tools
         Label_Mine_Earned.Text = 0
         Label_Logfile_Earned.Text = 0
 
+        TextBox_WinGGS.Text = ""
 
     End Sub
 
