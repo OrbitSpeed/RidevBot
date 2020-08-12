@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports AxMediaPlayer
 
 Public Class AutoUpdater
     Public StartupPath As String = Application.StartupPath
@@ -18,6 +19,7 @@ Public Class AutoUpdater
 
     Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Me.Size = New Size(363, 410)
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
 
@@ -69,6 +71,9 @@ Public Class AutoUpdater
     End Sub
 
     Private Sub Button_Update_Click(sender As Object, e As EventArgs) Handles Button_Update.Click
+
+        ' Verify if an update is available
+
         If Application.ProductVersion <> LastVersion Then
             Update_Dialog()
         Else
@@ -104,6 +109,15 @@ Public Class AutoUpdater
         'Throw New NotImplementedException()
     End Sub
 
+    Public FilePath As String = Path.Combine(Application.StartupPath, "ridevbotuniverse.mp4")
+
+    Sub PlayVideo()
+
+        AxWindowsMediaPlayer1.URL = FilePath
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
+
+    End Sub
+
     Private Async Sub WC_Update_ChangeLog_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try
@@ -113,6 +127,18 @@ Public Class AutoUpdater
             Button_Update.Visible = True
             Button_Update.Enabled = True
             Form_Tools.TextBox_Changelog.Text = e.Result
+
+            If Not File.Exists(FilePath) Then
+                File.WriteAllBytes(FilePath, My.Resources.ridevbotuniverse)
+            End If
+            AxWindowsMediaPlayer1.Visible = True
+            PlayVideo()
+            Dim attendre = Task.Delay(2200)
+            Await attendre
+            AxWindowsMediaPlayer1.Ctlcontrols.pause()
+
+
+
 
             If My.Settings.AutoUpdate = True Then
                 Dim delay = Task.Delay(500)
@@ -126,7 +152,7 @@ Public Class AutoUpdater
             MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Close()
         End Try
-        'Throw New NotImplementedException()
     End Sub
+
 
 End Class

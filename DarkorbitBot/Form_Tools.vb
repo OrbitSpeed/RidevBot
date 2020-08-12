@@ -3178,44 +3178,49 @@ Public Class Form_Tools
 
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
-        TextBox_timeticks3.Text = "0"
-        TextBox_timeticks4.Text = "0"
-        TextBox_timeticks5.Text = "0"
-        TextBox_timeticks6.Text = "0"
+        TextBox_minutedouble2.Text = "0"
+        TextBox_minutedouble.Text = "0"
+        TextBox_secondsdouble2.Text = "0"
+        TextBox_secondsdouble.Text = "0"
 
     End Sub
 
     Private Sub Timer_sid_Tick(sender As Object, e As EventArgs) Handles Timer_sid.Tick
 
-        TextBox_timeticks6.Text = Val(TextBox_timeticks6.Text) + 1
+        TextBox_secondsdouble.Text = Val(TextBox_secondsdouble.Text) + 1
 
         ' seconds
-        If TextBox_timeticks6.Text = "10" Then
+        If TextBox_secondsdouble.Text = "10" Then
 
-            TextBox_timeticks6.Text = "0"
-            TextBox_timeticks5.Text = Val(TextBox_timeticks5.Text) + 1
+            TextBox_secondsdouble.Text = "0"
+            TextBox_secondsdouble2.Text = Val(TextBox_secondsdouble2.Text) + 1
 
         End If
 
-        If TextBox_timeticks5.Text = "6" Then
+        If TextBox_secondsdouble2.Text = "6" Then
 
-            TextBox_timeticks5.Text = "0"
-            TextBox_timeticks4.Text = Val(TextBox_timeticks4.Text) + 1
+            TextBox_secondsdouble2.Text = "0"
+            TextBox_minutedouble.Text = Val(TextBox_minutedouble.Text) + 1
 
         End If
 
         ' minutes
-        If TextBox_timeticks4.Text = "10" Then
+        If TextBox_minutedouble.Text = "10" Then
 
             Button_revive_sid.PerformClick()
-            TextBox_timeticks4.Text = "0"
-            TextBox_timeticks3.Text = Val(TextBox_timeticks3.Text) + 1
+
+            TextBox_minutedouble2.Text = "0"
+            TextBox_minutedouble.Text = "0"
+            TextBox_secondsdouble2.Text = "0"
+            TextBox_secondsdouble.Text = "0"
+
+            TextBox_minutedouble2.Text = Val(TextBox_minutedouble2.Text) + 1
 
         End If
 
-        If TextBox_timeticks3.Text = "6" Then
+        If TextBox_minutedouble2.Text = "6" Then
 
-            TextBox_timeticks3.Text = "0"
+            TextBox_minutedouble2.Text = "0"
 
         End If
 

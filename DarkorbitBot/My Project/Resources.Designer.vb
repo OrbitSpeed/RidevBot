@@ -472,6 +472,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property img_accueil() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("img_accueil", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property img_cross_full() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("img_cross_full", resourceCulture)
@@ -626,6 +636,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("prometium", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property ridevbotuniverse() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ridevbotuniverse", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

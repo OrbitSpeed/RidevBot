@@ -139,10 +139,10 @@ Public Class Form_Startup
         Form_Tools.Timer_sid.Stop()
         Form_Tools.Timer_sid.Enabled = False
 
-        Form_Tools.TextBox_timeticks3.Text = "0"
-        Form_Tools.TextBox_timeticks4.Text = "0"
-        Form_Tools.TextBox_timeticks5.Text = "0"
-        Form_Tools.TextBox_timeticks6.Text = "0"
+        Form_Tools.TextBox_minutedouble2.Text = "0"
+        Form_Tools.TextBox_minutedouble.Text = "0"
+        Form_Tools.TextBox_secondsdouble2.Text = "0"
+        Form_Tools.TextBox_secondsdouble.Text = "0"
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
         Form_Tools.TextBox_Get_id.Text = ""
@@ -430,6 +430,10 @@ Public Class Form_Startup
     End Sub
 
     Private Sub TextBoxUsernamePasswordProfil1password_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsernamePasswordProfil1password.TextChanged
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.Click
 
     End Sub
 End Class

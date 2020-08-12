@@ -25,10 +25,6 @@ Partial Class Form_Tools
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Tools))
         Me.Label_Tittle = New System.Windows.Forms.Label()
-        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.LogUpdate_button = New System.Windows.Forms.Button()
         Me.NPC_Button = New System.Windows.Forms.Button()
         Me.General_button = New System.Windows.Forms.Button()
@@ -46,8 +42,22 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Label_ButtonDivers = New System.Windows.Forms.Label()
         Me.Panel_general = New System.Windows.Forms.Panel()
+        Me.Button_revive_sid = New System.Windows.Forms.Button()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
+        Me.TextBox_timeGame6 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame5 = New System.Windows.Forms.TextBox()
+        Me.Label_separator4 = New System.Windows.Forms.Label()
+        Me.TextBox_timeGame4 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame3 = New System.Windows.Forms.TextBox()
+        Me.Label_separator3 = New System.Windows.Forms.Label()
+        Me.TextBox_timeGame2 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame = New System.Windows.Forms.TextBox()
+        Me.TextBox_secondsdouble = New System.Windows.Forms.TextBox()
+        Me.TextBox_secondsdouble2 = New System.Windows.Forms.TextBox()
+        Me.Label_separator2 = New System.Windows.Forms.Label()
+        Me.TextBox_minutedouble = New System.Windows.Forms.TextBox()
+        Me.TextBox_minutedouble2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label_timeticks = New System.Windows.Forms.Label()
         Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
@@ -79,7 +89,6 @@ Partial Class Form_Tools
         Me.label_Update = New System.Windows.Forms.Label()
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
-        Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
         Me.Label_PALADIUM_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_stats = New System.Windows.Forms.Panel()
@@ -126,19 +135,10 @@ Partial Class Form_Tools
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
-        Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_epingleBarréBot = New System.Windows.Forms.PictureBox()
         Me.Label_GG_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Button_beta = New System.Windows.Forms.Button()
@@ -160,7 +160,6 @@ Partial Class Form_Tools
         Me.Button_kronos = New System.Windows.Forms.Button()
         Me.Button_Hades_GGS = New System.Windows.Forms.Button()
         Me.Button_StartSpin = New System.Windows.Forms.Button()
-        Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Panel_Uridum_ExtraEnnergy_left = New System.Windows.Forms.Panel()
         Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
         Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
@@ -207,14 +206,12 @@ Partial Class Form_Tools
         Me.Label_PLT2021 = New System.Windows.Forms.Label()
         Me.Label_MCB50 = New System.Windows.Forms.Label()
         Me.Label_MCB25 = New System.Windows.Forms.Label()
-        Me.WebBrowser_galaxyGates2 = New System.Windows.Forms.WebBrowser()
         Me.Panel_infoPartGG2 = New System.Windows.Forms.Panel()
         Me.Label_infoPartGG_InMap2 = New System.Windows.Forms.Label()
         Me.Label_InfoPartGG2 = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG_GG2 = New System.Windows.Forms.Panel()
         Me.Label_LivesLeft2 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_CurrentWave2 = New System.Windows.Forms.Label()
-        Me.WebBrowser_galaxyGates3 = New System.Windows.Forms.WebBrowser()
         Me.Panel_infoPartGG3 = New System.Windows.Forms.Panel()
         Me.Label_infoPartGG_InMap3 = New System.Windows.Forms.Label()
         Me.Label_InfoPartGG3 = New System.Windows.Forms.Label()
@@ -222,26 +219,25 @@ Partial Class Form_Tools
         Me.Label_LivesLeft3 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
-        Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.TextBox_timeticks4 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeticks3 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeticks6 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeticks5 = New System.Windows.Forms.TextBox()
-        Me.Label_separator2 = New System.Windows.Forms.Label()
-        Me.TextBox_timeGame6 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeGame5 = New System.Windows.Forms.TextBox()
-        Me.Label_separator4 = New System.Windows.Forms.Label()
-        Me.TextBox_timeGame4 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeGame3 = New System.Windows.Forms.TextBox()
-        Me.Label_separator3 = New System.Windows.Forms.Label()
-        Me.TextBox_timeGame2 = New System.Windows.Forms.TextBox()
-        Me.TextBox_timeGame = New System.Windows.Forms.TextBox()
-        Me.Button_revive_sid = New System.Windows.Forms.Button()
         Me.Timer_sid = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_galaxyGates3 = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_galaxyGates2 = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
+        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_epingleBarréBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -255,12 +251,6 @@ Partial Class Form_Tools
         Me.Panel_divers.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Uridum_ExtraEnnergy_left.SuspendLayout()
         Me.Panel_UridiumtoKeep.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
@@ -271,6 +261,16 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG3.SuspendLayout()
         Me.Panel_infoPartGG_GG3.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -283,51 +283,6 @@ Partial Class Form_Tools
         Me.Label_Tittle.Size = New System.Drawing.Size(147, 18)
         Me.Label_Tittle.TabIndex = 22
         Me.Label_Tittle.Text = "RidevBot tools 1.0"
-        '
-        'PictureBox_Backpage
-        '
-        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
-        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
-        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Backpage.TabIndex = 34
-        Me.PictureBox_Backpage.TabStop = False
-        '
-        'PictureBox_Pause
-        '
-        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
-        Me.PictureBox_Pause.Name = "PictureBox_Pause"
-        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Pause.TabIndex = 33
-        Me.PictureBox_Pause.TabStop = False
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 26
-        Me.PictureBox_Close.TabStop = False
-        '
-        'PictureBox_Start
-        '
-        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
-        Me.PictureBox_Start.Name = "PictureBox_Start"
-        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Start.TabIndex = 27
-        Me.PictureBox_Start.TabStop = False
         '
         'LogUpdate_button
         '
@@ -563,6 +518,20 @@ Partial Class Form_Tools
         Me.Panel_general.Size = New System.Drawing.Size(304, 315)
         Me.Panel_general.TabIndex = 41
         '
+        'Button_revive_sid
+        '
+        Me.Button_revive_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_revive_sid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_revive_sid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_revive_sid.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_revive_sid.ForeColor = System.Drawing.Color.White
+        Me.Button_revive_sid.Location = New System.Drawing.Point(12, 143)
+        Me.Button_revive_sid.Name = "Button_revive_sid"
+        Me.Button_revive_sid.Size = New System.Drawing.Size(213, 25)
+        Me.Button_revive_sid.TabIndex = 37
+        Me.Button_revive_sid.Text = "Revive sid / reload the session"
+        Me.Button_revive_sid.UseVisualStyleBackColor = False
+        '
         'ComboBox_autologin
         '
         Me.ComboBox_autologin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -590,11 +559,11 @@ Partial Class Form_Tools
         Me.Panel_Info.Controls.Add(Me.Label_separator3)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeGame2)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeGame)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks6)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks5)
+        Me.Panel_Info.Controls.Add(Me.TextBox_secondsdouble)
+        Me.Panel_Info.Controls.Add(Me.TextBox_secondsdouble2)
         Me.Panel_Info.Controls.Add(Me.Label_separator2)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks4)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks3)
+        Me.Panel_Info.Controls.Add(Me.TextBox_minutedouble)
+        Me.Panel_Info.Controls.Add(Me.TextBox_minutedouble2)
         Me.Panel_Info.Controls.Add(Me.Label1)
         Me.Panel_Info.Controls.Add(Me.Label_timeticks)
         Me.Panel_Info.Controls.Add(Me.TextBox_ProfilSelected)
@@ -610,6 +579,169 @@ Partial Class Form_Tools
         Me.Panel_Info.Name = "Panel_Info"
         Me.Panel_Info.Size = New System.Drawing.Size(276, 129)
         Me.Panel_Info.TabIndex = 28
+        '
+        'TextBox_timeGame6
+        '
+        Me.TextBox_timeGame6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame6.Location = New System.Drawing.Point(210, 104)
+        Me.TextBox_timeGame6.Name = "TextBox_timeGame6"
+        Me.TextBox_timeGame6.ReadOnly = True
+        Me.TextBox_timeGame6.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame6.TabIndex = 28
+        Me.TextBox_timeGame6.Text = "0"
+        Me.TextBox_timeGame6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame5
+        '
+        Me.TextBox_timeGame5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame5.Location = New System.Drawing.Point(195, 104)
+        Me.TextBox_timeGame5.Name = "TextBox_timeGame5"
+        Me.TextBox_timeGame5.ReadOnly = True
+        Me.TextBox_timeGame5.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame5.TabIndex = 27
+        Me.TextBox_timeGame5.Text = "0"
+        Me.TextBox_timeGame5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator4
+        '
+        Me.Label_separator4.AutoSize = True
+        Me.Label_separator4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator4.Location = New System.Drawing.Point(185, 104)
+        Me.Label_separator4.Name = "Label_separator4"
+        Me.Label_separator4.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator4.TabIndex = 26
+        Me.Label_separator4.Text = ":"
+        '
+        'TextBox_timeGame4
+        '
+        Me.TextBox_timeGame4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame4.Location = New System.Drawing.Point(170, 104)
+        Me.TextBox_timeGame4.Name = "TextBox_timeGame4"
+        Me.TextBox_timeGame4.ReadOnly = True
+        Me.TextBox_timeGame4.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame4.TabIndex = 25
+        Me.TextBox_timeGame4.Text = "0"
+        Me.TextBox_timeGame4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame3
+        '
+        Me.TextBox_timeGame3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame3.Location = New System.Drawing.Point(155, 104)
+        Me.TextBox_timeGame3.Name = "TextBox_timeGame3"
+        Me.TextBox_timeGame3.ReadOnly = True
+        Me.TextBox_timeGame3.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame3.TabIndex = 24
+        Me.TextBox_timeGame3.Text = "0"
+        Me.TextBox_timeGame3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator3
+        '
+        Me.Label_separator3.AutoSize = True
+        Me.Label_separator3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator3.Location = New System.Drawing.Point(145, 104)
+        Me.Label_separator3.Name = "Label_separator3"
+        Me.Label_separator3.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator3.TabIndex = 23
+        Me.Label_separator3.Text = ":"
+        '
+        'TextBox_timeGame2
+        '
+        Me.TextBox_timeGame2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame2.Location = New System.Drawing.Point(130, 104)
+        Me.TextBox_timeGame2.Name = "TextBox_timeGame2"
+        Me.TextBox_timeGame2.ReadOnly = True
+        Me.TextBox_timeGame2.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame2.TabIndex = 22
+        Me.TextBox_timeGame2.Text = "0"
+        Me.TextBox_timeGame2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame
+        '
+        Me.TextBox_timeGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame.Location = New System.Drawing.Point(115, 104)
+        Me.TextBox_timeGame.Name = "TextBox_timeGame"
+        Me.TextBox_timeGame.ReadOnly = True
+        Me.TextBox_timeGame.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame.TabIndex = 21
+        Me.TextBox_timeGame.Text = "0"
+        Me.TextBox_timeGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_secondsdouble
+        '
+        Me.TextBox_secondsdouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_secondsdouble.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_secondsdouble.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(190, 85)
+        Me.TextBox_secondsdouble.Name = "TextBox_secondsdouble"
+        Me.TextBox_secondsdouble.ReadOnly = True
+        Me.TextBox_secondsdouble.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_secondsdouble.TabIndex = 20
+        Me.TextBox_secondsdouble.Text = "0"
+        Me.TextBox_secondsdouble.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_secondsdouble2
+        '
+        Me.TextBox_secondsdouble2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_secondsdouble2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_secondsdouble2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(175, 85)
+        Me.TextBox_secondsdouble2.Name = "TextBox_secondsdouble2"
+        Me.TextBox_secondsdouble2.ReadOnly = True
+        Me.TextBox_secondsdouble2.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_secondsdouble2.TabIndex = 19
+        Me.TextBox_secondsdouble2.Text = "0"
+        Me.TextBox_secondsdouble2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator2
+        '
+        Me.Label_separator2.AutoSize = True
+        Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator2.Location = New System.Drawing.Point(165, 85)
+        Me.Label_separator2.Name = "Label_separator2"
+        Me.Label_separator2.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator2.TabIndex = 18
+        Me.Label_separator2.Text = ":"
+        '
+        'TextBox_minutedouble
+        '
+        Me.TextBox_minutedouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_minutedouble.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_minutedouble.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_minutedouble.Location = New System.Drawing.Point(150, 85)
+        Me.TextBox_minutedouble.Name = "TextBox_minutedouble"
+        Me.TextBox_minutedouble.ReadOnly = True
+        Me.TextBox_minutedouble.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_minutedouble.TabIndex = 17
+        Me.TextBox_minutedouble.Text = "0"
+        Me.TextBox_minutedouble.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_minutedouble2
+        '
+        Me.TextBox_minutedouble2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_minutedouble2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_minutedouble2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_minutedouble2.Location = New System.Drawing.Point(135, 85)
+        Me.TextBox_minutedouble2.Name = "TextBox_minutedouble2"
+        Me.TextBox_minutedouble2.ReadOnly = True
+        Me.TextBox_minutedouble2.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_minutedouble2.TabIndex = 16
+        Me.TextBox_minutedouble2.Text = "0"
+        Me.TextBox_minutedouble2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -997,16 +1129,6 @@ Partial Class Form_Tools
         Me.TextBox_Changelog.Size = New System.Drawing.Size(304, 315)
         Me.TextBox_Changelog.TabIndex = 6
         Me.TextBox_Changelog.Text = "       " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   A very white changelog in a blue background"
-        '
-        'WebBrowser_GGspinner
-        '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1013, 761)
-        Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
-        Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
-        Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGspinner.TabIndex = 40
         '
         'Panel_Palladium
         '
@@ -1611,20 +1733,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
-        '
         'TextBox_DebugGGS
         '
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1637,16 +1745,6 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.Size = New System.Drawing.Size(258, 13)
         Me.TextBox_DebugGGS.TabIndex = 69
         Me.TextBox_DebugGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'WebBrowser_GGInfo
-        '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1013, 787)
-        Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
-        Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
-        Me.WebBrowser_GGInfo.ScrollBarsEnabled = False
-        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGInfo.TabIndex = 74
         '
         'TextBox_GGinfoGGS
         '
@@ -1665,70 +1763,19 @@ Partial Class Form_Tools
         '
         Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Title.Controls.Add(Me.FlatMini_reduction_de_formtools)
-        Me.Panel_Title.Controls.Add(Me.PictureBox_epinglerBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_close1)
         Me.Panel_Title.Controls.Add(Me.PictureBox_BackgroundBot)
         Me.Panel_Title.Controls.Add(Me.Label16)
         Me.Panel_Title.Controls.Add(Me.PictureBox_StopBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_PlayBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_epingleBarréBot)
+        Me.Panel_Title.Controls.Add(Me.PictureBox_epinglerBot)
         Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 31
-        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
-        '
-        'PictureBox_epinglerBot
-        '
-        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pin
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(195, 0)
-        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
-        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_epinglerBot.TabIndex = 10
-        Me.PictureBox_epinglerBot.TabStop = False
-        '
-        'PictureBox_close1
-        '
-        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
-        Me.PictureBox_close1.Name = "PictureBox_close1"
-        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_close1.TabIndex = 32
-        Me.PictureBox_close1.TabStop = False
-        '
-        'PictureBox_BackgroundBot
-        '
-        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_settings
-        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(178, 0)
-        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
-        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_BackgroundBot.TabIndex = 9
-        Me.PictureBox_BackgroundBot.TabStop = False
         '
         'Label16
         '
@@ -1740,41 +1787,6 @@ Partial Class Form_Tools
         Me.Label16.Size = New System.Drawing.Size(124, 18)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "RidevBot Tools"
-        '
-        'PictureBox_StopBot
-        '
-        Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
-        Me.PictureBox_StopBot.Location = New System.Drawing.Point(152, 0)
-        Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
-        Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_StopBot.TabIndex = 8
-        Me.PictureBox_StopBot.TabStop = False
-        '
-        'PictureBox_PlayBot
-        '
-        Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
-        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(135, 0)
-        Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
-        Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_PlayBot.TabIndex = 7
-        Me.PictureBox_PlayBot.TabStop = False
-        '
-        'PictureBox_epingleBarréBot
-        '
-        Me.PictureBox_epingleBarréBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_epingleBarréBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
-        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(195, 0)
-        Me.PictureBox_epingleBarréBot.Name = "PictureBox_epingleBarréBot"
-        Me.PictureBox_epingleBarréBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_epingleBarréBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_epingleBarréBot.TabIndex = 11
-        Me.PictureBox_epingleBarréBot.TabStop = False
         '
         'Label_GG_A_SUPPRIMER
         '
@@ -2073,16 +2085,6 @@ Partial Class Form_Tools
         Me.Button_StartSpin.TabIndex = 59
         Me.Button_StartSpin.Text = "Start"
         Me.Button_StartSpin.UseVisualStyleBackColor = False
-        '
-        'WebBrowser_galaxyGates
-        '
-        Me.WebBrowser_galaxyGates.Location = New System.Drawing.Point(197, 14)
-        Me.WebBrowser_galaxyGates.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_galaxyGates.Name = "WebBrowser_galaxyGates"
-        Me.WebBrowser_galaxyGates.ScriptErrorsSuppressed = True
-        Me.WebBrowser_galaxyGates.ScrollBarsEnabled = False
-        Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(257, 312)
-        Me.WebBrowser_galaxyGates.TabIndex = 39
         '
         'Panel_Uridum_ExtraEnnergy_left
         '
@@ -2672,16 +2674,6 @@ Partial Class Form_Tools
         Me.Label_MCB25.TabIndex = 81
         Me.Label_MCB25.Text = "MCB-25"
         '
-        'WebBrowser_galaxyGates2
-        '
-        Me.WebBrowser_galaxyGates2.Location = New System.Drawing.Point(461, 14)
-        Me.WebBrowser_galaxyGates2.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_galaxyGates2.Name = "WebBrowser_galaxyGates2"
-        Me.WebBrowser_galaxyGates2.ScriptErrorsSuppressed = True
-        Me.WebBrowser_galaxyGates2.ScrollBarsEnabled = False
-        Me.WebBrowser_galaxyGates2.Size = New System.Drawing.Size(257, 312)
-        Me.WebBrowser_galaxyGates2.TabIndex = 85
-        '
         'Panel_infoPartGG2
         '
         Me.Panel_infoPartGG2.BackColor = System.Drawing.Color.White
@@ -2749,16 +2741,6 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_CurrentWave2.Size = New System.Drawing.Size(73, 15)
         Me.Label_infoPartGG_CurrentWave2.TabIndex = 77
         Me.Label_infoPartGG_CurrentWave2.Text = "Wave : 0 / 0"
-        '
-        'WebBrowser_galaxyGates3
-        '
-        Me.WebBrowser_galaxyGates3.Location = New System.Drawing.Point(725, 14)
-        Me.WebBrowser_galaxyGates3.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_galaxyGates3.Name = "WebBrowser_galaxyGates3"
-        Me.WebBrowser_galaxyGates3.ScriptErrorsSuppressed = True
-        Me.WebBrowser_galaxyGates3.ScrollBarsEnabled = False
-        Me.WebBrowser_galaxyGates3.Size = New System.Drawing.Size(257, 312)
-        Me.WebBrowser_galaxyGates3.TabIndex = 88
         '
         'Panel_infoPartGG3
         '
@@ -2873,6 +2855,10 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
+        'Timer_sid
+        '
+        Me.Timer_sid.Interval = 1000
+        '
         'WebBrowser_Synchronisation
         '
         Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1013, 813)
@@ -2883,186 +2869,200 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
         '
-        'TextBox_timeticks4
+        'WebBrowser_GGInfo
         '
-        Me.TextBox_timeticks4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks4.Location = New System.Drawing.Point(150, 85)
-        Me.TextBox_timeticks4.Name = "TextBox_timeticks4"
-        Me.TextBox_timeticks4.ReadOnly = True
-        Me.TextBox_timeticks4.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks4.TabIndex = 17
-        Me.TextBox_timeticks4.Text = "0"
-        Me.TextBox_timeticks4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1013, 787)
+        Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
+        Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
+        Me.WebBrowser_GGInfo.ScrollBarsEnabled = False
+        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGInfo.TabIndex = 74
         '
-        'TextBox_timeticks3
+        'WebBrowser_galaxyGates3
         '
-        Me.TextBox_timeticks3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks3.Location = New System.Drawing.Point(135, 85)
-        Me.TextBox_timeticks3.Name = "TextBox_timeticks3"
-        Me.TextBox_timeticks3.ReadOnly = True
-        Me.TextBox_timeticks3.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks3.TabIndex = 16
-        Me.TextBox_timeticks3.Text = "0"
-        Me.TextBox_timeticks3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WebBrowser_galaxyGates3.Location = New System.Drawing.Point(725, 14)
+        Me.WebBrowser_galaxyGates3.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_galaxyGates3.Name = "WebBrowser_galaxyGates3"
+        Me.WebBrowser_galaxyGates3.ScriptErrorsSuppressed = True
+        Me.WebBrowser_galaxyGates3.ScrollBarsEnabled = False
+        Me.WebBrowser_galaxyGates3.Size = New System.Drawing.Size(257, 312)
+        Me.WebBrowser_galaxyGates3.TabIndex = 88
         '
-        'TextBox_timeticks6
+        'WebBrowser_galaxyGates2
         '
-        Me.TextBox_timeticks6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks6.Location = New System.Drawing.Point(190, 85)
-        Me.TextBox_timeticks6.Name = "TextBox_timeticks6"
-        Me.TextBox_timeticks6.ReadOnly = True
-        Me.TextBox_timeticks6.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks6.TabIndex = 20
-        Me.TextBox_timeticks6.Text = "0"
-        Me.TextBox_timeticks6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WebBrowser_galaxyGates2.Location = New System.Drawing.Point(461, 14)
+        Me.WebBrowser_galaxyGates2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_galaxyGates2.Name = "WebBrowser_galaxyGates2"
+        Me.WebBrowser_galaxyGates2.ScriptErrorsSuppressed = True
+        Me.WebBrowser_galaxyGates2.ScrollBarsEnabled = False
+        Me.WebBrowser_galaxyGates2.Size = New System.Drawing.Size(257, 312)
+        Me.WebBrowser_galaxyGates2.TabIndex = 85
         '
-        'TextBox_timeticks5
+        'WebBrowser_galaxyGates
         '
-        Me.TextBox_timeticks5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks5.Location = New System.Drawing.Point(175, 85)
-        Me.TextBox_timeticks5.Name = "TextBox_timeticks5"
-        Me.TextBox_timeticks5.ReadOnly = True
-        Me.TextBox_timeticks5.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks5.TabIndex = 19
-        Me.TextBox_timeticks5.Text = "0"
-        Me.TextBox_timeticks5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WebBrowser_galaxyGates.Location = New System.Drawing.Point(197, 14)
+        Me.WebBrowser_galaxyGates.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_galaxyGates.Name = "WebBrowser_galaxyGates"
+        Me.WebBrowser_galaxyGates.ScriptErrorsSuppressed = True
+        Me.WebBrowser_galaxyGates.ScrollBarsEnabled = False
+        Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(257, 312)
+        Me.WebBrowser_galaxyGates.TabIndex = 39
         '
-        'Label_separator2
+        'WebBrowser_GGspinner
         '
-        Me.Label_separator2.AutoSize = True
-        Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator2.Location = New System.Drawing.Point(165, 85)
-        Me.Label_separator2.Name = "Label_separator2"
-        Me.Label_separator2.Size = New System.Drawing.Size(10, 13)
-        Me.Label_separator2.TabIndex = 18
-        Me.Label_separator2.Text = ":"
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1013, 761)
+        Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
+        Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
+        Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
+        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGspinner.TabIndex = 40
         '
-        'TextBox_timeGame6
+        'PictureBox_epinglerBot
         '
-        Me.TextBox_timeGame6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame6.Location = New System.Drawing.Point(210, 104)
-        Me.TextBox_timeGame6.Name = "TextBox_timeGame6"
-        Me.TextBox_timeGame6.ReadOnly = True
-        Me.TextBox_timeGame6.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame6.TabIndex = 28
-        Me.TextBox_timeGame6.Text = "0"
-        Me.TextBox_timeGame6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pin
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
+        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_epinglerBot.TabIndex = 10
+        Me.PictureBox_epinglerBot.TabStop = False
         '
-        'TextBox_timeGame5
+        'PictureBox_close1
         '
-        Me.TextBox_timeGame5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame5.Location = New System.Drawing.Point(195, 104)
-        Me.TextBox_timeGame5.Name = "TextBox_timeGame5"
-        Me.TextBox_timeGame5.ReadOnly = True
-        Me.TextBox_timeGame5.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame5.TabIndex = 27
-        Me.TextBox_timeGame5.Text = "0"
-        Me.TextBox_timeGame5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
+        Me.PictureBox_close1.Name = "PictureBox_close1"
+        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_close1.TabIndex = 32
+        Me.PictureBox_close1.TabStop = False
         '
-        'Label_separator4
+        'PictureBox_BackgroundBot
         '
-        Me.Label_separator4.AutoSize = True
-        Me.Label_separator4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_separator4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator4.Location = New System.Drawing.Point(185, 104)
-        Me.Label_separator4.Name = "Label_separator4"
-        Me.Label_separator4.Size = New System.Drawing.Size(10, 13)
-        Me.Label_separator4.TabIndex = 26
-        Me.Label_separator4.Text = ":"
+        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_accueil
+        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(178, 0)
+        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
+        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_BackgroundBot.TabIndex = 9
+        Me.PictureBox_BackgroundBot.TabStop = False
         '
-        'TextBox_timeGame4
+        'PictureBox_StopBot
         '
-        Me.TextBox_timeGame4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame4.Location = New System.Drawing.Point(170, 104)
-        Me.TextBox_timeGame4.Name = "TextBox_timeGame4"
-        Me.TextBox_timeGame4.ReadOnly = True
-        Me.TextBox_timeGame4.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame4.TabIndex = 25
-        Me.TextBox_timeGame4.Text = "0"
-        Me.TextBox_timeGame4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
+        Me.PictureBox_StopBot.Location = New System.Drawing.Point(152, 0)
+        Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
+        Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_StopBot.TabIndex = 8
+        Me.PictureBox_StopBot.TabStop = False
         '
-        'TextBox_timeGame3
+        'PictureBox_PlayBot
         '
-        Me.TextBox_timeGame3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame3.Location = New System.Drawing.Point(155, 104)
-        Me.TextBox_timeGame3.Name = "TextBox_timeGame3"
-        Me.TextBox_timeGame3.ReadOnly = True
-        Me.TextBox_timeGame3.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame3.TabIndex = 24
-        Me.TextBox_timeGame3.Text = "0"
-        Me.TextBox_timeGame3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
+        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(135, 0)
+        Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
+        Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_PlayBot.TabIndex = 7
+        Me.PictureBox_PlayBot.TabStop = False
         '
-        'Label_separator3
+        'PictureBox_epingleBarréBot
         '
-        Me.Label_separator3.AutoSize = True
-        Me.Label_separator3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_separator3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator3.Location = New System.Drawing.Point(145, 104)
-        Me.Label_separator3.Name = "Label_separator3"
-        Me.Label_separator3.Size = New System.Drawing.Size(10, 13)
-        Me.Label_separator3.TabIndex = 23
-        Me.Label_separator3.Text = ":"
+        Me.PictureBox_epingleBarréBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_epingleBarréBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
+        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epingleBarréBot.Name = "PictureBox_epingleBarréBot"
+        Me.PictureBox_epingleBarréBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_epingleBarréBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_epingleBarréBot.TabIndex = 11
+        Me.PictureBox_epingleBarréBot.TabStop = False
         '
-        'TextBox_timeGame2
+        'PictureBox_Backpage
         '
-        Me.TextBox_timeGame2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame2.Location = New System.Drawing.Point(130, 104)
-        Me.TextBox_timeGame2.Name = "TextBox_timeGame2"
-        Me.TextBox_timeGame2.ReadOnly = True
-        Me.TextBox_timeGame2.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame2.TabIndex = 22
-        Me.TextBox_timeGame2.Text = "0"
-        Me.TextBox_timeGame2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
+        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
+        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Backpage.TabIndex = 34
+        Me.PictureBox_Backpage.TabStop = False
         '
-        'TextBox_timeGame
+        'PictureBox_Pause
         '
-        Me.TextBox_timeGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeGame.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeGame.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeGame.Location = New System.Drawing.Point(115, 104)
-        Me.TextBox_timeGame.Name = "TextBox_timeGame"
-        Me.TextBox_timeGame.ReadOnly = True
-        Me.TextBox_timeGame.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeGame.TabIndex = 21
-        Me.TextBox_timeGame.Text = "0"
-        Me.TextBox_timeGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
+        Me.PictureBox_Pause.Name = "PictureBox_Pause"
+        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Pause.TabIndex = 33
+        Me.PictureBox_Pause.TabStop = False
         '
-        'Button_revive_sid
+        'PictureBox_Close
         '
-        Me.Button_revive_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_revive_sid.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_revive_sid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_revive_sid.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_revive_sid.ForeColor = System.Drawing.Color.White
-        Me.Button_revive_sid.Location = New System.Drawing.Point(12, 143)
-        Me.Button_revive_sid.Name = "Button_revive_sid"
-        Me.Button_revive_sid.Size = New System.Drawing.Size(213, 25)
-        Me.Button_revive_sid.TabIndex = 37
-        Me.Button_revive_sid.Text = "Revive sid / reload the session"
-        Me.Button_revive_sid.UseVisualStyleBackColor = False
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 26
+        Me.PictureBox_Close.TabStop = False
         '
-        'Timer_sid
+        'PictureBox_Start
         '
-        Me.Timer_sid.Interval = 1000
+        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
+        Me.PictureBox_Start.Name = "PictureBox_Start"
+        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Start.TabIndex = 27
+        Me.PictureBox_Start.TabStop = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'Form_Tools
         '
@@ -3105,10 +3105,6 @@ Partial Class Form_Tools
         Me.Name = "Form_Tools"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RidevBot tools"
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_general.ResumeLayout(False)
         Me.Panel_general.PerformLayout()
         Me.Panel_Info.ResumeLayout(False)
@@ -3135,12 +3131,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.PerformLayout()
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Title.PerformLayout()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Uridum_ExtraEnnergy_left.ResumeLayout(False)
         Me.Panel_Uridum_ExtraEnnergy_left.PerformLayout()
         Me.Panel_UridiumtoKeep.ResumeLayout(False)
@@ -3161,6 +3151,16 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG3.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
         Me.Panel_GalaxyGates.PerformLayout()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3373,11 +3373,11 @@ Partial Class Form_Tools
     Friend WithEvents Label_separator3 As Label
     Friend WithEvents TextBox_timeGame2 As TextBox
     Friend WithEvents TextBox_timeGame As TextBox
-    Friend WithEvents TextBox_timeticks6 As TextBox
-    Friend WithEvents TextBox_timeticks5 As TextBox
+    Friend WithEvents TextBox_secondsdouble As TextBox
+    Friend WithEvents TextBox_secondsdouble2 As TextBox
     Friend WithEvents Label_separator2 As Label
-    Friend WithEvents TextBox_timeticks4 As TextBox
-    Friend WithEvents TextBox_timeticks3 As TextBox
+    Friend WithEvents TextBox_minutedouble As TextBox
+    Friend WithEvents TextBox_minutedouble2 As TextBox
     Friend WithEvents Button_revive_sid As Button
     Friend WithEvents Timer_sid As Timer
 End Class

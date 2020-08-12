@@ -49,7 +49,6 @@ Partial Class Form_Startup
         Me.PictureBoxUsernamePasswordProfil3view = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil2view = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil1view = New System.Windows.Forms.PictureBox()
-        Me.Button_resetAll_accounts = New System.Windows.Forms.Button()
         Me.PictureBoxUsernamePasswordProfil3eyes = New System.Windows.Forms.PictureBox()
         Me.TextBox_UsernamePasswordProfil3username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil3texte = New System.Windows.Forms.Label()
@@ -62,6 +61,7 @@ Partial Class Form_Startup
         Me.TextBox_UsernamePasswordProfil1username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil1texte = New System.Windows.Forms.Label()
         Me.TextBoxUsernamePasswordProfil1password = New System.Windows.Forms.TextBox()
+        Me.Button_resetAll_accounts = New System.Windows.Forms.Button()
         Me.Credentials_Button = New System.Windows.Forms.Button()
         Me.Portail_Button = New System.Windows.Forms.Button()
         Me.License_Button = New System.Windows.Forms.Button()
@@ -448,20 +448,6 @@ Partial Class Form_Startup
         Me.PictureBoxUsernamePasswordProfil1view.TabIndex = 37
         Me.PictureBoxUsernamePasswordProfil1view.TabStop = False
         '
-        'Button_resetAll_accounts
-        '
-        Me.Button_resetAll_accounts.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_resetAll_accounts.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_resetAll_accounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_resetAll_accounts.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_resetAll_accounts.Location = New System.Drawing.Point(10, 634)
-        Me.Button_resetAll_accounts.Name = "Button_resetAll_accounts"
-        Me.Button_resetAll_accounts.Size = New System.Drawing.Size(160, 25)
-        Me.Button_resetAll_accounts.TabIndex = 36
-        Me.Button_resetAll_accounts.Text = "Reset All Account"
-        Me.Button_resetAll_accounts.UseVisualStyleBackColor = False
-        Me.Button_resetAll_accounts.Visible = False
-        '
         'PictureBoxUsernamePasswordProfil3eyes
         '
         Me.PictureBoxUsernamePasswordProfil3eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -620,6 +606,20 @@ Partial Class Form_Startup
         Me.TextBoxUsernamePasswordProfil1password.Text = Global.DarkorbitBot.My.MySettings.Default.Password1
         Me.TextBoxUsernamePasswordProfil1password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
+        '
+        'Button_resetAll_accounts
+        '
+        Me.Button_resetAll_accounts.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_resetAll_accounts.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_resetAll_accounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_resetAll_accounts.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_resetAll_accounts.Location = New System.Drawing.Point(10, 634)
+        Me.Button_resetAll_accounts.Name = "Button_resetAll_accounts"
+        Me.Button_resetAll_accounts.Size = New System.Drawing.Size(160, 25)
+        Me.Button_resetAll_accounts.TabIndex = 36
+        Me.Button_resetAll_accounts.Text = "Reset All Account"
+        Me.Button_resetAll_accounts.UseVisualStyleBackColor = False
+        Me.Button_resetAll_accounts.Visible = False
         '
         'Credentials_Button
         '
