@@ -1035,7 +1035,7 @@ Partial Class Form_Tools
         Me.CheckBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox8.Location = New System.Drawing.Point(15, 281)
+        Me.CheckBox8.Location = New System.Drawing.Point(15, 282)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(133, 23)
         Me.CheckBox8.TabIndex = 41
