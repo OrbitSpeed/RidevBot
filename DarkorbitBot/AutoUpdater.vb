@@ -104,7 +104,7 @@ Public Class AutoUpdater
         'Throw New NotImplementedException()
     End Sub
 
-    Private Sub WC_Update_ChangeLog_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
+    Private Async Sub WC_Update_ChangeLog_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try
             LastChangeLog = e.Result
@@ -115,7 +115,9 @@ Public Class AutoUpdater
             Form_Tools.TextBox_Changelog.Text = e.Result
 
             If My.Settings.AutoUpdate = True Then
-
+                Dim delay = Task.Delay(500)
+                Await delay
+                'Permet d'attendre 500 ms en + (secure)
                 Button_Update.PerformClick()
 
             End If

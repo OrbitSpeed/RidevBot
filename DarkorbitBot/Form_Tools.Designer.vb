@@ -124,12 +124,10 @@ Partial Class Form_Tools
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label_GG_A_SUPPRIMER = New System.Windows.Forms.Label()
@@ -155,66 +153,68 @@ Partial Class Form_Tools
         Me.Button_StartSpin = New System.Windows.Forms.Button()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Panel_Uridum_ExtraEnnergy_left = New System.Windows.Forms.Panel()
-        Me.Label_uridiumGGS = New System.Windows.Forms.Label()
-        Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
-        Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
         Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
+        Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
+        Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
+        Me.Label_uridiumGGS = New System.Windows.Forms.Label()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.Panel_UridiumtoKeep = New System.Windows.Forms.Panel()
-        Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
-        Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
-        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
-        Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
-        Me.TextBox_spintimes_GGS = New System.Windows.Forms.TextBox()
-        Me.Label_spintime_GGS = New System.Windows.Forms.Label()
+        Me.CheckBox_buildoneandstop = New System.Windows.Forms.CheckBox()
         Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.Label_spintime_GGS = New System.Windows.Forms.Label()
+        Me.TextBox_spintimes_GGS = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CheckBox_PrepareGatesIfBuiled = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
+        Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
+        Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
+        Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Panel_infoPartGG = New System.Windows.Forms.Panel()
-        Me.Label_InfoPartGG = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_InMap = New System.Windows.Forms.Label()
+        Me.Label_InfoPartGG = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG_GG = New System.Windows.Forms.Panel()
-        Me.Label_infoPartGG_CurrentWave = New System.Windows.Forms.Label()
         Me.Label_LivesLeft = New System.Windows.Forms.Label()
+        Me.Label_infoPartGG_CurrentWave = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label_MCB25 = New System.Windows.Forms.Label()
-        Me.Label_MCB50 = New System.Windows.Forms.Label()
-        Me.Label_PLT2021 = New System.Windows.Forms.Label()
-        Me.Label_SAB50 = New System.Windows.Forms.Label()
-        Me.Label_UCB100 = New System.Windows.Forms.Label()
-        Me.Label_Xenomit = New System.Windows.Forms.Label()
-        Me.Label_Logfile = New System.Windows.Forms.Label()
-        Me.Label_Mine = New System.Windows.Forms.Label()
-        Me.Label_Part = New System.Windows.Forms.Label()
-        Me.Label_Nanohull = New System.Windows.Forms.Label()
-        Me.Label_MCB25_Earned = New System.Windows.Forms.Label()
-        Me.Label_MCB50_Earned = New System.Windows.Forms.Label()
-        Me.Label_UCB100_Earned = New System.Windows.Forms.Label()
-        Me.Label_SAB50_Earned = New System.Windows.Forms.Label()
-        Me.Label_PLT2021_Earned = New System.Windows.Forms.Label()
-        Me.Label_Xenomit_Earned = New System.Windows.Forms.Label()
-        Me.Label_Mine_Earned = New System.Windows.Forms.Label()
-        Me.Label_Nanohull_Earned = New System.Windows.Forms.Label()
-        Me.Label_Part_Earned = New System.Windows.Forms.Label()
         Me.Label_Logfile_Earned = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label_Part_Earned = New System.Windows.Forms.Label()
+        Me.Label_Nanohull_Earned = New System.Windows.Forms.Label()
+        Me.Label_Mine_Earned = New System.Windows.Forms.Label()
+        Me.Label_Xenomit_Earned = New System.Windows.Forms.Label()
+        Me.Label_PLT2021_Earned = New System.Windows.Forms.Label()
+        Me.Label_SAB50_Earned = New System.Windows.Forms.Label()
+        Me.Label_UCB100_Earned = New System.Windows.Forms.Label()
+        Me.Label_MCB50_Earned = New System.Windows.Forms.Label()
+        Me.Label_MCB25_Earned = New System.Windows.Forms.Label()
+        Me.Label_Nanohull = New System.Windows.Forms.Label()
+        Me.Label_Part = New System.Windows.Forms.Label()
+        Me.Label_Mine = New System.Windows.Forms.Label()
+        Me.Label_Logfile = New System.Windows.Forms.Label()
+        Me.Label_Xenomit = New System.Windows.Forms.Label()
+        Me.Label_UCB100 = New System.Windows.Forms.Label()
+        Me.Label_SAB50 = New System.Windows.Forms.Label()
+        Me.Label_PLT2021 = New System.Windows.Forms.Label()
+        Me.Label_MCB50 = New System.Windows.Forms.Label()
+        Me.Label_MCB25 = New System.Windows.Forms.Label()
         Me.WebBrowser_galaxyGates2 = New System.Windows.Forms.WebBrowser()
         Me.Panel_infoPartGG2 = New System.Windows.Forms.Panel()
-        Me.Label_InfoPartGG2 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_InMap2 = New System.Windows.Forms.Label()
+        Me.Label_InfoPartGG2 = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG_GG2 = New System.Windows.Forms.Panel()
-        Me.Label_infoPartGG_CurrentWave2 = New System.Windows.Forms.Label()
         Me.Label_LivesLeft2 = New System.Windows.Forms.Label()
+        Me.Label_infoPartGG_CurrentWave2 = New System.Windows.Forms.Label()
         Me.WebBrowser_galaxyGates3 = New System.Windows.Forms.WebBrowser()
         Me.Panel_infoPartGG3 = New System.Windows.Forms.Panel()
-        Me.Label_InfoPartGG3 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_InMap3 = New System.Windows.Forms.Label()
+        Me.Label_InfoPartGG3 = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG_GG3 = New System.Windows.Forms.Panel()
-        Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Label_LivesLeft3 = New System.Windows.Forms.Label()
+        Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -313,7 +313,7 @@ Partial Class Form_Tools
         Me.LogUpdate_button.Name = "LogUpdate_button"
         Me.LogUpdate_button.Size = New System.Drawing.Size(86, 45)
         Me.LogUpdate_button.TabIndex = 27
-        Me.LogUpdate_button.Text = "Log && Update"
+        Me.LogUpdate_button.Text = "Bot's changelog"
         Me.LogUpdate_button.UseVisualStyleBackColor = False
         '
         'NPC_Button
@@ -1554,20 +1554,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
-        '
         'TextBox_DebugGGS
         '
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1616,20 +1602,6 @@ Partial Class Form_Tools
         Me.Panel_Title.Name = "Panel_Title"
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 31
-        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
         '
         'PictureBox_close1
         '
@@ -1977,25 +1949,18 @@ Partial Class Form_Tools
         Me.Panel_Uridum_ExtraEnnergy_left.Size = New System.Drawing.Size(175, 25)
         Me.Panel_Uridum_ExtraEnnergy_left.TabIndex = 51
         '
-        'Label_uridiumGGS
+        'TextBox_ExtraEnergy_GGS
         '
-        Me.Label_uridiumGGS.AutoSize = True
-        Me.Label_uridiumGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_uridiumGGS.Location = New System.Drawing.Point(6, 4)
-        Me.Label_uridiumGGS.Name = "Label_uridiumGGS"
-        Me.Label_uridiumGGS.Size = New System.Drawing.Size(21, 13)
-        Me.Label_uridiumGGS.TabIndex = 1
-        Me.Label_uridiumGGS.Text = "U :"
-        '
-        'Label_ExtraEnergyGGS
-        '
-        Me.Label_ExtraEnergyGGS.AutoSize = True
-        Me.Label_ExtraEnergyGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ExtraEnergyGGS.Location = New System.Drawing.Point(94, 4)
-        Me.Label_ExtraEnergyGGS.Name = "Label_ExtraEnergyGGS"
-        Me.Label_ExtraEnergyGGS.Size = New System.Drawing.Size(25, 13)
-        Me.Label_ExtraEnergyGGS.TabIndex = 3
-        Me.Label_ExtraEnergyGGS.Text = "EE :"
+        Me.TextBox_ExtraEnergy_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_ExtraEnergy_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_ExtraEnergy_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_ExtraEnergy_GGS.Location = New System.Drawing.Point(118, 3)
+        Me.TextBox_ExtraEnergy_GGS.Name = "TextBox_ExtraEnergy_GGS"
+        Me.TextBox_ExtraEnergy_GGS.ReadOnly = True
+        Me.TextBox_ExtraEnergy_GGS.Size = New System.Drawing.Size(53, 16)
+        Me.TextBox_ExtraEnergy_GGS.TabIndex = 6
+        Me.TextBox_ExtraEnergy_GGS.Text = "-1"
+        Me.TextBox_ExtraEnergy_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_uridiumGGS
         '
@@ -2010,18 +1975,25 @@ Partial Class Form_Tools
         Me.TextBox_uridiumGGS.Text = "0"
         Me.TextBox_uridiumGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox_ExtraEnergy_GGS
+        'Label_ExtraEnergyGGS
         '
-        Me.TextBox_ExtraEnergy_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_ExtraEnergy_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_ExtraEnergy_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ExtraEnergy_GGS.Location = New System.Drawing.Point(118, 3)
-        Me.TextBox_ExtraEnergy_GGS.Name = "TextBox_ExtraEnergy_GGS"
-        Me.TextBox_ExtraEnergy_GGS.ReadOnly = True
-        Me.TextBox_ExtraEnergy_GGS.Size = New System.Drawing.Size(53, 16)
-        Me.TextBox_ExtraEnergy_GGS.TabIndex = 6
-        Me.TextBox_ExtraEnergy_GGS.Text = "-1"
-        Me.TextBox_ExtraEnergy_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label_ExtraEnergyGGS.AutoSize = True
+        Me.Label_ExtraEnergyGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_ExtraEnergyGGS.Location = New System.Drawing.Point(94, 4)
+        Me.Label_ExtraEnergyGGS.Name = "Label_ExtraEnergyGGS"
+        Me.Label_ExtraEnergyGGS.Size = New System.Drawing.Size(25, 13)
+        Me.Label_ExtraEnergyGGS.TabIndex = 3
+        Me.Label_ExtraEnergyGGS.Text = "EE :"
+        '
+        'Label_uridiumGGS
+        '
+        Me.Label_uridiumGGS.AutoSize = True
+        Me.Label_uridiumGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_uridiumGGS.Location = New System.Drawing.Point(6, 4)
+        Me.Label_uridiumGGS.Name = "Label_uridiumGGS"
+        Me.Label_uridiumGGS.Size = New System.Drawing.Size(21, 13)
+        Me.Label_uridiumGGS.TabIndex = 1
+        Me.Label_uridiumGGS.Text = "U :"
         '
         'Button_stopSpin
         '
@@ -2058,7 +2030,7 @@ Partial Class Form_Tools
         Me.Panel_UridiumtoKeep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Button_stopSpin)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Button_StartSpin)
-        Me.Panel_UridiumtoKeep.Controls.Add(Me.CheckBox7)
+        Me.Panel_UridiumtoKeep.Controls.Add(Me.CheckBox_buildoneandstop)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_Spintimes_MS_text)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.Label_spintime_GGS)
         Me.Panel_UridiumtoKeep.Controls.Add(Me.TextBox_spintimes_GGS)
@@ -2072,6 +2044,115 @@ Partial Class Form_Tools
         Me.Panel_UridiumtoKeep.Name = "Panel_UridiumtoKeep"
         Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(258, 138)
         Me.Panel_UridiumtoKeep.TabIndex = 66
+        '
+        'CheckBox_buildoneandstop
+        '
+        Me.CheckBox_buildoneandstop.AutoSize = True
+        Me.CheckBox_buildoneandstop.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_buildoneandstop.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_buildoneandstop.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_buildoneandstop.Location = New System.Drawing.Point(5, 44)
+        Me.CheckBox_buildoneandstop.Name = "CheckBox_buildoneandstop"
+        Me.CheckBox_buildoneandstop.Size = New System.Drawing.Size(126, 21)
+        Me.CheckBox_buildoneandstop.TabIndex = 93
+        Me.CheckBox_buildoneandstop.Text = "Build one && Stop"
+        Me.CheckBox_buildoneandstop.UseVisualStyleBackColor = False
+        '
+        'Label_Spintimes_MS_text
+        '
+        Me.Label_Spintimes_MS_text.AutoSize = True
+        Me.Label_Spintimes_MS_text.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Spintimes_MS_text.Location = New System.Drawing.Point(105, 25)
+        Me.Label_Spintimes_MS_text.Name = "Label_Spintimes_MS_text"
+        Me.Label_Spintimes_MS_text.Size = New System.Drawing.Size(22, 13)
+        Me.Label_Spintimes_MS_text.TabIndex = 6
+        Me.Label_Spintimes_MS_text.Text = "ms"
+        '
+        'Label_spintime_GGS
+        '
+        Me.Label_spintime_GGS.AutoSize = True
+        Me.Label_spintime_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_spintime_GGS.Location = New System.Drawing.Point(6, 25)
+        Me.Label_spintime_GGS.Name = "Label_spintime_GGS"
+        Me.Label_spintime_GGS.Size = New System.Drawing.Size(62, 13)
+        Me.Label_spintime_GGS.TabIndex = 37
+        Me.Label_spintime_GGS.Text = "Spin time :"
+        '
+        'TextBox_spintimes_GGS
+        '
+        Me.TextBox_spintimes_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_spintimes_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_spintimes_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_spintimes_GGS.Location = New System.Drawing.Point(68, 24)
+        Me.TextBox_spintimes_GGS.MaxLength = 5
+        Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
+        Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(38, 16)
+        Me.TextBox_spintimes_GGS.TabIndex = 5
+        Me.TextBox_spintimes_GGS.Text = "100"
+        Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(186, 110)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(70, 26)
+        Me.Button1.TabIndex = 84
+        Me.Button1.Text = "Reset"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'CheckBox_PrepareGatesIfBuiled
+        '
+        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
+        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(5, 82)
+        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
+        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(139, 21)
+        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
+        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare gates auto"
+        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
+        '
+        'CheckBox_UseOnlyEE_GGS
+        '
+        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
+        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(5, 63)
+        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
+        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(69, 21)
+        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
+        Me.CheckBox_UseOnlyEE_GGS.Text = "EE only"
+        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
+        '
+        'Label_UridiumtoKeepGGS
+        '
+        Me.Label_UridiumtoKeepGGS.AutoSize = True
+        Me.Label_UridiumtoKeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_UridiumtoKeepGGS.Location = New System.Drawing.Point(6, 4)
+        Me.Label_UridiumtoKeepGGS.Name = "Label_UridiumtoKeepGGS"
+        Me.Label_UridiumtoKeepGGS.Size = New System.Drawing.Size(97, 13)
+        Me.Label_UridiumtoKeepGGS.TabIndex = 1
+        Me.Label_UridiumtoKeepGGS.Text = "Uridium to keep :"
+        '
+        'TextBox_uridiumtokeepGGS
+        '
+        Me.TextBox_uridiumtokeepGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_uridiumtokeepGGS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_uridiumtokeepGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_uridiumtokeepGGS.Location = New System.Drawing.Point(102, 3)
+        Me.TextBox_uridiumtokeepGGS.MaxLength = 7
+        Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
+        Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(55, 16)
+        Me.TextBox_uridiumtokeepGGS.TabIndex = 5
+        Me.TextBox_uridiumtokeepGGS.Text = "1.000.000"
+        Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ComboBox_autospin
         '
@@ -2087,101 +2168,6 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
         '
-        'Label_UridiumtoKeepGGS
-        '
-        Me.Label_UridiumtoKeepGGS.AutoSize = True
-        Me.Label_UridiumtoKeepGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_UridiumtoKeepGGS.Location = New System.Drawing.Point(6, 4)
-        Me.Label_UridiumtoKeepGGS.Name = "Label_UridiumtoKeepGGS"
-        Me.Label_UridiumtoKeepGGS.Size = New System.Drawing.Size(97, 13)
-        Me.Label_UridiumtoKeepGGS.TabIndex = 1
-        Me.Label_UridiumtoKeepGGS.Text = "Uridium to keep :"
-        '
-        'CheckBox_UseOnlyEE_GGS
-        '
-        Me.CheckBox_UseOnlyEE_GGS.AutoSize = True
-        Me.CheckBox_UseOnlyEE_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(5, 63)
-        Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
-        Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(69, 21)
-        Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
-        Me.CheckBox_UseOnlyEE_GGS.Text = "EE only"
-        Me.CheckBox_UseOnlyEE_GGS.UseVisualStyleBackColor = False
-        '
-        'CheckBox_PrepareGatesIfBuiled
-        '
-        Me.CheckBox_PrepareGatesIfBuiled.AutoSize = True
-        Me.CheckBox_PrepareGatesIfBuiled.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_PrepareGatesIfBuiled.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_PrepareGatesIfBuiled.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_PrepareGatesIfBuiled.Location = New System.Drawing.Point(5, 82)
-        Me.CheckBox_PrepareGatesIfBuiled.Name = "CheckBox_PrepareGatesIfBuiled"
-        Me.CheckBox_PrepareGatesIfBuiled.Size = New System.Drawing.Size(139, 21)
-        Me.CheckBox_PrepareGatesIfBuiled.TabIndex = 36
-        Me.CheckBox_PrepareGatesIfBuiled.Text = "Prepare gates auto"
-        Me.CheckBox_PrepareGatesIfBuiled.UseVisualStyleBackColor = False
-        '
-        'TextBox_uridiumtokeepGGS
-        '
-        Me.TextBox_uridiumtokeepGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_uridiumtokeepGGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_uridiumtokeepGGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_uridiumtokeepGGS.Location = New System.Drawing.Point(102, 3)
-        Me.TextBox_uridiumtokeepGGS.MaxLength = 7
-        Me.TextBox_uridiumtokeepGGS.Name = "TextBox_uridiumtokeepGGS"
-        Me.TextBox_uridiumtokeepGGS.Size = New System.Drawing.Size(55, 16)
-        Me.TextBox_uridiumtokeepGGS.TabIndex = 5
-        Me.TextBox_uridiumtokeepGGS.Text = "1.000.000"
-        Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_spintimes_GGS
-        '
-        Me.TextBox_spintimes_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_spintimes_GGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_spintimes_GGS.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_spintimes_GGS.Location = New System.Drawing.Point(68, 24)
-        Me.TextBox_spintimes_GGS.MaxLength = 5
-        Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
-        Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(38, 16)
-        Me.TextBox_spintimes_GGS.TabIndex = 5
-        Me.TextBox_spintimes_GGS.Text = "99999"
-        Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_spintime_GGS
-        '
-        Me.Label_spintime_GGS.AutoSize = True
-        Me.Label_spintime_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_spintime_GGS.Location = New System.Drawing.Point(6, 25)
-        Me.Label_spintime_GGS.Name = "Label_spintime_GGS"
-        Me.Label_spintime_GGS.Size = New System.Drawing.Size(62, 13)
-        Me.Label_spintime_GGS.TabIndex = 37
-        Me.Label_spintime_GGS.Text = "Spin time :"
-        '
-        'Label_Spintimes_MS_text
-        '
-        Me.Label_Spintimes_MS_text.AutoSize = True
-        Me.Label_Spintimes_MS_text.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Spintimes_MS_text.Location = New System.Drawing.Point(105, 25)
-        Me.Label_Spintimes_MS_text.Name = "Label_Spintimes_MS_text"
-        Me.Label_Spintimes_MS_text.Size = New System.Drawing.Size(22, 13)
-        Me.Label_Spintimes_MS_text.TabIndex = 6
-        Me.Label_Spintimes_MS_text.Text = "ms"
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox7.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox7.Location = New System.Drawing.Point(5, 44)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(126, 21)
-        Me.CheckBox7.TabIndex = 93
-        Me.CheckBox7.Text = "Build one && Stop"
-        Me.CheckBox7.UseVisualStyleBackColor = False
-        '
         'Panel_infoPartGG
         '
         Me.Panel_infoPartGG.BackColor = System.Drawing.Color.White
@@ -2194,17 +2180,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG.TabIndex = 78
         '
-        'Label_InfoPartGG
-        '
-        Me.Label_InfoPartGG.AutoSize = True
-        Me.Label_InfoPartGG.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_InfoPartGG.ForeColor = System.Drawing.Color.Black
-        Me.Label_InfoPartGG.Location = New System.Drawing.Point(2, 2)
-        Me.Label_InfoPartGG.Name = "Label_InfoPartGG"
-        Me.Label_InfoPartGG.Size = New System.Drawing.Size(64, 15)
-        Me.Label_InfoPartGG.TabIndex = 77
-        Me.Label_InfoPartGG.Text = "Part : 0 / 0"
-        '
         'Label_infoPartGG_InMap
         '
         Me.Label_infoPartGG_InMap.AutoSize = True
@@ -2215,6 +2190,17 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_InMap.Size = New System.Drawing.Size(66, 15)
         Me.Label_infoPartGG_InMap.TabIndex = 78
         Me.Label_infoPartGG_InMap.Text = "On map : 0"
+        '
+        'Label_InfoPartGG
+        '
+        Me.Label_InfoPartGG.AutoSize = True
+        Me.Label_InfoPartGG.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_InfoPartGG.ForeColor = System.Drawing.Color.Black
+        Me.Label_InfoPartGG.Location = New System.Drawing.Point(2, 2)
+        Me.Label_InfoPartGG.Name = "Label_InfoPartGG"
+        Me.Label_InfoPartGG.Size = New System.Drawing.Size(64, 15)
+        Me.Label_InfoPartGG.TabIndex = 77
+        Me.Label_InfoPartGG.Text = "Part : 0 / 0"
         '
         'Panel_infoPartGG_GG
         '
@@ -2228,17 +2214,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG_GG.TabIndex = 79
         '
-        'Label_infoPartGG_CurrentWave
-        '
-        Me.Label_infoPartGG_CurrentWave.AutoSize = True
-        Me.Label_infoPartGG_CurrentWave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_infoPartGG_CurrentWave.ForeColor = System.Drawing.Color.Black
-        Me.Label_infoPartGG_CurrentWave.Location = New System.Drawing.Point(2, 2)
-        Me.Label_infoPartGG_CurrentWave.Name = "Label_infoPartGG_CurrentWave"
-        Me.Label_infoPartGG_CurrentWave.Size = New System.Drawing.Size(73, 15)
-        Me.Label_infoPartGG_CurrentWave.TabIndex = 77
-        Me.Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 0"
-        '
         'Label_LivesLeft
         '
         Me.Label_LivesLeft.AutoSize = True
@@ -2249,6 +2224,17 @@ Partial Class Form_Tools
         Me.Label_LivesLeft.Size = New System.Drawing.Size(79, 15)
         Me.Label_LivesLeft.TabIndex = 78
         Me.Label_LivesLeft.Text = "Lives left : -1"
+        '
+        'Label_infoPartGG_CurrentWave
+        '
+        Me.Label_infoPartGG_CurrentWave.AutoSize = True
+        Me.Label_infoPartGG_CurrentWave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_infoPartGG_CurrentWave.ForeColor = System.Drawing.Color.Black
+        Me.Label_infoPartGG_CurrentWave.Location = New System.Drawing.Point(2, 2)
+        Me.Label_infoPartGG_CurrentWave.Name = "Label_infoPartGG_CurrentWave"
+        Me.Label_infoPartGG_CurrentWave.Size = New System.Drawing.Size(73, 15)
+        Me.Label_infoPartGG_CurrentWave.TabIndex = 77
+        Me.Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 0"
         '
         'TextBox_WinGGS
         '
@@ -2307,211 +2293,17 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(175, 161)
         Me.TableLayoutPanel1.TabIndex = 83
         '
-        'Label_MCB25
+        'Label_Logfile_Earned
         '
-        Me.Label_MCB25.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB25.AutoSize = True
-        Me.Label_MCB25.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB25.Location = New System.Drawing.Point(20, 2)
-        Me.Label_MCB25.Name = "Label_MCB25"
-        Me.Label_MCB25.Size = New System.Drawing.Size(48, 13)
-        Me.Label_MCB25.TabIndex = 81
-        Me.Label_MCB25.Text = "MCB-25"
-        '
-        'Label_MCB50
-        '
-        Me.Label_MCB50.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB50.AutoSize = True
-        Me.Label_MCB50.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB50.Location = New System.Drawing.Point(20, 18)
-        Me.Label_MCB50.Name = "Label_MCB50"
-        Me.Label_MCB50.Size = New System.Drawing.Size(48, 13)
-        Me.Label_MCB50.TabIndex = 82
-        Me.Label_MCB50.Text = "MCB-50"
-        '
-        'Label_PLT2021
-        '
-        Me.Label_PLT2021.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_PLT2021.AutoSize = True
-        Me.Label_PLT2021.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_PLT2021.Location = New System.Drawing.Point(17, 66)
-        Me.Label_PLT2021.Name = "Label_PLT2021"
-        Me.Label_PLT2021.Size = New System.Drawing.Size(53, 13)
-        Me.Label_PLT2021.TabIndex = 85
-        Me.Label_PLT2021.Text = "PLT-2021"
-        '
-        'Label_SAB50
-        '
-        Me.Label_SAB50.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_SAB50.AutoSize = True
-        Me.Label_SAB50.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_SAB50.Location = New System.Drawing.Point(22, 50)
-        Me.Label_SAB50.Name = "Label_SAB50"
-        Me.Label_SAB50.Size = New System.Drawing.Size(44, 13)
-        Me.Label_SAB50.TabIndex = 83
-        Me.Label_SAB50.Text = "SAB-50"
-        '
-        'Label_UCB100
-        '
-        Me.Label_UCB100.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_UCB100.AutoSize = True
-        Me.Label_UCB100.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_UCB100.Location = New System.Drawing.Point(18, 34)
-        Me.Label_UCB100.Name = "Label_UCB100"
-        Me.Label_UCB100.Size = New System.Drawing.Size(51, 13)
-        Me.Label_UCB100.TabIndex = 84
-        Me.Label_UCB100.Text = "UCB-100"
-        '
-        'Label_Xenomit
-        '
-        Me.Label_Xenomit.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Xenomit.AutoSize = True
-        Me.Label_Xenomit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Xenomit.Location = New System.Drawing.Point(18, 82)
-        Me.Label_Xenomit.Name = "Label_Xenomit"
-        Me.Label_Xenomit.Size = New System.Drawing.Size(51, 13)
-        Me.Label_Xenomit.TabIndex = 90
-        Me.Label_Xenomit.Text = "Xenomit"
-        '
-        'Label_Logfile
-        '
-        Me.Label_Logfile.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Logfile.AutoSize = True
-        Me.Label_Logfile.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Logfile.Location = New System.Drawing.Point(22, 146)
-        Me.Label_Logfile.Name = "Label_Logfile"
-        Me.Label_Logfile.Size = New System.Drawing.Size(43, 13)
-        Me.Label_Logfile.TabIndex = 89
-        Me.Label_Logfile.Text = "Logfile"
-        '
-        'Label_Mine
-        '
-        Me.Label_Mine.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Mine.AutoSize = True
-        Me.Label_Mine.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Mine.Location = New System.Drawing.Point(27, 98)
-        Me.Label_Mine.Name = "Label_Mine"
-        Me.Label_Mine.Size = New System.Drawing.Size(34, 13)
-        Me.Label_Mine.TabIndex = 86
-        Me.Label_Mine.Text = "Mine"
-        '
-        'Label_Part
-        '
-        Me.Label_Part.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Part.AutoSize = True
-        Me.Label_Part.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Part.Location = New System.Drawing.Point(30, 130)
-        Me.Label_Part.Name = "Label_Part"
-        Me.Label_Part.Size = New System.Drawing.Size(28, 13)
-        Me.Label_Part.TabIndex = 88
-        Me.Label_Part.Text = "Part"
-        '
-        'Label_Nanohull
-        '
-        Me.Label_Nanohull.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Nanohull.AutoSize = True
-        Me.Label_Nanohull.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Nanohull.Location = New System.Drawing.Point(16, 114)
-        Me.Label_Nanohull.Name = "Label_Nanohull"
-        Me.Label_Nanohull.Size = New System.Drawing.Size(56, 13)
-        Me.Label_Nanohull.TabIndex = 87
-        Me.Label_Nanohull.Text = "Nanohull"
-        '
-        'Label_MCB25_Earned
-        '
-        Me.Label_MCB25_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB25_Earned.AutoSize = True
-        Me.Label_MCB25_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB25", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_MCB25_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB25_Earned.Location = New System.Drawing.Point(124, 2)
-        Me.Label_MCB25_Earned.Name = "Label_MCB25_Earned"
-        Me.Label_MCB25_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_MCB25_Earned.TabIndex = 83
-        Me.Label_MCB25_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB25
-        '
-        'Label_MCB50_Earned
-        '
-        Me.Label_MCB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB50_Earned.AutoSize = True
-        Me.Label_MCB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_MCB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB50_Earned.Location = New System.Drawing.Point(124, 18)
-        Me.Label_MCB50_Earned.Name = "Label_MCB50_Earned"
-        Me.Label_MCB50_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_MCB50_Earned.TabIndex = 91
-        Me.Label_MCB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB50
-        '
-        'Label_UCB100_Earned
-        '
-        Me.Label_UCB100_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_UCB100_Earned.AutoSize = True
-        Me.Label_UCB100_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "UCB100", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_UCB100_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_UCB100_Earned.Location = New System.Drawing.Point(124, 34)
-        Me.Label_UCB100_Earned.Name = "Label_UCB100_Earned"
-        Me.Label_UCB100_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_UCB100_Earned.TabIndex = 92
-        Me.Label_UCB100_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.UCB100
-        '
-        'Label_SAB50_Earned
-        '
-        Me.Label_SAB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_SAB50_Earned.AutoSize = True
-        Me.Label_SAB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "SAB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_SAB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_SAB50_Earned.Location = New System.Drawing.Point(124, 50)
-        Me.Label_SAB50_Earned.Name = "Label_SAB50_Earned"
-        Me.Label_SAB50_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_SAB50_Earned.TabIndex = 93
-        Me.Label_SAB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.SAB50
-        '
-        'Label_PLT2021_Earned
-        '
-        Me.Label_PLT2021_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_PLT2021_Earned.AutoSize = True
-        Me.Label_PLT2021_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "PLT21", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_PLT2021_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_PLT2021_Earned.Location = New System.Drawing.Point(124, 66)
-        Me.Label_PLT2021_Earned.Name = "Label_PLT2021_Earned"
-        Me.Label_PLT2021_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_PLT2021_Earned.TabIndex = 94
-        Me.Label_PLT2021_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.PLT21
-        '
-        'Label_Xenomit_Earned
-        '
-        Me.Label_Xenomit_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Xenomit_Earned.AutoSize = True
-        Me.Label_Xenomit_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Xenomit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Xenomit_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Xenomit_Earned.Location = New System.Drawing.Point(124, 82)
-        Me.Label_Xenomit_Earned.Name = "Label_Xenomit_Earned"
-        Me.Label_Xenomit_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Xenomit_Earned.TabIndex = 95
-        Me.Label_Xenomit_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Xenomit
-        '
-        'Label_Mine_Earned
-        '
-        Me.Label_Mine_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Mine_Earned.AutoSize = True
-        Me.Label_Mine_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Mine", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Mine_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Mine_Earned.Location = New System.Drawing.Point(124, 98)
-        Me.Label_Mine_Earned.Name = "Label_Mine_Earned"
-        Me.Label_Mine_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Mine_Earned.TabIndex = 96
-        Me.Label_Mine_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Mine
-        '
-        'Label_Nanohull_Earned
-        '
-        Me.Label_Nanohull_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Nanohull_Earned.AutoSize = True
-        Me.Label_Nanohull_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Nanohull", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Nanohull_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Nanohull_Earned.Location = New System.Drawing.Point(124, 114)
-        Me.Label_Nanohull_Earned.Name = "Label_Nanohull_Earned"
-        Me.Label_Nanohull_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Nanohull_Earned.TabIndex = 97
-        Me.Label_Nanohull_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Nanohull
+        Me.Label_Logfile_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Logfile_Earned.AutoSize = True
+        Me.Label_Logfile_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Logfile_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Logfile_Earned.Location = New System.Drawing.Point(124, 146)
+        Me.Label_Logfile_Earned.Name = "Label_Logfile_Earned"
+        Me.Label_Logfile_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Logfile_Earned.TabIndex = 99
+        Me.Label_Logfile_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
         '
         'Label_Part_Earned
         '
@@ -2525,31 +2317,211 @@ Partial Class Form_Tools
         Me.Label_Part_Earned.TabIndex = 98
         Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Part
         '
-        'Label_Logfile_Earned
+        'Label_Nanohull_Earned
         '
-        Me.Label_Logfile_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Logfile_Earned.AutoSize = True
-        Me.Label_Logfile_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Logfile_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Logfile_Earned.Location = New System.Drawing.Point(124, 146)
-        Me.Label_Logfile_Earned.Name = "Label_Logfile_Earned"
-        Me.Label_Logfile_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Logfile_Earned.TabIndex = 99
-        Me.Label_Logfile_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
+        Me.Label_Nanohull_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Nanohull_Earned.AutoSize = True
+        Me.Label_Nanohull_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Nanohull", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Nanohull_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Nanohull_Earned.Location = New System.Drawing.Point(124, 114)
+        Me.Label_Nanohull_Earned.Name = "Label_Nanohull_Earned"
+        Me.Label_Nanohull_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Nanohull_Earned.TabIndex = 97
+        Me.Label_Nanohull_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Nanohull
         '
-        'Button1
+        'Label_Mine_Earned
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(186, 110)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(70, 26)
-        Me.Button1.TabIndex = 84
-        Me.Button1.Text = "Reset"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Label_Mine_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Mine_Earned.AutoSize = True
+        Me.Label_Mine_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Mine", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Mine_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Mine_Earned.Location = New System.Drawing.Point(124, 98)
+        Me.Label_Mine_Earned.Name = "Label_Mine_Earned"
+        Me.Label_Mine_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Mine_Earned.TabIndex = 96
+        Me.Label_Mine_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Mine
+        '
+        'Label_Xenomit_Earned
+        '
+        Me.Label_Xenomit_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Xenomit_Earned.AutoSize = True
+        Me.Label_Xenomit_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Xenomit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Xenomit_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Xenomit_Earned.Location = New System.Drawing.Point(124, 82)
+        Me.Label_Xenomit_Earned.Name = "Label_Xenomit_Earned"
+        Me.Label_Xenomit_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Xenomit_Earned.TabIndex = 95
+        Me.Label_Xenomit_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Xenomit
+        '
+        'Label_PLT2021_Earned
+        '
+        Me.Label_PLT2021_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_PLT2021_Earned.AutoSize = True
+        Me.Label_PLT2021_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "PLT21", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_PLT2021_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_PLT2021_Earned.Location = New System.Drawing.Point(124, 66)
+        Me.Label_PLT2021_Earned.Name = "Label_PLT2021_Earned"
+        Me.Label_PLT2021_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_PLT2021_Earned.TabIndex = 94
+        Me.Label_PLT2021_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.PLT21
+        '
+        'Label_SAB50_Earned
+        '
+        Me.Label_SAB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_SAB50_Earned.AutoSize = True
+        Me.Label_SAB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "SAB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_SAB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_SAB50_Earned.Location = New System.Drawing.Point(124, 50)
+        Me.Label_SAB50_Earned.Name = "Label_SAB50_Earned"
+        Me.Label_SAB50_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_SAB50_Earned.TabIndex = 93
+        Me.Label_SAB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.SAB50
+        '
+        'Label_UCB100_Earned
+        '
+        Me.Label_UCB100_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_UCB100_Earned.AutoSize = True
+        Me.Label_UCB100_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "UCB100", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_UCB100_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_UCB100_Earned.Location = New System.Drawing.Point(124, 34)
+        Me.Label_UCB100_Earned.Name = "Label_UCB100_Earned"
+        Me.Label_UCB100_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_UCB100_Earned.TabIndex = 92
+        Me.Label_UCB100_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.UCB100
+        '
+        'Label_MCB50_Earned
+        '
+        Me.Label_MCB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB50_Earned.AutoSize = True
+        Me.Label_MCB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_MCB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB50_Earned.Location = New System.Drawing.Point(124, 18)
+        Me.Label_MCB50_Earned.Name = "Label_MCB50_Earned"
+        Me.Label_MCB50_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_MCB50_Earned.TabIndex = 91
+        Me.Label_MCB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB50
+        '
+        'Label_MCB25_Earned
+        '
+        Me.Label_MCB25_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB25_Earned.AutoSize = True
+        Me.Label_MCB25_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB25", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_MCB25_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB25_Earned.Location = New System.Drawing.Point(124, 2)
+        Me.Label_MCB25_Earned.Name = "Label_MCB25_Earned"
+        Me.Label_MCB25_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_MCB25_Earned.TabIndex = 83
+        Me.Label_MCB25_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB25
+        '
+        'Label_Nanohull
+        '
+        Me.Label_Nanohull.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Nanohull.AutoSize = True
+        Me.Label_Nanohull.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Nanohull.Location = New System.Drawing.Point(16, 114)
+        Me.Label_Nanohull.Name = "Label_Nanohull"
+        Me.Label_Nanohull.Size = New System.Drawing.Size(56, 13)
+        Me.Label_Nanohull.TabIndex = 87
+        Me.Label_Nanohull.Text = "Nanohull"
+        '
+        'Label_Part
+        '
+        Me.Label_Part.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Part.AutoSize = True
+        Me.Label_Part.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Part.Location = New System.Drawing.Point(30, 130)
+        Me.Label_Part.Name = "Label_Part"
+        Me.Label_Part.Size = New System.Drawing.Size(28, 13)
+        Me.Label_Part.TabIndex = 88
+        Me.Label_Part.Text = "Part"
+        '
+        'Label_Mine
+        '
+        Me.Label_Mine.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Mine.AutoSize = True
+        Me.Label_Mine.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Mine.Location = New System.Drawing.Point(27, 98)
+        Me.Label_Mine.Name = "Label_Mine"
+        Me.Label_Mine.Size = New System.Drawing.Size(34, 13)
+        Me.Label_Mine.TabIndex = 86
+        Me.Label_Mine.Text = "Mine"
+        '
+        'Label_Logfile
+        '
+        Me.Label_Logfile.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Logfile.AutoSize = True
+        Me.Label_Logfile.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Logfile.Location = New System.Drawing.Point(22, 146)
+        Me.Label_Logfile.Name = "Label_Logfile"
+        Me.Label_Logfile.Size = New System.Drawing.Size(43, 13)
+        Me.Label_Logfile.TabIndex = 89
+        Me.Label_Logfile.Text = "Logfile"
+        '
+        'Label_Xenomit
+        '
+        Me.Label_Xenomit.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Xenomit.AutoSize = True
+        Me.Label_Xenomit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Xenomit.Location = New System.Drawing.Point(18, 82)
+        Me.Label_Xenomit.Name = "Label_Xenomit"
+        Me.Label_Xenomit.Size = New System.Drawing.Size(51, 13)
+        Me.Label_Xenomit.TabIndex = 90
+        Me.Label_Xenomit.Text = "Xenomit"
+        '
+        'Label_UCB100
+        '
+        Me.Label_UCB100.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_UCB100.AutoSize = True
+        Me.Label_UCB100.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_UCB100.Location = New System.Drawing.Point(18, 34)
+        Me.Label_UCB100.Name = "Label_UCB100"
+        Me.Label_UCB100.Size = New System.Drawing.Size(51, 13)
+        Me.Label_UCB100.TabIndex = 84
+        Me.Label_UCB100.Text = "UCB-100"
+        '
+        'Label_SAB50
+        '
+        Me.Label_SAB50.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_SAB50.AutoSize = True
+        Me.Label_SAB50.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_SAB50.Location = New System.Drawing.Point(22, 50)
+        Me.Label_SAB50.Name = "Label_SAB50"
+        Me.Label_SAB50.Size = New System.Drawing.Size(44, 13)
+        Me.Label_SAB50.TabIndex = 83
+        Me.Label_SAB50.Text = "SAB-50"
+        '
+        'Label_PLT2021
+        '
+        Me.Label_PLT2021.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_PLT2021.AutoSize = True
+        Me.Label_PLT2021.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_PLT2021.Location = New System.Drawing.Point(17, 66)
+        Me.Label_PLT2021.Name = "Label_PLT2021"
+        Me.Label_PLT2021.Size = New System.Drawing.Size(53, 13)
+        Me.Label_PLT2021.TabIndex = 85
+        Me.Label_PLT2021.Text = "PLT-2021"
+        '
+        'Label_MCB50
+        '
+        Me.Label_MCB50.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB50.AutoSize = True
+        Me.Label_MCB50.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB50.Location = New System.Drawing.Point(20, 18)
+        Me.Label_MCB50.Name = "Label_MCB50"
+        Me.Label_MCB50.Size = New System.Drawing.Size(48, 13)
+        Me.Label_MCB50.TabIndex = 82
+        Me.Label_MCB50.Text = "MCB-50"
+        '
+        'Label_MCB25
+        '
+        Me.Label_MCB25.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB25.AutoSize = True
+        Me.Label_MCB25.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB25.Location = New System.Drawing.Point(20, 2)
+        Me.Label_MCB25.Name = "Label_MCB25"
+        Me.Label_MCB25.Size = New System.Drawing.Size(48, 13)
+        Me.Label_MCB25.TabIndex = 81
+        Me.Label_MCB25.Text = "MCB-25"
         '
         'WebBrowser_galaxyGates2
         '
@@ -2573,17 +2545,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG2.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG2.TabIndex = 86
         '
-        'Label_InfoPartGG2
-        '
-        Me.Label_InfoPartGG2.AutoSize = True
-        Me.Label_InfoPartGG2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_InfoPartGG2.ForeColor = System.Drawing.Color.Black
-        Me.Label_InfoPartGG2.Location = New System.Drawing.Point(2, 2)
-        Me.Label_InfoPartGG2.Name = "Label_InfoPartGG2"
-        Me.Label_InfoPartGG2.Size = New System.Drawing.Size(64, 15)
-        Me.Label_InfoPartGG2.TabIndex = 77
-        Me.Label_InfoPartGG2.Text = "Part : 0 / 0"
-        '
         'Label_infoPartGG_InMap2
         '
         Me.Label_infoPartGG_InMap2.AutoSize = True
@@ -2594,6 +2555,17 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_InMap2.Size = New System.Drawing.Size(66, 15)
         Me.Label_infoPartGG_InMap2.TabIndex = 78
         Me.Label_infoPartGG_InMap2.Text = "On map : 0"
+        '
+        'Label_InfoPartGG2
+        '
+        Me.Label_InfoPartGG2.AutoSize = True
+        Me.Label_InfoPartGG2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_InfoPartGG2.ForeColor = System.Drawing.Color.Black
+        Me.Label_InfoPartGG2.Location = New System.Drawing.Point(2, 2)
+        Me.Label_InfoPartGG2.Name = "Label_InfoPartGG2"
+        Me.Label_InfoPartGG2.Size = New System.Drawing.Size(64, 15)
+        Me.Label_InfoPartGG2.TabIndex = 77
+        Me.Label_InfoPartGG2.Text = "Part : 0 / 0"
         '
         'Panel_infoPartGG_GG2
         '
@@ -2607,17 +2579,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG2.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG_GG2.TabIndex = 87
         '
-        'Label_infoPartGG_CurrentWave2
-        '
-        Me.Label_infoPartGG_CurrentWave2.AutoSize = True
-        Me.Label_infoPartGG_CurrentWave2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_infoPartGG_CurrentWave2.ForeColor = System.Drawing.Color.Black
-        Me.Label_infoPartGG_CurrentWave2.Location = New System.Drawing.Point(2, 2)
-        Me.Label_infoPartGG_CurrentWave2.Name = "Label_infoPartGG_CurrentWave2"
-        Me.Label_infoPartGG_CurrentWave2.Size = New System.Drawing.Size(73, 15)
-        Me.Label_infoPartGG_CurrentWave2.TabIndex = 77
-        Me.Label_infoPartGG_CurrentWave2.Text = "Wave : 0 / 0"
-        '
         'Label_LivesLeft2
         '
         Me.Label_LivesLeft2.AutoSize = True
@@ -2628,6 +2589,17 @@ Partial Class Form_Tools
         Me.Label_LivesLeft2.Size = New System.Drawing.Size(79, 15)
         Me.Label_LivesLeft2.TabIndex = 78
         Me.Label_LivesLeft2.Text = "Lives left : -1"
+        '
+        'Label_infoPartGG_CurrentWave2
+        '
+        Me.Label_infoPartGG_CurrentWave2.AutoSize = True
+        Me.Label_infoPartGG_CurrentWave2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_infoPartGG_CurrentWave2.ForeColor = System.Drawing.Color.Black
+        Me.Label_infoPartGG_CurrentWave2.Location = New System.Drawing.Point(2, 2)
+        Me.Label_infoPartGG_CurrentWave2.Name = "Label_infoPartGG_CurrentWave2"
+        Me.Label_infoPartGG_CurrentWave2.Size = New System.Drawing.Size(73, 15)
+        Me.Label_infoPartGG_CurrentWave2.TabIndex = 77
+        Me.Label_infoPartGG_CurrentWave2.Text = "Wave : 0 / 0"
         '
         'WebBrowser_galaxyGates3
         '
@@ -2651,17 +2623,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG3.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG3.TabIndex = 89
         '
-        'Label_InfoPartGG3
-        '
-        Me.Label_InfoPartGG3.AutoSize = True
-        Me.Label_InfoPartGG3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_InfoPartGG3.ForeColor = System.Drawing.Color.Black
-        Me.Label_InfoPartGG3.Location = New System.Drawing.Point(2, 2)
-        Me.Label_InfoPartGG3.Name = "Label_InfoPartGG3"
-        Me.Label_InfoPartGG3.Size = New System.Drawing.Size(64, 15)
-        Me.Label_InfoPartGG3.TabIndex = 77
-        Me.Label_InfoPartGG3.Text = "Part : 0 / 0"
-        '
         'Label_infoPartGG_InMap3
         '
         Me.Label_infoPartGG_InMap3.AutoSize = True
@@ -2672,6 +2633,17 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_InMap3.Size = New System.Drawing.Size(66, 15)
         Me.Label_infoPartGG_InMap3.TabIndex = 78
         Me.Label_infoPartGG_InMap3.Text = "On map : 0"
+        '
+        'Label_InfoPartGG3
+        '
+        Me.Label_InfoPartGG3.AutoSize = True
+        Me.Label_InfoPartGG3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_InfoPartGG3.ForeColor = System.Drawing.Color.Black
+        Me.Label_InfoPartGG3.Location = New System.Drawing.Point(2, 2)
+        Me.Label_InfoPartGG3.Name = "Label_InfoPartGG3"
+        Me.Label_InfoPartGG3.Size = New System.Drawing.Size(64, 15)
+        Me.Label_InfoPartGG3.TabIndex = 77
+        Me.Label_InfoPartGG3.Text = "Part : 0 / 0"
         '
         'Panel_infoPartGG_GG3
         '
@@ -2685,17 +2657,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG3.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG_GG3.TabIndex = 90
         '
-        'Label_infoPartGG_CurrentWave3
-        '
-        Me.Label_infoPartGG_CurrentWave3.AutoSize = True
-        Me.Label_infoPartGG_CurrentWave3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_infoPartGG_CurrentWave3.ForeColor = System.Drawing.Color.Black
-        Me.Label_infoPartGG_CurrentWave3.Location = New System.Drawing.Point(2, 2)
-        Me.Label_infoPartGG_CurrentWave3.Name = "Label_infoPartGG_CurrentWave3"
-        Me.Label_infoPartGG_CurrentWave3.Size = New System.Drawing.Size(73, 15)
-        Me.Label_infoPartGG_CurrentWave3.TabIndex = 77
-        Me.Label_infoPartGG_CurrentWave3.Text = "Wave : 0 / 0"
-        '
         'Label_LivesLeft3
         '
         Me.Label_LivesLeft3.AutoSize = True
@@ -2706,6 +2667,17 @@ Partial Class Form_Tools
         Me.Label_LivesLeft3.Size = New System.Drawing.Size(79, 15)
         Me.Label_LivesLeft3.TabIndex = 78
         Me.Label_LivesLeft3.Text = "Lives left : -1"
+        '
+        'Label_infoPartGG_CurrentWave3
+        '
+        Me.Label_infoPartGG_CurrentWave3.AutoSize = True
+        Me.Label_infoPartGG_CurrentWave3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_infoPartGG_CurrentWave3.ForeColor = System.Drawing.Color.Black
+        Me.Label_infoPartGG_CurrentWave3.Location = New System.Drawing.Point(2, 2)
+        Me.Label_infoPartGG_CurrentWave3.Name = "Label_infoPartGG_CurrentWave3"
+        Me.Label_infoPartGG_CurrentWave3.Size = New System.Drawing.Size(73, 15)
+        Me.Label_infoPartGG_CurrentWave3.TabIndex = 77
+        Me.Label_infoPartGG_CurrentWave3.Text = "Wave : 0 / 0"
         '
         'Panel_GalaxyGates
         '
@@ -2751,6 +2723,34 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Size = New System.Drawing.Size(995, 514)
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'Form_Tools
         '
@@ -2987,7 +2987,7 @@ Partial Class Form_Tools
     Friend WithEvents Button_stopSpin As Button
     Friend WithEvents Button_PrepareGates As Button
     Friend WithEvents Panel_UridiumtoKeep As Panel
-    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox_buildoneandstop As CheckBox
     Friend WithEvents Label_Spintimes_MS_text As Label
     Friend WithEvents Label_spintime_GGS As Label
     Friend WithEvents TextBox_spintimes_GGS As TextBox

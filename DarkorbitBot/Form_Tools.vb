@@ -2044,10 +2044,10 @@ Public Class Form_Tools
             ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
                 BackgroundWorkerAutospin = True
                 MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            ElseIf Val(TextBox_spintimes_GGS.Text) < 150 Then
-                TextBox_spintimes_GGS.Text = 150
+            ElseIf Val(TextBox_spintimes_GGS.Text) < 100 Then
+                TextBox_spintimes_GGS.Text = 100
                 BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, you can't put less than 150ms.{vbNewLine}Starting with 150ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                MessageBox.Show($"Error, you can't put less than 150ms.{vbNewLine}Starting with 100ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Else
                 BackgroundWorkerAutospin = False
             End If
@@ -2087,7 +2087,7 @@ Public Class Form_Tools
 
                     Case Else
                         BackgroundWorkerAutospin = False
-                        MsgBox("Erreur, Aucune GG selectionnée")
+                        MessageBox.Show("Erreur, Aucune GG selectionnée", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Select
                 'If BackgroundWorkerAutospin = True Then
                 '    ClickGG("alpha", 250)
@@ -2096,7 +2096,7 @@ Public Class Form_Tools
                 BackgroundWorkerAutospin = False
             End If
         Else
-            MsgBox("Déjà lancé")
+            MessageBox.Show($"GG Snipper already started{vbNewLine}Stop it before starting it again", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Button_StartSpin.Enabled = True
 
             ' Console.WriteLine("Already used")
@@ -2109,7 +2109,6 @@ Public Class Form_Tools
         Button_stopSpin.Enabled = False
         ComboBox_autospin.Enabled = True
 
-
         If BackgroundWorkerAutospin = True Then
             BackgroundWorkerAutospin = False
             MessageBox.Show("Autospinner deactivated.")
@@ -2119,7 +2118,10 @@ Public Class Form_Tools
 
     Private Async Sub ClickGG(portail As String, temps As Integer)
         Dim delay = Task.Delay(temps)
-
+        If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = 0 Then
+            BackgroundWorkerAutospin = False
+            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
+        End If
         If BackgroundWorkerAutospin = True Then
             uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
             ComboBox_autospin.Enabled = False
@@ -2172,17 +2174,9 @@ Public Class Form_Tools
                     MsgBox("Erreur, Aucune GG selectionnée")
             End Select
 
-
-
-
-
             'Avant le timer
             Await delay
             'Apres le timer
-
-
-
-
 
 
             'TODO: Verification uri et prepare gates
@@ -2195,11 +2189,16 @@ Public Class Form_Tools
                 If infoinMapGG = False Then
                     If CheckBox_PrepareGatesIfBuiled.Checked = True Then
                         Button_PrepareGates.PerformClick()
-                        TextBox_WinGGS.Text = vbNewLine + "(" + "Galaxy Gates - " + ComboBox_autospin.Text + ") " + "was put in your mothermap" + TextBox_WinGGS.Text
+                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
+                        If CheckBox_buildoneandstop.Checked = True Then
+                            BackgroundWorkerAutospin = False
+                            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text }) The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed." + TextBox_WinGGS.Text
+                            MessageBox.Show($"(Galaxy Gates {ComboBox_autospin.Text}) The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    Else
+                        BackgroundWorkerAutospin = False
+                        MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
-                Else
-                    BackgroundWorkerAutospin = False
-                    MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
@@ -2210,6 +2209,7 @@ Public Class Form_Tools
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
             ComboBox_autospin.Enabled = True
+
         End If
     End Sub
 
@@ -3066,7 +3066,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
+    Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
         Utils.checkStats = True
         BackPage_Form.Show()
@@ -3075,7 +3075,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
+    Private Sub CheckBox_AutoUpdate_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
 
         '  Button_Update
 

@@ -53,6 +53,7 @@ Public Class Utils
             Else
                 If Not number.Length = 0 Then
                     number = StrReverse(number)
+                    number = number.Replace(espacement, "")
                     Dim dataToReturn = Regex.Replace(number, ".{3}", "$0" + espacement)
                     If dataToReturn.Substring(dataToReturn.Length - 1, 1) = espacement Then
                         'Si le dernier char est l'epacement alors
