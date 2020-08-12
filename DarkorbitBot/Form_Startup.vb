@@ -7,6 +7,8 @@ Public Class Form_Startup
     Public BeingDragged As Boolean = False
     Public MouseDownX As Integer
     Public MouseDownY As Integer
+    Public ProfilSelected As String = 0
+    Public CheckedStats As String = 0
 
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
@@ -14,61 +16,54 @@ Public Class Form_Startup
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 #Region "Location and resize"
-        Panel4.Location = New Point(0, 55)
-        Panel4.Size = New Size(256, 221)
+        PanelUserAndPass.Location = New Point(0, 55)
+        PanelUserAndPass.Size = New Size(256, 221)
 
-        Panel3.Location = New Point(0, 37)
-        Panel2.Location = New Point(0, 37)
+        Panel_ProfilConnection.Location = New Point(0, 37)
+        Panel_SidConnexion.Location = New Point(0, 37)
         PanelConnection.Location = New Point(0, 37)
 
-        Panel5.Location = New Point(0, 55)
-        Panel6.Location = New Point(0, 55)
+        Panel_profil.Location = New Point(0, 55)
+        Panel_license.Location = New Point(0, 55)
 #End Region
-
-        ' program started'
 
         Label_Title.Text = "RidevBot v" + Application.ProductVersion
         Me.Size = New Size(256, 251)
         CenterToScreen()
-        Label1.Select()
+        Label_point_de_chute.Select()
 
-        ' Profil 1
-        ' Profil 2
-        ' Profil 3
-        ' Current
+        If CheckedStats = 0 Then
+            If Form_Tools.CheckBox_AutoLogin.Checked = True Then
+                If Form_Tools.ComboBox_autologin.Text = "Profil 1" Then
 
-        If Form_Tools.CheckBox_AutoLogin.Checked = True Then
+                    ProfilSelected = 1
+                    Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text
+                    Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
+                    CheckedStats = 1
+                    Load_Button.PerformClick()
 
-            If Form_Tools.ComboBox_autologin.Text = "Profil 1" Then
+                ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
 
-                Label1.Select()
+                    ProfilSelected = 2
+                    Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text
+                    Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
+                    CheckedStats = 1
+                    Load_Button.PerformClick()
 
-            ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
+                ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
 
-                Label1.Select()
+                    ProfilSelected = 3
+                    Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text
+                    Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text
+                    CheckedStats = 1
+                    Load_Button.PerformClick()
 
-            ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
 
-                Label1.Select()
+                Else CheckedStats = 1
+                    MsgBox("if your active ""Auto Login"" option , select Profil")
 
-            ElseIf Form_Tools.ComboBox_autologin.Text = "Current" Then
-
-                If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
-
-                    Form_Game.Show()
-                    Label1.Select()
-                    Form_Tools.Show()
-                    Close()
-
-                Else
-
-                    Label1.Select()
-                    Form_Tools.Show()
-                    Close()
 
                 End If
-
-            Else
             End If
         End If
 
@@ -78,14 +73,16 @@ Public Class Form_Startup
 
         ' Button 1 = User && Pass '
 
-        Label2.Visible = True
-        Label3.Visible = False
-        Label4.Visible = False
-        Label1.Select()
+        Labelportal_White_4.Visible = True
+        Labelportal_White_5.Visible = False
+        Labelportal_White_6.Visible = False
+        Label_point_de_chute.Select()
 
+        PanelUserAndPass.Size = New Size(256, 251)
+        Me.Size = New Size(256, 251)
         PanelConnection.Visible = True
-        Panel2.Visible = False
-        Panel3.Visible = False
+        Panel_SidConnexion.Visible = False
+        Panel_ProfilConnection.Visible = False
 
         UserAndPass_Button.Enabled = False
         SID_Login_Button.Enabled = True
@@ -99,14 +96,16 @@ Public Class Form_Startup
 
         ' Button 1 = SID login '
 
-        Label2.Visible = False
-        Label3.Visible = True
-        Label4.Visible = False
-        Label1.Select()
+        PanelUserAndPass.Size = New Size(256, 251)
+        Me.Size = New Size(256, 251)
+        Labelportal_White_4.Visible = False
+        Labelportal_White_5.Visible = True
+        Labelportal_White_6.Visible = False
+        Label_point_de_chute.Select()
 
         PanelConnection.Visible = False
-        Panel2.Visible = True
-        Panel3.Visible = False
+        Panel_SidConnexion.Visible = True
+        Panel_ProfilConnection.Visible = False
 
         UserAndPass_Button.Enabled = True
         SID_Login_Button.Enabled = False
@@ -118,14 +117,16 @@ Public Class Form_Startup
 
         ' Button 1 = Saved '
 
-        Label2.Visible = False
-        Label3.Visible = False
-        Label4.Visible = True
-        Label1.Select()
+        Labelportal_White_4.Visible = False
+        Labelportal_White_5.Visible = False
+        Labelportal_White_6.Visible = True
+        Label_point_de_chute.Select()
+        PanelUserAndPass.Size = New Size(256, 358)
+        Me.Size = New Size(256, 358)
 
         PanelConnection.Visible = False
-        Panel2.Visible = False
-        Panel3.Visible = True
+        Panel_SidConnexion.Visible = False
+        Panel_ProfilConnection.Visible = True
 
         UserAndPass_Button.Enabled = True
         SID_Login_Button.Enabled = True
@@ -135,19 +136,47 @@ Public Class Form_Startup
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
-        ' button Load 1 > User&&Pass > RidevBot Browser '
-        If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+        If ProfilSelected = 1 Then
 
-            Label1.Select()
-            Form_Game.Show()
-            Form_Tools.Show()
-            Me.Close()
+            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Form_Game.Show()
+                Close()
+            Else
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Close()
+            End If
 
-        Else
+        ElseIf ProfilSelected = 2 Then
 
-            Label1.Select()
-            Form_Tools.Show()
-            Me.Close()
+            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Form_Game.Show()
+                Close()
+            Else
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Close()
+            End If
+
+        ElseIf ProfilSelected = 3 Then
+
+            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Form_Game.Show()
+                Close()
+            Else
+                Label_point_de_chute.Select()
+                Form_Tools.Show()
+                Close()
+            End If
+
+        Else MsgBox("select profil in first.")
+
 
         End If
 
@@ -157,7 +186,7 @@ Public Class Form_Startup
 
         ' button Remove > Saved '
 
-        Label1.Select()
+        Label_point_de_chute.Select()
 
     End Sub
 
@@ -165,23 +194,16 @@ Public Class Form_Startup
 
         ' button Edit > Saved '
 
-        Label1.Select()
+        Label_point_de_chute.Select()
 
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button_loadprofil.Click
-
-        ' button Load > Saved '
-
-        Label1.Select()
-
-    End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button_SID_Load.Click
 
         ' button Load > SID login '
 
-        Label1.Select()
+        Label_point_de_chute.Select()
         Utils.server = TextBox_server.Text
         Utils.dosid = TextBox_sid.Text
 
@@ -202,13 +224,14 @@ Public Class Form_Startup
 
         ' button credentials '
 
-        Panel4.Visible = True
-        Panel5.Visible = False
-        Panel6.Visible = False
+        Me.Size = New Size(256, 251)
+        PanelUserAndPass.Visible = True
+        Panel_profil.Visible = False
+        Panel_license.Visible = False
 
-        Label8.Visible = False
-        Label9.Visible = False
-        Label10.Visible = True
+        Label_portal_White_2.Visible = False
+        Label_portal_White.Visible = False
+        Labelportal_White_3.Visible = True
 
         Credentials_Button.Enabled = False
         Portail_Button.Enabled = True
@@ -220,13 +243,14 @@ Public Class Form_Startup
 
         ' button Portal '
 
-        Panel4.Visible = False
-        Panel5.Visible = True
-        Panel6.Visible = False
+        Me.Size = New Size(256, 251)
+        PanelUserAndPass.Visible = False
+        Panel_profil.Visible = True
+        Panel_license.Visible = False
 
-        Label8.Visible = False
-        Label9.Visible = True
-        Label10.Visible = False
+        Label_portal_White_2.Visible = False
+        Label_portal_White.Visible = True
+        Labelportal_White_3.Visible = False
 
         Credentials_Button.Enabled = True
         Portail_Button.Enabled = False
@@ -238,13 +262,14 @@ Public Class Form_Startup
 
         ' button License '
 
-        Panel4.Visible = False
-        Panel5.Visible = False
-        Panel6.Visible = True
+        Me.Size = New Size(256, 251)
+        PanelUserAndPass.Visible = False
+        Panel_profil.Visible = False
+        Panel_license.Visible = True
 
-        Label8.Visible = True
-        Label9.Visible = False
-        Label10.Visible = False
+        Label_portal_White_2.Visible = True
+        Label_portal_White.Visible = False
+        Labelportal_White_3.Visible = False
 
         Credentials_Button.Enabled = True
         Portail_Button.Enabled = True
@@ -252,32 +277,32 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button_ridevbotBrowser.Click
 
         ' button browser Ridevbot '
 
-        Label11.Visible = True
-        Label12.Visible = False
+        Label_buttonridevbotBrowser.Visible = True
+        Label_OfficialLauncherBrowser.Visible = False
         Load_Button.Visible = True
         Button4.Visible = False
 
-        Button15.Enabled = False
-        Button16.Enabled = True
+        Button_ridevbotBrowser.Enabled = False
+        Button_OfficialLauncherBrowser.Enabled = True
 
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button_OfficialLauncherBrowser.Click
 
         ' button browser launcher '
 
-        Label11.Visible = False
-        Label12.Visible = True
+        Label_buttonridevbotBrowser.Visible = False
+        Label_OfficialLauncherBrowser.Visible = True
 
         Load_Button.Visible = False
         Button4.Visible = True
 
-        Button15.Enabled = True
-        Button16.Enabled = False
+        Button_ridevbotBrowser.Enabled = True
+        Button_OfficialLauncherBrowser.Enabled = False
 
     End Sub
 
@@ -285,7 +310,7 @@ Public Class Form_Startup
 
         ' button Load 2 > User&&Pass > Launcher'
 
-        Label1.Select()
+        Label_point_de_chute.Select()
 
     End Sub
 
@@ -332,42 +357,91 @@ Public Class Form_Startup
         Textbox_Password.UseSystemPasswordChar = True
         PictureBox_PasswordHider.Image = My.Resources.img_eyeClose
     End Sub
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
+        TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = False
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.img_eyeOpen
+    End Sub
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
+        TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.img_eyeClose
+    End Sub
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
+        TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = False
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.img_eyeOpen
+    End Sub
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
+        TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.img_eyeClose
+    End Sub
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
+        TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = False
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.img_eyeOpen
+    End Sub
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
+        TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.img_eyeClose
+    End Sub
 
-    Private Sub Button_profil1_Click(sender As Object, e As EventArgs) Handles Button_profil1.Click
+    Private Sub PictureBoxUsernamePasswordProfil1view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1view.Click
+        '
+        ProfilSelected = 1
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100_1_
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
 
-        Label22.Visible = True
-        Label23.Visible = False
-        Label24.Visible = False
+        Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text
+        Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
+        Form_Tools.ComboBox_autologin.Text = "Profil 1"
+        UserAndPass_Button.PerformClick()
 
-        Button_profil1.Enabled = True
-        Button_profil2.Enabled = False
-        Button_profil3.Enabled = False
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2view.Click
+        '
+        ProfilSelected = 2
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100_1_
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
+
+        Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text
+        Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
+        Form_Tools.ComboBox_autologin.Text = "Profil 2"
+        UserAndPass_Button.PerformClick()
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil3view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3view.Click
+        '
+        ProfilSelected = 3
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100_1_
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
+
+
+        Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text
+        Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text
+        Form_Tools.ComboBox_autologin.Text = "Profil 3"
+        UserAndPass_Button.PerformClick()
 
 
     End Sub
 
-    Private Sub Button_profil2_Click(sender As Object, e As EventArgs) Handles Button_profil2.Click
+    Private Sub Button_resetAll_accounts_Click(sender As Object, e As EventArgs) Handles Button_resetAll_accounts.Click
 
-        Label22.Visible = False
-        Label23.Visible = True
-        Label24.Visible = False
+        TextBox_UsernamePasswordProfil1username.Text = ""
+        TextBoxUsernamePasswordProfil1password.Text = ""
+        TextBox_UsernamePasswordProfil2username.Text = ""
+        TextBoxUsernamePasswordProfil2password.Text = ""
+        TextBox_UsernamePasswordProfil3username.Text = ""
+        TextBoxUsernamePasswordProfil3password.Text = ""
 
-        Button_profil1.Enabled = False
-        Button_profil2.Enabled = True
-        Button_profil3.Enabled = False
-
-    End Sub
-
-    Private Sub Button_profil3_Click(sender As Object, e As EventArgs) Handles Button_profil3.Click
-
-        Label22.Visible = False
-        Label23.Visible = False
-        Label24.Visible = True
-
-        Button_profil1.Enabled = False
-        Button_profil2.Enabled = False
-        Button_profil3.Enabled = True
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
 
     End Sub
 
+    Private Sub TextBoxUsernamePasswordProfil1password_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsernamePasswordProfil1password.TextChanged
+
+    End Sub
 End Class

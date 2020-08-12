@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("FREE")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property License() As String
             Get
                 Return CType(Me("License"),String)
@@ -151,7 +151,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Profil 1")>  _
         Public Property AutoLoginCombobox() As String
             Get
                 Return CType(Me("AutoLoginCombobox"),String)
@@ -398,6 +398,90 @@ Namespace My
             End Get
             Set
                 Me("AutoUpdate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Password2() As String
+            Get
+                Return CType(Me("Password2"),String)
+            End Get
+            Set
+                Me("Password2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Username1() As String
+            Get
+                Return CType(Me("Username1"),String)
+            End Get
+            Set
+                Me("Username1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Username2() As String
+            Get
+                Return CType(Me("Username2"),String)
+            End Get
+            Set
+                Me("Username2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Password3() As String
+            Get
+                Return CType(Me("Password3"),String)
+            End Get
+            Set
+                Me("Password3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Password4() As String
+            Get
+                Return CType(Me("Password4"),String)
+            End Get
+            Set
+                Me("Password4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Password1() As String
+            Get
+                Return CType(Me("Password1"),String)
+            End Get
+            Set
+                Me("Password1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Username3() As String
+            Get
+                Return CType(Me("Username3"),String)
+            End Get
+            Set
+                Me("Username3") = value
             End Set
         End Property
     End Class

@@ -1,15 +1,23 @@
 ﻿Imports System.Text.RegularExpressions
 Imports AutoItX3Lib
 
+
 Public Class Form_Game
     Dim AutoIt As New AutoItX3
     'Public server As String
     'Public dosid As String
 
+    Declare Function GetActiveWindow Lib "user32" () As Long
+
+
+    Declare Function ShowWindow Lib "user32" Alias "ShowWindow" (
+                 ByVal hwnd As Long,
+                 ByVal nCmdShow As Long) As Long
+
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' quand on appuye sur load dans form1
-        Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
+        Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
 
         If Utils.connectWithCookie Then
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution", "dosid", Utils.dosid & ";")
@@ -24,6 +32,7 @@ Public Class Form_Game
         End If
 
     End Sub
+
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
 

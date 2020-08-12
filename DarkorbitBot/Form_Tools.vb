@@ -567,7 +567,8 @@ Public Class Form_Tools
             'Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
             Label_galaxygates.Select()
             Form_Game.WebBrowser1.Refresh()
-            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+            ' Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
             Form_Game.Show()
         Else
             Button_LaunchGameRidevBrowser.Text = "Already connecting..."
@@ -576,19 +577,6 @@ Public Class Form_Tools
 
     End Sub
 #End Region
-
-    Private Sub PictureBox_Backpage_Click(sender As Object, e As EventArgs) Handles PictureBox_Backpage.Click
-
-        If Utils.server.Length = 0 Then
-            MessageBox.Show("You must first login to the game before you can access the page", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        Else
-            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-            BackPage_Form.Show()
-        End If
-
-    End Sub
-
 
 #Region "Galaxy Gates"
     ' full = toute la gg 
@@ -1876,6 +1864,7 @@ Public Class Form_Tools
 
         'button open Login Box'
 
+        Form_Startup.CheckedStats = 1
         Form_Startup.Show()
 
     End Sub
@@ -3081,4 +3070,33 @@ Public Class Form_Tools
 
     End Sub
 
+    Private Sub PictureBox_epingleBarréBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epingleBarréBot.Click
+
+        PictureBox_epingleBarréBot.Visible = False
+        Me.TopMost = False
+
+    End Sub
+
+    Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
+
+        PictureBox_epinglerBot.Visible = False
+        Me.TopMost = True
+
+    End Sub
+
+    Private Sub PictureBox_BackgroundBot_Click(sender As Object, e As EventArgs) Handles PictureBox_BackgroundBot.Click
+
+        If TextBox_Get_Dosid.Text = "" Then
+
+            MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Else
+
+            BackPage_Form.Show()
+            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+
+        End If
+
+
+    End Sub
 End Class

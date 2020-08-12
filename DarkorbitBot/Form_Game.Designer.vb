@@ -132,6 +132,7 @@ Partial Class Form_Game
         Me.FlatButton4.TabIndex = 31
         Me.FlatButton4.Text = "All in one + Move"
         Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatButton4.Visible = False
         '
         'FlatButton2
         '
@@ -146,6 +147,7 @@ Partial Class Form_Game
         Me.FlatButton2.TabIndex = 25
         Me.FlatButton2.Text = "Click NPC + attack"
         Me.FlatButton2.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatButton2.Visible = False
         '
         'FlatButton1
         '
@@ -160,6 +162,7 @@ Partial Class Form_Game
         Me.FlatButton1.TabIndex = 24
         Me.FlatButton1.Text = "Click Cargo"
         Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatButton1.Visible = False
         '
         'Clickbutton
         '
@@ -174,6 +177,7 @@ Partial Class Form_Game
         Me.Clickbutton.TabIndex = 24
         Me.Clickbutton.Text = "Click box"
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Clickbutton.Visible = False
         '
         'Form_Game
         '
