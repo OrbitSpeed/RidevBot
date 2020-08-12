@@ -166,4 +166,12 @@ Public Class Utils
         End If
         Return Regex.Match(Data, "current(.*?)\ ").Groups.Item(1).ToString
     End Function
+    Public Shared Function getTotalPart(Data As String)
+        If Data = Nothing Then
+            Return "?"
+        ElseIf Data.Length = 0 Then
+            Return "?"
+        End If
+        Return Regex.Match(Data, "total(.*?)\ ").Groups.Item(1).ToString
+    End Function
 End Class

@@ -2032,50 +2032,85 @@ Public Class Form_Tools
     Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
-        If BackgroundWorkerAutospin = False Then
-            BackgroundWorkerAutospin = True
 
-            If BackgroundWorkerAutospin = True Then
+        If BackgroundWorkerAutospin = False Then
+
+            If TextBox_spintimes_GGS.Text.Contains(".") Then
+                BackgroundWorkerAutospin = True
+                MessageBox.Show($"Error, you can't put a dot in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
+            ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
+                BackgroundWorkerAutospin = True
+                MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            ElseIf Val(TextBox_spintimes_GGS.Text) < 150 Then
+                TextBox_spintimes_GGS.Text = 150
+                BackgroundWorkerAutospin = False
+                MessageBox.Show($"Error, you can't put less than 150ms.{vbNewLine}Starting with 150ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            Else
+                BackgroundWorkerAutospin = False
+            End If
+
+            If BackgroundWorkerAutospin = False Then
+                BackgroundWorkerAutospin = True
+
+                Button_StartSpin.Enabled = False
+                Button_stopSpin.Enabled = True
+
                 Dim data = ComboBox_autospin.Text
                 Select Case data
                     Case "ABG"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Delta"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Epsilon"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Zeta"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kappa"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Lambda"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kuiper"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Hades"
                         MsgBox(data)
+                        ClickGG(data, TextBox_spintimes_GGS.Text)
 
                     Case Else
                         BackgroundWorkerAutospin = False
                         MsgBox("Erreur, Aucune GG selectionnée")
                 End Select
-                If BackgroundWorkerAutospin = True Then
-                    ClickGG("alpha", 250)
-                End If
+                'If BackgroundWorkerAutospin = True Then
+                '    ClickGG("alpha", 250)
+                'End If
+            Else
+                BackgroundWorkerAutospin = False
             End If
-
         Else
             MsgBox("Déjà lancé")
+            Button_StartSpin.Enabled = True
+
             ' Console.WriteLine("Already used")
         End If
 
     End Sub
 
-
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
+        Button_StartSpin.Enabled = True
+        Button_stopSpin.Enabled = False
+        ComboBox_autospin.Enabled = True
+
 
         If BackgroundWorkerAutospin = True Then
             BackgroundWorkerAutospin = False
+            MessageBox.Show("Autospinner deactivated.")
         End If
 
     End Sub
@@ -2083,19 +2118,89 @@ Public Class Form_Tools
     Private Async Sub ClickGG(portail As String, temps As Integer)
         Dim delay = Task.Delay(temps)
 
-
         If BackgroundWorkerAutospin = True Then
-
+            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
+            ComboBox_autospin.Enabled = False
             'DoWork ici
 
+            Select Case portail
+                Case "ABG"
+                    If Button_ABG_GGS.Enabled = True Then
+                        Button_ABG_GGS.PerformClick()
+                    End If
 
-            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
+                Case "Delta"
+                    If Button_Delta_GGS.Enabled = True Then
+                        Button_Delta_GGS.PerformClick()
+                    End If
+
+                Case "Epsilon"
+                    If Button_Epsilon_GGS.Enabled = True Then
+                        Button_Epsilon_GGS.PerformClick()
+                    End If
+
+                Case "Zeta"
+                    If Button_Zeta_GGS.Enabled = True Then
+                        Button_Zeta_GGS.PerformClick()
+                    End If
+
+                Case "Kappa"
+                    If Button_Kappa_GGS.Enabled = True Then
+                        Button_Kappa_GGS.PerformClick()
+                    End If
+
+                Case "Lambda"
+                    If Button_Lambda_GGS.Enabled = True Then
+                        Button_Lambda_GGS.PerformClick()
+                    End If
+
+                Case "Kuiper"
+                    If Button_Kuiper_GGS.Enabled = True Then
+                        Button_Kuiper_GGS.PerformClick()
+                    End If
+
+                Case "Hades"
+                    If Button_Hades_GGS.Enabled = True Then
+                        Button_Hades_GGS.PerformClick()
+                    End If
 
 
-
+                Case Else
+                    BackgroundWorkerAutospin = False
+                    MsgBox("Erreur, Aucune GG selectionnée")
+            End Select
+            'Avant le timer
             Await delay
+            'Apres le timer
+
             'TODO: Verification uri et prepare gates
+
+            Dim infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
+            Dim infoinMapGG As Boolean = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
+            Console.WriteLine($"DEBUG-{infoinMapGG}")
+            'Console.WriteLine(data)
+            'Console.WriteLine($"DEBUG : {data.Split(" / ").First}-{data.Split(" / ").Last}")
+
+            If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
+                If infoinMapGG = False Then
+                    If CheckBox_PrepareGatesIfBuiled.Checked = True Then
+                        'MsgBox("[DEBUG] La gg est prête")
+                        Button_PrepareGates.PerformClick()
+                        TextBox_WinGGS.Text = vbNewLine + "(" + "Galaxy Gates - " + ComboBox_autospin.Text + ") " + "was put in your mothermap" + TextBox_WinGGS.Text
+                    End If
+                Else
+                    BackgroundWorkerAutospin = False
+                    MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
+
+
             ClickGG(portail, temps)
+        Else
+            BackgroundWorkerAutospin = False
+            Button_StartSpin.Enabled = True
+            Button_stopSpin.Enabled = False
+            ComboBox_autospin.Enabled = True
         End If
     End Sub
 
@@ -2176,7 +2281,7 @@ Public Class Form_Tools
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
         'Console.WriteLine(html5)
-        Clipboard.SetText(html5)
+        'Clipboard.SetText(html5)
 
         Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
         Console.WriteLine(mode.Groups.Item(1).ToString)

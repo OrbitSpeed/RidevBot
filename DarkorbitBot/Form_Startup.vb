@@ -8,6 +8,9 @@ Public Class Form_Startup
     Public MouseDownX As Integer
     Public MouseDownY As Integer
 
+    Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+        Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 #Region "Location and resize"
