@@ -43,43 +43,34 @@ Public Class Form_Startup
 
                 Label1.Select()
 
-            Else
-                If Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
+            ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
 
+                Label1.Select()
+
+            ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
+
+                Label1.Select()
+
+            ElseIf Form_Tools.ComboBox_autologin.Text = "Current" Then
+
+                If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
+
+                    Form_Game.Show()
                     Label1.Select()
+                    Form_Tools.Show()
+                    Close()
 
                 Else
-                    If Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
 
-                        Label1.Select()
+                    Label1.Select()
+                    Form_Tools.Show()
+                    Close()
 
-                    Else
-                        If Form_Tools.ComboBox_autologin.Text = "Current" Then
-
-                            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
-                                Form_Game.Show()
-                            Else
-
-                            End If
-                            Label1.Select()
-                            Form_Tools.Show()
-                            Close()
-
-                        Else
-
-
-
-                        End If
-                    End If
                 End If
+
+            Else
             End If
-
-        Else
-
-
-
         End If
-
 
     End Sub
 

@@ -88,8 +88,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Size = New Size(439, 86)
         TextBox_WinGGS.Location = New Point(15, 508)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
-
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
 
@@ -607,6 +605,7 @@ Public Class Form_Tools
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         ABG = True
+        ComboBox_autospin.Text = "ABG"
 
         If CheckedAlphaBetaGammaStats = 0 Then
 
@@ -644,14 +643,14 @@ Public Class Form_Tools
         TextBox_WinGGS.Size = New Size(521, 162)
         TextBox_WinGGS.Location = New Point(461, 340)
 
-        Label_Transition_GGS.Text = "_____________________________________________________________________________________________________________"
-
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
 
         Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
+
+        ComboBox_autospin.Text = "ABG"
 
         Button_Alpha.Enabled = False
         Button_beta.Enabled = True
@@ -678,8 +677,6 @@ Public Class Form_Tools
             TextBox_WinGGS.Size = New Size(439, 86)
             TextBox_WinGGS.Location = New Point(15, 508)
             Size = New Size(553, 622)
-
-            Label_Transition_GGS.Text = "__________________________________________________"
 
             If DataAlpha = Nothing Then
             Else
@@ -788,6 +785,8 @@ Public Class Form_Tools
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
         Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
+
+        ComboBox_autospin.Text = "ABG"
         '
         Button_Alpha.Enabled = True
         Button_beta.Enabled = False
@@ -814,8 +813,6 @@ Public Class Form_Tools
             TextBox_WinGGS.Size = New Size(439, 86)
             TextBox_WinGGS.Location = New Point(15, 508)
             Size = New Size(553, 622)
-
-            Label_Transition_GGS.Text = "__________________________________________________"
 
             If DataBeta = Nothing Then
             Else
@@ -929,6 +926,8 @@ Public Class Form_Tools
 
         Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
 
+        ComboBox_autospin.Text = "ABG"
+
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = False
@@ -954,8 +953,6 @@ Public Class Form_Tools
             TextBox_WinGGS.Size = New Size(439, 86)
             TextBox_WinGGS.Location = New Point(15, 508)
             Size = New Size(553, 622)
-
-            Label_Transition_GGS.Text = "__________________________________________________"
 
             If DataGamma = Nothing Then
             Else
@@ -1070,6 +1067,8 @@ Public Class Form_Tools
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
+        ComboBox_autospin.Text = "Delta"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1093,8 +1092,6 @@ Public Class Form_Tools
         Size = New Size(553, 622)
         TextBox_WinGGS.Size = New Size(439, 86)
         TextBox_WinGGS.Location = New Point(15, 508)
-
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1198,7 +1195,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1266,6 +1262,8 @@ Public Class Form_Tools
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
+        ComboBox_autospin.Text = "Hades"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1290,7 +1288,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1363,6 +1360,8 @@ Public Class Form_Tools
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
 
+        ComboBox_autospin.Text = "Kuiper"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1387,7 +1386,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1462,6 +1460,8 @@ Public Class Form_Tools
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
+        ComboBox_autospin.Text = "Lambda"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1486,7 +1486,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1563,6 +1562,8 @@ Public Class Form_Tools
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
 
+        ComboBox_autospin.Text = "Kappa"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1587,7 +1588,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1662,6 +1662,8 @@ Public Class Form_Tools
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
+        ComboBox_autospin.Text = "Zeta"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1686,7 +1688,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -1762,6 +1763,8 @@ Public Class Form_Tools
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
+        ComboBox_autospin.Text = "Epsilon"
+
         CheckedAlphaBetaGammaStats2 = 0
         CheckedAlphaBetaGammaStats3 = 0
         '
@@ -1786,7 +1789,6 @@ Public Class Form_Tools
         TextBox_WinGGS.Location = New Point(15, 508)
         Size = New Size(553, 622)
 
-        Label_Transition_GGS.Text = "__________________________________________________"
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -2059,28 +2061,28 @@ Public Class Form_Tools
                 Dim data = ComboBox_autospin.Text
                 Select Case data
                     Case "ABG"
-                        MsgBox(data)
+                        '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Delta"
-                        MsgBox(data)
+                        '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Epsilon"
-                        MsgBox(data)
+                        '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Zeta"
-                        MsgBox(data)
+                        '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kappa"
-                        MsgBox(data)
+                        '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Lambda"
-                        MsgBox(data)
+                        '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kuiper"
-                        MsgBox(data)
+                        '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Hades"
-                        MsgBox(data)
+                        '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
 
                     Case Else
@@ -2169,22 +2171,29 @@ Public Class Form_Tools
                     BackgroundWorkerAutospin = False
                     MsgBox("Erreur, Aucune GG selectionnée")
             End Select
+
+
+
+
+
             'Avant le timer
             Await delay
             'Apres le timer
+
+
+
+
+
 
             'TODO: Verification uri et prepare gates
 
             Dim infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
             Dim infoinMapGG As Boolean = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
             Console.WriteLine($"DEBUG-{infoinMapGG}")
-            'Console.WriteLine(data)
-            'Console.WriteLine($"DEBUG : {data.Split(" / ").First}-{data.Split(" / ").Last}")
 
             If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
                 If infoinMapGG = False Then
                     If CheckBox_PrepareGatesIfBuiled.Checked = True Then
-                        'MsgBox("[DEBUG] La gg est prête")
                         Button_PrepareGates.PerformClick()
                         TextBox_WinGGS.Text = vbNewLine + "(" + "Galaxy Gates - " + ComboBox_autospin.Text + ") " + "was put in your mothermap" + TextBox_WinGGS.Text
                     End If
@@ -3066,22 +3075,10 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_collector_Paint(sender As Object, e As PaintEventArgs) Handles Panel_collector.Paint
-
-    End Sub
-
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
 
         '  Button_Update
 
     End Sub
 
-    Private Sub Panel_general_Paint(sender As Object, e As PaintEventArgs) Handles Panel_general.Paint
-
-    End Sub
-
-    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
-
-
-    End Sub
 End Class
