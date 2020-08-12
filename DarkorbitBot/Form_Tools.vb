@@ -3131,6 +3131,8 @@ Public Class Form_Tools
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                Timer_sid.Enabled = True
+                Timer_sid.Start()
 
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
@@ -3167,7 +3169,55 @@ Public Class Form_Tools
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
+        Timer_sid.Stop()
+        Timer_sid.Enabled = False
+
+        TextBox_Get_Dosid.Text = ""
+        TextBox_Get_id.Text = ""
+        TextBox_Get_Server.Text = ""
+
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
+
+        TextBox_timeticks3.Text = "0"
+        TextBox_timeticks4.Text = "0"
+        TextBox_timeticks5.Text = "0"
+        TextBox_timeticks6.Text = "0"
+
+    End Sub
+
+    Private Sub Timer_sid_Tick(sender As Object, e As EventArgs) Handles Timer_sid.Tick
+
+        TextBox_timeticks6.Text = Val(TextBox_timeticks6.Text) + 1
+
+        ' seconds
+        If TextBox_timeticks6.Text = "10" Then
+
+            TextBox_timeticks6.Text = "0"
+            TextBox_timeticks5.Text = Val(TextBox_timeticks5.Text) + 1
+
+        End If
+
+        If TextBox_timeticks5.Text = "6" Then
+
+            TextBox_timeticks5.Text = "0"
+            TextBox_timeticks4.Text = Val(TextBox_timeticks4.Text) + 1
+
+        End If
+
+        ' minutes
+        If TextBox_timeticks4.Text = "10" Then
+
+            Button_revive_sid.PerformClick()
+            TextBox_timeticks4.Text = "0"
+            TextBox_timeticks3.Text = Val(TextBox_timeticks3.Text) + 1
+
+        End If
+
+        If TextBox_timeticks3.Text = "6" Then
+
+            TextBox_timeticks3.Text = "0"
+
+        End If
 
     End Sub
 End Class

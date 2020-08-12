@@ -136,28 +136,41 @@ Public Class Form_Startup
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
+        Form_Tools.Timer_sid.Stop()
+        Form_Tools.Timer_sid.Enabled = False
 
-        Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
+        Form_Tools.TextBox_timeticks3.Text = "0"
+        Form_Tools.TextBox_timeticks4.Text = "0"
+        Form_Tools.TextBox_timeticks5.Text = "0"
+        Form_Tools.TextBox_timeticks6.Text = "0"
+
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+        Form_Tools.TextBox_Get_id.Text = ""
+        Form_Tools.TextBox_Get_Server.Text = ""
 
         If ProfilSelected = 1 Then
 
+            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
             Label_point_de_chute.Select()
             Form_Tools.Show()
             Close()
 
         ElseIf ProfilSelected = 2 Then
 
+            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
             Label_point_de_chute.Select()
             Form_Tools.Show()
             Close()
 
         ElseIf ProfilSelected = 3 Then
 
+            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
             Label_point_de_chute.Select()
             Form_Tools.Show()
             Close()
 
         Else MsgBox("select profil in first.")
+            Saved_Button.PerformClick()
 
 
         End If

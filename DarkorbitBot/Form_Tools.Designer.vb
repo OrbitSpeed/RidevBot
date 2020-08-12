@@ -22,6 +22,7 @@ Partial Class Form_Tools
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Tools))
         Me.Label_Tittle = New System.Windows.Forms.Label()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
@@ -48,7 +49,6 @@ Partial Class Form_Tools
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox_timeticks = New System.Windows.Forms.TextBox()
         Me.Label_timeticks = New System.Windows.Forms.Label()
         Me.TextBox_ProfilSelected = New System.Windows.Forms.TextBox()
         Me.Label_ProfilSelected = New System.Windows.Forms.Label()
@@ -223,11 +223,9 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.TextBox_timeticks2 = New System.Windows.Forms.TextBox()
-        Me.Label_separator = New System.Windows.Forms.Label()
         Me.TextBox_timeticks4 = New System.Windows.Forms.TextBox()
         Me.TextBox_timeticks3 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeticks6 = New System.Windows.Forms.TextBox()
         Me.TextBox_timeticks5 = New System.Windows.Forms.TextBox()
         Me.Label_separator2 = New System.Windows.Forms.Label()
         Me.TextBox_timeGame6 = New System.Windows.Forms.TextBox()
@@ -239,6 +237,7 @@ Partial Class Form_Tools
         Me.TextBox_timeGame2 = New System.Windows.Forms.TextBox()
         Me.TextBox_timeGame = New System.Windows.Forms.TextBox()
         Me.Button_revive_sid = New System.Windows.Forms.Button()
+        Me.Timer_sid = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -591,15 +590,12 @@ Partial Class Form_Tools
         Me.Panel_Info.Controls.Add(Me.Label_separator3)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeGame2)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeGame)
-        Me.Panel_Info.Controls.Add(Me.TextBox6)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks6)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeticks5)
         Me.Panel_Info.Controls.Add(Me.Label_separator2)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeticks4)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeticks3)
-        Me.Panel_Info.Controls.Add(Me.Label_separator)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks2)
         Me.Panel_Info.Controls.Add(Me.Label1)
-        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks)
         Me.Panel_Info.Controls.Add(Me.Label_timeticks)
         Me.Panel_Info.Controls.Add(Me.TextBox_ProfilSelected)
         Me.Panel_Info.Controls.Add(Me.Label_ProfilSelected)
@@ -624,19 +620,6 @@ Partial Class Form_Tools
         Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Time Game"
-        '
-        'TextBox_timeticks
-        '
-        Me.TextBox_timeticks.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks.Location = New System.Drawing.Point(115, 85)
-        Me.TextBox_timeticks.Name = "TextBox_timeticks"
-        Me.TextBox_timeticks.ReadOnly = True
-        Me.TextBox_timeticks.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks.TabIndex = 11
-        Me.TextBox_timeticks.Text = "0"
-        Me.TextBox_timeticks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_timeticks
         '
@@ -2900,36 +2883,12 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
         '
-        'TextBox_timeticks2
-        '
-        Me.TextBox_timeticks2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_timeticks2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_timeticks2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks2.Location = New System.Drawing.Point(130, 85)
-        Me.TextBox_timeticks2.Name = "TextBox_timeticks2"
-        Me.TextBox_timeticks2.ReadOnly = True
-        Me.TextBox_timeticks2.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox_timeticks2.TabIndex = 14
-        Me.TextBox_timeticks2.Text = "0"
-        Me.TextBox_timeticks2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label_separator
-        '
-        Me.Label_separator.AutoSize = True
-        Me.Label_separator.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_separator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator.Location = New System.Drawing.Point(145, 85)
-        Me.Label_separator.Name = "Label_separator"
-        Me.Label_separator.Size = New System.Drawing.Size(10, 13)
-        Me.Label_separator.TabIndex = 15
-        Me.Label_separator.Text = ":"
-        '
         'TextBox_timeticks4
         '
         Me.TextBox_timeticks4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_timeticks4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_timeticks4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks4.Location = New System.Drawing.Point(170, 85)
+        Me.TextBox_timeticks4.Location = New System.Drawing.Point(150, 85)
         Me.TextBox_timeticks4.Name = "TextBox_timeticks4"
         Me.TextBox_timeticks4.ReadOnly = True
         Me.TextBox_timeticks4.Size = New System.Drawing.Size(15, 15)
@@ -2942,7 +2901,7 @@ Partial Class Form_Tools
         Me.TextBox_timeticks3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_timeticks3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_timeticks3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks3.Location = New System.Drawing.Point(155, 85)
+        Me.TextBox_timeticks3.Location = New System.Drawing.Point(135, 85)
         Me.TextBox_timeticks3.Name = "TextBox_timeticks3"
         Me.TextBox_timeticks3.ReadOnly = True
         Me.TextBox_timeticks3.Size = New System.Drawing.Size(15, 15)
@@ -2950,25 +2909,25 @@ Partial Class Form_Tools
         Me.TextBox_timeticks3.Text = "0"
         Me.TextBox_timeticks3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox6
+        'TextBox_timeticks6
         '
-        Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(210, 85)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(15, 15)
-        Me.TextBox6.TabIndex = 20
-        Me.TextBox6.Text = "0"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_timeticks6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks6.Location = New System.Drawing.Point(190, 85)
+        Me.TextBox_timeticks6.Name = "TextBox_timeticks6"
+        Me.TextBox_timeticks6.ReadOnly = True
+        Me.TextBox_timeticks6.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeticks6.TabIndex = 20
+        Me.TextBox_timeticks6.Text = "0"
+        Me.TextBox_timeticks6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_timeticks5
         '
         Me.TextBox_timeticks5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_timeticks5.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_timeticks5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks5.Location = New System.Drawing.Point(195, 85)
+        Me.TextBox_timeticks5.Location = New System.Drawing.Point(175, 85)
         Me.TextBox_timeticks5.Name = "TextBox_timeticks5"
         Me.TextBox_timeticks5.ReadOnly = True
         Me.TextBox_timeticks5.Size = New System.Drawing.Size(15, 15)
@@ -2981,7 +2940,7 @@ Partial Class Form_Tools
         Me.Label_separator2.AutoSize = True
         Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator2.Location = New System.Drawing.Point(185, 85)
+        Me.Label_separator2.Location = New System.Drawing.Point(165, 85)
         Me.Label_separator2.Name = "Label_separator2"
         Me.Label_separator2.Size = New System.Drawing.Size(10, 13)
         Me.Label_separator2.TabIndex = 18
@@ -3100,6 +3059,10 @@ Partial Class Form_Tools
         Me.Button_revive_sid.TabIndex = 37
         Me.Button_revive_sid.Text = "Revive sid / reload the session"
         Me.Button_revive_sid.UseVisualStyleBackColor = False
+        '
+        'Timer_sid
+        '
+        Me.Timer_sid.Interval = 1000
         '
         'Form_Tools
         '
@@ -3304,7 +3267,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents TextBox_timeticks As TextBox
     Friend WithEvents Label_timeticks As Label
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Button2 As Button
@@ -3411,12 +3373,11 @@ Partial Class Form_Tools
     Friend WithEvents Label_separator3 As Label
     Friend WithEvents TextBox_timeGame2 As TextBox
     Friend WithEvents TextBox_timeGame As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox_timeticks6 As TextBox
     Friend WithEvents TextBox_timeticks5 As TextBox
     Friend WithEvents Label_separator2 As Label
     Friend WithEvents TextBox_timeticks4 As TextBox
     Friend WithEvents TextBox_timeticks3 As TextBox
-    Friend WithEvents Label_separator As Label
-    Friend WithEvents TextBox_timeticks2 As TextBox
     Friend WithEvents Button_revive_sid As Button
+    Friend WithEvents Timer_sid As Timer
 End Class
