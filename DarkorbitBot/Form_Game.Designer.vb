@@ -24,16 +24,16 @@ Partial Class Form_Game
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
-        Me.TextBox_getserver = New System.Windows.Forms.TextBox()
-        Me.FlatButton3 = New DarkorbitBot.FlatButton()
         Me.FlatButton4 = New DarkorbitBot.FlatButton()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
         Me.FlatButton1 = New DarkorbitBot.FlatButton()
         Me.Clickbutton = New DarkorbitBot.FlatButton()
+        Me.TextBox_getserver = New System.Windows.Forms.TextBox()
+        Me.FlatButton3 = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,15 +50,15 @@ Partial Class Form_Game
         Me.Label2.Text = "000"
         Me.Label2.Visible = False
         '
-        'WebBrowser1
+        'WebBrowser_Game_Ridevbot
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 18)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Size = New System.Drawing.Size(800, 600)
-        Me.WebBrowser1.TabIndex = 17
+        Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
+        Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"
+        Me.WebBrowser_Game_Ridevbot.ScriptErrorsSuppressed = True
+        Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
+        Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
+        Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
         'Label_Title
         '
@@ -84,41 +84,6 @@ Partial Class Form_Game
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
         '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
-        '
-        'TextBox_getserver
-        '
-        Me.TextBox_getserver.Location = New System.Drawing.Point(12, 32)
-        Me.TextBox_getserver.Name = "TextBox_getserver"
-        Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_getserver.TabIndex = 28
-        '
-        'FlatButton3
-        '
-        Me.FlatButton3.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton3.Location = New System.Drawing.Point(12, 58)
-        Me.FlatButton3.Name = "FlatButton3"
-        Me.FlatButton3.Rounded = False
-        Me.FlatButton3.Size = New System.Drawing.Size(73, 18)
-        Me.FlatButton3.TabIndex = 28
-        Me.FlatButton3.Text = "Attack"
-        Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.FlatButton3.Visible = False
-        '
         'FlatButton4
         '
         Me.FlatButton4.BackColor = System.Drawing.Color.Transparent
@@ -133,6 +98,19 @@ Partial Class Form_Game
         Me.FlatButton4.Text = "All in one + Move"
         Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.FlatButton4.Visible = False
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
         '
         'FlatButton2
         '
@@ -179,13 +157,35 @@ Partial Class Form_Game
         Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.Clickbutton.Visible = False
         '
+        'TextBox_getserver
+        '
+        Me.TextBox_getserver.Location = New System.Drawing.Point(12, 32)
+        Me.TextBox_getserver.Name = "TextBox_getserver"
+        Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_getserver.TabIndex = 28
+        '
+        'FlatButton3
+        '
+        Me.FlatButton3.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton3.Location = New System.Drawing.Point(12, 58)
+        Me.FlatButton3.Name = "FlatButton3"
+        Me.FlatButton3.Rounded = False
+        Me.FlatButton3.Size = New System.Drawing.Size(73, 18)
+        Me.FlatButton3.TabIndex = 28
+        Me.FlatButton3.Text = "Attack"
+        Me.FlatButton3.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.FlatButton3.Visible = False
+        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
         Me.Controls.Add(Me.FlatButton3)
         Me.Controls.Add(Me.TextBox_getserver)
         Me.Controls.Add(Me.Panel7)
@@ -205,7 +205,7 @@ Partial Class Form_Game
 
     End Sub
     Friend WithEvents Label2 As Label
-    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents WebBrowser_Game_Ridevbot As WebBrowser
     Friend WithEvents Button_Backpage As FlatButton
     Friend WithEvents Button_Click As FlatButton
     Friend WithEvents FlatLabel1 As FlatLabel

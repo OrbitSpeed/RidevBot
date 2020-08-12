@@ -113,16 +113,6 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         End If
 
-        If Utils.server = "" Then
-        Else
-            Utils.checkStats = True
-            BackPage_Form.Show()
-            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-            BackPage_Form.WindowState = FormWindowState.Minimized
-
-        End If
-
-
         'TODO
         'Pour les thèmes (prend uniquement dans le controle et pas dans un panel) (donc à faire)
         'For Each b As Button In Me.Controls.OfType(Of Button)()
@@ -550,29 +540,24 @@ Public Class Form_Tools
         If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
-            'Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-            Label_galaxygates.Select()
 
-            If Utils.dosid IsNot vbNullString Then
-                Utils.connectWithCookie = True
-                'Form_Game.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart")
-                Form_Game.Show()
-                Form_Game.Hide()
-            Else
-                Form_Game.WebBrowser1.Navigate("https://darkorbit-22.bpsecure.com")
-                'Form_Game.Show()
-            End If
+            Form_Game.Show()
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
-            'Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-            Label_galaxygates.Select()
-            Form_Game.WebBrowser1.Refresh()
+
+            Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
+            Button_LaunchGameRidevBrowser.Text = "Connecting..."
+
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
-            ' Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8")
-            Form_Game.Show()
-        Else
-            Button_LaunchGameRidevBrowser.Text = "Already connecting..."
+
+            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
+        Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
         End If
+
 
 
     End Sub
@@ -3097,6 +3082,92 @@ Public Class Form_Tools
 
         End If
 
+
+    End Sub
+
+    Private Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
+
+        If WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+
+            WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Textbox_Username.Text)
+            WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Textbox_Password.Text)
+            For Each p As HtmlElement In WebBrowser_Synchronisation.Document.GetElementsByTagName("input")
+                If p.GetAttribute("type") = "submit" Then
+                    p.InvokeMember("click")
+                End If
+            Next
+
+        ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
+
+            ' Lance le jeu'
+            Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
+            Utils.server = CheckRegex.Groups.Item(1).ToString
+
+            Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+            If testalacon.Success Then
+                Console.WriteLine(testalacon.Value.Split("=")(1))
+                Utils.dosid = testalacon.Value.Split("=")(1)
+
+                Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+
+                TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+
+                TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
+
+                TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
+
+                Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
+
+                Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
+
+                Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
+
+                Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
+
+                Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+
+                TextBox_Get_Server.Text = Utils.server
+
+                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+
+
+                If CheckBox_LaunchGameAuto.Checked = True Then
+
+                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Form_Game.Show()
+                    Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                    WebBrowser_Synchronisation.Navigate("About:Blank")
+
+                End If
+
+            End If
+
+            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+
+
+        ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
+            Dim result = MessageBox.Show("Verify your account", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If result = DialogResult.OK Then
+
+                Form_Startup.Show()
+                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                WebBrowser_Synchronisation.Navigate("About:Blank")
+
+            End If
+
+        Else
+        End If
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
+
+        WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
     End Sub
 End Class

@@ -47,7 +47,6 @@ Partial Class Form_Tools
         Me.Panel_general = New System.Windows.Forms.Panel()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox_timeticks = New System.Windows.Forms.TextBox()
         Me.Label_timeticks = New System.Windows.Forms.Label()
@@ -223,6 +222,23 @@ Partial Class Form_Tools
         Me.Label_LivesLeft3 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.TextBox_timeticks2 = New System.Windows.Forms.TextBox()
+        Me.Label_separator = New System.Windows.Forms.Label()
+        Me.TextBox_timeticks4 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeticks3 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeticks5 = New System.Windows.Forms.TextBox()
+        Me.Label_separator2 = New System.Windows.Forms.Label()
+        Me.TextBox_timeGame6 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame5 = New System.Windows.Forms.TextBox()
+        Me.Label_separator4 = New System.Windows.Forms.Label()
+        Me.TextBox_timeGame4 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame3 = New System.Windows.Forms.TextBox()
+        Me.Label_separator3 = New System.Windows.Forms.Label()
+        Me.TextBox_timeGame2 = New System.Windows.Forms.TextBox()
+        Me.TextBox_timeGame = New System.Windows.Forms.TextBox()
+        Me.Button_revive_sid = New System.Windows.Forms.Button()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -533,6 +549,7 @@ Partial Class Form_Tools
         'Panel_general
         '
         Me.Panel_general.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_general.Controls.Add(Me.Button_revive_sid)
         Me.Panel_general.Controls.Add(Me.ComboBox_autologin)
         Me.Panel_general.Controls.Add(Me.Panel_Info)
         Me.Panel_general.Controls.Add(Me.CheckBox_AutoUpdate)
@@ -566,7 +583,21 @@ Partial Class Form_Tools
         '
         Me.Panel_Info.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_Info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Info.Controls.Add(Me.TextBox2)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame6)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame5)
+        Me.Panel_Info.Controls.Add(Me.Label_separator4)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame4)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame3)
+        Me.Panel_Info.Controls.Add(Me.Label_separator3)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame2)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeGame)
+        Me.Panel_Info.Controls.Add(Me.TextBox6)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks5)
+        Me.Panel_Info.Controls.Add(Me.Label_separator2)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks4)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks3)
+        Me.Panel_Info.Controls.Add(Me.Label_separator)
+        Me.Panel_Info.Controls.Add(Me.TextBox_timeticks2)
         Me.Panel_Info.Controls.Add(Me.Label1)
         Me.Panel_Info.Controls.Add(Me.TextBox_timeticks)
         Me.Panel_Info.Controls.Add(Me.Label_timeticks)
@@ -584,40 +615,27 @@ Partial Class Form_Tools
         Me.Panel_Info.Size = New System.Drawing.Size(276, 129)
         Me.Panel_Info.TabIndex = 28
         '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(131, 104)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(138, 15)
-        Me.TextBox2.TabIndex = 13
-        Me.TextBox2.Text = "00 : 00 : 00"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(5, 104)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 13)
+        Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Time to refresh Game"
+        Me.Label1.Text = "Time Game"
         '
         'TextBox_timeticks
         '
         Me.TextBox_timeticks.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_timeticks.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_timeticks.Location = New System.Drawing.Point(131, 85)
+        Me.TextBox_timeticks.Location = New System.Drawing.Point(115, 85)
         Me.TextBox_timeticks.Name = "TextBox_timeticks"
         Me.TextBox_timeticks.ReadOnly = True
-        Me.TextBox_timeticks.Size = New System.Drawing.Size(138, 15)
+        Me.TextBox_timeticks.Size = New System.Drawing.Size(15, 15)
         Me.TextBox_timeticks.TabIndex = 11
-        Me.TextBox_timeticks.Text = "00 : 00 : 00"
+        Me.TextBox_timeticks.Text = "0"
         Me.TextBox_timeticks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_timeticks
@@ -626,9 +644,9 @@ Partial Class Form_Tools
         Me.Label_timeticks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_timeticks.Location = New System.Drawing.Point(5, 85)
         Me.Label_timeticks.Name = "Label_timeticks"
-        Me.Label_timeticks.Size = New System.Drawing.Size(120, 13)
+        Me.Label_timeticks.Size = New System.Drawing.Size(50, 13)
         Me.Label_timeticks.TabIndex = 10
-        Me.Label_timeticks.Text = "Time to refresh DoSID"
+        Me.Label_timeticks.Text = "Time sid"
         '
         'TextBox_ProfilSelected
         '
@@ -727,7 +745,7 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(15, 54)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(15, 56)
         Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
         Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(156, 23)
         Me.CheckBox_AutoUpdate.TabIndex = 36
@@ -742,7 +760,7 @@ Partial Class Form_Tools
         Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "LaunchGameatprogramstart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 32)
+        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 33)
         Me.CheckBox_LaunchGameAuto.Name = "CheckBox_LaunchGameAuto"
         Me.CheckBox_LaunchGameAuto.Size = New System.Drawing.Size(227, 23)
         Me.CheckBox_LaunchGameAuto.TabIndex = 7
@@ -756,9 +774,9 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_LaunchGameRidevBrowser.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_LaunchGameRidevBrowser.ForeColor = System.Drawing.Color.White
-        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(14, 148)
+        Me.Button_LaunchGameRidevBrowser.Location = New System.Drawing.Point(12, 85)
         Me.Button_LaunchGameRidevBrowser.Name = "Button_LaunchGameRidevBrowser"
-        Me.Button_LaunchGameRidevBrowser.Size = New System.Drawing.Size(153, 25)
+        Me.Button_LaunchGameRidevBrowser.Size = New System.Drawing.Size(175, 25)
         Me.Button_LaunchGameRidevBrowser.TabIndex = 26
         Me.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         Me.Button_LaunchGameRidevBrowser.UseVisualStyleBackColor = False
@@ -795,9 +813,9 @@ Partial Class Form_Tools
         Me.Button_OpenLoginPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_OpenLoginPanel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_OpenLoginPanel.ForeColor = System.Drawing.Color.White
-        Me.Button_OpenLoginPanel.Location = New System.Drawing.Point(171, 148)
+        Me.Button_OpenLoginPanel.Location = New System.Drawing.Point(12, 114)
         Me.Button_OpenLoginPanel.Name = "Button_OpenLoginPanel"
-        Me.Button_OpenLoginPanel.Size = New System.Drawing.Size(119, 25)
+        Me.Button_OpenLoginPanel.Size = New System.Drawing.Size(162, 25)
         Me.Button_OpenLoginPanel.TabIndex = 32
         Me.Button_OpenLoginPanel.Text = "Open Login panel"
         Me.Button_OpenLoginPanel.UseVisualStyleBackColor = False
@@ -2872,12 +2890,224 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
+        'WebBrowser_Synchronisation
+        '
+        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1013, 813)
+        Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
+        Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
+        Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
+        Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Synchronisation.TabIndex = 76
+        '
+        'TextBox_timeticks2
+        '
+        Me.TextBox_timeticks2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks2.Location = New System.Drawing.Point(130, 85)
+        Me.TextBox_timeticks2.Name = "TextBox_timeticks2"
+        Me.TextBox_timeticks2.ReadOnly = True
+        Me.TextBox_timeticks2.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeticks2.TabIndex = 14
+        Me.TextBox_timeticks2.Text = "0"
+        Me.TextBox_timeticks2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator
+        '
+        Me.Label_separator.AutoSize = True
+        Me.Label_separator.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator.Location = New System.Drawing.Point(145, 85)
+        Me.Label_separator.Name = "Label_separator"
+        Me.Label_separator.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator.TabIndex = 15
+        Me.Label_separator.Text = ":"
+        '
+        'TextBox_timeticks4
+        '
+        Me.TextBox_timeticks4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks4.Location = New System.Drawing.Point(170, 85)
+        Me.TextBox_timeticks4.Name = "TextBox_timeticks4"
+        Me.TextBox_timeticks4.ReadOnly = True
+        Me.TextBox_timeticks4.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeticks4.TabIndex = 17
+        Me.TextBox_timeticks4.Text = "0"
+        Me.TextBox_timeticks4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeticks3
+        '
+        Me.TextBox_timeticks3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks3.Location = New System.Drawing.Point(155, 85)
+        Me.TextBox_timeticks3.Name = "TextBox_timeticks3"
+        Me.TextBox_timeticks3.ReadOnly = True
+        Me.TextBox_timeticks3.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeticks3.TabIndex = 16
+        Me.TextBox_timeticks3.Text = "0"
+        Me.TextBox_timeticks3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox6
+        '
+        Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(210, 85)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox6.TabIndex = 20
+        Me.TextBox6.Text = "0"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeticks5
+        '
+        Me.TextBox_timeticks5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeticks5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeticks5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeticks5.Location = New System.Drawing.Point(195, 85)
+        Me.TextBox_timeticks5.Name = "TextBox_timeticks5"
+        Me.TextBox_timeticks5.ReadOnly = True
+        Me.TextBox_timeticks5.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeticks5.TabIndex = 19
+        Me.TextBox_timeticks5.Text = "0"
+        Me.TextBox_timeticks5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator2
+        '
+        Me.Label_separator2.AutoSize = True
+        Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator2.Location = New System.Drawing.Point(185, 85)
+        Me.Label_separator2.Name = "Label_separator2"
+        Me.Label_separator2.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator2.TabIndex = 18
+        Me.Label_separator2.Text = ":"
+        '
+        'TextBox_timeGame6
+        '
+        Me.TextBox_timeGame6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame6.Location = New System.Drawing.Point(210, 104)
+        Me.TextBox_timeGame6.Name = "TextBox_timeGame6"
+        Me.TextBox_timeGame6.ReadOnly = True
+        Me.TextBox_timeGame6.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame6.TabIndex = 28
+        Me.TextBox_timeGame6.Text = "0"
+        Me.TextBox_timeGame6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame5
+        '
+        Me.TextBox_timeGame5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame5.Location = New System.Drawing.Point(195, 104)
+        Me.TextBox_timeGame5.Name = "TextBox_timeGame5"
+        Me.TextBox_timeGame5.ReadOnly = True
+        Me.TextBox_timeGame5.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame5.TabIndex = 27
+        Me.TextBox_timeGame5.Text = "0"
+        Me.TextBox_timeGame5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator4
+        '
+        Me.Label_separator4.AutoSize = True
+        Me.Label_separator4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator4.Location = New System.Drawing.Point(185, 104)
+        Me.Label_separator4.Name = "Label_separator4"
+        Me.Label_separator4.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator4.TabIndex = 26
+        Me.Label_separator4.Text = ":"
+        '
+        'TextBox_timeGame4
+        '
+        Me.TextBox_timeGame4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame4.Location = New System.Drawing.Point(170, 104)
+        Me.TextBox_timeGame4.Name = "TextBox_timeGame4"
+        Me.TextBox_timeGame4.ReadOnly = True
+        Me.TextBox_timeGame4.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame4.TabIndex = 25
+        Me.TextBox_timeGame4.Text = "0"
+        Me.TextBox_timeGame4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame3
+        '
+        Me.TextBox_timeGame3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame3.Location = New System.Drawing.Point(155, 104)
+        Me.TextBox_timeGame3.Name = "TextBox_timeGame3"
+        Me.TextBox_timeGame3.ReadOnly = True
+        Me.TextBox_timeGame3.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame3.TabIndex = 24
+        Me.TextBox_timeGame3.Text = "0"
+        Me.TextBox_timeGame3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_separator3
+        '
+        Me.Label_separator3.AutoSize = True
+        Me.Label_separator3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator3.Location = New System.Drawing.Point(145, 104)
+        Me.Label_separator3.Name = "Label_separator3"
+        Me.Label_separator3.Size = New System.Drawing.Size(10, 13)
+        Me.Label_separator3.TabIndex = 23
+        Me.Label_separator3.Text = ":"
+        '
+        'TextBox_timeGame2
+        '
+        Me.TextBox_timeGame2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame2.Location = New System.Drawing.Point(130, 104)
+        Me.TextBox_timeGame2.Name = "TextBox_timeGame2"
+        Me.TextBox_timeGame2.ReadOnly = True
+        Me.TextBox_timeGame2.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame2.TabIndex = 22
+        Me.TextBox_timeGame2.Text = "0"
+        Me.TextBox_timeGame2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_timeGame
+        '
+        Me.TextBox_timeGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_timeGame.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_timeGame.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_timeGame.Location = New System.Drawing.Point(115, 104)
+        Me.TextBox_timeGame.Name = "TextBox_timeGame"
+        Me.TextBox_timeGame.ReadOnly = True
+        Me.TextBox_timeGame.Size = New System.Drawing.Size(15, 15)
+        Me.TextBox_timeGame.TabIndex = 21
+        Me.TextBox_timeGame.Text = "0"
+        Me.TextBox_timeGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button_revive_sid
+        '
+        Me.Button_revive_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_revive_sid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_revive_sid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_revive_sid.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_revive_sid.ForeColor = System.Drawing.Color.White
+        Me.Button_revive_sid.Location = New System.Drawing.Point(12, 143)
+        Me.Button_revive_sid.Name = "Button_revive_sid"
+        Me.Button_revive_sid.Size = New System.Drawing.Size(213, 25)
+        Me.Button_revive_sid.TabIndex = 37
+        Me.Button_revive_sid.Text = "Revive sid / reload the session"
+        Me.Button_revive_sid.UseVisualStyleBackColor = False
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
+        Me.Controls.Add(Me.WebBrowser_Synchronisation)
         Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.WebBrowser_GGInfo)
         Me.Controls.Add(Me.TextBox_DebugGGS)
@@ -3079,7 +3309,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label_GG_A_SUPPRIMER As Label
     Friend WithEvents Button_Alpha As Button
@@ -3173,4 +3402,21 @@ Partial Class Form_Tools
     Friend WithEvents PictureBox_BackgroundBot As PictureBox
     Friend WithEvents PictureBox_StopBot As PictureBox
     Friend WithEvents PictureBox_PlayBot As PictureBox
+    Friend WithEvents WebBrowser_Synchronisation As WebBrowser
+    Friend WithEvents TextBox_timeGame6 As TextBox
+    Friend WithEvents TextBox_timeGame5 As TextBox
+    Friend WithEvents Label_separator4 As Label
+    Friend WithEvents TextBox_timeGame4 As TextBox
+    Friend WithEvents TextBox_timeGame3 As TextBox
+    Friend WithEvents Label_separator3 As Label
+    Friend WithEvents TextBox_timeGame2 As TextBox
+    Friend WithEvents TextBox_timeGame As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox_timeticks5 As TextBox
+    Friend WithEvents Label_separator2 As Label
+    Friend WithEvents TextBox_timeticks4 As TextBox
+    Friend WithEvents TextBox_timeticks3 As TextBox
+    Friend WithEvents Label_separator As Label
+    Friend WithEvents TextBox_timeticks2 As TextBox
+    Friend WithEvents Button_revive_sid As Button
 End Class

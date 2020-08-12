@@ -136,44 +136,26 @@ Public Class Form_Startup
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
+
+        Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
+
         If ProfilSelected = 1 Then
 
-            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Form_Game.Show()
-                Close()
-            Else
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Close()
-            End If
+            Label_point_de_chute.Select()
+            Form_Tools.Show()
+            Close()
 
         ElseIf ProfilSelected = 2 Then
 
-            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Form_Game.Show()
-                Close()
-            Else
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Close()
-            End If
+            Label_point_de_chute.Select()
+            Form_Tools.Show()
+            Close()
 
         ElseIf ProfilSelected = 3 Then
 
-            If Form_Tools.CheckBox_LaunchGameAuto.Checked = True Then
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Form_Game.Show()
-                Close()
-            Else
-                Label_point_de_chute.Select()
-                Form_Tools.Show()
-                Close()
-            End If
+            Label_point_de_chute.Select()
+            Form_Tools.Show()
+            Close()
 
         Else MsgBox("select profil in first.")
 
@@ -201,21 +183,14 @@ Public Class Form_Startup
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button_SID_Load.Click
 
-        ' button Load > SID login '
-
         Label_point_de_chute.Select()
         Utils.server = TextBox_server.Text
         Utils.dosid = TextBox_sid.Text
 
-        ' Inutile maintenant qu'on utilise la classe utils
-        'Dim server1 = TextBox1.Text
-        'Dim dosid = TextBox3.Text
-
         Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-
+        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         Form_Game.Show()
-        Form_Game.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        ' Form2.WebBrowser1.Navigate("https://" + ((server)) + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
         Me.Close()
 
     End Sub
