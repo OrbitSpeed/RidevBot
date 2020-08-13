@@ -107,11 +107,11 @@
                     Form_Tools.ExpCalculator3 = (Form_Tools.ExpCalculator2) - (Form_Tools.ExpCalculator)
                     Form_Tools.RPCalculator3 = (Form_Tools.RPCalculator2) - (Form_Tools.RPCalculator)
 
-                    Form_Tools.TextBox_uridiumEarned.Text = (Form_Tools.UridiumCalculator3)
-                    Form_Tools.TextBox_creditEarned.Text = (Form_Tools.CreditCalculator3)
-                    Form_Tools.TextBox_honorEarned.Text = (Form_Tools.HonorCalculator3)
-                    Form_Tools.TextBox_experienceEarned.Text = (Form_Tools.ExpCalculator3)
-                    Form_Tools.TextBox_RPEarned.Text = (Form_Tools.RPCalculator3)
+                    Form_Tools.TextBox_uridiumEarned.Text = Utils.NumberToHumanReadable(Form_Tools.UridiumCalculator3, ".")
+                    Form_Tools.TextBox_creditEarned.Text = Utils.NumberToHumanReadable(Form_Tools.CreditCalculator3, ".")
+                    Form_Tools.TextBox_honorEarned.Text = Utils.NumberToHumanReadable(Form_Tools.HonorCalculator3, ".")
+                    Form_Tools.TextBox_experienceEarned.Text = Utils.NumberToHumanReadable(Form_Tools.ExpCalculator3, ".")
+                    Form_Tools.TextBox_RPEarned.Text = Utils.NumberToHumanReadable(Form_Tools.RPCalculator3, ".")
 
                 End If
 
