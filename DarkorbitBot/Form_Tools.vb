@@ -2250,7 +2250,7 @@ Public Class Form_Tools
 
     Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
         'Après le click
-#Region "Bordel"
+#Region "WebBrowser_GGspinner"
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
         'Console.WriteLine(html5)
@@ -2321,6 +2321,7 @@ Public Class Form_Tools
 
             ElseIf DataWinned.Contains("part") Then
 
+#Region "Delta"
                 If Button_delta.Enabled = False Then
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
@@ -2373,10 +2374,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
                     CheckedDeltaStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Epsilon"
                 If Button_epsilon.Enabled = False Then
 
                     Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
@@ -2437,10 +2438,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
                     CheckedEpsilonStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Zeta"
                 If Button_zeta.Enabled = False Then
 
                     Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
@@ -2496,10 +2497,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
                     CheckedZetaStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Kappa"
                 If Button_Kappa.Enabled = False Then
 
                     Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
@@ -2554,10 +2555,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
                     CheckedkappaStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Lambda"
                 If Button_lambda.Enabled = False Then
 
                     Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
@@ -2612,10 +2613,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
                     CheckedLambdaStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Kuiper"
                 If Button_kuiper.Enabled = False Then
 
                     Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
@@ -2670,10 +2671,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
                     CheckedkuiperStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "Hades"
                 If Button_hades.Enabled = False Then
 
                     Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
@@ -2726,10 +2727,10 @@ Public Class Form_Tools
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
                     CheckedHadesStats = 1
-
-                Else
                 End If
+#End Region
 
+#Region "ABG"
                 If Button_Alpha.Enabled = False Then
 
                     Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' info GG Alpha
@@ -2888,10 +2889,9 @@ Public Class Form_Tools
 
 
                 End If
+#End Region
 
                 DataWinned = "Part/ Multiplier assigned"
-
-            Else
             End If
 
         End If
@@ -3026,19 +3026,21 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub PictureBox_epingleBarréBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epingleBarréBot.Click
-
-        PictureBox_epingleBarréBot.Visible = False
-        PictureBox_epinglerBot.Visible = True
-        Me.TopMost = False
-
-    End Sub
-
     Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
+        Console.WriteLine("click !")
+        Dim tagBoolean As Boolean = PictureBox_epinglerBot.Tag
 
-        PictureBox_epinglerBot.Visible = False
-        PictureBox_epingleBarréBot.Visible = True
-        Me.TopMost = True
+        If tagBoolean Then
+            PictureBox_epinglerBot.Tag = "0"
+            'MsgBox("Epinglé")
+            PictureBox_epinglerBot.Image = My.Resources.img_unpin
+            Me.TopMost = False
+        Else
+            PictureBox_epinglerBot.Tag = "1"
+            'MsgBox("Pas Epinglé")
+            PictureBox_epinglerBot.Image = My.Resources.img_pin
+            Me.TopMost = True
+        End If
 
     End Sub
 
