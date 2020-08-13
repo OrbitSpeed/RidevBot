@@ -177,6 +177,8 @@ Partial Class Form_Tools
         Me.Button_stopSpin = New System.Windows.Forms.Button()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.Panel_UridiumtoKeep = New System.Windows.Forms.Panel()
+        Me.TextBox_total_gates_builded = New System.Windows.Forms.TextBox()
+        Me.TextBox_total_spinned = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label_total_gates_builded = New System.Windows.Forms.Label()
         Me.Label_total_spinned = New System.Windows.Forms.Label()
@@ -248,8 +250,6 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
-        Me.TextBox_total_gates_builded = New System.Windows.Forms.TextBox()
-        Me.TextBox_total_spinned = New System.Windows.Forms.TextBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -2332,6 +2332,32 @@ Partial Class Form_Tools
         Me.Panel_UridiumtoKeep.Size = New System.Drawing.Size(258, 162)
         Me.Panel_UridiumtoKeep.TabIndex = 66
         '
+        'TextBox_total_gates_builded
+        '
+        Me.TextBox_total_gates_builded.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_total_gates_builded.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_total_gates_builded.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_total_gates_builded.Location = New System.Drawing.Point(134, 104)
+        Me.TextBox_total_gates_builded.MaxLength = 5
+        Me.TextBox_total_gates_builded.Name = "TextBox_total_gates_builded"
+        Me.TextBox_total_gates_builded.Size = New System.Drawing.Size(18, 16)
+        Me.TextBox_total_gates_builded.TabIndex = 97
+        Me.TextBox_total_gates_builded.Text = "99"
+        Me.TextBox_total_gates_builded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_total_spinned
+        '
+        Me.TextBox_total_spinned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_total_spinned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_total_spinned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_total_spinned.Location = New System.Drawing.Point(106, 88)
+        Me.TextBox_total_spinned.MaxLength = 7
+        Me.TextBox_total_spinned.Name = "TextBox_total_spinned"
+        Me.TextBox_total_spinned.Size = New System.Drawing.Size(36, 16)
+        Me.TextBox_total_spinned.TabIndex = 98
+        Me.TextBox_total_spinned.Text = "99999"
+        Me.TextBox_total_spinned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -3061,7 +3087,6 @@ Partial Class Form_Tools
         'PictureBox_part
         '
         Me.PictureBox_part.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox_part.Image = Global.DarkorbitBot.My.Resources.Resources.g3x_amry_m_30x30
         Me.PictureBox_part.Location = New System.Drawing.Point(15, 420)
         Me.PictureBox_part.Name = "PictureBox_part"
         Me.PictureBox_part.Size = New System.Drawing.Size(17, 17)
@@ -3072,7 +3097,6 @@ Partial Class Form_Tools
         'PictureBox_nanohull
         '
         Me.PictureBox_nanohull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox_nanohull.Image = Global.DarkorbitBot.My.Resources.Resources.sg3n_a01_30x30
         Me.PictureBox_nanohull.Location = New System.Drawing.Point(15, 452)
         Me.PictureBox_nanohull.Name = "PictureBox_nanohull"
         Me.PictureBox_nanohull.Size = New System.Drawing.Size(17, 17)
@@ -3212,32 +3236,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
         Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
-        '
-        'TextBox_total_gates_builded
-        '
-        Me.TextBox_total_gates_builded.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_total_gates_builded.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_total_gates_builded.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_total_gates_builded.Location = New System.Drawing.Point(134, 104)
-        Me.TextBox_total_gates_builded.MaxLength = 5
-        Me.TextBox_total_gates_builded.Name = "TextBox_total_gates_builded"
-        Me.TextBox_total_gates_builded.Size = New System.Drawing.Size(18, 16)
-        Me.TextBox_total_gates_builded.TabIndex = 97
-        Me.TextBox_total_gates_builded.Text = "99"
-        Me.TextBox_total_gates_builded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_total_spinned
-        '
-        Me.TextBox_total_spinned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_total_spinned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_total_spinned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_total_spinned.Location = New System.Drawing.Point(106, 88)
-        Me.TextBox_total_spinned.MaxLength = 7
-        Me.TextBox_total_spinned.Name = "TextBox_total_spinned"
-        Me.TextBox_total_spinned.Size = New System.Drawing.Size(36, 16)
-        Me.TextBox_total_spinned.TabIndex = 98
-        Me.TextBox_total_spinned.Text = "99999"
-        Me.TextBox_total_spinned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Form_Tools
         '

@@ -56,6 +56,17 @@ Public Class Form_Startup
         CenterToScreen()
         Label_point_de_chute.Select()
 
+        If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text Then
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
+
+        Else
+
+
+        End If
+
         If CheckedStats = 0 Then
             If Form_Tools.CheckBox_AutoLogin.Checked = True Then
                 If Form_Tools.ComboBox_autologin.Text = "Profil 1" Then
@@ -88,6 +99,10 @@ Public Class Form_Startup
 
 
                 End If
+
+            Else
+
+
             End If
         End If
 
@@ -189,23 +204,6 @@ Public Class Form_Startup
         ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
             ProfilSelected = 3
 
-        ElseIf TextBox_UsernamePasswordProfil1username.Text = "" And TextBoxUsernamePasswordProfil1password.Text = "" Then
-            TextBox_UsernamePasswordProfil1username.Text = Textbox_Username.Text
-            TextBoxUsernamePasswordProfil1password.Text = Textbox_Password.Text
-            MsgBox("your account are saved in profil 1")
-            ProfilSelected = 1
-
-        ElseIf TextBox_UsernamePasswordProfil2username.Text = "" And TextBoxUsernamePasswordProfil2password.Text = "" Then
-            TextBox_UsernamePasswordProfil2username.Text = Textbox_Username.Text
-            TextBoxUsernamePasswordProfil2password.Text = Textbox_Password.Text
-            MsgBox("your account are saved in profil 2")
-            ProfilSelected = 2
-
-        ElseIf TextBox_UsernamePasswordProfil3username.Text = "" And TextBoxUsernamePasswordProfil3password.Text = "" Then
-            TextBox_UsernamePasswordProfil3username.Text = Textbox_Username.Text
-            TextBoxUsernamePasswordProfil3password.Text = Textbox_Password.Text
-            MsgBox("your account are saved in profil 3")
-            ProfilSelected = 3
         End If
 
         If ProfilSelected = 1 Then
