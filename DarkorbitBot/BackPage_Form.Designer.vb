@@ -26,20 +26,20 @@ Partial Class BackPage_Form
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel_Bar = New System.Windows.Forms.Panel()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.FlatMax1 = New DarkorbitBot.FlatMax()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.Panel_Bar.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 59)
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(800, 541)
+        Me.WebBrowser1.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser1.TabIndex = 0
         '
         'Label16
@@ -67,6 +67,35 @@ Partial Class BackPage_Form
         Me.Panel_Bar.Size = New System.Drawing.Size(800, 18)
         Me.Panel_Bar.TabIndex = 24
         '
+        'FlatMax1
+        '
+        Me.FlatMax1.BackColor = System.Drawing.Color.White
+        Me.FlatMax1.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMax1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMax1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMax1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMax1.Location = New System.Drawing.Point(746, 0)
+        Me.FlatMax1.Name = "FlatMax1"
+        Me.FlatMax1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMax1.TabIndex = 20
+        Me.FlatMax1.Text = "1"
+        Me.FlatMax1.TextColor = System.Drawing.Color.Black
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(764, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 29
+        Me.FlatMini1.Text = "0"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        '
         'PictureBox_Close
         '
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
@@ -79,33 +108,6 @@ Partial Class BackPage_Form
         Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Close.TabIndex = 30
         Me.PictureBox_Close.TabStop = False
-        '
-        'FlatMax1
-        '
-        Me.FlatMax1.BackColor = System.Drawing.Color.White
-        Me.FlatMax1.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMax1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMax1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMax1.Location = New System.Drawing.Point(746, 0)
-        Me.FlatMax1.Name = "FlatMax1"
-        Me.FlatMax1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMax1.TabIndex = 31
-        Me.FlatMax1.Text = "FlatMax1"
-        Me.FlatMax1.TextColor = System.Drawing.Color.Black
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(764, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 29
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'BackPage_Form
         '

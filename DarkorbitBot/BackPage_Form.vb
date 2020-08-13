@@ -36,15 +36,6 @@
 
     End Sub
 
-    Private Sub Panel_Bar_DoubleClick(sender As Object, e As PaintEventArgs) Handles Panel_Bar.DoubleClick
-        'TODO Quand on aura le temps de fix
-        'If Me.WindowState = FormWindowState.Maximized Then
-        '    Me.WindowState = FormWindowState.Normal
-        'Else
-        '    Me.WindowState = FormWindowState.Maximized
-        'End If
-    End Sub
-
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
         CloseForm.ShowDialog(Me)
     End Sub
@@ -123,6 +114,14 @@
             End If
         End If
 
+    End Sub
+
+    Private Sub Panel_Bar_Paint(sender As Object, e As MouseEventArgs) Handles Panel_Bar.DoubleClick
+        If Me.WindowState = FormWindowState.Maximized Then
+            Me.WindowState = FormWindowState.Normal
+        Else
+            Me.WindowState = FormWindowState.Maximized
+        End If
     End Sub
 
 End Class
