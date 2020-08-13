@@ -108,13 +108,6 @@ Public Class AutoUpdater
 
     Public FilePath As String = Path.Combine(Application.StartupPath, "ridevbotuniverse.mp4")
 
-    Sub PlayVideo()
-
-        AxWindowsMediaPlayer1.URL = FilePath
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
-
-    End Sub
-
     Private Async Sub WC_Update_ChangeLog_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try
@@ -128,8 +121,12 @@ Public Class AutoUpdater
             If Not File.Exists(FilePath) Then
                 File.WriteAllBytes(FilePath, My.Resources.ridevbotuniverse)
             End If
+            AxWindowsMediaPlayer1.URL = FilePath
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            Dim wait = Task.Delay(265)
+            Await wait
             AxWindowsMediaPlayer1.Visible = True
-            PlayVideo()
+
             Dim attendre = Task.Delay(2200)
             Await attendre
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
