@@ -135,10 +135,22 @@ Partial Class Form_Tools
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
+        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_epingleBarréBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
         Me.Label_GG_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Button_beta = New System.Windows.Forms.Button()
@@ -219,25 +231,13 @@ Partial Class Form_Tools
         Me.Label_LivesLeft3 = New System.Windows.Forms.Label()
         Me.Label_infoPartGG_CurrentWave3 = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
-        Me.Timer_sid = New System.Windows.Forms.Timer(Me.components)
-        Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_galaxyGates3 = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_galaxyGates2 = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
+        Me.Timer_sid = New System.Windows.Forms.Timer(Me.components)
+        Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
-        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_epingleBarréBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -250,7 +250,17 @@ Partial Class Form_Tools
         Me.Panel_rex.SuspendLayout()
         Me.Panel_divers.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Uridum_ExtraEnnergy_left.SuspendLayout()
         Me.Panel_UridiumtoKeep.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
@@ -261,16 +271,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG3.SuspendLayout()
         Me.Panel_infoPartGG_GG3.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -1733,6 +1733,65 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
+        'PictureBox_Backpage
+        '
+        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
+        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
+        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Backpage.TabIndex = 34
+        Me.PictureBox_Backpage.TabStop = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        '
+        'PictureBox_Pause
+        '
+        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
+        Me.PictureBox_Pause.Name = "PictureBox_Pause"
+        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Pause.TabIndex = 33
+        Me.PictureBox_Pause.TabStop = False
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 26
+        Me.PictureBox_Close.TabStop = False
+        '
+        'PictureBox_Start
+        '
+        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
+        Me.PictureBox_Start.Name = "PictureBox_Start"
+        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Start.TabIndex = 27
+        Me.PictureBox_Start.TabStop = False
+        '
         'TextBox_DebugGGS
         '
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -1777,6 +1836,45 @@ Partial Class Form_Tools
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
         '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'PictureBox_close1
+        '
+        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
+        Me.PictureBox_close1.Name = "PictureBox_close1"
+        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_close1.TabIndex = 32
+        Me.PictureBox_close1.TabStop = False
+        '
+        'PictureBox_BackgroundBot
+        '
+        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_accueil
+        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(178, 0)
+        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
+        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_BackgroundBot.TabIndex = 9
+        Me.PictureBox_BackgroundBot.TabStop = False
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -1787,6 +1885,53 @@ Partial Class Form_Tools
         Me.Label16.Size = New System.Drawing.Size(124, 18)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "RidevBot Tools"
+        '
+        'PictureBox_StopBot
+        '
+        Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
+        Me.PictureBox_StopBot.Location = New System.Drawing.Point(152, 0)
+        Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
+        Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_StopBot.TabIndex = 8
+        Me.PictureBox_StopBot.TabStop = False
+        '
+        'PictureBox_PlayBot
+        '
+        Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
+        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(135, 0)
+        Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
+        Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_PlayBot.TabIndex = 7
+        Me.PictureBox_PlayBot.TabStop = False
+        '
+        'PictureBox_epingleBarréBot
+        '
+        Me.PictureBox_epingleBarréBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_epingleBarréBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
+        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epingleBarréBot.Name = "PictureBox_epingleBarréBot"
+        Me.PictureBox_epingleBarréBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_epingleBarréBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_epingleBarréBot.TabIndex = 11
+        Me.PictureBox_epingleBarréBot.TabStop = False
+        '
+        'PictureBox_epinglerBot
+        '
+        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pin
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
+        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_epinglerBot.TabIndex = 10
+        Me.PictureBox_epinglerBot.TabStop = False
         '
         'Label_GG_A_SUPPRIMER
         '
@@ -2855,30 +3000,6 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
         '
-        'Timer_sid
-        '
-        Me.Timer_sid.Interval = 1000
-        '
-        'WebBrowser_Synchronisation
-        '
-        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1013, 813)
-        Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
-        Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
-        Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
-        Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_Synchronisation.TabIndex = 76
-        '
-        'WebBrowser_GGInfo
-        '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1013, 787)
-        Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
-        Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
-        Me.WebBrowser_GGInfo.ScrollBarsEnabled = False
-        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGInfo.TabIndex = 74
-        '
         'WebBrowser_galaxyGates3
         '
         Me.WebBrowser_galaxyGates3.Location = New System.Drawing.Point(725, 14)
@@ -2909,6 +3030,30 @@ Partial Class Form_Tools
         Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(257, 312)
         Me.WebBrowser_galaxyGates.TabIndex = 39
         '
+        'Timer_sid
+        '
+        Me.Timer_sid.Interval = 1000
+        '
+        'WebBrowser_Synchronisation
+        '
+        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1013, 813)
+        Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
+        Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
+        Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
+        Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Synchronisation.TabIndex = 76
+        '
+        'WebBrowser_GGInfo
+        '
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1013, 787)
+        Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
+        Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
+        Me.WebBrowser_GGInfo.ScrollBarsEnabled = False
+        Me.WebBrowser_GGInfo.Size = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_GGInfo.TabIndex = 74
+        '
         'WebBrowser_GGspinner
         '
         Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1013, 761)
@@ -2918,151 +3063,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
         Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
-        '
-        'PictureBox_epinglerBot
-        '
-        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pin
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(195, 0)
-        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
-        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_epinglerBot.TabIndex = 10
-        Me.PictureBox_epinglerBot.TabStop = False
-        '
-        'PictureBox_close1
-        '
-        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
-        Me.PictureBox_close1.Name = "PictureBox_close1"
-        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_close1.TabIndex = 32
-        Me.PictureBox_close1.TabStop = False
-        '
-        'PictureBox_BackgroundBot
-        '
-        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_accueil
-        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(178, 0)
-        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
-        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_BackgroundBot.TabIndex = 9
-        Me.PictureBox_BackgroundBot.TabStop = False
-        '
-        'PictureBox_StopBot
-        '
-        Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
-        Me.PictureBox_StopBot.Location = New System.Drawing.Point(152, 0)
-        Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
-        Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_StopBot.TabIndex = 8
-        Me.PictureBox_StopBot.TabStop = False
-        '
-        'PictureBox_PlayBot
-        '
-        Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
-        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(135, 0)
-        Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
-        Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_PlayBot.TabIndex = 7
-        Me.PictureBox_PlayBot.TabStop = False
-        '
-        'PictureBox_epingleBarréBot
-        '
-        Me.PictureBox_epingleBarréBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_epingleBarréBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
-        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(195, 0)
-        Me.PictureBox_epingleBarréBot.Name = "PictureBox_epingleBarréBot"
-        Me.PictureBox_epingleBarréBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_epingleBarréBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_epingleBarréBot.TabIndex = 11
-        Me.PictureBox_epingleBarréBot.TabStop = False
-        '
-        'PictureBox_Backpage
-        '
-        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
-        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
-        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Backpage.TabIndex = 34
-        Me.PictureBox_Backpage.TabStop = False
-        '
-        'PictureBox_Pause
-        '
-        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
-        Me.PictureBox_Pause.Name = "PictureBox_Pause"
-        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Pause.TabIndex = 33
-        Me.PictureBox_Pause.TabStop = False
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 26
-        Me.PictureBox_Close.TabStop = False
-        '
-        'PictureBox_Start
-        '
-        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
-        Me.PictureBox_Start.Name = "PictureBox_Start"
-        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Start.TabIndex = 27
-        Me.PictureBox_Start.TabStop = False
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 31
-        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'Form_Tools
         '
@@ -3129,8 +3129,18 @@ Partial Class Form_Tools
         Me.Panel_divers.PerformLayout()
         Me.Panel_MoveTitle.ResumeLayout(False)
         Me.Panel_MoveTitle.PerformLayout()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Title.PerformLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Uridum_ExtraEnnergy_left.ResumeLayout(False)
         Me.Panel_Uridum_ExtraEnnergy_left.PerformLayout()
         Me.Panel_UridiumtoKeep.ResumeLayout(False)
@@ -3151,16 +3161,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG3.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
         Me.Panel_GalaxyGates.PerformLayout()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_epingleBarréBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

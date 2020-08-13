@@ -3058,6 +3058,7 @@ Public Class Form_Tools
     Private Sub PictureBox_epingleBarréBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epingleBarréBot.Click
 
         PictureBox_epingleBarréBot.Visible = False
+        PictureBox_epinglerBot.Visible = True
         Me.TopMost = False
 
     End Sub
@@ -3065,6 +3066,7 @@ Public Class Form_Tools
     Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
 
         PictureBox_epinglerBot.Visible = False
+        PictureBox_epingleBarréBot.Visible = True
         Me.TopMost = True
 
     End Sub
