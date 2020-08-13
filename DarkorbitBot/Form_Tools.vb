@@ -2056,15 +2056,14 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
-        Button_StartSpin.Enabled = True
-        Button_stopSpin.Enabled = False
-        ComboBox_autospin.Enabled = True
-
         If BackgroundWorkerAutospin = True Then
             BackgroundWorkerAutospin = False
             MessageBox.Show("Autospinner deactivated.")
         End If
 
+        Button_StartSpin.Enabled = True
+        Button_stopSpin.Enabled = False
+        ComboBox_autospin.Enabled = True
     End Sub
 
     Private Async Sub ClickGG(portail As String, temps As Integer)
@@ -3025,12 +3024,10 @@ Public Class Form_Tools
 
         If tagBoolean Then
             PictureBox_epinglerBot.Tag = "0"
-            'MsgBox("Epinglé")
             PictureBox_epinglerBot.Image = My.Resources.img_unpin
             Me.TopMost = False
         Else
             PictureBox_epinglerBot.Tag = "1"
-            'MsgBox("Pas Epinglé")
             PictureBox_epinglerBot.Image = My.Resources.img_pin
             Me.TopMost = True
         End If
