@@ -1198,7 +1198,8 @@ Partial Class Form_Tools
         '
         Me.CheckBox_SavedStatsEarned.AutoSize = True
         Me.CheckBox_SavedStatsEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_SavedStatsEarned.Enabled = False
+        Me.CheckBox_SavedStatsEarned.Checked = Global.DarkorbitBot.My.MySettings.Default.Saved_Earned_stats
+        Me.CheckBox_SavedStatsEarned.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "Saved_Earned_stats", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_SavedStatsEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_SavedStatsEarned.ForeColor = System.Drawing.Color.Black
         Me.CheckBox_SavedStatsEarned.Location = New System.Drawing.Point(6, 3)
@@ -1914,7 +1915,7 @@ Partial Class Form_Tools
         '
         Me.PictureBox_epingleBarréBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_epingleBarréBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
-        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epingleBarréBot.Location = New System.Drawing.Point(198, 0)
         Me.PictureBox_epingleBarréBot.Name = "PictureBox_epingleBarréBot"
         Me.PictureBox_epingleBarréBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_epingleBarréBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1926,7 +1927,7 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pin
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(198, 0)
         Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
         Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

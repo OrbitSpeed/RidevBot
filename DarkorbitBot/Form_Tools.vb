@@ -39,6 +39,8 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats2 As String = 0
     Public CheckedAlphaBetaGammaStats3 As String = 0
 
+    Public Reader As String = 0
+
 
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
@@ -415,37 +417,36 @@ Public Class Form_Tools
 
             Utils.checkStats = True
             BackPage_Form.Show()
+            Reader = 1
             BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
             BackPage_Form.WindowState = FormWindowState.Minimized
 
-            If Calculator = 1 Then
+            BackPage_Form.ShowIcon = False
+            BackPage_Form.ShowInTaskbar = False
 
-                UridiumCalculator = Val(TextBox_uridiumCurrent.Text)
-                CreditCalculator = Val(TextBox_creditCurrent.Text)
-                HonorCalculator = Val(TextBox_honorCurrent.Text)
-                ExpCalculator = Val(TextBox_experienceCurrent.Text)
-                RPCalculator = Val(TextBox_RPCurrent.Text)
+            'If Calculator = 1 Then
 
-                Calculator = 2
-            End If
+            '
 
-            UridiumCalculator3 = Val(TextBox_uridiumCurrent.Text)
-            CreditCalculator3 = Val(TextBox_creditCurrent.Text)
-            HonorCalculator3 = Val(TextBox_honorCurrent.Text)
-            ExpCalculator3 = Val(TextBox_experienceCurrent.Text)
-            RPCalculator3 = Val(TextBox_RPCurrent.Text)
+            'Calculator = 2
+            'End If
+            'UridiumCalculator3 = Val(TextBox_uridiumCurrent.Text)
+            'CreditCalculator3 = Val(TextBox_creditCurrent.Text)
+            'HonorCalculator3 = Val(TextBox_honorCurrent.Text)
+            'ExpCalculator3 = Val(TextBox_experienceCurrent.Text)
+            'RPCalculator3 = Val(TextBox_RPCurrent.Text)
 
-            UridiumCalculator2 = (UridiumCalculator3) - (UridiumCalculator)
-            CreditCalculator2 = (CreditCalculator3) - (CreditCalculator)
-            HonorCalculator2 = (HonorCalculator3) - (HonorCalculator)
-            ExpCalculator2 = (ExpCalculator3) - (ExpCalculator)
-            RPCalculator2 = (RPCalculator3) - (RPCalculator)
+            'UridiumCalculator2 = (UridiumCalculator3) - (UridiumCalculator)
+            'CreditCalculator2 = (CreditCalculator3) - (CreditCalculator)
+            'HonorCalculator2 = (HonorCalculator3) - (HonorCalculator)
+            'ExpCalculator2 = (ExpCalculator3) - (ExpCalculator)
+            'RPCalculator2 = (RPCalculator3) - (RPCalculator)
 
-            TextBox_uridiumEarned.Text = UridiumCalculator2
-            TextBox_creditEarned.Text = CreditCalculator2
-            TextBox_honorEarned.Text = HonorCalculator2
-            TextBox_experienceEarned.Text = ExpCalculator2
-            TextBox_RPEarned.Text = RPCalculator2
+            'TextBox_uridiumEarned.Text = UridiumCalculator2
+            'TextBox_creditEarned.Text = CreditCalculator2
+            'TextBox_honorEarned.Text = HonorCalculator2
+            'TextBox_experienceEarned.Text = ExpCalculator2
+            'TextBox_RPEarned.Text = RPCalculator2
 
         End If
 
@@ -2213,10 +2214,16 @@ Public Class Form_Tools
         TextBox_experienceEarned.Text = 0
         TextBox_RPEarned.Text = 0
 
+
+        Reader = 1
+        BackPage_Form.ShowIcon = False
+        BackPage_Form.ShowInTaskbar = False
+
         Utils.checkStats = True
         BackPage_Form.Show()
         BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         BackPage_Form.WindowState = FormWindowState.Minimized
+
 
     End Sub
 
@@ -3042,6 +3049,11 @@ Public Class Form_Tools
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
+
+        Reader = 1
+        BackPage_Form.ShowIcon = False
+        BackPage_Form.ShowInTaskbar = False
+
         Utils.checkStats = True
         BackPage_Form.Show()
         BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
@@ -3079,6 +3091,8 @@ Public Class Form_Tools
 
         Else
 
+            BackPage_Form.ShowIcon = True
+            BackPage_Form.ShowInTaskbar = True
             BackPage_Form.Show()
             BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
@@ -3131,10 +3145,14 @@ Public Class Form_Tools
 
                 TextBox_Get_Server.Text = Utils.server
 
+                Utils.UpdateStats()
+
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
                 Timer_sid.Enabled = True
                 Timer_sid.Start()
+
+                WebBrowser_Synchronisation.Navigate("About:Blank")
 
 
                 If CheckBox_LaunchGameAuto.Checked = True Then

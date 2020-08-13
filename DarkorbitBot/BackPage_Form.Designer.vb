@@ -26,20 +26,20 @@ Partial Class BackPage_Form
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel_Bar = New System.Windows.Forms.Panel()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.FlatMax1 = New DarkorbitBot.FlatMax()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.Panel_Bar.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 59)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(800, 600)
+        Me.WebBrowser1.Size = New System.Drawing.Size(800, 541)
         Me.WebBrowser1.TabIndex = 0
         '
         'Label16
@@ -67,6 +67,19 @@ Partial Class BackPage_Form
         Me.Panel_Bar.Size = New System.Drawing.Size(800, 18)
         Me.Panel_Bar.TabIndex = 24
         '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
         'FlatMax1
         '
         Me.FlatMax1.BackColor = System.Drawing.Color.White
@@ -93,19 +106,6 @@ Partial Class BackPage_Form
         Me.FlatMini1.TabIndex = 29
         Me.FlatMini1.Text = "FlatMini1"
         Me.FlatMini1.TextColor = System.Drawing.Color.Black
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
         '
         'BackPage_Form
         '
