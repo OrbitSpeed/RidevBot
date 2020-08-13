@@ -13,6 +13,7 @@ Global
 		v1.0.0.2|Any CPU = v1.0.0.2|Any CPU
 		v1.3|Any CPU = v1.3|Any CPU
 		v1.4|Any CPU = v1.4|Any CPU
+		v1.5.1|Any CPU = v1.5.1|Any CPU
 		v1.5|Any CPU = v1.5|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -28,6 +29,8 @@ Global
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.3|Any CPU.Build.0 = v1.3|Any CPU
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.4|Any CPU.ActiveCfg = v1.4|Any CPU
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.4|Any CPU.Build.0 = v1.4|Any CPU
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.5.1|Any CPU.ActiveCfg = v1.5.1|Any CPU
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.5.1|Any CPU.Build.0 = v1.5.1|Any CPU
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.5|Any CPU.ActiveCfg = v1.5|Any CPU
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.5|Any CPU.Build.0 = v1.5|Any CPU
 	EndGlobalSection

@@ -23,6 +23,7 @@ Public Class AutoUpdater
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
 
+
         AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
         WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
         '---
@@ -37,12 +38,8 @@ Public Class AutoUpdater
         Try
             Check_Maintenance = e.Result
             If Check_Maintenance Then
-                Dim result = MessageBox.Show($"A maintenance is actually underway...{vbNewLine}Please, try again later.{vbNewLine}If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                If result = DialogResult.OK Then
-                    Close()
-                Else
-                    Close()
-                End If
+                MessageBox.Show($"A maintenance is actually underway...{vbNewLine}Please, try again later.{vbNewLine}If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Close()
             End If
             FlatLabel_isUpdated.Select()
         Catch ex As Exception
@@ -137,15 +134,13 @@ Public Class AutoUpdater
             Await attendre
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
 
-
-
-
-            If My.Settings.AutoUpdate = True Then
+            If Check_Maintenance = False And My.Settings.AutoUpdate = True Then
                 Dim delay = Task.Delay(500)
                 Await delay
                 'Permet d'attendre 500 ms en + (secure)
                 Button_Update.PerformClick()
-
+            Else
+                Close()
             End If
 
         Catch ex As Exception

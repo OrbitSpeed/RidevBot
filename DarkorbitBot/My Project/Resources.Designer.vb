@@ -351,6 +351,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property AxInterop_WMPLib() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AxInterop_WMPLib", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property cargoBox() As System.Drawing.Bitmap
@@ -626,6 +636,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("img_verifie", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Interop_WMPLib() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Interop_WMPLib", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
