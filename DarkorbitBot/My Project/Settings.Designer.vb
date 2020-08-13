@@ -496,6 +496,66 @@ Namespace My
                 Me("Saved_Earned_stats") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Uridium_Earned_Visual() As String
+            Get
+                Return CType(Me("Uridium_Earned_Visual"),String)
+            End Get
+            Set
+                Me("Uridium_Earned_Visual") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Credit_Earned_Visual() As String
+            Get
+                Return CType(Me("Credit_Earned_Visual"),String)
+            End Get
+            Set
+                Me("Credit_Earned_Visual") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Honor_Earned_Visual() As String
+            Get
+                Return CType(Me("Honor_Earned_Visual"),String)
+            End Get
+            Set
+                Me("Honor_Earned_Visual") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Experience_Earned_Visual() As String
+            Get
+                Return CType(Me("Experience_Earned_Visual"),String)
+            End Get
+            Set
+                Me("Experience_Earned_Visual") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property RP_Earned_Visual() As String
+            Get
+                Return CType(Me("RP_Earned_Visual"),String)
+            End Get
+            Set
+                Me("RP_Earned_Visual") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

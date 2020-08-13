@@ -3025,7 +3025,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox_SavedStatsEarned_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_SavedStatsEarned.CheckedChanged
+    Private Sub CheckBox_SavedStatsEarned_CheckedChanged(sender As Object, e As EventArgs)
 
         If CheckBox_SavedStatsEarned.Checked = True Then
 
@@ -3049,15 +3049,13 @@ Public Class Form_Tools
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
-
         Reader = 1
+        Utils.checkStats = True
         BackPage_Form.ShowIcon = False
         BackPage_Form.ShowInTaskbar = False
-
-        Utils.checkStats = True
         BackPage_Form.Show()
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         BackPage_Form.WindowState = FormWindowState.Minimized
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
     End Sub
 
