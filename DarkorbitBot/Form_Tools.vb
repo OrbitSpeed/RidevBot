@@ -2093,7 +2093,7 @@ Public Class Form_Tools
 
     Private Async Sub ClickGG(portail As String, temps As Integer)
         Dim delay = Task.Delay(temps)
-        If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = 0 Then
+        If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
         End If
