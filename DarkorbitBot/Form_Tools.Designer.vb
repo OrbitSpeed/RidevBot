@@ -93,7 +93,6 @@ Partial Class Form_Tools
         Me.Label_Stats_Earned = New System.Windows.Forms.Label()
         Me.Label_Total_Current = New System.Windows.Forms.Label()
         Me.Panel_StatsEarned = New System.Windows.Forms.Panel()
-        Me.TextBox_RPEarned = New System.Windows.Forms.TextBox()
         Me.Label_RPEarned = New System.Windows.Forms.Label()
         Me.Label_uridiumEarned = New System.Windows.Forms.Label()
         Me.Label_creditEarned = New System.Windows.Forms.Label()
@@ -216,8 +215,7 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.TextBox_RPEarned = New System.Windows.Forms.TextBox()
         Me.TextBox_experienceEarned = New System.Windows.Forms.TextBox()
         Me.TextBox_honorEarned = New System.Windows.Forms.TextBox()
         Me.TextBox_creditEarned = New System.Windows.Forms.TextBox()
@@ -236,6 +234,8 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.CheckBox_LaunchGameAuto = New System.Windows.Forms.CheckBox()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -932,7 +932,7 @@ Partial Class Form_Tools
         Me.CheckBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox5.Location = New System.Drawing.Point(16, 235)
+        Me.CheckBox5.Location = New System.Drawing.Point(16, 141)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(129, 23)
         Me.CheckBox5.TabIndex = 38
@@ -945,7 +945,7 @@ Partial Class Form_Tools
         Me.CheckBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox11.Location = New System.Drawing.Point(15, 204)
+        Me.CheckBox11.Location = New System.Drawing.Point(15, 110)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(162, 23)
         Me.CheckBox11.TabIndex = 44
@@ -958,7 +958,7 @@ Partial Class Form_Tools
         Me.CheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox10.Location = New System.Drawing.Point(15, 181)
+        Me.CheckBox10.Location = New System.Drawing.Point(15, 87)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(170, 23)
         Me.CheckBox10.TabIndex = 43
@@ -971,7 +971,7 @@ Partial Class Form_Tools
         Me.CheckBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox8.Location = New System.Drawing.Point(15, 282)
+        Me.CheckBox8.Location = New System.Drawing.Point(15, 188)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(133, 23)
         Me.CheckBox8.TabIndex = 41
@@ -984,7 +984,7 @@ Partial Class Form_Tools
         Me.CheckBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox7.Location = New System.Drawing.Point(15, 258)
+        Me.CheckBox7.Location = New System.Drawing.Point(15, 164)
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(130, 23)
         Me.CheckBox7.TabIndex = 40
@@ -1175,20 +1175,6 @@ Partial Class Form_Tools
         Me.Panel_StatsEarned.Name = "Panel_StatsEarned"
         Me.Panel_StatsEarned.Size = New System.Drawing.Size(276, 108)
         Me.Panel_StatsEarned.TabIndex = 46
-        '
-        'TextBox_RPEarned
-        '
-        Me.TextBox_RPEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_RPEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_RPEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RP_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_RPEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_RPEarned.Location = New System.Drawing.Point(107, 81)
-        Me.TextBox_RPEarned.Name = "TextBox_RPEarned"
-        Me.TextBox_RPEarned.ReadOnly = True
-        Me.TextBox_RPEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_RPEarned.TabIndex = 55
-        Me.TextBox_RPEarned.Text = Global.DarkorbitBot.My.MySettings.Default.RP_Earned_Visual
-        Me.TextBox_RPEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_RPEarned
         '
@@ -2775,33 +2761,19 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
         '
-        'FlatMini_reduction_de_formtools
+        'TextBox_RPEarned
         '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 31
-        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
-        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 25
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.Black
+        Me.TextBox_RPEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_RPEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_RPEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RP_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_RPEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_RPEarned.Location = New System.Drawing.Point(107, 81)
+        Me.TextBox_RPEarned.Name = "TextBox_RPEarned"
+        Me.TextBox_RPEarned.ReadOnly = True
+        Me.TextBox_RPEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_RPEarned.TabIndex = 55
+        Me.TextBox_RPEarned.Text = Global.DarkorbitBot.My.MySettings.Default.RP_Earned_Visual
+        Me.TextBox_RPEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_experienceEarned
         '
@@ -3039,6 +3011,34 @@ Partial Class Form_Tools
         Me.CheckBox_AutoLogin.TabIndex = 6
         Me.CheckBox_AutoLogin.Text = "Auto login with :"
         Me.CheckBox_AutoLogin.UseVisualStyleBackColor = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 31
+        Me.FlatMini_reduction_de_formtools.Text = "FlatMini2"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini1.BaseColor = System.Drawing.Color.Empty
+        Me.FlatMini1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(1652, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 25
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.Black
         '
         'Form_Tools
         '
