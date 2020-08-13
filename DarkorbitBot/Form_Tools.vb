@@ -424,30 +424,6 @@ Public Class Form_Tools
             BackPage_Form.ShowIcon = False
             BackPage_Form.ShowInTaskbar = False
 
-            'If Calculator = 1 Then
-
-            '
-
-            'Calculator = 2
-            'End If
-            'UridiumCalculator3 = Val(TextBox_uridiumCurrent.Text)
-            'CreditCalculator3 = Val(TextBox_creditCurrent.Text)
-            'HonorCalculator3 = Val(TextBox_honorCurrent.Text)
-            'ExpCalculator3 = Val(TextBox_experienceCurrent.Text)
-            'RPCalculator3 = Val(TextBox_RPCurrent.Text)
-
-            'UridiumCalculator2 = (UridiumCalculator3) - (UridiumCalculator)
-            'CreditCalculator2 = (CreditCalculator3) - (CreditCalculator)
-            'HonorCalculator2 = (HonorCalculator3) - (HonorCalculator)
-            'ExpCalculator2 = (ExpCalculator3) - (ExpCalculator)
-            'RPCalculator2 = (RPCalculator3) - (RPCalculator)
-
-            'TextBox_uridiumEarned.Text = UridiumCalculator2
-            'TextBox_creditEarned.Text = CreditCalculator2
-            'TextBox_honorEarned.Text = HonorCalculator2
-            'TextBox_experienceEarned.Text = ExpCalculator2
-            'TextBox_RPEarned.Text = RPCalculator2
-
         End If
 
         CenterToScreen()
@@ -3022,28 +2998,6 @@ Public Class Form_Tools
         Label_Logfile_Earned.Text = 0
 
         TextBox_WinGGS.Text = ""
-
-    End Sub
-
-    Private Sub CheckBox_SavedStatsEarned_CheckedChanged(sender As Object, e As EventArgs)
-
-        If CheckBox_SavedStatsEarned.Checked = True Then
-
-            TextBox_uridiumEarned.DataBindings.Add(New Binding("0", TextBox_uridiumEarned, "Height"))
-            TextBox_creditEarned.DataBindings.Add(New Binding("0", TextBox_creditEarned, "Height"))
-            TextBox_honorEarned.DataBindings.Add(New Binding("0", TextBox_honorEarned, "Height"))
-            TextBox_experienceEarned.DataBindings.Add(New Binding("0", TextBox_experienceEarned, "Height"))
-            TextBox_RPEarned.DataBindings.Add(New Binding("0", TextBox_RPEarned, "Height"))
-
-        Else
-
-            TextBox_uridiumEarned.DataBindings.Clear()
-            TextBox_creditEarned.DataBindings.Clear()
-            TextBox_honorEarned.DataBindings.Clear()
-            TextBox_experienceEarned.DataBindings.Clear()
-            TextBox_RPEarned.DataBindings.Clear()
-
-        End If
 
     End Sub
 
