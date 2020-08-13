@@ -1,7 +1,14 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
+Imports AutoItX3Lib
 
 Public Class Form_Tools
+
+    Dim AutoIt As New AutoItX3
+    Public X_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.X)
+    Public Y_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.Y - 18)
+    Public X_BOTTOM As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Width)
+    Public Y_BOTTOM As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Height)
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -3196,4 +3203,98 @@ Public Class Form_Tools
         End If
 
     End Sub
+
+
+
+    Private Sub Collect_Palladium()
+
+
+        Try
+
+            Dim Palladium_ = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
+            AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
+
+        Catch Palladium_not_found As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub Collect_box()
+
+        Try
+
+            Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+
+        Catch Bonus_Box_not_found As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub Collect_Cargo_box()
+
+        Try
+
+            Dim Cargo_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 16777030, 5, 1)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Cargo_Box(0) - 0, Cargo_Box(1) - 0)
+
+        Catch Cargo_Box_not_found As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub Random_movement()
+
+
+        'Dim random As New Random(), rndnbr As Integer
+        '    rndnbr = random.Next(A6 + 60, A62 + 60)
+        '    Dim random2 As New Random(), rndnbr2 As Integer
+        '    rndnbr2 = random2.Next(A61 - 20, A63 - 20)
+
+        '    AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
+
+    End Sub
+
+    Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs) Handles PictureBox_StopBot.Click
+
+    End Sub
 End Class
+
+
+
+
+

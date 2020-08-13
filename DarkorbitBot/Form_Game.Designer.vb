@@ -27,11 +27,8 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.FlatButton4 = New DarkorbitBot.FlatButton()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.FlatButton2 = New DarkorbitBot.FlatButton()
-        Me.FlatButton1 = New DarkorbitBot.FlatButton()
-        Me.Clickbutton = New DarkorbitBot.FlatButton()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.FlatButton3 = New DarkorbitBot.FlatButton()
         Me.Panel7.SuspendLayout()
@@ -73,31 +70,13 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.FlatButton4)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.FlatButton2)
-        Me.Panel7.Controls.Add(Me.FlatButton1)
-        Me.Panel7.Controls.Add(Me.Clickbutton)
         Me.Panel7.Controls.Add(Me.Label_Title)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
-        '
-        'FlatButton4
-        '
-        Me.FlatButton4.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton4.Location = New System.Drawing.Point(512, 0)
-        Me.FlatButton4.Name = "FlatButton4"
-        Me.FlatButton4.Rounded = False
-        Me.FlatButton4.Size = New System.Drawing.Size(142, 18)
-        Me.FlatButton4.TabIndex = 31
-        Me.FlatButton4.Text = "All in one + Move"
-        Me.FlatButton4.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.FlatButton4.Visible = False
         '
         'PictureBox_Close
         '
@@ -126,36 +105,6 @@ Partial Class Form_Game
         Me.FlatButton2.Text = "Click NPC + attack"
         Me.FlatButton2.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.FlatButton2.Visible = False
-        '
-        'FlatButton1
-        '
-        Me.FlatButton1.BackColor = System.Drawing.Color.Transparent
-        Me.FlatButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(262, 0)
-        Me.FlatButton1.Name = "FlatButton1"
-        Me.FlatButton1.Rounded = False
-        Me.FlatButton1.Size = New System.Drawing.Size(91, 18)
-        Me.FlatButton1.TabIndex = 24
-        Me.FlatButton1.Text = "Click Cargo"
-        Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.FlatButton1.Visible = False
-        '
-        'Clickbutton
-        '
-        Me.Clickbutton.BackColor = System.Drawing.Color.Transparent
-        Me.Clickbutton.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Clickbutton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Clickbutton.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Clickbutton.Location = New System.Drawing.Point(180, 0)
-        Me.Clickbutton.Name = "Clickbutton"
-        Me.Clickbutton.Rounded = False
-        Me.Clickbutton.Size = New System.Drawing.Size(76, 18)
-        Me.Clickbutton.TabIndex = 24
-        Me.Clickbutton.Text = "Click box"
-        Me.Clickbutton.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.Clickbutton.Visible = False
         '
         'TextBox_getserver
         '
@@ -211,11 +160,8 @@ Partial Class Form_Game
     Friend WithEvents FlatLabel1 As FlatLabel
     Friend WithEvents Label_Title As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Clickbutton As FlatButton
-    Friend WithEvents FlatButton1 As FlatButton
     Friend WithEvents FlatButton2 As FlatButton
     Friend WithEvents FlatButton3 As FlatButton
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
-    Friend WithEvents FlatButton4 As FlatButton
 End Class
