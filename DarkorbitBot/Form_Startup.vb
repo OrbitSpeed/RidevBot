@@ -15,6 +15,30 @@ Public Class Form_Startup
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
+
+            ProfilSelected = 1
+            PictureBoxUsernamePasswordProfil1view.Image = My.Resources.greenBooty
+            PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
+            PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text Then
+
+            ProfilSelected = 2
+            PictureBoxUsernamePasswordProfil2view.Image = My.Resources.greenBooty
+            PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
+            PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
+
+            ProfilSelected = 3
+            PictureBoxUsernamePasswordProfil3view.Image = My.Resources.greenBooty
+            PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
+            PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
+
+        End If
+
 #Region "Location and resize"
         PanelUserAndPass.Location = New Point(0, 55)
         PanelUserAndPass.Size = New Size(256, 221)
@@ -134,6 +158,15 @@ Public Class Form_Startup
 
     End Sub
 
+    Private Sub Launcher()
+
+        Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
+        Label_point_de_chute.Select()
+        Form_Tools.Show()
+        Close()
+
+    End Sub
+
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
         Form_Tools.Timer_sid.Stop()
@@ -143,36 +176,52 @@ Public Class Form_Startup
         Form_Tools.TextBox_minutedouble.Text = "0"
         Form_Tools.TextBox_secondsdouble2.Text = "0"
         Form_Tools.TextBox_secondsdouble.Text = "0"
-
         Form_Tools.TextBox_Get_Dosid.Text = ""
         Form_Tools.TextBox_Get_id.Text = ""
         Form_Tools.TextBox_Get_Server.Text = ""
 
-        If ProfilSelected = 1 Then
+        If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
+            ProfilSelected = 1
 
-            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
-            Label_point_de_chute.Select()
-            Form_Tools.Show()
-            Close()
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text Then
+            ProfilSelected = 2
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
+            ProfilSelected = 3
+
+        ElseIf TextBox_UsernamePasswordProfil1username.Text = "" And TextBoxUsernamePasswordProfil1password.Text = "" Then
+            TextBox_UsernamePasswordProfil1username.Text = Textbox_Username.Text
+            TextBoxUsernamePasswordProfil1password.Text = Textbox_Password.Text
+            MsgBox("your account are saved in profil 1")
+            ProfilSelected = 1
+
+        ElseIf TextBox_UsernamePasswordProfil2username.Text = "" And TextBoxUsernamePasswordProfil2password.Text = "" Then
+            TextBox_UsernamePasswordProfil2username.Text = Textbox_Username.Text
+            TextBoxUsernamePasswordProfil2password.Text = Textbox_Password.Text
+            MsgBox("your account are saved in profil 2")
+            ProfilSelected = 2
+
+        ElseIf TextBox_UsernamePasswordProfil3username.Text = "" And TextBoxUsernamePasswordProfil3password.Text = "" Then
+            TextBox_UsernamePasswordProfil3username.Text = Textbox_Username.Text
+            TextBoxUsernamePasswordProfil3password.Text = Textbox_Password.Text
+            MsgBox("your account are saved in profil 3")
+            ProfilSelected = 3
+        End If
+
+        If ProfilSelected = 1 Then
+            Form_Tools.ComboBox_autologin.Text = "Profil 1"
+            Launcher()
 
         ElseIf ProfilSelected = 2 Then
-
-            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
-            Label_point_de_chute.Select()
-            Form_Tools.Show()
-            Close()
+            Form_Tools.ComboBox_autologin.Text = "Profil 2"
+            Launcher()
 
         ElseIf ProfilSelected = 3 Then
+            Form_Tools.ComboBox_autologin.Text = "Profil 3"
+            Launcher()
 
-            Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
-            Label_point_de_chute.Select()
-            Form_Tools.Show()
-            Close()
-
-        Else MsgBox("select profil in first.")
+        Else MsgBox("select or register profil in first")
             Saved_Button.PerformClick()
-
-
         End If
 
     End Sub
@@ -375,9 +424,10 @@ Public Class Form_Startup
     Private Sub PictureBoxUsernamePasswordProfil1view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1view.Click
         '
         ProfilSelected = 1
-        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100_1_
-        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
-        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.greenBooty
+
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
 
         Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text
         Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
@@ -389,9 +439,10 @@ Public Class Form_Startup
     Private Sub PictureBoxUsernamePasswordProfil2view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2view.Click
         '
         ProfilSelected = 2
-        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100_1_
-        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
-        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.greenBooty
+
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
 
         Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text
         Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
@@ -403,9 +454,10 @@ Public Class Form_Startup
     Private Sub PictureBoxUsernamePasswordProfil3view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3view.Click
         '
         ProfilSelected = 3
-        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100_1_
-        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
-        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
+        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.greenBooty
+
+        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
+        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
 
 
         Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text

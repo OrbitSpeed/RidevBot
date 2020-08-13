@@ -2897,6 +2897,7 @@ Public Class Form_Tools
 
         TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
+
         If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
         Else
 
@@ -2940,10 +2941,13 @@ Public Class Form_Tools
 
                 Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
 
+
             End If
 
+            TextBox_total_spinned.Text = Val(TextBox_total_spinned) + 1
 
         End If
+
 
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 #End Region
@@ -3002,6 +3006,8 @@ Public Class Form_Tools
         Label_Nanohull_Earned.Text = 0
         Label_Mine_Earned.Text = 0
         Label_Logfile_Earned.Text = 0
+        TextBox_total_spinned.Text = 0
+        TextBox_total_gates_builded.Text = 0
 
         TextBox_WinGGS.Text = ""
 
