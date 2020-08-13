@@ -351,6 +351,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property acm_01_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("acm_01_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Byte[].
         '''</summary>
         Friend ReadOnly Property AxInterop_WMPLib() As Byte()
@@ -376,6 +386,16 @@ Namespace My.Resources
         Friend ReadOnly Property connected() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("connected", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property g3x_amry_m_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("g3x_amry_m_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -652,6 +672,46 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property logfile_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logfile_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mcb_25_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mcb_25_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mcb_50_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mcb_50_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property plt_2021_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("plt_2021_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property prometium() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("prometium", resourceCulture)
@@ -676,6 +736,46 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("RidevBotUpdater", resourceCulture)
                 Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sab_50_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sab_50_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sg3n_a01_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sg3n_a01_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ucb_100_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ucb_100_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property xenomit_30x30() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("xenomit_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module

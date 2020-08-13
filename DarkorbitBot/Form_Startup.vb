@@ -225,6 +225,8 @@ Public Class Form_Startup
         Portail_Button.Enabled = True
         License_Button.Enabled = True
 
+        UserAndPass_Button.PerformClick()
+
     End Sub
 
     Private Sub Portail_Button_Click(sender As Object, e As EventArgs) Handles Portail_Button.Click

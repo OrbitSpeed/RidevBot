@@ -467,6 +467,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\logfile_30x30.png" />
+    <None Include="Resources\acm-01_30x30.png" />
+    <None Include="Resources\mcb-25_30x30.png" />
+    <None Include="Resources\ucb-100_30x30.png" />
+    <None Include="Resources\sab-50_30x30.png" />
+    <None Include="Resources\mcb-50_30x30.png" />
+    <None Include="Resources\plt-2021_30x30.png" />
+    <None Include="Resources\g3x-amry-m_30x30.png" />
+    <None Include="Resources\sg3n-a01_30x30.png" />
+    <None Include="Resources\xenomit_30x30.png" />
     <None Include="dll\Interop.WMPLib.dll" />
     <None Include="dll\AxInterop.WMPLib.dll" />
     <None Include="bin\v1.5\Interop.WMPLib.dll" />
