@@ -5,6 +5,7 @@
     Public MouseDownX As Integer
     Public MouseDownY As Integer
 
+#Region "Mouse Move"
     Private Sub Panel_Bar_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Bar.MouseMove
 
         If BeingDragged = True Then
@@ -35,6 +36,7 @@
         End If
 
     End Sub
+#End Region
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
         CloseForm.ShowDialog(Me)

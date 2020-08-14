@@ -2144,8 +2144,8 @@ Public Class Form_Tools
                         TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
                         If CheckBox_buildoneandstop.Checked = True Then
                             BackgroundWorkerAutospin = False
-                            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text }) The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed." + TextBox_WinGGS.Text
-                            MessageBox.Show($"(Galaxy Gates {ComboBox_autospin.Text}) The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            TextBox_WinGGS.Text = vbNewLine + $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed." + TextBox_WinGGS.Text
+                            MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     Else
                         BackgroundWorkerAutospin = False
@@ -3020,12 +3020,6 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox_AutoUpdate_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_AutoUpdate.CheckedChanged
-
-        '  Button_Update
-
-    End Sub
-
     Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
         Console.WriteLine("click !")
         Dim tagBoolean As Boolean = PictureBox_epinglerBot.Tag
@@ -3123,7 +3117,7 @@ Public Class Form_Tools
 
                 textbox_stade.Text = "Server : OK  ---  2/2"
 
-                textbox_stade.Text = "You playing with  " + AutoUpdater.FlatLabel_Version.Text + " |Done."
+                textbox_stade.Text = "Done."
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                     Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -3134,7 +3128,7 @@ Public Class Form_Tools
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
-                    textbox_stade.Text = "Launching Game wait ... "
+                    textbox_stade.Text = "Launching the game wait ... "
 
                     Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
                         Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
@@ -3219,30 +3213,6 @@ Public Class Form_Tools
         '    AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
 
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     Public CheckBackgroundWorker_activated As String
