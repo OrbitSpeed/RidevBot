@@ -3072,7 +3072,7 @@ Public Class Form_Tools
 
             Form_Game.Visible = False
             Form_Startup.Visible = True
-            WebBrowser_Synchronisation.Navigate("About:Blank")
+            WebBrowser_Synchronisation.Navigate("about:blank")
             Check_message = 1
             Me.Close()
 
@@ -3081,7 +3081,7 @@ Public Class Form_Tools
 
             Form_Game.Visible = False
             Form_Startup.Visible = True
-            WebBrowser_Synchronisation.Navigate("About:Blank")
+            WebBrowser_Synchronisation.Navigate("about:blank")
             Check_message = 1
             Me.Close()
 
@@ -3133,10 +3133,10 @@ Public Class Form_Tools
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-                Timer_sid.Enabled = True
-                Timer_sid.Start()
 
-                WebBrowser_Synchronisation.Navigate("About:Blank")
+                Timer_SID.Start()
+
+                WebBrowser_Synchronisation.Navigate("about:blank")
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
@@ -3154,10 +3154,9 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
+    Private Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
-        Timer_sid.Stop()
-        Timer_sid.Enabled = False
+        Timer_SID.Stop()
 
         TextBox_Get_Dosid.Text = ""
         TextBox_Get_id.Text = ""
@@ -3165,7 +3164,7 @@ Public Class Form_Tools
 
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
-        TextBox_minutedouble2.Text = "0"
+        TextBox_minutedouble_dixieme.Text = "0"
         TextBox_minutedouble.Text = "0"
         TextBox_secondsdouble2.Text = "0"
         TextBox_secondsdouble.Text = "0"
@@ -3173,45 +3172,81 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Timer_sid_Tick(sender As Object, e As EventArgs) Handles Timer_sid.Tick
-
-        TextBox_secondsdouble.Text = Val(TextBox_secondsdouble.Text) + 1
-
-        ' seconds
-        If TextBox_secondsdouble.Text = "10" Then
-
-            TextBox_secondsdouble.Text = "0"
-            TextBox_secondsdouble2.Text = Val(TextBox_secondsdouble2.Text) + 1
-
+    Private SID_Minutes_dixaine As Integer = 0
+    Private SID_Minutes As Integer = 0
+    Private SID_Seconds_dixaine As Integer = 0
+    Private SID_Seconds As Integer = 0
+    Private Sub Timer_SID_Tick(sender As Object, e As EventArgs) Handles Timer_SID.Tick
+        SID_Seconds += 1
+        If SID_Seconds = 10 Then
+            SID_Seconds_dixaine += 1
+            SID_Seconds = 0
         End If
 
-        If TextBox_secondsdouble2.Text = "6" Then
-
-            TextBox_secondsdouble2.Text = "0"
-            TextBox_minutedouble.Text = Val(TextBox_minutedouble.Text) + 1
-
+        If SID_Seconds_dixaine = 6 Then
+            SID_Minutes = 1
+            SID_Seconds_dixaine = 0
         End If
 
-        ' minutes
-        If TextBox_minutedouble.Text = "10" Then
+        If SID_Minutes = 10 Then
+            SID_Minutes = 0
+            SID_Seconds_dixaine = 1
+        End If
+
+        If SID_Minutes_dixaine = 1 Then
 
             Button_revive_sid.PerformClick()
 
-            TextBox_minutedouble2.Text = "0"
+            TextBox_minutedouble_dixieme.Text = "0"
             TextBox_minutedouble.Text = "0"
             TextBox_secondsdouble2.Text = "0"
             TextBox_secondsdouble.Text = "0"
 
-            TextBox_minutedouble2.Text = Val(TextBox_minutedouble2.Text) + 1
+            'TextBox_minutedouble_dixieme.Text = Val(TextBox_minutedouble_dixieme.Text) + 1
 
         End If
 
-        If TextBox_minutedouble2.Text = "6" Then
+        TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
+        TextBox_minutedouble.Text = SID_Minutes
+        TextBox_secondsdouble2.Text = SID_Seconds_dixaine
+        TextBox_secondsdouble.Text = SID_Seconds
 
-            TextBox_minutedouble2.Text = "0"
+        'TextBox_secondsdouble.Text = Val(TextBox_secondsdouble.Text) + 1
 
-        End If
+        ' seconds
+        'If TextBox_secondsdouble.Text = "10" Then
 
+        '    TextBox_secondsdouble.Text = "0"
+        '    TextBox_secondsdouble2.Text = Val(TextBox_secondsdouble2.Text) + 1
+
+        'End If
+
+        'If TextBox_secondsdouble2.Text = "6" Then
+
+        '    TextBox_secondsdouble2.Text = "0"
+        '    TextBox_minutedouble.Text = Val(TextBox_minutedouble.Text) + 1
+
+        'End If
+
+        '' minutes
+        'If TextBox_minutedouble.Text = "10" Then
+
+        '    Button_revive_sid.PerformClick()
+
+        '    TextBox_minutedouble_dixieme.Text = "0"
+        '    TextBox_minutedouble.Text = "0"
+        '    TextBox_secondsdouble2.Text = "0"
+        '    TextBox_secondsdouble.Text = "0"
+
+        '    TextBox_minutedouble_dixieme.Text = Val(TextBox_minutedouble_dixieme.Text) + 1
+
+        'End If
+
+        'If TextBox_minutedouble_dixieme.Text = "6" Then
+
+        '    TextBox_minutedouble_dixieme.Text = "0"
+
+        'End If
     End Sub
 
     Private Sub Random_movement()
@@ -3227,50 +3262,46 @@ Public Class Form_Tools
     End Sub
 
 
-    Public CheckBackgroundWorker_activated As String
 
     Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
 
-        If BackgroundWorker_Bot.IsBusy = False Then
-            BackgroundWorker_Bot.RunWorkerAsync()
-            CheckBackgroundWorker_activated = 0
+        If Background_Worker_Working = False Then
+            PictureBox_PlayBot.Visible = False
+            PictureBox_StopBot.Visible = True
+            Background_Worker_Working = True
+            BackgroundWorker_Bot_DoWork()
         End If
 
     End Sub
 
     Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs) Handles PictureBox_StopBot.Click
 
-        If BackgroundWorker_Bot.IsBusy = True Then
-            CheckBackgroundWorker_activated = 1
+        If Background_Worker_Working = True Then
+            PictureBox_PlayBot.Visible = True
+            PictureBox_StopBot.Visible = False
+            Background_Worker_Working = False
         End If
 
     End Sub
 
-    Private Async Sub BackgroundWorker_Bot_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Bot.DoWork
+    Private Background_Worker_Working As Boolean = False
+    Public Async Sub BackgroundWorker_Bot_DoWork()
+        If Background_Worker_Working = True Then
 
-        If CheckBox_palladium.Checked = True Then
+            If My.Settings.checkbox_palladium = True Then
+                Try
+                    Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_palladium.PerformClick()))
+                Catch Palladium_Not_Found As Exception
+                    'PictureBox_StopBot_Click(Nothing, Nothing)
+                    Console.WriteLine("[Form_Tools] Can't find the palladium")
+                End Try
 
-            Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_palladium.PerformClick()))
+                Dim temps = Task.Delay(TextBox_palladium_ms.Text)
+                Await temps
+                BackgroundWorker_Bot_DoWork()
 
+            End If
         End If
-
     End Sub
 
-    Private Async Sub BackgroundWorker_Bot_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_Bot.RunWorkerCompleted
-
-        If CheckBackgroundWorker_activated = 1 Then
-
-        Else
-            Dim temps = Task.Delay(TextBox_palladium_ms.Text)
-            Await temps
-            BackgroundWorker_Bot.RunWorkerAsync()
-            CheckBackgroundWorker_activated = 0
-        End If
-
-    End Sub
 End Class
-
-
-
-
-

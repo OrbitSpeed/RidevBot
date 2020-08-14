@@ -43,17 +43,50 @@ Public Class Form_Game
 
     End Sub
 
-    Private Async Sub Button_palladium_Click(sender As Object, e As EventArgs) Handles Button_palladium.Click
-
-        Dim Palladium_ = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
+    Public found_palla As Boolean = False
+    Private Sub Button_palladium_Click(sender As Object, e As EventArgs) Handles Button_palladium.Click
 
         Try
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
 
+            If Not found_palla Then
+
+                Dim Palladium_1 = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 2, 1)
+                Dim Palladium_2 = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 2771579, 2, 1)
+                Dim Palladium_3 = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 3695245, 2, 1)
+                Dim Palladium_4 = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5664406, 2, 1)
+                'Console.WriteLine(Palladium_)
+                'Console.WriteLine(Palladium_(0))
+                'Console.WriteLine(Palladium_(1))
+                If Not Palladium_1(0).Equals(Nothing) Then
+                    GoToPalladium(Palladium_1)
+
+                ElseIf Not Palladium_2(0).Equals(Nothing) Then
+                    GoToPalladium(Palladium_2)
+
+                ElseIf Not Palladium_3(0).Equals(Nothing) Then
+                    GoToPalladium(Palladium_3)
+
+                ElseIf Not Palladium_4(0).Equals(Nothing) Then
+                    GoToPalladium(Palladium_4)
+
+                End If
+
+
+            End If
 
         Catch Palladium_not_found As Exception
+            'Console.WriteLine("[Form_Game] Can't find a palladium")
         End Try
 
+    End Sub
+
+    Private Async Sub GoToPalladium(palla)
+        found_palla = True
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, palla(0), palla(1))
+
+        Dim temps = Task.Delay(Form_Tools.TextBox_palladium_ms.Text)
+        Await temps
+        found_palla = False
     End Sub
 
     Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click

@@ -189,16 +189,6 @@ Public Class Form_Startup
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
 
-        Form_Tools.Timer_sid.Stop()
-        Form_Tools.Timer_sid.Enabled = False
-
-        Form_Tools.TextBox_minutedouble2.Text = "0"
-        Form_Tools.TextBox_minutedouble.Text = "0"
-        Form_Tools.TextBox_secondsdouble2.Text = "0"
-        Form_Tools.TextBox_secondsdouble.Text = "0"
-        Form_Tools.TextBox_Get_Dosid.Text = ""
-        Form_Tools.TextBox_Get_id.Text = ""
-        Form_Tools.TextBox_Get_Server.Text = ""
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
             ProfilSelected = 1
@@ -228,6 +218,15 @@ Public Class Form_Startup
 
         End If
 
+        Form_Tools.Timer_SID.Stop()
+
+        Form_Tools.TextBox_minutedouble_dixieme.Text = "0"
+        Form_Tools.TextBox_minutedouble.Text = "0"
+        Form_Tools.TextBox_secondsdouble2.Text = "0"
+        Form_Tools.TextBox_secondsdouble.Text = "0"
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+        Form_Tools.TextBox_Get_id.Text = ""
+        Form_Tools.TextBox_Get_Server.Text = ""
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs)

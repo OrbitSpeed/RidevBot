@@ -155,5 +155,8 @@
     <Setting Name="prioritycargobox" Type="System.String" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
+    <Setting Name="checkbox_palladium" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
