@@ -89,7 +89,7 @@ Public Class Form_Tools
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Calculator = 1
-
+        textbox_stade.Text = "Checking URL Profil ... "
         Panel_infoPartGG2.Visible = False
         Panel_infoPartGG3.Visible = False
         Panel_infoPartGG_GG2.Visible = False
@@ -2946,8 +2946,8 @@ Public Class Form_Tools
 
 
             End If
-
-            TextBox_total_spinned.Text = Val(TextBox_total_spinned) + 1
+            '
+            TextBox_total_spinned.Text = Val(TextBox_total_spinned.Text) + 1
 
         End If
 
@@ -3078,6 +3078,7 @@ Public Class Form_Tools
             Check_message = 1
             Me.Close()
 
+
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
 
             Form_Game.Visible = False
@@ -3087,6 +3088,9 @@ Public Class Form_Tools
             Me.Close()
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
+
+            textbox_stade.Text = "Checking URL Profil ... "
+
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Textbox_Username.Text)
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Textbox_Password.Text)
             For Each p As HtmlElement In WebBrowser_Synchronisation.Document.GetElementsByTagName("input")
@@ -3095,17 +3099,22 @@ Public Class Form_Tools
                 End If
             Next
 
+            textbox_stade.Text = "Verifying URL Profil ... "
+
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
+
+            textbox_stade.Text = "URL : OK  ---  1/2"
+
             Check_message = 0
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
 
                 ' Lance le jeu'
                 Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-                Utils.server = CheckRegex.Groups.Item(1).ToString
+            Utils.server = CheckRegex.Groups.Item(1).ToString
 
-                Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
-                If testalacon.Success Then
+            Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+            If testalacon.Success Then
 
                 Utils.dosid = testalacon.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
@@ -3120,6 +3129,10 @@ Public Class Form_Tools
                 TextBox_Get_Server.Text = Utils.server
                 Utils.UpdateStats()
 
+                textbox_stade.Text = "Server : OK  ---  2/2"
+
+                textbox_stade.Text = "You playing with  " + AutoUpdater.FlatLabel_Version.Text + " |Done."
+
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                     Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
                     Timer_sid.Enabled = True
@@ -3129,7 +3142,9 @@ Public Class Form_Tools
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
-                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                    textbox_stade.Text = "Launching Game wait ... "
+
+                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
                         Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
                         Form_Game.Show()
 
@@ -3156,6 +3171,7 @@ Public Class Form_Tools
         TextBox_minutedouble.Text = "0"
         TextBox_secondsdouble2.Text = "0"
         TextBox_secondsdouble.Text = "0"
+        textbox_stade.Text = "Checking URL Profil ... "
 
     End Sub
 

@@ -556,6 +556,42 @@ Namespace My
                 Me("RP_Earned_Visual") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Visible_Account_Valid() As Boolean
+            Get
+                Return CType(Me("Visible_Account_Valid"),Boolean)
+            End Get
+            Set
+                Me("Visible_Account_Valid") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Visible_Account_Valid2() As Boolean
+            Get
+                Return CType(Me("Visible_Account_Valid2"),Boolean)
+            End Get
+            Set
+                Me("Visible_Account_Valid2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Visible_Account_Valid3() As Boolean
+            Get
+                Return CType(Me("Visible_Account_Valid3"),Boolean)
+            End Get
+            Set
+                Me("Visible_Account_Valid3") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

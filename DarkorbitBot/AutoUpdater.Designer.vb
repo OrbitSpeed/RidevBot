@@ -71,7 +71,6 @@ Partial Class AutoUpdater
         Me.FlatLabel_isUpdated.Size = New System.Drawing.Size(122, 17)
         Me.FlatLabel_isUpdated.TabIndex = 4
         Me.FlatLabel_isUpdated.Text = "You are up to date"
-        Me.FlatLabel_isUpdated.Visible = False
         '
         'FlatLabel_Version
         '
@@ -108,19 +107,18 @@ Partial Class AutoUpdater
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(375, 292)
         Me.AxWindowsMediaPlayer1.TabIndex = 100
-        Me.AxWindowsMediaPlayer1.Visible = False
         '
         'FlatTextBox_Changelog
         '
         Me.FlatTextBox_Changelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.FlatTextBox_Changelog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlatTextBox_Changelog.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatTextBox_Changelog.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(0, 217)
         Me.FlatTextBox_Changelog.Multiline = True
         Me.FlatTextBox_Changelog.Name = "FlatTextBox_Changelog"
-        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(363, 110)
+        Me.FlatTextBox_Changelog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(363, 114)
         Me.FlatTextBox_Changelog.TabIndex = 101
-        Me.FlatTextBox_Changelog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel_utilites
         '
