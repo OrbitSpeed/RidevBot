@@ -137,5 +137,23 @@
     <Setting Name="Visible_Account_Valid3" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CollectPalladiumticks" Type="System.String" Scope="User">
+      <Value Profile="(Default)">850</Value>
+    </Setting>
+    <Setting Name="collectbonusboxticks" Type="System.String" Scope="User">
+      <Value Profile="(Default)">850</Value>
+    </Setting>
+    <Setting Name="collectcargosboxticks" Type="System.String" Scope="User">
+      <Value Profile="(Default)">850</Value>
+    </Setting>
+    <Setting Name="prioritypalladium" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="prioritybonusbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="prioritycargobox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

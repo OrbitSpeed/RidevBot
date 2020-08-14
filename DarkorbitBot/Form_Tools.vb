@@ -1,15 +1,7 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
-Imports AutoItX3Lib
 
 Public Class Form_Tools
-
-    Dim AutoIt As New AutoItX3
-
-    Public X_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.X)
-    Public Y_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.Y - 18)
-    Public X_BOTTOM As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Width)
-    Public Y_BOTTOM As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Height)
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -3216,48 +3208,6 @@ Public Class Form_Tools
 
     End Sub
 
-
-
-    Private Sub Collect_Palladium()
-
-
-        Try
-
-            Dim Palladium_ = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
-            AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
-
-        Catch Palladium_not_found As Exception
-
-        End Try
-
-    End Sub
-
-    Private Sub Collect_box()
-
-        Try
-
-            Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-
-        Catch Bonus_Box_not_found As Exception
-
-        End Try
-
-    End Sub
-
-    Private Sub Collect_Cargo_box()
-
-        Try
-
-            Dim Cargo_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 16777030, 5, 1)
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Cargo_Box(0) - 0, Cargo_Box(1) - 0)
-
-        Catch Cargo_Box_not_found As Exception
-
-        End Try
-
-    End Sub
-
     Private Sub Random_movement()
 
 
@@ -3295,13 +3245,41 @@ Public Class Form_Tools
 
 
 
-
+    Public CheckBackgroundWorker_activated As String
 
     Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
+
+        If BackgroundWorker_Bot.IsBusy = False Then
+            BackgroundWorker_Bot.RunWorkerAsync()
+        End If
 
     End Sub
 
     Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs) Handles PictureBox_StopBot.Click
+
+        If BackgroundWorker_Bot.IsBusy = True Then
+            CheckBackgroundWorker_activated = 1
+        End If
+
+    End Sub
+
+    Private Sub BackgroundWorker_Bot_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Bot.DoWork
+
+        If CheckBox_palladium.Checked = True Then
+
+            Form_Game.Button1.PerformClick()
+            System.Threading.Thread.Sleep(TextBox_palladium_ms.Text)
+
+        End If
+
+    End Sub
+
+    Private Sub BackgroundWorker_Bot_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_Bot.RunWorkerCompleted
+
+        If CheckBackgroundWorker_activated = 1 Then
+            BackgroundWorker_Bot.RunWorkerAsync()
+        Else
+        End If
 
     End Sub
 End Class

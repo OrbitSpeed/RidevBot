@@ -1,24 +1,67 @@
-﻿Imports System.Text.RegularExpressions
-Imports AutoItX3Lib
+﻿Imports AutoItX3Lib
 
 
 Public Class Form_Game
-    Dim AutoIt As New AutoItX3
+    Dim AutoIt2 As New AutoItX3
 
-    Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Collect_Palladium()
+
+        Dim X_TOP As Integer = (Me.Location.X)
+        Dim Y_TOP As Integer = (Me.Location.Y - 18)
+        Dim X_BOTTOM As Integer = (Me.Width)
+        Dim Y_BOTTOM As Integer = (Me.Height)
+
+        Dim Palladium_ = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
+        Try
+
+            AutoIt2.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
+            System.Threading.Thread.Sleep(Form_Tools.TextBox_palladium_ms.Text)
+
+        Catch Palladium_not_found As Exception
+
+        End Try
 
     End Sub
 
-    Private Sub Clickbutton_Click(sender As Object, e As EventArgs)
+    Private Sub Collect_box()
+
+        Dim X_TOP As Integer = (Me.Location.X)
+        Dim Y_TOP As Integer = (Me.Location.Y - 18)
+        Dim X_BOTTOM As Integer = (Me.Width)
+        Dim Y_BOTTOM As Integer = (Me.Height)
+
+        Dim Bonus_Box = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+        Try
+
+            AutoIt2.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+            System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)
+
+        Catch Bonus_Box_not_found As Exception
+
+        End Try
 
     End Sub
 
-    Private Sub FlatButton1_Click(sender As Object, e As EventArgs)
+    Private Sub Collect_Cargo_box()
 
+        Dim X_TOP As Integer = (Me.Location.X)
+        Dim Y_TOP As Integer = (Me.Location.Y - 18)
+        Dim X_BOTTOM As Integer = (Me.Width)
+        Dim Y_BOTTOM As Integer = (Me.Height)
+
+        Dim Cargo_Box = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 16777030, 5, 1)
+        Try
+
+            AutoIt2.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Cargo_Box(0) - 0, Cargo_Box(1) - 0)
+            System.Threading.Thread.Sleep(Form_Tools.TextBox_bonusbox_ms.Text)
+
+        Catch Cargo_Box_not_found As Exception
+
+        End Try
 
     End Sub
 
-    Private Sub FlatButton2_Click(sender As Object, e As EventArgs) Handles FlatButton2.Click
+    Private Sub FlatButton2_Click(sender As Object, e As EventArgs)
         'Try
         '    Dim A1 As Integer = (WebBrowser_Game_Ridevbot.Location.X)
         '    Dim A2 As Integer = (WebBrowser_Game_Ridevbot.Location.Y - 18)
@@ -50,6 +93,24 @@ Public Class Form_Game
     Private Sub WebBrowser_Game_Ridevbot_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Game_Ridevbot.DocumentCompleted
 
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim X_TOP As Integer = (Me.Location.X)
+        Dim Y_TOP As Integer = (Me.Location.Y - 18)
+        Dim X_BOTTOM As Integer = (Me.Width)
+        Dim Y_BOTTOM As Integer = (Me.Height)
+
+        Dim Palladium_ = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
+        Try
+
+            AutoIt2.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
+
+        Catch Palladium_not_found As Exception
+
+        End Try
 
     End Sub
 End Class

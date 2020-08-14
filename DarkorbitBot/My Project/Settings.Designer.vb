@@ -592,6 +592,78 @@ Namespace My
                 Me("Visible_Account_Valid3") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("850")>  _
+        Public Property CollectPalladiumticks() As String
+            Get
+                Return CType(Me("CollectPalladiumticks"),String)
+            End Get
+            Set
+                Me("CollectPalladiumticks") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("850")>  _
+        Public Property collectbonusboxticks() As String
+            Get
+                Return CType(Me("collectbonusboxticks"),String)
+            End Get
+            Set
+                Me("collectbonusboxticks") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("850")>  _
+        Public Property collectcargosboxticks() As String
+            Get
+                Return CType(Me("collectcargosboxticks"),String)
+            End Get
+            Set
+                Me("collectcargosboxticks") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property prioritypalladium() As String
+            Get
+                Return CType(Me("prioritypalladium"),String)
+            End Get
+            Set
+                Me("prioritypalladium") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property prioritybonusbox() As String
+            Get
+                Return CType(Me("prioritybonusbox"),String)
+            End Get
+            Set
+                Me("prioritybonusbox") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
+        Public Property prioritycargobox() As String
+            Get
+                Return CType(Me("prioritycargobox"),String)
+            End Get
+            Set
+                Me("prioritycargobox") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
