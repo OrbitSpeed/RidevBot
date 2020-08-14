@@ -1,65 +1,12 @@
 ﻿Imports AutoItX3Lib
 
-
 Public Class Form_Game
-    Dim AutoIt2 As New AutoItX3
 
-    Private Sub Collect_Palladium()
-
-        Dim X_TOP As Integer = (Me.Location.X)
-        Dim Y_TOP As Integer = (Me.Location.Y - 18)
-        Dim X_BOTTOM As Integer = (Me.Width)
-        Dim Y_BOTTOM As Integer = (Me.Height)
-
-        Dim Palladium_ = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
-        Try
-
-            AutoIt2.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
-            System.Threading.Thread.Sleep(Form_Tools.TextBox_palladium_ms.Text)
-
-        Catch Palladium_not_found As Exception
-
-        End Try
-
-    End Sub
-
-    Private Sub Collect_box()
-
-        Dim X_TOP As Integer = (Me.Location.X)
-        Dim Y_TOP As Integer = (Me.Location.Y - 18)
-        Dim X_BOTTOM As Integer = (Me.Width)
-        Dim Y_BOTTOM As Integer = (Me.Height)
-
-        Dim Bonus_Box = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
-        Try
-
-            AutoIt2.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-            System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)
-
-        Catch Bonus_Box_not_found As Exception
-
-        End Try
-
-    End Sub
-
-    Private Sub Collect_Cargo_box()
-
-        Dim X_TOP As Integer = (Me.Location.X)
-        Dim Y_TOP As Integer = (Me.Location.Y - 18)
-        Dim X_BOTTOM As Integer = (Me.Width)
-        Dim Y_BOTTOM As Integer = (Me.Height)
-
-        Dim Cargo_Box = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 16777030, 5, 1)
-        Try
-
-            AutoIt2.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Cargo_Box(0) - 0, Cargo_Box(1) - 0)
-            System.Threading.Thread.Sleep(Form_Tools.TextBox_bonusbox_ms.Text)
-
-        Catch Cargo_Box_not_found As Exception
-
-        End Try
-
-    End Sub
+    Dim AutoIt As New AutoItX3
+    Dim X_TOP As Integer = 0
+    Dim Y_TOP As Integer = 64
+    Dim X_BOTTOM As Integer = 800
+    Dim Y_BOTTOM As Integer = 618
 
     Private Sub FlatButton2_Click(sender As Object, e As EventArgs)
         'Try
@@ -96,20 +43,41 @@ Public Class Form_Game
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Async Sub Button_palladium_Click(sender As Object, e As EventArgs) Handles Button_palladium.Click
 
-        Dim X_TOP As Integer = (Me.Location.X)
-        Dim Y_TOP As Integer = (Me.Location.Y - 18)
-        Dim X_BOTTOM As Integer = (Me.Width)
-        Dim Y_BOTTOM As Integer = (Me.Height)
+        Dim Palladium_ = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
 
-        Dim Palladium_ = AutoIt2.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 5073012, 5, 1)
         Try
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
 
-            AutoIt2.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Palladium_(0), Palladium_(1))
 
         Catch Palladium_not_found As Exception
+        End Try
 
+    End Sub
+
+    Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
+
+        Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+
+        Try
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+            '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
+
+        Catch Bonus_Box_not_found As Exception
+        End Try
+
+    End Sub
+
+    Private Sub Button_cargobox_Click(sender As Object, e As EventArgs) Handles Button_cargobox.Click
+
+        Dim Cargo_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 16777030, 5, 1)
+
+        Try
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Cargo_Box(0) - 0, Cargo_Box(1) - 0)
+            '   Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_bonusbox_ms.Text)))
+
+        Catch Cargo_Box_not_found As Exception
         End Try
 
     End Sub

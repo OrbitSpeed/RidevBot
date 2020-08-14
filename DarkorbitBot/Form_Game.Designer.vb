@@ -28,7 +28,9 @@ Partial Class Form_Game
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_palladium = New System.Windows.Forms.Button()
+        Me.Button_bonusbox = New System.Windows.Forms.Button()
+        Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,14 +85,32 @@ Partial Class Form_Game
         Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_getserver.TabIndex = 28
         '
-        'Button1
+        'Button_palladium
         '
-        Me.Button1.Location = New System.Drawing.Point(87, 103)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(191, 91)
-        Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Palladium"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button_palladium.Location = New System.Drawing.Point(12, 50)
+        Me.Button_palladium.Name = "Button_palladium"
+        Me.Button_palladium.Size = New System.Drawing.Size(100, 37)
+        Me.Button_palladium.TabIndex = 29
+        Me.Button_palladium.Text = "Palladium"
+        Me.Button_palladium.UseVisualStyleBackColor = True
+        '
+        'Button_bonusbox
+        '
+        Me.Button_bonusbox.Location = New System.Drawing.Point(12, 93)
+        Me.Button_bonusbox.Name = "Button_bonusbox"
+        Me.Button_bonusbox.Size = New System.Drawing.Size(100, 37)
+        Me.Button_bonusbox.TabIndex = 30
+        Me.Button_bonusbox.Text = "Bonus box"
+        Me.Button_bonusbox.UseVisualStyleBackColor = True
+        '
+        'Button_cargobox
+        '
+        Me.Button_cargobox.Location = New System.Drawing.Point(12, 136)
+        Me.Button_cargobox.Name = "Button_cargobox"
+        Me.Button_cargobox.Size = New System.Drawing.Size(100, 37)
+        Me.Button_cargobox.TabIndex = 31
+        Me.Button_cargobox.Text = "Cargobox"
+        Me.Button_cargobox.UseVisualStyleBackColor = True
         '
         'Form_Game
         '
@@ -98,10 +118,12 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button_cargobox)
+        Me.Controls.Add(Me.Button_bonusbox)
+        Me.Controls.Add(Me.Button_palladium)
         Me.Controls.Add(Me.TextBox_getserver)
         Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -124,5 +146,7 @@ Partial Class Form_Game
     Friend WithEvents Panel7 As Panel
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_palladium As Button
+    Friend WithEvents Button_bonusbox As Button
+    Friend WithEvents Button_cargobox As Button
 End Class

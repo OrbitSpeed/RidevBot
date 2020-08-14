@@ -1,7 +1,19 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
+Imports AutoItX3Lib
+Imports System.Diagnostics
+Imports System.IO
+Imports System.Runtime.InteropServices
+Imports System.Data
+Imports System.Drawing.Graphics
+Imports System.ComponentModel
+Imports System.Windows.Forms.Application
+Imports System.Text
+
 
 Public Class Form_Tools
+
+    Dim autoit As New AutoItX3
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -3095,8 +3107,8 @@ Public Class Form_Tools
             Check_message = 0
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
 
-                ' Lance le jeu'
-                Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
+            ' Lance le jeu'
+            Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
             Utils.server = CheckRegex.Groups.Item(1).ToString
 
             Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
@@ -3120,25 +3132,25 @@ Public Class Form_Tools
                 textbox_stade.Text = "Done."
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-                    Timer_sid.Enabled = True
-                    Timer_sid.Start()
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                Timer_sid.Enabled = True
+                Timer_sid.Start()
 
-                    WebBrowser_Synchronisation.Navigate("About:Blank")
+                WebBrowser_Synchronisation.Navigate("About:Blank")
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
                     textbox_stade.Text = "Launching the game wait ... "
 
                     Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                        Form_Game.Show()
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Form_Game.Show()
 
                 End If
-                End If
-
-                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
             End If
+
+            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+        End If
 
     End Sub
 
@@ -3221,6 +3233,7 @@ Public Class Form_Tools
 
         If BackgroundWorker_Bot.IsBusy = False Then
             BackgroundWorker_Bot.RunWorkerAsync()
+            CheckBackgroundWorker_activated = 0
         End If
 
     End Sub
@@ -3233,22 +3246,25 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub BackgroundWorker_Bot_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Bot.DoWork
+    Private Async Sub BackgroundWorker_Bot_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Bot.DoWork
 
         If CheckBox_palladium.Checked = True Then
 
-            Form_Game.Button1.PerformClick()
-            System.Threading.Thread.Sleep(TextBox_palladium_ms.Text)
+            Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_palladium.PerformClick()))
 
         End If
 
     End Sub
 
-    Private Sub BackgroundWorker_Bot_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_Bot.RunWorkerCompleted
+    Private Async Sub BackgroundWorker_Bot_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker_Bot.RunWorkerCompleted
 
         If CheckBackgroundWorker_activated = 1 Then
-            BackgroundWorker_Bot.RunWorkerAsync()
+
         Else
+            Dim temps = Task.Delay(TextBox_palladium_ms.Text)
+            Await temps
+            BackgroundWorker_Bot.RunWorkerAsync()
+            CheckBackgroundWorker_activated = 0
         End If
 
     End Sub
