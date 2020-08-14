@@ -15,6 +15,11 @@ Public Class Form_Startup
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        If Form_Tools.Check_message = 1 Then
+
+            MsgBox("Error", "Your password or pseudonyme are not correct")
+
+        End If
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
 
@@ -218,8 +223,9 @@ Public Class Form_Startup
             Form_Tools.ComboBox_autologin.Text = "Profil 3"
             Launcher()
 
-        Else MsgBox("select or register profil in first")
-            Saved_Button.PerformClick()
+        Else Form_Tools.ComboBox_autologin.Text = "Current"
+            Launcher()
+
         End If
 
     End Sub
@@ -423,7 +429,6 @@ Public Class Form_Startup
         '
         ProfilSelected = 1
         PictureBoxUsernamePasswordProfil1view.Image = My.Resources.greenBooty
-
         PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
         PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
 
@@ -431,6 +436,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 1"
         UserAndPass_Button.PerformClick()
+        Load_Button.PerformClick()
 
     End Sub
 
@@ -438,7 +444,6 @@ Public Class Form_Startup
         '
         ProfilSelected = 2
         PictureBoxUsernamePasswordProfil2view.Image = My.Resources.greenBooty
-
         PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
         PictureBoxUsernamePasswordProfil3view.Image = My.Resources.prometium
 
@@ -446,6 +451,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 2"
         UserAndPass_Button.PerformClick()
+        Load_Button.PerformClick()
 
     End Sub
 
@@ -453,7 +459,6 @@ Public Class Form_Startup
         '
         ProfilSelected = 3
         PictureBoxUsernamePasswordProfil3view.Image = My.Resources.greenBooty
-
         PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
         PictureBoxUsernamePasswordProfil1view.Image = My.Resources.prometium
 
@@ -462,6 +467,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 3"
         UserAndPass_Button.PerformClick()
+        Load_Button.PerformClick()
 
 
     End Sub
@@ -486,6 +492,38 @@ Public Class Form_Startup
     End Sub
 
     Private Sub PictureBoxUsernamePasswordProfil2eyes_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.Click
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
+
+    End Sub
+
+    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseDown
+
+    End Sub
+
+    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseUp
 
     End Sub
 End Class

@@ -5,6 +5,7 @@ Imports AutoItX3Lib
 Public Class Form_Tools
 
     Dim AutoIt As New AutoItX3
+
     Public X_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.X)
     Public Y_TOP As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Location.Y - 18)
     Public X_BOTTOM As Integer = (Form_Game.WebBrowser_Game_Ridevbot.Width)
@@ -45,6 +46,8 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats As String = 0
     Public CheckedAlphaBetaGammaStats2 As String = 0
     Public CheckedAlphaBetaGammaStats3 As String = 0
+
+    Public Check_message As String = 0
 
     Public Reader As String = 0
 
@@ -3067,9 +3070,23 @@ Public Class Form_Tools
 
     Private Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
 
-        If WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
-            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+        If WebBrowser_Synchronisation.Url.ToString.Contains("loginError=99") Then
 
+            Form_Game.Visible = False
+            Form_Startup.Visible = True
+            WebBrowser_Synchronisation.Navigate("About:Blank")
+            Check_message = 1
+            Me.Close()
+
+        ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
+
+            Form_Game.Visible = False
+            Form_Startup.Visible = True
+            WebBrowser_Synchronisation.Navigate("About:Blank")
+            Check_message = 1
+            Me.Close()
+
+        ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Textbox_Username.Text)
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Textbox_Password.Text)
             For Each p As HtmlElement In WebBrowser_Synchronisation.Document.GetElementsByTagName("input")
@@ -3078,76 +3095,49 @@ Public Class Form_Tools
                 End If
             Next
 
+
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
+            Check_message = 0
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
 
-            ' Lance le jeu'
-            Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-            Utils.server = CheckRegex.Groups.Item(1).ToString
+                ' Lance le jeu'
+                Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
+                Utils.server = CheckRegex.Groups.Item(1).ToString
 
-            Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
-            If testalacon.Success Then
-                Console.WriteLine(testalacon.Value.Split("=")(1))
+                Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+                If testalacon.Success Then
+
                 Utils.dosid = testalacon.Value.Split("=")(1)
-
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-
                 TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-
                 TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
-
                 TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
-
                 Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
-
                 Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
-
                 Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
-
                 Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
-
                 Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
-
                 TextBox_Get_Server.Text = Utils.server
-
                 Utils.UpdateStats()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-                Timer_sid.Enabled = True
-                Timer_sid.Start()
+                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                    Timer_sid.Enabled = True
+                    Timer_sid.Start()
 
-                WebBrowser_Synchronisation.Navigate("About:Blank")
-
+                    WebBrowser_Synchronisation.Navigate("About:Blank")
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
-                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                    Form_Game.Show()
-                    Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-                    WebBrowser_Synchronisation.Navigate("About:Blank")
+                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                        Form_Game.Show()
 
                 End If
+                End If
 
+                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
             End If
-
-            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
-
-
-        ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
-            Dim result = MessageBox.Show("Verify your account", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            If result = DialogResult.OK Then
-
-                Form_Startup.Show()
-                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-                WebBrowser_Synchronisation.Navigate("About:Blank")
-
-            End If
-
-        Else
-        End If
 
     End Sub
 

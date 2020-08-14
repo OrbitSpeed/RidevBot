@@ -467,6 +467,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\icon_elite_12x7.png" />
     <None Include="Resources\logfile_30x30.png" />
     <None Include="Resources\acm-01_30x30.png" />
     <None Include="Resources\mcb-25_30x30.png" />

@@ -2342,7 +2342,7 @@ Partial Class Form_Tools
         Me.TextBox_total_gates_builded.Name = "TextBox_total_gates_builded"
         Me.TextBox_total_gates_builded.Size = New System.Drawing.Size(18, 16)
         Me.TextBox_total_gates_builded.TabIndex = 97
-        Me.TextBox_total_gates_builded.Text = "99"
+        Me.TextBox_total_gates_builded.Text = "0"
         Me.TextBox_total_gates_builded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_total_spinned
@@ -2355,7 +2355,7 @@ Partial Class Form_Tools
         Me.TextBox_total_spinned.Name = "TextBox_total_spinned"
         Me.TextBox_total_spinned.Size = New System.Drawing.Size(36, 16)
         Me.TextBox_total_spinned.TabIndex = 98
-        Me.TextBox_total_spinned.Text = "99999"
+        Me.TextBox_total_spinned.Text = "0"
         Me.TextBox_total_spinned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
