@@ -2054,7 +2054,6 @@ Public Class Form_Tools
 
             ' Console.WriteLine("Already used")
         End If
-
     End Sub
 
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
