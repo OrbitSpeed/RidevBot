@@ -69,16 +69,18 @@ Public Class Form_Game
         ' --------------- '
         ' --- Startup --- '
         ' --------------- '
-        ' Checking de l'écran et effectue le screen de demarge + desacive toute les fenetre du jeu avec la touche associé + check et recuperation d'image
-        ' balise 0 '
 
-        Dim delay = Task.Delay(3200)
+
+        ' Checking de l'écran et effectue le screen de demarge + desacive toute les fenetre du jeu avec la touche associé + check et recuperation d'image
+        ' balise 1 '
+
 
         WebBrowser_Game_Ridevbot.Select()
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
 
-        Await delay
+        Dim delay0 = Task.Delay(2000)
+        Await delay0
 
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
         Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
@@ -94,41 +96,45 @@ Public Class Form_Game
         ' --------------- '
 
 
-
-        Dim delay2 = Task.Delay(3000)
-
-
-        ' ------------------------ '
-        ' --- Checking minimap --- '
-        ' ------------------------ '
         ' checking si minimap fermer et que la touche de depart a bien ete entrer
-        ' balise 1 '
-
         Try
             Dim Minimap_closed As Point = Client_primary.Contains(Minimap_closed_ref)
-
             If Minimap_closed <> Nothing Then
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-            End If
 
+                WebBrowser_Game_Ridevbot.Select()
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
+
+            End If
         Catch Minimap_opened As Exception
             ' faire un systeme qui te ramene a la "balise 0" '
         End Try
 
-
-
+        Dim delay2 = Task.Delay(3000)
         Await delay2
-        Checking_screen()
-        Dim delay3 = Task.Delay(3000)
 
 
 
+
+
+
+
+        ' -------------------------------------------'
         ' reduit la minimap au minimum '
         ' balise 2 '
+        ' -------------------------------------------'
+
+        Dim Client_primary2 = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
+        Dim Client_second2 As Graphics = Graphics.FromImage(Client_primary2)
+        Client_second2.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
+        Client_primary2.Save($"screenshot.jpg", ImageFormat.Jpeg)
+
 
         Try
-            Dim Minimap_size As Point = Client_primary.Contains(Minimap_size_ref)
+            Dim Minimap_size As Point = Client_primary2.Contains(Minimap_size_ref)
             If Minimap_size <> Nothing Then
+                '  Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
+
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y + 18)
                 ' essayer de voir pour mettre sa en x10 genre une boucle qui repete 10x l'operation
             End If
@@ -136,21 +142,37 @@ Public Class Form_Game
             ' faire un systeme qui te ramene a la "balise 1" '
         End Try
 
-
-        Checking_screen()
+        Dim delay3 = Task.Delay(3000)
         Await delay3
 
 
 
+
+
+
+
+
+
+
+
+
+        ' ---------------------------------------------------'
         'deplace la minimap en bas a droite 
         ' balise 3
+        ' ---------------------------------------------------'
+        Dim Client_primary3 = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
+        Dim Client_second3 As Graphics = Graphics.FromImage(Client_primary3)
+        Client_second3.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
+        Client_primary3.Save($"screenshot.jpg", ImageFormat.Jpeg)
 
         Try
-            Dim Minimap_move As Point = Client_primary.Contains(Move_minimap_box_ref)
+            Dim Minimap_move As Point = Client_primary3.Contains(Move_minimap_box_ref)
 
             If Minimap_move <> Nothing Then
+                Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "WheelUp", 1, Minimap_move.X - 40, Minimap_move.Y + 20)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "WheelDown", 1, 599, 659)
+
 
             End If
 
@@ -159,12 +181,6 @@ Public Class Form_Game
             '
 
         End Try
-
-
-
-        ' ------------------------ '
-        ' --- Checking minimap --- '
-        ' ------------------------ '
 
     End Sub
 
@@ -209,14 +225,14 @@ Public Class Form_Game
 
     Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
 
-        Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+        'Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
 
-        Try
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-            '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
+        'Try
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+        '    '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
 
-        Catch Bonus_Box_not_found As Exception
-        End Try
+        'Catch Bonus_Box_not_found As Exception
+        'End Try
 
     End Sub
 
