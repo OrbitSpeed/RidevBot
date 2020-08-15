@@ -611,7 +611,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(177, 64)
+        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(173, 64)
         Me.TextBox_secondsdouble.Name = "TextBox_secondsdouble"
         Me.TextBox_secondsdouble.ReadOnly = True
         Me.TextBox_secondsdouble.Size = New System.Drawing.Size(15, 16)
@@ -624,7 +624,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(167, 64)
+        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(163, 64)
         Me.TextBox_secondsdouble2.Name = "TextBox_secondsdouble2"
         Me.TextBox_secondsdouble2.ReadOnly = True
         Me.TextBox_secondsdouble2.Size = New System.Drawing.Size(15, 16)
@@ -648,7 +648,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble.Location = New System.Drawing.Point(142, 64)
+        Me.TextBox_minutedouble.Location = New System.Drawing.Point(146, 64)
         Me.TextBox_minutedouble.Name = "TextBox_minutedouble"
         Me.TextBox_minutedouble.ReadOnly = True
         Me.TextBox_minutedouble.Size = New System.Drawing.Size(15, 16)
@@ -661,7 +661,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble_dixieme.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble_dixieme.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble_dixieme.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(132, 64)
+        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(136, 64)
         Me.TextBox_minutedouble_dixieme.Name = "TextBox_minutedouble_dixieme"
         Me.TextBox_minutedouble_dixieme.ReadOnly = True
         Me.TextBox_minutedouble_dixieme.Size = New System.Drawing.Size(15, 16)
@@ -697,7 +697,7 @@ Partial Class Form_Tools
         Me.TextBox_ProfilSelected.Location = New System.Drawing.Point(59, 46)
         Me.TextBox_ProfilSelected.Name = "TextBox_ProfilSelected"
         Me.TextBox_ProfilSelected.ReadOnly = True
-        Me.TextBox_ProfilSelected.Size = New System.Drawing.Size(168, 15)
+        Me.TextBox_ProfilSelected.Size = New System.Drawing.Size(210, 15)
         Me.TextBox_ProfilSelected.TabIndex = 9
         Me.TextBox_ProfilSelected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -716,7 +716,7 @@ Partial Class Form_Tools
         Me.TextBox_Get_Server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_Get_Server.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_Get_Server.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Get_Server.Location = New System.Drawing.Point(242, 46)
+        Me.TextBox_Get_Server.Location = New System.Drawing.Point(90, 65)
         Me.TextBox_Get_Server.Name = "TextBox_Get_Server"
         Me.TextBox_Get_Server.ReadOnly = True
         Me.TextBox_Get_Server.Size = New System.Drawing.Size(27, 15)
@@ -856,7 +856,7 @@ Partial Class Form_Tools
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
         Me.Label_Minutes_Avant_Refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label_Minutes_Avant_Refresh.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(222, 282)
+        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(222, 199)
         Me.Label_Minutes_Avant_Refresh.Name = "Label_Minutes_Avant_Refresh"
         Me.Label_Minutes_Avant_Refresh.Size = New System.Drawing.Size(67, 19)
         Me.Label_Minutes_Avant_Refresh.TabIndex = 31
@@ -868,7 +868,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
-        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(181, 283)
+        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(181, 200)
         Me.TextBox_Refresh_Game.MaxLength = 3
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
@@ -881,7 +881,7 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(14, 279)
+        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(14, 196)
         Me.CheckBox_Refresh_Game.Name = "CheckBox_Refresh_Game"
         Me.CheckBox_Refresh_Game.Size = New System.Drawing.Size(164, 23)
         Me.CheckBox_Refresh_Game.TabIndex = 29
@@ -892,10 +892,12 @@ Partial Class Form_Tools
         '
         Me.Panel_Npc.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Npc.Controls.Add(Me.Panel_ressources)
-        Me.Panel_Npc.Controls.Add(Me.CheckBox10)
         Me.Panel_Npc.Controls.Add(Me.CheckBox3)
         Me.Panel_Npc.Controls.Add(Me.Button2)
         Me.Panel_Npc.Controls.Add(Me.Label_NPC_A_SUPPRIMER)
+        Me.Panel_Npc.Controls.Add(Me.CheckBox_Refresh_Game)
+        Me.Panel_Npc.Controls.Add(Me.Label_Minutes_Avant_Refresh)
+        Me.Panel_Npc.Controls.Add(Me.TextBox_Refresh_Game)
         Me.Panel_Npc.ForeColor = System.Drawing.Color.White
         Me.Panel_Npc.Location = New System.Drawing.Point(445, 36)
         Me.Panel_Npc.Name = "Panel_Npc"
@@ -1086,7 +1088,7 @@ Partial Class Form_Tools
         Me.CheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox10.Location = New System.Drawing.Point(26, 162)
+        Me.CheckBox10.Location = New System.Drawing.Point(11, 67)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(170, 23)
         Me.CheckBox10.TabIndex = 43
@@ -1629,15 +1631,13 @@ Partial Class Form_Tools
         '
         Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_divers.Controls.Add(Me.ComboBox2)
+        Me.Panel_divers.Controls.Add(Me.CheckBox10)
         Me.Panel_divers.Controls.Add(Me.CheckBox6)
         Me.Panel_divers.Controls.Add(Me.ComboBox1)
         Me.Panel_divers.Controls.Add(Me.TextBox1)
         Me.Panel_divers.Controls.Add(Me.CheckBox2)
         Me.Panel_divers.Controls.Add(Me.CheckBox1)
-        Me.Panel_divers.Controls.Add(Me.Label_Minutes_Avant_Refresh)
         Me.Panel_divers.Controls.Add(Me.Labe_DIVERS__A_SUPPRIMER)
-        Me.Panel_divers.Controls.Add(Me.TextBox_Refresh_Game)
-        Me.Panel_divers.Controls.Add(Me.CheckBox_Refresh_Game)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
         Me.Panel_divers.Location = New System.Drawing.Point(1065, 36)
         Me.Panel_divers.Name = "Panel_divers"
