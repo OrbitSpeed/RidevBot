@@ -563,7 +563,7 @@ Partial Class Form_Tools
         Me.Button_revive_sid.Name = "Button_revive_sid"
         Me.Button_revive_sid.Size = New System.Drawing.Size(91, 56)
         Me.Button_revive_sid.TabIndex = 37
-        Me.Button_revive_sid.Text = "Reload"
+        Me.Button_revive_sid.Text = "Reload doSID"
         Me.Button_revive_sid.UseVisualStyleBackColor = False
         '
         'ComboBox_autologin
@@ -925,7 +925,6 @@ Partial Class Form_Tools
         Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(155, 196)
         Me.TextBox_desactive_allkey.MaxLength = 1
         Me.TextBox_desactive_allkey.Name = "TextBox_desactive_allkey"
-        Me.TextBox_desactive_allkey.ReadOnly = True
         Me.TextBox_desactive_allkey.Size = New System.Drawing.Size(24, 22)
         Me.TextBox_desactive_allkey.TabIndex = 47
         Me.TextBox_desactive_allkey.Text = Global.DarkorbitBot.My.MySettings.Default.Desactive_all_formkey
@@ -1748,6 +1747,7 @@ Partial Class Form_Tools
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(13, 163)
         Me.Label2.Name = "Label2"
@@ -1758,6 +1758,7 @@ Partial Class Form_Tools
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(13, 143)
         Me.Label1.Name = "Label1"
@@ -1803,7 +1804,6 @@ Partial Class Form_Tools
         Me.CheckBox_revive_after.TabIndex = 50
         Me.CheckBox_revive_after.Text = "Revive after"
         Me.CheckBox_revive_after.UseVisualStyleBackColor = False
-        Me.CheckBox_revive_after.Visible = False
         '
         'Label_time_PET
         '
@@ -1843,7 +1843,6 @@ Partial Class Form_Tools
         Me.CheckBox_maximum_pet_death.TabIndex = 47
         Me.CheckBox_maximum_pet_death.Text = "Auto revive"
         Me.CheckBox_maximum_pet_death.UseVisualStyleBackColor = False
-        Me.CheckBox_maximum_pet_death.Visible = False
         '
         'Label_pet_profil
         '
@@ -1884,7 +1883,6 @@ Partial Class Form_Tools
         Me.CheckBox_repair_pet_auto.TabIndex = 35
         Me.CheckBox_repair_pet_auto.Text = "Repair P.E.T automatically"
         Me.CheckBox_repair_pet_auto.UseVisualStyleBackColor = False
-        Me.CheckBox_repair_pet_auto.Visible = False
         '
         'CheckBox_use_pet
         '
@@ -1900,7 +1898,6 @@ Partial Class Form_Tools
         Me.CheckBox_use_pet.TabIndex = 34
         Me.CheckBox_use_pet.Text = "Use P.E.T"
         Me.CheckBox_use_pet.UseVisualStyleBackColor = False
-        Me.CheckBox_use_pet.Visible = False
         '
         'Label_transitionPET
         '
@@ -2538,7 +2535,6 @@ Partial Class Form_Tools
         Me.TextBox_total_gates_builded.TabIndex = 97
         Me.TextBox_total_gates_builded.Text = "0"
         Me.TextBox_total_gates_builded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox_total_gates_builded.Visible = False
         '
         'TextBox_total_spinned
         '
@@ -2683,7 +2679,6 @@ Partial Class Form_Tools
         Me.TextBox_uridiumtokeepGGS.TabIndex = 5
         Me.TextBox_uridiumtokeepGGS.Text = "1.000.000"
         Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox_uridiumtokeepGGS.Visible = False
         '
         'CheckBox_PrepareGatesIfBuiled
         '

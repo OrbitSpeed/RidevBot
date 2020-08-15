@@ -1110,12 +1110,6 @@ Public Class Form_Tools
         Else
         End If
 
-        '''
-        '
-
-        '
-        ''
-        ''''
 
     End Sub
 
@@ -2073,7 +2067,7 @@ Public Class Form_Tools
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
         End If
-        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) Then
+        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) Uridium is lowest than the Uridium to keep..." + TextBox_WinGGS.Text
         End If
