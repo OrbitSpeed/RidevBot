@@ -164,6 +164,7 @@
     <Compile Include="BackPage_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BitmapExtension.vb" />
     <Compile Include="Form_Tools.Designer.vb">
       <DependentUpon>Form_Tools.vb</DependentUpon>
     </Compile>
@@ -467,6 +468,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="bin\Debug\mission.png" />
+    <None Include="bin\Debug\map.png" />
+    <None Include="bin\Debug\logout.png" />
+    <None Include="bin\Debug\heal.png" />
     <None Include="Resources\unknown.png" />
     <None Include="Resources\65.png" />
     <None Include="Resources\icon_elite_12x7.png" />
