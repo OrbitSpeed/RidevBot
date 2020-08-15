@@ -43,7 +43,6 @@ Partial Class Form_Tools
         Me.Label_ButtonDivers = New System.Windows.Forms.Label()
         Me.Panel_general = New System.Windows.Forms.Panel()
         Me.Button_revive_sid = New System.Windows.Forms.Button()
-        Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
         Me.textbox_stade = New System.Windows.Forms.TextBox()
         Me.TextBox_secondsdouble = New System.Windows.Forms.TextBox()
@@ -60,10 +59,7 @@ Partial Class Form_Tools
         Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
         Me.Label_Dosid = New System.Windows.Forms.Label()
         Me.Label_ID = New System.Windows.Forms.Label()
-        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
-        Me.CheckBox_LaunchGameAuto = New System.Windows.Forms.CheckBox()
         Me.Button_LaunchGameRidevBrowser = New System.Windows.Forms.Button()
-        Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
         Me.Label_GENERAL_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Button_OpenLoginPanel = New System.Windows.Forms.Button()
         Me.Label_Minutes_Avant_Refresh = New System.Windows.Forms.Label()
@@ -71,23 +67,14 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
         Me.Panel_ressources = New System.Windows.Forms.Panel()
-        Me.TextBox_priority_cargobox = New System.Windows.Forms.TextBox()
-        Me.TextBox_priority_bonusbox = New System.Windows.Forms.TextBox()
-        Me.TextBox_priority_palladium = New System.Windows.Forms.TextBox()
         Me.Label_ms_cargobox = New System.Windows.Forms.Label()
         Me.Label_ms_bonusbox = New System.Windows.Forms.Label()
         Me.Labelms_palladium = New System.Windows.Forms.Label()
-        Me.TextBox_cargobox_ms = New System.Windows.Forms.TextBox()
-        Me.TextBox_bonusbox_ms = New System.Windows.Forms.TextBox()
-        Me.TextBox_palladium_ms = New System.Windows.Forms.TextBox()
-        Me.CheckBox_palladium = New System.Windows.Forms.CheckBox()
         Me.CheckBox_Bonus_box = New System.Windows.Forms.CheckBox()
         Me.CheckBox_Cargo_box = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label_NPC_A_SUPPRIMER = New System.Windows.Forms.Label()
-        Me.label_Update = New System.Windows.Forms.Label()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
@@ -98,17 +85,11 @@ Partial Class Form_Tools
         Me.Label_Stats_Earned = New System.Windows.Forms.Label()
         Me.Label_Total_Current = New System.Windows.Forms.Label()
         Me.Panel_StatsEarned = New System.Windows.Forms.Panel()
-        Me.TextBox_RPEarned = New System.Windows.Forms.TextBox()
-        Me.TextBox_experienceEarned = New System.Windows.Forms.TextBox()
-        Me.TextBox_honorEarned = New System.Windows.Forms.TextBox()
-        Me.TextBox_creditEarned = New System.Windows.Forms.TextBox()
-        Me.TextBox_uridiumEarned = New System.Windows.Forms.TextBox()
         Me.Label_RPEarned = New System.Windows.Forms.Label()
         Me.Label_uridiumEarned = New System.Windows.Forms.Label()
         Me.Label_creditEarned = New System.Windows.Forms.Label()
         Me.Label_HonorEarned = New System.Windows.Forms.Label()
         Me.Label_experienceEarned = New System.Windows.Forms.Label()
-        Me.Label_STATS_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_StatsCurrent = New System.Windows.Forms.Panel()
         Me.TextBox_LevelCurrent = New System.Windows.Forms.TextBox()
         Me.TextBox_RPCurrent = New System.Windows.Forms.TextBox()
@@ -135,21 +116,18 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.Label_GG_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Button_beta = New System.Windows.Forms.Button()
         Me.Button_gamma = New System.Windows.Forms.Button()
@@ -201,14 +179,6 @@ Partial Class Form_Tools
         Me.Label_infoPartGG_CurrentWave = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label_Logfile_Earned = New System.Windows.Forms.Label()
-        Me.Label_Nanohull_Earned = New System.Windows.Forms.Label()
-        Me.Label_Mine_Earned = New System.Windows.Forms.Label()
-        Me.Label_PLT2021_Earned = New System.Windows.Forms.Label()
-        Me.Label_SAB50_Earned = New System.Windows.Forms.Label()
-        Me.Label_UCB100_Earned = New System.Windows.Forms.Label()
-        Me.Label_MCB50_Earned = New System.Windows.Forms.Label()
-        Me.Label_MCB25_Earned = New System.Windows.Forms.Label()
         Me.Label_Nanohull = New System.Windows.Forms.Label()
         Me.Label_Mine = New System.Windows.Forms.Label()
         Me.Label_UCB100 = New System.Windows.Forms.Label()
@@ -218,9 +188,7 @@ Partial Class Form_Tools
         Me.Label_Logfile = New System.Windows.Forms.Label()
         Me.Label_MCB25 = New System.Windows.Forms.Label()
         Me.Label_Xenomit = New System.Windows.Forms.Label()
-        Me.Label_Xenomit_Earned = New System.Windows.Forms.Label()
         Me.Label_Part = New System.Windows.Forms.Label()
-        Me.Label_Part_Earned = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG2 = New System.Windows.Forms.Panel()
         Me.Label_infoPartGG_InMap2 = New System.Windows.Forms.Label()
         Me.Label_InfoPartGG2 = New System.Windows.Forms.Label()
@@ -251,6 +219,36 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.Timer_SID = New System.Windows.Forms.Timer(Me.components)
+        Me.Label_desactive_all_elements = New System.Windows.Forms.Label()
+        Me.TextBox_RPEarned = New System.Windows.Forms.TextBox()
+        Me.TextBox_experienceEarned = New System.Windows.Forms.TextBox()
+        Me.TextBox_honorEarned = New System.Windows.Forms.TextBox()
+        Me.TextBox_creditEarned = New System.Windows.Forms.TextBox()
+        Me.TextBox_uridiumEarned = New System.Windows.Forms.TextBox()
+        Me.Label_Logfile_Earned = New System.Windows.Forms.Label()
+        Me.Label_Nanohull_Earned = New System.Windows.Forms.Label()
+        Me.Label_Mine_Earned = New System.Windows.Forms.Label()
+        Me.Label_PLT2021_Earned = New System.Windows.Forms.Label()
+        Me.Label_SAB50_Earned = New System.Windows.Forms.Label()
+        Me.Label_UCB100_Earned = New System.Windows.Forms.Label()
+        Me.Label_MCB50_Earned = New System.Windows.Forms.Label()
+        Me.Label_MCB25_Earned = New System.Windows.Forms.Label()
+        Me.Label_Xenomit_Earned = New System.Windows.Forms.Label()
+        Me.Label_Part_Earned = New System.Windows.Forms.Label()
+        Me.TextBox_desactive_allkey = New System.Windows.Forms.TextBox()
+        Me.TextBox_priority_cargobox = New System.Windows.Forms.TextBox()
+        Me.TextBox_priority_bonusbox = New System.Windows.Forms.TextBox()
+        Me.TextBox_priority_palladium = New System.Windows.Forms.TextBox()
+        Me.TextBox_cargobox_ms = New System.Windows.Forms.TextBox()
+        Me.TextBox_bonusbox_ms = New System.Windows.Forms.TextBox()
+        Me.TextBox_palladium_ms = New System.Windows.Forms.TextBox()
+        Me.CheckBox_palladium = New System.Windows.Forms.CheckBox()
+        Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
+        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_LaunchGameAuto = New System.Windows.Forms.CheckBox()
+        Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -554,21 +552,6 @@ Partial Class Form_Tools
         Me.Button_revive_sid.Text = "Reload"
         Me.Button_revive_sid.UseVisualStyleBackColor = False
         '
-        'ComboBox_autologin
-        '
-        Me.ComboBox_autologin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ComboBox_autologin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "AutoLoginCombobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.ComboBox_autologin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox_autologin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_autologin.ForeColor = System.Drawing.Color.White
-        Me.ComboBox_autologin.FormattingEnabled = True
-        Me.ComboBox_autologin.Items.AddRange(New Object() {"Profil 1", "Profil 2", "Profil 3"})
-        Me.ComboBox_autologin.Location = New System.Drawing.Point(147, 13)
-        Me.ComboBox_autologin.Name = "ComboBox_autologin"
-        Me.ComboBox_autologin.Size = New System.Drawing.Size(143, 21)
-        Me.ComboBox_autologin.TabIndex = 5
-        Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
-        '
         'Panel_Info
         '
         Me.Panel_Info.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -611,7 +594,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(173, 64)
+        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(212, 64)
         Me.TextBox_secondsdouble.Name = "TextBox_secondsdouble"
         Me.TextBox_secondsdouble.ReadOnly = True
         Me.TextBox_secondsdouble.Size = New System.Drawing.Size(15, 16)
@@ -624,7 +607,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(163, 64)
+        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(202, 64)
         Me.TextBox_secondsdouble2.Name = "TextBox_secondsdouble2"
         Me.TextBox_secondsdouble2.ReadOnly = True
         Me.TextBox_secondsdouble2.Size = New System.Drawing.Size(15, 16)
@@ -637,7 +620,7 @@ Partial Class Form_Tools
         Me.Label_separator2.AutoSize = True
         Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_separator2.Location = New System.Drawing.Point(157, 64)
+        Me.Label_separator2.Location = New System.Drawing.Point(196, 64)
         Me.Label_separator2.Name = "Label_separator2"
         Me.Label_separator2.Size = New System.Drawing.Size(10, 15)
         Me.Label_separator2.TabIndex = 18
@@ -648,7 +631,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble.Location = New System.Drawing.Point(146, 64)
+        Me.TextBox_minutedouble.Location = New System.Drawing.Point(185, 64)
         Me.TextBox_minutedouble.Name = "TextBox_minutedouble"
         Me.TextBox_minutedouble.ReadOnly = True
         Me.TextBox_minutedouble.Size = New System.Drawing.Size(15, 16)
@@ -661,7 +644,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble_dixieme.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble_dixieme.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble_dixieme.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(136, 64)
+        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(175, 64)
         Me.TextBox_minutedouble_dixieme.Name = "TextBox_minutedouble_dixieme"
         Me.TextBox_minutedouble_dixieme.ReadOnly = True
         Me.TextBox_minutedouble_dixieme.Size = New System.Drawing.Size(15, 16)
@@ -716,7 +699,7 @@ Partial Class Form_Tools
         Me.TextBox_Get_Server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_Get_Server.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_Get_Server.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Get_Server.Location = New System.Drawing.Point(90, 65)
+        Me.TextBox_Get_Server.Location = New System.Drawing.Point(96, 65)
         Me.TextBox_Get_Server.Name = "TextBox_Get_Server"
         Me.TextBox_Get_Server.ReadOnly = True
         Me.TextBox_Get_Server.Size = New System.Drawing.Size(27, 15)
@@ -767,37 +750,6 @@ Partial Class Form_Tools
         Me.Label_ID.TabIndex = 1
         Me.Label_ID.Text = "UserID"
         '
-        'CheckBox_AutoUpdate
-        '
-        Me.CheckBox_AutoUpdate.AutoSize = True
-        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
-        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(192, 34)
-        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
-        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(104, 23)
-        Me.CheckBox_AutoUpdate.TabIndex = 36
-        Me.CheckBox_AutoUpdate.Text = "Auto Update"
-        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
-        '
-        'CheckBox_LaunchGameAuto
-        '
-        Me.CheckBox_LaunchGameAuto.AutoSize = True
-        Me.CheckBox_LaunchGameAuto.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_LaunchGameAuto.Checked = Global.DarkorbitBot.My.MySettings.Default.LaunchGameatprogramstart
-        Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "LaunchGameatprogramstart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 34)
-        Me.CheckBox_LaunchGameAuto.Name = "CheckBox_LaunchGameAuto"
-        Me.CheckBox_LaunchGameAuto.Size = New System.Drawing.Size(177, 23)
-        Me.CheckBox_LaunchGameAuto.TabIndex = 7
-        Me.CheckBox_LaunchGameAuto.Text = "Auto launch Bot Browser"
-        Me.CheckBox_LaunchGameAuto.UseVisualStyleBackColor = False
-        '
         'Button_LaunchGameRidevBrowser
         '
         Me.Button_LaunchGameRidevBrowser.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -811,21 +763,6 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser.TabIndex = 26
         Me.Button_LaunchGameRidevBrowser.Text = "Open Bot Browser"
         Me.Button_LaunchGameRidevBrowser.UseVisualStyleBackColor = False
-        '
-        'CheckBox_AutoLogin
-        '
-        Me.CheckBox_AutoLogin.AutoSize = True
-        Me.CheckBox_AutoLogin.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoLogin.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoLogin
-        Me.CheckBox_AutoLogin.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoLogin", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_AutoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_AutoLogin.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_AutoLogin.Location = New System.Drawing.Point(15, 10)
-        Me.CheckBox_AutoLogin.Name = "CheckBox_AutoLogin"
-        Me.CheckBox_AutoLogin.Size = New System.Drawing.Size(126, 23)
-        Me.CheckBox_AutoLogin.TabIndex = 6
-        Me.CheckBox_AutoLogin.Text = "Auto login with :"
-        Me.CheckBox_AutoLogin.UseVisualStyleBackColor = False
         '
         'Label_GENERAL_A_SUPPRIMER
         '
@@ -856,11 +793,12 @@ Partial Class Form_Tools
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
         Me.Label_Minutes_Avant_Refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label_Minutes_Avant_Refresh.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(222, 199)
+        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(217, 279)
         Me.Label_Minutes_Avant_Refresh.Name = "Label_Minutes_Avant_Refresh"
         Me.Label_Minutes_Avant_Refresh.Size = New System.Drawing.Size(67, 19)
         Me.Label_Minutes_Avant_Refresh.TabIndex = 31
         Me.Label_Minutes_Avant_Refresh.Text = "Minute(s)"
+        Me.Label_Minutes_Avant_Refresh.Visible = False
         '
         'TextBox_Refresh_Game
         '
@@ -868,12 +806,13 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
-        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(181, 200)
+        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(176, 280)
         Me.TextBox_Refresh_Game.MaxLength = 3
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
         Me.TextBox_Refresh_Game.TabIndex = 30
         Me.TextBox_Refresh_Game.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_Refresh_Game.Visible = False
         '
         'CheckBox_Refresh_Game
         '
@@ -881,23 +820,20 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(14, 196)
+        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(9, 276)
         Me.CheckBox_Refresh_Game.Name = "CheckBox_Refresh_Game"
         Me.CheckBox_Refresh_Game.Size = New System.Drawing.Size(164, 23)
         Me.CheckBox_Refresh_Game.TabIndex = 29
         Me.CheckBox_Refresh_Game.Text = "Refresh the game after"
         Me.CheckBox_Refresh_Game.UseVisualStyleBackColor = False
+        Me.CheckBox_Refresh_Game.Visible = False
         '
         'Panel_Npc
         '
         Me.Panel_Npc.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Npc.Controls.Add(Me.TextBox_desactive_allkey)
+        Me.Panel_Npc.Controls.Add(Me.Label_desactive_all_elements)
         Me.Panel_Npc.Controls.Add(Me.Panel_ressources)
-        Me.Panel_Npc.Controls.Add(Me.CheckBox3)
-        Me.Panel_Npc.Controls.Add(Me.Button2)
-        Me.Panel_Npc.Controls.Add(Me.Label_NPC_A_SUPPRIMER)
-        Me.Panel_Npc.Controls.Add(Me.CheckBox_Refresh_Game)
-        Me.Panel_Npc.Controls.Add(Me.Label_Minutes_Avant_Refresh)
-        Me.Panel_Npc.Controls.Add(Me.TextBox_Refresh_Game)
         Me.Panel_Npc.ForeColor = System.Drawing.Color.White
         Me.Panel_Npc.Location = New System.Drawing.Point(445, 36)
         Me.Panel_Npc.Name = "Panel_Npc"
@@ -922,58 +858,16 @@ Partial Class Form_Tools
         Me.Panel_ressources.Controls.Add(Me.CheckBox_Bonus_box)
         Me.Panel_ressources.Controls.Add(Me.CheckBox_Cargo_box)
         Me.Panel_ressources.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_ressources.Location = New System.Drawing.Point(8, 225)
+        Me.Panel_ressources.Location = New System.Drawing.Point(15, 222)
         Me.Panel_ressources.Name = "Panel_ressources"
-        Me.Panel_ressources.Size = New System.Drawing.Size(288, 81)
+        Me.Panel_ressources.Size = New System.Drawing.Size(270, 81)
         Me.Panel_ressources.TabIndex = 45
-        '
-        'TextBox_priority_cargobox
-        '
-        Me.TextBox_priority_cargobox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_priority_cargobox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_priority_cargobox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritycargobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_priority_cargobox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_priority_cargobox.Location = New System.Drawing.Point(255, 57)
-        Me.TextBox_priority_cargobox.MaxLength = 1
-        Me.TextBox_priority_cargobox.Name = "TextBox_priority_cargobox"
-        Me.TextBox_priority_cargobox.Size = New System.Drawing.Size(19, 15)
-        Me.TextBox_priority_cargobox.TabIndex = 50
-        Me.TextBox_priority_cargobox.Text = Global.DarkorbitBot.My.MySettings.Default.prioritycargobox
-        Me.TextBox_priority_cargobox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_priority_bonusbox
-        '
-        Me.TextBox_priority_bonusbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_priority_bonusbox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_priority_bonusbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritybonusbox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_priority_bonusbox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_priority_bonusbox.Location = New System.Drawing.Point(255, 34)
-        Me.TextBox_priority_bonusbox.MaxLength = 1
-        Me.TextBox_priority_bonusbox.Name = "TextBox_priority_bonusbox"
-        Me.TextBox_priority_bonusbox.Size = New System.Drawing.Size(19, 15)
-        Me.TextBox_priority_bonusbox.TabIndex = 49
-        Me.TextBox_priority_bonusbox.Text = Global.DarkorbitBot.My.MySettings.Default.prioritybonusbox
-        Me.TextBox_priority_bonusbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_priority_palladium
-        '
-        Me.TextBox_priority_palladium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_priority_palladium.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_priority_palladium.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritypalladium", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_priority_palladium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_priority_palladium.Location = New System.Drawing.Point(255, 11)
-        Me.TextBox_priority_palladium.MaxLength = 1
-        Me.TextBox_priority_palladium.Name = "TextBox_priority_palladium"
-        Me.TextBox_priority_palladium.Size = New System.Drawing.Size(19, 15)
-        Me.TextBox_priority_palladium.TabIndex = 48
-        Me.TextBox_priority_palladium.Text = Global.DarkorbitBot.My.MySettings.Default.prioritypalladium
-        Me.TextBox_priority_palladium.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_ms_cargobox
         '
         Me.Label_ms_cargobox.AutoSize = True
         Me.Label_ms_cargobox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ms_cargobox.Location = New System.Drawing.Point(178, 57)
+        Me.Label_ms_cargobox.Location = New System.Drawing.Point(167, 56)
         Me.Label_ms_cargobox.Name = "Label_ms_cargobox"
         Me.Label_ms_cargobox.Size = New System.Drawing.Size(81, 13)
         Me.Label_ms_cargobox.TabIndex = 47
@@ -983,7 +877,7 @@ Partial Class Form_Tools
         '
         Me.Label_ms_bonusbox.AutoSize = True
         Me.Label_ms_bonusbox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ms_bonusbox.Location = New System.Drawing.Point(178, 34)
+        Me.Label_ms_bonusbox.Location = New System.Drawing.Point(167, 33)
         Me.Label_ms_bonusbox.Name = "Label_ms_bonusbox"
         Me.Label_ms_bonusbox.Size = New System.Drawing.Size(81, 13)
         Me.Label_ms_bonusbox.TabIndex = 46
@@ -993,78 +887,21 @@ Partial Class Form_Tools
         '
         Me.Labelms_palladium.AutoSize = True
         Me.Labelms_palladium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labelms_palladium.Location = New System.Drawing.Point(178, 11)
+        Me.Labelms_palladium.Location = New System.Drawing.Point(167, 10)
         Me.Labelms_palladium.Name = "Labelms_palladium"
         Me.Labelms_palladium.Size = New System.Drawing.Size(81, 13)
         Me.Labelms_palladium.TabIndex = 45
         Me.Labelms_palladium.Text = "ms.     Priority "
-        '
-        'TextBox_cargobox_ms
-        '
-        Me.TextBox_cargobox_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_cargobox_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_cargobox_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "collectcargosboxticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_cargobox_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_cargobox_ms.Location = New System.Drawing.Point(142, 57)
-        Me.TextBox_cargobox_ms.MaxLength = 4
-        Me.TextBox_cargobox_ms.Name = "TextBox_cargobox_ms"
-        Me.TextBox_cargobox_ms.Size = New System.Drawing.Size(32, 15)
-        Me.TextBox_cargobox_ms.TabIndex = 44
-        Me.TextBox_cargobox_ms.Text = Global.DarkorbitBot.My.MySettings.Default.collectcargosboxticks
-        Me.TextBox_cargobox_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_bonusbox_ms
-        '
-        Me.TextBox_bonusbox_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_bonusbox_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_bonusbox_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "collectbonusboxticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_bonusbox_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_bonusbox_ms.Location = New System.Drawing.Point(142, 34)
-        Me.TextBox_bonusbox_ms.MaxLength = 4
-        Me.TextBox_bonusbox_ms.Name = "TextBox_bonusbox_ms"
-        Me.TextBox_bonusbox_ms.Size = New System.Drawing.Size(32, 15)
-        Me.TextBox_bonusbox_ms.TabIndex = 43
-        Me.TextBox_bonusbox_ms.Text = Global.DarkorbitBot.My.MySettings.Default.collectbonusboxticks
-        Me.TextBox_bonusbox_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_palladium_ms
-        '
-        Me.TextBox_palladium_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_palladium_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_palladium_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "CollectPalladiumticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_palladium_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_palladium_ms.Location = New System.Drawing.Point(142, 11)
-        Me.TextBox_palladium_ms.MaxLength = 4
-        Me.TextBox_palladium_ms.Name = "TextBox_palladium_ms"
-        Me.TextBox_palladium_ms.Size = New System.Drawing.Size(32, 15)
-        Me.TextBox_palladium_ms.TabIndex = 42
-        Me.TextBox_palladium_ms.Text = Global.DarkorbitBot.My.MySettings.Default.CollectPalladiumticks
-        Me.TextBox_palladium_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'CheckBox_palladium
-        '
-        Me.CheckBox_palladium.AutoSize = True
-        Me.CheckBox_palladium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.CheckBox_palladium.Checked = Global.DarkorbitBot.My.MySettings.Default.checkbox_palladium
-        Me.CheckBox_palladium.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "checkbox_palladium", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_palladium.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_palladium.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_palladium.Location = New System.Drawing.Point(11, 5)
-        Me.CheckBox_palladium.Name = "CheckBox_palladium"
-        Me.CheckBox_palladium.Size = New System.Drawing.Size(129, 23)
-        Me.CheckBox_palladium.TabIndex = 38
-        Me.CheckBox_palladium.Text = "Collect Palladium"
-        Me.CheckBox_palladium.UseVisualStyleBackColor = False
         '
         'CheckBox_Bonus_box
         '
         Me.CheckBox_Bonus_box.AutoSize = True
         Me.CheckBox_Bonus_box.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckBox_Bonus_box.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_Bonus_box.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Bonus_box.Location = New System.Drawing.Point(11, 28)
+        Me.CheckBox_Bonus_box.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_Bonus_box.Location = New System.Drawing.Point(10, 31)
         Me.CheckBox_Bonus_box.Name = "CheckBox_Bonus_box"
-        Me.CheckBox_Bonus_box.Size = New System.Drawing.Size(130, 23)
+        Me.CheckBox_Bonus_box.Size = New System.Drawing.Size(114, 17)
         Me.CheckBox_Bonus_box.TabIndex = 40
         Me.CheckBox_Bonus_box.Text = "Collect BonusBox"
         Me.CheckBox_Bonus_box.UseVisualStyleBackColor = False
@@ -1074,26 +911,13 @@ Partial Class Form_Tools
         Me.CheckBox_Cargo_box.AutoSize = True
         Me.CheckBox_Cargo_box.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckBox_Cargo_box.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_Cargo_box.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Cargo_box.Location = New System.Drawing.Point(11, 51)
+        Me.CheckBox_Cargo_box.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_Cargo_box.Location = New System.Drawing.Point(10, 54)
         Me.CheckBox_Cargo_box.Name = "CheckBox_Cargo_box"
-        Me.CheckBox_Cargo_box.Size = New System.Drawing.Size(133, 23)
+        Me.CheckBox_Cargo_box.Size = New System.Drawing.Size(115, 17)
         Me.CheckBox_Cargo_box.TabIndex = 41
         Me.CheckBox_Cargo_box.Text = "Collect Cargo Box"
         Me.CheckBox_Cargo_box.UseVisualStyleBackColor = False
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox10.Location = New System.Drawing.Point(11, 67)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(170, 23)
-        Me.CheckBox10.TabIndex = 43
-        Me.CheckBox10.Text = "Npc Attack ( x - 2 only )"
-        Me.CheckBox10.UseVisualStyleBackColor = False
         '
         'CheckBox3
         '
@@ -1101,12 +925,13 @@ Partial Class Form_Tools
         Me.CheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox3.Location = New System.Drawing.Point(16, 39)
+        Me.CheckBox3.Location = New System.Drawing.Point(16, 243)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(245, 23)
         Me.CheckBox3.TabIndex = 39
         Me.CheckBox3.Text = "Use REX ( Rex settings in panel Rex )"
         Me.CheckBox3.UseVisualStyleBackColor = False
+        Me.CheckBox3.Visible = False
         '
         'Button2
         '
@@ -1115,38 +940,32 @@ Partial Class Form_Tools
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(15, 13)
+        Me.Button2.Location = New System.Drawing.Point(15, 217)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(219, 25)
         Me.Button2.TabIndex = 38
         Me.Button2.Text = "Modify no click zone ( minimap )"
         Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.Visible = False
         '
-        'Label_NPC_A_SUPPRIMER
+        'CheckBox10
         '
-        Me.Label_NPC_A_SUPPRIMER.AutoSize = True
-        Me.Label_NPC_A_SUPPRIMER.Location = New System.Drawing.Point(184, 13)
-        Me.Label_NPC_A_SUPPRIMER.Name = "Label_NPC_A_SUPPRIMER"
-        Me.Label_NPC_A_SUPPRIMER.Size = New System.Drawing.Size(98, 13)
-        Me.Label_NPC_A_SUPPRIMER.TabIndex = 0
-        Me.Label_NPC_A_SUPPRIMER.Text = "Npc Killer & collector"
-        Me.Label_NPC_A_SUPPRIMER.Visible = False
-        '
-        'label_Update
-        '
-        Me.label_Update.AutoSize = True
-        Me.label_Update.Location = New System.Drawing.Point(229, 293)
-        Me.label_Update.Name = "label_Update"
-        Me.label_Update.Size = New System.Drawing.Size(72, 13)
-        Me.label_Update.TabIndex = 0
-        Me.label_Update.Text = "Log && Update"
-        Me.label_Update.Visible = False
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox10.Location = New System.Drawing.Point(19, 103)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(170, 23)
+        Me.CheckBox10.TabIndex = 43
+        Me.CheckBox10.Text = "Npc Attack ( x - 2 only )"
+        Me.CheckBox10.UseVisualStyleBackColor = False
+        Me.CheckBox10.Visible = False
         '
         'Panel_collector
         '
         Me.Panel_collector.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_collector.Controls.Add(Me.TextBox_Changelog)
-        Me.Panel_collector.Controls.Add(Me.label_Update)
         Me.Panel_collector.ForeColor = System.Drawing.Color.White
         Me.Panel_collector.Location = New System.Drawing.Point(755, 36)
         Me.Panel_collector.Name = "Panel_collector"
@@ -1198,7 +1017,6 @@ Partial Class Form_Tools
         Me.Panel_stats.Controls.Add(Me.Label_Stats_Earned)
         Me.Panel_stats.Controls.Add(Me.Label_Total_Current)
         Me.Panel_stats.Controls.Add(Me.Panel_StatsEarned)
-        Me.Panel_stats.Controls.Add(Me.Label_STATS_A_SUPPRIMER)
         Me.Panel_stats.Controls.Add(Me.Panel_StatsCurrent)
         Me.Panel_stats.ForeColor = System.Drawing.Color.White
         Me.Panel_stats.Location = New System.Drawing.Point(1013, 362)
@@ -1279,76 +1097,6 @@ Partial Class Form_Tools
         Me.Panel_StatsEarned.Size = New System.Drawing.Size(276, 108)
         Me.Panel_StatsEarned.TabIndex = 46
         '
-        'TextBox_RPEarned
-        '
-        Me.TextBox_RPEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_RPEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_RPEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RP_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_RPEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_RPEarned.Location = New System.Drawing.Point(107, 81)
-        Me.TextBox_RPEarned.Name = "TextBox_RPEarned"
-        Me.TextBox_RPEarned.ReadOnly = True
-        Me.TextBox_RPEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_RPEarned.TabIndex = 55
-        Me.TextBox_RPEarned.Text = Global.DarkorbitBot.My.MySettings.Default.RP_Earned_Visual
-        Me.TextBox_RPEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_experienceEarned
-        '
-        Me.TextBox_experienceEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_experienceEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_experienceEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Experience_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_experienceEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_experienceEarned.Location = New System.Drawing.Point(107, 64)
-        Me.TextBox_experienceEarned.Name = "TextBox_experienceEarned"
-        Me.TextBox_experienceEarned.ReadOnly = True
-        Me.TextBox_experienceEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_experienceEarned.TabIndex = 54
-        Me.TextBox_experienceEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Experience_Earned_Visual
-        Me.TextBox_experienceEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_honorEarned
-        '
-        Me.TextBox_honorEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_honorEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_honorEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Honor_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_honorEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_honorEarned.Location = New System.Drawing.Point(107, 47)
-        Me.TextBox_honorEarned.Name = "TextBox_honorEarned"
-        Me.TextBox_honorEarned.ReadOnly = True
-        Me.TextBox_honorEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_honorEarned.TabIndex = 53
-        Me.TextBox_honorEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Honor_Earned_Visual
-        Me.TextBox_honorEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_creditEarned
-        '
-        Me.TextBox_creditEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_creditEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_creditEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Credit_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_creditEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_creditEarned.Location = New System.Drawing.Point(107, 30)
-        Me.TextBox_creditEarned.Name = "TextBox_creditEarned"
-        Me.TextBox_creditEarned.ReadOnly = True
-        Me.TextBox_creditEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_creditEarned.TabIndex = 52
-        Me.TextBox_creditEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Credit_Earned_Visual
-        Me.TextBox_creditEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox_uridiumEarned
-        '
-        Me.TextBox_uridiumEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_uridiumEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_uridiumEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Uridium_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_uridiumEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_uridiumEarned.Location = New System.Drawing.Point(107, 13)
-        Me.TextBox_uridiumEarned.Name = "TextBox_uridiumEarned"
-        Me.TextBox_uridiumEarned.ReadOnly = True
-        Me.TextBox_uridiumEarned.Size = New System.Drawing.Size(152, 16)
-        Me.TextBox_uridiumEarned.TabIndex = 51
-        Me.TextBox_uridiumEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Uridium_Earned_Visual
-        Me.TextBox_uridiumEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label_RPEarned
         '
         Me.Label_RPEarned.AutoSize = True
@@ -1408,16 +1156,6 @@ Partial Class Form_Tools
         Me.Label_experienceEarned.Size = New System.Drawing.Size(82, 17)
         Me.Label_experienceEarned.TabIndex = 40
         Me.Label_experienceEarned.Text = "Experience :"
-        '
-        'Label_STATS_A_SUPPRIMER
-        '
-        Me.Label_STATS_A_SUPPRIMER.AutoSize = True
-        Me.Label_STATS_A_SUPPRIMER.Location = New System.Drawing.Point(259, 0)
-        Me.Label_STATS_A_SUPPRIMER.Name = "Label_STATS_A_SUPPRIMER"
-        Me.Label_STATS_A_SUPPRIMER.Size = New System.Drawing.Size(31, 13)
-        Me.Label_STATS_A_SUPPRIMER.TabIndex = 0
-        Me.Label_STATS_A_SUPPRIMER.Text = "Stats"
-        Me.Label_STATS_A_SUPPRIMER.Visible = False
         '
         'Panel_StatsCurrent
         '
@@ -1595,7 +1333,19 @@ Partial Class Form_Tools
         '
         Me.Panel_rex.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_rex.Controls.Add(Me.Button3)
+        Me.Panel_rex.Controls.Add(Me.CheckBox3)
+        Me.Panel_rex.Controls.Add(Me.ComboBox2)
+        Me.Panel_rex.Controls.Add(Me.Button2)
         Me.Panel_rex.Controls.Add(Me.Label8rex_A_SUPPRIMER)
+        Me.Panel_rex.Controls.Add(Me.CheckBox_Refresh_Game)
+        Me.Panel_rex.Controls.Add(Me.CheckBox10)
+        Me.Panel_rex.Controls.Add(Me.Label_Minutes_Avant_Refresh)
+        Me.Panel_rex.Controls.Add(Me.CheckBox6)
+        Me.Panel_rex.Controls.Add(Me.TextBox_Refresh_Game)
+        Me.Panel_rex.Controls.Add(Me.CheckBox1)
+        Me.Panel_rex.Controls.Add(Me.ComboBox1)
+        Me.Panel_rex.Controls.Add(Me.CheckBox2)
+        Me.Panel_rex.Controls.Add(Me.TextBox1)
         Me.Panel_rex.ForeColor = System.Drawing.Color.White
         Me.Panel_rex.Location = New System.Drawing.Point(1332, 362)
         Me.Panel_rex.Name = "Panel_rex"
@@ -1616,6 +1366,7 @@ Partial Class Form_Tools
         Me.Button3.TabIndex = 39
         Me.Button3.Text = "Modify no click zone ( Rex )"
         Me.Button3.UseVisualStyleBackColor = False
+        Me.Button3.Visible = False
         '
         'Label8rex_A_SUPPRIMER
         '
@@ -1630,13 +1381,6 @@ Partial Class Form_Tools
         'Panel_divers
         '
         Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_divers.Controls.Add(Me.ComboBox2)
-        Me.Panel_divers.Controls.Add(Me.CheckBox10)
-        Me.Panel_divers.Controls.Add(Me.CheckBox6)
-        Me.Panel_divers.Controls.Add(Me.ComboBox1)
-        Me.Panel_divers.Controls.Add(Me.TextBox1)
-        Me.Panel_divers.Controls.Add(Me.CheckBox2)
-        Me.Panel_divers.Controls.Add(Me.CheckBox1)
         Me.Panel_divers.Controls.Add(Me.Labe_DIVERS__A_SUPPRIMER)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
         Me.Panel_divers.Location = New System.Drawing.Point(1065, 36)
@@ -1653,10 +1397,11 @@ Partial Class Form_Tools
         Me.ComboBox2.ForeColor = System.Drawing.Color.White
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Original", "grey"})
-        Me.ComboBox2.Location = New System.Drawing.Point(151, 259)
+        Me.ComboBox2.Location = New System.Drawing.Point(184, 188)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(65, 21)
         Me.ComboBox2.TabIndex = 38
+        Me.ComboBox2.Visible = False
         '
         'CheckBox6
         '
@@ -1664,12 +1409,13 @@ Partial Class Form_Tools
         Me.CheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox6.Location = New System.Drawing.Point(14, 256)
+        Me.CheckBox6.Location = New System.Drawing.Point(47, 185)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(131, 23)
         Me.CheckBox6.TabIndex = 37
         Me.CheckBox6.Text = "Active Color mod"
         Me.CheckBox6.UseVisualStyleBackColor = False
+        Me.CheckBox6.Visible = False
         '
         'ComboBox1
         '
@@ -1679,10 +1425,11 @@ Partial Class Form_Tools
         Me.ComboBox1.ForeColor = System.Drawing.Color.White
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Promerium", "Seprom"})
-        Me.ComboBox1.Location = New System.Drawing.Point(187, 36)
+        Me.ComboBox1.Location = New System.Drawing.Point(195, 72)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(65, 21)
         Me.ComboBox1.TabIndex = 35
+        Me.ComboBox1.Visible = False
         '
         'TextBox1
         '
@@ -1690,12 +1437,13 @@ Partial Class Form_Tools
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(147, 37)
+        Me.TextBox1.Location = New System.Drawing.Point(155, 73)
         Me.TextBox1.MaxLength = 3
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(34, 22)
         Me.TextBox1.TabIndex = 34
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox1.Visible = False
         '
         'CheckBox2
         '
@@ -1703,12 +1451,13 @@ Partial Class Form_Tools
         Me.CheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox2.Location = New System.Drawing.Point(39, 33)
+        Me.CheckBox2.Location = New System.Drawing.Point(47, 69)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(102, 23)
         Me.CheckBox2.TabIndex = 33
         Me.CheckBox2.Text = "Send to Ship"
         Me.CheckBox2.UseVisualStyleBackColor = False
+        Me.CheckBox2.Visible = False
         '
         'CheckBox1
         '
@@ -1716,12 +1465,13 @@ Partial Class Form_Tools
         Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox1.Location = New System.Drawing.Point(14, 10)
+        Me.CheckBox1.Location = New System.Drawing.Point(22, 46)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox1.TabIndex = 32
         Me.CheckBox1.Text = "Update Skylab Automatically"
         Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.CheckBox1.Visible = False
         '
         'Labe_DIVERS__A_SUPPRIMER
         '
@@ -1759,18 +1509,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_Pause
         '
@@ -1849,19 +1587,6 @@ Partial Class Form_Tools
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
         '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_close1
         '
         Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -1935,16 +1660,6 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabIndex = 10
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
-        '
-        'Label_GG_A_SUPPRIMER
-        '
-        Me.Label_GG_A_SUPPRIMER.AutoSize = True
-        Me.Label_GG_A_SUPPRIMER.Location = New System.Drawing.Point(237, 0)
-        Me.Label_GG_A_SUPPRIMER.Name = "Label_GG_A_SUPPRIMER"
-        Me.Label_GG_A_SUPPRIMER.Size = New System.Drawing.Size(67, 13)
-        Me.Label_GG_A_SUPPRIMER.TabIndex = 0
-        Me.Label_GG_A_SUPPRIMER.Text = "GalaxyGates"
-        Me.Label_GG_A_SUPPRIMER.Visible = False
         '
         'Button_Alpha
         '
@@ -2362,6 +2077,7 @@ Partial Class Form_Tools
         Me.TextBox_total_gates_builded.TabIndex = 97
         Me.TextBox_total_gates_builded.Text = "0"
         Me.TextBox_total_gates_builded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_total_gates_builded.Visible = False
         '
         'TextBox_total_spinned
         '
@@ -2506,6 +2222,7 @@ Partial Class Form_Tools
         Me.TextBox_uridiumtokeepGGS.TabIndex = 5
         Me.TextBox_uridiumtokeepGGS.Text = "1.000.000"
         Me.TextBox_uridiumtokeepGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_uridiumtokeepGGS.Visible = False
         '
         'CheckBox_PrepareGatesIfBuiled
         '
@@ -2660,102 +2377,6 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(159, 161)
         Me.TableLayoutPanel1.TabIndex = 83
         '
-        'Label_Logfile_Earned
-        '
-        Me.Label_Logfile_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Logfile_Earned.AutoSize = True
-        Me.Label_Logfile_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Logfile_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Logfile_Earned.Location = New System.Drawing.Point(104, 82)
-        Me.Label_Logfile_Earned.Name = "Label_Logfile_Earned"
-        Me.Label_Logfile_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Logfile_Earned.TabIndex = 99
-        Me.Label_Logfile_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
-        '
-        'Label_Nanohull_Earned
-        '
-        Me.Label_Nanohull_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Nanohull_Earned.AutoSize = True
-        Me.Label_Nanohull_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Nanohull", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Nanohull_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Nanohull_Earned.Location = New System.Drawing.Point(104, 114)
-        Me.Label_Nanohull_Earned.Name = "Label_Nanohull_Earned"
-        Me.Label_Nanohull_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Nanohull_Earned.TabIndex = 97
-        Me.Label_Nanohull_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Nanohull
-        '
-        'Label_Mine_Earned
-        '
-        Me.Label_Mine_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Mine_Earned.AutoSize = True
-        Me.Label_Mine_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Mine", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Mine_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Mine_Earned.Location = New System.Drawing.Point(104, 98)
-        Me.Label_Mine_Earned.Name = "Label_Mine_Earned"
-        Me.Label_Mine_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Mine_Earned.TabIndex = 96
-        Me.Label_Mine_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Mine
-        '
-        'Label_PLT2021_Earned
-        '
-        Me.Label_PLT2021_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_PLT2021_Earned.AutoSize = True
-        Me.Label_PLT2021_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "PLT21", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_PLT2021_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_PLT2021_Earned.Location = New System.Drawing.Point(104, 66)
-        Me.Label_PLT2021_Earned.Name = "Label_PLT2021_Earned"
-        Me.Label_PLT2021_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_PLT2021_Earned.TabIndex = 94
-        Me.Label_PLT2021_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.PLT21
-        '
-        'Label_SAB50_Earned
-        '
-        Me.Label_SAB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_SAB50_Earned.AutoSize = True
-        Me.Label_SAB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "SAB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_SAB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_SAB50_Earned.Location = New System.Drawing.Point(104, 50)
-        Me.Label_SAB50_Earned.Name = "Label_SAB50_Earned"
-        Me.Label_SAB50_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_SAB50_Earned.TabIndex = 93
-        Me.Label_SAB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.SAB50
-        '
-        'Label_UCB100_Earned
-        '
-        Me.Label_UCB100_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_UCB100_Earned.AutoSize = True
-        Me.Label_UCB100_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "UCB100", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_UCB100_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_UCB100_Earned.Location = New System.Drawing.Point(104, 34)
-        Me.Label_UCB100_Earned.Name = "Label_UCB100_Earned"
-        Me.Label_UCB100_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_UCB100_Earned.TabIndex = 92
-        Me.Label_UCB100_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.UCB100
-        '
-        'Label_MCB50_Earned
-        '
-        Me.Label_MCB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB50_Earned.AutoSize = True
-        Me.Label_MCB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_MCB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB50_Earned.Location = New System.Drawing.Point(104, 18)
-        Me.Label_MCB50_Earned.Name = "Label_MCB50_Earned"
-        Me.Label_MCB50_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_MCB50_Earned.TabIndex = 91
-        Me.Label_MCB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB50
-        '
-        'Label_MCB25_Earned
-        '
-        Me.Label_MCB25_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_MCB25_Earned.AutoSize = True
-        Me.Label_MCB25_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB25", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_MCB25_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_MCB25_Earned.Location = New System.Drawing.Point(104, 2)
-        Me.Label_MCB25_Earned.Name = "Label_MCB25_Earned"
-        Me.Label_MCB25_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_MCB25_Earned.TabIndex = 83
-        Me.Label_MCB25_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB25
-        '
         'Label_Nanohull
         '
         Me.Label_Nanohull.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -2855,18 +2476,6 @@ Partial Class Form_Tools
         Me.Label_Xenomit.TabIndex = 90
         Me.Label_Xenomit.Text = "Xenomit"
         '
-        'Label_Xenomit_Earned
-        '
-        Me.Label_Xenomit_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Xenomit_Earned.AutoSize = True
-        Me.Label_Xenomit_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Xenomit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Xenomit_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Xenomit_Earned.Location = New System.Drawing.Point(104, 130)
-        Me.Label_Xenomit_Earned.Name = "Label_Xenomit_Earned"
-        Me.Label_Xenomit_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Xenomit_Earned.TabIndex = 95
-        Me.Label_Xenomit_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Xenomit
-        '
         'Label_Part
         '
         Me.Label_Part.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -2877,18 +2486,6 @@ Partial Class Form_Tools
         Me.Label_Part.Size = New System.Drawing.Size(28, 13)
         Me.Label_Part.TabIndex = 88
         Me.Label_Part.Text = "Part"
-        '
-        'Label_Part_Earned
-        '
-        Me.Label_Part_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Part_Earned.AutoSize = True
-        Me.Label_Part_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Part", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Part_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Part_Earned.Location = New System.Drawing.Point(104, 146)
-        Me.Label_Part_Earned.Name = "Label_Part_Earned"
-        Me.Label_Part_Earned.Size = New System.Drawing.Size(13, 13)
-        Me.Label_Part_Earned.TabIndex = 98
-        Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Part
         '
         'Panel_infoPartGG2
         '
@@ -3071,7 +2668,6 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_gamma)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_beta)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Alpha)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Label_GG_A_SUPPRIMER)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
         Me.Panel_GalaxyGates.Location = New System.Drawing.Point(5, 362)
@@ -3259,6 +2855,406 @@ Partial Class Form_Tools
         Me.Timer_SID.Enabled = True
         Me.Timer_SID.Interval = 1000
         '
+        'Label_desactive_all_elements
+        '
+        Me.Label_desactive_all_elements.AutoSize = True
+        Me.Label_desactive_all_elements.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_desactive_all_elements.Location = New System.Drawing.Point(23, 199)
+        Me.Label_desactive_all_elements.Name = "Label_desactive_all_elements"
+        Me.Label_desactive_all_elements.Size = New System.Drawing.Size(126, 13)
+        Me.Label_desactive_all_elements.TabIndex = 46
+        Me.Label_desactive_all_elements.Text = "Desactive all form key :"
+        '
+        'TextBox_RPEarned
+        '
+        Me.TextBox_RPEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_RPEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_RPEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "RP_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_RPEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_RPEarned.Location = New System.Drawing.Point(107, 81)
+        Me.TextBox_RPEarned.Name = "TextBox_RPEarned"
+        Me.TextBox_RPEarned.ReadOnly = True
+        Me.TextBox_RPEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_RPEarned.TabIndex = 55
+        Me.TextBox_RPEarned.Text = Global.DarkorbitBot.My.MySettings.Default.RP_Earned_Visual
+        Me.TextBox_RPEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_experienceEarned
+        '
+        Me.TextBox_experienceEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_experienceEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_experienceEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Experience_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_experienceEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_experienceEarned.Location = New System.Drawing.Point(107, 64)
+        Me.TextBox_experienceEarned.Name = "TextBox_experienceEarned"
+        Me.TextBox_experienceEarned.ReadOnly = True
+        Me.TextBox_experienceEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_experienceEarned.TabIndex = 54
+        Me.TextBox_experienceEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Experience_Earned_Visual
+        Me.TextBox_experienceEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_honorEarned
+        '
+        Me.TextBox_honorEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_honorEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_honorEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Honor_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_honorEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_honorEarned.Location = New System.Drawing.Point(107, 47)
+        Me.TextBox_honorEarned.Name = "TextBox_honorEarned"
+        Me.TextBox_honorEarned.ReadOnly = True
+        Me.TextBox_honorEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_honorEarned.TabIndex = 53
+        Me.TextBox_honorEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Honor_Earned_Visual
+        Me.TextBox_honorEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_creditEarned
+        '
+        Me.TextBox_creditEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_creditEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_creditEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Credit_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_creditEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_creditEarned.Location = New System.Drawing.Point(107, 30)
+        Me.TextBox_creditEarned.Name = "TextBox_creditEarned"
+        Me.TextBox_creditEarned.ReadOnly = True
+        Me.TextBox_creditEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_creditEarned.TabIndex = 52
+        Me.TextBox_creditEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Credit_Earned_Visual
+        Me.TextBox_creditEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_uridiumEarned
+        '
+        Me.TextBox_uridiumEarned.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_uridiumEarned.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_uridiumEarned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Uridium_Earned_Visual", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_uridiumEarned.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_uridiumEarned.Location = New System.Drawing.Point(107, 13)
+        Me.TextBox_uridiumEarned.Name = "TextBox_uridiumEarned"
+        Me.TextBox_uridiumEarned.ReadOnly = True
+        Me.TextBox_uridiumEarned.Size = New System.Drawing.Size(152, 16)
+        Me.TextBox_uridiumEarned.TabIndex = 51
+        Me.TextBox_uridiumEarned.Text = Global.DarkorbitBot.My.MySettings.Default.Uridium_Earned_Visual
+        Me.TextBox_uridiumEarned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label_Logfile_Earned
+        '
+        Me.Label_Logfile_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Logfile_Earned.AutoSize = True
+        Me.Label_Logfile_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Logfile_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Logfile_Earned.Location = New System.Drawing.Point(104, 82)
+        Me.Label_Logfile_Earned.Name = "Label_Logfile_Earned"
+        Me.Label_Logfile_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Logfile_Earned.TabIndex = 99
+        Me.Label_Logfile_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
+        '
+        'Label_Nanohull_Earned
+        '
+        Me.Label_Nanohull_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Nanohull_Earned.AutoSize = True
+        Me.Label_Nanohull_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Nanohull", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Nanohull_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Nanohull_Earned.Location = New System.Drawing.Point(104, 114)
+        Me.Label_Nanohull_Earned.Name = "Label_Nanohull_Earned"
+        Me.Label_Nanohull_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Nanohull_Earned.TabIndex = 97
+        Me.Label_Nanohull_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Nanohull
+        '
+        'Label_Mine_Earned
+        '
+        Me.Label_Mine_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Mine_Earned.AutoSize = True
+        Me.Label_Mine_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Mine", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Mine_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Mine_Earned.Location = New System.Drawing.Point(104, 98)
+        Me.Label_Mine_Earned.Name = "Label_Mine_Earned"
+        Me.Label_Mine_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Mine_Earned.TabIndex = 96
+        Me.Label_Mine_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Mine
+        '
+        'Label_PLT2021_Earned
+        '
+        Me.Label_PLT2021_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_PLT2021_Earned.AutoSize = True
+        Me.Label_PLT2021_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "PLT21", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_PLT2021_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_PLT2021_Earned.Location = New System.Drawing.Point(104, 66)
+        Me.Label_PLT2021_Earned.Name = "Label_PLT2021_Earned"
+        Me.Label_PLT2021_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_PLT2021_Earned.TabIndex = 94
+        Me.Label_PLT2021_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.PLT21
+        '
+        'Label_SAB50_Earned
+        '
+        Me.Label_SAB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_SAB50_Earned.AutoSize = True
+        Me.Label_SAB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "SAB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_SAB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_SAB50_Earned.Location = New System.Drawing.Point(104, 50)
+        Me.Label_SAB50_Earned.Name = "Label_SAB50_Earned"
+        Me.Label_SAB50_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_SAB50_Earned.TabIndex = 93
+        Me.Label_SAB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.SAB50
+        '
+        'Label_UCB100_Earned
+        '
+        Me.Label_UCB100_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_UCB100_Earned.AutoSize = True
+        Me.Label_UCB100_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "UCB100", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_UCB100_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_UCB100_Earned.Location = New System.Drawing.Point(104, 34)
+        Me.Label_UCB100_Earned.Name = "Label_UCB100_Earned"
+        Me.Label_UCB100_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_UCB100_Earned.TabIndex = 92
+        Me.Label_UCB100_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.UCB100
+        '
+        'Label_MCB50_Earned
+        '
+        Me.Label_MCB50_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB50_Earned.AutoSize = True
+        Me.Label_MCB50_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB50", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_MCB50_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB50_Earned.Location = New System.Drawing.Point(104, 18)
+        Me.Label_MCB50_Earned.Name = "Label_MCB50_Earned"
+        Me.Label_MCB50_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_MCB50_Earned.TabIndex = 91
+        Me.Label_MCB50_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB50
+        '
+        'Label_MCB25_Earned
+        '
+        Me.Label_MCB25_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_MCB25_Earned.AutoSize = True
+        Me.Label_MCB25_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "MCB25", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_MCB25_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_MCB25_Earned.Location = New System.Drawing.Point(104, 2)
+        Me.Label_MCB25_Earned.Name = "Label_MCB25_Earned"
+        Me.Label_MCB25_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_MCB25_Earned.TabIndex = 83
+        Me.Label_MCB25_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.MCB25
+        '
+        'Label_Xenomit_Earned
+        '
+        Me.Label_Xenomit_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Xenomit_Earned.AutoSize = True
+        Me.Label_Xenomit_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Xenomit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Xenomit_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Xenomit_Earned.Location = New System.Drawing.Point(104, 130)
+        Me.Label_Xenomit_Earned.Name = "Label_Xenomit_Earned"
+        Me.Label_Xenomit_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Xenomit_Earned.TabIndex = 95
+        Me.Label_Xenomit_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Xenomit
+        '
+        'Label_Part_Earned
+        '
+        Me.Label_Part_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Part_Earned.AutoSize = True
+        Me.Label_Part_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Part", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Part_Earned.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Part_Earned.Location = New System.Drawing.Point(104, 146)
+        Me.Label_Part_Earned.Name = "Label_Part_Earned"
+        Me.Label_Part_Earned.Size = New System.Drawing.Size(13, 13)
+        Me.Label_Part_Earned.TabIndex = 98
+        Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Part
+        '
+        'TextBox_desactive_allkey
+        '
+        Me.TextBox_desactive_allkey.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TextBox_desactive_allkey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_desactive_allkey.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Desactive_all_formkey", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_desactive_allkey.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(155, 196)
+        Me.TextBox_desactive_allkey.MaxLength = 1
+        Me.TextBox_desactive_allkey.Name = "TextBox_desactive_allkey"
+        Me.TextBox_desactive_allkey.ReadOnly = True
+        Me.TextBox_desactive_allkey.Size = New System.Drawing.Size(24, 22)
+        Me.TextBox_desactive_allkey.TabIndex = 47
+        Me.TextBox_desactive_allkey.Text = Global.DarkorbitBot.My.MySettings.Default.Desactive_all_formkey
+        Me.TextBox_desactive_allkey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_priority_cargobox
+        '
+        Me.TextBox_priority_cargobox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_priority_cargobox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_priority_cargobox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritycargobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_priority_cargobox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_priority_cargobox.Location = New System.Drawing.Point(244, 56)
+        Me.TextBox_priority_cargobox.MaxLength = 1
+        Me.TextBox_priority_cargobox.Name = "TextBox_priority_cargobox"
+        Me.TextBox_priority_cargobox.Size = New System.Drawing.Size(19, 15)
+        Me.TextBox_priority_cargobox.TabIndex = 50
+        Me.TextBox_priority_cargobox.Text = Global.DarkorbitBot.My.MySettings.Default.prioritycargobox
+        Me.TextBox_priority_cargobox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_priority_bonusbox
+        '
+        Me.TextBox_priority_bonusbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_priority_bonusbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_priority_bonusbox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritybonusbox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_priority_bonusbox.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_priority_bonusbox.Location = New System.Drawing.Point(244, 33)
+        Me.TextBox_priority_bonusbox.MaxLength = 1
+        Me.TextBox_priority_bonusbox.Name = "TextBox_priority_bonusbox"
+        Me.TextBox_priority_bonusbox.Size = New System.Drawing.Size(19, 15)
+        Me.TextBox_priority_bonusbox.TabIndex = 49
+        Me.TextBox_priority_bonusbox.Text = Global.DarkorbitBot.My.MySettings.Default.prioritybonusbox
+        Me.TextBox_priority_bonusbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_priority_palladium
+        '
+        Me.TextBox_priority_palladium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_priority_palladium.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_priority_palladium.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "prioritypalladium", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_priority_palladium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_priority_palladium.Location = New System.Drawing.Point(244, 10)
+        Me.TextBox_priority_palladium.MaxLength = 1
+        Me.TextBox_priority_palladium.Name = "TextBox_priority_palladium"
+        Me.TextBox_priority_palladium.Size = New System.Drawing.Size(19, 15)
+        Me.TextBox_priority_palladium.TabIndex = 48
+        Me.TextBox_priority_palladium.Text = Global.DarkorbitBot.My.MySettings.Default.prioritypalladium
+        Me.TextBox_priority_palladium.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_cargobox_ms
+        '
+        Me.TextBox_cargobox_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_cargobox_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_cargobox_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "collectcargosboxticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_cargobox_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_cargobox_ms.Location = New System.Drawing.Point(131, 56)
+        Me.TextBox_cargobox_ms.MaxLength = 4
+        Me.TextBox_cargobox_ms.Name = "TextBox_cargobox_ms"
+        Me.TextBox_cargobox_ms.Size = New System.Drawing.Size(32, 15)
+        Me.TextBox_cargobox_ms.TabIndex = 44
+        Me.TextBox_cargobox_ms.Text = Global.DarkorbitBot.My.MySettings.Default.collectcargosboxticks
+        Me.TextBox_cargobox_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_bonusbox_ms
+        '
+        Me.TextBox_bonusbox_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_bonusbox_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_bonusbox_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "collectbonusboxticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_bonusbox_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_bonusbox_ms.Location = New System.Drawing.Point(131, 33)
+        Me.TextBox_bonusbox_ms.MaxLength = 4
+        Me.TextBox_bonusbox_ms.Name = "TextBox_bonusbox_ms"
+        Me.TextBox_bonusbox_ms.Size = New System.Drawing.Size(32, 15)
+        Me.TextBox_bonusbox_ms.TabIndex = 43
+        Me.TextBox_bonusbox_ms.Text = Global.DarkorbitBot.My.MySettings.Default.collectbonusboxticks
+        Me.TextBox_bonusbox_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox_palladium_ms
+        '
+        Me.TextBox_palladium_ms.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_palladium_ms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_palladium_ms.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "CollectPalladiumticks", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_palladium_ms.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_palladium_ms.Location = New System.Drawing.Point(131, 10)
+        Me.TextBox_palladium_ms.MaxLength = 4
+        Me.TextBox_palladium_ms.Name = "TextBox_palladium_ms"
+        Me.TextBox_palladium_ms.Size = New System.Drawing.Size(32, 15)
+        Me.TextBox_palladium_ms.TabIndex = 42
+        Me.TextBox_palladium_ms.Text = Global.DarkorbitBot.My.MySettings.Default.CollectPalladiumticks
+        Me.TextBox_palladium_ms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'CheckBox_palladium
+        '
+        Me.CheckBox_palladium.AutoSize = True
+        Me.CheckBox_palladium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckBox_palladium.Checked = Global.DarkorbitBot.My.MySettings.Default.checkbox_palladium
+        Me.CheckBox_palladium.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "checkbox_palladium", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_palladium.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_palladium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_palladium.Location = New System.Drawing.Point(10, 8)
+        Me.CheckBox_palladium.Name = "CheckBox_palladium"
+        Me.CheckBox_palladium.Size = New System.Drawing.Size(113, 17)
+        Me.CheckBox_palladium.TabIndex = 38
+        Me.CheckBox_palladium.Text = "Collect Palladium"
+        Me.CheckBox_palladium.UseVisualStyleBackColor = False
+        '
+        'ComboBox_autologin
+        '
+        Me.ComboBox_autologin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox_autologin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "AutoLoginCombobox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ComboBox_autologin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox_autologin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_autologin.ForeColor = System.Drawing.Color.White
+        Me.ComboBox_autologin.FormattingEnabled = True
+        Me.ComboBox_autologin.Items.AddRange(New Object() {"Profil 1", "Profil 2", "Profil 3"})
+        Me.ComboBox_autologin.Location = New System.Drawing.Point(147, 13)
+        Me.ComboBox_autologin.Name = "ComboBox_autologin"
+        Me.ComboBox_autologin.Size = New System.Drawing.Size(143, 21)
+        Me.ComboBox_autologin.TabIndex = 5
+        Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
+        '
+        'CheckBox_AutoUpdate
+        '
+        Me.CheckBox_AutoUpdate.AutoSize = True
+        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
+        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(192, 34)
+        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
+        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(104, 23)
+        Me.CheckBox_AutoUpdate.TabIndex = 36
+        Me.CheckBox_AutoUpdate.Text = "Auto Update"
+        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
+        '
+        'CheckBox_LaunchGameAuto
+        '
+        Me.CheckBox_LaunchGameAuto.AutoSize = True
+        Me.CheckBox_LaunchGameAuto.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_LaunchGameAuto.Checked = Global.DarkorbitBot.My.MySettings.Default.LaunchGameatprogramstart
+        Me.CheckBox_LaunchGameAuto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "LaunchGameatprogramstart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_LaunchGameAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_LaunchGameAuto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_LaunchGameAuto.Location = New System.Drawing.Point(15, 34)
+        Me.CheckBox_LaunchGameAuto.Name = "CheckBox_LaunchGameAuto"
+        Me.CheckBox_LaunchGameAuto.Size = New System.Drawing.Size(177, 23)
+        Me.CheckBox_LaunchGameAuto.TabIndex = 7
+        Me.CheckBox_LaunchGameAuto.Text = "Auto launch Bot Browser"
+        Me.CheckBox_LaunchGameAuto.UseVisualStyleBackColor = False
+        '
+        'CheckBox_AutoLogin
+        '
+        Me.CheckBox_AutoLogin.AutoSize = True
+        Me.CheckBox_AutoLogin.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoLogin.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoLogin
+        Me.CheckBox_AutoLogin.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoLogin", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_AutoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoLogin.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CheckBox_AutoLogin.Location = New System.Drawing.Point(15, 10)
+        Me.CheckBox_AutoLogin.Name = "CheckBox_AutoLogin"
+        Me.CheckBox_AutoLogin.Size = New System.Drawing.Size(126, 23)
+        Me.CheckBox_AutoLogin.TabIndex = 6
+        Me.CheckBox_AutoLogin.Text = "Auto login with :"
+        Me.CheckBox_AutoLogin.UseVisualStyleBackColor = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3395,13 +3391,10 @@ Partial Class Form_Tools
     Friend WithEvents Panel_general As Panel
     Friend WithEvents Label_GENERAL_A_SUPPRIMER As Label
     Friend WithEvents Panel_Npc As Panel
-    Friend WithEvents Label_NPC_A_SUPPRIMER As Label
-    Friend WithEvents label_Update As Label
     Friend WithEvents Panel_collector As Panel
     Friend WithEvents Panel_Palladium As Panel
     Friend WithEvents Label_PALADIUM_A_SUPPRIMER As Label
     Friend WithEvents Panel_stats As Panel
-    Friend WithEvents Label_STATS_A_SUPPRIMER As Label
     Friend WithEvents Panel_rex As Panel
     Friend WithEvents Label8rex_A_SUPPRIMER As Label
     Friend WithEvents Panel_divers As Panel
@@ -3472,7 +3465,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label_GG_A_SUPPRIMER As Label
     Friend WithEvents Button_Alpha As Button
     Friend WithEvents Button_beta As Button
     Friend WithEvents Button_gamma As Button
@@ -3597,4 +3589,6 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_bonusbox_ms As TextBox
     Friend WithEvents TextBox_palladium_ms As TextBox
     Friend WithEvents Timer_SID As Timer
+    Friend WithEvents TextBox_desactive_allkey As TextBox
+    Friend WithEvents Label_desactive_all_elements As Label
 End Class

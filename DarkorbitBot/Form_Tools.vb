@@ -3177,6 +3177,7 @@ Public Class Form_Tools
     Private SID_Seconds_dixaine As Integer = 0
     Private SID_Seconds As Integer = 0
     Private Sub Timer_SID_Tick(sender As Object, e As EventArgs) Handles Timer_SID.Tick
+
         SID_Seconds += 1
         If SID_Seconds = 10 Then
             SID_Seconds_dixaine += 1
@@ -3211,42 +3212,6 @@ Public Class Form_Tools
         TextBox_secondsdouble2.Text = SID_Seconds_dixaine
         TextBox_secondsdouble.Text = SID_Seconds
 
-        'TextBox_secondsdouble.Text = Val(TextBox_secondsdouble.Text) + 1
-
-        ' seconds
-        'If TextBox_secondsdouble.Text = "10" Then
-
-        '    TextBox_secondsdouble.Text = "0"
-        '    TextBox_secondsdouble2.Text = Val(TextBox_secondsdouble2.Text) + 1
-
-        'End If
-
-        'If TextBox_secondsdouble2.Text = "6" Then
-
-        '    TextBox_secondsdouble2.Text = "0"
-        '    TextBox_minutedouble.Text = Val(TextBox_minutedouble.Text) + 1
-
-        'End If
-
-        '' minutes
-        'If TextBox_minutedouble.Text = "10" Then
-
-        '    Button_revive_sid.PerformClick()
-
-        '    TextBox_minutedouble_dixieme.Text = "0"
-        '    TextBox_minutedouble.Text = "0"
-        '    TextBox_secondsdouble2.Text = "0"
-        '    TextBox_secondsdouble.Text = "0"
-
-        '    TextBox_minutedouble_dixieme.Text = Val(TextBox_minutedouble_dixieme.Text) + 1
-
-        'End If
-
-        'If TextBox_minutedouble_dixieme.Text = "6" Then
-
-        '    TextBox_minutedouble_dixieme.Text = "0"
-
-        'End If
     End Sub
 
     Private Sub Random_movement()
@@ -3285,22 +3250,13 @@ Public Class Form_Tools
     End Sub
 
     Private Background_Worker_Working As Boolean = False
-    Public Async Sub BackgroundWorker_Bot_DoWork()
+    Public Sub BackgroundWorker_Bot_DoWork()
+
         If Background_Worker_Working = True Then
 
-            If My.Settings.checkbox_palladium = True Then
-                Try
-                    Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_palladium.PerformClick()))
-                Catch Palladium_Not_Found As Exception
-                    'PictureBox_StopBot_Click(Nothing, Nothing)
-                    Console.WriteLine("[Form_Tools] Can't find the palladium")
-                End Try
+            Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_Bot.PerformClick()))
+            BackgroundWorker_Bot_DoWork()
 
-                Dim temps = Task.Delay(TextBox_palladium_ms.Text)
-                Await temps
-                BackgroundWorker_Bot_DoWork()
-
-            End If
         End If
     End Sub
 

@@ -468,6 +468,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Minimap_reduce.png" />
+    <None Include="Resources\Minimap_closed.png" />
+    <None Include="Resources\Move_box.png" />
     <None Include="bin\Debug\mission.png" />
     <None Include="bin\Debug\map.png" />
     <None Include="bin\Debug\logout.png" />

@@ -28,7 +28,7 @@ Partial Class Form_Game
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
-        Me.Button_palladium = New System.Windows.Forms.Button()
+        Me.Button_Bot = New System.Windows.Forms.Button()
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
@@ -85,14 +85,14 @@ Partial Class Form_Game
         Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_getserver.TabIndex = 28
         '
-        'Button_palladium
+        'Button_Bot
         '
-        Me.Button_palladium.Location = New System.Drawing.Point(12, 50)
-        Me.Button_palladium.Name = "Button_palladium"
-        Me.Button_palladium.Size = New System.Drawing.Size(100, 37)
-        Me.Button_palladium.TabIndex = 29
-        Me.Button_palladium.Text = "Palladium"
-        Me.Button_palladium.UseVisualStyleBackColor = True
+        Me.Button_Bot.Location = New System.Drawing.Point(12, 50)
+        Me.Button_Bot.Name = "Button_Bot"
+        Me.Button_Bot.Size = New System.Drawing.Size(100, 37)
+        Me.Button_Bot.TabIndex = 29
+        Me.Button_Bot.Text = "bot"
+        Me.Button_Bot.UseVisualStyleBackColor = True
         '
         'Button_bonusbox
         '
@@ -120,7 +120,7 @@ Partial Class Form_Game
         Me.ClientSize = New System.Drawing.Size(800, 618)
         Me.Controls.Add(Me.Button_cargobox)
         Me.Controls.Add(Me.Button_bonusbox)
-        Me.Controls.Add(Me.Button_palladium)
+        Me.Controls.Add(Me.Button_Bot)
         Me.Controls.Add(Me.TextBox_getserver)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
@@ -146,7 +146,7 @@ Partial Class Form_Game
     Friend WithEvents Panel7 As Panel
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
-    Friend WithEvents Button_palladium As Button
+    Friend WithEvents Button_Bot As Button
     Friend WithEvents Button_bonusbox As Button
     Friend WithEvents Button_cargobox As Button
 End Class
