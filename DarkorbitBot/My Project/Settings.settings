@@ -27,7 +27,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="AutoLoginCombobox" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Profil 1</Value>
+      <Value Profile="(Default)">Passive</Value>
     </Setting>
     <Setting Name="LaunchGameatprogramstart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -160,6 +160,27 @@
     </Setting>
     <Setting Name="Desactive_all_formkey" Type="System.String" Scope="User">
       <Value Profile="(Default)">Q</Value>
+    </Setting>
+    <Setting Name="PET_Selection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Passive</Value>
+    </Setting>
+    <Setting Name="use_pet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="repair_pet_auto" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Maximum_pet_death" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Maximum_pet_death_box" Type="System.String" Scope="User">
+      <Value Profile="(Default)">99</Value>
+    </Setting>
+    <Setting Name="revive_after_x_death_pet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="revive_pet_x_seconds" Type="System.String" Scope="User">
+      <Value Profile="(Default)">999</Value>
     </Setting>
   </Settings>
 </SettingsFile>

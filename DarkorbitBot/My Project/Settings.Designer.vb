@@ -151,7 +151,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Profil 1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Passive")>  _
         Public Property AutoLoginCombobox() As String
             Get
                 Return CType(Me("AutoLoginCombobox"),String)
@@ -686,6 +686,90 @@ Namespace My
             End Get
             Set
                 Me("Desactive_all_formkey") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Passive")>  _
+        Public Property PET_Selection() As String
+            Get
+                Return CType(Me("PET_Selection"),String)
+            End Get
+            Set
+                Me("PET_Selection") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property use_pet() As Boolean
+            Get
+                Return CType(Me("use_pet"),Boolean)
+            End Get
+            Set
+                Me("use_pet") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property repair_pet_auto() As Boolean
+            Get
+                Return CType(Me("repair_pet_auto"),Boolean)
+            End Get
+            Set
+                Me("repair_pet_auto") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Maximum_pet_death() As Boolean
+            Get
+                Return CType(Me("Maximum_pet_death"),Boolean)
+            End Get
+            Set
+                Me("Maximum_pet_death") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("99")>  _
+        Public Property Maximum_pet_death_box() As String
+            Get
+                Return CType(Me("Maximum_pet_death_box"),String)
+            End Get
+            Set
+                Me("Maximum_pet_death_box") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property revive_after_x_death_pet() As Boolean
+            Get
+                Return CType(Me("revive_after_x_death_pet"),Boolean)
+            End Get
+            Set
+                Me("revive_after_x_death_pet") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("999")>  _
+        Public Property revive_pet_x_seconds() As String
+            Get
+                Return CType(Me("revive_pet_x_seconds"),String)
+            End Get
+            Set
+                Me("revive_pet_x_seconds") = value
             End Set
         End Property
     End Class

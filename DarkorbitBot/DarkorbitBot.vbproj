@@ -468,6 +468,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Protocol_Defense_kami.png" />
+    <None Include="Resources\protocol_collect_box.png" />
+    <None Include="Resources\protocol_kamikaze.png" />
+    <None Include="Resources\protocol_reparation_vaiseau.png" />
+    <None Include="Resources\protocol_reparation_pet.png" />
+    <None Include="Resources\protocol_recolte_resources.png" />
+    <None Include="Resources\protocol_pet_selling.png" />
+    <None Include="Resources\protocol_detection_resources.png" />
+    <None Include="Resources\protocol_detection_npc.png" />
     <None Include="Resources\Minimap_reduce.png" />
     <None Include="Resources\Minimap_closed.png" />
     <None Include="Resources\Move_box.png" />
