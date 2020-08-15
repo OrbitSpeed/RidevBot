@@ -1,19 +1,7 @@
-﻿Imports System.Net
+﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
-Imports AutoItX3Lib
-Imports System.Diagnostics
-Imports System.IO
-Imports System.Runtime.InteropServices
-Imports System.Data
-Imports System.Drawing.Graphics
-Imports System.ComponentModel
-Imports System.Windows.Forms.Application
-Imports System.Text
-
 
 Public Class Form_Tools
-
-    Dim autoit As New AutoItX3
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
     Public BeingDragged As Boolean = False
@@ -2086,6 +2074,11 @@ Public Class Form_Tools
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
         End If
+        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) Then
+            BackgroundWorkerAutospin = False
+            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) Uridium is lowest than the Uridium to keep..." + TextBox_WinGGS.Text
+        End If
+
         If BackgroundWorkerAutospin = True Then
             uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
             ComboBox_autospin.Enabled = False
@@ -2151,10 +2144,11 @@ Public Class Form_Tools
 
             If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
                 If infoinMapGG = False Then
-                    If CheckBox_PrepareGatesIfBuiled.Checked = True Then
+                    If CheckBox_PrepareGatesIfBuiled.Checked Then
                         Button_PrepareGates.PerformClick()
+                        TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
                         TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
-                        If CheckBox_buildoneandstop.Checked = True Then
+                        If CheckBox_BuildOneAndStop.Checked Then
                             BackgroundWorkerAutospin = False
                             TextBox_WinGGS.Text = vbNewLine + $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed." + TextBox_WinGGS.Text
                             MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -2162,6 +2156,17 @@ Public Class Form_Tools
                     Else
                         BackgroundWorkerAutospin = False
                         MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                Else
+                    'Déjà une map en carte mère (prepared : 1)
+                    If CheckBox_BuildOneAndStop.Checked Or CheckBox_PrepareGatesIfBuiled.Checked Then
+                        BackgroundWorkerAutospin = False
+                        If CheckBox_PrepareGatesIfBuiled.Checked Then
+                            Button_PrepareGates.PerformClick()
+                            TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
+                        End If
+                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
+                        MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 End If
             End If
@@ -3111,10 +3116,10 @@ Public Class Form_Tools
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
             Utils.server = CheckRegex.Groups.Item(1).ToString
 
-            Dim testalacon = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
-            If testalacon.Success Then
+            Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+            If dosid_regex.Success Then
 
-                Utils.dosid = testalacon.Value.Split("=")(1)
+                Utils.dosid = dosid_regex.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
                 TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
                 TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
@@ -3134,7 +3139,9 @@ Public Class Form_Tools
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                Timer_SID.Start()
+                If BackgroundWorker_Timer.IsBusy <> True Then
+                    BackgroundWorker_Timer.RunWorkerAsync()
+                End If
 
                 WebBrowser_Synchronisation.Navigate("about:blank")
 
@@ -3156,7 +3163,11 @@ Public Class Form_Tools
 
     Private Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
-        Timer_SID.Stop()
+        'Timer_SID.Stop()
+
+        If BackgroundWorker_Timer.IsBusy = True Then
+            BackgroundWorker_Timer.CancelAsync()
+        End If
 
         TextBox_Get_Dosid.Text = ""
         TextBox_Get_id.Text = ""
@@ -3176,7 +3187,8 @@ Public Class Form_Tools
     Private SID_Minutes As Integer = 0
     Private SID_Seconds_dixaine As Integer = 0
     Private SID_Seconds As Integer = 0
-    Private Sub Timer_SID_Tick(sender As Object, e As EventArgs) Handles Timer_SID.Tick
+
+    Private Sub BackgroundWorker_Timer_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Timer.DoWork
 
         SID_Seconds += 1
         If SID_Seconds = 10 Then
@@ -3196,7 +3208,9 @@ Public Class Form_Tools
 
         If SID_Minutes_dixaine = 1 Then
 
-            Button_revive_sid.PerformClick()
+            Invoke(New MethodInvoker(Sub()
+                                         Button_revive_sid.PerformClick()
+                                     End Sub))
 
             TextBox_minutedouble_dixieme.Text = "0"
             TextBox_minutedouble.Text = "0"
@@ -3207,11 +3221,25 @@ Public Class Form_Tools
 
         End If
 
-        TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
-        TextBox_minutedouble.Text = SID_Minutes
-        TextBox_secondsdouble2.Text = SID_Seconds_dixaine
-        TextBox_secondsdouble.Text = SID_Seconds
+        Invoke(New MethodInvoker(Sub()
+                                     TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
+                                     TextBox_minutedouble.Text = SID_Minutes
+                                     TextBox_secondsdouble2.Text = SID_Seconds_dixaine
+                                     TextBox_secondsdouble.Text = SID_Seconds
 
+                                     TextBox_minutedouble_dixieme.Refresh()
+                                     TextBox_minutedouble.Refresh()
+                                     TextBox_secondsdouble2.Refresh()
+                                     TextBox_secondsdouble.Refresh()
+                                 End Sub))
+
+    End Sub
+
+    Private Async Sub BackgroundWorker_Timer_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Timer.RunWorkerCompleted
+        If BackgroundWorker_Timer.IsBusy = False Then
+            Await Task.Delay(980)
+            BackgroundWorker_Timer.RunWorkerAsync()
+        End If
     End Sub
 
     Private Sub Random_movement()
@@ -3225,8 +3253,6 @@ Public Class Form_Tools
         '    AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
 
     End Sub
-
-
 
     Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
 

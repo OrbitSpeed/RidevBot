@@ -452,6 +452,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property map_detect() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("map_detect", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property mcb_25_30x30() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("mcb_25_30x30", resourceCulture)
@@ -565,6 +575,16 @@ Namespace My.Resources
         Friend ReadOnly Property sg3n_a01_30x30() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("sg3n_a01_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property systeme_stellaire() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("systeme_stellaire", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -118,9 +118,6 @@ Public Class AutoUpdater
             Button_Update.Enabled = True
             Form_Tools.TextBox_Changelog.Text = e.Result
 
-            If Not File.Exists(FilePath) Then
-                File.WriteAllBytes(FilePath, My.Resources.ridevbotuniverse)
-            End If
             AxWindowsMediaPlayer1.URL = FilePath
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             Dim wait = Task.Delay(265)

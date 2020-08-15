@@ -468,6 +468,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="bin\Debug\systeme_stellaire.png" />
+    <None Include="bin\Debug\map_detect.png" />
     <None Include="Resources\Protocol_Defense_kami.png" />
     <None Include="Resources\protocol_collect_box.png" />
     <None Include="Resources\protocol_kamikaze.png" />

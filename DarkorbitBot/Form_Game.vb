@@ -24,7 +24,13 @@ Public Class Form_Game
     Private Sub WebBrowser_Game_Ridevbot_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Game_Ridevbot.DocumentCompleted
 
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+        Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
+    End Sub
+
+
+    Private Sub Form_Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.TopMost = True
     End Sub
 
 
@@ -44,16 +50,15 @@ Public Class Form_Game
 
 
 
-
-
-    Private Sub Checking_screen()
+    Function Checking_screen()
 
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
         Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
         Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-        Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
+        Return Client_primary
+        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
 
-    End Sub
+    End Function
 
 
 
@@ -66,9 +71,9 @@ Public Class Form_Game
 
     Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
 
-        ' --------------- '
-        ' --- Startup --- '
-        ' --------------- '
+        ' --------------- 
+        ' --- Startup --- 
+        ' --------------- 
 
 
         ' Checking de l'écran et effectue le screen de demarge + desacive toute les fenetre du jeu avec la touche associé + check et recuperation d'image
@@ -79,26 +84,25 @@ Public Class Form_Game
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
 
-        Dim delay0 = Task.Delay(2000)
-        Await delay0
-
-        Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
-        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
-        Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-        Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
+        Await Task.Delay(2000)
 
         Dim Minimap_closed_ref = My.Resources.Minimap_closed
         Dim Minimap_size_ref = My.Resources.Minimap_reduce
         Dim Move_minimap_box_ref = My.Resources.Move_box
 
-        ' --------------- '
-        ' --- Startup --- '
-        ' --------------- '
+        Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
+        Dim map_detect_ref = My.Resources.map_detect
 
+        ' --------------- 
+        ' --- Startup --- 
+        ' --------------- 
 
+Startup_Balise1:
         ' checking si minimap fermer et que la touche de depart a bien ete entrer
+        Dim Client_Screen As Bitmap = Checking_screen()
+        'Graphics.FromImage(Client_primary)
         Try
-            Dim Minimap_closed As Point = Client_primary.Contains(Minimap_closed_ref)
+            Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
             If Minimap_closed <> Nothing Then
 
                 WebBrowser_Game_Ridevbot.Select()
@@ -106,11 +110,12 @@ Public Class Form_Game
 
             End If
         Catch Minimap_opened As Exception
-            ' faire un systeme qui te ramene a la "balise 0" '
+            ' faire un systeme qui te ramene a la "balise 0" 
+            Console.WriteLine($"Exception minimap_opened: {Minimap_opened.Message}")
+            GoTo Startup_Balise1
         End Try
 
-        Dim delay2 = Task.Delay(3000)
-        Await delay2
+        Await Task.Delay(3000)
 
 
 
@@ -118,32 +123,45 @@ Public Class Form_Game
 
 
 
-        ' -------------------------------------------'
-        ' reduit la minimap au minimum '
-        ' balise 2 '
-        ' -------------------------------------------'
 
-        Dim Client_primary2 = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
-        Dim Client_second2 As Graphics = Graphics.FromImage(Client_primary2)
-        Client_second2.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-        Client_primary2.Save($"screenshot.jpg", ImageFormat.Jpeg)
+        ' -------------------------------------------
+        ' reduit la minimap au minimum 
+        ' balise 2 
+        ' -------------------------------------------
 
+        Client_Screen = Checking_screen()
 
         Try
-            Dim Minimap_size As Point = Client_primary2.Contains(Minimap_size_ref)
-            If Minimap_size <> Nothing Then
-                '  Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
+            Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
+            Dim compare As Point
 
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y + 18)
-                ' essayer de voir pour mettre sa en x10 genre une boucle qui repete 10x l'operation
+            If Minimap_size <> Nothing Then
+
+                For i = 0 To 20
+                    Await Task.Delay(90)
+                    Dim cursor_Pos = Cursor.Position
+                    Client_Screen = Checking_screen()
+                    Minimap_size = Client_Screen.Contains(Minimap_size_ref)
+                    If Minimap_size <> Nothing Then
+                        If compare = Minimap_size Then
+                            i = 20
+                            Console.WriteLine("Similaire, on skip")
+                        Else
+                            Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
+                            AutoIt.MouseClick("LEFT")
+                            compare = Minimap_size
+                        End If
+                    End If
+                    Cursor.Position = cursor_Pos
+                Next
+
             End If
         Catch ex As Exception
-            ' faire un systeme qui te ramene a la "balise 1" '
+            GoTo Startup_Balise1
+            ' faire un systeme qui te ramene a la "balise 1" 
         End Try
 
-        Dim delay3 = Task.Delay(3000)
-        Await delay3
+        Await Task.Delay(3000)
 
 
 
@@ -155,30 +173,52 @@ Public Class Form_Game
 
 
 
-
-        ' ---------------------------------------------------'
+        ' ---------------------------------------------------
         'deplace la minimap en bas a droite 
         ' balise 3
-        ' ---------------------------------------------------'
-        Dim Client_primary3 = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
-        Dim Client_second3 As Graphics = Graphics.FromImage(Client_primary3)
-        Client_second3.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-        Client_primary3.Save($"screenshot.jpg", ImageFormat.Jpeg)
+        ' ---------------------------------------------------
+        Client_Screen = Checking_screen()
 
         Try
-            Dim Minimap_move As Point = Client_primary3.Contains(Move_minimap_box_ref)
+            Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
 
             If Minimap_move <> Nothing Then
-                Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "WheelUp", 1, Minimap_move.X - 40, Minimap_move.Y + 20)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "WheelDown", 1, 599, 659)
 
+                Dim cursor_Pos = Cursor.Position
+                Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
+                AutoIt.MouseDown("LEFT")
+                Cursor.Position = New Point(759, 599)
+                AutoIt.MouseUp("LEFT")
+                Cursor.Position = cursor_Pos
+                Await Task.Delay(800)
 
             End If
 
         Catch ex As Exception
 
             '
+
+        End Try
+
+        Try
+
+            Dim Systeme_Stellaire_Point As Point = Client_Screen.Contains(systeme_stellaire_ref)
+
+            If Systeme_Stellaire_Point <> Nothing Then
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, Systeme_Stellaire_Point.X, Systeme_Stellaire_Point.Y + 18)
+                Await Task.Delay(1200)
+
+                Client_Screen = Checking_screen()
+                Dim map_detect_point As Point = Client_Screen.Contains(map_detect_ref)
+
+                If map_detect_point <> Nothing Then
+                    Cursor.Position = New Point(map_detect_point.X, map_detect_point.Y)
+                Else
+                    Console.WriteLine("Not found")
+                End If
+
+            End If
+        Catch ex As Exception
 
         End Try
 

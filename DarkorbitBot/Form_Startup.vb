@@ -17,7 +17,7 @@ Public Class Form_Startup
 
         If Form_Tools.Check_message = 1 Then
 
-            MsgBox("Error", "Your password or pseudonyme are not correct")
+            MsgBox("Error", "Check your credentials")
 
         End If
 
@@ -67,9 +67,6 @@ Public Class Form_Startup
 
         ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
 
-        Else
-
-
         End If
 
         If CheckedStats = 0 Then
@@ -104,10 +101,6 @@ Public Class Form_Startup
 
 
                 End If
-
-            Else
-
-
             End If
         End If
 
@@ -218,7 +211,10 @@ Public Class Form_Startup
 
         End If
 
-        Form_Tools.Timer_SID.Stop()
+        'Form_Tools.Timer_SID.Stop()
+        If Form_Tools.BackgroundWorker_Timer.IsBusy = True Then
+            Form_Tools.BackgroundWorker_Timer.CancelAsync()
+        End If
 
         Form_Tools.TextBox_minutedouble_dixieme.Text = "0"
         Form_Tools.TextBox_minutedouble.Text = "0"
@@ -246,7 +242,7 @@ Public Class Form_Startup
     End Sub
 
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button_SID_Load.Click
+    Private Sub Button_SID_Load_Click(sender As Object, e As EventArgs) Handles Button_SID_Load.Click
 
         Label_point_de_chute.Select()
         Utils.server = TextBox_server.Text
@@ -391,6 +387,7 @@ Public Class Form_Startup
         CloseForm.ShowDialog(Me)
     End Sub
 
+#Region "Yeux"
     Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseDown
         Textbox_Password.UseSystemPasswordChar = False
         PictureBox_PasswordHider.Image = My.Resources.img_eyeOpen
@@ -423,6 +420,7 @@ Public Class Form_Startup
         TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
         PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.img_eyeClose
     End Sub
+#End Region
 
     Private Sub PictureBoxUsernamePasswordProfil1view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1view.Click
         '
@@ -486,43 +484,4 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub TextBoxUsernamePasswordProfil1password_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsernamePasswordProfil1password.TextChanged
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.Click
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseDown
-
-    End Sub
-
-    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseUp
-
-    End Sub
 End Class
