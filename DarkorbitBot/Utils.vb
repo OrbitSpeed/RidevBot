@@ -203,19 +203,19 @@ Public Class Utils
 
         End If
     End Sub
-    Public Shared Sub setWavePart(regex_currentWave As String, regex_totalWave As String, regex_currentPart As String)
-        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+    Public Shared Sub setWavePart(regex_currentWave As String, regex_totalWave As String, regex_currentPart As String, regex_totalPart As String)
+        If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
             Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
         Else
             Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
         End If
 
-        If Not regex_currentPart = "?" Then
+        If Not regex_currentPart = "?" And Not regex_totalPart = "?" Then
 
-            Form_Tools.Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
+            Form_Tools.Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / " + regex_totalPart
         Else
-            Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / 128"
+            Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / ?"
         End If
     End Sub
 

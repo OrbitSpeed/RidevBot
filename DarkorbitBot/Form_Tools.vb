@@ -650,10 +650,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                 Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                 Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+                Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
 
                 Utils.setInfoPartGG_InMap(DataAlpha)
                 Utils.setLivesLeft(DataAlpha)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
 
             End If
 
@@ -666,10 +667,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                 Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                 Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+                Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
 
                 Utils.setInfoPartGG_InMap(DataAlpha)
                 Utils.setLivesLeft(DataAlpha)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
 
             End If
 
@@ -718,10 +720,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
                 Dim regex_totalWave = Utils.getTotalWave(DataBeta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+                Dim regex_totalPart = Utils.getTotalPart(DataBeta)
 
                 Utils.setInfoPartGG_InMap(DataBeta)
                 Utils.setLivesLeft(DataBeta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -761,7 +764,7 @@ Public Class Form_Tools
                 Dim regex_totalWave = Utils.getTotalWave(DataBeta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
                     Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
                 Else
@@ -822,10 +825,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
                 Dim regex_totalWave = Utils.getTotalWave(DataGamma)
                 Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+                Dim regex_totalPart = Utils.getTotalPart(DataGamma)
 
                 Utils.setInfoPartGG_InMap(DataGamma)
                 Utils.setLivesLeft(DataGamma)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -864,8 +868,9 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
                 Dim regex_totalWave = Utils.getTotalWave(DataGamma)
                 Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+                Dim regex_totalPart = Utils.getTotalPart(DataGamma)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
                     Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
                 Else
@@ -940,10 +945,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
                 Dim regex_totalWave = Utils.getTotalWave(DataDelta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
+                Dim regex_totalPart = Utils.getTotalPart(DataDelta)
 
                 Utils.setInfoPartGG_InMap(DataDelta)
                 Utils.setLivesLeft(DataDelta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1002,10 +1008,11 @@ Public Class Form_Tools
             Dim regex_currentWave = Utils.getCurrentWave(DataChronos)
             Dim regex_totalWave = Utils.getTotalWave(DataChronos)
             Dim regex_currentPart = Utils.getCurrentPart(DataChronos)
+            Dim regex_totalPart = Utils.getTotalPart(DataChronos)
 
             Utils.setInfoPartGG_InMap(DataChronos)
             Utils.setLivesLeft(DataChronos)
-            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
         End If
 
@@ -1061,10 +1068,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataHades)
                 Dim regex_totalWave = Utils.getTotalWave(DataHades)
                 Dim regex_currentPart = Utils.getCurrentPart(DataHades)
+                Dim regex_totalPart = Utils.getTotalPart(DataHades)
 
                 Utils.setInfoPartGG_InMap(DataHades)
                 Utils.setLivesLeft(DataHades)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1125,10 +1133,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
                 Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
                 Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
+                Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
 
                 Utils.setInfoPartGG_InMap(DataKuiper)
                 Utils.setLivesLeft(DataKuiper)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1189,10 +1198,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
                 Dim regex_totalWave = Utils.getTotalWave(DataLambda)
                 Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
+                Dim regex_totalPart = Utils.getTotalPart(DataLambda)
 
                 Utils.setInfoPartGG_InMap(DataLambda)
                 Utils.setLivesLeft(DataLambda)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1255,10 +1265,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
                 Dim regex_totalWave = Utils.getTotalWave(DataKappa)
                 Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
+                Dim regex_totalPart = Utils.getTotalPart(DataKappa)
 
                 Utils.setInfoPartGG_InMap(DataKappa)
                 Utils.setLivesLeft(DataKappa)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1319,10 +1330,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
                 Dim regex_totalWave = Utils.getTotalWave(DataZeta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
+                Dim regex_totalPart = Utils.getTotalPart(DataZeta)
 
                 Utils.setInfoPartGG_InMap(DataZeta)
                 Utils.setLivesLeft(DataZeta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1383,10 +1395,11 @@ Public Class Form_Tools
                 Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
                 Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
                 Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
+                Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
 
                 Utils.setInfoPartGG_InMap(DataEpsilon)
                 Utils.setLivesLeft(DataEpsilon)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
             End If
 
@@ -1916,10 +1929,11 @@ Public Class Form_Tools
                         Dim regex_currentWave As String = Utils.getCurrentWave(DataDelta)
                         Dim regex_totalWave As String = Utils.getTotalWave(DataDelta)
                         Dim regex_currentPart As String = Utils.getCurrentPart(DataDelta)
+                        Dim regex_totalPart = Utils.getTotalPart(DataDelta)
 
                         Utils.setInfoPartGG_InMap(DataDelta)
                         Utils.setLivesLeft(DataDelta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
@@ -1938,10 +1952,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
                         Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
                         Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
+                        Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
 
                         Utils.setInfoPartGG_InMap(DataEpsilon)
                         Utils.setLivesLeft(DataEpsilon)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                     End If
 
@@ -1960,10 +1975,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
                         Dim regex_totalWave = Utils.getTotalWave(DataZeta)
                         Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
+                        Dim regex_totalPart = Utils.getTotalPart(DataZeta)
 
                         Utils.setInfoPartGG_InMap(DataZeta)
                         Utils.setLivesLeft(DataZeta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                     End If
 
@@ -1982,10 +1998,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
                         Dim regex_totalWave = Utils.getTotalWave(DataKappa)
                         Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
+                        Dim regex_totalPart = Utils.getTotalPart(DataKappa)
 
                         Utils.setInfoPartGG_InMap(DataKappa)
                         Utils.setLivesLeft(DataKappa)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
@@ -2003,10 +2020,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
                         Dim regex_totalWave = Utils.getTotalWave(DataLambda)
                         Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
+                        Dim regex_totalPart = Utils.getTotalPart(DataLambda)
 
                         Utils.setInfoPartGG_InMap(DataLambda)
                         Utils.setLivesLeft(DataLambda)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                     End If
 
@@ -2025,10 +2043,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
                         Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
                         Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
+                        Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
 
                         Utils.setInfoPartGG_InMap(DataKuiper)
                         Utils.setLivesLeft(DataKuiper)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                     End If
 
@@ -2047,10 +2066,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataHades)
                         Dim regex_totalWave = Utils.getTotalWave(DataHades)
                         Dim regex_currentPart = Utils.getCurrentPart(DataHades)
+                        Dim regex_totalPart = Utils.getTotalPart(DataHades)
 
                         Utils.setInfoPartGG_InMap(DataHades)
                         Utils.setLivesLeft(DataHades)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                     End If
 
@@ -2068,10 +2088,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                         Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                         Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+                        Dim regex_totalPart = Utils.getTotalPart(DataAlpha)
 
                         Utils.setInfoPartGG_InMap(DataAlpha)
                         Utils.setLivesLeft(DataAlpha)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
 
                         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
@@ -2084,10 +2105,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
                         Dim regex_totalWave = Utils.getTotalWave(DataBeta)
                         Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+                        Dim regex_totalPart = Utils.getTotalPart(DataBeta)
 
                         Utils.setInfoPartGG_InMap(DataBeta)
                         Utils.setLivesLeft(DataBeta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                         WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
                         CheckedAlphaBetaGammaStats2 = 1
@@ -2099,10 +2121,11 @@ Public Class Form_Tools
                         Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
                         Dim regex_totalWave = Utils.getTotalWave(DataGamma)
                         Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+                        Dim regex_totalPart = Utils.getTotalPart(DataGamma)
 
                         Utils.setInfoPartGG_InMap(DataGamma)
                         Utils.setLivesLeft(DataGamma)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
 
                         AlphaBetaGammaReupload = 0
@@ -2124,7 +2147,7 @@ Public Class Form_Tools
         TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
 
 
-        If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
+        If DataWinned Is Nothing And DataWinned2 Is Nothing Then
         Else
 
             If DataWinned.Contains("MCB-25") Then
