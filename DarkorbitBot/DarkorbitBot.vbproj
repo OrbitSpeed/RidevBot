@@ -176,6 +176,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BitmapExtension.vb" />
+    <Compile Include="Form_Msgbox.Designer.vb">
+      <DependentUpon>Form_Msgbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Msgbox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_Tools.Designer.vb">
       <DependentUpon>Form_Tools.vb</DependentUpon>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BackPage_Form.resx">
       <DependentUpon>BackPage_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Msgbox.resx">
+      <DependentUpon>Form_Msgbox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Startup.resx">
       <DependentUpon>Form_Startup.vb</DependentUpon>

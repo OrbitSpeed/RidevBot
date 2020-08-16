@@ -33,10 +33,13 @@ Partial Class Form_Startup
         Me.PanelConnection = New System.Windows.Forms.Panel()
         Me.Load_Button = New System.Windows.Forms.Button()
         Me.Label_password = New System.Windows.Forms.Label()
+        Me.Textbox_Username = New System.Windows.Forms.TextBox()
         Me.Label_username = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Textbox_Password = New System.Windows.Forms.TextBox()
         Me.Panel_SidConnexion = New System.Windows.Forms.Panel()
         Me.Label_serverExemple = New System.Windows.Forms.Label()
+        Me.TextBox_server = New System.Windows.Forms.TextBox()
         Me.Label_server = New System.Windows.Forms.Label()
         Me.Button_SID_Load = New System.Windows.Forms.Button()
         Me.TextBox_sid = New System.Windows.Forms.TextBox()
@@ -45,9 +48,15 @@ Partial Class Form_Startup
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox_UsernamePasswordProfil3username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil3texte = New System.Windows.Forms.Label()
+        Me.TextBoxUsernamePasswordProfil3password = New System.Windows.Forms.TextBox()
+        Me.TextBox_UsernamePasswordProfil2username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil2texte = New System.Windows.Forms.Label()
+        Me.TextBoxUsernamePasswordProfil2password = New System.Windows.Forms.TextBox()
+        Me.TextBox_UsernamePasswordProfil1username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil1texte = New System.Windows.Forms.Label()
+        Me.TextBoxUsernamePasswordProfil1password = New System.Windows.Forms.TextBox()
         Me.Button_resetAll_accounts = New System.Windows.Forms.Button()
         Me.Credentials_Button = New System.Windows.Forms.Button()
         Me.Portail_Button = New System.Windows.Forms.Button()
@@ -64,12 +73,16 @@ Partial Class Form_Startup
         Me.Panel_license = New System.Windows.Forms.Panel()
         Me.Label_timeLeftLicense = New System.Windows.Forms.Label()
         Me.Button_License_Verify = New System.Windows.Forms.Button()
+        Me.TextBox_license = New System.Windows.Forms.TextBox()
         Me.Label_statusoflicense = New System.Windows.Forms.Label()
         Me.Label_license = New System.Windows.Forms.Label()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.Label_Title = New System.Windows.Forms.Label()
+        Me.button_MinimizeForm = New DarkorbitBot.FlatMini()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil3view = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil2view = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil1view = New System.Windows.Forms.PictureBox()
@@ -77,19 +90,6 @@ Partial Class Form_Startup
         Me.PictureBoxUsernamePasswordProfil2eyes = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUsernamePasswordProfil1eyes = New System.Windows.Forms.PictureBox()
         Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
-        Me.button_MinimizeForm = New DarkorbitBot.FlatMini()
-        Me.TextBox_server = New System.Windows.Forms.TextBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.TextBox_UsernamePasswordProfil3username = New System.Windows.Forms.TextBox()
-        Me.TextBoxUsernamePasswordProfil3password = New System.Windows.Forms.TextBox()
-        Me.TextBox_UsernamePasswordProfil2username = New System.Windows.Forms.TextBox()
-        Me.TextBoxUsernamePasswordProfil2password = New System.Windows.Forms.TextBox()
-        Me.TextBox_UsernamePasswordProfil1username = New System.Windows.Forms.TextBox()
-        Me.TextBoxUsernamePasswordProfil1password = New System.Windows.Forms.TextBox()
-        Me.Textbox_Username = New System.Windows.Forms.TextBox()
-        Me.Textbox_Password = New System.Windows.Forms.TextBox()
-        Me.TextBox_license = New System.Windows.Forms.TextBox()
         Me.PanelConnection.SuspendLayout()
         Me.Panel_SidConnexion.SuspendLayout()
         Me.Panel_ProfilConnection.SuspendLayout()
@@ -98,7 +98,9 @@ Partial Class Form_Startup
         Me.Panel_license.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil3view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil2view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil1view, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,8 +108,6 @@ Partial Class Form_Startup
         CType(Me.PictureBoxUsernamePasswordProfil2eyes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil1eyes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserAndPass_Button
@@ -239,6 +239,21 @@ Partial Class Form_Startup
         Me.Label_password.TabIndex = 14
         Me.Label_password.Text = "Password :"
         '
+        'Textbox_Username
+        '
+        Me.Textbox_Username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Textbox_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textbox_Username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Textbox_Username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Textbox_Username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_Username.ForeColor = System.Drawing.Color.White
+        Me.Textbox_Username.Location = New System.Drawing.Point(0, 32)
+        Me.Textbox_Username.Name = "Textbox_Username"
+        Me.Textbox_Username.Size = New System.Drawing.Size(256, 22)
+        Me.Textbox_Username.TabIndex = 13
+        Me.Textbox_Username.Text = Global.DarkorbitBot.My.MySettings.Default.Username
+        Me.Textbox_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label_username
         '
         Me.Label_username.AutoSize = True
@@ -262,6 +277,22 @@ Partial Class Form_Startup
         Me.Button4.Text = "Load"
         Me.Button4.UseVisualStyleBackColor = False
         Me.Button4.Visible = False
+        '
+        'Textbox_Password
+        '
+        Me.Textbox_Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textbox_Password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Textbox_Password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Textbox_Password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_Password.ForeColor = System.Drawing.Color.White
+        Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
+        Me.Textbox_Password.Name = "Textbox_Password"
+        Me.Textbox_Password.Size = New System.Drawing.Size(230, 22)
+        Me.Textbox_Password.TabIndex = 14
+        Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
+        Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Textbox_Password.UseSystemPasswordChar = True
         '
         'Panel_SidConnexion
         '
@@ -289,6 +320,21 @@ Partial Class Form_Startup
         Me.Label_serverExemple.Size = New System.Drawing.Size(121, 13)
         Me.Label_serverExemple.TabIndex = 21
         Me.Label_serverExemple.Text = "Server exemple : fr1"
+        '
+        'TextBox_server
+        '
+        Me.TextBox_server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_server.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_server.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_server.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_server.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_server.ForeColor = System.Drawing.Color.White
+        Me.TextBox_server.Location = New System.Drawing.Point(62, 19)
+        Me.TextBox_server.Name = "TextBox_server"
+        Me.TextBox_server.Size = New System.Drawing.Size(46, 22)
+        Me.TextBox_server.TabIndex = 16
+        Me.TextBox_server.Text = Global.DarkorbitBot.My.MySettings.Default.server
+        Me.TextBox_server.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_server
         '
@@ -397,6 +443,21 @@ Partial Class Form_Startup
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "-"
         '
+        'TextBox_UsernamePasswordProfil3username
+        '
+        Me.TextBox_UsernamePasswordProfil3username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_UsernamePasswordProfil3username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_UsernamePasswordProfil3username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_UsernamePasswordProfil3username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_UsernamePasswordProfil3username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_UsernamePasswordProfil3username.ForeColor = System.Drawing.Color.White
+        Me.TextBox_UsernamePasswordProfil3username.Location = New System.Drawing.Point(0, 173)
+        Me.TextBox_UsernamePasswordProfil3username.Name = "TextBox_UsernamePasswordProfil3username"
+        Me.TextBox_UsernamePasswordProfil3username.Size = New System.Drawing.Size(256, 22)
+        Me.TextBox_UsernamePasswordProfil3username.TabIndex = 33
+        Me.TextBox_UsernamePasswordProfil3username.Text = Global.DarkorbitBot.My.MySettings.Default.Username3
+        Me.TextBox_UsernamePasswordProfil3username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label_UsernamePasswordProfil3texte
         '
         Me.Label_UsernamePasswordProfil3texte.AutoSize = True
@@ -406,6 +467,37 @@ Partial Class Form_Startup
         Me.Label_UsernamePasswordProfil3texte.Size = New System.Drawing.Size(44, 13)
         Me.Label_UsernamePasswordProfil3texte.TabIndex = 32
         Me.Label_UsernamePasswordProfil3texte.Text = "Profil : "
+        '
+        'TextBoxUsernamePasswordProfil3password
+        '
+        Me.TextBoxUsernamePasswordProfil3password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBoxUsernamePasswordProfil3password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxUsernamePasswordProfil3password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxUsernamePasswordProfil3password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBoxUsernamePasswordProfil3password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUsernamePasswordProfil3password.ForeColor = System.Drawing.Color.White
+        Me.TextBoxUsernamePasswordProfil3password.Location = New System.Drawing.Point(26, 194)
+        Me.TextBoxUsernamePasswordProfil3password.Name = "TextBoxUsernamePasswordProfil3password"
+        Me.TextBoxUsernamePasswordProfil3password.Size = New System.Drawing.Size(208, 22)
+        Me.TextBoxUsernamePasswordProfil3password.TabIndex = 34
+        Me.TextBoxUsernamePasswordProfil3password.Text = Global.DarkorbitBot.My.MySettings.Default.Password3
+        Me.TextBoxUsernamePasswordProfil3password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
+        '
+        'TextBox_UsernamePasswordProfil2username
+        '
+        Me.TextBox_UsernamePasswordProfil2username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_UsernamePasswordProfil2username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_UsernamePasswordProfil2username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_UsernamePasswordProfil2username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_UsernamePasswordProfil2username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_UsernamePasswordProfil2username.ForeColor = System.Drawing.Color.White
+        Me.TextBox_UsernamePasswordProfil2username.Location = New System.Drawing.Point(0, 101)
+        Me.TextBox_UsernamePasswordProfil2username.Name = "TextBox_UsernamePasswordProfil2username"
+        Me.TextBox_UsernamePasswordProfil2username.Size = New System.Drawing.Size(256, 22)
+        Me.TextBox_UsernamePasswordProfil2username.TabIndex = 29
+        Me.TextBox_UsernamePasswordProfil2username.Text = Global.DarkorbitBot.My.MySettings.Default.Username2
+        Me.TextBox_UsernamePasswordProfil2username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_UsernamePasswordProfil2texte
         '
@@ -417,6 +509,37 @@ Partial Class Form_Startup
         Me.Label_UsernamePasswordProfil2texte.TabIndex = 28
         Me.Label_UsernamePasswordProfil2texte.Text = "Profil : "
         '
+        'TextBoxUsernamePasswordProfil2password
+        '
+        Me.TextBoxUsernamePasswordProfil2password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBoxUsernamePasswordProfil2password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxUsernamePasswordProfil2password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxUsernamePasswordProfil2password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBoxUsernamePasswordProfil2password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUsernamePasswordProfil2password.ForeColor = System.Drawing.Color.White
+        Me.TextBoxUsernamePasswordProfil2password.Location = New System.Drawing.Point(26, 122)
+        Me.TextBoxUsernamePasswordProfil2password.Name = "TextBoxUsernamePasswordProfil2password"
+        Me.TextBoxUsernamePasswordProfil2password.Size = New System.Drawing.Size(208, 22)
+        Me.TextBoxUsernamePasswordProfil2password.TabIndex = 30
+        Me.TextBoxUsernamePasswordProfil2password.Text = Global.DarkorbitBot.My.MySettings.Default.Password2
+        Me.TextBoxUsernamePasswordProfil2password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
+        '
+        'TextBox_UsernamePasswordProfil1username
+        '
+        Me.TextBox_UsernamePasswordProfil1username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_UsernamePasswordProfil1username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_UsernamePasswordProfil1username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_UsernamePasswordProfil1username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_UsernamePasswordProfil1username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_UsernamePasswordProfil1username.ForeColor = System.Drawing.Color.White
+        Me.TextBox_UsernamePasswordProfil1username.Location = New System.Drawing.Point(0, 25)
+        Me.TextBox_UsernamePasswordProfil1username.Name = "TextBox_UsernamePasswordProfil1username"
+        Me.TextBox_UsernamePasswordProfil1username.Size = New System.Drawing.Size(256, 22)
+        Me.TextBox_UsernamePasswordProfil1username.TabIndex = 24
+        Me.TextBox_UsernamePasswordProfil1username.Text = Global.DarkorbitBot.My.MySettings.Default.Username1
+        Me.TextBox_UsernamePasswordProfil1username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label_UsernamePasswordProfil1texte
         '
         Me.Label_UsernamePasswordProfil1texte.AutoSize = True
@@ -426,6 +549,22 @@ Partial Class Form_Startup
         Me.Label_UsernamePasswordProfil1texte.Size = New System.Drawing.Size(44, 13)
         Me.Label_UsernamePasswordProfil1texte.TabIndex = 23
         Me.Label_UsernamePasswordProfil1texte.Text = "Profil : "
+        '
+        'TextBoxUsernamePasswordProfil1password
+        '
+        Me.TextBoxUsernamePasswordProfil1password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBoxUsernamePasswordProfil1password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxUsernamePasswordProfil1password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxUsernamePasswordProfil1password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBoxUsernamePasswordProfil1password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUsernamePasswordProfil1password.ForeColor = System.Drawing.Color.White
+        Me.TextBoxUsernamePasswordProfil1password.Location = New System.Drawing.Point(26, 46)
+        Me.TextBoxUsernamePasswordProfil1password.Name = "TextBoxUsernamePasswordProfil1password"
+        Me.TextBoxUsernamePasswordProfil1password.Size = New System.Drawing.Size(208, 22)
+        Me.TextBoxUsernamePasswordProfil1password.TabIndex = 26
+        Me.TextBoxUsernamePasswordProfil1password.Text = Global.DarkorbitBot.My.MySettings.Default.Password1
+        Me.TextBoxUsernamePasswordProfil1password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
         '
         'Button_resetAll_accounts
         '
@@ -646,6 +785,21 @@ Partial Class Form_Startup
         Me.Button_License_Verify.Text = "Verify"
         Me.Button_License_Verify.UseVisualStyleBackColor = False
         '
+        'TextBox_license
+        '
+        Me.TextBox_license.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_license.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox_license.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox_license.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TextBox_license.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_license.ForeColor = System.Drawing.Color.White
+        Me.TextBox_license.Location = New System.Drawing.Point(0, 36)
+        Me.TextBox_license.Name = "TextBox_license"
+        Me.TextBox_license.Size = New System.Drawing.Size(256, 22)
+        Me.TextBox_license.TabIndex = 18
+        Me.TextBox_license.Text = Global.DarkorbitBot.My.MySettings.Default.License
+        Me.TextBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label_statusoflicense
         '
         Me.Label_statusoflicense.AutoSize = True
@@ -689,6 +843,20 @@ Partial Class Form_Startup
         Me.Label_Title.TabIndex = 22
         Me.Label_Title.Text = "RidevBot v0.0.0.0"
         '
+        'button_MinimizeForm
+        '
+        Me.button_MinimizeForm.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.button_MinimizeForm.BaseColor = System.Drawing.Color.Empty
+        Me.button_MinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.button_MinimizeForm.Dock = System.Windows.Forms.DockStyle.Right
+        Me.button_MinimizeForm.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.button_MinimizeForm.Location = New System.Drawing.Point(220, 0)
+        Me.button_MinimizeForm.Name = "button_MinimizeForm"
+        Me.button_MinimizeForm.Size = New System.Drawing.Size(18, 18)
+        Me.button_MinimizeForm.TabIndex = 24
+        Me.button_MinimizeForm.Text = "button_MinimizeForm"
+        Me.button_MinimizeForm.TextColor = System.Drawing.Color.Black
+        '
         'PictureBox_Close
         '
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
@@ -702,6 +870,19 @@ Partial Class Form_Startup
         Me.PictureBox_Close.TabIndex = 24
         Me.PictureBox_Close.TabStop = False
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox5.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.PictureBox5.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
+        Me.PictureBox5.Location = New System.Drawing.Point(238, 32)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(12, 7)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox5.TabIndex = 14
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -714,6 +895,19 @@ Partial Class Form_Startup
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid3
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
+        Me.PictureBox4.Location = New System.Drawing.Point(238, 108)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(12, 7)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox4.TabIndex = 16
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid2
         '
         'PictureBoxUsernamePasswordProfil3view
         '
@@ -802,200 +996,6 @@ Partial Class Form_Startup
         Me.PictureBox_PasswordHider.TabIndex = 22
         Me.PictureBox_PasswordHider.TabStop = False
         '
-        'button_MinimizeForm
-        '
-        Me.button_MinimizeForm.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.button_MinimizeForm.BaseColor = System.Drawing.Color.Empty
-        Me.button_MinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.button_MinimizeForm.Dock = System.Windows.Forms.DockStyle.Right
-        Me.button_MinimizeForm.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.button_MinimizeForm.Location = New System.Drawing.Point(220, 0)
-        Me.button_MinimizeForm.Name = "button_MinimizeForm"
-        Me.button_MinimizeForm.Size = New System.Drawing.Size(18, 18)
-        Me.button_MinimizeForm.TabIndex = 24
-        Me.button_MinimizeForm.Text = "button_MinimizeForm"
-        Me.button_MinimizeForm.TextColor = System.Drawing.Color.Black
-        '
-        'TextBox_server
-        '
-        Me.TextBox_server.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_server.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_server.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox_server.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_server.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_server.ForeColor = System.Drawing.Color.White
-        Me.TextBox_server.Location = New System.Drawing.Point(62, 19)
-        Me.TextBox_server.Name = "TextBox_server"
-        Me.TextBox_server.Size = New System.Drawing.Size(46, 22)
-        Me.TextBox_server.TabIndex = 16
-        Me.TextBox_server.Text = Global.DarkorbitBot.My.MySettings.Default.server
-        Me.TextBox_server.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox5.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.PictureBox5.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
-        Me.PictureBox5.Location = New System.Drawing.Point(238, 32)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(12, 7)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox5.TabIndex = 14
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
-        Me.PictureBox4.Location = New System.Drawing.Point(238, 108)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(12, 7)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox4.TabIndex = 16
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid2
-        '
-        'TextBox_UsernamePasswordProfil3username
-        '
-        Me.TextBox_UsernamePasswordProfil3username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_UsernamePasswordProfil3username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_UsernamePasswordProfil3username.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox_UsernamePasswordProfil3username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_UsernamePasswordProfil3username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_UsernamePasswordProfil3username.ForeColor = System.Drawing.Color.White
-        Me.TextBox_UsernamePasswordProfil3username.Location = New System.Drawing.Point(0, 173)
-        Me.TextBox_UsernamePasswordProfil3username.Name = "TextBox_UsernamePasswordProfil3username"
-        Me.TextBox_UsernamePasswordProfil3username.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox_UsernamePasswordProfil3username.TabIndex = 33
-        Me.TextBox_UsernamePasswordProfil3username.Text = Global.DarkorbitBot.My.MySettings.Default.Username3
-        Me.TextBox_UsernamePasswordProfil3username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBoxUsernamePasswordProfil3password
-        '
-        Me.TextBoxUsernamePasswordProfil3password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBoxUsernamePasswordProfil3password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxUsernamePasswordProfil3password.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBoxUsernamePasswordProfil3password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxUsernamePasswordProfil3password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsernamePasswordProfil3password.ForeColor = System.Drawing.Color.White
-        Me.TextBoxUsernamePasswordProfil3password.Location = New System.Drawing.Point(26, 194)
-        Me.TextBoxUsernamePasswordProfil3password.Name = "TextBoxUsernamePasswordProfil3password"
-        Me.TextBoxUsernamePasswordProfil3password.Size = New System.Drawing.Size(208, 22)
-        Me.TextBoxUsernamePasswordProfil3password.TabIndex = 34
-        Me.TextBoxUsernamePasswordProfil3password.Text = Global.DarkorbitBot.My.MySettings.Default.Password3
-        Me.TextBoxUsernamePasswordProfil3password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
-        '
-        'TextBox_UsernamePasswordProfil2username
-        '
-        Me.TextBox_UsernamePasswordProfil2username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_UsernamePasswordProfil2username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_UsernamePasswordProfil2username.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox_UsernamePasswordProfil2username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_UsernamePasswordProfil2username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_UsernamePasswordProfil2username.ForeColor = System.Drawing.Color.White
-        Me.TextBox_UsernamePasswordProfil2username.Location = New System.Drawing.Point(0, 101)
-        Me.TextBox_UsernamePasswordProfil2username.Name = "TextBox_UsernamePasswordProfil2username"
-        Me.TextBox_UsernamePasswordProfil2username.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox_UsernamePasswordProfil2username.TabIndex = 29
-        Me.TextBox_UsernamePasswordProfil2username.Text = Global.DarkorbitBot.My.MySettings.Default.Username2
-        Me.TextBox_UsernamePasswordProfil2username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBoxUsernamePasswordProfil2password
-        '
-        Me.TextBoxUsernamePasswordProfil2password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBoxUsernamePasswordProfil2password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxUsernamePasswordProfil2password.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBoxUsernamePasswordProfil2password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxUsernamePasswordProfil2password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsernamePasswordProfil2password.ForeColor = System.Drawing.Color.White
-        Me.TextBoxUsernamePasswordProfil2password.Location = New System.Drawing.Point(26, 122)
-        Me.TextBoxUsernamePasswordProfil2password.Name = "TextBoxUsernamePasswordProfil2password"
-        Me.TextBoxUsernamePasswordProfil2password.Size = New System.Drawing.Size(208, 22)
-        Me.TextBoxUsernamePasswordProfil2password.TabIndex = 30
-        Me.TextBoxUsernamePasswordProfil2password.Text = Global.DarkorbitBot.My.MySettings.Default.Password2
-        Me.TextBoxUsernamePasswordProfil2password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
-        '
-        'TextBox_UsernamePasswordProfil1username
-        '
-        Me.TextBox_UsernamePasswordProfil1username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_UsernamePasswordProfil1username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_UsernamePasswordProfil1username.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox_UsernamePasswordProfil1username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_UsernamePasswordProfil1username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_UsernamePasswordProfil1username.ForeColor = System.Drawing.Color.White
-        Me.TextBox_UsernamePasswordProfil1username.Location = New System.Drawing.Point(0, 25)
-        Me.TextBox_UsernamePasswordProfil1username.Name = "TextBox_UsernamePasswordProfil1username"
-        Me.TextBox_UsernamePasswordProfil1username.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox_UsernamePasswordProfil1username.TabIndex = 24
-        Me.TextBox_UsernamePasswordProfil1username.Text = Global.DarkorbitBot.My.MySettings.Default.Username1
-        Me.TextBox_UsernamePasswordProfil1username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBoxUsernamePasswordProfil1password
-        '
-        Me.TextBoxUsernamePasswordProfil1password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBoxUsernamePasswordProfil1password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxUsernamePasswordProfil1password.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBoxUsernamePasswordProfil1password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password1", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBoxUsernamePasswordProfil1password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsernamePasswordProfil1password.ForeColor = System.Drawing.Color.White
-        Me.TextBoxUsernamePasswordProfil1password.Location = New System.Drawing.Point(26, 46)
-        Me.TextBoxUsernamePasswordProfil1password.Name = "TextBoxUsernamePasswordProfil1password"
-        Me.TextBoxUsernamePasswordProfil1password.Size = New System.Drawing.Size(208, 22)
-        Me.TextBoxUsernamePasswordProfil1password.TabIndex = 26
-        Me.TextBoxUsernamePasswordProfil1password.Text = Global.DarkorbitBot.My.MySettings.Default.Password1
-        Me.TextBoxUsernamePasswordProfil1password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
-        '
-        'Textbox_Username
-        '
-        Me.Textbox_Username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Textbox_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Textbox_Username.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Textbox_Username.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Username", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Textbox_Username.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textbox_Username.ForeColor = System.Drawing.Color.White
-        Me.Textbox_Username.Location = New System.Drawing.Point(0, 32)
-        Me.Textbox_Username.Name = "Textbox_Username"
-        Me.Textbox_Username.Size = New System.Drawing.Size(256, 22)
-        Me.Textbox_Username.TabIndex = 13
-        Me.Textbox_Username.Text = Global.DarkorbitBot.My.MySettings.Default.Username
-        Me.Textbox_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Textbox_Password
-        '
-        Me.Textbox_Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Textbox_Password.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Textbox_Password.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Textbox_Password.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textbox_Password.ForeColor = System.Drawing.Color.White
-        Me.Textbox_Password.Location = New System.Drawing.Point(0, 86)
-        Me.Textbox_Password.Name = "Textbox_Password"
-        Me.Textbox_Password.Size = New System.Drawing.Size(230, 22)
-        Me.Textbox_Password.TabIndex = 14
-        Me.Textbox_Password.Text = Global.DarkorbitBot.My.MySettings.Default.Password
-        Me.Textbox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Textbox_Password.UseSystemPasswordChar = True
-        '
-        'TextBox_license
-        '
-        Me.TextBox_license.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_license.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_license.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox_license.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_license.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_license.ForeColor = System.Drawing.Color.White
-        Me.TextBox_license.Location = New System.Drawing.Point(0, 36)
-        Me.TextBox_license.Name = "TextBox_license"
-        Me.TextBox_license.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox_license.TabIndex = 18
-        Me.TextBox_license.Text = Global.DarkorbitBot.My.MySettings.Default.License
-        Me.TextBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Form_Startup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1037,7 +1037,9 @@ Partial Class Form_Startup
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Title.PerformLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil3view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil2view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil1view, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1045,8 +1047,6 @@ Partial Class Form_Startup
         CType(Me.PictureBoxUsernamePasswordProfil2eyes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil1eyes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
