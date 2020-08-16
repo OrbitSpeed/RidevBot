@@ -43,24 +43,12 @@ Public Class Form_Game
 
 
 
-
-
-
-
-
-
-
-
-
-    Function Checking_screen()
-
-        Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
-        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
-        Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-        Return Client_primary
-        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
-
-    End Function
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    ' █                                                                                                                                █
+    ' █                                                          RidevBot BOT                                                          █
+    ' █                                                                                                                                █
+    ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+    ' ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
 
 
 
@@ -71,52 +59,78 @@ Public Class Form_Game
 
 
     Public Stop_bot As String = 0
+    Function Checking_screen()
+
+        Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
+        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
+        Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
+        Return Client_primary
+        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
+
+    End Function
+
     Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
+
+Label_HOME_lancement_du_bot:
+
+        WebBrowser_Game_Ridevbot.Select()
+        Dim Client_Screen As Bitmap = Checking_screen()
+        Dim System_box_move As String = 0
+        Dim save_point_x As String = 0
+        Dim save_point_Y As String = 0
+        Dim passage As String = 0
+
+        Dim Minimap_closed_ref = My.Resources.Minimap_closed
+        Dim Minimap_size_ref = My.Resources.Minimap_reduce
+        Dim Move_minimap_box_ref = My.Resources.Move_box
+        Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
+        Dim map_detect_ref = My.Resources.map_detect
 
         ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         ' █                                                            █
         ' █             Effectue un click au centre du browser         █
         ' █              appel les variables et les assignes           █
         ' █                                                            █
-        ' █                   < Balise 1 - error79 >                   █
+        ' █                          < Balise 1 >                      █
         ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
-Startup_Balise1:
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
 
         If Stop_bot = 1 Then
 
-            GoTo Ending_balise
+            GoTo Exit_
 
         End If
 
-        Dim Client_Screen As Bitmap = Checking_screen()
+        'Try
+        '    Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
-        WebBrowser_Game_Ridevbot.Select()
+        '    If Save_point_original.X = "440" Then
+
+        '        GoTo Label_Minimap_ok
+
+        '    Else
+        '    End If
+
+        '    GoTo Label_HOME_lancement_du_bot
+        'Catch map_error As Exception
+        'End Try
+
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
-
         Await Task.Delay(2000)
-        Dim System_box_move As String = 0
-
-        Dim Minimap_closed_ref = My.Resources.Minimap_closed
-        Dim Minimap_size_ref = My.Resources.Minimap_reduce
-        Dim Move_minimap_box_ref = My.Resources.Move_box
-
-        Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
-        Dim map_detect_ref = My.Resources.map_detect
 
         ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         ' █                                                            █
         ' █                Detecte la minimap et l'ouvre               █
         ' █                                                            █
-        ' █                   < Balise 2 - error105 >                  █
+        ' █                         < Balise 2 >                       █
         ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
-Startup_Balise2:
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+Label_Detection_Minimap_et_ouverture:
 
         If Stop_bot = 1 Then
 
-            GoTo Ending_balise
+            GoTo Exit_
 
         End If
 
@@ -129,11 +143,12 @@ Startup_Balise2:
             If Minimap_closed <> Nothing Then
                 WebBrowser_Game_Ridevbot.Select()
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
+
+            Else
+                GoTo Label_HOME_lancement_du_bot
             End If
 
         Catch Minimap_opened As Exception
-
-            GoTo Startup_Balise1
         End Try
 
         Await Task.Delay(3000)
@@ -142,14 +157,14 @@ Startup_Balise2:
         ' █                                                            █
         ' █                reduit la minimap au minimum                █
         ' █                                                            █
-        ' █                   < Balise 3 - error129 >                  █
+        ' █                        < Balise 3 >                        █
         ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
-Startup_Balise3:
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+Label_Reduction_minimap:
 
         If Stop_bot = 1 Then
 
-            GoTo Ending_balise
+            GoTo Exit_
 
         End If
 
@@ -178,16 +193,15 @@ Startup_Balise3:
                     End If
                     Cursor.Position = cursor_Pos
                 Next
-
-            End If
-        Catch ex As Exception
-
-            If System_box_move = 1 Then
-                GoTo Startup_Balise1
             Else
-                GoTo Startup_Balise2
+                If System_box_move = 1 Then
+                    GoTo Label_HOME_lancement_du_bot
+                Else
+                    GoTo Label_Detection_Minimap_et_ouverture
+                End If
             End If
 
+        Catch ex As Exception
         End Try
 
         Await Task.Delay(3000)
@@ -196,14 +210,14 @@ Startup_Balise3:
         ' █                                                            █
         ' █           deplace la minimap en bas a droite               █
         ' █                                                            █
-        ' █                   < Balise 4 - error172 >                  █
+        ' █                        < Balise 4 >                        █
         ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
-Startup_Balise4:
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+Label_Deplacement_miniamp_basdroite:
 
         If Stop_bot = 1 Then
 
-            GoTo Ending_balise
+            GoTo Exit_
 
         End If
 
@@ -222,17 +236,47 @@ Startup_Balise4:
                 Cursor.Position = cursor_Pos
                 Await Task.Delay(800)
 
+            Else
+                System_box_move = 1
+                GoTo Label_Reduction_minimap
             End If
 
         Catch ex As Exception
+        End Try
 
-            System_box_move = 1
-            GoTo Startup_Balise3
+        Await Task.Delay(2000)
+Label_Minimap_ok:
+        MsgBox("Minimap Ok")
+
+
+        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        ' █                                                            █
+        ' █               Check dans quel map il se trouve             █
+        ' █                                                            █
+        ' █                          < Balise 1 >                      █
+        ' █                                                            █
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+Label_Checking_minimap:
+
+        Try
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Catch Aucune_map_trouver As Exception
 
         End Try
 
 
-        GoTo Startup_Balise1
 
 
 
@@ -246,28 +290,12 @@ Startup_Balise4:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ending_balise:
-
+        MsgBox("relance")
+Exit_:
         If Stop_bot = 1 Then
             MsgBox("Stopped")
         Else
-            GoTo Startup_Balise1
+            GoTo Label_HOME_lancement_du_bot
         End If
 
 
