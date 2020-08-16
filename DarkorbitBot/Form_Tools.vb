@@ -632,47 +632,13 @@ Public Class Form_Tools
 
             If DataAlpha = Nothing Then
             Else
-
-                If DataAlpha.Contains("prepared1") Then
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataAlpha.Contains("prepared0") Then
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeftAlpha.Length = 0 Then
-
-                    If regex_livesLeftAlpha > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeftAlpha = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                 Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                 Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
-                End If
+                Utils.setInfoPartGG_InMap(DataAlpha)
+                Utils.setLivesLeft(DataAlpha)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -682,47 +648,13 @@ Public Class Form_Tools
 
             If DataAlpha = Nothing Then
             Else
-
-                If DataAlpha.Contains("prepared1") Then
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataAlpha.Contains("prepared0") Then
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeftAlpha.Length = 0 Then
-
-                    If regex_livesLeftAlpha > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeftAlpha = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                 Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                 Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
-                End If
+                Utils.setInfoPartGG_InMap(DataAlpha)
+                Utils.setLivesLeft(DataAlpha)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -768,49 +700,13 @@ Public Class Form_Tools
 
             If DataBeta = Nothing Then
             Else
-
-                If DataBeta.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataBeta.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
                 Dim regex_totalWave = Utils.getTotalWave(DataBeta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "Unknown"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 48"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 48"
-                End If
+                Utils.setInfoPartGG_InMap(DataBeta)
+                Utils.setLivesLeft(DataBeta)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -908,49 +804,13 @@ Public Class Form_Tools
 
             If DataGamma = Nothing Then
             Else
-
-                If DataGamma.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataGamma.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
                 Dim regex_totalWave = Utils.getTotalWave(DataGamma)
                 Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 82"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 82"
-                End If
+                Utils.setInfoPartGG_InMap(DataGamma)
+                Utils.setLivesLeft(DataGamma)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -1062,46 +922,13 @@ Public Class Form_Tools
 
             If DataDelta = Nothing Then
             Else
-
-                If DataDelta.Contains("prepared1") Then
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataDelta.Contains("prepared0") Then
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataDelta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
                 Dim regex_totalWave = Utils.getTotalWave(DataDelta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 128"
-                End If
+                Utils.setInfoPartGG_InMap(DataDelta)
+                Utils.setLivesLeft(DataDelta)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -1157,49 +984,13 @@ Public Class Form_Tools
 
         If DataChronos = Nothing Then
         Else
-
-            If DataChronos.Contains("prepared1") Then
-
-                Label_infoPartGG_InMap.Text = "On map : 1"
-
-            ElseIf DataChronos.Contains("prepared0") Then
-
-                Label_infoPartGG_InMap.Text = "On map : 0"
-
-            End If
-
-            Dim regex_livesLeft = Regex.Match(DataChronos, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-            If Not regex_livesLeft.Length = 0 Then
-
-                If regex_livesLeft > 5 Then
-                    Label_LivesLeft.Text = "Lives left : 5+"
-
-                ElseIf regex_livesLeft = -1 Then
-                    Label_LivesLeft.Text = "Lives left : -1"
-                Else
-                    Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                End If
-            End If
-
             Dim regex_currentWave = Utils.getCurrentWave(DataChronos)
             Dim regex_totalWave = Utils.getTotalWave(DataChronos)
             Dim regex_currentPart = Utils.getCurrentPart(DataChronos)
 
-            If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-            Else
-                Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-            End If
-
-            If Not regex_currentPart = "?" Then
-
-
-                Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 21"
-            Else
-                Label_InfoPartGG.Text = "Part : " + "?" + " / 21"
-            End If
+            Utils.setInfoPartGG_InMap(DataChronos)
+            Utils.setLivesLeft(DataChronos)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
         End If
 
@@ -1252,48 +1043,14 @@ Public Class Form_Tools
 
             If DataHades = Nothing Then
             Else
-
-                If DataHades.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataHades.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataHades, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataHades)
                 Dim regex_totalWave = Utils.getTotalWave(DataHades)
                 Dim regex_currentPart = Utils.getCurrentPart(DataHades)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                Utils.setInfoPartGG_InMap(DataHades)
+                Utils.setLivesLeft(DataHades)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
-                End If
             End If
 
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
@@ -1350,50 +1107,14 @@ Public Class Form_Tools
 
             If DataKuiper = Nothing Then
             Else
-
-                If DataKuiper.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataKuiper.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataKuiper, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                Console.WriteLine("DEBUG = " + regex_livesLeft)
-
-                If Not regex_livesLeft.Length = 0 Then
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
                 Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
                 Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                Utils.setInfoPartGG_InMap(DataKuiper)
+                Utils.setLivesLeft(DataKuiper)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 100"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 100"
-                End If
             End If
 
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
@@ -1450,49 +1171,13 @@ Public Class Form_Tools
 
             If DataLambda = Nothing Then
             Else
-
-                If DataLambda.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataLambda.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataLambda, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
                 Dim regex_totalWave = Utils.getTotalWave(DataLambda)
                 Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
-                End If
+                Utils.setInfoPartGG_InMap(DataLambda)
+                Utils.setLivesLeft(DataLambda)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -1552,49 +1237,13 @@ Public Class Form_Tools
 
             If DataKappa = Nothing Then
             Else
-
-                If DataKappa.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataKappa.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataKappa, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
                 Dim regex_totalWave = Utils.getTotalWave(DataKappa)
                 Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 120"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 120"
-                End If
+                Utils.setInfoPartGG_InMap(DataKappa)
+                Utils.setLivesLeft(DataKappa)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -1652,51 +1301,14 @@ Public Class Form_Tools
 
             If DataZeta = Nothing Then
             Else
-
-                If DataZeta.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataZeta.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataZeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
                 Dim regex_totalWave = Utils.getTotalWave(DataZeta)
                 Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                Utils.setInfoPartGG_InMap(DataZeta)
+                Utils.setLivesLeft(DataZeta)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 111"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 111"
-                End If
             End If
 
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
@@ -1753,55 +1365,13 @@ Public Class Form_Tools
             '
             If DataEpsilon = Nothing Then
             Else
-
-
-                If DataEpsilon.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 1"
-
-                ElseIf DataEpsilon.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap.Text = "On map : 0"
-
-                End If
-
-
-                Dim regex_livesLeft = Regex.Match(DataEpsilon, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-
-                If Not regex_livesLeft.Length = 0 Then
-                    'Le regex contient quelque chose
-                    If regex_livesLeft > 5 Then
-
-                        Label_LivesLeft.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-
-                        Label_LivesLeft.Text = "Lives left : -1"
-                    Else
-
-                        Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
                 Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
                 Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
                 Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
 
-                If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-
-                If Not regex_currentPart = "?" Then
-
-                    Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 99"
-                Else
-                    Label_InfoPartGG.Text = "Part : " + "?" + " / 99"
-                End If
+                Utils.setInfoPartGG_InMap(DataEpsilon)
+                Utils.setLivesLeft(DataEpsilon)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
             End If
 
@@ -1980,7 +1550,6 @@ Public Class Form_Tools
     Public numberToSpin As String = 0
     Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
-
 
         If BackgroundWorkerAutospin = False Then
 
@@ -2174,13 +1743,9 @@ Public Class Form_Tools
 
         End If
     End Sub
-
-
-
 #End Region
 
 #End Region
-
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
         TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
     End Sub
@@ -2333,47 +1898,13 @@ Public Class Form_Tools
 
                     If DataDelta = Nothing Then
                     Else
+                        Dim regex_currentWave As String = Utils.getCurrentWave(DataDelta)
+                        Dim regex_totalWave As String = Utils.getTotalWave(DataDelta)
+                        Dim regex_currentPart As String = Utils.getCurrentPart(DataDelta)
 
-                        If DataDelta.Contains("prepared1") Then
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataDelta.Contains("prepared0") Then
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataDelta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
-                        Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
-                        Dim regex_totalWave = Utils.getTotalWave(DataDelta)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
-
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 128"
-                        End If
-
+                        Utils.setInfoPartGG_InMap(DataDelta)
+                        Utils.setLivesLeft(DataDelta)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
@@ -2389,54 +1920,13 @@ Public Class Form_Tools
                     If DataEpsilon = Nothing Then
                     Else
 
-
-                        If DataEpsilon.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataEpsilon.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-
-                        Dim regex_livesLeft = Regex.Match(DataEpsilon, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-
-                        If Not regex_livesLeft.Length = 0 Then
-                            'Le regex contient quelque chose
-                            If regex_livesLeft > 5 Then
-
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
                         Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
                         Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-
-                        If Not regex_currentPart = "?" Then
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 99"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 99"
-                        End If
+                        Utils.setInfoPartGG_InMap(DataEpsilon)
+                        Utils.setLivesLeft(DataEpsilon)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
                     End If
 
@@ -2452,51 +1942,14 @@ Public Class Form_Tools
 
                     If DataZeta = Nothing Then
                     Else
-
-                        If DataZeta.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataZeta.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataZeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
                         Dim regex_totalWave = Utils.getTotalWave(DataZeta)
                         Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                        Utils.setInfoPartGG_InMap(DataZeta)
+                        Utils.setLivesLeft(DataZeta)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 111"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 111"
-                        End If
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
@@ -2511,50 +1964,13 @@ Public Class Form_Tools
 
                     If DataKappa = Nothing Then
                     Else
-
-                        If DataKappa.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataKappa.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataKappa, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
                         Dim regex_totalWave = Utils.getTotalWave(DataKappa)
                         Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 120"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 120"
-                        End If
-
+                        Utils.setInfoPartGG_InMap(DataKappa)
+                        Utils.setLivesLeft(DataKappa)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
@@ -2569,49 +1985,13 @@ Public Class Form_Tools
 
                     If DataLambda = Nothing Then
                     Else
-
-                        If DataLambda.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataLambda.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataLambda, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
                         Dim regex_totalWave = Utils.getTotalWave(DataLambda)
                         Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
-                        End If
+                        Utils.setInfoPartGG_InMap(DataLambda)
+                        Utils.setLivesLeft(DataLambda)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
                     End If
 
@@ -2627,50 +2007,14 @@ Public Class Form_Tools
 
                     If DataKuiper = Nothing Then
                     Else
-
-                        If DataKuiper.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataKuiper.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataKuiper, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        Console.WriteLine("DEBUG = " + regex_livesLeft)
-
-                        If Not regex_livesLeft.Length = 0 Then
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
                         Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
                         Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                        Utils.setInfoPartGG_InMap(DataKuiper)
+                        Utils.setLivesLeft(DataKuiper)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 100"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 100"
-                        End If
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
@@ -2685,48 +2029,14 @@ Public Class Form_Tools
 
                     If DataHades = Nothing Then
                     Else
-
-                        If DataHades.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataHades.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataHades, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataHades)
                         Dim regex_totalWave = Utils.getTotalWave(DataHades)
                         Dim regex_currentPart = Utils.getCurrentPart(DataHades)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                        Utils.setInfoPartGG_InMap(DataHades)
+                        Utils.setLivesLeft(DataHades)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 45"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 45"
-                        End If
                     End If
 
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
@@ -2740,47 +2050,14 @@ Public Class Form_Tools
                     Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' info GG Alpha
                     If DataAlpha = Nothing Then
                     Else
-
-                        If DataAlpha.Contains("prepared1") Then
-                            Label_infoPartGG_InMap.Text = "On map : 1"
-
-                        ElseIf DataAlpha.Contains("prepared0") Then
-                            Label_infoPartGG_InMap.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeftAlpha = Regex.Match(DataAlpha, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeftAlpha.Length = 0 Then
-
-                            If regex_livesLeftAlpha > 5 Then
-                                Label_LivesLeft.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeftAlpha = -1 Then
-                                Label_LivesLeft.Text = "Lives left : -1"
-
-                            Else
-                                Label_LivesLeft.Text = "Lives left : " + regex_livesLeftAlpha
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
                         Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
                         Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+                        Utils.setInfoPartGG_InMap(DataAlpha)
+                        Utils.setLivesLeft(DataAlpha)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-                        Else
-                            Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-                            Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 34"
-                        Else
-                            Label_InfoPartGG.Text = "Part : " + "?" + " / 34"
-                        End If
 
                         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
                         CheckedAlphaBetaGammaStats = 1
@@ -2789,49 +2066,13 @@ Public Class Form_Tools
                     Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
                     If DataBeta = Nothing Then
                     Else
-
-                        If DataBeta.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap2.Text = "On map : 1"
-
-                        ElseIf DataBeta.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap2.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft2.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft2.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft2.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
                         Dim regex_totalWave = Utils.getTotalWave(DataBeta)
                         Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                        Else
-                            Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "Unknown"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG2.Text = "Part : " + regex_currentPart + " / 48"
-                        Else
-                            Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
-                        End If
+                        Utils.setInfoPartGG_InMap(DataBeta)
+                        Utils.setLivesLeft(DataBeta)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
                         WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
                         CheckedAlphaBetaGammaStats2 = 1
@@ -2840,49 +2081,14 @@ Public Class Form_Tools
                     Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
                     If DataGamma = Nothing Then
                     Else
-
-                        If DataGamma.Contains("prepared1") Then
-
-                            Label_infoPartGG_InMap3.Text = "On map : 1"
-
-                        ElseIf DataGamma.Contains("prepared0") Then
-
-                            Label_infoPartGG_InMap3.Text = "On map : 0"
-
-                        End If
-
-                        Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                        If Not regex_livesLeft.Length = 0 Then
-
-                            If regex_livesLeft > 5 Then
-                                Label_LivesLeft3.Text = "Lives left : 5+"
-
-                            ElseIf regex_livesLeft = -1 Then
-                                Label_LivesLeft3.Text = "Lives left : -1"
-                            Else
-                                Label_LivesLeft3.Text = "Lives left : " + regex_livesLeft
-
-                            End If
-                        End If
-
                         Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
                         Dim regex_totalWave = Utils.getTotalWave(DataGamma)
                         Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
 
-                        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
-                            Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+                        Utils.setInfoPartGG_InMap(DataGamma)
+                        Utils.setLivesLeft(DataGamma)
+                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart)
 
-                        Else
-                            Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
-                        End If
-
-                        If Not regex_currentPart = "?" Then
-
-
-                            Label_InfoPartGG3.Text = "Part : " + regex_currentPart + " / 82"
-                        Else
-                            Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
-                        End If
 
                         AlphaBetaGammaReupload = 0
 

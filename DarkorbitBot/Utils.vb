@@ -151,6 +151,7 @@ Public Class Utils
         End If
         Return Regex.Match(Data, "currentWave.*?([\s\S]*?)\ ").Groups.Item(1).ToString
     End Function
+
     Public Shared Function getTotalWave(Data As String)
         If Data = Nothing Then
             Return "?"
@@ -176,5 +177,46 @@ Public Class Utils
         End If
         Return Regex.Match(Data, "total(.*?)\ ").Groups.Item(1).ToString
     End Function
+
+    Public Shared Sub setLivesLeft(Data As String)
+        Dim regex_livesLeft = Regex.Match(Data, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        If Not regex_livesLeft.Length = 0 Then
+
+            If regex_livesLeft > 5 Then
+                Form_Tools.Label_LivesLeft.Text = "Lives left : 5+"
+
+            ElseIf regex_livesLeft = -1 Then
+                Form_Tools.Label_LivesLeft.Text = "Lives left : -1"
+            Else
+                Form_Tools.Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+
+            End If
+        End If
+    End Sub
+
+    Public Shared Sub setInfoPartGG_InMap(Data As String)
+        If Data.Contains("prepared1") Then
+            Form_Tools.Label_infoPartGG_InMap.Text = "On map : 1"
+
+        ElseIf Data.Contains("prepared0") Then
+            Form_Tools.Label_infoPartGG_InMap.Text = "On map : 0"
+
+        End If
+    End Sub
+    Public Shared Sub setWavePart(regex_currentWave As String, regex_totalWave As String, regex_currentPart As String)
+        If Not regex_currentWave = "?" AndAlso Not regex_totalWave = "?" Then
+            Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+
+        Else
+            Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+        End If
+
+        If Not regex_currentPart = "?" Then
+
+            Form_Tools.Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / 128"
+        Else
+            Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / 128"
+        End If
+    End Sub
 
 End Class
