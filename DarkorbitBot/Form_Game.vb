@@ -79,12 +79,12 @@ Public Class Form_Game
     Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
     Dim map_detect_ref = My.Resources.map_detect
 
+    Dim Client_Screen As Bitmap
 
     Private Async Sub Startup_bot()
 
         WebBrowser_Game_Ridevbot.Select()
-
-        Dim Client_Screen As Bitmap = Checking_screen()
+        Client_Screen = Checking_screen()
 
 
         ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -112,47 +112,55 @@ Public Class Form_Game
         'Catch map_error As Exception
         'End Try
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
-        Await Task.Delay(2000)
+        Try
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
+            Await Task.Delay(2000)
+            Detection_minimap()
+        Catch ex As Exception
+            Console.WriteLine($"Startup_Bot error! {ex.Message}")
+            Startup_bot()
+        End Try
+
     End Sub
 
     Private Async Sub Detection_minimap()
         If Stop_bot Then Exit_Bot()
 
-        Dim Client_Screen = Checking_screen()
-        System_box_move = False
 
         Try
+            Client_Screen = Checking_screen()
+            System_box_move = False
 
             Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
             If Minimap_closed <> Nothing Then
                 WebBrowser_Game_Ridevbot.Select()
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-
+                Await Task.Delay(3000)
+                Reduction_minimap()
             Else
                 Startup_bot()
             End If
 
         Catch Minimap_opened As Exception
+            Console.WriteLine($"Minimap_opened error! {Minimap_opened.Message}")
         End Try
 
-        Await Task.Delay(3000)
     End Sub
 
     Private Async Sub Reduction_minimap()
         If Stop_bot Then Exit_Bot()
 
-        Dim Client_Screen = Checking_screen()
 
         Try
+            Client_Screen = Checking_screen()
             Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
             Dim compare As Point
 
             If Minimap_size <> Nothing Then
 
-                For i = 0 To 20
-                    Await Task.Delay(90)
+                For i = 0 To 15
+                    Await Task.Delay(120)
                     Dim cursor_Pos = Cursor.Position
                     Client_Screen = Checking_screen()
                     Minimap_size = Client_Screen.Contains(Minimap_size_ref)
@@ -168,6 +176,8 @@ Public Class Form_Game
                     End If
                     Cursor.Position = cursor_Pos
                 Next
+                Await Task.Delay(1000)
+                Deplacement_minimap_bas_droite()
             Else
                 If System_box_move = True Then
                     Startup_bot()
@@ -176,16 +186,16 @@ Public Class Form_Game
                 End If
             End If
 
-        Catch ex As Exception
+        Catch Reduction_minimap_error As Exception
+            Console.WriteLine($"Reduction_minimap_error error! {Reduction_minimap_error.Message}")
         End Try
 
-        Await Task.Delay(3000)
     End Sub
 
     Private Async Sub Deplacement_minimap_bas_droite()
         If Stop_bot Then Exit_Bot()
 
-        Dim Client_Screen = Checking_screen()
+        Client_Screen = Checking_screen()
 
         Try
             Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
@@ -199,13 +209,15 @@ Public Class Form_Game
                 AutoIt.MouseUp("LEFT")
                 Cursor.Position = cursor_Pos
                 Await Task.Delay(800)
-
+                Exit_Bot()
             Else
                 System_box_move = True
                 Reduction_minimap()
             End If
 
-        Catch ex As Exception
+        Catch Deplacement_minimap_bas_droite_error As Exception
+            Console.WriteLine($"Deplacement_minimap_bas_droite_error error! {Deplacement_minimap_bas_droite_error.Message}")
+
         End Try
 
         Await Task.Delay(2000)
@@ -229,6 +241,7 @@ Public Class Form_Game
 
 
         Catch Aucune_map_trouve As Exception
+            Console.WriteLine($"Aucune_map_trouve error! {Aucune_map_trouve.Message}")
 
         End Try
 
@@ -365,6 +378,9 @@ Public Class Form_Game
 
     End Sub
 
+    Private Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
+        Startup_bot()
+    End Sub
 End Class
 
 'npc killer
