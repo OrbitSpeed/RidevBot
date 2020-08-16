@@ -58,8 +58,8 @@ Public Class Form_Game
 
 
 
-    Public Stop_bot As Boolean = False
-    Function Checking_screen()
+    Public User_Stop_Bot As Boolean = True
+    Function Update_Screen()
 
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
         Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
@@ -82,35 +82,29 @@ Public Class Form_Game
     Dim Client_Screen As Bitmap
 
     Private Async Sub Startup_bot()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         WebBrowser_Game_Ridevbot.Select()
-        Client_Screen = Checking_screen()
+        Client_Screen = Update_Screen()
 
+        ' if machin
+        'alors tu fais ça
+        'exit sub
+        'end if
 
-        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ' █                                                            █
-        ' █             Effectue un click au centre du browser         █
-        ' █              appel les variables et les assignes           █
-        ' █                                                            █
-        ' █                          < Balise 1 >                      █
-        ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+        Try
+            Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
-        If Stop_bot Then Exit_Bot()
+            If Save_point_original.X = "762" Then
+                Checking_minimap()
+                Exit Sub
+            End If
 
-        'Try
-        '    Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
-
-        '    If Save_point_original.X = "440" Then
-
-        '        GoTo Label_Minimap_ok
-
-        '    Else
-        '    End If
-
-        '    GoTo Label_HOME_lancement_du_bot
-        'Catch map_error As Exception
-        'End Try
+        Catch map_error As Exception
+        End Try
 
         Try
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
@@ -125,11 +119,14 @@ Public Class Form_Game
     End Sub
 
     Private Async Sub Detection_minimap()
-        If Stop_bot Then Exit_Bot()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
 
         Try
-            Client_Screen = Checking_screen()
+            Client_Screen = Update_Screen()
             System_box_move = False
 
             Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
@@ -137,6 +134,7 @@ Public Class Form_Game
                 WebBrowser_Game_Ridevbot.Select()
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
                 Await Task.Delay(3000)
+                Console.WriteLine("Detection minimap ok")
                 Reduction_minimap()
             Else
                 Startup_bot()
@@ -149,11 +147,14 @@ Public Class Form_Game
     End Sub
 
     Private Async Sub Reduction_minimap()
-        If Stop_bot Then Exit_Bot()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
 
         Try
-            Client_Screen = Checking_screen()
+            Client_Screen = Update_Screen()
             Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
             Dim compare As Point
 
@@ -162,12 +163,15 @@ Public Class Form_Game
                 For i = 0 To 15
                     Await Task.Delay(120)
                     Dim cursor_Pos = Cursor.Position
-                    Client_Screen = Checking_screen()
+                    Client_Screen = Update_Screen()
                     Minimap_size = Client_Screen.Contains(Minimap_size_ref)
                     If Minimap_size <> Nothing Then
                         If compare = Minimap_size Then
-                            i = 20
-                            Console.WriteLine("Similaire, on skip")
+                            i = 15
+                            Console.WriteLine("Réduction faite")
+                            Await Task.Delay(1000)
+                            Deplacement_minimap_bas_droite()
+                            Exit Sub
                         Else
                             Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
                             AutoIt.MouseClick("LEFT")
@@ -193,9 +197,12 @@ Public Class Form_Game
     End Sub
 
     Private Async Sub Deplacement_minimap_bas_droite()
-        If Stop_bot Then Exit_Bot()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
-        Client_Screen = Checking_screen()
+        Client_Screen = Update_Screen()
 
         Try
             Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
@@ -209,7 +216,8 @@ Public Class Form_Game
                 AutoIt.MouseUp("LEFT")
                 Cursor.Position = cursor_Pos
                 Await Task.Delay(800)
-                Exit_Bot()
+                Console.WriteLine("déplacement minimap ok")
+                Stop_Bot()
             Else
                 System_box_move = True
                 Reduction_minimap()
@@ -219,43 +227,36 @@ Public Class Form_Game
             Console.WriteLine($"Deplacement_minimap_bas_droite_error error! {Deplacement_minimap_bas_droite_error.Message}")
 
         End Try
-
-        Await Task.Delay(2000)
-        Console.WriteLine("minimap ok")
     End Sub
 
 
-    Private Sub Checking_minimap()
+    Private Async Sub Checking_minimap()
+        Client_Screen = Update_Screen()
+
         Try
+            Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
+            If Save_point_original.X = "762" Then
+                Console.WriteLine("relance")
+                Await Task.Delay(10000)
+                Stop_Bot()
+                Exit Sub
+            Else
+                Startup_bot()
+            End If
 
-
-
-
-
-
-
-
-
-
-
-
-        Catch Aucune_map_trouve As Exception
-            Console.WriteLine($"Aucune_map_trouve error! {Aucune_map_trouve.Message}")
+        Catch Aucune_map_trouve_error As Exception
+            Console.WriteLine($"Aucune_map_trouve_error! {Aucune_map_trouve_error.Message}")
 
         End Try
 
-
-
-
-        MsgBox("relance")
     End Sub
 
-    Private Sub Exit_Bot()
-        If Stop_bot Then
+    Private Sub Stop_Bot()
+        If User_Stop_Bot Then
             MsgBox("Stopped")
         Else
-            Startup_bot()
+            Checking_minimap()
         End If
 
 
@@ -267,7 +268,7 @@ Public Class Form_Game
         '        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, Systeme_Stellaire_Point.X, Systeme_Stellaire_Point.Y + 18)
         '        Await Task.Delay(1200)
 
-        '        Client_Screen = Checking_screen()
+        '        Client_Screen = Update_Screen()
         '        Dim map_detect_point As Point = Client_Screen.Contains(map_detect_ref)
 
         '        If map_detect_point <> Nothing Then

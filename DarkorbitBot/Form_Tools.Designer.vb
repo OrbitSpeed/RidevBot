@@ -161,8 +161,7 @@ Partial Class Form_Tools
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox_StopBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_PlayBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Button_beta = New System.Windows.Forms.Button()
@@ -285,8 +284,7 @@ Partial Class Form_Tools
         Me.Panel_Title.SuspendLayout()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Uridum_ExtraEnnergy_left.SuspendLayout()
         Me.Panel_UridiumtoKeep.SuspendLayout()
@@ -2086,9 +2084,8 @@ Partial Class Form_Tools
         Me.Panel_Title.Controls.Add(Me.PictureBox_close1)
         Me.Panel_Title.Controls.Add(Me.PictureBox_BackgroundBot)
         Me.Panel_Title.Controls.Add(Me.Label16)
-        Me.Panel_Title.Controls.Add(Me.PictureBox_PlayBot)
+        Me.Panel_Title.Controls.Add(Me.PictureBox_LaunchBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_epinglerBot)
-        Me.Panel_Title.Controls.Add(Me.PictureBox_StopBot)
         Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
@@ -2145,30 +2142,17 @@ Partial Class Form_Tools
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "RidevBot Tools"
         '
-        'PictureBox_StopBot
+        'PictureBox_LaunchBot
         '
-        Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
-        Me.PictureBox_StopBot.Location = New System.Drawing.Point(131, 0)
-        Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
-        Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_StopBot.TabIndex = 8
-        Me.PictureBox_StopBot.TabStop = False
-        Me.PictureBox_StopBot.Visible = False
-        '
-        'PictureBox_PlayBot
-        '
-        Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
-        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(131, 0)
-        Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
-        Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_PlayBot.TabIndex = 7
-        Me.PictureBox_PlayBot.TabStop = False
+        Me.PictureBox_LaunchBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_LaunchBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_LaunchBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
+        Me.PictureBox_LaunchBot.Location = New System.Drawing.Point(129, 0)
+        Me.PictureBox_LaunchBot.Name = "PictureBox_LaunchBot"
+        Me.PictureBox_LaunchBot.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_LaunchBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_LaunchBot.TabIndex = 7
+        Me.PictureBox_LaunchBot.TabStop = False
         '
         'PictureBox_epinglerBot
         '
@@ -3569,8 +3553,7 @@ Partial Class Form_Tools
         Me.Panel_Title.PerformLayout()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_StopBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_PlayBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Uridum_ExtraEnnergy_left.ResumeLayout(False)
         Me.Panel_Uridum_ExtraEnnergy_left.PerformLayout()
@@ -3793,8 +3776,7 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox10 As CheckBox
     Friend WithEvents PictureBox_epinglerBot As PictureBox
     Friend WithEvents PictureBox_BackgroundBot As PictureBox
-    Friend WithEvents PictureBox_StopBot As PictureBox
-    Friend WithEvents PictureBox_PlayBot As PictureBox
+    Friend WithEvents PictureBox_LaunchBot As PictureBox
     Friend WithEvents WebBrowser_Synchronisation As WebBrowser
     Friend WithEvents TextBox_secondsdouble As TextBox
     Friend WithEvents TextBox_secondsdouble2 As TextBox

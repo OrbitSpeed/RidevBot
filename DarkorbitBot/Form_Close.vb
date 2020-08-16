@@ -6,6 +6,10 @@
     End Sub
     Private Sub Yes_button_Click(sender As Object, e As EventArgs) Handles Yes_button.Click
         'MsgBox(formToClose)
+        '???
+        'If formToClose = "Form_Game" Then
+        '    Form_Tools.BackgroundWorker_Timer.CancelAsync()
+        'End If
         Form_Tools.TopMost = True
         Form_Tools.TopMost = False
         Owner.Close()
@@ -20,7 +24,9 @@
         Close()
     End Sub
 
-    Private Sub Button_CloseAllForm_Click(sender As Object, e As EventArgs) Handles Button_CloseAllForm.Click
+    Private Async Sub Button_CloseAllForm_Click(sender As Object, e As EventArgs) Handles Button_CloseAllForm.Click
+        Form_Tools.BackgroundWorker_Timer.CancelAsync()
+        'Await Task.Delay(1000)
         Form_Startup.Close()
         BackPage_Form.Close()
         Form_Game.Close()

@@ -2469,21 +2469,24 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
+    Private Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
+        If Form_Game.User_Stop_Bot = True Then
+            PictureBox_LaunchBot.Image = My.Resources.img_pause
+            Form_Game.User_Stop_Bot = False
+            Form_Game.Button_Bot.PerformClick()
+        Else
+            PictureBox_LaunchBot.Image = My.Resources.img_play
+            Form_Game.User_Stop_Bot = True
+        End If
 
-        PictureBox_PlayBot.Visible = False
-        PictureBox_StopBot.Visible = True
-
-        Form_Game.Stop_bot = 0
-        Form_Game.Button_Bot.PerformClick()
 
     End Sub
 
-    Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs) Handles PictureBox_StopBot.Click
+    Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs)
 
-        Form_Game.Stop_bot = 1
-        PictureBox_PlayBot.Visible = True
-        PictureBox_StopBot.Visible = False
+        'Form_Game.User_Stop_Bot = True
+        'PictureBox_LaunchBot.Visible = True
+        'PictureBox_StopBot.Visible = False
         '
 
     End Sub
