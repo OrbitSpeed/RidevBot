@@ -126,6 +126,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v1.6|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\v1.6\</OutputPath>
+    <DocumentationFile>RidevBot.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -468,6 +479,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="bin\Debug\error_icon.png" />
+    <None Include="bin\Debug\success_icon.png" />
+    <None Include="bin\Debug\loading.gif" />
     <None Include="bin\Debug\systeme_stellaire.png" />
     <None Include="bin\Debug\map_detect.png" />
     <None Include="Resources\Protocol_Defense_kami.png" />

@@ -478,9 +478,9 @@ Public Class Form_Startup
         TextBox_UsernamePasswordProfil3username.Text = ""
         TextBoxUsernamePasswordProfil3password.Text = ""
 
-        PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
-        PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
-        PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
+        'PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
+        'PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
+        'PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
 
     End Sub
 
