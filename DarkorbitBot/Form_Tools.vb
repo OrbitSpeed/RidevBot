@@ -40,9 +40,20 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats3 As String = 0
 
     Public Check_message As String = 0
-
+    Public Reloader As String = 0
     Public Reader As String = 0
 
+
+    Function Reload()
+
+        If Reloader = 0 Then
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+            Reloader = 1
+        Else
+        End If
+
+
+    End Function
 
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
@@ -520,8 +531,11 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
 
+            Reload()
+
             Form_Game.Show()
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
 
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
@@ -529,9 +543,10 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
 
-            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+            Reloader = 0
+            Reload()
 
-            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
@@ -2309,54 +2324,55 @@ Public Class Form_Tools
             textbox_stade.Text = "URL : OK  ---  1/2"
 
             Check_message = 0
-            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+
+            Reload()
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-            Utils.server = CheckRegex.Groups.Item(1).ToString
+                Utils.server = CheckRegex.Groups.Item(1).ToString
 
-            Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
-            If dosid_regex.Success Then
+                Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+                If dosid_regex.Success Then
 
-                Utils.dosid = dosid_regex.Value.Split("=")(1)
-                Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
-                TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
-                Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
-                Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
-                Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
-                Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
-                Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
-                TextBox_Get_Server.Text = Utils.server
-                Utils.UpdateStats()
+                    Utils.dosid = dosid_regex.Value.Split("=")(1)
+                    Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                    TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                    TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
+                    TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
+                    Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
+                    Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
+                    Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
+                    Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
+                    Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+                    TextBox_Get_Server.Text = Utils.server
+                    Utils.UpdateStats()
 
-                textbox_stade.Text = "Server : OK  ---  2/2"
+                    textbox_stade.Text = "Server : OK  ---  2/2"
 
-                textbox_stade.Text = "Done."
+                    textbox_stade.Text = "Done."
 
-                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                    Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                If BackgroundWorker_Timer.IsBusy <> True Then
-                    BackgroundWorker_Timer.RunWorkerAsync()
+                    If BackgroundWorker_Timer.IsBusy <> True Then
+                        BackgroundWorker_Timer.RunWorkerAsync()
+                    End If
+
+                    WebBrowser_Synchronisation.Navigate("about:blank")
+
+                    If CheckBox_LaunchGameAuto.Checked = True Then
+
+                        textbox_stade.Text = "Launching the game wait ... "
+
+                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                        Form_Game.Show()
+
+                    End If
                 End If
 
-                WebBrowser_Synchronisation.Navigate("about:blank")
-
-                If CheckBox_LaunchGameAuto.Checked = True Then
-
-                    textbox_stade.Text = "Launching the game wait ... "
-
-                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                    Form_Game.Show()
-
-                End If
+                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
             End If
-
-            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
-        End If
 
     End Sub
 
@@ -2396,8 +2412,8 @@ Public Class Form_Tools
         End If
 
         If SID_Seconds_dixaine = 6 Then
-            SID_Minutes = 1
             SID_Seconds_dixaine = 0
+            SID_Minutes += 1
         End If
 
         If SID_Minutes = 10 Then
@@ -2455,34 +2471,21 @@ Public Class Form_Tools
 
     Private Sub PictureBox_PlayBot_Click(sender As Object, e As EventArgs) Handles PictureBox_PlayBot.Click
 
-        If Background_Worker_Working = False Then
-            PictureBox_PlayBot.Visible = False
-            PictureBox_StopBot.Visible = True
-            Background_Worker_Working = True
-            BackgroundWorker_Bot_DoWork()
-        End If
+        PictureBox_PlayBot.Visible = False
+        PictureBox_StopBot.Visible = True
+
+        Form_Game.Stop_bot = 0
+        Form_Game.Button_Bot.PerformClick()
 
     End Sub
 
     Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs) Handles PictureBox_StopBot.Click
 
-        If Background_Worker_Working = True Then
-            PictureBox_PlayBot.Visible = True
-            PictureBox_StopBot.Visible = False
-            Background_Worker_Working = False
-        End If
+        Form_Game.Stop_bot = 1
+        PictureBox_PlayBot.Visible = True
+        PictureBox_StopBot.Visible = False
+        '
 
-    End Sub
-
-    Private Background_Worker_Working As Boolean = False
-    Public Sub BackgroundWorker_Bot_DoWork()
-
-        If Background_Worker_Working = True Then
-
-            Me.Invoke(New MethodInvoker(Sub() Form_Game.Button_Bot.PerformClick()))
-            BackgroundWorker_Bot_DoWork()
-
-        End If
     End Sub
 
 End Class

@@ -17,7 +17,9 @@ Public Class Form_Game
         CloseForm.ShowDialog(Me)
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
-        Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+
+        Form_Tools.Reloader = 0
+        Form_Tools.Reload()
 
     End Sub
 
@@ -68,23 +70,33 @@ Public Class Form_Game
 
 
 
-
+    Public Stop_bot As String = 0
     Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
 
-        ' --------------- 
-        ' --- Startup --- 
-        ' --------------- 
+        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        ' █                                                            █
+        ' █             Effectue un click au centre du browser         █
+        ' █              appel les variables et les assignes           █
+        ' █                                                            █
+        ' █                   < Balise 1 - error79 >                   █
+        ' █                                                            █
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
+Startup_Balise1:
 
+        If Stop_bot = 1 Then
 
-        ' Checking de l'écran et effectue le screen de demarge + desacive toute les fenetre du jeu avec la touche associé + check et recuperation d'image
-        ' balise 1 '
+            GoTo Ending_balise
 
+        End If
+
+        Dim Client_Screen As Bitmap = Checking_screen()
 
         WebBrowser_Game_Ridevbot.Select()
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
 
         Await Task.Delay(2000)
+        Dim System_box_move As String = 0
 
         Dim Minimap_closed_ref = My.Resources.Minimap_closed
         Dim Minimap_size_ref = My.Resources.Minimap_reduce
@@ -93,41 +105,53 @@ Public Class Form_Game
         Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
         Dim map_detect_ref = My.Resources.map_detect
 
-        ' --------------- 
-        ' --- Startup --- 
-        ' --------------- 
+        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        ' █                                                            █
+        ' █                Detecte la minimap et l'ouvre               █
+        ' █                                                            █
+        ' █                   < Balise 2 - error105 >                  █
+        ' █                                                            █
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
+Startup_Balise2:
 
-Startup_Balise1:
-        ' checking si minimap fermer et que la touche de depart a bien ete entrer
-        Dim Client_Screen As Bitmap = Checking_screen()
-        'Graphics.FromImage(Client_primary)
+        If Stop_bot = 1 Then
+
+            GoTo Ending_balise
+
+        End If
+
+        Client_Screen = Checking_screen()
+        System_box_move = 0
+
         Try
+
             Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
             If Minimap_closed <> Nothing Then
-
                 WebBrowser_Game_Ridevbot.Select()
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-
             End If
+
         Catch Minimap_opened As Exception
-            ' faire un systeme qui te ramene a la "balise 0" 
-            Console.WriteLine($"Exception minimap_opened: {Minimap_opened.Message}")
+
             GoTo Startup_Balise1
         End Try
 
         Await Task.Delay(3000)
 
+        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        ' █                                                            █
+        ' █                reduit la minimap au minimum                █
+        ' █                                                            █
+        ' █                   < Balise 3 - error129 >                  █
+        ' █                                                            █
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
+Startup_Balise3:
 
+        If Stop_bot = 1 Then
 
+            GoTo Ending_balise
 
-
-
-
-
-        ' -------------------------------------------
-        ' reduit la minimap au minimum 
-        ' balise 2 
-        ' -------------------------------------------
+        End If
 
         Client_Screen = Checking_screen()
 
@@ -157,26 +181,32 @@ Startup_Balise1:
 
             End If
         Catch ex As Exception
-            GoTo Startup_Balise1
-            ' faire un systeme qui te ramene a la "balise 1" 
+
+            If System_box_move = 1 Then
+                GoTo Startup_Balise1
+            Else
+                GoTo Startup_Balise2
+            End If
+
         End Try
 
         Await Task.Delay(3000)
 
+        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        ' █                                                            █
+        ' █           deplace la minimap en bas a droite               █
+        ' █                                                            █
+        ' █                   < Balise 4 - error172 >                  █
+        ' █                                                            █
+        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼
+Startup_Balise4:
 
+        If Stop_bot = 1 Then
 
+            GoTo Ending_balise
 
+        End If
 
-
-
-
-
-
-
-        ' ---------------------------------------------------
-        'deplace la minimap en bas a droite 
-        ' balise 3
-        ' ---------------------------------------------------
         Client_Screen = Checking_screen()
 
         Try
@@ -196,31 +226,72 @@ Startup_Balise1:
 
         Catch ex As Exception
 
-            '
+            System_box_move = 1
+            GoTo Startup_Balise3
 
         End Try
 
-        Try
 
-            Dim Systeme_Stellaire_Point As Point = Client_Screen.Contains(systeme_stellaire_ref)
+        GoTo Startup_Balise1
 
-            If Systeme_Stellaire_Point <> Nothing Then
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, Systeme_Stellaire_Point.X, Systeme_Stellaire_Point.Y + 18)
-                Await Task.Delay(1200)
 
-                Client_Screen = Checking_screen()
-                Dim map_detect_point As Point = Client_Screen.Contains(map_detect_ref)
 
-                If map_detect_point <> Nothing Then
-                    Cursor.Position = New Point(map_detect_point.X, map_detect_point.Y)
-                Else
-                    Console.WriteLine("Not found")
-                End If
 
-            End If
-        Catch ex As Exception
 
-        End Try
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ending_balise:
+
+        If Stop_bot = 1 Then
+            MsgBox("Stopped")
+        Else
+            GoTo Startup_Balise1
+        End If
+
+
+        'Try
+
+        '    Dim Systeme_Stellaire_Point As Point = Client_Screen.Contains(systeme_stellaire_ref)
+
+        '    If Systeme_Stellaire_Point <> Nothing Then
+        '        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, Systeme_Stellaire_Point.X, Systeme_Stellaire_Point.Y + 18)
+        '        Await Task.Delay(1200)
+
+        '        Client_Screen = Checking_screen()
+        '        Dim map_detect_point As Point = Client_Screen.Contains(map_detect_ref)
+
+        '        If map_detect_point <> Nothing Then
+        '            Cursor.Position = New Point(map_detect_point.X, map_detect_point.Y)
+        '        Else
+        '            Console.WriteLine("Not found")
+        '        End If
+
+        '    End If
+        'Catch ex As Exception
+
+        'End Try
 
     End Sub
 
@@ -265,14 +336,14 @@ Startup_Balise1:
 
     Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
 
-        'Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+        Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
 
-        'Try
-        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-        '    '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
+        Try
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+            '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
 
-        'Catch Bonus_Box_not_found As Exception
-        'End Try
+        Catch Bonus_Box_not_found As Exception
+        End Try
 
     End Sub
 

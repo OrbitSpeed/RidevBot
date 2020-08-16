@@ -69,6 +69,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox_desactive_allkey = New System.Windows.Forms.TextBox()
         Me.Label_desactive_all_elements = New System.Windows.Forms.Label()
         Me.Panel_ressources = New System.Windows.Forms.Panel()
@@ -90,6 +91,7 @@ Partial Class Form_Tools
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label_PALADIUM_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -129,6 +131,7 @@ Partial Class Form_Tools
         Me.Label_experienceCurrent = New System.Windows.Forms.Label()
         Me.Panel_rex = New System.Windows.Forms.Panel()
         Me.Panel_PET_selection = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label_seconds_pet = New System.Windows.Forms.Label()
@@ -262,9 +265,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.BackgroundWorker_Timer = New System.ComponentModel.BackgroundWorker()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -626,7 +626,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(212, 64)
+        Me.TextBox_secondsdouble.Location = New System.Drawing.Point(213, 64)
         Me.TextBox_secondsdouble.Name = "TextBox_secondsdouble"
         Me.TextBox_secondsdouble.ReadOnly = True
         Me.TextBox_secondsdouble.Size = New System.Drawing.Size(15, 16)
@@ -639,7 +639,7 @@ Partial Class Form_Tools
         Me.TextBox_secondsdouble2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_secondsdouble2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_secondsdouble2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(202, 64)
+        Me.TextBox_secondsdouble2.Location = New System.Drawing.Point(203, 64)
         Me.TextBox_secondsdouble2.Name = "TextBox_secondsdouble2"
         Me.TextBox_secondsdouble2.ReadOnly = True
         Me.TextBox_secondsdouble2.Size = New System.Drawing.Size(15, 16)
@@ -663,7 +663,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble.Location = New System.Drawing.Point(185, 64)
+        Me.TextBox_minutedouble.Location = New System.Drawing.Point(184, 64)
         Me.TextBox_minutedouble.Name = "TextBox_minutedouble"
         Me.TextBox_minutedouble.ReadOnly = True
         Me.TextBox_minutedouble.Size = New System.Drawing.Size(15, 16)
@@ -676,7 +676,7 @@ Partial Class Form_Tools
         Me.TextBox_minutedouble_dixieme.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_minutedouble_dixieme.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_minutedouble_dixieme.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(175, 64)
+        Me.TextBox_minutedouble_dixieme.Location = New System.Drawing.Point(174, 64)
         Me.TextBox_minutedouble_dixieme.Name = "TextBox_minutedouble_dixieme"
         Me.TextBox_minutedouble_dixieme.ReadOnly = True
         Me.TextBox_minutedouble_dixieme.Size = New System.Drawing.Size(15, 16)
@@ -919,6 +919,17 @@ Partial Class Form_Tools
         Me.Panel_Npc.Size = New System.Drawing.Size(304, 315)
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(66, 118)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(179, 15)
+        Me.Label6.TabIndex = 55
+        Me.Label6.Text = "NOT WORKING, EXPERIMENTAL"
         '
         'TextBox_desactive_allkey
         '
@@ -1214,6 +1225,17 @@ Partial Class Form_Tools
         Me.Panel_Palladium.Size = New System.Drawing.Size(304, 315)
         Me.Panel_Palladium.TabIndex = 45
         Me.Panel_Palladium.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(53, 147)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(179, 15)
+        Me.Label5.TabIndex = 55
+        Me.Label5.Text = "NOT WORKING, EXPERIMENTAL"
         '
         'Button3
         '
@@ -1750,6 +1772,17 @@ Partial Class Form_Tools
         Me.Panel_PET_selection.Size = New System.Drawing.Size(270, 279)
         Me.Panel_PET_selection.TabIndex = 46
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(39, 215)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(179, 15)
+        Me.Label4.TabIndex = 55
+        Me.Label4.Text = "NOT WORKING, EXPERIMENTAL"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -2053,9 +2086,9 @@ Partial Class Form_Tools
         Me.Panel_Title.Controls.Add(Me.PictureBox_close1)
         Me.Panel_Title.Controls.Add(Me.PictureBox_BackgroundBot)
         Me.Panel_Title.Controls.Add(Me.Label16)
-        Me.Panel_Title.Controls.Add(Me.PictureBox_StopBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_PlayBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_epinglerBot)
+        Me.Panel_Title.Controls.Add(Me.PictureBox_StopBot)
         Me.Panel_Title.Cursor = System.Windows.Forms.Cursors.SizeAll
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
@@ -2094,7 +2127,7 @@ Partial Class Form_Tools
         Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_accueil
-        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(178, 0)
+        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(148, 0)
         Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
         Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2117,7 +2150,7 @@ Partial Class Form_Tools
         Me.PictureBox_StopBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_StopBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_StopBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_pause
-        Me.PictureBox_StopBot.Location = New System.Drawing.Point(152, 0)
+        Me.PictureBox_StopBot.Location = New System.Drawing.Point(131, 0)
         Me.PictureBox_StopBot.Name = "PictureBox_StopBot"
         Me.PictureBox_StopBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_StopBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2130,7 +2163,7 @@ Partial Class Form_Tools
         Me.PictureBox_PlayBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_PlayBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_PlayBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
-        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(135, 0)
+        Me.PictureBox_PlayBot.Location = New System.Drawing.Point(131, 0)
         Me.PictureBox_PlayBot.Name = "PictureBox_PlayBot"
         Me.PictureBox_PlayBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_PlayBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2142,7 +2175,7 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(198, 0)
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(165, 0)
         Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
         Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3460,39 +3493,6 @@ Partial Class Form_Tools
         'BackgroundWorker_Timer
         '
         Me.BackgroundWorker_Timer.WorkerSupportsCancellation = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(39, 215)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(179, 15)
-        Me.Label4.TabIndex = 55
-        Me.Label4.Text = "NOT WORKING, EXPERIMENTAL"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(53, 147)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(179, 15)
-        Me.Label5.TabIndex = 55
-        Me.Label5.Text = "NOT WORKING, EXPERIMENTAL"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(66, 118)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(179, 15)
-        Me.Label6.TabIndex = 55
-        Me.Label6.Text = "NOT WORKING, EXPERIMENTAL"
         '
         'Form_Tools
         '
