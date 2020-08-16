@@ -58,7 +58,7 @@ Public Class Form_Game
 
 
 
-    Public Stop_bot As String = 0
+    Public Stop_bot As Boolean = False
     Function Checking_screen()
 
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
@@ -66,25 +66,26 @@ Public Class Form_Game
         Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
         Return Client_primary
         'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
-
     End Function
 
-    Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
+    Dim System_box_move As Boolean = False
+    Dim save_point_x As String = 0
+    Dim save_point_Y As String = 0
+    Dim passage As String = 0
 
-Label_HOME_lancement_du_bot:
+    Dim Minimap_closed_ref = My.Resources.Minimap_closed
+    Dim Minimap_size_ref = My.Resources.Minimap_reduce
+    Dim Move_minimap_box_ref = My.Resources.Move_box
+    Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
+    Dim map_detect_ref = My.Resources.map_detect
+
+
+    Private Async Sub Startup_bot()
 
         WebBrowser_Game_Ridevbot.Select()
-        Dim Client_Screen As Bitmap = Checking_screen()
-        Dim System_box_move As String = 0
-        Dim save_point_x As String = 0
-        Dim save_point_Y As String = 0
-        Dim passage As String = 0
 
-        Dim Minimap_closed_ref = My.Resources.Minimap_closed
-        Dim Minimap_size_ref = My.Resources.Minimap_reduce
-        Dim Move_minimap_box_ref = My.Resources.Move_box
-        Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
-        Dim map_detect_ref = My.Resources.map_detect
+        Dim Client_Screen As Bitmap = Checking_screen()
+
 
         ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         ' █                                                            █
@@ -95,11 +96,7 @@ Label_HOME_lancement_du_bot:
         ' █                                                            █
         ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
 
-        If Stop_bot = 1 Then
-
-            GoTo Exit_
-
-        End If
+        If Stop_bot Then Exit_Bot()
 
         'Try
         '    Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
@@ -118,24 +115,13 @@ Label_HOME_lancement_du_bot:
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
         Await Task.Delay(2000)
+    End Sub
 
-        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ' █                                                            █
-        ' █                Detecte la minimap et l'ouvre               █
-        ' █                                                            █
-        ' █                         < Balise 2 >                       █
-        ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-Label_Detection_Minimap_et_ouverture:
+    Private Async Sub Detection_minimap()
+        If Stop_bot Then Exit_Bot()
 
-        If Stop_bot = 1 Then
-
-            GoTo Exit_
-
-        End If
-
-        Client_Screen = Checking_screen()
-        System_box_move = 0
+        Dim Client_Screen = Checking_screen()
+        System_box_move = False
 
         Try
 
@@ -145,30 +131,19 @@ Label_Detection_Minimap_et_ouverture:
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
 
             Else
-                GoTo Label_HOME_lancement_du_bot
+                Startup_bot()
             End If
 
         Catch Minimap_opened As Exception
         End Try
 
         Await Task.Delay(3000)
+    End Sub
 
-        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ' █                                                            █
-        ' █                reduit la minimap au minimum                █
-        ' █                                                            █
-        ' █                        < Balise 3 >                        █
-        ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-Label_Reduction_minimap:
+    Private Async Sub Reduction_minimap()
+        If Stop_bot Then Exit_Bot()
 
-        If Stop_bot = 1 Then
-
-            GoTo Exit_
-
-        End If
-
-        Client_Screen = Checking_screen()
+        Dim Client_Screen = Checking_screen()
 
         Try
             Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
@@ -194,10 +169,10 @@ Label_Reduction_minimap:
                     Cursor.Position = cursor_Pos
                 Next
             Else
-                If System_box_move = 1 Then
-                    GoTo Label_HOME_lancement_du_bot
+                If System_box_move = True Then
+                    Startup_bot()
                 Else
-                    GoTo Label_Detection_Minimap_et_ouverture
+                    Detection_minimap()
                 End If
             End If
 
@@ -205,23 +180,12 @@ Label_Reduction_minimap:
         End Try
 
         Await Task.Delay(3000)
+    End Sub
 
-        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ' █                                                            █
-        ' █           deplace la minimap en bas a droite               █
-        ' █                                                            █
-        ' █                        < Balise 4 >                        █
-        ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-Label_Deplacement_miniamp_basdroite:
+    Private Async Sub Deplacement_minimap_bas_droite()
+        If Stop_bot Then Exit_Bot()
 
-        If Stop_bot = 1 Then
-
-            GoTo Exit_
-
-        End If
-
-        Client_Screen = Checking_screen()
+        Dim Client_Screen = Checking_screen()
 
         Try
             Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
@@ -237,27 +201,19 @@ Label_Deplacement_miniamp_basdroite:
                 Await Task.Delay(800)
 
             Else
-                System_box_move = 1
-                GoTo Label_Reduction_minimap
+                System_box_move = True
+                Reduction_minimap()
             End If
 
         Catch ex As Exception
         End Try
 
         Await Task.Delay(2000)
-Label_Minimap_ok:
-        MsgBox("Minimap Ok")
+        Console.WriteLine("minimap ok")
+    End Sub
 
 
-        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ' █                                                            █
-        ' █               Check dans quel map il se trouve             █
-        ' █                                                            █
-        ' █                          < Balise 1 >                      █
-        ' █                                                            █
-        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-Label_Checking_minimap:
-
+    Private Sub Checking_minimap()
         Try
 
 
@@ -272,30 +228,21 @@ Label_Checking_minimap:
 
 
 
-        Catch Aucune_map_trouver As Exception
+        Catch Aucune_map_trouve As Exception
 
         End Try
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         MsgBox("relance")
-Exit_:
-        If Stop_bot = 1 Then
+    End Sub
+
+    Private Sub Exit_Bot()
+        If Stop_bot Then
             MsgBox("Stopped")
         Else
-            GoTo Label_HOME_lancement_du_bot
+            Startup_bot()
         End If
 
 
@@ -320,30 +267,60 @@ Exit_:
         'Catch ex As Exception
 
         'End Try
-
     End Sub
 
+    '    Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
+
+    'Label_HOME_lancement_du_bot:
+
+    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '        ' █                                                            █
+    '        ' █                Detecte la minimap et l'ouvre               █
+    '        ' █                                                            █
+    '        ' █                         < Balise 2 >                       █
+    '        ' █                                                            █
+    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+    'Label_Detection_Minimap_et_ouverture:
+
+
+
+    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '        ' █                                                            █
+    '        ' █                reduit la minimap au minimum                █
+    '        ' █                                                            █
+    '        ' █                        < Balise 3 >                        █
+    '        ' █                                                            █
+    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+    'Label_Reduction_minimap:
+
+
+
+    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '        ' █                                                            █
+    '        ' █           deplace la minimap en bas a droite               █
+    '        ' █                                                            █
+    '        ' █                        < Balise 4 >                        █
+    '        ' █                                                            █
+    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+    'Label_Deplacement_miniamp_basdroite:
 
 
 
 
+    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '        ' █                                                            █
+    '        ' █               Check dans quel map il se trouve             █
+    '        ' █                                                            █
+    '        ' █                          < Balise 1 >                      █
+    '        ' █                                                            █
+    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+    'Label_Checking_minimap:
 
 
+    'Exit_:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    '    End Sub
 
 
 

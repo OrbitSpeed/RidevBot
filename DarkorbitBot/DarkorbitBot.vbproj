@@ -488,11 +488,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
-    <None Include="bin\Debug\error_icon.png" />
-    <None Include="bin\Debug\success_icon.png" />
-    <None Include="bin\Debug\loading.gif" />
-    <None Include="bin\Debug\systeme_stellaire.png" />
-    <None Include="bin\Debug\map_detect.png" />
     <None Include="Resources\Protocol_Defense_kami.png" />
     <None Include="Resources\protocol_collect_box.png" />
     <None Include="Resources\protocol_kamikaze.png" />
@@ -505,10 +500,6 @@
     <None Include="Resources\Minimap_reduce.png" />
     <None Include="Resources\Minimap_closed.png" />
     <None Include="Resources\Move_box.png" />
-    <None Include="bin\Debug\mission.png" />
-    <None Include="bin\Debug\map.png" />
-    <None Include="bin\Debug\logout.png" />
-    <None Include="bin\Debug\heal.png" />
     <None Include="Resources\unknown.png" />
     <None Include="Resources\65.png" />
     <None Include="Resources\icon_elite_12x7.png" />
@@ -542,6 +533,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
