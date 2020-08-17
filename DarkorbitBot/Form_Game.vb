@@ -56,8 +56,7 @@ Public Class Form_Game
     Dim save_point_x As String = 0
     Dim save_point_Y As String = 0
     Dim passage As String = 0
-    Dim tour As String = 4
-    Dim tour2 As String = 0
+    Dim tour As String = 0
 
     ' ⚡ VARIABLES DISCONECTED ⚡
 
@@ -285,32 +284,18 @@ Public Class Form_Game
             Exit Sub
         End If
 
-        If tour = 5 Then
-            tour = 0
-            Checking_map_actuel()
-            Exit Sub
-
-        Else
-            tour = +1
-        End If
-
-        If tour2 = 5 Then
-            tour2 = 0
-            reconnexion()
-            Exit Sub
-
-        Else
-            tour2 = +1
-        End If
-
         Try
             Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
             If Save_point_original.X = "762" Then
                 Await Task.Delay(1000)
                 Console.WriteLine("relance")
-                tour = +1
-                tour2 = +1
+                tour += 1
+                If tour = 5 Then
+
+                    Checking_map_actuel()
+                    Exit Sub
+                End If
                 Checking_minimap()
                 Exit Sub
             Else
@@ -333,7 +318,7 @@ Public Class Form_Game
         End If
 
         If tour = 5 Then
-
+            tour = 0
 
             Client_Screen = Update_Screen()
 
@@ -453,13 +438,12 @@ Public Class Form_Game
                 Label_map_location.Update()
                 CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
                 Console.WriteLine("On a reussi ! ")
-                Checking_minimap()
+                reconnexion()
 
             Catch detect_map_error As Exception
                 Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
             End Try
 
-            tour = 0
         End If
 
 
@@ -480,30 +464,20 @@ Public Class Form_Game
 
             If Connection_Lost <> Nothing Then
 
+                Await Task.Delay(2000)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
-                Console.WriteLine("Checking premiere fois")
-                Await Task.Delay(5000)
-
-            End If
-
-            Client_Screen = Update_Screen()
-            If Connection_Lost2 <> Nothing Then
-
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
-                Console.WriteLine("Checking deuxieme fois")
-                Await Task.Delay(1000)
-
-            Else
-
+                Console.WriteLine("Reconnexion")
+                Await Task.Delay(6999)
                 Checking_minimap()
-                Exit Sub
-
             End If
 
+        Catch Connected As Exception
 
-        Catch ex As Exception
+            Checking_minimap()
 
         End Try
+
+
 
     End Sub
 
