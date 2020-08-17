@@ -1,26 +1,8 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.ComponentModel
+Imports System.Runtime.InteropServices
 Imports AutoItX3Lib
 
 Public Class Form_Game
-    'Test
-    '<DllImport("user32.dll")>
-    'Private Shared Sub mouse_event(dwFlags As UInteger, dx As UInteger, dy As UInteger, dwData As UInteger, dwExtraInfo As Integer)
-    'End Sub
-    '<Flags()>
-    'Public Enum MouseEventFlags As UInteger
-    '    MOUSEEVENTF_ABSOLUTE = &H8000
-    '    MOUSEEVENTF_LEFTDOWN = &H2
-    '    MOUSEEVENTF_LEFTUP = &H4
-    '    MOUSEEVENTF_MIDDLEDOWN = &H20
-    '    MOUSEEVENTF_MIDDLEUP = &H40
-    '    MOUSEEVENTF_MOVE = &H1
-    '    MOUSEEVENTF_RIGHTDOWN = &H8
-    '    MOUSEEVENTF_RIGHTUP = &H10
-    '    MOUSEEVENTF_XDOWN = &H80
-    '    MOUSEEVENTF_XUP = &H100
-    '    MOUSEEVENTF_WHEEL = &H800
-    '    MOUSEEVENTF_HWHEEL = &H1000
-    'End Enum
     Declare Function BlockInput Lib "user32" (ByVal fBlockIt As Boolean) As Boolean
 
 
@@ -50,6 +32,7 @@ Public Class Form_Game
 
     Private Sub Form_Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.TopMost = True
+        BackgroundWorker_Performance.RunWorkerAsync()
     End Sub
 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -73,13 +56,13 @@ Public Class Form_Game
     Dim save_point_x As String = 0
     Dim save_point_Y As String = 0
     Dim passage As String = 0
-    Dim tour As Integer = 0
 
-    ' ⚡ VARIABLES DISCONECTED ⚡
+#Region "⚡ VARIABLES DISCONECTED ⚡"
 
     Dim Disconnected = My.Resources.Disconnected
+#End Region
 
-    ' ⚡ VARIABLES MAP LOCATION ⚡
+#Region "⚡ VARIABLES MAP LOCATION ⚡"
 
     Dim System_box_move As Boolean = False
 
@@ -130,7 +113,10 @@ Public Class Form_Game
     Dim Map1_BL = My.Resources.map1_BL
     Dim Map2_BL = My.Resources.map2_BL
     Dim Map3_BL = My.Resources.map3_BL
+#End Region
 
+
+#Region "Fonction Minimap + Deconnexion + map location"
     ' ⚡ MODULE MINIMAP ⚡ 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
@@ -298,6 +284,7 @@ Public Class Form_Game
                 Await Task.Delay(800)
                 Console.WriteLine("déplacement minimap ok")
                 BlockInput(False)
+                Checking_map_actuel(True)
                 Stop_Bot()
             Else
                 System_box_move = True
@@ -317,8 +304,8 @@ Public Class Form_Game
     ' ⚡ MODULE MINIMAP ⚡
 
 
-    ' TOUJOURS CE REFERENCER ICI !
-    Private Async Sub Checking_minimap()
+    ' CHECKING MINIMAP
+    Private Sub Checking_minimap()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -330,9 +317,8 @@ Public Class Form_Game
             Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
             If Save_point_original.X = "762" Then
-                Await Task.Delay(1000)
+                'Await Task.Delay(1000)
                 Console.WriteLine("relance")
-                tour += 1
 
                 Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
                 If Connection_Lost <> Nothing Then
@@ -342,15 +328,10 @@ Public Class Form_Game
 
                 End If
 
-                If tour = 20 Then
-
-                    Checking_map_actuel()
-                    Exit Sub
-                End If
-
+                Checking_map_actuel(True)
 
                 Console.WriteLine("On boucle sur checking_minimap")
-                Point_de_chute()
+                Point_de_chute_Startup(True)
             Else
                 Startup_bot()
             End If
@@ -363,141 +344,139 @@ Public Class Form_Game
     End Sub
 
     ' CHECK DANS QUEL MAP IL SE TROUVE !
-    Private Sub Checking_map_actuel()
+    Private Sub Checking_map_actuel(Optional UpdateOnly As Boolean = False)
 
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
 
-        If tour = 20 Then
-            tour = 0
+        Client_Screen = Update_Screen()
 
-            Client_Screen = Update_Screen()
+        Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
+        Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
+        Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
+        Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
+        Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
+        Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
+        Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
+        Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
 
-            Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
-            Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
-            Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
-            Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
-            Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
-            Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
-            Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
-            Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
+        Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
+        Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
+        Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
+        Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
+        Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
+        Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
+        Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
+        Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
 
-            Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
-            Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
-            Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
-            Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
-            Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
-            Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
-            Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
-            Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
+        Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
+        Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
+        Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
+        Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
+        Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
+        Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
+        Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
+        Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
 
-            Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
-            Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
-            Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
-            Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
-            Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
-            Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
-            Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
-            Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
+        Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
+        Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
+        Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
+        Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
+        Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
 
-            Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
-            Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
-            Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
-            Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
-            Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
+        Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
+        Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
+        Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
 
-            Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
-            Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
-            Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
+        Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
+        Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
+        Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
 
-            Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
-            Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
-            Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
-
-            Try
-                If Map_Location1_1 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-1"
-                ElseIf Map_Location1_2 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-2"
-                ElseIf Map_Location1_3 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-3"
-                ElseIf Map_Location1_4 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-4"
-                ElseIf Map_Location1_5 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-5"
-                ElseIf Map_Location1_6 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-6"
-                ElseIf Map_Location1_7 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-7"
-                ElseIf Map_Location1_8 <> Nothing Then
-                    Label_map_location.Text = "Map : 1-8"
-                ElseIf Map_Location2_1 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-1"
-                ElseIf Map_Location2_2 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-2"
-                ElseIf Map_Location2_3 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-3"
-                ElseIf Map_Location2_4 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-4"
-                ElseIf Map_Location2_5 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-5"
-                ElseIf Map_Location2_6 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-6"
-                ElseIf Map_Location2_7 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-7"
-                ElseIf Map_Location2_8 <> Nothing Then
-                    Label_map_location.Text = "Map : 2-8"
-                ElseIf Map_Location3_1 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-1"
-                ElseIf Map_Location3_2 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-2"
-                ElseIf Map_Location3_3 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-3"
-                ElseIf Map_Location3_4 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-4"
-                ElseIf Map_Location3_5 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-5"
-                ElseIf Map_Location3_6 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-6"
-                ElseIf Map_Location3_7 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-7"
-                ElseIf Map_Location3_8 <> Nothing Then
-                    Label_map_location.Text = "Map : 3-8"
-                ElseIf Map_Location4_1 <> Nothing Then
-                    Label_map_location.Text = "Map : 4-1"
-                ElseIf Map_Location4_2 <> Nothing Then
-                    Label_map_location.Text = "Map : 4-2"
-                ElseIf Map_Location4_3 <> Nothing Then
-                    Label_map_location.Text = "Map : 4-3"
-                ElseIf Map_Location4_4 <> Nothing Then
-                    Label_map_location.Text = "Map : 4-4"
-                ElseIf Map_Location4_5 <> Nothing Then
-                    Label_map_location.Text = "Map : 4-5"
-                ElseIf Map_Location5_1 <> Nothing Then
-                    Label_map_location.Text = "Map : 5-1"
-                ElseIf Map_Location5_2 <> Nothing Then
-                    Label_map_location.Text = "Map : 5-2"
-                ElseIf Map_Location5_3 <> Nothing Then
-                    Label_map_location.Text = "Map : 5-3"
-                ElseIf Map_Location1_BL <> Nothing Then
-                    Label_map_location.Text = "Map : 1BL"
-                ElseIf Map_Location2_BL <> Nothing Then
-                    Label_map_location.Text = "Map : 2BL"
-                ElseIf Map_Location3_BL <> Nothing Then
-                    Label_map_location.Text = "Map : 3BL"
-                End If
-                Label_map_location.Update()
-                CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
-                Console.WriteLine("On a reussi ! ")
+        Try
+            If Map_Location1_1 <> Nothing Then
+                Label_map_location.Text = "Map : 1-1"
+            ElseIf Map_Location1_2 <> Nothing Then
+                Label_map_location.Text = "Map : 1-2"
+            ElseIf Map_Location1_3 <> Nothing Then
+                Label_map_location.Text = "Map : 1-3"
+            ElseIf Map_Location1_4 <> Nothing Then
+                Label_map_location.Text = "Map : 1-4"
+            ElseIf Map_Location1_5 <> Nothing Then
+                Label_map_location.Text = "Map : 1-5"
+            ElseIf Map_Location1_6 <> Nothing Then
+                Label_map_location.Text = "Map : 1-6"
+            ElseIf Map_Location1_7 <> Nothing Then
+                Label_map_location.Text = "Map : 1-7"
+            ElseIf Map_Location1_8 <> Nothing Then
+                Label_map_location.Text = "Map : 1-8"
+            ElseIf Map_Location2_1 <> Nothing Then
+                Label_map_location.Text = "Map : 2-1"
+            ElseIf Map_Location2_2 <> Nothing Then
+                Label_map_location.Text = "Map : 2-2"
+            ElseIf Map_Location2_3 <> Nothing Then
+                Label_map_location.Text = "Map : 2-3"
+            ElseIf Map_Location2_4 <> Nothing Then
+                Label_map_location.Text = "Map : 2-4"
+            ElseIf Map_Location2_5 <> Nothing Then
+                Label_map_location.Text = "Map : 2-5"
+            ElseIf Map_Location2_6 <> Nothing Then
+                Label_map_location.Text = "Map : 2-6"
+            ElseIf Map_Location2_7 <> Nothing Then
+                Label_map_location.Text = "Map : 2-7"
+            ElseIf Map_Location2_8 <> Nothing Then
+                Label_map_location.Text = "Map : 2-8"
+            ElseIf Map_Location3_1 <> Nothing Then
+                Label_map_location.Text = "Map : 3-1"
+            ElseIf Map_Location3_2 <> Nothing Then
+                Label_map_location.Text = "Map : 3-2"
+            ElseIf Map_Location3_3 <> Nothing Then
+                Label_map_location.Text = "Map : 3-3"
+            ElseIf Map_Location3_4 <> Nothing Then
+                Label_map_location.Text = "Map : 3-4"
+            ElseIf Map_Location3_5 <> Nothing Then
+                Label_map_location.Text = "Map : 3-5"
+            ElseIf Map_Location3_6 <> Nothing Then
+                Label_map_location.Text = "Map : 3-6"
+            ElseIf Map_Location3_7 <> Nothing Then
+                Label_map_location.Text = "Map : 3-7"
+            ElseIf Map_Location3_8 <> Nothing Then
+                Label_map_location.Text = "Map : 3-8"
+            ElseIf Map_Location4_1 <> Nothing Then
+                Label_map_location.Text = "Map : 4-1"
+            ElseIf Map_Location4_2 <> Nothing Then
+                Label_map_location.Text = "Map : 4-2"
+            ElseIf Map_Location4_3 <> Nothing Then
+                Label_map_location.Text = "Map : 4-3"
+            ElseIf Map_Location4_4 <> Nothing Then
+                Label_map_location.Text = "Map : 4-4"
+            ElseIf Map_Location4_5 <> Nothing Then
+                Label_map_location.Text = "Map : 4-5"
+            ElseIf Map_Location5_1 <> Nothing Then
+                Label_map_location.Text = "Map : 5-1"
+            ElseIf Map_Location5_2 <> Nothing Then
+                Label_map_location.Text = "Map : 5-2"
+            ElseIf Map_Location5_3 <> Nothing Then
+                Label_map_location.Text = "Map : 5-3"
+            ElseIf Map_Location1_BL <> Nothing Then
+                Label_map_location.Text = "Map : 1BL"
+            ElseIf Map_Location2_BL <> Nothing Then
+                Label_map_location.Text = "Map : 2BL"
+            ElseIf Map_Location3_BL <> Nothing Then
+                Label_map_location.Text = "Map : 3BL"
+            End If
+            Label_map_location.Update()
+            CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
+            Console.WriteLine("On a reussi ! ")
+            If UpdateOnly = False Then
                 Checking_minimap()
+            End If
 
-            Catch detect_map_error As Exception
-                Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
-            End Try
+        Catch detect_map_error As Exception
+            Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
+        End Try
 
-        End If
 
 
     End Sub
@@ -554,25 +533,18 @@ Public Class Form_Game
 
     End Sub
 
-    ' POINT DE CHUTE
-    Private Sub Point_de_chute()
+#End Region
 
-        Console.WriteLine("Point de chute atteint, on relance sur checking_minimap")
-        Checking_minimap()
+    ' POINT DE CHUTE = Point_de_chute_Startup
+    Private Async Sub Point_de_chute_Startup(Optional CheckedAll As Boolean = False)
+        'Await Task.Delay(10000)
+        Console.WriteLine("Point de chute atteint")
 
+        If CheckedAll = False Then
+            Checking_minimap()
+        End If
+        'Checking_minimap()
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -648,6 +620,49 @@ Public Class Form_Game
     Private Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
         Startup_bot()
     End Sub
+
+    Dim peakPagedMem As Long = 0
+    Dim peakWorkingSet As Long = 0
+    Dim peakVirtualMem As Long = 0
+
+    Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
+        Dim myProcess = Process.GetCurrentProcess()
+
+        Console.WriteLine($"{myProcess} -")
+        Console.WriteLine("-------------------------------------")
+        Console.WriteLine($"  Physical memory usage     : {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))}")
+        Console.WriteLine($"  Base priority             : {myProcess.BasePriority}")
+        Console.WriteLine($"  Priority class            : {myProcess.PriorityClass}")
+        Console.WriteLine($"  User processor time       : {myProcess.UserProcessorTime}")
+        Console.WriteLine($"  Privileged processor time : {myProcess.PrivilegedProcessorTime}")
+        Console.WriteLine($"  Total processor time      : {myProcess.TotalProcessorTime}")
+        Console.WriteLine($"  Paged system memory size  : {myProcess.PagedSystemMemorySize64}")
+        Console.WriteLine($"  Paged memory size         : {myProcess.PagedMemorySize64}")
+
+        Console.WriteLine(My.Computer.Info.TotalPhysicalMemory)
+        Console.WriteLine($"{Convert.ToInt32(My.Computer.Info.TotalPhysicalMemory / (1024.0F * 1024.0F * 1024.0F))}")
+
+        Try
+            Invoke(New MethodInvoker(Sub()
+                                         Label_PerformanceMemoire.Text = $"RAM Used: {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))} Mo"
+                                         Label_PerformanceMemoire.Update()
+                                     End Sub))
+        Catch ex As Exception
+        End Try
+
+        ' Update the values for the overall peak memory statistics.
+        peakPagedMem = myProcess.PeakPagedMemorySize64
+        peakVirtualMem = myProcess.PeakVirtualMemorySize64
+        peakWorkingSet = myProcess.PeakWorkingSet64
+    End Sub
+
+    Private Async Sub BackgroundWorker_Performance_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Performance.RunWorkerCompleted
+        If BackgroundWorker_Performance.IsBusy = False Then
+            Await Task.Delay(100)
+            BackgroundWorker_Performance.RunWorkerAsync()
+        End If
+    End Sub
+
 End Class
 
 'npc killer
