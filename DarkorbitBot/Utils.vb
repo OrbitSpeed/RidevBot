@@ -218,5 +218,4 @@ Public Class Utils
             Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / ?"
         End If
     End Sub
-
 End Class

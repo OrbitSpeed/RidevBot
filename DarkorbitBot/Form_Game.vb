@@ -1,17 +1,34 @@
-﻿Imports System.Drawing.Imaging
-Imports System.IO
-Imports System.Runtime.CompilerServices
-Imports System.Runtime.InteropServices
+﻿Imports System.Runtime.InteropServices
 Imports AutoItX3Lib
 
 Public Class Form_Game
+    'Test
+    '<DllImport("user32.dll")>
+    'Private Shared Sub mouse_event(dwFlags As UInteger, dx As UInteger, dy As UInteger, dwData As UInteger, dwExtraInfo As Integer)
+    'End Sub
+    '<Flags()>
+    'Public Enum MouseEventFlags As UInteger
+    '    MOUSEEVENTF_ABSOLUTE = &H8000
+    '    MOUSEEVENTF_LEFTDOWN = &H2
+    '    MOUSEEVENTF_LEFTUP = &H4
+    '    MOUSEEVENTF_MIDDLEDOWN = &H20
+    '    MOUSEEVENTF_MIDDLEUP = &H40
+    '    MOUSEEVENTF_MOVE = &H1
+    '    MOUSEEVENTF_RIGHTDOWN = &H8
+    '    MOUSEEVENTF_RIGHTUP = &H10
+    '    MOUSEEVENTF_XDOWN = &H80
+    '    MOUSEEVENTF_XUP = &H100
+    '    MOUSEEVENTF_WHEEL = &H800
+    '    MOUSEEVENTF_HWHEEL = &H1000
+    'End Enum
+    Declare Function BlockInput Lib "user32" (ByVal fBlockIt As Boolean) As Boolean
+
 
     Dim AutoIt As New AutoItX3
     Dim X_TOP As Integer = 0
     Dim Y_TOP As Integer = 64
     Dim X_BOTTOM As Integer = 800
     Dim Y_BOTTOM As Integer = 618
-
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
 
         CloseForm.ShowDialog(Me)
@@ -143,6 +160,8 @@ Public Class Form_Game
             End If
 
         Catch map_error As Exception
+            Console.WriteLine($"map_error error! {map_error.Message}")
+            Startup_bot()
         End Try
 
         Try
@@ -212,8 +231,21 @@ Public Class Form_Game
                             Deplacement_minimap_bas_droite()
                             Exit Sub
                         Else
+                            BlockInput(True)
+                            Console.WriteLine("désactivé")
+
                             Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
                             AutoIt.MouseClick("LEFT")
+
+                            BlockInput(False)
+                            Console.WriteLine("activé")
+
+                            '--Test
+                            'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y + 18)
+                            'mouse_event(MouseEventFlags.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
+                            'mouse_event(MouseEventFlags.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
+                            '--Test
+
                             compare = Minimap_size
                         End If
                     End If
@@ -248,6 +280,7 @@ Public Class Form_Game
 
             If Minimap_move <> Nothing Then
 
+                BlockInput(True)
                 Dim cursor_Pos = Cursor.Position
                 Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
                 AutoIt.MouseDown("LEFT")
@@ -256,6 +289,7 @@ Public Class Form_Game
                 Cursor.Position = cursor_Pos
                 Await Task.Delay(800)
                 Console.WriteLine("déplacement minimap ok")
+                BlockInput(False)
                 Stop_Bot()
             Else
                 System_box_move = True
@@ -277,7 +311,6 @@ Public Class Form_Game
 
     ' TOUJOURS CE REFERENCER ICI !
     Private Async Sub Checking_minimap()
-        Client_Screen = Update_Screen()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -285,6 +318,7 @@ Public Class Form_Game
         End If
 
         Try
+            Client_Screen = Update_Screen()
             Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
             If Save_point_original.X = "762" Then
@@ -297,6 +331,7 @@ Public Class Form_Game
                     Exit Sub
                 End If
                 Checking_minimap()
+                Console.WriteLine("On boucle sur checking_minimap")
                 Exit Sub
             Else
                 Startup_bot()
@@ -460,14 +495,16 @@ Public Class Form_Game
         Try
             Client_Screen = Update_Screen()
             Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-            Dim Connection_Lost2 As Point = Client_Screen.Contains(Disconnected)
 
             If Connection_Lost <> Nothing Then
 
                 Await Task.Delay(2000)
+                Cursor.Position = New Point(300, 354)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
                 Console.WriteLine("Reconnexion")
                 Await Task.Delay(6999)
+                Checking_minimap()
+            Else
                 Checking_minimap()
             End If
 
@@ -501,7 +538,7 @@ Public Class Form_Game
 
     Private Sub Stop_Bot()
         If User_Stop_Bot Then
-            MsgBox("Stopped")
+            Console.WriteLine("Stopped")
         Else
             Checking_minimap()
         End If

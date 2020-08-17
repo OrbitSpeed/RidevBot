@@ -9,8 +9,10 @@
         '???
         Console.WriteLine(formToClose)
         If formToClose = "Form_Game" Then
-            Form_Tools.PictureBox_LaunchBot_Click(Nothing, Nothing)
-            Await Task.Delay(5000)
+            If Form_Game.User_Stop_Bot = False Then
+                Form_Tools.PictureBox_LaunchBot_Click(Nothing, Nothing)
+                Await Task.Delay(1250)
+            End If
         End If
         Form_Tools.TopMost = True
         Form_Tools.TopMost = False
@@ -27,6 +29,12 @@
     End Sub
 
     Private Async Sub Button_CloseAllForm_Click(sender As Object, e As EventArgs) Handles Button_CloseAllForm.Click
+        If formToClose = "Form_Game" Then
+            If Form_Game.User_Stop_Bot = False Then
+                Form_Tools.PictureBox_LaunchBot_Click(Nothing, Nothing)
+                Await Task.Delay(1250)
+            End If
+        End If
         Form_Tools.BackgroundWorker_Timer.CancelAsync()
         'Await Task.Delay(1000)
         Form_Startup.Close()

@@ -2275,7 +2275,7 @@ Public Class Form_Tools
     End Sub
 
     Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
-        Console.WriteLine("click !")
+        'Console.WriteLine("click !")
         Dim tagBoolean As Boolean = PictureBox_epinglerBot.Tag
 
         If tagBoolean Then
@@ -2459,18 +2459,21 @@ Public Class Form_Tools
 
         End If
 
-        Invoke(New MethodInvoker(Sub()
-                                     TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
-                                     TextBox_minutedouble.Text = SID_Minutes
-                                     TextBox_secondsdouble2.Text = SID_Seconds_dixaine
-                                     TextBox_secondsdouble.Text = SID_Seconds
+        Try
+            Invoke(New MethodInvoker(Sub()
+                                         TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
+                                         TextBox_minutedouble.Text = SID_Minutes
+                                         TextBox_secondsdouble2.Text = SID_Seconds_dixaine
+                                         TextBox_secondsdouble.Text = SID_Seconds
 
-                                     TextBox_minutedouble_dixieme.Refresh()
-                                     TextBox_minutedouble.Refresh()
-                                     TextBox_secondsdouble2.Refresh()
-                                     TextBox_secondsdouble.Refresh()
-                                 End Sub))
+                                         TextBox_minutedouble_dixieme.Refresh()
+                                         TextBox_minutedouble.Refresh()
+                                         TextBox_secondsdouble2.Refresh()
+                                         TextBox_secondsdouble.Refresh()
+                                     End Sub))
+        Catch ex As Exception
 
+        End Try
     End Sub
 
     Private Async Sub BackgroundWorker_Timer_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Timer.RunWorkerCompleted
