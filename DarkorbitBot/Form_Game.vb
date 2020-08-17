@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Runtime.InteropServices
 Imports AutoItX3Lib
 
 Public Class Form_Game
@@ -43,10 +42,11 @@ Public Class Form_Game
 
     Public User_Stop_Bot As Boolean = True
     Function Update_Screen()
-
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
         Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
-        Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
+        Invoke(New MethodInvoker(Sub()
+                                     Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
+                                 End Sub))
         Return Client_primary
         'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
     End Function
@@ -123,14 +123,23 @@ Public Class Form_Game
 
 #Region "Checking/reducing/moving and saving minimap"
 
-    Private Async Sub Startup_bot()
+    Private BackgroundWorker_Startup_Bot_Rework As Boolean
+    Private Async Sub BackgroundWorker_Startup_Bot_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Startup_Bot.DoWork
 
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
 
-        WebBrowser_Game_Ridevbot.Select()
+        'Try
+        Invoke(New MethodInvoker(Sub()
+                                     WebBrowser_Game_Ridevbot.Select()
+                                 End Sub))
+        'Catch ex As Exception
+        '    Console.WriteLine($"[ERROR - STR0] Connection_lost_error error! {ex.Message}")
+        '    BackgroundWorker_Startup_Bot_Rework = True
+        'End Try
+
         Client_Screen = Update_Screen()
 
         ' if machin
@@ -138,130 +147,155 @@ Public Class Form_Game
         'exit sub
         'end if
 
-        Try
-            Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-            If Connection_Lost <> Nothing Then
+        'Try
+        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+        If Connection_Lost <> Nothing Then
 
-                Reconnexion()
-                Exit Sub
+            Reconnexion()
+            Exit Sub
 
-            End If
+        End If
 
-        Catch Connection_lost_error As Exception
-            Console.WriteLine($"Connection_lost_error error! {Connection_lost_error.Message}")
-            Startup_bot()
-        End Try
+        'Catch Connection_lost_error As Exception
+        '    Console.WriteLine($"[ERROR - STR1] Connection_lost_error error! {Connection_lost_error.Message}")
+        '    BackgroundWorker_Startup_Bot_Rework = True
+        '    'Startup_bot()
+        'End Try
 
-        Try
-            Client_Screen = Update_Screen()
-            Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
+        'Try
+        Client_Screen = Update_Screen()
+        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
 
-            If Save_point_original.X = "762" Then
-                Checking_minimap()
-                Exit Sub
-            End If
+        If Save_point_original.X = "762" Then
+            BackgroundWorker_Checking_minimap.RunWorkerAsync()
+            Exit Sub
+        End If
 
-        Catch map_error As Exception
-            Console.WriteLine($"map_error error! {map_error.Message}")
-            Startup_bot()
-        End Try
+        'Catch map_error As Exception
+        '    Console.WriteLine($"[ERROR - STR2] map_error error! {map_error.Message}")
+        '    BackgroundWorker_Startup_Bot_Rework = True
+        '    'Startup_bot()
+        'End Try
 
-        Try
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            Form_Tools.TextBox_desactive_allkey.Refresh()
-            Form_Tools.TextBox_desactive_allkey.Update()
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
-            Await Task.Delay(2000)
-            Detection_minimap()
-        Catch ex As Exception
-            Console.WriteLine($"Startup_Bot error! {ex.Message}")
-            Startup_bot()
-        End Try
-
+        'Try
+        Invoke(New MethodInvoker(Sub()
+                                     AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                                     Form_Tools.TextBox_desactive_allkey.Refresh()
+                                     Form_Tools.TextBox_desactive_allkey.Update()
+                                     AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
+                                 End Sub))
+        Await Task.Delay(2000)
+        BackgroundWorker_Detection_minimap.RunWorkerAsync()
+        'Catch ex As Exception
+        '    Console.WriteLine($"[ERROR - STR3] Startup_Bot error! {ex.Message}")
+        '    BackgroundWorker_Startup_Bot_Rework = True
+        '    'Startup_bot()
+        'End Try
+    End Sub
+    Private Sub BackgroundWorker_Startup_Bot_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Startup_Bot.RunWorkerCompleted
+        If BackgroundWorker_Startup_Bot_Rework = True Then
+            BackgroundWorker_Startup_Bot_Rework = False
+            BackgroundWorker_Startup_Bot.RunWorkerAsync()
+        End If
     End Sub
 
-    Private Async Sub Detection_minimap()
+
+    Private BackgroundWorker_Detection_minimap_Rework As Boolean
+    Private Sub BackgroundWorker_Detection_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Detection_minimap.DoWork
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
 
 
-        Try
-            Client_Screen = Update_Screen()
-            System_box_move = False
+        'Try
+        Client_Screen = Update_Screen()
+        System_box_move = False
 
-            Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
-            If Minimap_closed <> Nothing Then
-                WebBrowser_Game_Ridevbot.Select()
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-                Await Task.Delay(3000)
-                Console.WriteLine("Detection minimap ok")
-                Reduction_minimap()
-            Else
-                Startup_bot()
-            End If
+        Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
+        If Minimap_closed <> Nothing Then
+            Invoke(New MethodInvoker(Async Sub()
+                                         WebBrowser_Game_Ridevbot.Select()
+                                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
+                                         Await Task.Delay(2000)
+                                         Console.WriteLine("Detection minimap ok")
+                                         BackgroundWorker_Reduce_minimap.RunWorkerAsync()
+                                     End Sub))
+        Else
+            BackgroundWorker_Startup_Bot.RunWorkerAsync()
+        End If
 
-        Catch Minimap_opened As Exception
-            Console.WriteLine($"Minimap_opened error! {Minimap_opened.Message}")
-        End Try
-
+        'Catch Minimap_opened_error As Exception
+        '    Console.WriteLine($"[MNMAP_0] Minimap_opened error! {Minimap_opened_error.Message}")
+        'End Try
+    End Sub
+    Private Sub BackgroundWorker_Detection_minimap_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Detection_minimap.RunWorkerCompleted
+        If BackgroundWorker_Detection_minimap_Rework = True Then
+            BackgroundWorker_Detection_minimap_Rework = False
+            BackgroundWorker_Detection_minimap.RunWorkerAsync()
+        End If
     End Sub
 
-    Private Async Sub Reduction_minimap()
+
+    'Private BackgroundWorker_reduce_minimap_Rework As Boolean
+    Private Async Sub BackgroundWorker_Reduce_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Reduce_minimap.DoWork
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
 
 
-        Try
-            Client_Screen = Update_Screen()
-            Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
-            Dim compare As Point
+        'Try
+        Client_Screen = Update_Screen()
+        Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
+        Dim compare As Point
 
-            If Minimap_size <> Nothing Then
+        If Minimap_size <> Nothing Then
 
-                For i = 0 To 15
-                    Await Task.Delay(120)
-                    Dim cursor_Pos = Cursor.Position
-                    Client_Screen = Update_Screen()
-                    Minimap_size = Client_Screen.Contains(Minimap_size_ref)
-                    If Minimap_size <> Nothing Then
-                        If compare = Minimap_size Then
-                            i = 15
-                            Console.WriteLine("Réduction faite")
-                            Await Task.Delay(1000)
-                            Deplacement_minimap_bas_droite()
-                            Exit Sub
-                        Else
-                            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
+            For i = 0 To 15
+                Await Task.Delay(120)
+                'Dim cursor_Pos = Cursor.Position
+                Client_Screen = Update_Screen()
+                Minimap_size = Client_Screen.Contains(Minimap_size_ref)
+                If Minimap_size <> Nothing Then
+                    If compare = Minimap_size Then
+                        i = 15
+                        Console.WriteLine("Réduction faite")
+                        Invoke(New MethodInvoker(Async Sub()
+                                                     'Await Task.Delay(1000)
+                                                     BackgroundWorker_Deplacement_minimap_bas_droite.RunWorkerAsync()
+                                                 End Sub))
+                        BackgroundWorker_Reduce_minimap.CancelAsync()
+                    Else
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
 
-                            compare = Minimap_size
-                        End If
+                        compare = Minimap_size
                     End If
-                    Cursor.Position = cursor_Pos
-                Next
-                Console.WriteLine("Passé par la trappe")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
-                Await Task.Delay(1000)
-                Deplacement_minimap_bas_droite()
-            Else
-                If System_box_move = True Then
-                    Startup_bot()
-                Else
-                    Detection_minimap()
                 End If
+                'Cursor.Position = cursor_Pos
+            Next
+            'BackgroundWorker_Reduce_minimap.CancelAsync()
+            'Invoke(New MethodInvoker(Async Sub()
+            '                             Console.WriteLine("Passé par la trappe")
+            '                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
+            '                             Await Task.Delay(1000)
+            '                             BackgroundWorker_Deplacement_minimap_bas_droite.RunWorkerAsync()
+            '                         End Sub))
+        Else
+            If System_box_move = True Then
+                BackgroundWorker_Startup_Bot.RunWorkerAsync()
+            Else
+                BackgroundWorker_Detection_minimap.RunWorkerAsync()
             End If
+        End If
 
-        Catch Reduction_minimap_error As Exception
-            Console.WriteLine($"Reduction_minimap_error error! {Reduction_minimap_error.Message}")
-        End Try
-
+        'Catch Reduction_minimap_error As Exception
+        '    Console.WriteLine($"Reduction_minimap_error error! {vbNewLine}{Reduction_minimap_error.Message}{vbNewLine}------")
+        'End Try
     End Sub
 
-    Private Async Sub Deplacement_minimap_bas_droite()
+    Private Sub BackgroundWorker_Deplacement_minimap_bas_droite_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Deplacement_minimap_bas_droite.DoWork
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -269,32 +303,37 @@ Public Class Form_Game
 
         Client_Screen = Update_Screen()
 
-        Try
-            Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
+        'Try
+        Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
 
-            If Minimap_move <> Nothing Then
+        If Minimap_move <> Nothing Then
 
-                BlockInput(True)
-                Dim cursor_Pos = Cursor.Position
-                Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
-                AutoIt.MouseDown("LEFT")
-                Cursor.Position = New Point(759, 599)
-                AutoIt.MouseUp("LEFT")
-                Cursor.Position = cursor_Pos
-                Await Task.Delay(800)
-                Console.WriteLine("déplacement minimap ok")
-                BlockInput(False)
-                Checking_map_actuel(True)
-                Stop_Bot()
-            Else
-                System_box_move = True
-                Reduction_minimap()
-            End If
+            Invoke(New MethodInvoker(Async Sub()
+                                         BlockInput(True)
+                                         Dim cursor_Pos = Cursor.Position
+                                         Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
+                                         AutoIt.MouseDown("LEFT")
+                                         Await Task.Delay(100)
+                                         Cursor.Position = New Point(759, 599)
+                                         AutoIt.MouseUp("LEFT")
+                                         Cursor.Position = cursor_Pos
+                                         'Await Task.Delay(1200)
+                                         Console.WriteLine("déplacement minimap ok")
+                                         BlockInput(False)
 
-        Catch Deplacement_minimap_bas_droite_error As Exception
-            Console.WriteLine($"Deplacement_minimap_bas_droite_error error! {Deplacement_minimap_bas_droite_error.Message}")
+                                         Checking_map_actuel(True)
+                                         User_Stop_Bot = False
+                                         Stop_Bot()
+                                     End Sub))
+        Else
+            System_box_move = True
+            BackgroundWorker_Reduce_minimap.RunWorkerAsync()
+        End If
 
-        End Try
+        'Catch Deplacement_minimap_bas_droite_error As Exception
+        '    Console.WriteLine($"Deplacement_minimap_bas_droite_error error! {Deplacement_minimap_bas_droite_error.Message}")
+
+        'End Try
     End Sub
 
 #End Region
@@ -305,41 +344,49 @@ Public Class Form_Game
 
 
     ' CHECKING MINIMAP
-    Private Sub Checking_minimap()
+    Private Sub BackgroundWorker_Checking_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Checking_minimap.DoWork
 
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
 
-        Try
-            Client_Screen = Update_Screen()
-            Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
+        Client_Screen = Update_Screen()
+        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
-            If Save_point_original.X = "762" Then
-                'Await Task.Delay(1000)
-                Console.WriteLine("relance")
+        If Save_point_original.X = "762" Then
+            'Await Task.Delay(1000)
+            Console.WriteLine("relance")
 
-                Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-                If Connection_Lost <> Nothing Then
+            Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+            If Connection_Lost <> Nothing Then
 
-                    Reconnexion()
-                    Exit Sub
+                Reconnexion()
+                Exit Sub
 
-                End If
-
-                Checking_map_actuel(True)
-
-                Console.WriteLine("On boucle sur checking_minimap")
-                Point_de_chute_Startup(True)
-            Else
-                Startup_bot()
             End If
 
-        Catch Aucune_map_trouve_error As Exception
-            Console.WriteLine($"Aucune_map_trouve_error! {Aucune_map_trouve_error.Message}")
+            Checking_map_actuel(True)
 
-        End Try
+            Console.WriteLine("On boucle sur checking_minimap")
+            User_Stop_Bot = False
+            BackgroundWorker_Checking_minimap.CancelAsync()
+            Stop_Bot()
+        Else
+            BackgroundWorker_Startup_Bot.RunWorkerAsync()
+        End If
+
+        'Try
+        'Catch Aucune_map_trouve_error As Exception
+        '    Console.WriteLine($"Aucune_map_trouve_error! {Aucune_map_trouve_error.Message}")
+        '    Dim st As New StackTrace(True)
+        '    st = New StackTrace(Aucune_map_trouve_error, True)
+        '    Console.WriteLine("Line: " & st.GetFrame(0).GetFileLineNumber().ToString)
+        '    Console.WriteLine("-------")
+
+        'End Try
+
+
 
     End Sub
 
@@ -394,90 +441,91 @@ Public Class Form_Game
         Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
         Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
 
+
         Try
-            If Map_Location1_1 <> Nothing Then
-                Label_map_location.Text = "Map : 1-1"
-            ElseIf Map_Location1_2 <> Nothing Then
-                Label_map_location.Text = "Map : 1-2"
-            ElseIf Map_Location1_3 <> Nothing Then
-                Label_map_location.Text = "Map : 1-3"
-            ElseIf Map_Location1_4 <> Nothing Then
-                Label_map_location.Text = "Map : 1-4"
-            ElseIf Map_Location1_5 <> Nothing Then
-                Label_map_location.Text = "Map : 1-5"
-            ElseIf Map_Location1_6 <> Nothing Then
-                Label_map_location.Text = "Map : 1-6"
-            ElseIf Map_Location1_7 <> Nothing Then
-                Label_map_location.Text = "Map : 1-7"
-            ElseIf Map_Location1_8 <> Nothing Then
-                Label_map_location.Text = "Map : 1-8"
-            ElseIf Map_Location2_1 <> Nothing Then
-                Label_map_location.Text = "Map : 2-1"
-            ElseIf Map_Location2_2 <> Nothing Then
-                Label_map_location.Text = "Map : 2-2"
-            ElseIf Map_Location2_3 <> Nothing Then
-                Label_map_location.Text = "Map : 2-3"
-            ElseIf Map_Location2_4 <> Nothing Then
-                Label_map_location.Text = "Map : 2-4"
-            ElseIf Map_Location2_5 <> Nothing Then
-                Label_map_location.Text = "Map : 2-5"
-            ElseIf Map_Location2_6 <> Nothing Then
-                Label_map_location.Text = "Map : 2-6"
-            ElseIf Map_Location2_7 <> Nothing Then
-                Label_map_location.Text = "Map : 2-7"
-            ElseIf Map_Location2_8 <> Nothing Then
-                Label_map_location.Text = "Map : 2-8"
-            ElseIf Map_Location3_1 <> Nothing Then
-                Label_map_location.Text = "Map : 3-1"
-            ElseIf Map_Location3_2 <> Nothing Then
-                Label_map_location.Text = "Map : 3-2"
-            ElseIf Map_Location3_3 <> Nothing Then
-                Label_map_location.Text = "Map : 3-3"
-            ElseIf Map_Location3_4 <> Nothing Then
-                Label_map_location.Text = "Map : 3-4"
-            ElseIf Map_Location3_5 <> Nothing Then
-                Label_map_location.Text = "Map : 3-5"
-            ElseIf Map_Location3_6 <> Nothing Then
-                Label_map_location.Text = "Map : 3-6"
-            ElseIf Map_Location3_7 <> Nothing Then
-                Label_map_location.Text = "Map : 3-7"
-            ElseIf Map_Location3_8 <> Nothing Then
-                Label_map_location.Text = "Map : 3-8"
-            ElseIf Map_Location4_1 <> Nothing Then
-                Label_map_location.Text = "Map : 4-1"
-            ElseIf Map_Location4_2 <> Nothing Then
-                Label_map_location.Text = "Map : 4-2"
-            ElseIf Map_Location4_3 <> Nothing Then
-                Label_map_location.Text = "Map : 4-3"
-            ElseIf Map_Location4_4 <> Nothing Then
-                Label_map_location.Text = "Map : 4-4"
-            ElseIf Map_Location4_5 <> Nothing Then
-                Label_map_location.Text = "Map : 4-5"
-            ElseIf Map_Location5_1 <> Nothing Then
-                Label_map_location.Text = "Map : 5-1"
-            ElseIf Map_Location5_2 <> Nothing Then
-                Label_map_location.Text = "Map : 5-2"
-            ElseIf Map_Location5_3 <> Nothing Then
-                Label_map_location.Text = "Map : 5-3"
-            ElseIf Map_Location1_BL <> Nothing Then
-                Label_map_location.Text = "Map : 1BL"
-            ElseIf Map_Location2_BL <> Nothing Then
-                Label_map_location.Text = "Map : 2BL"
-            ElseIf Map_Location3_BL <> Nothing Then
-                Label_map_location.Text = "Map : 3BL"
-            End If
-            Label_map_location.Update()
-            CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
-            Console.WriteLine("On a reussi ! ")
-            If UpdateOnly = False Then
-                Checking_minimap()
-            End If
+            Invoke(New MethodInvoker(Sub()
+                                         If Map_Location1_1 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-1"
+                                         ElseIf Map_Location1_2 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-2"
+                                         ElseIf Map_Location1_3 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-3"
+                                         ElseIf Map_Location1_4 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-4"
+                                         ElseIf Map_Location1_5 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-5"
+                                         ElseIf Map_Location1_6 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-6"
+                                         ElseIf Map_Location1_7 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-7"
+                                         ElseIf Map_Location1_8 <> Nothing Then
+                                             Label_map_location.Text = "Map : 1-8"
+                                         ElseIf Map_Location2_1 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-1"
+                                         ElseIf Map_Location2_2 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-2"
+                                         ElseIf Map_Location2_3 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-3"
+                                         ElseIf Map_Location2_4 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-4"
+                                         ElseIf Map_Location2_5 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-5"
+                                         ElseIf Map_Location2_6 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-6"
+                                         ElseIf Map_Location2_7 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-7"
+                                         ElseIf Map_Location2_8 <> Nothing Then
+                                             Label_map_location.Text = "Map : 2-8"
+                                         ElseIf Map_Location3_1 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-1"
+                                         ElseIf Map_Location3_2 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-2"
+                                         ElseIf Map_Location3_3 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-3"
+                                         ElseIf Map_Location3_4 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-4"
+                                         ElseIf Map_Location3_5 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-5"
+                                         ElseIf Map_Location3_6 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-6"
+                                         ElseIf Map_Location3_7 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-7"
+                                         ElseIf Map_Location3_8 <> Nothing Then
+                                             Label_map_location.Text = "Map : 3-8"
+                                         ElseIf Map_Location4_1 <> Nothing Then
+                                             Label_map_location.Text = "Map : 4-1"
+                                         ElseIf Map_Location4_2 <> Nothing Then
+                                             Label_map_location.Text = "Map : 4-2"
+                                         ElseIf Map_Location4_3 <> Nothing Then
+                                             Label_map_location.Text = "Map : 4-3"
+                                         ElseIf Map_Location4_4 <> Nothing Then
+                                             Label_map_location.Text = "Map : 4-4"
+                                         ElseIf Map_Location4_5 <> Nothing Then
+                                             Label_map_location.Text = "Map : 4-5"
+                                         ElseIf Map_Location5_1 <> Nothing Then
+                                             Label_map_location.Text = "Map : 5-1"
+                                         ElseIf Map_Location5_2 <> Nothing Then
+                                             Label_map_location.Text = "Map : 5-2"
+                                         ElseIf Map_Location5_3 <> Nothing Then
+                                             Label_map_location.Text = "Map : 5-3"
+                                         ElseIf Map_Location1_BL <> Nothing Then
+                                             Label_map_location.Text = "Map : 1BL"
+                                         ElseIf Map_Location2_BL <> Nothing Then
+                                             Label_map_location.Text = "Map : 2BL"
+                                         ElseIf Map_Location3_BL <> Nothing Then
+                                             Label_map_location.Text = "Map : 3BL"
+                                         End If
+                                         Label_map_location.Update()
+                                         CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
+                                         Console.WriteLine("On a reussi ! ")
+                                         If UpdateOnly = False Then
+                                             BackgroundWorker_Checking_minimap.RunWorkerAsync()
+                                         End If
+                                     End Sub))
 
         Catch detect_map_error As Exception
             Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
         End Try
-
-
 
     End Sub
 
@@ -489,45 +537,47 @@ Public Class Form_Game
             Exit Sub
         End If
 
-        Try
+        'Try
+        Client_Screen = Update_Screen()
+        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+
+        If Connection_Lost <> Nothing Then
+            'Cursor.Position = New Point(300, 354 + 18)
+            'Await Task.Delay(1000)
+
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
+            Console.WriteLine("Reconnexion")
+            Await Task.Delay(7000)
+            'Try
             Client_Screen = Update_Screen()
-            Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+            Dim deconnection_popup As Point = Client_Screen.Contains(deconnection_popup_visible)
 
-            If Connection_Lost <> Nothing Then
-                'Cursor.Position = New Point(300, 354 + 18)
-                'Await Task.Delay(1000)
-
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
-                Console.WriteLine("Reconnexion")
-                Await Task.Delay(7000)
-                Try
-                    Client_Screen = Update_Screen()
-                    Dim deconnection_popup As Point = Client_Screen.Contains(deconnection_popup_visible)
-
-                    If deconnection_popup <> Nothing Then
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 409, 348)
-                        Await Task.Delay(1000)
-                        Checking_minimap()
-                    Else
-                        Checking_minimap()
-                    End If
-                Catch detection_popup_error As Exception
-
-                    Console.WriteLine($"detection_popup_error {detection_popup_error.Message}")
-                    Checking_minimap()
-                End Try
-                Checking_minimap()
+            If deconnection_popup <> Nothing Then
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 409, 348)
+                Await Task.Delay(1000)
+                BackgroundWorker_Checking_minimap.RunWorkerAsync()
             Else
-                Console.WriteLine("Reconnexion introuvable")
-                Checking_minimap()
+                BackgroundWorker_Checking_minimap.RunWorkerAsync()
             End If
+            'Catch detection_popup_error As Exception
 
-        Catch Reconnection_errror As Exception
+            '    Console.WriteLine($"detection_popup_error {detection_popup_error.Message}")
+            '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
+            'End Try
+            'BackgroundWorker_Checking_minimap.CancelAsync()
+            'Await Task.Delay(750)
+            'BackgroundWorker_Checking_minimap.RunWorkerAsync() '--
+        Else
+            Console.WriteLine("Reconnexion introuvable")
+            BackgroundWorker_Checking_minimap.RunWorkerAsync()
+        End If
 
-            Console.WriteLine($"Reconnection error {Reconnection_errror.Message}")
-            Checking_minimap()
+        'Catch Reconnection_errror As Exception
 
-        End Try
+        '    Console.WriteLine($"Reconnection error {Reconnection_errror.Message}")
+        '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
+
+        'End Try
 
 
 
@@ -535,26 +585,13 @@ Public Class Form_Game
 
 #End Region
 
-    ' POINT DE CHUTE = Point_de_chute_Startup
-    Private Async Sub Point_de_chute_Startup(Optional CheckedAll As Boolean = False)
-        'Await Task.Delay(10000)
-        Console.WriteLine("Point de chute atteint")
-
-        If CheckedAll = False Then
-            Checking_minimap()
-        End If
-        'Checking_minimap()
-    End Sub
-
-
-
-
-
-    Private Sub Stop_Bot()
+    Private Async Sub Stop_Bot()
         If User_Stop_Bot Then
             Console.WriteLine("Stopped")
         Else
-            Checking_minimap()
+            Await Task.Delay(10000)
+            BackgroundWorker_Checking_minimap.RunWorkerAsync()
+            Console.WriteLine("On relance tous les background worker")
         End If
 
 
@@ -618,29 +655,25 @@ Public Class Form_Game
     End Sub
 
     Private Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
-        Startup_bot()
+        BackgroundWorker_Startup_Bot.RunWorkerAsync()
     End Sub
 
-    Dim peakPagedMem As Long = 0
-    Dim peakWorkingSet As Long = 0
-    Dim peakVirtualMem As Long = 0
-
-    Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
+    Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
         Dim myProcess = Process.GetCurrentProcess()
 
-        Console.WriteLine($"{myProcess} -")
-        Console.WriteLine("-------------------------------------")
-        Console.WriteLine($"  Physical memory usage     : {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))}")
-        Console.WriteLine($"  Base priority             : {myProcess.BasePriority}")
-        Console.WriteLine($"  Priority class            : {myProcess.PriorityClass}")
-        Console.WriteLine($"  User processor time       : {myProcess.UserProcessorTime}")
-        Console.WriteLine($"  Privileged processor time : {myProcess.PrivilegedProcessorTime}")
-        Console.WriteLine($"  Total processor time      : {myProcess.TotalProcessorTime}")
-        Console.WriteLine($"  Paged system memory size  : {myProcess.PagedSystemMemorySize64}")
-        Console.WriteLine($"  Paged memory size         : {myProcess.PagedMemorySize64}")
+        'Console.WriteLine($"{myProcess} -")
+        'Console.WriteLine("-------------------------------------")
+        'Console.WriteLine($"  Physical memory usage     : {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))}")
+        'Console.WriteLine($"  Base priority             : {myProcess.BasePriority}")
+        'Console.WriteLine($"  Priority class            : {myProcess.PriorityClass}")
+        'Console.WriteLine($"  User processor time       : {myProcess.UserProcessorTime}")
+        'Console.WriteLine($"  Privileged processor time : {myProcess.PrivilegedProcessorTime}")
+        'Console.WriteLine($"  Total processor time      : {myProcess.TotalProcessorTime}")
+        'Console.WriteLine($"  Paged system memory size  : {myProcess.PagedSystemMemorySize64}")
+        'Console.WriteLine($"  Paged memory size         : {myProcess.PagedMemorySize64}")
 
-        Console.WriteLine(My.Computer.Info.TotalPhysicalMemory)
-        Console.WriteLine($"{Convert.ToInt32(My.Computer.Info.TotalPhysicalMemory / (1024.0F * 1024.0F * 1024.0F))}")
+        'Console.WriteLine(My.Computer.Info.TotalPhysicalMemory)
+        'Console.WriteLine($"{Convert.ToInt32(My.Computer.Info.TotalPhysicalMemory / (1024.0F * 1024.0F * 1024.0F))}")
 
         Try
             Invoke(New MethodInvoker(Sub()
@@ -650,10 +683,6 @@ Public Class Form_Game
         Catch ex As Exception
         End Try
 
-        ' Update the values for the overall peak memory statistics.
-        peakPagedMem = myProcess.PeakPagedMemorySize64
-        peakVirtualMem = myProcess.PeakVirtualMemorySize64
-        peakWorkingSet = myProcess.PeakWorkingSet64
     End Sub
 
     Private Async Sub BackgroundWorker_Performance_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Performance.RunWorkerCompleted

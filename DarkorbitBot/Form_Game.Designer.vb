@@ -25,6 +25,7 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
@@ -33,7 +34,11 @@ Partial Class Form_Game
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
-        Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
+        Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker_Detection_minimap = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker_Reduce_minimap = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker_Deplacement_minimap_bas_droite = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker_Checking_minimap = New System.ComponentModel.BackgroundWorker()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,6 +64,17 @@ Partial Class Form_Game
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
+        '
+        'Label_PerformanceMemoire
+        '
+        Me.Label_PerformanceMemoire.AutoSize = True
+        Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_PerformanceMemoire.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(152, 0)
+        Me.Label_PerformanceMemoire.Name = "Label_PerformanceMemoire"
+        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(107, 18)
+        Me.Label_PerformanceMemoire.TabIndex = 32
+        Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
         '
         'Label_map_location
         '
@@ -131,16 +147,25 @@ Partial Class Form_Game
         '
         Me.BackgroundWorker_Performance.WorkerSupportsCancellation = True
         '
-        'Label_PerformanceMemoire
+        'BackgroundWorker_Startup_Bot
         '
-        Me.Label_PerformanceMemoire.AutoSize = True
-        Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_PerformanceMemoire.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(152, 0)
-        Me.Label_PerformanceMemoire.Name = "Label_PerformanceMemoire"
-        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(107, 18)
-        Me.Label_PerformanceMemoire.TabIndex = 32
-        Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
+        Me.BackgroundWorker_Startup_Bot.WorkerSupportsCancellation = True
+        '
+        'BackgroundWorker_Detection_minimap
+        '
+        Me.BackgroundWorker_Detection_minimap.WorkerSupportsCancellation = True
+        '
+        'BackgroundWorker_Reduce_minimap
+        '
+        Me.BackgroundWorker_Reduce_minimap.WorkerSupportsCancellation = True
+        '
+        'BackgroundWorker_Deplacement_minimap_bas_droite
+        '
+        Me.BackgroundWorker_Deplacement_minimap_bas_droite.WorkerSupportsCancellation = True
+        '
+        'BackgroundWorker_Checking_minimap
+        '
+        Me.BackgroundWorker_Checking_minimap.WorkerSupportsCancellation = True
         '
         'Form_Game
         '
@@ -156,6 +181,7 @@ Partial Class Form_Game
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form_Game"
@@ -182,4 +208,9 @@ Partial Class Form_Game
     Friend WithEvents Label_map_location As Label
     Friend WithEvents BackgroundWorker_Performance As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label_PerformanceMemoire As Label
+    Friend WithEvents BackgroundWorker_Startup_Bot As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker_Detection_minimap As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker_Reduce_minimap As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker_Deplacement_minimap_bas_droite As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker_Checking_minimap As System.ComponentModel.BackgroundWorker
 End Class

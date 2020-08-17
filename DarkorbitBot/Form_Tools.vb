@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 Public Class Form_Tools
 
     Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
-    Public BeingDragged As Boolean = False
+    Public BeingDragged As Boolean
     Public MouseDownX As Integer
     Public MouseDownY As Integer
     Public Calculator As String
@@ -24,24 +24,24 @@ Public Class Form_Tools
     Public HonorCalculator3 As String
     Public ExpCalculator3 As String
     Public RPCalculator3 As String
-    Public ABG As Boolean = False
+    Public ABG As Boolean
 
-    Public BackgroundWorkerAutospin As Boolean = False
+    Public BackgroundWorkerAutospin As Boolean
 
-    Public CheckedDeltaStats As String = 0
-    Public CheckedEpsilonStats As String = 0
-    Public CheckedZetaStats As String = 0
-    Public CheckedkappaStats As String = 0
-    Public CheckedLambdaStats As String = 0
-    Public CheckedkuiperStats As String = 0
-    Public CheckedHadesStats As String = 0
-    Public CheckedAlphaBetaGammaStats As String = 0
-    Public CheckedAlphaBetaGammaStats2 As String = 0
-    Public CheckedAlphaBetaGammaStats3 As String = 0
+    Public CheckedDeltaStats As String
+    Public CheckedEpsilonStats As String
+    Public CheckedZetaStats As String
+    Public CheckedkappaStats As String
+    Public CheckedLambdaStats As String
+    Public CheckedkuiperStats As String
+    Public CheckedHadesStats As String
+    Public CheckedAlphaBetaGammaStats As String
+    Public CheckedAlphaBetaGammaStats2 As String
+    Public CheckedAlphaBetaGammaStats3 As String
 
-    Public Check_message As Integer = 0
-    Public Reloader As Integer = 0
-    Public Reader As Integer = 0
+    Public Check_message As Integer
+    Public Reloader As Integer
+    Public Reader As Integer
 
 
     Function Reload()
@@ -565,9 +565,9 @@ Public Class Form_Tools
     Dim PartAlpha As String
     Dim PartBeta As String
     Dim PartGamma As String
-    Public AlphaBetaGammaReupload As String = 0
-    Public AlphaBetaGammaReupload2 As String = 0
-    Public AlphaBetaGammaReupload3 As String = 0
+    Public AlphaBetaGammaReupload As String
+    Public AlphaBetaGammaReupload2 As String
+    Public AlphaBetaGammaReupload3 As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         ABG = True
@@ -1574,7 +1574,7 @@ Public Class Form_Tools
 #End Region
 
 #Region "Spin Click"
-    Public numberToSpin As String = 0
+    Public numberToSpin As String
     Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
@@ -2426,10 +2426,10 @@ Public Class Form_Tools
 
     End Sub
 
-    Private SID_Minutes_dixaine As Integer = 0
-    Private SID_Minutes As Integer = 0
-    Private SID_Seconds_dixaine As Integer = 0
-    Private SID_Seconds As Integer = 0
+    Private SID_Minutes_dixaine As Integer
+    Private SID_Minutes As Integer
+    Private SID_Seconds_dixaine As Integer
+    Private SID_Seconds As Integer
 
     Private Sub BackgroundWorker_Timer_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Timer.DoWork
 
