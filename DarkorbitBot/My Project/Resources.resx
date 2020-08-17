@@ -202,6 +202,22 @@
   <data name="connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\connected_moins_fort.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Deconnection_popup_encore_visible" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAIAAABbzbuTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAl1JREFUOE81Uw1PGkEQ3R+xS2kb09IId8fdcRzHx/FxIAp4KFJR8LCkmlIEoybG
+        SNoqwSY2xdgUDG3TNG3SpB8x6b/sW8BkktudmTdv5s0eYd4AjPo0JgSpGGL+qJTbPPjyDybkNpgUYYLB
+        Q4LGvCoyAVCZT2dCiEoGsh8YGangTAFivuYOpOBkkkGRIAQnAJ/OC0sR78Ja9XyYfdkV7PoUINkOMPWL
+        T+BkcgQwUBEm8sLBUmNv9Kc1/BVcfyHZ2zMGe9tjlZoffnbGt+ZWmylRlCZUCnuzT1uj343Lr4+tkktL
+        I++Ooc601JxZqPfH++PbwMozNEJcStx5+7l983c+U2ZqAhmifTfDskO1JA0kHpkF8Oxe/bgfTBO5yMPW
+        zjFV4kwxgRcLtRlDweFOOQa/sdGEJ1rbI7nOG9A9DGfRIpPCXNZ8dQbIV6kcQc9wutQUSMqnA7LevdoZ
+        fGeqyfwTyf0RaakyAyxVIAkE5YUUs9obYk4CKfGhigkvjwm6WzXnMyUYDrjCXADIscrra5Qmq8eXUJMF
+        ElBgth1shh9CfKH8rIOWqnHUrfVuSNRpg91v1ymGQyUOmBl/DnytBsp7rFWkLTRPCcZtDfkS3LqF4XhY
+        0CmypwaeycSbZx+hzRNrheCebBwCvbx/ztSJiOABDIap/FzT9O4JEnKdMyhJuFeOrZ28g6vcHXiSRShG
+        YUqMyuZcNFc8ukAI2tzDWkWDYCa8U+xrsdUFKWK13qhw0INVXl3jCise9d3BJF+IoBOKnwE6TJ4gWgTv
+        8/ffpnkQ0T7s+xYrvLHpbD7tPxUL4D+//eNQAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="Defile_menu_pet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

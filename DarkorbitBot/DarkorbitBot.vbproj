@@ -488,6 +488,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Deconnection_popup_encore_visible.png" />
     <None Include="Resources\ore_collector_module_pet.png" />
     <None Include="Resources\npc_locator_module_pet.png" />
     <None Include="Resources\Kamikaze_active_module_pet.png" />

@@ -73,7 +73,7 @@ Public Class Form_Game
     Dim save_point_x As String = 0
     Dim save_point_Y As String = 0
     Dim passage As String = 0
-    Dim tour As String = 0
+    Dim tour As Integer = 0
 
     ' ⚡ VARIABLES DISCONECTED ⚡
 
@@ -82,11 +82,13 @@ Public Class Form_Game
     ' ⚡ VARIABLES MAP LOCATION ⚡
 
     Dim System_box_move As Boolean = False
+
     Dim Minimap_closed_ref = My.Resources.Minimap_closed
     Dim Minimap_size_ref = My.Resources.Minimap_reduce
     Dim Move_minimap_box_ref = My.Resources.Move_box
     Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
     Dim map_detect_ref = My.Resources.map_detect
+    Dim deconnection_popup_visible = My.Resources.Deconnection_popup_encore_visible
 
     Dim Map1_1 = My.Resources.map1_1
     Dim Map1_2 = My.Resources.map1_2
@@ -129,7 +131,6 @@ Public Class Form_Game
     Dim Map2_BL = My.Resources.map2_BL
     Dim Map3_BL = My.Resources.map3_BL
 
-
     ' ⚡ MODULE MINIMAP ⚡ 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
@@ -152,7 +153,23 @@ Public Class Form_Game
         'end if
 
         Try
+            Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+            If Connection_Lost <> Nothing Then
+
+                Reconnexion()
+                Exit Sub
+
+            End If
+
+        Catch Connection_lost_error As Exception
+            Console.WriteLine($"Connection_lost_error error! {Connection_lost_error.Message}")
+            Startup_bot()
+        End Try
+
+        Try
+            Client_Screen = Update_Screen()
             Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
+
 
             If Save_point_original.X = "762" Then
                 Checking_minimap()
@@ -166,6 +183,8 @@ Public Class Form_Game
 
         Try
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+            Form_Tools.TextBox_desactive_allkey.Refresh()
+            Form_Tools.TextBox_desactive_allkey.Update()
             AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
             Await Task.Delay(2000)
             Detection_minimap()
@@ -231,26 +250,15 @@ Public Class Form_Game
                             Deplacement_minimap_bas_droite()
                             Exit Sub
                         Else
-                            BlockInput(True)
-                            Console.WriteLine("désactivé")
-
-                            Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
-                            AutoIt.MouseClick("LEFT")
-
-                            BlockInput(False)
-                            Console.WriteLine("activé")
-
-                            '--Test
-                            'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y + 18)
-                            'mouse_event(MouseEventFlags.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
-                            'mouse_event(MouseEventFlags.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
-                            '--Test
+                            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
 
                             compare = Minimap_size
                         End If
                     End If
                     Cursor.Position = cursor_Pos
                 Next
+                Console.WriteLine("Passé par la trappe")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
                 Await Task.Delay(1000)
                 Deplacement_minimap_bas_droite()
             Else
@@ -325,14 +333,24 @@ Public Class Form_Game
                 Await Task.Delay(1000)
                 Console.WriteLine("relance")
                 tour += 1
-                If tour = 5 Then
+
+                Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+                If Connection_Lost <> Nothing Then
+
+                    Reconnexion()
+                    Exit Sub
+
+                End If
+
+                If tour = 20 Then
 
                     Checking_map_actuel()
                     Exit Sub
                 End If
-                Checking_minimap()
+
+
                 Console.WriteLine("On boucle sur checking_minimap")
-                Exit Sub
+                Point_de_chute()
             Else
                 Startup_bot()
             End If
@@ -352,53 +370,53 @@ Public Class Form_Game
             Exit Sub
         End If
 
-        If tour = 5 Then
+        If tour = 20 Then
             tour = 0
 
             Client_Screen = Update_Screen()
 
+            Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
+            Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
+            Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
+            Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
+            Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
+            Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
+            Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
+            Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
+
+            Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
+            Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
+            Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
+            Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
+            Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
+            Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
+            Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
+            Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
+
+            Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
+            Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
+            Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
+            Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
+            Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
+            Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
+            Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
+            Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
+
+            Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
+            Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
+            Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
+            Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
+            Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
+
+            Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
+            Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
+            Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
+
+            Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
+            Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
+            Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
+
             Try
-                Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
-                Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
-                Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
-                Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
-                Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
-                Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
-                Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
-                Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
-
-                Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
-                Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
-                Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
-                Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
-                Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
-                Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
-                Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
-                Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
-
-                Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
-                Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
-                Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
-                Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
-                Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
-                Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
-                Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
-                Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
-
-                Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
-                Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
-                Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
-                Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
-                Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
-
-                Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
-                Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
-                Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
-
-                Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
-                Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
-                Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
-
                 If Map_Location1_1 <> Nothing Then
                     Label_map_location.Text = "Map : 1-1"
                 ElseIf Map_Location1_2 <> Nothing Then
@@ -473,7 +491,7 @@ Public Class Form_Game
                 Label_map_location.Update()
                 CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
                 Console.WriteLine("On a reussi ! ")
-                reconnexion()
+                Checking_minimap()
 
             Catch detect_map_error As Exception
                 Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
@@ -484,8 +502,8 @@ Public Class Form_Game
 
     End Sub
 
-    ' CHECK SI ON ES DECONNECTER !
-    Private Async Sub reconnexion()
+    ' CHECK SI ON EST DECONNECTE !
+    Private Async Sub Reconnexion()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -497,19 +515,37 @@ Public Class Form_Game
             Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
 
             If Connection_Lost <> Nothing Then
+                'Cursor.Position = New Point(300, 354 + 18)
+                'Await Task.Delay(1000)
 
-                Await Task.Delay(2000)
-                Cursor.Position = New Point(300, 354)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
                 Console.WriteLine("Reconnexion")
-                Await Task.Delay(6999)
+                Await Task.Delay(7000)
+                Try
+                    Client_Screen = Update_Screen()
+                    Dim deconnection_popup As Point = Client_Screen.Contains(deconnection_popup_visible)
+
+                    If deconnection_popup <> Nothing Then
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 409, 348)
+                        Await Task.Delay(1000)
+                        Checking_minimap()
+                    Else
+                        Checking_minimap()
+                    End If
+                Catch detection_popup_error As Exception
+
+                    Console.WriteLine($"detection_popup_error {detection_popup_error.Message}")
+                    Checking_minimap()
+                End Try
                 Checking_minimap()
             Else
+                Console.WriteLine("Reconnexion introuvable")
                 Checking_minimap()
             End If
 
-        Catch Connected As Exception
+        Catch Reconnection_errror As Exception
 
+            Console.WriteLine($"Reconnection error {Reconnection_errror.Message}")
             Checking_minimap()
 
         End Try
@@ -518,7 +554,13 @@ Public Class Form_Game
 
     End Sub
 
+    ' POINT DE CHUTE
+    Private Sub Point_de_chute()
 
+        Console.WriteLine("Point de chute atteint, on relance sur checking_minimap")
+        Checking_minimap()
+
+    End Sub
 
 
 
@@ -701,6 +743,27 @@ End Class
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+' pour le click souris + blocage
+
+'BlockInput(True)
+'Console.WriteLine("désactivé")
+
+'Cursor.Position = New Point(Minimap_size.X, Minimap_size.Y + 18)
+'AutoIt.MouseClick("LEFT")
+
+'BlockInput(False)
+'Console.WriteLine("activé")
 
 
 

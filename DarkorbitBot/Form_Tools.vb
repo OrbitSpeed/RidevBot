@@ -39,9 +39,9 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats2 As String = 0
     Public CheckedAlphaBetaGammaStats3 As String = 0
 
-    Public Check_message As String = 0
-    Public Reloader As String = 0
-    Public Reader As String = 0
+    Public Check_message As Integer = 0
+    Public Reloader As Integer = 0
+    Public Reader As Integer = 0
 
 
     Function Reload()
@@ -49,7 +49,6 @@ Public Class Form_Tools
         If Reloader = 0 Then
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
             Reloader = 1
-        Else
         End If
 
 
@@ -2319,6 +2318,7 @@ Public Class Form_Tools
             Me.Close()
 
 
+
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
 
             Form_Game.Visible = False
@@ -2326,6 +2326,7 @@ Public Class Form_Tools
             WebBrowser_Synchronisation.Navigate("about:blank")
             Check_message = 1
             Me.Close()
+
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
 
@@ -2405,6 +2406,10 @@ Public Class Form_Tools
 
         If BackgroundWorker_Timer.IsBusy = True Then
             BackgroundWorker_Timer.CancelAsync()
+            SID_Minutes_dixaine = 0
+            SID_Minutes = 0
+            SID_Seconds_dixaine = 0
+            SID_Seconds = 0
         End If
 
         TextBox_Get_Dosid.Text = ""
@@ -2413,10 +2418,10 @@ Public Class Form_Tools
 
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
-        TextBox_minutedouble_dixieme.Text = "0"
-        TextBox_minutedouble.Text = "0"
-        TextBox_secondsdouble2.Text = "0"
-        TextBox_secondsdouble.Text = "0"
+        'TextBox_minutedouble_dixieme.Text = "0"
+        'TextBox_minutedouble.Text = "0"
+        'TextBox_secondsdouble2.Text = "0"
+        'TextBox_secondsdouble.Text = "0"
         textbox_stade.Text = "Checking URL Profil ... "
 
     End Sub
@@ -2447,13 +2452,17 @@ Public Class Form_Tools
         If SID_Minutes_dixaine = 1 Then
 
             Invoke(New MethodInvoker(Sub()
-                                         Button_revive_sid.PerformClick()
+                                         Try
+                                             Button_revive_sid.PerformClick()
+                                         Catch ex As Exception
+                                             Console.WriteLine($"Method invoker SID minutes dixaine error - {ex.Message}")
+                                         End Try
                                      End Sub))
 
-            TextBox_minutedouble_dixieme.Text = "0"
-            TextBox_minutedouble.Text = "0"
-            TextBox_secondsdouble2.Text = "0"
-            TextBox_secondsdouble.Text = "0"
+            'TextBox_minutedouble_dixieme.Text = "0"
+            'TextBox_minutedouble.Text = "0"
+            'TextBox_secondsdouble2.Text = "0"
+            'TextBox_secondsdouble.Text = "0"
 
             'TextBox_minutedouble_dixieme.Text = Val(TextBox_minutedouble_dixieme.Text) + 1
 
@@ -2461,18 +2470,22 @@ Public Class Form_Tools
 
         Try
             Invoke(New MethodInvoker(Sub()
-                                         TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
-                                         TextBox_minutedouble.Text = SID_Minutes
-                                         TextBox_secondsdouble2.Text = SID_Seconds_dixaine
-                                         TextBox_secondsdouble.Text = SID_Seconds
+                                         Try
+                                             TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
+                                             TextBox_minutedouble.Text = SID_Minutes
+                                             TextBox_secondsdouble2.Text = SID_Seconds_dixaine
+                                             TextBox_secondsdouble.Text = SID_Seconds
 
-                                         TextBox_minutedouble_dixieme.Refresh()
-                                         TextBox_minutedouble.Refresh()
-                                         TextBox_secondsdouble2.Refresh()
-                                         TextBox_secondsdouble.Refresh()
+                                             TextBox_minutedouble_dixieme.Refresh()
+                                             TextBox_minutedouble.Refresh()
+                                             TextBox_secondsdouble2.Refresh()
+                                             TextBox_secondsdouble.Refresh()
+                                         Catch MethodInvoker As Exception
+                                             Console.WriteLine($"Error on MethodInvoker {MethodInvoker.Message}")
+                                         End Try
                                      End Sub))
-        Catch ex As Exception
-
+        Catch invoke_error As Exception
+            Console.WriteLine($"Error on Invoke_error {invoke_error.Message}")
         End Try
     End Sub
 

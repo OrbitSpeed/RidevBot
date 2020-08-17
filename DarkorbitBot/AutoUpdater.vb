@@ -17,7 +17,7 @@ Public Class AutoUpdater
     Public LastChangeLog As String
     Public Check_Maintenance As Boolean
 
-    Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Size = New Size(363, 410)
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
@@ -32,6 +32,16 @@ Public Class AutoUpdater
         '---
         AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
         WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
+
+
+        AxWindowsMediaPlayer1.URL = FilePath
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
+        Await Task.Delay(265)
+        AxWindowsMediaPlayer1.Visible = True
+
+        Await Task.Delay(2200)
+
+        AxWindowsMediaPlayer1.Ctlcontrols.pause()
     End Sub
 
     Private Sub WC_Check_Maintenance_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
@@ -118,15 +128,14 @@ Public Class AutoUpdater
             Button_Update.Enabled = True
             Form_Tools.TextBox_Changelog.Text = e.Result
 
-            AxWindowsMediaPlayer1.URL = FilePath
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
-            Dim wait = Task.Delay(265)
-            Await wait
-            AxWindowsMediaPlayer1.Visible = True
+            'AxWindowsMediaPlayer1.URL = FilePath
+            'AxWindowsMediaPlayer1.Ctlcontrols.play()
+            'Await Task.Delay(265)
+            'AxWindowsMediaPlayer1.Visible = True
 
-            Dim attendre = Task.Delay(2200)
-            Await attendre
-            AxWindowsMediaPlayer1.Ctlcontrols.pause()
+            'Await Task.Delay(2200)
+
+            'AxWindowsMediaPlayer1.Ctlcontrols.pause()
 
             If Check_Maintenance = False And My.Settings.AutoUpdate = True Then
                 Dim delay = Task.Delay(500)

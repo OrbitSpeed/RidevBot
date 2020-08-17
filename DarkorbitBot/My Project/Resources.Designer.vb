@@ -142,6 +142,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Deconnection_popup_encore_visible() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Deconnection_popup_encore_visible", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Defile_menu_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Defile_menu_pet", resourceCulture)
