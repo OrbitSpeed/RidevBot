@@ -4,12 +4,14 @@
         My.Computer.Audio.PlaySystemSound(System.Media.SystemSounds.Asterisk)
         formToClose = Owner.Name
     End Sub
-    Private Sub Yes_button_Click(sender As Object, e As EventArgs) Handles Yes_button.Click
+    Private Async Sub Yes_button_Click(sender As Object, e As EventArgs) Handles Yes_button.Click
         'MsgBox(formToClose)
         '???
-        'If formToClose = "Form_Game" Then
-        '    Form_Tools.BackgroundWorker_Timer.CancelAsync()
-        'End If
+        Console.WriteLine(formToClose)
+        If formToClose = "Form_Game" Then
+            Form_Tools.PictureBox_LaunchBot_Click(Nothing, Nothing)
+            Await Task.Delay(5000)
+        End If
         Form_Tools.TopMost = True
         Form_Tools.TopMost = False
         Owner.Close()

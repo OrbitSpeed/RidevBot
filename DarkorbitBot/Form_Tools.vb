@@ -2492,7 +2492,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
+    Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
         If Form_Game.User_Stop_Bot = True Then
             PictureBox_LaunchBot.Image = My.Resources.img_pause
             Form_Game.User_Stop_Bot = False

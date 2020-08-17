@@ -25,12 +25,13 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.Button_Bot = New System.Windows.Forms.Button()
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
+        Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,25 +49,13 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Label_map_location)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.Label_Title)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
         '
         'TextBox_getserver
         '
@@ -102,6 +91,19 @@ Partial Class Form_Game
         Me.Button_cargobox.Text = "Cargobox"
         Me.Button_cargobox.UseVisualStyleBackColor = True
         '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
         'WebBrowser_Game_Ridevbot
         '
         Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
@@ -111,6 +113,16 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
+        '
+        'Label_map_location
+        '
+        Me.Label_map_location.AutoSize = True
+        Me.Label_map_location.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_map_location.Location = New System.Drawing.Point(694, 0)
+        Me.Label_map_location.Name = "Label_map_location"
+        Me.Label_map_location.Size = New System.Drawing.Size(79, 18)
+        Me.Label_map_location.TabIndex = 31
+        Me.Label_map_location.Text = "Map : 0-0"
         '
         'Form_Game
         '
@@ -149,4 +161,5 @@ Partial Class Form_Game
     Friend WithEvents Button_Bot As Button
     Friend WithEvents Button_bonusbox As Button
     Friend WithEvents Button_cargobox As Button
+    Friend WithEvents Label_map_location As Label
 End Class

@@ -35,28 +35,11 @@ Public Class Form_Game
         Me.TopMost = True
     End Sub
 
-
-
-
-
-
-
-
-
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     ' █                                                                                                                                █
     ' █                                                          RidevBot BOT                                                          █
     ' █                                                                                                                                █
     ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-    ' ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-
-
-
-
-
-
-
-
 
     Public User_Stop_Bot As Boolean = True
     Function Update_Screen()
@@ -68,20 +51,76 @@ Public Class Form_Game
         'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
     End Function
 
+
+
     Dim System_box_move As Boolean = False
     Dim save_point_x As String = 0
     Dim save_point_Y As String = 0
     Dim passage As String = 0
-
     Dim Minimap_closed_ref = My.Resources.Minimap_closed
     Dim Minimap_size_ref = My.Resources.Minimap_reduce
     Dim Move_minimap_box_ref = My.Resources.Move_box
     Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
     Dim map_detect_ref = My.Resources.map_detect
-
     Dim Client_Screen As Bitmap
 
+    ' ⚡ VARIABLES MAP LOCATION ⚡
+
+    Dim Map1_1 = My.Resources.map1_1
+    Dim Map1_2 = My.Resources.map1_2
+    Dim Map1_3 = My.Resources.map1_3
+    Dim Map1_4 = My.Resources.map1_4
+    Dim Map1_5 = My.Resources.map1_5
+    Dim Map1_6 = My.Resources.map1_6
+    Dim Map1_7 = My.Resources.map1_7
+    Dim Map1_8 = My.Resources.map1_8
+
+    Dim Map2_1 = My.Resources.map2_1
+    Dim Map2_2 = My.Resources.map2_2
+    Dim Map2_3 = My.Resources.map2_3
+    Dim Map2_4 = My.Resources.map2_4
+    Dim Map2_5 = My.Resources.map2_5
+    Dim Map2_6 = My.Resources.map2_6
+    Dim Map2_7 = My.Resources.map2_7
+    Dim Map2_8 = My.Resources.map2_8
+
+    Dim Map3_1 = My.Resources.map3_1
+    Dim Map3_2 = My.Resources.map3_2
+    Dim Map3_3 = My.Resources.map3_3
+    Dim Map3_4 = My.Resources.map3_4
+    Dim Map3_5 = My.Resources.map3_5
+    Dim Map3_6 = My.Resources.map3_6
+    Dim Map3_7 = My.Resources.map3_7
+    Dim Map3_8 = My.Resources.map3_8
+
+    Dim Map4_1 = My.Resources.map4_1
+    Dim Map4_2 = My.Resources.map4_2
+    Dim Map4_3 = My.Resources.map4_3
+    Dim Map4_4 = My.Resources.map4_4
+    Dim Map4_5 = My.Resources.map4_5
+
+    Dim Map5_1 = My.Resources.map5_1
+    Dim Map5_2 = My.Resources.map5_2
+    Dim Map5_3 = My.Resources.map5_3
+
+    Dim Map1_BL = My.Resources.map1_BL
+    Dim Map2_BL = My.Resources.map2_BL
+    Dim Map3_BL = My.Resources.map3_BL
+
+
+    ' ⚡ VARIABLES MAP LOCATION ⚡
+
+
+
+
+    ' ⚡ MODULE MINIMAP ⚡
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
+
+#Region "Checking/reducing/moving and saving minimap"
+
     Private Async Sub Startup_bot()
+
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -229,17 +268,27 @@ Public Class Form_Game
         End Try
     End Sub
 
+#End Region
+
+    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    ' ⚡ MODULE MINIMAP ⚡
 
     Private Async Sub Checking_minimap()
         Client_Screen = Update_Screen()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         Try
             Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
 
             If Save_point_original.X = "762" Then
+                Await Task.Delay(1000)
                 Console.WriteLine("relance")
-                Await Task.Delay(10000)
-                Stop_Bot()
+                Checking_map_actuel()
                 Exit Sub
             Else
                 Startup_bot()
@@ -248,6 +297,141 @@ Public Class Form_Game
         Catch Aucune_map_trouve_error As Exception
             Console.WriteLine($"Aucune_map_trouve_error! {Aucune_map_trouve_error.Message}")
 
+        End Try
+
+    End Sub
+
+    Public CurrentMapUser = "0-0"
+    Private Async Sub Checking_map_actuel()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        Client_Screen = Update_Screen()
+
+        Try
+            Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
+            Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
+            Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
+            Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
+            Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
+            Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
+            Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
+            Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
+
+            Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
+            Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
+            Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
+            Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
+            Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
+            Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
+            Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
+            Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
+
+            Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
+            Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
+            Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
+            Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
+            Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
+            Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
+            Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
+            Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
+
+            Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
+            Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
+            Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
+            Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
+            Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
+
+            Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
+            Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
+            Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
+
+            Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
+            Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
+            Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
+
+            If Map_Location1_1 <> Nothing Then
+                Label_map_location.Text = "Map : 1-1"
+            ElseIf Map_Location1_2 <> Nothing Then
+                Label_map_location.Text = "Map : 1-2"
+            ElseIf Map_Location1_3 <> Nothing Then
+                Label_map_location.Text = "Map : 1-3"
+            ElseIf Map_Location1_4 <> Nothing Then
+                Label_map_location.Text = "Map : 1-4"
+            ElseIf Map_Location1_5 <> Nothing Then
+                Label_map_location.Text = "Map : 1-5"
+            ElseIf Map_Location1_6 <> Nothing Then
+                Label_map_location.Text = "Map : 1-6"
+            ElseIf Map_Location1_7 <> Nothing Then
+                Label_map_location.Text = "Map : 1-7"
+            ElseIf Map_Location1_8 <> Nothing Then
+                Label_map_location.Text = "Map : 1-8"
+            ElseIf Map_Location2_1 <> Nothing Then
+                Label_map_location.Text = "Map : 2-1"
+            ElseIf Map_Location2_2 <> Nothing Then
+                Label_map_location.Text = "Map : 2-2"
+            ElseIf Map_Location2_3 <> Nothing Then
+                Label_map_location.Text = "Map : 2-3"
+            ElseIf Map_Location2_4 <> Nothing Then
+                Label_map_location.Text = "Map : 2-4"
+            ElseIf Map_Location2_5 <> Nothing Then
+                Label_map_location.Text = "Map : 2-5"
+            ElseIf Map_Location2_6 <> Nothing Then
+                Label_map_location.Text = "Map : 2-6"
+            ElseIf Map_Location2_7 <> Nothing Then
+                Label_map_location.Text = "Map : 2-7"
+            ElseIf Map_Location2_8 <> Nothing Then
+                Label_map_location.Text = "Map : 2-8"
+            ElseIf Map_Location3_1 <> Nothing Then
+                Label_map_location.Text = "Map : 3-1"
+            ElseIf Map_Location3_2 <> Nothing Then
+                Label_map_location.Text = "Map : 3-2"
+            ElseIf Map_Location3_3 <> Nothing Then
+                Label_map_location.Text = "Map : 3-3"
+            ElseIf Map_Location3_4 <> Nothing Then
+                Label_map_location.Text = "Map : 3-4"
+            ElseIf Map_Location3_5 <> Nothing Then
+                Label_map_location.Text = "Map : 3-5"
+            ElseIf Map_Location3_6 <> Nothing Then
+                Label_map_location.Text = "Map : 3-6"
+            ElseIf Map_Location3_7 <> Nothing Then
+                Label_map_location.Text = "Map : 3-7"
+            ElseIf Map_Location3_8 <> Nothing Then
+                Label_map_location.Text = "Map : 3-8"
+            ElseIf Map_Location4_1 <> Nothing Then
+                Label_map_location.Text = "Map : 4-1"
+            ElseIf Map_Location4_2 <> Nothing Then
+                Label_map_location.Text = "Map : 4-2"
+            ElseIf Map_Location4_3 <> Nothing Then
+                Label_map_location.Text = "Map : 4-3"
+            ElseIf Map_Location4_4 <> Nothing Then
+                Label_map_location.Text = "Map : 4-4"
+            ElseIf Map_Location4_5 <> Nothing Then
+                Label_map_location.Text = "Map : 4-5"
+            ElseIf Map_Location5_1 <> Nothing Then
+                Label_map_location.Text = "Map : 5-1"
+            ElseIf Map_Location5_2 <> Nothing Then
+                Label_map_location.Text = "Map : 5-2"
+            ElseIf Map_Location5_3 <> Nothing Then
+                Label_map_location.Text = "Map : 5-3"
+            ElseIf Map_Location1_BL <> Nothing Then
+                Label_map_location.Text = "Map : 1BL"
+            ElseIf Map_Location2_BL <> Nothing Then
+                Label_map_location.Text = "Map : 2BL"
+            ElseIf Map_Location3_BL <> Nothing Then
+                Label_map_location.Text = "Map : 3BL"
+            End If
+            Label_map_location.Update()
+            CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
+            Await Task.Delay(5000)
+            Console.WriteLine("On a reussi ! ")
+            Checking_minimap()
+
+        Catch detect_map_error As Exception
+            Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
         End Try
 
     End Sub
@@ -282,66 +466,6 @@ Public Class Form_Game
 
         'End Try
     End Sub
-
-    '    Private Async Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
-
-    'Label_HOME_lancement_du_bot:
-
-    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '        ' █                                                            █
-    '        ' █                Detecte la minimap et l'ouvre               █
-    '        ' █                                                            █
-    '        ' █                         < Balise 2 >                       █
-    '        ' █                                                            █
-    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-    'Label_Detection_Minimap_et_ouverture:
-
-
-
-    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '        ' █                                                            █
-    '        ' █                reduit la minimap au minimum                █
-    '        ' █                                                            █
-    '        ' █                        < Balise 3 >                        █
-    '        ' █                                                            █
-    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-    'Label_Reduction_minimap:
-
-
-
-    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '        ' █                                                            █
-    '        ' █           deplace la minimap en bas a droite               █
-    '        ' █                                                            █
-    '        ' █                        < Balise 4 >                        █
-    '        ' █                                                            █
-    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-    'Label_Deplacement_miniamp_basdroite:
-
-
-
-
-    '        ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '        ' █                                                            █
-    '        ' █               Check dans quel map il se trouve             █
-    '        ' █                                                            █
-    '        ' █                          < Balise 1 >                      █
-    '        ' █                                                            █
-    '        ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-    'Label_Checking_minimap:
-
-
-    'Exit_:
-
-
-    '    End Sub
-
-
-
-
-
-
-
 
 
     Private Async Sub GoToPalladium(palla)
