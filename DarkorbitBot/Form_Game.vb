@@ -35,7 +35,7 @@ Public Class Form_Game
             BackgroundWorker_Performance.RunWorkerAsync()
         End If
 
-        Traveling_module()
+        'Traveling_module()
     End Sub
 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -594,13 +594,6 @@ Public Class Form_Game
 
 
 
-
-
-
-
-
-
-
     Private Sub CLICK_HAUT_DROITE()
 
         'HAUT DROITE 
@@ -631,11 +624,19 @@ Public Class Form_Game
     End Sub
 
     Private Async Sub POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-        Await Task.Delay(15000)
-        WebBrowser_Game_Ridevbot.Focus()
-        My.Computer.Keyboard.SendKeys("J")
+        If User_Stop_Bot Then
+            'Stop_Bot()
+            Exit Sub
+        End If
+        Console.WriteLine("Point de chute du click traveling atteint")
         Await Task.Delay(5000)
+        'My.Computer.Keyboard.SendKeys("J")
+        'WebBrowser_Game_Ridevbot.Focus()
+        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "J")
+        Console.WriteLine("Sended J")
+        'AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "j")
+        'Console.WriteLine("Sended j")
+        Await Task.Delay(9000)
         Traveling_module()
 
     End Sub
@@ -643,6 +644,10 @@ Public Class Form_Game
 
 
     Private Sub Traveling_module()
+        If User_Stop_Bot Then
+            'Stop_Bot()
+            Exit Sub
+        End If
 
         'Dim Map_VRU As New List(Of String) From {"3-1", "3-2", "3-3"}
         'For Each map In Map_VRU
@@ -654,45 +659,62 @@ Public Class Form_Game
         Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
         Console.WriteLine(Map_roaming)
 
-        If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
+        If Map_actuelle <> Map_roaming Then
+            'Si on est pas dans la bonne map choisie par l'utilisateur alors...
 
-            CLICK_BAS_DROITE()
+#Region "1.8"
+            If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
 
-        ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-6" Then
+                CLICK_BAS_DROITE()
 
-            CLICK_HAUT_DROITE()
+            ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-6" Then
 
-        ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-8" Then
+                CLICK_HAUT_DROITE()
 
-            CLICK_HAUT_GAUCHE()
+            ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-5" Then
 
-        ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
+                CLICK_HAUT_DROITE()
+#End Region
 
-            CLICK_HAUT_DROITE()
+#Region "1-7"
+            ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-8" Then
 
-        ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-8" Then
+                CLICK_HAUT_GAUCHE()
 
-            CLICK_BAS_GAUCHE()
+            ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
 
-        ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
+                CLICK_HAUT_DROITE()
+#End Region
 
-            CLICK_BAS_DROITE()
+#Region "1-6"
+            ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-8" Then
 
-        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-7" Then
+                CLICK_BAS_GAUCHE()
 
-            CLICK_BAS_GAUCHE()
+            ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
 
-        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
+                CLICK_BAS_DROITE()
+#End Region
 
-            CLICK_HAUT_GAUCHE()
+#Region "1-5"
+            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-7" Then
 
-        ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-5" Then
+                CLICK_BAS_GAUCHE()
 
-            CLICK_HAUT_DROITE()
+            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
 
-        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-8" Then
+                CLICK_HAUT_GAUCHE()
 
-            CLICK_BAS_GAUCHE()
+
+            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-8" Then
+
+                CLICK_BAS_GAUCHE()
+
+            End If
+#End Region
+
+        Else
+            'On est dans la bonne map choisie alors...
 
         End If
 

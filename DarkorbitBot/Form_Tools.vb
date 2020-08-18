@@ -44,7 +44,7 @@ Public Class Form_Tools
     Public Reader As Integer
 
 
-    Function Reload()
+    Public Sub Reload()
 
         If Reloader = 0 Then
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
@@ -52,7 +52,7 @@ Public Class Form_Tools
         End If
 
 
-    End Function
+    End Sub
 
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
@@ -2490,8 +2490,8 @@ Public Class Form_Tools
     End Sub
 
     Private Async Sub BackgroundWorker_Timer_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Timer.RunWorkerCompleted
+        Await Task.Delay(980)
         If BackgroundWorker_Timer.IsBusy = False Then
-            Await Task.Delay(980)
             BackgroundWorker_Timer.RunWorkerAsync()
         End If
     End Sub
