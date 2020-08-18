@@ -35,6 +35,7 @@ Public Class Form_Game
             BackgroundWorker_Performance.RunWorkerAsync()
         End If
 
+
         'Traveling_module()
     End Sub
 
@@ -742,11 +743,28 @@ Public Class Form_Game
     End Sub
 
     Private Async Sub Traveling_module()
-        BackgroundWorker_Startup_Bot.CancelAsync()
+
+        'For Each bg_worker As BackgroundWorker In (Of BackgroundWorker)
+        '    bg_worker.CancelAsync()
+        '    Console.WriteLine($"Le bg_worker: '{bg_worker}' a été arrêté")
+        'Next
 
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
+        End If
+
+        If BackgroundWorker_Startup_Bot.IsBusy Or BackgroundWorker_Checking_minimap.IsBusy Or BackgroundWorker_Deplacement_minimap_bas_droite.IsBusy Or BackgroundWorker_Detection_minimap.IsBusy Or BackgroundWorker_Reduce_minimap.IsBusy Then
+            'Await Task.Delay(350)
+            Console.WriteLine($"Les backgrounds sont en cours, on coupe tout")
+            User_Stop_Bot = True
+            BackgroundWorker_Startup_Bot.CancelAsync()
+            BackgroundWorker_Checking_minimap.CancelAsync()
+            BackgroundWorker_Deplacement_minimap_bas_droite.CancelAsync()
+            BackgroundWorker_Detection_minimap.CancelAsync()
+            BackgroundWorker_Reduce_minimap.CancelAsync()
+            Await Task.Delay(600)
+            User_Stop_Bot = False
         End If
 
         Client_Screen = Update_Screen()
@@ -754,18 +772,22 @@ Public Class Form_Game
         Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
         If Save_point_original.X = "762" Then
             'Await Task.Delay(1000)
-            Console.WriteLine("tout es safe")
+            Console.WriteLine("tout est safe")
 
         Else
-            BackgroundWorker_Startup_Bot.RunWorkerAsync()
-            Exit Sub
+            If BackgroundWorker_Startup_Bot.IsBusy = False Then
+                BackgroundWorker_Startup_Bot.RunWorkerAsync()
+                Exit Sub
+            End If
         End If
 
         Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
         If Connection_Lost <> Nothing Then
 
-            BackgroundWorker_Startup_Bot.RunWorkerAsync()
-            Exit Sub
+            If BackgroundWorker_Startup_Bot.IsBusy = False Then
+                BackgroundWorker_Startup_Bot.RunWorkerAsync()
+                Exit Sub
+            End If
 
         End If
 
