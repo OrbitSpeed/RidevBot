@@ -56,8 +56,11 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
+        Me.Panel7.Controls.Add(Me.Button_bonusbox)
         Me.Panel7.Controls.Add(Me.Label_map_location)
+        Me.Panel7.Controls.Add(Me.Button_Bot)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.Label_Title)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
@@ -108,27 +111,27 @@ Partial Class Form_Game
         '
         'Button_Bot
         '
-        Me.Button_Bot.Location = New System.Drawing.Point(12, 50)
+        Me.Button_Bot.Location = New System.Drawing.Point(265, -1)
         Me.Button_Bot.Name = "Button_Bot"
-        Me.Button_Bot.Size = New System.Drawing.Size(100, 37)
+        Me.Button_Bot.Size = New System.Drawing.Size(100, 19)
         Me.Button_Bot.TabIndex = 29
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
         '
         'Button_bonusbox
         '
-        Me.Button_bonusbox.Location = New System.Drawing.Point(12, 93)
+        Me.Button_bonusbox.Location = New System.Drawing.Point(371, -2)
         Me.Button_bonusbox.Name = "Button_bonusbox"
-        Me.Button_bonusbox.Size = New System.Drawing.Size(100, 37)
+        Me.Button_bonusbox.Size = New System.Drawing.Size(100, 20)
         Me.Button_bonusbox.TabIndex = 30
-        Me.Button_bonusbox.Text = "Bonus box"
+        Me.Button_bonusbox.Text = "Traveling"
         Me.Button_bonusbox.UseVisualStyleBackColor = True
         '
         'Button_cargobox
         '
-        Me.Button_cargobox.Location = New System.Drawing.Point(12, 136)
+        Me.Button_cargobox.Location = New System.Drawing.Point(477, -1)
         Me.Button_cargobox.Name = "Button_cargobox"
-        Me.Button_cargobox.Size = New System.Drawing.Size(100, 37)
+        Me.Button_cargobox.Size = New System.Drawing.Size(100, 19)
         Me.Button_cargobox.TabIndex = 31
         Me.Button_cargobox.Text = "Cargobox"
         Me.Button_cargobox.UseVisualStyleBackColor = True
@@ -173,12 +176,9 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.Button_cargobox)
-        Me.Controls.Add(Me.Button_bonusbox)
-        Me.Controls.Add(Me.Button_Bot)
-        Me.Controls.Add(Me.TextBox_getserver)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
+        Me.Controls.Add(Me.TextBox_getserver)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True

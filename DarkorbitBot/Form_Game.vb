@@ -44,7 +44,11 @@ Public Class Form_Game
     ' █                                                                                                                                █
     ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 
-    Public User_Stop_Bot As Boolean = True
+    ' ici se trouve toute les déclaration et les variables utiles pour le bot
+#Region "Declarations -- fonction Update screen -- Var.Multiple"
+
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
     Function Update_Screen()
         Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
         Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
@@ -55,12 +59,23 @@ Public Class Form_Game
         'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
     End Function
 
-    Dim Client_Screen As Bitmap
+    Public User_Stop_Bot As Boolean = True
     Public CurrentMapUser = "0-0"
+    Dim Client_Screen As Bitmap
     Dim save_point_x As String = 0
     Dim save_point_Y As String = 0
     Dim passage As String = 0
 
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+#End Region
+
+    ' Pour utiliser ce referer a " CHECKING MINIMAP "
+#Region "Var.disconedcted -- Var.map location -- Fonction Minimap -- fonction deconnecté et reconnexion --- Resize/Reduce and place"
+
+
+    ' ⚡ VARIABLES ⚡ 
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
 #Region "⚡ VARIABLES DISCONECTED ⚡"
 
     Dim Disconnected = My.Resources.Disconnected
@@ -118,13 +133,21 @@ Public Class Form_Game
     Dim Map2_BL = My.Resources.map2_BL
     Dim Map3_BL = My.Resources.map3_BL
 #End Region
+    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    ' ⚡ VARIABLES ⚡
 
 
-#Region "Fonction Minimap + Deconnexion + map location"
+
+
+
+
+
+
+
     ' ⚡ MODULE MINIMAP ⚡ 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-
 #Region "Checking/reducing/moving and saving minimap"
 
     Private BackgroundWorker_Startup_Bot_Rework As Boolean
@@ -341,12 +364,23 @@ Public Class Form_Game
     End Sub
 
 #End Region
-
     '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     ' ⚡ MODULE MINIMAP ⚡
 
 
+
+
+
+
+
+
+
+
+
+    ' ⚡ CHECKING MINIMAP / CHECK DANS QUEL MAP IL SE TROUVE / CHECK SI ON EST DECONNECTER ⚡ 
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
     ' CHECKING MINIMAP
     Private Sub BackgroundWorker_Checking_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Checking_minimap.DoWork
 
@@ -394,7 +428,6 @@ Public Class Form_Game
 
     End Sub
 
-    ' CHECK DANS QUEL MAP IL SE TROUVE !
     Private Sub Checking_map_actuel(Optional UpdateOnly As Boolean = False)
 
         If User_Stop_Bot Then
@@ -533,10 +566,6 @@ Public Class Form_Game
 
     End Sub
 
-
-#End Region
-
-    ' CHECK SI ON EST DECONNECTE !
     Private Async Sub Reconnexion()
 
         If User_Stop_Bot Then
@@ -590,94 +619,178 @@ Public Class Form_Game
 
     End Sub
 
+    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
+    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    ' ⚡ MODULE MINIMAP ⚡
+
+#End Region
+
+
+#Region "Click Zone"
+
+    Private Sub CLICK_1BL_MMO()
+    End Sub
+    Private Sub CLICK_2BL_EIC()
+    End Sub
+    Private Sub CLICK_3BL_VRU()
+    End Sub
 
 
 
+    Private Sub CLICK_4_4_MMO()
+    End Sub
+    Private Sub CLICK_4_4_EIC()
+    End Sub
+    Private Sub CLICK_4_4_VRU()
+    End Sub
 
-    Private Sub CLICK_HAUT_DROITE()
+
+
+    Private Sub CLICK_4_5_MMO()
+    End Sub
+    Private Sub CLICK_4_5_EIC()
+    End Sub
+    Private Sub CLICK_4_5_VRU()
+    End Sub
+
+
+
+    Private Async Sub CLICK_HAUT_DROITE()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         'HAUT DROITE 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 480)
+        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Sub CLICK_HAUT_GAUCHE()
+    Private Async Sub CLICK_HAUT_GAUCHE()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
+        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Sub CLICK_BAS_DROITE()
+    Private Async Sub CLICK_BAS_DROITE()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         ' BAS DROITE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 562)
+        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Sub CLICK_BAS_GAUCHE()
+    Private Async Sub CLICK_BAS_GAUCHE()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 569)
+        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
 
+#End Region
+
     Private Async Sub POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
         If User_Stop_Bot Then
-            'Stop_Bot()
+            Stop_Bot()
             Exit Sub
         End If
-        Console.WriteLine("Point de chute du click traveling atteint")
-        Await Task.Delay(5000)
-        'My.Computer.Keyboard.SendKeys("J")
-        'WebBrowser_Game_Ridevbot.Focus()
-        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "J")
-        Console.WriteLine("Sended J")
-        'AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "j")
-        'Console.WriteLine("Sended j")
-        Await Task.Delay(9000)
-        Traveling_module()
+
+        Dim Map_actuelle_reconize = Label_map_location.Text.Replace("Map : ", "")
+        Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
+        Console.WriteLine(Map_actuelle_reconize)
+        Console.WriteLine(Map_roaming_reconize)
+
+        If Map_actuelle_reconize <> Map_roaming_reconize Then
+
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "J")
+            Console.WriteLine("Point de chute du click traveling atteint and Sended J")
+            Await Task.Delay(10000)
+            Checking_map_actuel(True)
+            Traveling_module()
+
+        Else
+
+            Await Task.Delay(10000)
+            Console.WriteLine("On relance Traveling par Point de chute")
+            Traveling_module()
+
+        End If
 
     End Sub
 
+    Private Async Sub Traveling_module()
+        BackgroundWorker_Startup_Bot.CancelAsync()
 
-
-    Private Sub Traveling_module()
         If User_Stop_Bot Then
-            'Stop_Bot()
+            Stop_Bot()
             Exit Sub
         End If
 
-        'Dim Map_VRU As New List(Of String) From {"3-1", "3-2", "3-3"}
-        'For Each map In Map_VRU
-        '    Console.WriteLine(map)
-        'Next
+        Client_Screen = Update_Screen()
+
+        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
+        If Save_point_original.X = "762" Then
+            'Await Task.Delay(1000)
+            Console.WriteLine("tout es safe")
+
+        Else
+            BackgroundWorker_Startup_Bot.RunWorkerAsync()
+            Exit Sub
+        End If
+
+        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
+        If Connection_Lost <> Nothing Then
+
+            BackgroundWorker_Startup_Bot.RunWorkerAsync()
+            Exit Sub
+
+        End If
 
         Dim Map_actuelle = Label_map_location.Text.Replace("Map : ", "")
-        Console.WriteLine(Map_actuelle)
         Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+
+        Console.WriteLine(Map_actuelle)
         Console.WriteLine(Map_roaming)
+        Console.WriteLine("Calcul de l'itinéraire")
 
         If Map_actuelle <> Map_roaming Then
-            'Si on est pas dans la bonne map choisie par l'utilisateur alors...
 
 #Region "1.8"
             If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
 
                 CLICK_BAS_DROITE()
 
-            ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-6" Then
+            ElseIf Map_actuelle = "1-8" AndAlso (Map_roaming = "1-6" Or Map_roaming = "1-5") Then
 
                 CLICK_HAUT_DROITE()
 
-            ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-5" Then
-
-                CLICK_HAUT_DROITE()
 #End Region
 
 #Region "1-7"
-            ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-8" Then
+            ElseIf Map_actuelle = "1-7" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-6") Then
 
                 CLICK_HAUT_GAUCHE()
 
@@ -687,7 +800,7 @@ Public Class Form_Game
 #End Region
 
 #Region "1-6"
-            ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-8" Then
+            ElseIf Map_actuelle = "1-6" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
 
                 CLICK_BAS_GAUCHE()
 
@@ -697,7 +810,7 @@ Public Class Form_Game
 #End Region
 
 #Region "1-5"
-            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-7" Then
+            ElseIf Map_actuelle = "1-5" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
 
                 CLICK_BAS_GAUCHE()
 
@@ -706,15 +819,15 @@ Public Class Form_Game
                 CLICK_HAUT_GAUCHE()
 
 
-            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-8" Then
-
-                CLICK_BAS_GAUCHE()
 
             End If
 #End Region
 
         Else
-            'On est dans la bonne map choisie alors...
+
+            Await Task.Delay(10000)
+            Console.WriteLine("On relance Traveling Module")
+            Traveling_module()
 
         End If
 
@@ -723,33 +836,15 @@ Public Class Form_Game
     Private Async Sub Stop_Bot()
         If User_Stop_Bot Then
             Console.WriteLine("Stopped")
+
         Else
             Await Task.Delay(3000)
-            BackgroundWorker_Checking_minimap.RunWorkerAsync()
+            If BackgroundWorker_Checking_minimap.IsBusy = False Then
+                BackgroundWorker_Checking_minimap.RunWorkerAsync()
+            End If
             Console.WriteLine("On relance tous les background worker")
         End If
 
-
-        'Try
-        '    Dim Systeme_Stellaire_Point As Point = Client_Screen.Contains(systeme_stellaire_ref)
-
-        '    If Systeme_Stellaire_Point <> Nothing Then
-        '        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, Systeme_Stellaire_Point.X, Systeme_Stellaire_Point.Y + 18)
-        '        Await Task.Delay(1200)
-
-        '        Client_Screen = Update_Screen()
-        '        Dim map_detect_point As Point = Client_Screen.Contains(map_detect_ref)
-
-        '        If map_detect_point <> Nothing Then
-        '            Cursor.Position = New Point(map_detect_point.X, map_detect_point.Y)
-        '        Else
-        '            Console.WriteLine("Not found")
-        '        End If
-
-        '    End If
-        'Catch ex As Exception
-
-        'End Try
     End Sub
 
 
