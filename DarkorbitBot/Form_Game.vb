@@ -601,43 +601,37 @@ Public Class Form_Game
 
 
 
-    Private Async Sub CLICK_HAUT_DROITE()
+    Private Sub CLICK_HAUT_DROITE()
 
         'HAUT DROITE 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 480)
-        Await Task.Delay(15000)
-        WebBrowser_Game_Ridevbot.Focus()
-        My.Computer.Keyboard.SendKeys("J")
-        Await Task.Delay(5000)
-        Traveling_module()
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_HAUT_GAUCHE()
+    Private Sub CLICK_HAUT_GAUCHE()
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
-        Await Task.Delay(15000)
-        WebBrowser_Game_Ridevbot.Focus()
-        My.Computer.Keyboard.SendKeys("J")
-        Await Task.Delay(5000)
-        Traveling_module()
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_BAS_DROITE()
+    Private Sub CLICK_BAS_DROITE()
 
         ' BAS DROITE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 562)
-        Await Task.Delay(15000)
-        WebBrowser_Game_Ridevbot.Focus()
-        My.Computer.Keyboard.SendKeys("J")
-        Await Task.Delay(5000)
-        Traveling_module()
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_BAS_GAUCHE()
+    Private Sub CLICK_BAS_GAUCHE()
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 569)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+
+    Private Async Sub POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
         Await Task.Delay(15000)
         WebBrowser_Game_Ridevbot.Focus()
         My.Computer.Keyboard.SendKeys("J")
