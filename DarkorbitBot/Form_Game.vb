@@ -590,110 +590,117 @@ Public Class Form_Game
 
     End Sub
 
-    Private Async Sub Traveling_module()
 
-        Dim Map_VRU As New List(Of String) From {"3-1", "3-2", "3-3"}
-        For Each map In Map_VRU
-            Console.WriteLine(map)
-        Next
 
-        Dim Map_actuelle = Label_map_location.Text.Split(" : ")(1)
+
+
+
+
+
+
+
+
+
+    Private Async Sub CLICK_HAUT_DROITE()
+
+        'HAUT DROITE 
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 480)
+        Await Task.Delay(15000)
+        WebBrowser_Game_Ridevbot.Focus()
+        My.Computer.Keyboard.SendKeys("J")
+        Await Task.Delay(5000)
+        Traveling_module()
+
+    End Sub
+    Private Async Sub CLICK_HAUT_GAUCHE()
+
+        ' HAUT GAUCHE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
+        Await Task.Delay(15000)
+        WebBrowser_Game_Ridevbot.Focus()
+        My.Computer.Keyboard.SendKeys("J")
+        Await Task.Delay(5000)
+        Traveling_module()
+
+    End Sub
+    Private Async Sub CLICK_BAS_DROITE()
+
+        ' BAS DROITE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 562)
+        Await Task.Delay(15000)
+        WebBrowser_Game_Ridevbot.Focus()
+        My.Computer.Keyboard.SendKeys("J")
+        Await Task.Delay(5000)
+        Traveling_module()
+
+    End Sub
+    Private Async Sub CLICK_BAS_GAUCHE()
+
+        ' BAS GAUCHE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 569)
+        Await Task.Delay(15000)
+        WebBrowser_Game_Ridevbot.Focus()
+        My.Computer.Keyboard.SendKeys("J")
+        Await Task.Delay(5000)
+        Traveling_module()
+
+    End Sub
+
+
+
+    Private Sub Traveling_module()
+
+        'Dim Map_VRU As New List(Of String) From {"3-1", "3-2", "3-3"}
+        'For Each map In Map_VRU
+        '    Console.WriteLine(map)
+        'Next
+
+        Dim Map_actuelle = Label_map_location.Text.Replace("Map : ", "")
+        Console.WriteLine(Map_actuelle)
         Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+        Console.WriteLine(Map_roaming)
 
-        If Map_actuelle <> Map_roaming Then
+        If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
 
-            Select Case Map_actuelle
-#Region "MMO"
-                Case "1-1"
-                    'Si la map actuelle = 1-1 alors...
+            CLICK_BAS_DROITE()
 
-                Case "1-2"
+        ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-6" Then
 
-                Case "1-3"
+            CLICK_HAUT_DROITE()
 
-                Case "1-4"
+        ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-8" Then
 
-                Case "1-5"
+            CLICK_HAUT_GAUCHE()
 
-                Case "1-6"
+        ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
 
-                Case "1-7"
+            CLICK_HAUT_DROITE()
 
-                Case "1-8"
+        ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-8" Then
 
-                Case "1-BL"
+            CLICK_BAS_GAUCHE()
 
-#End Region
+        ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
 
-#Region "EIC"
-                Case "2-1"
+            CLICK_BAS_DROITE()
 
-                Case "2-2"
+        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-7" Then
 
-                Case "2-3"
+            CLICK_BAS_GAUCHE()
 
-                Case "2-4"
+        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
 
-                Case "2-5"
+            CLICK_HAUT_GAUCHE()
 
-                Case "2-6"
+        ElseIf Map_actuelle = "1-8" AndAlso Map_roaming = "1-5" Then
 
-                Case "2-7"
+            CLICK_HAUT_DROITE()
 
-                Case "2-8"
+        ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-8" Then
 
-                Case "2-BL"
-#End Region
-
-#Region "VRU"
-                Case "3-1"
-
-                Case "3-2"
-
-                Case "3-3"
-
-                Case "3-4"
-
-                Case "3-5"
-
-                Case "3-6"
-
-                Case "3-7"
-
-                Case "3-8"
-
-                Case "3-BL"
-#End Region
-
-                Case "4-1"
-
-                Case "4-2"
-
-                Case "4-3"
-
-                Case "4-4"
-
-                Case "4-5"
-
-                Case "5-1"
-
-                Case "5-2"
-
-                Case "5-3"
-
-                Case "???"
-
-                    'etc...
-                Case Else
-                    'si il ne trouve pas
-                    'alors tu fais tes machins...
-
-            End Select
-
+            CLICK_BAS_GAUCHE()
 
         End If
-
-
 
     End Sub
 
@@ -701,7 +708,7 @@ Public Class Form_Game
         If User_Stop_Bot Then
             Console.WriteLine("Stopped")
         Else
-            Await Task.Delay(10000)
+            Await Task.Delay(3000)
             BackgroundWorker_Checking_minimap.RunWorkerAsync()
             Console.WriteLine("On relance tous les background worker")
         End If
@@ -742,14 +749,16 @@ Public Class Form_Game
 
     Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
 
-        Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
+        Traveling_module()
 
-        Try
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-            '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
+        'Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
 
-        Catch Bonus_Box_not_found As Exception
-        End Try
+        'Try
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
+        '    '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
+
+        'Catch Bonus_Box_not_found As Exception
+        'End Try
 
     End Sub
 
