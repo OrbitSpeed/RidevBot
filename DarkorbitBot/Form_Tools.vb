@@ -177,7 +177,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        'CenterToScreen()
 
     End Sub
 
@@ -218,7 +218,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        'CenterToScreen()
 
     End Sub
 

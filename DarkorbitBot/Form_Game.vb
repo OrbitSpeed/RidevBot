@@ -408,8 +408,8 @@ Public Class Form_Game
             Checking_map_actuel(True)
 
             Console.WriteLine("On boucle sur checking_minimap")
-            User_Stop_Bot = False
-            BackgroundWorker_Checking_minimap.CancelAsync()
+            'User_Stop_Bot = False
+            'BackgroundWorker_Checking_minimap.CancelAsync()
             Stop_Bot()
         Else
             BackgroundWorker_Startup_Bot.RunWorkerAsync()
@@ -555,7 +555,7 @@ Public Class Form_Game
                                          End If
                                          Label_map_location.Update()
                                          CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
-                                         Console.WriteLine("On a reussi ! ")
+                                         Console.WriteLine("On a récupéré la map")
                                          If UpdateOnly = False Then
                                              BackgroundWorker_Checking_minimap.RunWorkerAsync()
                                          End If
@@ -625,6 +625,13 @@ Public Class Form_Game
     ' ⚡ MODULE MINIMAP ⚡
 
 #End Region
+
+
+
+
+
+
+
 
 
 #Region "Click Zone"
@@ -754,32 +761,7 @@ Public Class Form_Game
             Exit Sub
         End If
 
-        If BackgroundWorker_Startup_Bot.IsBusy Or BackgroundWorker_Checking_minimap.IsBusy Or BackgroundWorker_Deplacement_minimap_bas_droite.IsBusy Or BackgroundWorker_Detection_minimap.IsBusy Or BackgroundWorker_Reduce_minimap.IsBusy Then
-            'Await Task.Delay(350)
-            Console.WriteLine($"Les backgrounds sont en cours, on coupe tout")
-            User_Stop_Bot = True
-            BackgroundWorker_Startup_Bot.CancelAsync()
-            BackgroundWorker_Checking_minimap.CancelAsync()
-            BackgroundWorker_Deplacement_minimap_bas_droite.CancelAsync()
-            BackgroundWorker_Detection_minimap.CancelAsync()
-            BackgroundWorker_Reduce_minimap.CancelAsync()
-            Await Task.Delay(600)
-            User_Stop_Bot = False
-        End If
-
         Client_Screen = Update_Screen()
-
-        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
-        If Save_point_original.X = "762" Then
-            'Await Task.Delay(1000)
-            Console.WriteLine("tout est safe")
-
-        Else
-            If BackgroundWorker_Startup_Bot.IsBusy = False Then
-                BackgroundWorker_Startup_Bot.RunWorkerAsync()
-                Exit Sub
-            End If
-        End If
 
         Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
         If Connection_Lost <> Nothing Then
@@ -791,65 +773,104 @@ Public Class Form_Game
 
         End If
 
-        Dim Map_actuelle = Label_map_location.Text.Replace("Map : ", "")
-        Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
+        If Save_point_original.X = "762" Then
+            'Await Task.Delay(1000)
+            Console.WriteLine("Minimap au bon endroit")
 
-        Console.WriteLine(Map_actuelle)
-        Console.WriteLine(Map_roaming)
-        Console.WriteLine("Calcul de l'itinéraire")
+        Else
+            If BackgroundWorker_Startup_Bot.IsBusy = False Then
+                BackgroundWorker_Startup_Bot.RunWorkerAsync()
+                Exit Sub
+            End If
+        End If
 
-        If Map_actuelle <> Map_roaming Then
+        If BackgroundWorker_Startup_Bot.IsBusy Or
+            BackgroundWorker_Checking_minimap.IsBusy Or
+            BackgroundWorker_Deplacement_minimap_bas_droite.IsBusy Or
+            BackgroundWorker_Detection_minimap.IsBusy Or
+            BackgroundWorker_Reduce_minimap.IsBusy Then
+
+            'Await Task.Delay(350)
+            Console.WriteLine($"Les backgrounds sont en cours, on coupe tout")
+            User_Stop_Bot = True
+            BackgroundWorker_Startup_Bot.CancelAsync()
+            BackgroundWorker_Checking_minimap.CancelAsync()
+            BackgroundWorker_Deplacement_minimap_bas_droite.CancelAsync()
+            BackgroundWorker_Detection_minimap.CancelAsync()
+            BackgroundWorker_Reduce_minimap.CancelAsync()
+            Await Task.Delay(3200)
+            User_Stop_Bot = False
+        Else
+
+
+            Dim Map_actuelle = Label_map_location.Text.Split(" : ")(2)
+            Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+
+            Console.WriteLine(Map_actuelle)
+            Console.WriteLine(Map_roaming)
+            Console.WriteLine("Calcul de l'itinéraire")
+
+            If Map_actuelle <> Map_roaming Then
 
 #Region "1.8"
-            If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
+                If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
 
-                CLICK_BAS_DROITE()
+                    CLICK_BAS_DROITE()
 
-            ElseIf Map_actuelle = "1-8" AndAlso (Map_roaming = "1-6" Or Map_roaming = "1-5") Then
+                ElseIf Map_actuelle = "1-8" AndAlso (Map_roaming = "1-6" Or Map_roaming = "1-5") Then
 
-                CLICK_HAUT_DROITE()
+                    CLICK_HAUT_DROITE()
 
 #End Region
 
 #Region "1-7"
-            ElseIf Map_actuelle = "1-7" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-6") Then
+                ElseIf Map_actuelle = "1-7" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-6") Then
 
-                CLICK_HAUT_GAUCHE()
+                    CLICK_HAUT_GAUCHE()
 
-            ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
+                ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
 
-                CLICK_HAUT_DROITE()
+                    CLICK_HAUT_DROITE()
 #End Region
 
 #Region "1-6"
-            ElseIf Map_actuelle = "1-6" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
+                ElseIf Map_actuelle = "1-6" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
 
-                CLICK_BAS_GAUCHE()
+                    CLICK_BAS_GAUCHE()
 
-            ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
+                ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
 
-                CLICK_BAS_DROITE()
+                    CLICK_BAS_DROITE()
 #End Region
 
 #Region "1-5"
-            ElseIf Map_actuelle = "1-5" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
+                ElseIf Map_actuelle = "1-5" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
 
-                CLICK_BAS_GAUCHE()
+                    CLICK_BAS_GAUCHE()
 
-            ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
+                ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
 
-                CLICK_HAUT_GAUCHE()
+                    CLICK_HAUT_GAUCHE()
 
 
+
+
+#End Region
+                Else
+                    'On ne trouve pas la map à aller ?
+                    Await Task.Delay(10000)
+                    Console.WriteLine("On relance Traveling Module")
+                    Traveling_module()
+                End If
+
+            Else
+                If BackgroundWorker_Startup_Bot.IsBusy = False Then
+                    BackgroundWorker_Startup_Bot.RunWorkerAsync()
+                    Console.WriteLine("On relance le startup (Traveling_module)")
+                End If
 
             End If
-#End Region
-
-        Else
-
-            Await Task.Delay(10000)
-            Console.WriteLine("On relance Traveling Module")
-            Traveling_module()
 
         End If
 
@@ -860,11 +881,23 @@ Public Class Form_Game
             Console.WriteLine("Stopped")
 
         Else
-            Await Task.Delay(3000)
+            Console.WriteLine("User_Stop_Bot en true")
             If BackgroundWorker_Checking_minimap.IsBusy = False Then
+                Console.WriteLine("Checking minimap n'est pas busy")
                 BackgroundWorker_Checking_minimap.RunWorkerAsync()
+                Console.WriteLine("On relance tous les background worker")
+
+            Else
+                Console.WriteLine("Checking minimap est busy")
+                'Await Task.Delay(600)
+
+                'If BackgroundWorker_Checking_minimap.IsBusy = False Then
+                '    Console.WriteLine("Checking minimap est OFF (2nd check)")
+                '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
+                '    Console.WriteLine("On relance tous les background worker (2nd check)")
+
+                'End If
             End If
-            Console.WriteLine("On relance tous les background worker")
         End If
 
     End Sub
