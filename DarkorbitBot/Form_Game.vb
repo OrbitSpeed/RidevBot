@@ -31,7 +31,11 @@ Public Class Form_Game
 
     Private Sub Form_Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.TopMost = True
-        BackgroundWorker_Performance.RunWorkerAsync()
+        If BackgroundWorker_Performance.IsBusy = False Then
+            BackgroundWorker_Performance.RunWorkerAsync()
+        End If
+
+        Traveling_module()
     End Sub
 
     ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -529,6 +533,9 @@ Public Class Form_Game
 
     End Sub
 
+
+#End Region
+
     ' CHECK SI ON EST DECONNECTE !
     Private Async Sub Reconnexion()
 
@@ -583,7 +590,112 @@ Public Class Form_Game
 
     End Sub
 
+    Private Async Sub Traveling_module()
+
+        Dim Map_VRU As New List(Of String) From {"3-1", "3-2", "3-3"}
+        For Each map In Map_VRU
+            Console.WriteLine(map)
+        Next
+
+        Dim Map_actuelle = Label_map_location.Text.Split(" : ")(1)
+        Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+
+        If Map_actuelle <> Map_roaming Then
+
+            Select Case Map_actuelle
+#Region "MMO"
+                Case "1-1"
+                    'Si la map actuelle = 1-1 alors...
+
+                Case "1-2"
+
+                Case "1-3"
+
+                Case "1-4"
+
+                Case "1-5"
+
+                Case "1-6"
+
+                Case "1-7"
+
+                Case "1-8"
+
+                Case "1-BL"
+
 #End Region
+
+#Region "EIC"
+                Case "2-1"
+
+                Case "2-2"
+
+                Case "2-3"
+
+                Case "2-4"
+
+                Case "2-5"
+
+                Case "2-6"
+
+                Case "2-7"
+
+                Case "2-8"
+
+                Case "2-BL"
+#End Region
+
+#Region "VRU"
+                Case "3-1"
+
+                Case "3-2"
+
+                Case "3-3"
+
+                Case "3-4"
+
+                Case "3-5"
+
+                Case "3-6"
+
+                Case "3-7"
+
+                Case "3-8"
+
+                Case "3-BL"
+#End Region
+
+                Case "4-1"
+
+                Case "4-2"
+
+                Case "4-3"
+
+                Case "4-4"
+
+                Case "4-5"
+
+                Case "5-1"
+
+                Case "5-2"
+
+                Case "5-3"
+
+                Case "???"
+
+                    'etc...
+                Case Else
+                    'si il ne trouve pas
+                    'alors tu fais tes machins...
+
+            End Select
+
+
+        End If
+
+
+
+    End Sub
 
     Private Async Sub Stop_Bot()
         If User_Stop_Bot Then

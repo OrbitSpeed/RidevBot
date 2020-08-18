@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -679,7 +679,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Q")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("H")>  _
         Public Property Desactive_all_formkey() As String
             Get
                 Return CType(Me("Desactive_all_formkey"),String)
@@ -770,6 +770,30 @@ Namespace My
             End Get
             Set
                 Me("revive_pet_x_seconds") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("J")>  _
+        Public Property jump_key() As String
+            Get
+                Return CType(Me("jump_key"),String)
+            End Get
+            Set
+                Me("jump_key") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1-1")>  _
+        Public Property map_to_travel() As String
+            Get
+                Return CType(Me("map_to_travel"),String)
+            End Get
+            Set
+                Me("map_to_travel") = value
             End Set
         End Property
     End Class
