@@ -731,7 +731,6 @@ Public Class Form_Game
 
 
         'Try
-
         '    Dim Systeme_Stellaire_Point As Point = Client_Screen.Contains(systeme_stellaire_ref)
 
         '    If Systeme_Stellaire_Point <> Nothing Then
