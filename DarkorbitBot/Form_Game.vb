@@ -1020,32 +1020,11 @@ Public Class Form_Game
                     PORTAIL_4_5_MMO()
 
                 ElseIf Map_actuelle = "1-5" AndAlso
-                   (Map_roaming = "1-6" Or "1-1" Or
-                    Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "???") Then
+                       (Map_roaming = "1-1" Or "1-2" Or "1-3" Or "1-4" Or "1-6" Or
+                                      "2-1" Or "2-2" Or "2-3" Or "2-4" Or "2-5" Or "2-6" Or "2-7" Or "2-8" Or
+                                      "3-1" Or "3-2" Or "3-3" Or "3-4" Or "3-5" Or "3-6" Or "3-7" Or "3-8" Or
+                                      "4-1" Or "4-2" Or "4-3" Or "4-4" Or
+                                      "???") Then
 
                     PORTAIL_4_4_MMO()
 #End Region
