@@ -25,13 +25,13 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
+        Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
+        Me.Button_Bot = New System.Windows.Forms.Button()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
-        Me.Button_Bot = New System.Windows.Forms.Button()
-        Me.Button_bonusbox = New System.Windows.Forms.Button()
-        Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -68,6 +68,15 @@ Partial Class Form_Game
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
         '
+        'Button_cargobox
+        '
+        Me.Button_cargobox.Location = New System.Drawing.Point(477, -1)
+        Me.Button_cargobox.Name = "Button_cargobox"
+        Me.Button_cargobox.Size = New System.Drawing.Size(64, 19)
+        Me.Button_cargobox.TabIndex = 31
+        Me.Button_cargobox.Text = "Cargobox"
+        Me.Button_cargobox.UseVisualStyleBackColor = True
+        '
         'Label_PerformanceMemoire
         '
         Me.Label_PerformanceMemoire.AutoSize = True
@@ -79,6 +88,15 @@ Partial Class Form_Game
         Me.Label_PerformanceMemoire.TabIndex = 32
         Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
         '
+        'Button_bonusbox
+        '
+        Me.Button_bonusbox.Location = New System.Drawing.Point(407, -2)
+        Me.Button_bonusbox.Name = "Button_bonusbox"
+        Me.Button_bonusbox.Size = New System.Drawing.Size(64, 20)
+        Me.Button_bonusbox.TabIndex = 30
+        Me.Button_bonusbox.Text = "Traveling"
+        Me.Button_bonusbox.UseVisualStyleBackColor = True
+        '
         'Label_map_location
         '
         Me.Label_map_location.AutoSize = True
@@ -88,6 +106,15 @@ Partial Class Form_Game
         Me.Label_map_location.Size = New System.Drawing.Size(79, 18)
         Me.Label_map_location.TabIndex = 31
         Me.Label_map_location.Text = "Map : 0-0"
+        '
+        'Button_Bot
+        '
+        Me.Button_Bot.Location = New System.Drawing.Point(366, -1)
+        Me.Button_Bot.Name = "Button_Bot"
+        Me.Button_Bot.Size = New System.Drawing.Size(35, 19)
+        Me.Button_Bot.TabIndex = 29
+        Me.Button_Bot.Text = "bot"
+        Me.Button_Bot.UseVisualStyleBackColor = True
         '
         'PictureBox_Close
         '
@@ -109,35 +136,9 @@ Partial Class Form_Game
         Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_getserver.TabIndex = 28
         '
-        'Button_Bot
-        '
-        Me.Button_Bot.Location = New System.Drawing.Point(265, -1)
-        Me.Button_Bot.Name = "Button_Bot"
-        Me.Button_Bot.Size = New System.Drawing.Size(100, 19)
-        Me.Button_Bot.TabIndex = 29
-        Me.Button_Bot.Text = "bot"
-        Me.Button_Bot.UseVisualStyleBackColor = True
-        '
-        'Button_bonusbox
-        '
-        Me.Button_bonusbox.Location = New System.Drawing.Point(371, -2)
-        Me.Button_bonusbox.Name = "Button_bonusbox"
-        Me.Button_bonusbox.Size = New System.Drawing.Size(100, 20)
-        Me.Button_bonusbox.TabIndex = 30
-        Me.Button_bonusbox.Text = "Traveling"
-        Me.Button_bonusbox.UseVisualStyleBackColor = True
-        '
-        'Button_cargobox
-        '
-        Me.Button_cargobox.Location = New System.Drawing.Point(477, -1)
-        Me.Button_cargobox.Name = "Button_cargobox"
-        Me.Button_cargobox.Size = New System.Drawing.Size(100, 19)
-        Me.Button_cargobox.TabIndex = 31
-        Me.Button_cargobox.Text = "Cargobox"
-        Me.Button_cargobox.UseVisualStyleBackColor = True
-        '
         'WebBrowser_Game_Ridevbot
         '
+        Me.WebBrowser_Game_Ridevbot.IsWebBrowserContextMenuEnabled = False
         Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
         Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"

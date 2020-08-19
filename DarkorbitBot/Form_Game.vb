@@ -640,7 +640,16 @@ Public Class Form_Game
 
 #Region "Click Zone"
 
-    Private Sub CLICK_1BL_MMO()
+    Private Async Sub PORTAIL_1BL_MMO()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        ' BAS GAUCHE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 691, 556)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Sub CLICK_2BL_EIC()
     End Sub
@@ -649,7 +658,16 @@ Public Class Form_Game
 
 
 
-    Private Sub CLICK_4_4_MMO()
+    Private Async Sub PORTAIL_4_4_MMO()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        ' BAS GAUCHE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Sub CLICK_4_4_EIC()
     End Sub
@@ -658,7 +676,16 @@ Public Class Form_Game
 
 
 
-    Private Sub CLICK_4_5_MMO()
+    Private Async Sub PORTAIL_4_5_MMO()
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        ' BAS GAUCHE
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 570)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Sub CLICK_4_5_EIC()
     End Sub
@@ -667,7 +694,7 @@ Public Class Form_Game
 
 
 
-    Private Async Sub CLICK_HAUT_DROITE()
+    Private Async Sub PORTAIL_HAUT_DROITE()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -680,7 +707,7 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_HAUT_GAUCHE()
+    Private Async Sub PORTAIL_HAUT_GAUCHE()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -693,7 +720,7 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_BAS_DROITE()
+    Private Async Sub PORTAIL_BAS_DROITE()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -706,7 +733,7 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
-    Private Async Sub CLICK_BAS_GAUCHE()
+    Private Async Sub PORTAIL_BAS_GAUCHE()
 
         If User_Stop_Bot Then
             Stop_Bot()
@@ -753,7 +780,7 @@ Public Class Form_Game
 
     End Sub
 
-    Private Async Sub Traveling_module()
+    Public Async Sub Traveling_module()
 
         'For Each bg_worker As BackgroundWorker In (Of BackgroundWorker)
         '    bg_worker.CancelAsync()
@@ -815,51 +842,212 @@ Public Class Form_Game
             Console.WriteLine(Map_roaming)
             Console.WriteLine("Calcul de l'itinéraire")
 
+            '  Or
+            ' Map_roaming = ""
+
             If Map_actuelle <> Map_roaming Then
 
-#Region "1.8"
-                If Map_actuelle = "1-8" AndAlso Map_roaming = "1-7" Then
 
-                    CLICK_BAS_DROITE()
 
-                ElseIf Map_actuelle = "1-8" AndAlso (Map_roaming = "1-6" Or Map_roaming = "1-5") Then
 
-                    CLICK_HAUT_DROITE()
+#Region "MAP = 1.8"
+                If Map_actuelle = "1-8" AndAlso Map_roaming = "1-6" Then
+                    PORTAIL_HAUT_DROITE()
 
+                ElseIf Map_actuelle = "1-8" AndAlso
+                    (Map_roaming = "1-BL" Or
+                    Map_roaming = "2-BL" Or
+                    Map_roaming = "3-BL") Then
+
+                    PORTAIL_1BL_MMO()
+
+                ElseIf Map_actuelle = "1-8" AndAlso
+                    (Map_roaming = "1-1" Or
+                    Map_roaming = "1-2" Or
+                    Map_roaming = "1-3" Or
+                    Map_roaming = "1-4" Or
+                    Map_roaming = "1-5" Or
+                    Map_roaming = "1-7" Or
+                    Map_roaming = "2-1" Or
+                    Map_roaming = "2-2" Or
+                    Map_roaming = "2-3" Or
+                    Map_roaming = "2-4" Or
+                    Map_roaming = "2-5" Or
+                    Map_roaming = "2-6" Or
+                    Map_roaming = "2-7" Or
+                    Map_roaming = "2-8" Or
+                    Map_roaming = "3-1" Or
+                    Map_roaming = "3-2" Or
+                    Map_roaming = "3-3" Or
+                    Map_roaming = "3-4" Or
+                    Map_roaming = "3-5" Or
+                    Map_roaming = "3-6" Or
+                    Map_roaming = "3-7" Or
+                    Map_roaming = "3-8" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "4-1" Or
+                    Map_roaming = "4-2" Or
+                    Map_roaming = "4-3" Or
+                    Map_roaming = "4-4" Or
+                    Map_roaming = "4-5" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "???") Then
+
+                    PORTAIL_BAS_DROITE()
 #End Region
-
 #Region "1-7"
-                ElseIf Map_actuelle = "1-7" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-6") Then
+                ElseIf Map_actuelle = "1-7" AndAlso
+                    (Map_roaming = "1-8" Or
+                    Map_roaming = "1-6" Or
+                    Map_roaming = "1-BL" Or
+                    Map_roaming = "2-BL" Or
+                    Map_roaming = "3-BL") Then
 
-                    CLICK_HAUT_GAUCHE()
+                    PORTAIL_HAUT_GAUCHE()
 
-                ElseIf Map_actuelle = "1-7" AndAlso Map_roaming = "1-5" Then
+                ElseIf Map_actuelle = "1-7" AndAlso
+                    (Map_roaming = "1-5" Or
+                    Map_roaming = "1-1" Or
+                    Map_roaming = "1-2" Or
+                    Map_roaming = "1-3" Or
+                    Map_roaming = "1-4" Or
+                    Map_roaming = "2-1" Or
+                    Map_roaming = "2-2" Or
+                    Map_roaming = "2-3" Or
+                    Map_roaming = "2-4" Or
+                    Map_roaming = "2-5" Or
+                    Map_roaming = "2-6" Or
+                    Map_roaming = "2-7" Or
+                    Map_roaming = "2-8" Or
+                    Map_roaming = "3-1" Or
+                    Map_roaming = "3-2" Or
+                    Map_roaming = "3-3" Or
+                    Map_roaming = "3-4" Or
+                    Map_roaming = "3-5" Or
+                    Map_roaming = "3-6" Or
+                    Map_roaming = "3-7" Or
+                    Map_roaming = "3-8" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "4-1" Or
+                    Map_roaming = "4-2" Or
+                    Map_roaming = "4-3" Or
+                    Map_roaming = "4-4" Or
+                    Map_roaming = "4-5" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "???") Then
 
-                    CLICK_HAUT_DROITE()
+                    PORTAIL_HAUT_DROITE()
 #End Region
 
 #Region "1-6"
-                ElseIf Map_actuelle = "1-6" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
+                ElseIf Map_actuelle = "1-6" AndAlso
+                    (Map_roaming = "1-8" Or
+                    Map_roaming = "1-7" Or
+                    Map_roaming = "1-BL" Or
+                    Map_roaming = "2-BL" Or
+                    Map_roaming = "3-BL") Then
 
-                    CLICK_BAS_GAUCHE()
+                    PORTAIL_BAS_GAUCHE()
 
-                ElseIf Map_actuelle = "1-6" AndAlso Map_roaming = "1-5" Then
+                ElseIf Map_actuelle = "1-6" AndAlso
+                    (Map_roaming = "1-5" Or
+                    Map_roaming = "1-1" Or
+                    Map_roaming = "1-2" Or
+                    Map_roaming = "1-3" Or
+                    Map_roaming = "1-4" Or
+                    Map_roaming = "2-1" Or
+                    Map_roaming = "2-2" Or
+                    Map_roaming = "2-3" Or
+                    Map_roaming = "2-4" Or
+                    Map_roaming = "2-5" Or
+                    Map_roaming = "2-6" Or
+                    Map_roaming = "2-7" Or
+                    Map_roaming = "2-8" Or
+                    Map_roaming = "3-1" Or
+                    Map_roaming = "3-2" Or
+                    Map_roaming = "3-3" Or
+                    Map_roaming = "3-4" Or
+                    Map_roaming = "3-5" Or
+                    Map_roaming = "3-6" Or
+                    Map_roaming = "3-7" Or
+                    Map_roaming = "3-8" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "4-1" Or
+                    Map_roaming = "4-2" Or
+                    Map_roaming = "4-3" Or
+                    Map_roaming = "4-4" Or
+                    Map_roaming = "4-5" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "???") Then
 
-                    CLICK_BAS_DROITE()
+                    PORTAIL_BAS_DROITE()
 #End Region
 
 #Region "1-5"
-                ElseIf Map_actuelle = "1-5" AndAlso (Map_roaming = "1-8" Or Map_roaming = "1-7") Then
+                ElseIf Map_actuelle = "1-5" AndAlso
+                    (Map_roaming = "1-8" Or
+                    Map_roaming = "1-7" Or
+                    Map_roaming = "1-BL" Or
+                    Map_roaming = "2-BL" Or
+                    Map_roaming = "3-BL") Then
 
-                    CLICK_BAS_GAUCHE()
+                    PORTAIL_BAS_GAUCHE()
 
                 ElseIf Map_actuelle = "1-5" AndAlso Map_roaming = "1-6" Then
 
-                    CLICK_HAUT_GAUCHE()
+                    PORTAIL_HAUT_GAUCHE()
 
+                ElseIf Map_actuelle = "1-5" AndAlso
+                   (Map_roaming = "4-5" Or
+                    Map_roaming = "5-1" Or
+                    Map_roaming = "5-2" Or
+                    Map_roaming = "5-3" Or
+                    Map_roaming = "3-5" Or
+                    Map_roaming = "2-5") Then
 
+                    PORTAIL_4_5_MMO()
 
+                ElseIf Map_actuelle = "1-5" AndAlso
+                   (Map_roaming = "1-6" Or "1-1" Or
+                    Map_roaming = "1-1" Or
+                    Map_roaming = "1-2" Or
+                    Map_roaming = "1-3" Or
+                    Map_roaming = "1-4" Or
+                    Map_roaming = "2-1" Or
+                    Map_roaming = "2-2" Or
+                    Map_roaming = "2-3" Or
+                    Map_roaming = "2-4" Or
+                    Map_roaming = "2-5" Or
+                    Map_roaming = "2-6" Or
+                    Map_roaming = "2-7" Or
+                    Map_roaming = "2-8" Or
+                    Map_roaming = "3-1" Or
+                    Map_roaming = "3-2" Or
+                    Map_roaming = "3-3" Or
+                    Map_roaming = "3-4" Or
+                    Map_roaming = "3-5" Or
+                    Map_roaming = "3-6" Or
+                    Map_roaming = "3-7" Or
+                    Map_roaming = "3-8" Or
+                    Map_roaming = "4-1" Or
+                    Map_roaming = "4-2" Or
+                    Map_roaming = "4-3" Or
+                    Map_roaming = "4-4" Or
+                    Map_roaming = "???") Then
 
+                    PORTAIL_4_4_MMO()
 #End Region
                 Else
                     'On ne trouve pas la map à aller ?
@@ -880,9 +1068,10 @@ Public Class Form_Game
 
     End Sub
 
-    Private Async Sub Stop_Bot()
+    Public Sub Stop_Bot()
         If User_Stop_Bot Then
             Console.WriteLine("Stopped")
+            User_Stop_Bot = False
 
         Else
             Console.WriteLine("User_Stop_Bot en true")
