@@ -23,6 +23,10 @@ Public Class Form_Game
 
     Private Sub WebBrowser_Game_Ridevbot_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Game_Ridevbot.DocumentCompleted
 
+        If Form_Tools.textbox_stade.Text = "Launching the game wait ... " Then
+            Form_Tools.textbox_stade.Text = "Game loaded. Have fun botting !"
+        End If
+
         Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
         Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
@@ -213,7 +217,7 @@ Public Class Form_Game
                                      Form_Tools.TextBox_desactive_allkey.Update()
                                      AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
                                  End Sub))
-        Await Task.Delay(2000)
+        Await Task.Delay(800)
         BackgroundWorker_Detection_minimap.RunWorkerAsync()
         'Catch ex As Exception
         '    Console.WriteLine($"[ERROR - STR3] Startup_Bot error! {ex.Message}")
@@ -246,7 +250,7 @@ Public Class Form_Game
             Invoke(New MethodInvoker(Async Sub()
                                          WebBrowser_Game_Ridevbot.Select()
                                          AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-                                         Await Task.Delay(2000)
+                                         Await Task.Delay(800)
                                          Console.WriteLine("Detection minimap ok")
                                          BackgroundWorker_Reduce_minimap.RunWorkerAsync()
                                      End Sub))
@@ -282,7 +286,7 @@ Public Class Form_Game
         If Minimap_size <> Nothing Then
 
             For i = 0 To 15
-                Await Task.Delay(120)
+                Await Task.Delay(60)
                 'Dim cursor_Pos = Cursor.Position
                 Client_Screen = Update_Screen()
                 Minimap_size = Client_Screen.Contains(Minimap_size_ref)
@@ -290,7 +294,7 @@ Public Class Form_Game
                     If compare = Minimap_size Then
                         i = 15
                         Console.WriteLine("Réduction faite")
-                        Invoke(New MethodInvoker(Async Sub()
+                        Invoke(New MethodInvoker(Sub()
                                                      'Await Task.Delay(1000)
                                                      BackgroundWorker_Deplacement_minimap_bas_droite.RunWorkerAsync()
                                                  End Sub))

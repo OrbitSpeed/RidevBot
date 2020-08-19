@@ -2514,7 +2514,7 @@ Public Class Form_Tools
             Form_Game.User_Stop_Bot = False
             Form_Game.Button_Bot.PerformClick()
         Else
-            PictureBox_LaunchBot.Image = My.Resources.img_play
+            PictureBox_LaunchBot.Image = My.Resources.img_suivant
             Form_Game.User_Stop_Bot = True
         End If
 
