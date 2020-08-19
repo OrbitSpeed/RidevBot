@@ -757,6 +757,87 @@ Public Class Form_Game
 
 
 
+    Private Async Sub PORTAIL_45_to_15()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 621, 517)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+    Private Async Sub PORTAIL_45_to_25()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 717, 463)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+    Private Async Sub PORTAIL_45_to_35()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 717, 571)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+    Private Async Sub PORTAIL_45_to_51_MMO()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 645, 517)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+    Private Async Sub PORTAIL_45_to_51_EIC()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 703, 486)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+    Private Async Sub PORTAIL_45_to_51_VRU()
+
+        If User_Stop_Bot Then
+            Stop_Bot()
+            Exit Sub
+        End If
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 703, 550)
+        Await Task.Delay(10000)
+        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
+
+    End Sub
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1169,47 +1250,68 @@ Public Class Form_Game
                 ElseIf Map_actuelle = "4-4" AndAlso
                     (Map_roaming = "1-5" Or "1-6" Or "1-7" Or "1-8" Or
                     Map_roaming = "1-BL") Then
-                        PORTAIL_44_to_15()
+                    PORTAIL_44_to_15()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso
-                      (Map_roaming = "2-5" Or "2-6" Or "2-7" Or "2-8" Or
-                    Map_roaming = "2-BL") Then
-                        PORTAIL_44_to_25()
+                ElseIf Map_actuelle = "4-4" AndAlso
+                  (Map_roaming = "2-5" Or "2-6" Or "2-7" Or "2-8" Or
+                Map_roaming = "2-BL") Then
+                    PORTAIL_44_to_25()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso
-                  (Map_roaming = "3-5" Or "3-6" Or "3-7" Or "3-8" Or
-                Map_roaming = "3-BL") Then
-                        PORTAIL_44_to_35()
+                ElseIf Map_actuelle = "4-4" AndAlso
+              (Map_roaming = "3-5" Or "3-6" Or "3-7" Or "3-8" Or
+            Map_roaming = "3-BL") Then
+                    PORTAIL_44_to_35()
 
-                        ' If mmo pour savoir par quel portail allez pour la 4-5
+                    ' If mmo pour savoir par quel portail allez pour la 4-5
 
-                    ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "MMO" AndAlso
-                   (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
-                        PORTAIL_44_to_15()
+                ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "MMO" AndAlso
+               (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
+                    PORTAIL_44_to_15()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "EIC" AndAlso
-                   (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
-                        PORTAIL_44_to_25()
+                ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "EIC" AndAlso
+               (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
+                    PORTAIL_44_to_25()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "VRU" AndAlso
-                   (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
-                        PORTAIL_44_to_35()
+                ElseIf Map_actuelle = "4-4" AndAlso Form_Tools.ComboBox_firme.Text = "VRU" AndAlso
+               (Map_roaming = "4-5" Or "5-1" Or "5-2" Or "5-3") Then
+                    PORTAIL_44_to_35()
 
 
-                    ElseIf Map_actuelle = "4-4" AndAlso
-              (Map_roaming = "4-1" Or "1-1" Or "1-2" Or "1-3" Or "1-4") Then
-                        PORTAIL_44_to_41()
+                ElseIf Map_actuelle = "4-4" AndAlso
+          (Map_roaming = "4-1" Or "1-1" Or "1-2" Or "1-3" Or "1-4") Then
+                    PORTAIL_44_to_41()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso
-     (Map_roaming = "4-1" Or "1-1" Or "1-2" Or "1-3" Or "1-4") Then
-                        PORTAIL_44_to_42()
+                ElseIf Map_actuelle = "4-4" AndAlso
+ (Map_roaming = "4-1" Or "1-1" Or "1-2" Or "1-3" Or "1-4") Then
+                    PORTAIL_44_to_42()
 
-                    ElseIf Map_actuelle = "4-4" AndAlso
-     (Map_roaming = "4-3" Or "3-1" Or "3-2" Or "3-3" Or "3-4") Then
-                        PORTAIL_44_to_43()
+                ElseIf Map_actuelle = "4-4" AndAlso
+ (Map_roaming = "4-3" Or "3-1" Or "3-2" Or "3-3" Or "3-4") Then
+                    PORTAIL_44_to_43()
 
 
 #End Region ' VALIDER
+#Region "MAP = 4-5 ---------- "
+
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "MMO" AndAlso
+                        (Map_roaming = "1-1" Or "1-2" Or "1-3" Or "1-4" Or "1-5" Or "1-6" Or "1-7" Or "1-8" Or
+                         Map_roaming = "4-1" Or "4-2" Or "4-3" Or "4-4" Or
+                         Map_roaming = "1-BL") Then
+                    PORTAIL_45_to_15()
+
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "EIC" AndAlso
+                        (Map_roaming = "2-1" Or "2-2" Or "2-3" Or "2-4" Or "2-5" Or "2-6" Or "2-7" Or "2-8" Or
+                         Map_roaming = "4-2" Or "4-3" Or "4-1" Or "4-4" Or
+                         Map_roaming = "2-BL") Then
+                    PORTAIL_45_to_25()
+
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "VRU" AndAlso
+                        (Map_roaming = "1-1" Or "1-2" Or "1-3" Or "1-4" Or "1-5" Or "1-6" Or "1-7" Or "1-8" Or
+                         Map_roaming = "4-3" Or "4-1" Or "4-3" Or "4-2" Or
+                         Map_roaming = "3-BL") Then
+                    PORTAIL_45_to_35()
+
+#End Region
 
 
 
@@ -1236,7 +1338,7 @@ Public Class Form_Game
 
 
 
-                    Else
+                Else
                         'On ne trouve pas la map à aller ?
                         Await Task.Delay(10000)
                     Console.WriteLine("On relance Traveling Module")
