@@ -545,7 +545,7 @@ Public Class Form_Tools
             Reloader = 0
             Reload()
 
-                Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
@@ -2353,50 +2353,53 @@ Public Class Form_Tools
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-                Utils.server = CheckRegex.Groups.Item(1).ToString
+            Utils.server = CheckRegex.Groups.Item(1).ToString
 
-                Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
-                If dosid_regex.Success Then
+            Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+            If dosid_regex.Success Then
 
-                    Utils.dosid = dosid_regex.Value.Split("=")(1)
-                    Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                    TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                    TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
-                    TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
-                    Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
-                    Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
-                    Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
-                    Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
-                    Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
-                    TextBox_Get_Server.Text = Utils.server
-                    Utils.UpdateStats()
+                Utils.dosid = dosid_regex.Value.Split("=")(1)
+                Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
+                TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
+                Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
+                Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
+                Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
+                Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
+                Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+                Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
+                Console.WriteLine(Compagny)
+                Console.WriteLine("---------------------------------------")
+                TextBox_Get_Server.Text = Utils.server
+                Utils.UpdateStats()
 
-                    textbox_stade.Text = "Server : OK  ---  2/2"
+                textbox_stade.Text = "Server : OK  ---  2/2"
 
-                    textbox_stade.Text = "Done."
+                textbox_stade.Text = "Done."
 
-                    Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                    If BackgroundWorker_Timer.IsBusy <> True Then
-                        BackgroundWorker_Timer.RunWorkerAsync()
-                    End If
-
-                    WebBrowser_Synchronisation.Navigate("about:blank")
-
-                    If CheckBox_LaunchGameAuto.Checked = True Then
-
-                        textbox_stade.Text = "Launching the game wait ... "
-
-                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                        Form_Game.Show()
-
-                    End If
+                If BackgroundWorker_Timer.IsBusy <> True Then
+                    BackgroundWorker_Timer.RunWorkerAsync()
                 End If
 
-                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+                WebBrowser_Synchronisation.Navigate("about:blank")
+
+                If CheckBox_LaunchGameAuto.Checked = True Then
+
+                    textbox_stade.Text = "Launching the game wait ... "
+
+                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Form_Game.Show()
+
+                End If
             End If
+
+            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+        End If
 
     End Sub
 

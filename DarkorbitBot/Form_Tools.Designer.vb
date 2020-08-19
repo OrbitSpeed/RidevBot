@@ -69,7 +69,9 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox_map_to_travel = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_firme = New System.Windows.Forms.ComboBox()
         Me.TextBox_desactive_allkey = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label_desactive_all_elements = New System.Windows.Forms.Label()
@@ -152,12 +154,14 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -264,8 +268,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.BackgroundWorker_Timer = New System.ComponentModel.BackgroundWorker()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
@@ -909,7 +911,9 @@ Partial Class Form_Tools
         'Panel_Npc
         '
         Me.Panel_Npc.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Npc.Controls.Add(Me.Label6)
         Me.Panel_Npc.Controls.Add(Me.ComboBox_map_to_travel)
+        Me.Panel_Npc.Controls.Add(Me.ComboBox_firme)
         Me.Panel_Npc.Controls.Add(Me.TextBox_desactive_allkey)
         Me.Panel_Npc.Controls.Add(Me.Label7)
         Me.Panel_Npc.Controls.Add(Me.Label_desactive_all_elements)
@@ -921,6 +925,17 @@ Partial Class Form_Tools
         Me.Panel_Npc.Size = New System.Drawing.Size(304, 315)
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(82, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "Firme :"
         '
         'ComboBox_map_to_travel
         '
@@ -934,12 +949,27 @@ Partial Class Form_Tools
         Me.ComboBox_map_to_travel.FormattingEnabled = True
         Me.ComboBox_map_to_travel.IntegralHeight = False
         Me.ComboBox_map_to_travel.Items.AddRange(New Object() {"1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-BL", "2-1", "2-2", "2-3", "2-4", "2-5", "2-6", "2-7", "2-8", "2-BL", "3-1", "3-2", "3-3", "3-4", "3-5", "3-6", "3-7", "3-8", "3-BL", "4-1", "4-2", "4-3", "4-4", "4-5", "5-1", "5-2", "5-3", "???"})
-        Me.ComboBox_map_to_travel.Location = New System.Drawing.Point(130, 18)
+        Me.ComboBox_map_to_travel.Location = New System.Drawing.Point(130, 42)
         Me.ComboBox_map_to_travel.MaxDropDownItems = 35
         Me.ComboBox_map_to_travel.Name = "ComboBox_map_to_travel"
         Me.ComboBox_map_to_travel.Size = New System.Drawing.Size(58, 21)
         Me.ComboBox_map_to_travel.TabIndex = 57
         Me.ComboBox_map_to_travel.Text = Global.DarkorbitBot.My.MySettings.Default.map_to_travel
+        '
+        'ComboBox_firme
+        '
+        Me.ComboBox_firme.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ComboBox_firme.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "FIRME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ComboBox_firme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox_firme.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_firme.ForeColor = System.Drawing.Color.White
+        Me.ComboBox_firme.FormattingEnabled = True
+        Me.ComboBox_firme.Items.AddRange(New Object() {"MMO ", "VRU", "EIC"})
+        Me.ComboBox_firme.Location = New System.Drawing.Point(130, 19)
+        Me.ComboBox_firme.Name = "ComboBox_firme"
+        Me.ComboBox_firme.Size = New System.Drawing.Size(58, 21)
+        Me.ComboBox_firme.TabIndex = 38
+        Me.ComboBox_firme.Text = Global.DarkorbitBot.My.MySettings.Default.FIRME
         '
         'TextBox_desactive_allkey
         '
@@ -947,7 +977,7 @@ Partial Class Form_Tools
         Me.TextBox_desactive_allkey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_desactive_allkey.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Desactive_all_formkey", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBox_desactive_allkey.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(166, 42)
+        Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(166, 69)
         Me.TextBox_desactive_allkey.MaxLength = 1
         Me.TextBox_desactive_allkey.Name = "TextBox_desactive_allkey"
         Me.TextBox_desactive_allkey.Size = New System.Drawing.Size(24, 22)
@@ -960,7 +990,7 @@ Partial Class Form_Tools
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(40, 21)
+        Me.Label7.Location = New System.Drawing.Point(40, 45)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(84, 13)
         Me.Label7.TabIndex = 46
@@ -971,7 +1001,7 @@ Partial Class Form_Tools
         Me.Label_desactive_all_elements.AutoSize = True
         Me.Label_desactive_all_elements.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label_desactive_all_elements.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_desactive_all_elements.Location = New System.Drawing.Point(40, 44)
+        Me.Label_desactive_all_elements.Location = New System.Drawing.Point(40, 71)
         Me.Label_desactive_all_elements.Name = "Label_desactive_all_elements"
         Me.Label_desactive_all_elements.Size = New System.Drawing.Size(126, 13)
         Me.Label_desactive_all_elements.TabIndex = 46
@@ -1159,7 +1189,7 @@ Partial Class Form_Tools
         Me.Label_jump_key.AutoSize = True
         Me.Label_jump_key.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label_jump_key.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_jump_key.Location = New System.Drawing.Point(23, 78)
+        Me.Label_jump_key.Location = New System.Drawing.Point(23, 102)
         Me.Label_jump_key.Name = "Label_jump_key"
         Me.Label_jump_key.Size = New System.Drawing.Size(246, 13)
         Me.Label_jump_key.TabIndex = 58
@@ -2044,6 +2074,18 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2119,6 +2161,19 @@ Partial Class Form_Tools
         Me.Panel_Title.Name = "Panel_Title"
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
         Me.Panel_Title.TabIndex = 24
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_close1
         '
@@ -3492,31 +3547,6 @@ Partial Class Form_Tools
         '
         Me.BackgroundWorker_Timer.WorkerSupportsCancellation = True
         '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3872,4 +3902,6 @@ Partial Class Form_Tools
     Friend WithEvents Label7 As Label
     Friend WithEvents ComboBox_map_to_travel As ComboBox
     Friend WithEvents Label_jump_key As Label
+    Friend WithEvents ComboBox_firme As ComboBox
+    Friend WithEvents Label6 As Label
 End Class
