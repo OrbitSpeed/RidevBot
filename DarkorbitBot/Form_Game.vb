@@ -1311,6 +1311,18 @@ Public Class Form_Game
                          Map_roaming = "3-BL") Then
                     PORTAIL_45_to_35()
 
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "MMO" AndAlso
+                        (Map_roaming = "5-1") Then
+                    PORTAIL_45_to_51_MMO()
+
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "EIC" AndAlso
+                        (Map_roaming = "5-1") Then
+                    PORTAIL_45_to_51_EIC()
+
+                ElseIf Map_actuelle = "4-5" AndAlso Form_Tools.ComboBox_firme.Text = "VRU" AndAlso
+                        (Map_roaming = "5-1") Then
+                    PORTAIL_45_to_51_VRU()
+
 #End Region
 
 
