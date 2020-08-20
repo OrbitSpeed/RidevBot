@@ -220,7 +220,21 @@ Public Class Utils
     End Sub
 
     Public Shared Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer
-        Dim Generator As System.Random = New System.Random()
+        Dim Generator As Random = New Random()
         Return Generator.Next(Min, Max)
+    End Function
+    Public Shared Function GetPortalZone(ByVal Number As Integer, ByVal x_or_y As String) As Integer
+        If x_or_y = "x" Then
+            'C'est X, donc on enlève pas 18
+            Dim Generator As Random = New Random()
+            Return Generator.Next(Number - 8, Number + 8)
+        ElseIf x_or_y = "y" Then
+            'C'est Y, donc on enlève 18
+            Dim Generator As Random = New Random()
+            Return Generator.Next((Number - 18) - 8, (Number - 18) + 8)
+        Else
+            Console.WriteLine("Can't get the X or Y, is it defined in the call of the function ?")
+            Return 0
+        End If
     End Function
 End Class

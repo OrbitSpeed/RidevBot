@@ -771,8 +771,13 @@ Public Class Form_Game
             Exit Sub
         End If
 
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
+        'Dim randomX = Utils.GetRandom(685, 693)
+        'Dim randomY = Utils.GetRandom(717, 725)
+
+        Dim randomX = Utils.GetPortalZone(685, "x")
+        Dim randomY = Utils.GetPortalZone(717, "y")
+        'Milieu
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomy)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
@@ -806,9 +811,11 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'On envoit le milieu du portail
+        Dim randomX = Utils.GetPortalZone(683, "x")
+        Dim randomY = Utils.GetPortalZone(493, "y")
 
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
@@ -833,7 +840,6 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_2BL_EIC()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -870,7 +876,6 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_44_to_15()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -885,7 +890,6 @@ Public Class Form_Game
 
 
     Private Async Sub PORTAIL_25_TO_44()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -898,7 +902,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_44_to_25()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -913,7 +916,6 @@ Public Class Form_Game
 
 
     Private Async Sub PORTAIL_35_TO_44()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -926,7 +928,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_44_to_35()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -942,7 +943,6 @@ Public Class Form_Game
 
 
     Private Async Sub PORTAIL_44_to_41()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -955,7 +955,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_44_to_42()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -968,7 +967,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_44_to_43()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -984,7 +982,6 @@ Public Class Form_Game
 
 
     Private Async Sub PORTAIL_45_to_15()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -996,7 +993,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_45_to_25()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1008,7 +1004,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_45_to_35()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1020,7 +1015,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_45_to_51_MMO()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1032,7 +1026,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_45_to_51_EIC()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1044,7 +1037,6 @@ Public Class Form_Game
 
     End Sub
     Private Async Sub PORTAIL_45_to_51_VRU()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1070,7 +1062,6 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_45_EIC()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
@@ -1097,33 +1088,39 @@ Public Class Form_Game
 
 
     Private Async Sub PORTAIL_HAUT_DROITE()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
+        Dim randomX = Utils.GetPortalZone(758, "x")
+        Dim randomY = Utils.GetPortalZone(492, "y")
 
         'HAUT DROITE 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 480)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
     Private Async Sub PORTAIL_HAUT_GAUCHE()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
+        '608
+        '492+18
+        'Dim randomX = Utils.GetRandom(608, 616)
+        'Dim randomY = Utils.GetRandom(474, 482)
+
+        Dim randomX = Utils.GetPortalZone(608, "x")
+        Dim randomY = Utils.GetPortalZone(492, "y")
 
         ' HAUT GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
     Private Async Sub PORTAIL_BAS_DROITE()
-
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
