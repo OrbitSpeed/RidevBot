@@ -2540,16 +2540,14 @@ Public Class Form_Tools
     Public Async Sub ComboBox_map_to_travel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_map_to_travel.SelectedIndexChanged
 
         If Form_Game.User_Stop_Bot = True Then
-
+            'we don't do anything
         Else
             Form_Game.User_Stop_Bot = True
-Back:
-            If Form_Game.User_Stop_Bot = True Then
-                Await Task.Delay(100)
-                GoTo Back
-            Else
 
-                Await Task.Delay(2500)
+            If Form_Game.User_Stop_Bot = False Then
+
+            Else
+                'Await Task.Delay(2500)
                 Form_Game.User_Stop_Bot = False
                 Form_Game.Button_bonusbox.PerformClick()
             End If
