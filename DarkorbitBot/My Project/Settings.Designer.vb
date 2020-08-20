@@ -679,7 +679,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("H")>  _
         Public Property Desactive_all_formkey() As String
             Get
                 Return CType(Me("Desactive_all_formkey"),String)
@@ -806,6 +806,18 @@ Namespace My
             End Get
             Set
                 Me("FIRME") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Rex_dead() As String
+            Get
+                Return CType(Me("Rex_dead"),String)
+            End Get
+            Set
+                Me("Rex_dead") = value
             End Set
         End Property
     End Class

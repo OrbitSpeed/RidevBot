@@ -159,7 +159,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Desactive_all_formkey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">H</Value>
     </Setting>
     <Setting Name="PET_Selection" Type="System.String" Scope="User">
       <Value Profile="(Default)">Passive</Value>
@@ -190,6 +190,9 @@
     </Setting>
     <Setting Name="FIRME" Type="System.String" Scope="User">
       <Value Profile="(Default)">NONE</Value>
+    </Setting>
+    <Setting Name="Rex_dead" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

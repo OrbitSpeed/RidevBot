@@ -2533,7 +2533,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox_palladium_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_palladium.CheckedChanged
+    Private Sub CheckBox_palladium_CheckedChanged(sender As Object, e As EventArgs)
 
     End Sub
 

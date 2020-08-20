@@ -932,6 +932,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property repair_pet() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("repair_pet", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property reparator_ship_module_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("reparator_ship_module_pet", resourceCulture)

@@ -1178,8 +1178,8 @@ Public Class Form_Game
         If Map_actuelle_reconize <> Map_roaming_reconize Then
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "J")
-            Console.WriteLine("Point de chute du click traveling atteint and Sended J")
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
+            Console.WriteLine("Point de chute du click traveling atteint and Sended -- TextBox_jump_key.Text")
             Await Task.Delay(10000)
             Checking_map_actuel(True)
             Traveling_module()
@@ -2657,345 +2657,375 @@ Public Class Form_Game
         Dim protect_module_pet = My.Resources.protect_module_pet
         Dim Kamikaze_active_module_pet = My.Resources.Kamikaze_active_module_pet
         Dim npc_locator_module_pet = My.Resources.npc_locator_module_pet
+        Dim repair_pet = My.Resources.repair_pet
 
         Client_Screen = Update_Screen()
-        Dim Activate_pet1 As Point = Client_Screen.Contains(Activate_pet)
-        If Activate_pet1 <> Nothing Then
+        Dim Play_rex1 As Point = Client_Screen.Contains(Play_Pet)
+        Dim Stop_pet1 As Point = Client_Screen.Contains(Stop_pet)
+        Dim repair_pet1 As Point = Client_Screen.Contains(repair_pet)
 
-            Dim Play_rex1 As Point = Client_Screen.Contains(Play_Pet)
-            If Play_rex1 <> Nothing Then
+#Region "Activating the pet module"
+
+        If Play_rex1 <> Nothing Then
+
+        ElseIf Stop_pet1 <> Nothing Then
+
+        ElseIf repair_pet1 <> Nothing Then
+
+        Else
+            Dim Activate_pet1 As Point = Client_Screen.Contains(Activate_pet)
+            If Activate_pet1 <> Nothing Then
 
                 Console.WriteLine("On ouvre le rex")
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet1.X, Activate_pet1.Y)
                 Await Task.Delay(1600)
             Else
 
+                Console.WriteLine("Rex Error 2678")
 
             End If
+        End If
+
+#End Region
 
 
-            If Form_Tools.CheckBox_use_pet.Checked = True Then
+        Client_Screen = Update_Screen()
+        Dim repair_pet2 As Point = Client_Screen.Contains(repair_pet)
+        If repair_pet2 <> Nothing Then
 
-                Console.WriteLine("la Checkbox et valide")
+            If Form_Tools.CheckBox_repair_pet_auto.Checked = True Then
 
+                Console.WriteLine("On repare le rex")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, repair_pet2.X, repair_pet2.Y)
+                Form_Tools.Label_dead_pet_counter.Text = +1
+                Await Task.Delay(1600)
+
+            End If
+        End If
+
+
+#Region "Condition d'utilisation"
+
+        If Form_Tools.CheckBox_use_pet.Checked = True Then
+
+
+        Else
+
+            Console.WriteLine("La checkbox n'est pas ou plus checker")
+            Console.WriteLine("On verifie si le rex et quand meme lancer")
+            Client_Screen = Update_Screen()
+            Dim Stop_pet2 As Point = Client_Screen.Contains(Stop_pet)
+            If Stop_pet2 <> Nothing Then
+
+                Console.WriteLine("On arrete le Rex")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Stop_pet2.X, Stop_pet2.Y)
+                Await Task.Delay(1600)
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("On ferme le rex")
+                Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
+                Await Task.Delay(1600)
+                Exit Sub
 
             Else
 
-                Console.WriteLine("La checkbox n'est pas ou plus checker")
-                Console.WriteLine("On verifie si le rex et quand meme lancer")
-                Client_Screen = Update_Screen()
-                Dim Stop_pet2 As Point = Client_Screen.Contains(Stop_pet)
-                If Stop_pet2 <> Nothing Then
-
-                    Console.WriteLine("On arrete le Rex")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Stop_pet2.X, Stop_pet2.Y)
-                    Await Task.Delay(1600)
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("On ferme le rex")
-                    Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
-                    Await Task.Delay(1600)
-                    Exit Sub
-
-                Else
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("On ferme le rex -- le rex nest pas lancer")
-                    Dim Activate_pet2 As Point = Client_Screen.Contains(Activate_pet)
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet2.X, Activate_pet2.Y)
-                    Await Task.Delay(1600)
-                    Exit Sub
-
-                End If
+                Console.WriteLine("On ferme le rex -- le rex nest pas lancer")
+                Dim Activate_pet2 As Point = Client_Screen.Contains(Activate_pet)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet2.X, Activate_pet2.Y)
+                Await Task.Delay(1600)
+                Exit Sub
 
             End If
 
-            Console.WriteLine("la Checkbox et valide2")
+        End If
+
+#End Region
+
+#Region "Module Pet + Else des conditions"
+
+        Client_Screen = Update_Screen()
+        Dim Play_Pet2 As Point = Client_Screen.Contains(Play_Pet)
+        If Play_Pet2 <> Nothing Then
+
+            Console.WriteLine("On lance le rex")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Play_Pet2.X, Play_Pet2.Y)
+            Await Task.Delay(1600)
 
             Client_Screen = Update_Screen()
-            Dim Play_Pet2 As Point = Client_Screen.Contains(Play_Pet)
-            If Play_Pet2 <> Nothing Then
-
-                Console.WriteLine("On lance le rex")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Play_Pet2.X, Play_Pet2.Y)
-                Await Task.Delay(1600)
-
-                Client_Screen = Update_Screen()
-                Dim defile_menu1 As Point = Client_Screen.Contains(defile_menu)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, defile_menu1.X, defile_menu1.Y)
-                Await Task.Delay(1600)
+            Dim defile_menu1 As Point = Client_Screen.Contains(defile_menu)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, defile_menu1.X, defile_menu1.Y)
+            Await Task.Delay(1600)
 
 #Region "Elements_by_pet"
 
-                If Form_Tools.ComboBox_pet_profil.Text = "Passive" Then
+            If Form_Tools.ComboBox_pet_profil.Text = "Passive" Then
 
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Passive")
-                    Dim Passive_pet1 As Point = Client_Screen.Contains(Passive_pet)
-                    If Passive_pet1 <> Nothing Then
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Passive")
+                Dim Passive_pet1 As Point = Client_Screen.Contains(Passive_pet)
+                If Passive_pet1 <> Nothing Then
 
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Passive_pet1.X, Passive_pet1.Y)
-                        Await Task.Delay(1000)
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Passive_pet1.X, Passive_pet1.Y)
+                    Await Task.Delay(1000)
 
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Defensive mode" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Defensive mode")
-                    Dim Combo_material_module_pet1 As Point = Client_Screen.Contains(Combo_material_module_pet)
-                    If Combo_material_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Combo_material_module_pet1.X, Combo_material_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Box" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Collect Box")
-                    Dim box_collector_module_pet1 As Point = Client_Screen.Contains(box_collector_module_pet)
-                    If box_collector_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, box_collector_module_pet1.X, box_collector_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Ship Repairer" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Ship Repairer")
-                    Dim reparator_ship_module_pet1 As Point = Client_Screen.Contains(reparator_ship_module_pet)
-                    If reparator_ship_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, reparator_ship_module_pet1.X, reparator_ship_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Ore" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Collect Ore")
-                    Dim ore_collector_module_pet1 As Point = Client_Screen.Contains(ore_collector_module_pet)
-                    If ore_collector_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, ore_collector_module_pet1.X, ore_collector_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Guard" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Guard")
-                    Dim protect_module_pet1 As Point = Client_Screen.Contains(protect_module_pet)
-                    If protect_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, protect_module_pet1.X, protect_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Kamikaze" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Kamikaze")
-                    Dim Kamikaze_active_module_pet1 As Point = Client_Screen.Contains(Kamikaze_active_module_pet)
-                    If Kamikaze_active_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Kamikaze_active_module_pet1.X, Kamikaze_active_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "NPC Locator" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("NPC Locator")
-                    Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
-                    If npc_locator_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-
-
-                Else Console.WriteLine("Not added")
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("On ferme le rex")
-                    Dim Activate_pet4 As Point = Client_Screen.Contains(Activate_pet)
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet4.X, Activate_pet4.Y)
-                    Await Task.Delay(1600)
-                    Exit Sub
-
+                Else
                 End If
 
-#End Region
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Defensive mode" Then
 
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Defensive mode")
+                Dim Combo_material_module_pet1 As Point = Client_Screen.Contains(Combo_material_module_pet)
+                If Combo_material_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Combo_material_module_pet1.X, Combo_material_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Box" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Collect Box")
+                Dim box_collector_module_pet1 As Point = Client_Screen.Contains(box_collector_module_pet)
+                If box_collector_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, box_collector_module_pet1.X, box_collector_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Ship Repairer" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Ship Repairer")
+                Dim reparator_ship_module_pet1 As Point = Client_Screen.Contains(reparator_ship_module_pet)
+                If reparator_ship_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, reparator_ship_module_pet1.X, reparator_ship_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Ore" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Collect Ore")
+                Dim ore_collector_module_pet1 As Point = Client_Screen.Contains(ore_collector_module_pet)
+                If ore_collector_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, ore_collector_module_pet1.X, ore_collector_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Guard" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Guard")
+                Dim protect_module_pet1 As Point = Client_Screen.Contains(protect_module_pet)
+                If protect_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, protect_module_pet1.X, protect_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Kamikaze" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Kamikaze")
+                Dim Kamikaze_active_module_pet1 As Point = Client_Screen.Contains(Kamikaze_active_module_pet)
+                If Kamikaze_active_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Kamikaze_active_module_pet1.X, Kamikaze_active_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "NPC Locator" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("NPC Locator")
+                Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
+                If npc_locator_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+
+
+            Else Console.WriteLine("Not added")
 
                 Client_Screen = Update_Screen()
                 Console.WriteLine("On ferme le rex")
-                Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
-                Await Task.Delay(1600)
-                Exit Sub
-
-
-
-            Else
-                Console.WriteLine("Rex deja lancer")
-                Console.WriteLine("On verifie alors si on es sur le bon module")
-
-                Client_Screen = Update_Screen()
-                Dim defile_menu1 As Point = Client_Screen.Contains(defile_menu)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, defile_menu1.X, defile_menu1.Y)
-                Await Task.Delay(1600)
-
-#Region "Elements_by_pet2"
-
-                If Form_Tools.ComboBox_pet_profil.Text = "Passive" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Passive")
-                    Dim Passive_pet1 As Point = Client_Screen.Contains(Passive_pet)
-                    If Passive_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Passive_pet1.X, Passive_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Defensive mode" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Defensive mode")
-                    Dim Combo_material_module_pet1 As Point = Client_Screen.Contains(Combo_material_module_pet)
-                    If Combo_material_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Combo_material_module_pet1.X, Combo_material_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Box" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Collect Box")
-                    Dim box_collector_module_pet1 As Point = Client_Screen.Contains(box_collector_module_pet)
-                    If box_collector_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, box_collector_module_pet1.X, box_collector_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Ship Repairer" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Ship Repairer")
-                    Dim reparator_ship_module_pet1 As Point = Client_Screen.Contains(reparator_ship_module_pet)
-                    If reparator_ship_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, reparator_ship_module_pet1.X, reparator_ship_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Ore" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Collect Ore")
-                    Dim ore_collector_module_pet1 As Point = Client_Screen.Contains(ore_collector_module_pet)
-                    If ore_collector_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, ore_collector_module_pet1.X, ore_collector_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Guard" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Guard")
-                    Dim protect_module_pet1 As Point = Client_Screen.Contains(protect_module_pet)
-                    If protect_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, protect_module_pet1.X, protect_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "Kamikaze" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("Kamikaze")
-                    Dim Kamikaze_active_module_pet1 As Point = Client_Screen.Contains(Kamikaze_active_module_pet)
-                    If Kamikaze_active_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Kamikaze_active_module_pet1.X, Kamikaze_active_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-
-                ElseIf Form_Tools.ComboBox_pet_profil.Text = "NPC Locator" Then
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("NPC Locator")
-                    Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
-                    If npc_locator_module_pet1 <> Nothing Then
-
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
-                        Await Task.Delay(1000)
-
-                    Else
-                    End If
-                Else Console.WriteLine("Not added")
-
-                    Client_Screen = Update_Screen()
-                    Console.WriteLine("On ferme le rex")
-                    Dim Activate_pet4 As Point = Client_Screen.Contains(Activate_pet)
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet4.X, Activate_pet4.Y)
-                    Await Task.Delay(1600)
-                    Exit Sub
-
-                End If
-
-#End Region
-
-                Client_Screen = Update_Screen()
-                Console.WriteLine("On ferme le rex")
-                Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
+                Dim Activate_pet4 As Point = Client_Screen.Contains(Activate_pet)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet4.X, Activate_pet4.Y)
                 Await Task.Delay(1600)
                 Exit Sub
 
             End If
 
+#End Region
+
+
+            Client_Screen = Update_Screen()
+            Console.WriteLine("On ferme le rex")
+            Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
+            Await Task.Delay(1600)
+            Exit Sub
+
+
+
         Else
-            Console.WriteLine("ERROR PET OPENING")
+            Console.WriteLine("Rex deja lancer")
+            Console.WriteLine("On verifie alors si on es sur le bon module")
+
+            Client_Screen = Update_Screen()
+            Dim defile_menu1 As Point = Client_Screen.Contains(defile_menu)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, defile_menu1.X, defile_menu1.Y)
+            Await Task.Delay(1600)
+
+#Region "Elements_by_pet2"
+
+            If Form_Tools.ComboBox_pet_profil.Text = "Passive" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Passive")
+                Dim Passive_pet1 As Point = Client_Screen.Contains(Passive_pet)
+                If Passive_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Passive_pet1.X, Passive_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Defensive mode" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Defensive mode")
+                Dim Combo_material_module_pet1 As Point = Client_Screen.Contains(Combo_material_module_pet)
+                If Combo_material_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Combo_material_module_pet1.X, Combo_material_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Box" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Collect Box")
+                Dim box_collector_module_pet1 As Point = Client_Screen.Contains(box_collector_module_pet)
+                If box_collector_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, box_collector_module_pet1.X, box_collector_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Ship Repairer" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Ship Repairer")
+                Dim reparator_ship_module_pet1 As Point = Client_Screen.Contains(reparator_ship_module_pet)
+                If reparator_ship_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, reparator_ship_module_pet1.X, reparator_ship_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Collect Ore" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Collect Ore")
+                Dim ore_collector_module_pet1 As Point = Client_Screen.Contains(ore_collector_module_pet)
+                If ore_collector_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, ore_collector_module_pet1.X, ore_collector_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Guard" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Guard")
+                Dim protect_module_pet1 As Point = Client_Screen.Contains(protect_module_pet)
+                If protect_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, protect_module_pet1.X, protect_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "Kamikaze" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("Kamikaze")
+                Dim Kamikaze_active_module_pet1 As Point = Client_Screen.Contains(Kamikaze_active_module_pet)
+                If Kamikaze_active_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Kamikaze_active_module_pet1.X, Kamikaze_active_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+
+            ElseIf Form_Tools.ComboBox_pet_profil.Text = "NPC Locator" Then
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("NPC Locator")
+                Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
+                If npc_locator_module_pet1 <> Nothing Then
+
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+                    Await Task.Delay(1000)
+
+                Else
+                End If
+            Else Console.WriteLine("Not added")
+
+                Client_Screen = Update_Screen()
+                Console.WriteLine("On ferme le rex")
+                Dim Activate_pet4 As Point = Client_Screen.Contains(Activate_pet)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet4.X, Activate_pet4.Y)
+                Await Task.Delay(1600)
+                Exit Sub
+
+            End If
+
+#End Region
+
+            Client_Screen = Update_Screen()
+            Console.WriteLine("On ferme le rex")
+            Dim Activate_pet3 As Point = Client_Screen.Contains(Activate_pet)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Activate_pet3.X, Activate_pet3.Y)
+            Await Task.Delay(1600)
+            Exit Sub
+
         End If
+
+#End Region
+
 
     End Sub
 End Class
