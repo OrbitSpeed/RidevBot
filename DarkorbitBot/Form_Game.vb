@@ -2559,16 +2559,6 @@ Public Class Form_Game
 
     End Sub
 
-
-    Private Async Sub GoToPalladium(palla)
-        '  found_palla = True
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, palla(0), palla(1))
-
-        Dim temps = Task.Delay(Form_Tools.TextBox_palladium_ms.Text)
-        Await temps
-        '  found_palla = False
-    End Sub
-
     Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
 
         Traveling_module()
