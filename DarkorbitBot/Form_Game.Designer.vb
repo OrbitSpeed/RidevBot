@@ -25,6 +25,7 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button_REX = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
         Me.Button_bonusbox = New System.Windows.Forms.Button()
@@ -56,6 +57,7 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Button_REX)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
         Me.Panel7.Controls.Add(Me.Button_bonusbox)
@@ -68,9 +70,18 @@ Partial Class Form_Game
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
         '
+        'Button_REX
+        '
+        Me.Button_REX.Location = New System.Drawing.Point(526, -1)
+        Me.Button_REX.Name = "Button_REX"
+        Me.Button_REX.Size = New System.Drawing.Size(40, 19)
+        Me.Button_REX.TabIndex = 33
+        Me.Button_REX.Text = "REX"
+        Me.Button_REX.UseVisualStyleBackColor = True
+        '
         'Button_cargobox
         '
-        Me.Button_cargobox.Location = New System.Drawing.Point(477, -1)
+        Me.Button_cargobox.Location = New System.Drawing.Point(463, -1)
         Me.Button_cargobox.Name = "Button_cargobox"
         Me.Button_cargobox.Size = New System.Drawing.Size(64, 19)
         Me.Button_cargobox.TabIndex = 31
@@ -90,7 +101,7 @@ Partial Class Form_Game
         '
         'Button_bonusbox
         '
-        Me.Button_bonusbox.Location = New System.Drawing.Point(407, -2)
+        Me.Button_bonusbox.Location = New System.Drawing.Point(400, -2)
         Me.Button_bonusbox.Name = "Button_bonusbox"
         Me.Button_bonusbox.Size = New System.Drawing.Size(64, 20)
         Me.Button_bonusbox.TabIndex = 30
@@ -214,4 +225,5 @@ Partial Class Form_Game
     Friend WithEvents BackgroundWorker_Reduce_minimap As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker_Deplacement_minimap_bas_droite As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker_Checking_minimap As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button_REX As Button
 End Class
