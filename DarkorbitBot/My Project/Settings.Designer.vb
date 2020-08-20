@@ -595,7 +595,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("850")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15; 91")>  _
         Public Property CollectPalladiumticks() As String
             Get
                 Return CType(Me("CollectPalladiumticks"),String)
@@ -679,7 +679,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("H")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
         Public Property Desactive_all_formkey() As String
             Get
                 Return CType(Me("Desactive_all_formkey"),String)
@@ -799,7 +799,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("NONE")>  _
         Public Property FIRME() As String
             Get
                 Return CType(Me("FIRME"),String)

@@ -138,7 +138,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CollectPalladiumticks" Type="System.String" Scope="User">
-      <Value Profile="(Default)">850</Value>
+      <Value Profile="(Default)">15; 91</Value>
     </Setting>
     <Setting Name="collectbonusboxticks" Type="System.String" Scope="User">
       <Value Profile="(Default)">850</Value>
@@ -159,7 +159,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Desactive_all_formkey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">H</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="PET_Selection" Type="System.String" Scope="User">
       <Value Profile="(Default)">Passive</Value>
@@ -189,7 +189,7 @@
       <Value Profile="(Default)">1-1</Value>
     </Setting>
     <Setting Name="FIRME" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">NONE</Value>
     </Setting>
   </Settings>
 </SettingsFile>

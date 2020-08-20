@@ -217,7 +217,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 333)
+        Size = New Size(677, 333)
         'CenterToScreen()
 
     End Sub
