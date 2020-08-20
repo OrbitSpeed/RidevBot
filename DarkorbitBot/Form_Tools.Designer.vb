@@ -2488,7 +2488,7 @@ Partial Class Form_Tools
         Me.TextBox_GGinfoGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_GGinfoGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_GGinfoGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(14, 357)
+        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(487, 1069)
         Me.TextBox_GGinfoGGS.Multiline = True
         Me.TextBox_GGinfoGGS.Name = "TextBox_GGinfoGGS"
         Me.TextBox_GGinfoGGS.ReadOnly = True
@@ -3865,7 +3865,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_Synchronisation
         '
-        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1035, 352)
+        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1037, 1062)
         Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
         Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
@@ -3875,7 +3875,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGInfo
         '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1010, 352)
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1012, 1062)
         Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
         Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
@@ -3885,7 +3885,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1060, 352)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1062, 1062)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
@@ -3902,7 +3902,7 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_DebugGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_DebugGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(739, 357)
+        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(748, 1069)
         Me.TextBox_DebugGGS.Multiline = True
         Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
         Me.TextBox_DebugGGS.ReadOnly = True
@@ -3916,19 +3916,20 @@ Partial Class Form_Tools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
+        Me.Controls.Add(Me.Panel_GalaxyGates)
         Me.Controls.Add(Me.WebBrowser_GGInfo)
-        Me.Controls.Add(Me.WebBrowser_Synchronisation)
-        Me.Controls.Add(Me.TextBox_GGinfoGGS)
-        Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)
+        Me.Controls.Add(Me.WebBrowser_Synchronisation)
         Me.Controls.Add(Me.Panel_stats)
         Me.Controls.Add(Me.Panel_Palladium)
-        Me.Controls.Add(Me.Panel_GalaxyGates)
+        Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.Panel_collector)
         Me.Controls.Add(Me.Panel_Npc)
+        Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Panel_general)
         Me.Controls.Add(Me.Divers_Button)
+        Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Controls.Add(Me.Label_ButtonDivers)
         Me.Controls.Add(Me.Rex_Button)
         Me.Controls.Add(Me.Label_buttonREX)
@@ -3944,7 +3945,6 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Label_galaxygates)
         Me.Controls.Add(Me.Label_ButtonNPCBOX)
         Me.Controls.Add(Me.Label_buttonGeneral)
-        Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Controls.Add(Me.Panel_Title)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
