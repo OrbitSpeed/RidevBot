@@ -154,9 +154,30 @@
         scjOcbTWhFEDq6/mijbZ/wKrsRqSvUuEPwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="Aider_streuner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAcAAAAFCAIAAAAG+GGPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAADFJREFUGFdjAIIzYGQPYoJIIBsEWsEsIAkEUFGIQgiSR1YLBBDRBDRRiCFABBJl
+        YAAAcUEQScoAi/wAAAAASUVORK5CYII=
+</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="AxInterop_WMPLib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\dll\AxInterop.WMPLib.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boss_Lordakia" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAIAAACNL4o+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFRJREFUKFNjIAjkGRjOgBFhgKLUHsaBoASIKAwglELUrYEIg9XhVAqUgLCAerAC
+        FAdAWHCEpgeLt+BCrVABKEBxANxxQEVAIcJuhSA0dUAAVcrAAAAXMiTFmT2aqgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="boss_streuner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAkAAAAECAIAAADTbYKZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAChJREFUGFdjOMMAQvYM2ABErhXKgwIoF0gB5RIgHBiACGKRgIAzDAwANq0JdFna
+        k/gAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="bouclier" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1360,6 +1381,13 @@
         sHm7c4UbVP/DMkAwHO/8L37AQvDdwk8Q1e+++Cf0X6EsVAxCePM7AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="lordakia" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAIAAAA4WjmaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAC1JREFUGFdjOMPAYM+AAK0MIBEgCQVo0gn4peXBIkAEBRAOBK0Bi8BVnGFgAAAQ
+        sQ6/sUMrZQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="map" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAIAAABr4HqSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1939,6 +1967,13 @@
         AHo30BHFQiDAnlqBNgB9rK8lD+XDgZISALhpyVOBOOa1AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="recruit_streuner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAENJREFUGFdjAII1DAxnGBjsQUwQA86GggSwUCuMAVSNABDlEGkggjCwAyy6IQBo
+        GVBOHmYSwm4IH4iA0hAAFznDwAAA6RYWOHrzeDAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="repair_pet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAIAAAB2uKNyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -2026,6 +2061,13 @@
         M368WvT988rv39dgQV9XfX+7BGjDs30tDL/Oz/xxdxbIYKDoz7VYEFDD+2VAJz070DpSVJ+Z/uPm9B/P
         F3z/sBwUiJjo4wpg+AJNfLanmeHXkUk/Lk4Ecn48nf/j5SIs6PkCUHRemfJsSx3Drz29Pw91ACMWFKM3
         pmFB16YCjft5vOvZqjIAt/jc4YPd9f4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="streuner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAcAAAAFCAIAAAAG+GGPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACBJREFUGFdjOMPAkMCAAEAuEJEq2goRAAOEKBxBuQwMAB03D/5qe0GfAAAAAElF
+        TkSuQmCC
 </value>
   </data>
   <data name="success_icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
