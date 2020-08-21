@@ -2539,42 +2539,27 @@ Public Class Form_Tools
 
     Public Async Sub ComboBox_map_to_travel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_map_to_travel.SelectedIndexChanged
 
-        '        -=[ Streuner ]=-
-        '    ..: { Boss Streuner } :..
-        '     -=[ Lordakia ]=-
-        '   ..: { Boss Lordakia }:..
-        '   -=[ Recruit Streuner ]=-
-        '    -=[ Aider Streuner ]=-
-        '     -=[ Saimon ]=-
-        '    ..: { Boss Saimon }:..
-        '     -=[ Mordon ]=-
-        '    ..: { Boss Mordon }:..
-        '    -=[ Devolarium ]=-
-        '     ..: { Boss Devolarium }:..
-        '    -=[ Sibelon ]=-
-        '   ..: { Boss Sibelon }:..
-        '     -=[ Sibelonit ]=-
-        '   ..: { Boss Sibelonit }:..
-        '    -=[ Lordakium ]=-
-        '   ..: { Boss Lordakium }:..
-        '   -=[ Kristallin ]=-
-        '    ..: { Boss Kristallin }:..
-        '      -=[ Kristallon ]=-
-        '      ..: { Boss Kristallon }:..
-        '     -=[ StreuneR ]=-
-        '       ..: { Boss StreuneR }:..
-        '     -=[ Protegit ]=-
-        '   -=[ Cubikon ]=-
-        '       \\ Invoke XVI //
-
         Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
 
+#Region "MMO"
         If Map_actuelle = "1-1" Then
+
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
 
         ElseIf Map_actuelle = "1-2" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Recruit Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Aider Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add(" ..:{ Boss Streuner }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakia }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
@@ -2586,6 +2571,18 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "1-3" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Devolarium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Devolarium }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
             CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
@@ -2594,11 +2591,22 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
         ElseIf Map_actuelle = "1-4" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
@@ -2608,12 +2616,18 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
 
         ElseIf Map_actuelle = "1-5" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("*Lordakium spore*")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelonit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelonit }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakium }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("*Lordakium spore*")
@@ -2623,6 +2637,14 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
 
         ElseIf Map_actuelle = "1-6" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Cubikon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Protegit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
@@ -2634,6 +2656,14 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "1-7" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("<=< Blighted Gygerthrall >=>")
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
             CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
@@ -2644,17 +2674,34 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "1-8" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ StreuneR ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss StreuneR }:..")
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
             CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
 
         ElseIf Map_actuelle = "1-BL" Then
+#End Region
+#Region "EIC"
         ElseIf Map_actuelle = "2-1" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
 
         ElseIf Map_actuelle = "2-2" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Recruit Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Aider Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add(" ..:{ Boss Streuner }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakia }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
@@ -2666,6 +2713,18 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "2-3" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Devolarium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Devolarium }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
             CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
@@ -2674,11 +2733,22 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
         ElseIf Map_actuelle = "2-4" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
@@ -2688,11 +2758,17 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
         ElseIf Map_actuelle = "2-5" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("*Lordakium spore*")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelonit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelonit }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakium }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("*Lordakium spore*")
@@ -2702,6 +2778,14 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
 
         ElseIf Map_actuelle = "2-6" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Cubikon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Protegit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
@@ -2713,6 +2797,14 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "2-7" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("<=< Blighted Gygerthrall >=>")
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
             CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
@@ -2723,18 +2815,36 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "2-8" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ StreuneR ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss StreuneR }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
             CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
 
         ElseIf Map_actuelle = "2-BL" Then
+#End Region
+#Region "VRU"
         ElseIf Map_actuelle = "3-1" Then
+
+
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
 
         ElseIf Map_actuelle = "3-2" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Recruit Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Aider Streuner ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add(" ..:{ Boss Streuner }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakia }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
@@ -2746,6 +2856,18 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "3-3" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Devolarium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Devolarium }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
             CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
@@ -2754,11 +2876,22 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
         ElseIf Map_actuelle = "3-4" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Saimon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Mordon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Saimon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Mordon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC MINION -- ")
+            ComboBoxLabel_pet_locator_list.Items.Add(" -- HITAC -- ")
+
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
@@ -2768,11 +2901,17 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
             CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
-
             CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
             CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
         ElseIf Map_actuelle = "3-5" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("*Lordakium spore*")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelonit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakium ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Sibelonit }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Lordakium }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("*Lordakium spore*")
@@ -2782,6 +2921,14 @@ Public Class Form_Tools
             CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
 
         ElseIf Map_actuelle = "3-6" Then
+
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Cubikon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Protegit ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
 
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
@@ -2793,6 +2940,14 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "3-7" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallon ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallin }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss Kristallon }:..")
+            ComboBoxLabel_pet_locator_list.Items.Add("<=< Blighted Gygerthrall >=>")
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
             CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
@@ -2803,11 +2958,17 @@ Public Class Form_Tools
 
         ElseIf Map_actuelle = "3-8" Then
 
+            ComboBoxLabel_pet_locator_list.Items.Clear()
+            ComboBoxLabel_pet_locator_list.Items.Add("-=[ StreuneR ]=-")
+            ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss StreuneR }:..")
+
             CheckedListBox_npc.Items.Clear()
             CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
             CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
 
         ElseIf Map_actuelle = "3-BL" Then
+#End Region
+#Region "PVP"
         ElseIf Map_actuelle = "4-1" Then
         ElseIf Map_actuelle = "4-2" Then
         ElseIf Map_actuelle = "4-3" Then
@@ -2816,6 +2977,7 @@ Public Class Form_Tools
         ElseIf Map_actuelle = "5-1" Then
         ElseIf Map_actuelle = "5-2" Then
         ElseIf Map_actuelle = "5-3" Then
+#End Region
 
         End If
 
