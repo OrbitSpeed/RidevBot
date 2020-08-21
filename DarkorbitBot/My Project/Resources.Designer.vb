@@ -81,12 +81,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Aider_streuner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Aider_streuner", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Byte[].
         '''</summary>
         Friend ReadOnly Property AxInterop_WMPLib() As Byte()
             Get
                 Dim obj As Object = ResourceManager.GetObject("AxInterop_WMPLib", resourceCulture)
                 Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property boss_Lordakia() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("boss_Lordakia", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property boss_streuner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("boss_streuner", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -425,6 +455,16 @@ Namespace My.Resources
         Friend ReadOnly Property logfile_30x30() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logfile_30x30", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lordakia() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lordakia", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -932,6 +972,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property recruit_streuner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("recruit_streuner", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property repair_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("repair_pet", resourceCulture)
@@ -995,6 +1045,16 @@ Namespace My.Resources
         Friend ReadOnly Property Stop_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Stop_pet", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property streuner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("streuner", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

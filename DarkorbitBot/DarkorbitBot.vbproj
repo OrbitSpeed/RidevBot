@@ -491,6 +491,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\streuner.png" />
+    <None Include="Resources\recruit_streuner.png" />
+    <None Include="Resources\lordakia.png" />
+    <None Include="Resources\boss_streuner.png" />
+    <None Include="Resources\boss_Lordakia.png" />
+    <None Include="Resources\Aider_streuner.png" />
     <None Include="Resources\repair_pet.png" />
     <None Include="Resources\Deconnection_popup_encore_visible.png" />
     <None Include="Resources\ore_collector_module_pet.png" />

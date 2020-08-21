@@ -31,15 +31,21 @@ Partial Class Form_Game
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
-        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Detection_minimap = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Reduce_minimap = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Deplacement_minimap_bas_droite = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Checking_minimap = New System.ComponentModel.BackgroundWorker()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -127,36 +133,12 @@ Partial Class Form_Game
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
         '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
-        '
         'TextBox_getserver
         '
         Me.TextBox_getserver.Location = New System.Drawing.Point(12, 24)
         Me.TextBox_getserver.Name = "TextBox_getserver"
         Me.TextBox_getserver.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_getserver.TabIndex = 28
-        '
-        'WebBrowser_Game_Ridevbot
-        '
-        Me.WebBrowser_Game_Ridevbot.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
-        Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"
-        Me.WebBrowser_Game_Ridevbot.ScriptErrorsSuppressed = True
-        Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
-        Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
-        Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
         'BackgroundWorker_Performance
         '
@@ -182,12 +164,96 @@ Partial Class Form_Game
         '
         Me.BackgroundWorker_Checking_minimap.WorkerSupportsCancellation = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 587)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(79, 19)
+        Me.Button1.TabIndex = 34
+        Me.Button1.Text = "Aider"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(97, 587)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(79, 19)
+        Me.Button2.TabIndex = 35
+        Me.Button2.Text = "Recruit"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(180, 587)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(79, 19)
+        Me.Button3.TabIndex = 36
+        Me.Button3.Text = "streuner"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(265, 587)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(79, 19)
+        Me.Button4.TabIndex = 37
+        Me.Button4.Text = "Lordakia"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(350, 587)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(79, 19)
+        Me.Button5.TabIndex = 38
+        Me.Button5.Text = "Boss streuner"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(435, 587)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(79, 19)
+        Me.Button6.TabIndex = 39
+        Me.Button6.Text = "Boss lordakia"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
+        'WebBrowser_Game_Ridevbot
+        '
+        Me.WebBrowser_Game_Ridevbot.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
+        Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"
+        Me.WebBrowser_Game_Ridevbot.ScriptErrorsSuppressed = True
+        Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
+        Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
+        Me.WebBrowser_Game_Ridevbot.TabIndex = 17
+        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
         Me.Controls.Add(Me.TextBox_getserver)
@@ -226,4 +292,10 @@ Partial Class Form_Game
     Friend WithEvents BackgroundWorker_Deplacement_minimap_bas_droite As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker_Checking_minimap As System.ComponentModel.BackgroundWorker
     Friend WithEvents Button_REX As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class
