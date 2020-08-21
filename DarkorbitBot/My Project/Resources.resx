@@ -1362,6 +1362,13 @@
         yivgsebGeeF+ntyn9OhAADs=
 </value>
   </data>
+  <data name="locked" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACVJREFUGFdjmCfPOkGahWGyMsMsFQaG9eIM2yQYGI7xs1wU4gAAWMYGPkDM2ewA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="logfile_30x30" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAMBQTFRFjI6T
@@ -1879,6 +1886,13 @@
         wwAADsMBx2+oZAAAAGVJREFUGFdjkNbQl9cyUNExUNM1UNcDkUA2UAQozgCkgHxdA0NDI0MjY0MDI0Md
         A0NVXZA0g7KOAZBjZmJkbW5kZwEiTU2MtPUNgeIMQE02NpYvHx1ARkDdQHG8clp+0djN1DEAAOhAMgFd
         T2C+AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="mucosum" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAIAAADZSiLoAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACZJREFUGFdjELC2ErC1lrBzYJB2dRfx8hL39maQigxVjIiUiAoHAFCvBgOk4xCV
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="npc_locator_module_pet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

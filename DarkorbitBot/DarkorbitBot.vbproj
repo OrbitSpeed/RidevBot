@@ -491,6 +491,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\mucosum.png" />
+    <None Include="Resources\locked.png" />
     <None Include="Resources\streuner.png" />
     <None Include="Resources\recruit_streuner.png" />
     <None Include="Resources\lordakia.png" />

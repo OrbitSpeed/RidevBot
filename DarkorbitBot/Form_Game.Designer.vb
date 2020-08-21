@@ -46,6 +46,7 @@ Partial Class Form_Game
         Me.Button6 = New System.Windows.Forms.Button()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -242,12 +243,22 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(12, 543)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(79, 19)
+        Me.Button7.TabIndex = 40
+        Me.Button7.Text = "Mucosum"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -298,4 +309,5 @@ Partial Class Form_Game
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class

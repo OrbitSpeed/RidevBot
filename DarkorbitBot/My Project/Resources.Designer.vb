@@ -452,6 +452,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property locked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("locked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property logfile_30x30() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logfile_30x30", resourceCulture)
@@ -895,6 +905,16 @@ Namespace My.Resources
         Friend ReadOnly Property Move_box() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Move_box", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mucosum() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mucosum", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

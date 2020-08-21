@@ -572,6 +572,13 @@ Public Class Form_Game
 
                                          ElseIf (Map_actuelle.Contains("1-2")) Or (Map_actuelle.Contains("2-2")) Or (Map_actuelle.Contains("3-2")) Then
 
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Mucosum")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Streuner ]=-")
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
@@ -589,6 +596,14 @@ Public Class Form_Game
                                              Form_Tools.CheckedListBox_npc.Items.Add("..: { Boss Lordakia }:..")
 
                                          ElseIf (Map_actuelle.Contains("1-3")) Or (Map_actuelle.Contains("2-3")) Or (Map_actuelle.Contains("3-3")) Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Mucosum")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Scrap")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Plasmide")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
 
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
@@ -614,6 +629,14 @@ Public Class Form_Game
                                              Form_Tools.CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
                                          ElseIf (Map_actuelle.Contains("1-4")) Or (Map_actuelle.Contains("2-4")) Or (Map_actuelle.Contains("3-4")) Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Mucosum")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Scrap")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Plasmide")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
 
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Lordakia ]=-")
@@ -641,6 +664,12 @@ Public Class Form_Game
 
                                          ElseIf (Map_actuelle.Contains("1-5")) Or (Map_actuelle.Contains("2-5")) Or (Map_actuelle.Contains("3-5")) Then
 
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Mucosum")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("*Lordakium spore*")
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Sibelonit ]=-")
@@ -656,6 +685,13 @@ Public Class Form_Game
                                              Form_Tools.CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
 
                                          ElseIf Map_actuelle.Contains("-6") Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Prismatium")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bifenon")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
 
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Blighted Kristallin ]=-")
@@ -675,6 +711,12 @@ Public Class Form_Game
 
                                          ElseIf Map_actuelle.Contains("-7") Then
 
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Prismatium")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallin ]=-")
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ Kristallon ]=-")
@@ -693,6 +735,11 @@ Public Class Form_Game
 
                                          ElseIf Map_actuelle.Contains("-8") Then
 
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Clear()
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("-=[ StreuneR ]=-")
                                              Form_Tools.ComboBoxLabel_pet_locator_list.Items.Add("..: { Boss StreuneR }:..")
@@ -703,14 +750,60 @@ Public Class Form_Game
 
                                          ElseIf Map_actuelle = "1-BL" Then
 #End Region
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
 #Region "PVP"
                                          ElseIf Map_actuelle = "4-1" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "4-2" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "4-3" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "4-4" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "4-5" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "5-1" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "5-2" Then
+
+                                             Form_Tools.CheckedListBox_listbox.Items.Clear()
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Gift Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Bonus Box")
+                                             Form_Tools.CheckedListBox_listbox.Items.Add("Cargo Box")
+
                                          ElseIf Map_actuelle = "5-3" Then
 #End Region
 
@@ -788,14 +881,6 @@ Public Class Form_Game
     ' ⚡ MODULE MINIMAP ⚡
 
 #End Region
-
-
-
-
-
-
-
-
 
 #Region "Click Zone"
 
@@ -1356,7 +1441,7 @@ Public Class Form_Game
 
 #End Region
 
-
+    'TRAVELING MODULE
     Public Async Sub Traveling_module()
 
         If User_Stop_Bot Then
@@ -3177,6 +3262,167 @@ Public Class Form_Game
 
 #End Region
 
+
+    End Sub
+
+    Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Client_Screen = Update_Screen()
+        Dim Aider_Streuner = My.Resources.Aider_streuner
+        Dim Aider_Streuner1 As Point = Client_Screen.Contains(Aider_Streuner)
+        If Aider_Streuner1 <> Nothing Then
+
+            Console.WriteLine("Un Aider_Streuner trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Aider_Streuner1.X + 30, Aider_Streuner1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+
+        End If
+
+
+    End Sub
+
+    Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Client_Screen = Update_Screen()
+        Dim Recruit_streuner = My.Resources.recruit_streuner
+        Dim Recruit_streuner1 As Point = Client_Screen.Contains(Recruit_streuner)
+        If Recruit_streuner1 <> Nothing Then
+
+            Console.WriteLine("Un Recruit_streuner trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Recruit_streuner1.X + 30, Recruit_streuner1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+        End If
+
+    End Sub
+
+    Private Async Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+        Client_Screen = Update_Screen()
+        Dim streuner = My.Resources.streuner
+        Dim streuner1 As Point = Client_Screen.Contains(streuner)
+        If streuner1 <> Nothing Then
+
+            Console.WriteLine("Un streuner trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, streuner1.X + 30, streuner1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+        End If
+
+    End Sub
+
+    Private Async Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+        Client_Screen = Update_Screen()
+        Dim Lordakia = My.Resources.lordakia
+        Dim Lordakia1 As Point = Client_Screen.Contains(Lordakia)
+        If Lordakia1 <> Nothing Then
+
+            Console.WriteLine("Un Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Lordakia1.X + 30, Lordakia1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+        End If
+
+    End Sub
+
+    Private Async Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        Client_Screen = Update_Screen()
+        Dim Boss_streuner = My.Resources.boss_streuner
+        Dim Boss_streuner1 As Point = Client_Screen.Contains(Boss_streuner)
+        If Boss_streuner1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_streuner trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_streuner1.X + 30, Boss_streuner1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+        End If
+
+    End Sub
+
+    Private Async Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+        Client_Screen = Update_Screen()
+        Dim Boss_Lordakia = My.Resources.boss_Lordakia
+        Dim Boss_Lordakia1 As Point = Client_Screen.Contains(Boss_Lordakia)
+        If Boss_Lordakia1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Lordakia1.X + 30, Boss_Lordakia1.Y - 55)
+            Await Task.Delay(250)
+
+            Client_Screen = Update_Screen()
+            Dim Locked = My.Resources.locked
+            Dim Locked1 As Point = Client_Screen.Contains(Locked)
+            If Locked1 <> Nothing Then
+
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+
+
+            End If
+        End If
+
+    End Sub
+
+    Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+
+        Client_Screen = Update_Screen()
+        Dim Mucosum = My.Resources.mucosum
+        Dim Mucosum1 As Point = Client_Screen.Contains(Mucosum)
+        If Mucosum1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Mucosum1.X + 30, Mucosum1.Y - 55)
+            Await Task.Delay(1600)
+
+        End If
 
     End Sub
 End Class
