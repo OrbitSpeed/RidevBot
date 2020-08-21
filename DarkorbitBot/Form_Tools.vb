@@ -2539,47 +2539,283 @@ Public Class Form_Tools
 
     Public Async Sub ComboBox_map_to_travel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_map_to_travel.SelectedIndexChanged
 
-        If ComboBox_map_to_travel.Text = "" Then
+        '        -=[ Streuner ]=-
+        '    ..: { Boss Streuner } :..
+        '     -=[ Lordakia ]=-
+        '   ..: { Boss Lordakia }:..
+        '   -=[ Recruit Streuner ]=-
+        '    -=[ Aider Streuner ]=-
+        '     -=[ Saimon ]=-
+        '    ..: { Boss Saimon }:..
+        '     -=[ Mordon ]=-
+        '    ..: { Boss Mordon }:..
+        '    -=[ Devolarium ]=-
+        '     ..: { Boss Devolarium }:..
+        '    -=[ Sibelon ]=-
+        '   ..: { Boss Sibelon }:..
+        '     -=[ Sibelonit ]=-
+        '   ..: { Boss Sibelonit }:..
+        '    -=[ Lordakium ]=-
+        '   ..: { Boss Lordakium }:..
+        '   -=[ Kristallin ]=-
+        '    ..: { Boss Kristallin }:..
+        '      -=[ Kristallon ]=-
+        '      ..: { Boss Kristallon }:..
+        '     -=[ StreuneR ]=-
+        '       ..: { Boss StreuneR }:..
+        '     -=[ Protegit ]=-
+        '   -=[ Cubikon ]=-
+        '       \\ Invoke XVI //
 
-        ElseIf ComboBox_map_to_travel.Text = "1-1" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-2" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-3" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-4" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-5" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-6" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-7" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-8" Then
-        ElseIf ComboBox_map_to_travel.Text = "1-BL" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-1" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-2" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-3" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-4" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-5" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-6" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-7" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-8" Then
-        ElseIf ComboBox_map_to_travel.Text = "2-BL" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-1" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-2" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-3" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-4" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-5" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-6" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-7" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-8" Then
-        ElseIf ComboBox_map_to_travel.Text = "3-BL" Then
-        ElseIf ComboBox_map_to_travel.Text = "4-1" Then
-        ElseIf ComboBox_map_to_travel.Text = "4-2" Then
-        ElseIf ComboBox_map_to_travel.Text = "4-3" Then
-        ElseIf ComboBox_map_to_travel.Text = "4-4" Then
-        ElseIf ComboBox_map_to_travel.Text = "4-5" Then
-        ElseIf ComboBox_map_to_travel.Text = "5-1" Then
-        ElseIf ComboBox_map_to_travel.Text = "5-2" Then
-        ElseIf ComboBox_map_to_travel.Text = "5-3" Then
+        Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
 
-        Else
+        If Map_actuelle = "1-1" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+
+        ElseIf Map_actuelle = "1-2" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Recruit Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Aider Streuner ]=-")
+            CheckedListBox_npc.Items.Add(" ..:{ Boss Streuner }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakia }:..")
+
+        ElseIf Map_actuelle = "1-3" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Devolarium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
+
+        ElseIf Map_actuelle = "1-4" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Sibelon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
 
 
+        ElseIf Map_actuelle = "1-5" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("*Lordakium spore*")
+            CheckedListBox_npc.Items.Add("-=[ Sibelonit ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelonit }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
+
+        ElseIf Map_actuelle = "1-6" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Cubikon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Protegit ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+
+        ElseIf Map_actuelle = "1-7" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallon }:..")
+            CheckedListBox_npc.Items.Add("<=< Blighted Gygerthrall >=>")
+
+        ElseIf Map_actuelle = "1-8" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
+
+        ElseIf Map_actuelle = "1-BL" Then
+        ElseIf Map_actuelle = "2-1" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+
+        ElseIf Map_actuelle = "2-2" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Recruit Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Aider Streuner ]=-")
+            CheckedListBox_npc.Items.Add(" ..:{ Boss Streuner }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakia }:..")
+
+        ElseIf Map_actuelle = "2-3" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Devolarium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
+
+        ElseIf Map_actuelle = "2-4" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Sibelon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
+
+        ElseIf Map_actuelle = "2-5" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("*Lordakium spore*")
+            CheckedListBox_npc.Items.Add("-=[ Sibelonit ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelonit }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
+
+        ElseIf Map_actuelle = "2-6" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Cubikon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Protegit ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+
+        ElseIf Map_actuelle = "2-7" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallon }:..")
+            CheckedListBox_npc.Items.Add("<=< Blighted Gygerthrall >=>")
+
+        ElseIf Map_actuelle = "2-8" Then
+
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
+
+        ElseIf Map_actuelle = "2-BL" Then
+        ElseIf Map_actuelle = "3-1" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+
+        ElseIf Map_actuelle = "3-2" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Recruit Streuner ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Aider Streuner ]=-")
+            CheckedListBox_npc.Items.Add(" ..:{ Boss Streuner }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakia }:..")
+
+        ElseIf Map_actuelle = "3-3" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Devolarium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Devolarium }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
+
+        ElseIf Map_actuelle = "3-4" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Lordakia ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Saimon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Mordon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Sibelon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Saimon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Mordon }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelon }:..")
+
+            CheckedListBox_npc.Items.Add(" -- HITAC MINION -- ")
+            CheckedListBox_npc.Items.Add(" -- HITAC -- ")
+
+        ElseIf Map_actuelle = "3-5" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("*Lordakium spore*")
+            CheckedListBox_npc.Items.Add("-=[ Sibelonit ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Lordakium ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Sibelonit }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Lordakium }:..")
+
+        ElseIf Map_actuelle = "3-6" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Cubikon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Protegit ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+
+        ElseIf Map_actuelle = "3-7" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ Kristallin ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("-=[ Blighted Kristallon ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallin }:..")
+            CheckedListBox_npc.Items.Add("..: { Boss Kristallon }:..")
+            CheckedListBox_npc.Items.Add("<=< Blighted Gygerthrall >=>")
+
+        ElseIf Map_actuelle = "3-8" Then
+
+            CheckedListBox_npc.Items.Clear()
+            CheckedListBox_npc.Items.Add("-=[ StreuneR ]=-")
+            CheckedListBox_npc.Items.Add("..: { Boss StreuneR }:..")
+
+        ElseIf Map_actuelle = "3-BL" Then
+        ElseIf Map_actuelle = "4-1" Then
+        ElseIf Map_actuelle = "4-2" Then
+        ElseIf Map_actuelle = "4-3" Then
+        ElseIf Map_actuelle = "4-4" Then
+        ElseIf Map_actuelle = "4-5" Then
+        ElseIf Map_actuelle = "5-1" Then
+        ElseIf Map_actuelle = "5-2" Then
+        ElseIf Map_actuelle = "5-3" Then
 
         End If
 

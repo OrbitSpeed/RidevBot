@@ -50,6 +50,7 @@ Partial Class Form_Tools
         Me.TextBox_Get_Dosid = New System.Windows.Forms.TextBox()
         Me.TextBox_secondsdouble2 = New System.Windows.Forms.TextBox()
         Me.Label_Dosid = New System.Windows.Forms.Label()
+        Me.Button_revive_sid = New System.Windows.Forms.Button()
         Me.Label_separator2 = New System.Windows.Forms.Label()
         Me.TextBox_minutedouble = New System.Windows.Forms.TextBox()
         Me.TextBox_minutedouble_dixieme = New System.Windows.Forms.TextBox()
@@ -64,7 +65,6 @@ Partial Class Form_Tools
         Me.Button_LaunchGameRidevBrowser = New System.Windows.Forms.Button()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
         Me.Label_GENERAL_A_SUPPRIMER = New System.Windows.Forms.Label()
-        Me.Button_revive_sid = New System.Windows.Forms.Button()
         Me.Button_OpenLoginPanel = New System.Windows.Forms.Button()
         Me.Label_Minutes_Avant_Refresh = New System.Windows.Forms.Label()
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
@@ -72,6 +72,7 @@ Partial Class Form_Tools
         Me.Panel_Npc = New System.Windows.Forms.Panel()
         Me.TabControl_profil = New System.Windows.Forms.TabControl()
         Me.Tab_Npc_List = New System.Windows.Forms.TabPage()
+        Me.CheckedListBox_npc = New System.Windows.Forms.CheckedListBox()
         Me.Tab_Box_List = New System.Windows.Forms.TabPage()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -158,14 +159,12 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.TextBox_GGinfoGGS = New System.Windows.Forms.TextBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -272,10 +271,13 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         Me.Panel_Npc.SuspendLayout()
         Me.TabControl_profil.SuspendLayout()
+        Me.Tab_Npc_List.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
@@ -624,7 +626,7 @@ Partial Class Form_Tools
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(224, 15)
         Me.TextBox2.TabIndex = 60
-        Me.TextBox2.Text = "Player_Username &&& Grade"
+        Me.TextBox2.Text = "Player_Username &&& Grade ✓"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_secondsdouble
@@ -686,6 +688,20 @@ Partial Class Form_Tools
         Me.Label_Dosid.Size = New System.Drawing.Size(39, 13)
         Me.Label_Dosid.TabIndex = 3
         Me.Label_Dosid.Text = "DoSID"
+        '
+        'Button_revive_sid
+        '
+        Me.Button_revive_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_revive_sid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_revive_sid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_revive_sid.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_revive_sid.ForeColor = System.Drawing.Color.White
+        Me.Button_revive_sid.Location = New System.Drawing.Point(4, 121)
+        Me.Button_revive_sid.Name = "Button_revive_sid"
+        Me.Button_revive_sid.Size = New System.Drawing.Size(268, 25)
+        Me.Button_revive_sid.TabIndex = 37
+        Me.Button_revive_sid.Text = "Reload account infos && do-sid"
+        Me.Button_revive_sid.UseVisualStyleBackColor = False
         '
         'Label_separator2
         '
@@ -865,20 +881,6 @@ Partial Class Form_Tools
         Me.Label_GENERAL_A_SUPPRIMER.Text = "General"
         Me.Label_GENERAL_A_SUPPRIMER.Visible = False
         '
-        'Button_revive_sid
-        '
-        Me.Button_revive_sid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_revive_sid.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_revive_sid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_revive_sid.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_revive_sid.ForeColor = System.Drawing.Color.White
-        Me.Button_revive_sid.Location = New System.Drawing.Point(4, 121)
-        Me.Button_revive_sid.Name = "Button_revive_sid"
-        Me.Button_revive_sid.Size = New System.Drawing.Size(268, 25)
-        Me.Button_revive_sid.TabIndex = 37
-        Me.Button_revive_sid.Text = "Reload account infos && do-sid"
-        Me.Button_revive_sid.UseVisualStyleBackColor = False
-        '
         'Button_OpenLoginPanel
         '
         Me.Button_OpenLoginPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -963,6 +965,7 @@ Partial Class Form_Tools
         'Tab_Npc_List
         '
         Me.Tab_Npc_List.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Tab_Npc_List.Controls.Add(Me.CheckedListBox_npc)
         Me.Tab_Npc_List.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Tab_Npc_List.ForeColor = System.Drawing.Color.White
         Me.Tab_Npc_List.Location = New System.Drawing.Point(4, 22)
@@ -970,6 +973,16 @@ Partial Class Form_Tools
         Me.Tab_Npc_List.Size = New System.Drawing.Size(306, 263)
         Me.Tab_Npc_List.TabIndex = 0
         Me.Tab_Npc_List.Text = "Npc List"
+        '
+        'CheckedListBox_npc
+        '
+        Me.CheckedListBox_npc.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.CheckedListBox_npc.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CheckedListBox_npc.FormattingEnabled = True
+        Me.CheckedListBox_npc.Location = New System.Drawing.Point(5, 5)
+        Me.CheckedListBox_npc.Name = "CheckedListBox_npc"
+        Me.CheckedListBox_npc.Size = New System.Drawing.Size(298, 255)
+        Me.CheckedListBox_npc.TabIndex = 0
         '
         'Tab_Box_List
         '
@@ -2205,18 +2218,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2291,19 +2292,6 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_LaunchBot.TabIndex = 7
         Me.PictureBox_LaunchBot.TabStop = False
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_close1
         '
@@ -3679,6 +3667,31 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
         '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3727,6 +3740,7 @@ Partial Class Form_Tools
         Me.Panel_Npc.ResumeLayout(False)
         Me.Panel_Npc.PerformLayout()
         Me.TabControl_profil.ResumeLayout(False)
+        Me.Tab_Npc_List.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         Me.Panel_collector.ResumeLayout(False)
@@ -4041,4 +4055,5 @@ Partial Class Form_Tools
     Friend WithEvents TabControl_profil As TabControl
     Friend WithEvents Tab_Npc_List As TabPage
     Friend WithEvents Tab_Box_List As TabPage
+    Friend WithEvents CheckedListBox_npc As CheckedListBox
 End Class

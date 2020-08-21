@@ -2678,6 +2678,7 @@ Public Class Form_Game
 
 #End Region
 
+#Region "Pet reparation"
 
         Client_Screen = Update_Screen()
         Dim repair_pet2 As Point = Client_Screen.Contains(repair_pet)
@@ -2693,6 +2694,7 @@ Public Class Form_Game
             End If
         End If
 
+#End Region
 
 #Region "Condition d'utilisation"
 
