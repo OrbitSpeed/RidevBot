@@ -2539,18 +2539,46 @@ Public Class Form_Tools
 
     Public Async Sub ComboBox_map_to_travel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_map_to_travel.SelectedIndexChanged
 
-        If Form_Game.User_Stop_Bot = True Then
-            'we don't do anything
+        If ComboBox_map_to_travel.Text = "" Then
+
+        ElseIf ComboBox_map_to_travel.Text = "1-1" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-2" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-3" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-4" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-5" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-6" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-7" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-8" Then
+        ElseIf ComboBox_map_to_travel.Text = "1-BL" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-1" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-2" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-3" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-4" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-5" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-6" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-7" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-8" Then
+        ElseIf ComboBox_map_to_travel.Text = "2-BL" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-1" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-2" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-3" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-4" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-5" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-6" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-7" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-8" Then
+        ElseIf ComboBox_map_to_travel.Text = "3-BL" Then
+        ElseIf ComboBox_map_to_travel.Text = "4-1" Then
+        ElseIf ComboBox_map_to_travel.Text = "4-2" Then
+        ElseIf ComboBox_map_to_travel.Text = "4-3" Then
+        ElseIf ComboBox_map_to_travel.Text = "4-4" Then
+        ElseIf ComboBox_map_to_travel.Text = "4-5" Then
+        ElseIf ComboBox_map_to_travel.Text = "5-1" Then
+        ElseIf ComboBox_map_to_travel.Text = "5-2" Then
+        ElseIf ComboBox_map_to_travel.Text = "5-3" Then
+
         Else
-            Form_Game.User_Stop_Bot = True
 
-            If Form_Game.User_Stop_Bot = False Then
-
-            Else
-                'Await Task.Delay(2500)
-                Form_Game.User_Stop_Bot = False
-                Form_Game.Button_bonusbox.PerformClick()
-            End If
 
 
         End If
