@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 Imports System.Net
 Imports AxMediaPlayer
 
@@ -12,6 +13,7 @@ Public Class AutoUpdater
     Private WC_Update_Version As New WebClient
     Private WC_Update_ChangeLog As New WebClient
     Private WC_Check_Maintenance As New WebClient
+    Private WC_Download_AutoIt As New WebClient
 
     Public LastVersion As String '= WC.DownloadString("")
     Public LastChangeLog As String
@@ -23,25 +25,72 @@ Public Class AutoUpdater
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
 
+        'Console.WriteLine(My.Computer.Registry.LocalMachine)
+        Dim Everest_Registry As Microsoft.Win32.RegistryKey = My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\WOW6432Node\AutoIt v3\AutoIt")
+        If Everest_Registry Is Nothing Then
+            'key does not exist
+            'MsgBox("Key does not exist")
+            MessageBox.Show($"It seems that you don't have our dependancies, we will now download them, and install them.{vbNewLine}{vbNewLine}If a popup is shown, click ""Yes"" in order to use the bot", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
-        WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
-        '---
-        AddHandler WC_Update_Version.DownloadStringCompleted, AddressOf WC_Update_Version_DownloadStringCompleted
-        WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/5ergvrkppscoupo/Version.txt?dl=1"))
-        '---
-        AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
-        WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
+            AddHandler WC_Download_AutoIt.DownloadFileCompleted, AddressOf WC_Download_AutoIt_DownloadFileAsyncCompleted
+            WC_Download_AutoIt.DownloadFileAsync(New Uri("https://www.dropbox.com/s/clvd8vmulmiqxbl/autoit-v3-setup.exe?raw=1"), Path.Combine(Path.GetTempPath, "autoit-setup.exe"))
+            FlatTextBox_Changelog.Text = $"Downloading the dependancies...{vbNewLine}Please wait..."
+        Else
+
+            AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
+            WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
+            '---
+            AddHandler WC_Update_Version.DownloadStringCompleted, AddressOf WC_Update_Version_DownloadStringCompleted
+            WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/5ergvrkppscoupo/Version.txt?dl=1"))
+            '---
+            AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
+            WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
 
 
-        AxWindowsMediaPlayer1.URL = FilePath
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
-        Await Task.Delay(265)
-        AxWindowsMediaPlayer1.Visible = True
+            AxWindowsMediaPlayer1.URL = FilePath
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            Await Task.Delay(265)
+            AxWindowsMediaPlayer1.Visible = True
 
-        Await Task.Delay(2200)
+            Await Task.Delay(2200)
 
-        AxWindowsMediaPlayer1.Ctlcontrols.pause()
+            AxWindowsMediaPlayer1.Ctlcontrols.pause()
+            'key is valid, display actual name
+            'MsgBox(Everest_Registry.Name)
+            'Console.WriteLine(Everest_Registry.Name)
+            'Console.WriteLine(Everest_Registry.SubKeyCount)
+            'Console.WriteLine(Everest_Registry.GetValue("Version"))
+        End If
+
+    End Sub
+
+    Private Async Sub WC_Download_AutoIt_DownloadFileAsyncCompleted(sender As Object, e As AsyncCompletedEventArgs)
+
+        Try
+            If e.Cancelled Then
+                MessageBox.Show("An error occured or you cancelled the download. Aborting")
+                Close()
+            End If
+            'MessageBox.Show(e.GetType.ToString)
+            Dim installation = Shell(Path.Combine(Path.GetTempPath, "autoit-setup.exe /S"), AppWinStyle.NormalFocus, True, 1500)
+            FlatTextBox_Changelog.Text = $"Installing the dependancies...{vbNewLine}Please wait..."
+
+            Dim p() As Process
+            p = Process.GetProcessesByName("autoit-setup.exe")
+            Do Until p.Count = 0
+                ' Process is running
+                Await Task.Delay(500)
+                p = Process.GetProcessesByName("autoit-setup.exe")
+            Loop
+            FlatTextBox_Changelog.Text = $"Done. Restarting..."
+
+            ' Process is not running
+            Application.Restart()
+
+        Catch ex As Exception
+            MessageBox.Show($"Can't retrieve the bot dependancies.{vbNewLine}Error: {ex.Message}{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End Try
     End Sub
 
     Private Sub WC_Check_Maintenance_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
