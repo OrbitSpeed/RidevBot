@@ -2377,35 +2377,40 @@ Public Class Form_Tools
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
                 Console.WriteLine(Compagny)
                 Console.WriteLine("---------------------------------------")
+
+                If TextBox_username Then
+
+                End If
+
                 TextBox_Get_Server.Text = Utils.server
-                Utils.UpdateStats()
+                    Utils.UpdateStats()
 
-                textbox_stade.Text = "Server : OK  ---  2/2"
+                    textbox_stade.Text = "Server : OK  ---  2/2"
 
-                textbox_stade.Text = "Done."
+                    textbox_stade.Text = "Done."
 
-                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                    Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                If BackgroundWorker_Timer.IsBusy <> True Then
-                    BackgroundWorker_Timer.RunWorkerAsync()
+                    If BackgroundWorker_Timer.IsBusy <> True Then
+                        BackgroundWorker_Timer.RunWorkerAsync()
+                    End If
+
+                    WebBrowser_Synchronisation.Navigate("about:blank")
+
+                    If CheckBox_LaunchGameAuto.Checked = True Then
+
+                        textbox_stade.Text = "Launching the game wait ... "
+
+                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                        Form_Game.Show()
+
+                    End If
                 End If
 
-                WebBrowser_Synchronisation.Navigate("about:blank")
-
-                If CheckBox_LaunchGameAuto.Checked = True Then
-
-                    textbox_stade.Text = "Launching the game wait ... "
-
-                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                    Form_Game.Show()
-
-                End If
+                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
             End If
-
-            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
-        End If
 
     End Sub
 

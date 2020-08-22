@@ -491,6 +491,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\rank22.gif" />
+    <None Include="Resources\rank_99.gif" />
+    <None Include="Resources\rank_21.gif" />
+    <None Include="Resources\rank_20.gif" />
+    <None Include="Resources\rank_19.gif" />
+    <None Include="Resources\rank_18.gif" />
+    <None Include="Resources\rank_17.gif" />
+    <None Include="Resources\rank_16.gif" />
+    <None Include="Resources\rank_15.gif" />
+    <None Include="Resources\rank_14.gif" />
+    <None Include="Resources\rank_13.gif" />
+    <None Include="Resources\rank_12.gif" />
+    <None Include="Resources\rank_11.gif" />
+    <None Include="Resources\rank_10.gif" />
+    <None Include="Resources\rank_9.gif" />
+    <None Include="Resources\rank_8.gif" />
+    <None Include="Resources\rank_7.gif" />
+    <None Include="Resources\rank_6.gif" />
+    <None Include="Resources\rank_5.gif" />
+    <None Include="Resources\rank_4.gif" />
+    <None Include="Resources\rank_3.gif" />
+    <None Include="Resources\rank_2.gif" />
+    <None Include="Resources\rank_1.gif" />
+    <None Include="Resources\rank_0.gif" />
     <None Include="Resources\mucosum.png" />
     <None Include="Resources\locked.png" />
     <None Include="Resources\streuner.png" />
