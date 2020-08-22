@@ -274,7 +274,7 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox_Get_id = New System.Windows.Forms.Label()
+        Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3733,14 +3733,16 @@ Partial Class Form_Tools
         '
         'TextBox_Get_id
         '
-        Me.TextBox_Get_id.AutoSize = True
-        Me.TextBox_Get_id.Cursor = System.Windows.Forms.Cursors.SizeAll
-        Me.TextBox_Get_id.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Get_id.Location = New System.Drawing.Point(107, -1)
+        Me.TextBox_Get_id.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TextBox_Get_id.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_Get_id.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.TextBox_Get_id.Location = New System.Drawing.Point(104, -1)
         Me.TextBox_Get_id.Name = "TextBox_Get_id"
-        Me.TextBox_Get_id.Size = New System.Drawing.Size(89, 20)
-        Me.TextBox_Get_id.TabIndex = 33
+        Me.TextBox_Get_id.ReadOnly = True
+        Me.TextBox_Get_id.Size = New System.Drawing.Size(92, 20)
+        Me.TextBox_Get_id.TabIndex = 61
         Me.TextBox_Get_id.Text = "0000000000"
+        Me.TextBox_Get_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Form_Tools
         '
@@ -4106,5 +4108,5 @@ Partial Class Form_Tools
     Friend WithEvents Divers_Button As Button
     Friend WithEvents Label16 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox_Get_id As Label
+    Friend WithEvents TextBox_Get_id As TextBox
 End Class

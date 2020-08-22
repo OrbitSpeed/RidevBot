@@ -260,7 +260,7 @@ Public Class Form_Tools
 
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        ' CenterToScreen()
 
     End Sub
 
@@ -320,7 +320,7 @@ Public Class Form_Tools
         End If
 
         '
-        CenterToScreen()
+        '  CenterToScreen()
 
     End Sub
 
@@ -361,7 +361,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        ' CenterToScreen()
 
     End Sub
 
@@ -438,7 +438,7 @@ Public Class Form_Tools
 
         End If
 
-        CenterToScreen()
+        '  CenterToScreen()
 
     End Sub
 
@@ -479,7 +479,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        ' CenterToScreen()
 
     End Sub
 
@@ -520,7 +520,7 @@ Public Class Form_Tools
         Panel_divers.Visible = True
 
         Size = New Size(390, 333)
-        CenterToScreen()
+        ' CenterToScreen()
 
     End Sub
 
