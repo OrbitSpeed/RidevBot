@@ -2358,6 +2358,12 @@ Public Class Form_Tools
             Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
             If dosid_regex.Success Then
 
+                ' System.Text.UTF7Encoding :   18  23  :7A 61 2B 41 77 59 42 2F 51 4F 79 32 50 2F 63 2F 77 2D
+                ' System.Text.UTF8Encoding :  12  24  :7A 61 CC 86 C7 BD CE B2 F1 8F B3 BF
+                ' System.Text.UnicodeEncoding :  14  16  :7A 00 61 00 06 03 FD 01 B2 03 FF D8 FF DC
+                ' System.Text.UnicodeEncoding :  14  16  :00 7A 00 61 03 06 01 FD 03 B2 D8 FF DC FF
+                ' System.Text.UTF32Encoding :  24  32  :7A 00 00 00 61 00 00 00 06 03 00 00 FD 01 00 00 B2 03 00 00 FF FC 04 00
+
                 Utils.dosid = dosid_regex.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
                 TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
@@ -2530,6 +2536,38 @@ Public Class Form_Tools
         'PictureBox_LaunchBot.Visible = True
         'PictureBox_StopBot.Visible = False
         '
+
+    End Sub
+
+    Private Sub Title_form_MouseDown(sender As Object, e As MouseEventArgs) Handles Title_form.MouseDown
+
+        If e.Button = MouseButtons.Left Then
+            BeingDragged = True
+            MouseDownX = e.X
+            MouseDownY = e.Y
+        End If
+
+    End Sub
+
+    Private Sub Title_form_MouseUp(sender As Object, e As MouseEventArgs) Handles Title_form.MouseUp
+
+        If e.Button = MouseButtons.Left Then
+            BeingDragged = False
+        End If
+
+    End Sub
+
+    Private Sub Title_form_MouseMove(sender As Object, e As MouseEventArgs) Handles Title_form.MouseMove
+
+        If BeingDragged = True Then
+            Dim tmp As Point = New Point()
+
+            tmp.X = Me.Location.X + (e.X - MouseDownX)
+            tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
+            Me.Location = tmp
+
+            tmp = Nothing
+        End If
 
     End Sub
 End Class

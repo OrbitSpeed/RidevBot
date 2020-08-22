@@ -3274,17 +3274,9 @@ Public Class Form_Game
 
             Console.WriteLine("Un Aider_Streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Aider_Streuner1.X + 30, Aider_Streuner1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
-
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
 
         End If
 
@@ -3300,17 +3292,10 @@ Public Class Form_Game
 
             Console.WriteLine("Un Recruit_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Recruit_streuner1.X + 30, Recruit_streuner1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
 
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
         End If
 
     End Sub
@@ -3324,17 +3309,9 @@ Public Class Form_Game
 
             Console.WriteLine("Un streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, streuner1.X + 30, streuner1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
-
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         End If
 
     End Sub
@@ -3348,17 +3325,9 @@ Public Class Form_Game
 
             Console.WriteLine("Un Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Lordakia1.X + 30, Lordakia1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
-
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         End If
 
     End Sub
@@ -3372,17 +3341,9 @@ Public Class Form_Game
 
             Console.WriteLine("Un Boss_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_streuner1.X + 30, Boss_streuner1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
-
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         End If
 
     End Sub
@@ -3396,35 +3357,13 @@ Public Class Form_Game
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Lordakia1.X + 30, Boss_Lordakia1.Y - 55)
-            Await Task.Delay(250)
+            Await Task.Delay(100)
 
-            Client_Screen = Update_Screen()
-            Dim Locked = My.Resources.locked
-            Dim Locked1 As Point = Client_Screen.Contains(Locked)
-            If Locked1 <> Nothing Then
-
-                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-
-
-            End If
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         End If
 
     End Sub
 
-    Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-
-        Client_Screen = Update_Screen()
-        Dim Mucosum = My.Resources.mucosum
-        Dim Mucosum1 As Point = Client_Screen.Contains(Mucosum)
-        If Mucosum1 <> Nothing Then
-
-            Console.WriteLine("Un Boss_Lordakia trouver")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Mucosum1.X + 30, Mucosum1.Y - 55)
-            Await Task.Delay(1600)
-
-        End If
-
-    End Sub
 End Class
 
 'npc killer

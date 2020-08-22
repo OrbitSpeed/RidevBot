@@ -31,6 +31,7 @@ Partial Class Form_Game
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -44,9 +45,7 @@ Partial Class Form_Game
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -134,6 +133,19 @@ Partial Class Form_Game
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
         '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
         'TextBox_getserver
         '
         Me.TextBox_getserver.Location = New System.Drawing.Point(12, 24)
@@ -167,7 +179,7 @@ Partial Class Form_Game
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 587)
+        Me.Button1.Location = New System.Drawing.Point(12, 24)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(79, 19)
         Me.Button1.TabIndex = 34
@@ -176,7 +188,7 @@ Partial Class Form_Game
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(97, 587)
+        Me.Button2.Location = New System.Drawing.Point(12, 50)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(79, 19)
         Me.Button2.TabIndex = 35
@@ -185,7 +197,7 @@ Partial Class Form_Game
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(180, 587)
+        Me.Button3.Location = New System.Drawing.Point(12, 75)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(79, 19)
         Me.Button3.TabIndex = 36
@@ -194,7 +206,7 @@ Partial Class Form_Game
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(265, 587)
+        Me.Button4.Location = New System.Drawing.Point(12, 100)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(79, 19)
         Me.Button4.TabIndex = 37
@@ -203,7 +215,7 @@ Partial Class Form_Game
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(350, 587)
+        Me.Button5.Location = New System.Drawing.Point(12, 125)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(79, 19)
         Me.Button5.TabIndex = 38
@@ -212,25 +224,12 @@ Partial Class Form_Game
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(435, 587)
+        Me.Button6.Location = New System.Drawing.Point(12, 150)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(79, 19)
         Me.Button6.TabIndex = 39
         Me.Button6.Text = "Boss lordakia"
         Me.Button6.UseVisualStyleBackColor = True
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
         '
         'WebBrowser_Game_Ridevbot
         '
@@ -243,22 +242,12 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(12, 543)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(79, 19)
-        Me.Button7.TabIndex = 40
-        Me.Button7.Text = "Mucosum"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -309,5 +298,4 @@ Partial Class Form_Game
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
 End Class
