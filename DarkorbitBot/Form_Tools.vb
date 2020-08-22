@@ -2297,7 +2297,14 @@ Public Class Form_Tools
                 Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
                 Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
                 Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
+                Dim username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
+                Dim clan = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
+                Dim grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
+                Dim niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(4).ToString.Replace(" ", "")
+                Console.WriteLine("---------------------------------------")
+                TextBox_username.Text = username
                 Console.WriteLine(Compagny)
                 Console.WriteLine("---------------------------------------")
 
