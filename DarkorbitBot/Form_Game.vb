@@ -3426,6 +3426,69 @@ Public Class Form_Game
 
     End Sub
 
+    Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+
+        Client_Screen = Update_Screen()
+        Dim Saimon = My.Resources.Saimon
+        Dim Saimon1 As Point = Client_Screen.Contains(Saimon)
+        If Saimon1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Saimon1.X + 30, Saimon1.Y - 55)
+            Await Task.Delay(100)
+
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        End If
+
+    End Sub
+
+    Private Async Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+        Client_Screen = Update_Screen()
+        Dim Boss_Saimon = My.Resources.Boss_Saimon
+        Dim Boss_Saimon1 As Point = Client_Screen.Contains(Boss_Saimon)
+        If Boss_Saimon1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Saimon1.X + 30, Boss_Saimon1.Y - 55)
+            Await Task.Delay(100)
+
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        End If
+
+    End Sub
+
+    Private Async Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+
+        Client_Screen = Update_Screen()
+        Dim Mordon = My.Resources.Mordon
+        Dim Mordon1 As Point = Client_Screen.Contains(Mordon)
+        If Mordon1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Mordon1.X + 30, Mordon1.Y - 55)
+            Await Task.Delay(100)
+
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        End If
+
+    End Sub
+
+    Private Async Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+
+        Client_Screen = Update_Screen()
+        Dim boss_mordon = My.Resources.boss_mordon
+        Dim boss_mordon1 As Point = Client_Screen.Contains(boss_mordon)
+        If boss_mordon1 <> Nothing Then
+
+            Console.WriteLine("Un Boss_Lordakia trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, boss_mordon1.X + 30, boss_mordon1.Y - 55)
+            Await Task.Delay(100)
+
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        End If
+
+    End Sub
 End Class
 
 'npc killer

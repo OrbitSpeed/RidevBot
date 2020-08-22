@@ -31,7 +31,6 @@ Partial Class Form_Game
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -45,6 +44,26 @@ Partial Class Form_Game
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,19 +152,6 @@ Partial Class Form_Game
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
         '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
-        '
         'TextBox_getserver
         '
         Me.TextBox_getserver.Location = New System.Drawing.Point(12, 24)
@@ -179,7 +185,8 @@ Partial Class Form_Game
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 24)
+        Me.Button1.ForeColor = System.Drawing.Color.Green
+        Me.Button1.Location = New System.Drawing.Point(12, 25)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(79, 19)
         Me.Button1.TabIndex = 34
@@ -188,7 +195,8 @@ Partial Class Form_Game
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 50)
+        Me.Button2.ForeColor = System.Drawing.Color.Green
+        Me.Button2.Location = New System.Drawing.Point(12, 51)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(79, 19)
         Me.Button2.TabIndex = 35
@@ -197,7 +205,8 @@ Partial Class Form_Game
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(12, 75)
+        Me.Button3.ForeColor = System.Drawing.Color.Green
+        Me.Button3.Location = New System.Drawing.Point(12, 76)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(79, 19)
         Me.Button3.TabIndex = 36
@@ -206,7 +215,8 @@ Partial Class Form_Game
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(12, 100)
+        Me.Button4.ForeColor = System.Drawing.Color.Green
+        Me.Button4.Location = New System.Drawing.Point(12, 101)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(79, 19)
         Me.Button4.TabIndex = 37
@@ -215,7 +225,8 @@ Partial Class Form_Game
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(12, 125)
+        Me.Button5.ForeColor = System.Drawing.Color.Green
+        Me.Button5.Location = New System.Drawing.Point(12, 126)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(79, 19)
         Me.Button5.TabIndex = 38
@@ -224,12 +235,201 @@ Partial Class Form_Game
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(12, 150)
+        Me.Button6.ForeColor = System.Drawing.Color.Green
+        Me.Button6.Location = New System.Drawing.Point(12, 151)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(79, 19)
         Me.Button6.TabIndex = 39
         Me.Button6.Text = "Boss lordakia"
         Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.ForeColor = System.Drawing.Color.Green
+        Me.Button7.Location = New System.Drawing.Point(12, 176)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(79, 19)
+        Me.Button7.TabIndex = 40
+        Me.Button7.Text = "Saimon"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.ForeColor = System.Drawing.Color.Green
+        Me.Button8.Location = New System.Drawing.Point(12, 201)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(79, 19)
+        Me.Button8.TabIndex = 41
+        Me.Button8.Text = "Boss Saimon"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.ForeColor = System.Drawing.Color.Green
+        Me.Button9.Location = New System.Drawing.Point(12, 251)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(79, 19)
+        Me.Button9.TabIndex = 43
+        Me.Button9.Text = "Boss Mordon"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.ForeColor = System.Drawing.Color.Green
+        Me.Button10.Location = New System.Drawing.Point(12, 226)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(79, 19)
+        Me.Button10.TabIndex = 42
+        Me.Button10.Text = "Mordon"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(12, 301)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(79, 19)
+        Me.Button11.TabIndex = 45
+        Me.Button11.Text = "Boss devo"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(12, 276)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(79, 19)
+        Me.Button12.TabIndex = 44
+        Me.Button12.Text = "devo"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(12, 353)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(79, 19)
+        Me.Button13.TabIndex = 47
+        Me.Button13.Text = "Boss sibelon"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(12, 328)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(79, 19)
+        Me.Button14.TabIndex = 46
+        Me.Button14.Text = "Sibelon"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(12, 403)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(79, 19)
+        Me.Button15.TabIndex = 49
+        Me.Button15.Text = "Boss sibelonit"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(12, 378)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(79, 19)
+        Me.Button16.TabIndex = 48
+        Me.Button16.Text = "Sibelonit"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Button17
+        '
+        Me.Button17.Location = New System.Drawing.Point(12, 453)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(79, 34)
+        Me.Button17.TabIndex = 51
+        Me.Button17.Text = "Boss Lordakium"
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'Button18
+        '
+        Me.Button18.Location = New System.Drawing.Point(12, 428)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(79, 19)
+        Me.Button18.TabIndex = 50
+        Me.Button18.Text = "Lordakium"
+        Me.Button18.UseVisualStyleBackColor = True
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(12, 518)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(79, 19)
+        Me.Button19.TabIndex = 53
+        Me.Button19.Text = "Boss Kristallin"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(12, 493)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(79, 19)
+        Me.Button20.TabIndex = 52
+        Me.Button20.Text = "Kristallin"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
+        'Button21
+        '
+        Me.Button21.Location = New System.Drawing.Point(12, 568)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(79, 38)
+        Me.Button21.TabIndex = 55
+        Me.Button21.Text = "Boss kristallon"
+        Me.Button21.UseVisualStyleBackColor = True
+        '
+        'Button22
+        '
+        Me.Button22.Location = New System.Drawing.Point(12, 543)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(79, 19)
+        Me.Button22.TabIndex = 54
+        Me.Button22.Text = "Kristallon"
+        Me.Button22.UseVisualStyleBackColor = True
+        '
+        'Button23
+        '
+        Me.Button23.Location = New System.Drawing.Point(97, 568)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(79, 38)
+        Me.Button23.TabIndex = 57
+        Me.Button23.Text = "Boss StreuneR"
+        Me.Button23.UseVisualStyleBackColor = True
+        '
+        'Button24
+        '
+        Me.Button24.Location = New System.Drawing.Point(97, 543)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(79, 19)
+        Me.Button24.TabIndex = 56
+        Me.Button24.Text = "StreuneR"
+        Me.Button24.UseVisualStyleBackColor = True
+        '
+        'Button25
+        '
+        Me.Button25.Location = New System.Drawing.Point(182, 568)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(79, 38)
+        Me.Button25.TabIndex = 58
+        Me.Button25.Text = "Lordakium Spore"
+        Me.Button25.UseVisualStyleBackColor = True
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
         '
         'WebBrowser_Game_Ridevbot
         '
@@ -248,6 +448,25 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
+        Me.Controls.Add(Me.Button25)
+        Me.Controls.Add(Me.Button23)
+        Me.Controls.Add(Me.Button24)
+        Me.Controls.Add(Me.Button21)
+        Me.Controls.Add(Me.Button22)
+        Me.Controls.Add(Me.Button19)
+        Me.Controls.Add(Me.Button20)
+        Me.Controls.Add(Me.Button17)
+        Me.Controls.Add(Me.Button18)
+        Me.Controls.Add(Me.Button15)
+        Me.Controls.Add(Me.Button16)
+        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -298,4 +517,23 @@ Partial Class Form_Game
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button13 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button17 As Button
+    Friend WithEvents Button18 As Button
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents Button21 As Button
+    Friend WithEvents Button22 As Button
+    Friend WithEvents Button23 As Button
+    Friend WithEvents Button24 As Button
+    Friend WithEvents Button25 As Button
 End Class
