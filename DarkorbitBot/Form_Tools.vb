@@ -158,15 +158,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = True
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = True
         Panel_Npc.Visible = False
         Panel_collector.Visible = False
@@ -198,15 +189,6 @@ Public Class Form_Tools
         Stats_Button.Enabled = True
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
-
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = True
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
 
         Panel_general.Visible = False
         Panel_Npc.Visible = True
@@ -240,15 +222,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = True
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = False
         Panel_Npc.Visible = False
         Panel_collector.Visible = True
@@ -274,14 +247,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = False
         Panel_Npc.Visible = False
         Panel_collector.Visible = False
@@ -294,18 +259,15 @@ Public Class Form_Tools
             Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             If result = DialogResult.OK Then
                 General_button.Enabled = False
-                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 333)
             Else
                 General_button.Enabled = False
-                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 333)
             End If
         Else
 
-            Label_galaxygates.Visible = True
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
             Size = New Size(553, 622)
@@ -342,15 +304,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = True
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = False
         Panel_Npc.Visible = False
         Panel_collector.Visible = False
@@ -382,14 +335,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = True
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = False
         Panel_Npc.Visible = False
         Panel_collector.Visible = False
@@ -404,25 +349,21 @@ Public Class Form_Tools
             Dim result = MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             If result = DialogResult.OK Then
                 General_button.Enabled = False
-                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 333)
             Else
                 General_button.Enabled = False
-                Label_buttonGeneral.Visible = True
                 Panel_general.Visible = True
                 Size = New Size(390, 333)
             End If
 
 
             General_button.Enabled = False
-            Label_buttonGeneral.Visible = True
             Panel_general.Visible = True
             Size = New Size(390, 333)
 
         Else
 
-            Label_buttonStats.Visible = True
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
             Size = New Size(390, 356)
@@ -460,15 +401,6 @@ Public Class Form_Tools
         Rex_Button.Enabled = False
         Divers_Button.Enabled = True
 
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = True
-        Label_ButtonDivers.Visible = False
-
         Panel_general.Visible = False
         Panel_Npc.Visible = False
         Panel_collector.Visible = False
@@ -500,15 +432,6 @@ Public Class Form_Tools
         Stats_Button.Enabled = True
         Rex_Button.Enabled = True
         Divers_Button.Enabled = False
-
-        Label_buttonGeneral.Visible = False
-        Label_ButtonNPCBOX.Visible = False
-        Label_ButtonINUTILE.Visible = False
-        Label_galaxygates.Visible = False
-        Label_buttonPALLADIUM.Visible = False
-        Label_buttonStats.Visible = False
-        Label_buttonREX.Visible = False
-        Label_ButtonDivers.Visible = True
 
         Panel_general.Visible = False
         Panel_Npc.Visible = False

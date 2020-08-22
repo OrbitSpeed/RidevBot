@@ -27,13 +27,8 @@ Partial Class Form_Tools
         Me.LogUpdate_button = New System.Windows.Forms.Button()
         Me.NPC_Button = New System.Windows.Forms.Button()
         Me.General_button = New System.Windows.Forms.Button()
-        Me.Label_ButtonINUTILE = New System.Windows.Forms.Label()
-        Me.Label_ButtonNPCBOX = New System.Windows.Forms.Label()
-        Me.Label_buttonGeneral = New System.Windows.Forms.Label()
         Me.GalaxyGates_Button = New System.Windows.Forms.Button()
-        Me.Label_galaxygates = New System.Windows.Forms.Label()
         Me.Pirates_Button = New System.Windows.Forms.Button()
-        Me.Label_buttonPALLADIUM = New System.Windows.Forms.Label()
         Me.Panel_general = New System.Windows.Forms.Panel()
         Me.textbox_stade = New System.Windows.Forms.Label()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
@@ -154,7 +149,6 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -164,7 +158,6 @@ Partial Class Form_Tools
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
         Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_Alpha = New System.Windows.Forms.Button()
@@ -269,12 +262,11 @@ Partial Class Form_Tools
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
-        Me.Label_ButtonDivers = New System.Windows.Forms.Label()
-        Me.Label_buttonStats = New System.Windows.Forms.Label()
         Me.Stats_Button = New System.Windows.Forms.Button()
-        Me.Label_buttonREX = New System.Windows.Forms.Label()
         Me.Rex_Button = New System.Windows.Forms.Button()
         Me.Divers_Button = New System.Windows.Forms.Button()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -377,41 +369,6 @@ Partial Class Form_Tools
         Me.General_button.Text = "General"
         Me.General_button.UseVisualStyleBackColor = False
         '
-        'Label_ButtonINUTILE
-        '
-        Me.Label_ButtonINUTILE.AutoSize = True
-        Me.Label_ButtonINUTILE.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ButtonINUTILE.ForeColor = System.Drawing.Color.White
-        Me.Label_ButtonINUTILE.Location = New System.Drawing.Point(-8, 110)
-        Me.Label_ButtonINUTILE.Name = "Label_ButtonINUTILE"
-        Me.Label_ButtonINUTILE.Size = New System.Drawing.Size(98, 18)
-        Me.Label_ButtonINUTILE.TabIndex = 30
-        Me.Label_ButtonINUTILE.Text = "__________"
-        Me.Label_ButtonINUTILE.Visible = False
-        '
-        'Label_ButtonNPCBOX
-        '
-        Me.Label_ButtonNPCBOX.AutoSize = True
-        Me.Label_ButtonNPCBOX.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ButtonNPCBOX.ForeColor = System.Drawing.Color.White
-        Me.Label_ButtonNPCBOX.Location = New System.Drawing.Point(-8, 73)
-        Me.Label_ButtonNPCBOX.Name = "Label_ButtonNPCBOX"
-        Me.Label_ButtonNPCBOX.Size = New System.Drawing.Size(98, 18)
-        Me.Label_ButtonNPCBOX.TabIndex = 29
-        Me.Label_ButtonNPCBOX.Text = "__________"
-        Me.Label_ButtonNPCBOX.Visible = False
-        '
-        'Label_buttonGeneral
-        '
-        Me.Label_buttonGeneral.AutoSize = True
-        Me.Label_buttonGeneral.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_buttonGeneral.ForeColor = System.Drawing.Color.White
-        Me.Label_buttonGeneral.Location = New System.Drawing.Point(-8, 36)
-        Me.Label_buttonGeneral.Name = "Label_buttonGeneral"
-        Me.Label_buttonGeneral.Size = New System.Drawing.Size(98, 18)
-        Me.Label_buttonGeneral.TabIndex = 28
-        Me.Label_buttonGeneral.Text = "__________"
-        '
         'GalaxyGates_Button
         '
         Me.GalaxyGates_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -420,24 +377,12 @@ Partial Class Form_Tools
         Me.GalaxyGates_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GalaxyGates_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GalaxyGates_Button.ForeColor = System.Drawing.Color.White
-        Me.GalaxyGates_Button.Location = New System.Drawing.Point(0, 128)
+        Me.GalaxyGates_Button.Location = New System.Drawing.Point(0, 129)
         Me.GalaxyGates_Button.Name = "GalaxyGates_Button"
         Me.GalaxyGates_Button.Size = New System.Drawing.Size(86, 45)
         Me.GalaxyGates_Button.TabIndex = 31
         Me.GalaxyGates_Button.Text = "GalaxyGates && Spinner"
         Me.GalaxyGates_Button.UseVisualStyleBackColor = False
-        '
-        'Label_galaxygates
-        '
-        Me.Label_galaxygates.AutoSize = True
-        Me.Label_galaxygates.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_galaxygates.ForeColor = System.Drawing.Color.White
-        Me.Label_galaxygates.Location = New System.Drawing.Point(-8, 156)
-        Me.Label_galaxygates.Name = "Label_galaxygates"
-        Me.Label_galaxygates.Size = New System.Drawing.Size(98, 18)
-        Me.Label_galaxygates.TabIndex = 32
-        Me.Label_galaxygates.Text = "__________"
-        Me.Label_galaxygates.Visible = False
         '
         'Pirates_Button
         '
@@ -447,24 +392,12 @@ Partial Class Form_Tools
         Me.Pirates_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Pirates_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Pirates_Button.ForeColor = System.Drawing.Color.White
-        Me.Pirates_Button.Location = New System.Drawing.Point(0, 175)
+        Me.Pirates_Button.Location = New System.Drawing.Point(0, 176)
         Me.Pirates_Button.Name = "Pirates_Button"
         Me.Pirates_Button.Size = New System.Drawing.Size(86, 45)
         Me.Pirates_Button.TabIndex = 33
         Me.Pirates_Button.Text = "Bid " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "( 00:00:00 )"
         Me.Pirates_Button.UseVisualStyleBackColor = False
-        '
-        'Label_buttonPALLADIUM
-        '
-        Me.Label_buttonPALLADIUM.AutoSize = True
-        Me.Label_buttonPALLADIUM.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_buttonPALLADIUM.ForeColor = System.Drawing.Color.White
-        Me.Label_buttonPALLADIUM.Location = New System.Drawing.Point(-8, 203)
-        Me.Label_buttonPALLADIUM.Name = "Label_buttonPALLADIUM"
-        Me.Label_buttonPALLADIUM.Size = New System.Drawing.Size(98, 18)
-        Me.Label_buttonPALLADIUM.TabIndex = 34
-        Me.Label_buttonPALLADIUM.Text = "__________"
-        Me.Label_buttonPALLADIUM.Visible = False
         '
         'Panel_general
         '
@@ -2165,18 +2098,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2282,6 +2203,7 @@ Partial Class Form_Tools
         '
         Me.TextBox_Get_id.BackColor = System.Drawing.SystemColors.HotTrack
         Me.TextBox_Get_id.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_Get_id.Enabled = False
         Me.TextBox_Get_id.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
         Me.TextBox_Get_id.Location = New System.Drawing.Point(103, -1)
         Me.TextBox_Get_id.Name = "TextBox_Get_id"
@@ -2290,19 +2212,6 @@ Partial Class Form_Tools
         Me.TextBox_Get_id.TabIndex = 61
         Me.TextBox_Get_id.Text = "0000000000"
         Me.TextBox_Get_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_close1
         '
@@ -3663,30 +3572,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.TabIndex = 40
         '
-        'Label_ButtonDivers
-        '
-        Me.Label_ButtonDivers.AutoSize = True
-        Me.Label_ButtonDivers.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ButtonDivers.ForeColor = System.Drawing.Color.White
-        Me.Label_ButtonDivers.Location = New System.Drawing.Point(-8, 314)
-        Me.Label_ButtonDivers.Name = "Label_ButtonDivers"
-        Me.Label_ButtonDivers.Size = New System.Drawing.Size(98, 18)
-        Me.Label_ButtonDivers.TabIndex = 40
-        Me.Label_ButtonDivers.Text = "__________"
-        Me.Label_ButtonDivers.Visible = False
-        '
-        'Label_buttonStats
-        '
-        Me.Label_buttonStats.AutoSize = True
-        Me.Label_buttonStats.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_buttonStats.ForeColor = System.Drawing.Color.White
-        Me.Label_buttonStats.Location = New System.Drawing.Point(-8, 239)
-        Me.Label_buttonStats.Name = "Label_buttonStats"
-        Me.Label_buttonStats.Size = New System.Drawing.Size(98, 18)
-        Me.Label_buttonStats.TabIndex = 36
-        Me.Label_buttonStats.Text = "__________"
-        Me.Label_buttonStats.Visible = False
-        '
         'Stats_Button
         '
         Me.Stats_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -3695,24 +3580,12 @@ Partial Class Form_Tools
         Me.Stats_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Stats_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Stats_Button.ForeColor = System.Drawing.Color.White
-        Me.Stats_Button.Location = New System.Drawing.Point(0, 221)
+        Me.Stats_Button.Location = New System.Drawing.Point(0, 223)
         Me.Stats_Button.Name = "Stats_Button"
         Me.Stats_Button.Size = New System.Drawing.Size(86, 35)
         Me.Stats_Button.TabIndex = 35
         Me.Stats_Button.Text = "Player Stats"
         Me.Stats_Button.UseVisualStyleBackColor = False
-        '
-        'Label_buttonREX
-        '
-        Me.Label_buttonREX.AutoSize = True
-        Me.Label_buttonREX.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_buttonREX.ForeColor = System.Drawing.Color.White
-        Me.Label_buttonREX.Location = New System.Drawing.Point(-8, 277)
-        Me.Label_buttonREX.Name = "Label_buttonREX"
-        Me.Label_buttonREX.Size = New System.Drawing.Size(98, 18)
-        Me.Label_buttonREX.TabIndex = 38
-        Me.Label_buttonREX.Text = "__________"
-        Me.Label_buttonREX.Visible = False
         '
         'Rex_Button
         '
@@ -3722,7 +3595,7 @@ Partial Class Form_Tools
         Me.Rex_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rex_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rex_Button.ForeColor = System.Drawing.Color.White
-        Me.Rex_Button.Location = New System.Drawing.Point(0, 259)
+        Me.Rex_Button.Location = New System.Drawing.Point(0, 260)
         Me.Rex_Button.Name = "Rex_Button"
         Me.Rex_Button.Size = New System.Drawing.Size(86, 35)
         Me.Rex_Button.TabIndex = 37
@@ -3737,12 +3610,37 @@ Partial Class Form_Tools
         Me.Divers_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Divers_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Divers_Button.ForeColor = System.Drawing.Color.White
-        Me.Divers_Button.Location = New System.Drawing.Point(0, 296)
+        Me.Divers_Button.Location = New System.Drawing.Point(0, 297)
         Me.Divers_Button.Name = "Divers_Button"
         Me.Divers_Button.Size = New System.Drawing.Size(86, 35)
         Me.Divers_Button.TabIndex = 39
         Me.Divers_Button.Text = "Divers"
         Me.Divers_Button.UseVisualStyleBackColor = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.White
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '
@@ -3766,20 +3664,12 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Panel_general)
         Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Controls.Add(Me.Rex_Button)
-        Me.Controls.Add(Me.Label_buttonREX)
         Me.Controls.Add(Me.Stats_Button)
-        Me.Controls.Add(Me.Label_buttonStats)
-        Me.Controls.Add(Me.Label_buttonPALLADIUM)
         Me.Controls.Add(Me.LogUpdate_button)
         Me.Controls.Add(Me.GalaxyGates_Button)
         Me.Controls.Add(Me.NPC_Button)
         Me.Controls.Add(Me.General_button)
-        Me.Controls.Add(Me.Label_ButtonINUTILE)
-        Me.Controls.Add(Me.Label_galaxygates)
-        Me.Controls.Add(Me.Label_ButtonNPCBOX)
-        Me.Controls.Add(Me.Label_buttonGeneral)
         Me.Controls.Add(Me.Panel_Title)
-        Me.Controls.Add(Me.Label_ButtonDivers)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
@@ -3863,16 +3753,11 @@ Partial Class Form_Tools
     Friend WithEvents LogUpdate_button As Button
     Friend WithEvents NPC_Button As Button
     Friend WithEvents General_button As Button
-    Friend WithEvents Label_ButtonINUTILE As Label
-    Friend WithEvents Label_ButtonNPCBOX As Label
-    Friend WithEvents Label_buttonGeneral As Label
     Friend WithEvents GalaxyGates_Button As Button
-    Friend WithEvents Label_galaxygates As Label
     Friend WithEvents PictureBox_Backpage As PictureBox
     Friend WithEvents PictureBox_Pause As PictureBox
     Friend WithEvents PictureBox_Start As PictureBox
     Friend WithEvents Pirates_Button As Button
-    Friend WithEvents Label_buttonPALLADIUM As Label
     Friend WithEvents Panel_general As Panel
     Friend WithEvents Label_GENERAL_A_SUPPRIMER As Label
     Friend WithEvents Panel_Npc As Panel
@@ -4100,10 +3985,7 @@ Partial Class Form_Tools
     Friend WithEvents Label15 As Label
     Friend WithEvents textbox_stade As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label_ButtonDivers As Label
-    Friend WithEvents Label_buttonStats As Label
     Friend WithEvents Stats_Button As Button
-    Friend WithEvents Label_buttonREX As Label
     Friend WithEvents Rex_Button As Button
     Friend WithEvents Divers_Button As Button
     Friend WithEvents Label16 As Label

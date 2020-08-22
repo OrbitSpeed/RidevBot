@@ -110,9 +110,6 @@ Public Class Form_Startup
 
         ' Button 1 = User && Pass '
 
-        Labelportal_White_4.Visible = True
-        Labelportal_White_5.Visible = False
-        Labelportal_White_6.Visible = False
         Label_point_de_chute.Select()
 
         PanelUserAndPass.Size = New Size(256, 251)
@@ -135,9 +132,6 @@ Public Class Form_Startup
 
         PanelUserAndPass.Size = New Size(256, 251)
         Me.Size = New Size(256, 251)
-        Labelportal_White_4.Visible = False
-        Labelportal_White_5.Visible = True
-        Labelportal_White_6.Visible = False
         Label_point_de_chute.Select()
 
         PanelConnection.Visible = False
@@ -154,9 +148,6 @@ Public Class Form_Startup
 
         ' Button 1 = Saved '
 
-        Labelportal_White_4.Visible = False
-        Labelportal_White_5.Visible = False
-        Labelportal_White_6.Visible = True
         Label_point_de_chute.Select()
         PanelUserAndPass.Size = New Size(256, 358)
         Me.Size = New Size(256, 358)
@@ -265,10 +256,6 @@ Public Class Form_Startup
         Panel_profil.Visible = False
         Panel_license.Visible = False
 
-        Label_portal_White_2.Visible = False
-        Label_portal_White.Visible = False
-        Labelportal_White_3.Visible = True
-
         Credentials_Button.Enabled = False
         Portail_Button.Enabled = True
         License_Button.Enabled = True
@@ -286,10 +273,6 @@ Public Class Form_Startup
         Panel_profil.Visible = True
         Panel_license.Visible = False
 
-        Label_portal_White_2.Visible = False
-        Label_portal_White.Visible = True
-        Labelportal_White_3.Visible = False
-
         Credentials_Button.Enabled = True
         Portail_Button.Enabled = False
         License_Button.Enabled = True
@@ -305,10 +288,6 @@ Public Class Form_Startup
         Panel_profil.Visible = False
         Panel_license.Visible = True
 
-        Label_portal_White_2.Visible = True
-        Label_portal_White.Visible = False
-        Labelportal_White_3.Visible = False
-
         Credentials_Button.Enabled = True
         Portail_Button.Enabled = True
         License_Button.Enabled = False
@@ -319,8 +298,6 @@ Public Class Form_Startup
 
         ' button browser Ridevbot '
 
-        Label_buttonridevbotBrowser.Visible = True
-        Label_OfficialLauncherBrowser.Visible = False
         Load_Button.Visible = True
         Button4.Visible = False
 
@@ -332,9 +309,6 @@ Public Class Form_Startup
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button_OfficialLauncherBrowser.Click
 
         ' button browser launcher '
-
-        Label_buttonridevbotBrowser.Visible = False
-        Label_OfficialLauncherBrowser.Visible = True
 
         Load_Button.Visible = False
         Button4.Visible = True
