@@ -1371,13 +1371,12 @@ Public Class Form_Game
         End If
 
         ' BAS DROITE
-        'max gauche = 756, 584 -18
-        'max droite = 765, 584 -18
-        'max haut = 760, 580-18
-        'max bas =  768, 588-18
-        'x et y = +8 (px)
-        Dim randomX = Utils.GetRandom(756, 765)
-        Dim randomY = Utils.GetRandom(562, 569)
+        'Centre : 758, 579
+        Dim randomX = Utils.GetPortalZone(758, "x")
+        Dim randomY = Utils.GetPortalZone(579, "y")
+
+        'Dim randomX = Utils.GetRandom(756, 765)
+        'Dim randomY = Utils.GetRandom(562, 569)
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
 
 
@@ -1395,8 +1394,12 @@ Public Class Form_Game
             Exit Sub
         End If
         '610, 584
-        Dim randomX = Utils.GetRandom(610, 618)
-        Dim randomY = Utils.GetRandom(566, 574)
+        'Centre : 608, 579
+        Dim randomX = Utils.GetPortalZone(608, "x")
+        Dim randomY = Utils.GetPortalZone(579, "y")
+
+        'Dim randomX = Utils.GetRandom(610, 618)
+        'Dim randomY = Utils.GetRandom(566, 574)
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
 
 
