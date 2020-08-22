@@ -186,7 +186,7 @@
       <Value Profile="(Default)">J</Value>
     </Setting>
     <Setting Name="map_to_travel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1-1</Value>
+      <Value Profile="(Default)">Choose</Value>
     </Setting>
     <Setting Name="FIRME" Type="System.String" Scope="User">
       <Value Profile="(Default)">NONE</Value>

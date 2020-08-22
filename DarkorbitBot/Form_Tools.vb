@@ -2378,9 +2378,9 @@ Public Class Form_Tools
                 Console.WriteLine(Compagny)
                 Console.WriteLine("---------------------------------------")
 
-                If TextBox_username Then
+                'If TextBox_username Then
 
-                End If
+                'End If
 
                 TextBox_Get_Server.Text = Utils.server
                     Utils.UpdateStats()
@@ -2573,6 +2573,10 @@ Public Class Form_Tools
 
             tmp = Nothing
         End If
+
+    End Sub
+
+    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_listbox.SelectedIndexChanged
 
     End Sub
 End Class
