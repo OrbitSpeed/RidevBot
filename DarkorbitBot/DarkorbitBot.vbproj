@@ -491,6 +491,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Saimon.png" />
+    <None Include="Resources\Mordon.png" />
+    <None Include="Resources\Boss_Saimon.png" />
+    <None Include="Resources\boss_mordon.png" />
     <None Include="Resources\rank22.gif" />
     <None Include="Resources\rank_99.gif" />
     <None Include="Resources\rank_21.gif" />
