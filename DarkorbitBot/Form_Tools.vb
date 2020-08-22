@@ -2316,7 +2316,78 @@ Public Class Form_Tools
                 End If
 
                 Console.WriteLine("---------------------------------------")
+
                 TextBox_username.Text = username
+                TextBox_clan.Text = clan
+
+                If Compagny.Contains("Pilote de 1ère classe") Then
+                    PictureBox_grade.Image = My.Resources.rank_1
+
+                ElseIf Compagny.Contains("Caporal") Then
+                    PictureBox_grade.Image = My.Resources.rank_2
+
+                ElseIf Compagny.Contains("Caporal-chef") Then
+                    PictureBox_grade.Image = My.Resources.rank_3
+
+                ElseIf Compagny.Contains("Sergent") Then
+                    PictureBox_grade.Image = My.Resources.rank_4
+
+                ElseIf Compagny.Contains("Sergent-chef") Then
+                    PictureBox_grade.Image = My.Resources.rank_5
+
+                ElseIf Compagny.Contains("Adjudant") Then
+                    PictureBox_grade.Image = My.Resources.rank_6
+
+                ElseIf Compagny.Contains("Adjudant-chef") Then
+                    PictureBox_grade.Image = My.Resources.rank_7
+
+                ElseIf Compagny.Contains("Major") Then
+                    PictureBox_grade.Image = My.Resources.rank_8
+
+                ElseIf Compagny.Contains("Sous-lieutenant") Then
+                    PictureBox_grade.Image = My.Resources.rank_9
+
+                ElseIf Compagny.Contains("Lieutenant") Then
+                    PictureBox_grade.Image = My.Resources.rank_10
+
+                ElseIf Compagny.Contains("Capitaine") Then
+                    PictureBox_grade.Image = My.Resources.rank_11
+
+                ElseIf Compagny.Contains("Capitaine d'escadron") Then
+                    PictureBox_grade.Image = My.Resources.rank_12
+
+                ElseIf Compagny.Contains("Commandant") Then
+                    PictureBox_grade.Image = My.Resources.rank_13
+
+                ElseIf Compagny.Contains("Commandant d'escadron") Then
+                    PictureBox_grade.Image = My.Resources.rank_14
+
+                ElseIf Compagny.Contains("Lieutenant-colonel") Then
+                    PictureBox_grade.Image = My.Resources.rank_15
+
+                ElseIf Compagny.Contains("Colonel") Then
+                    PictureBox_grade.Image = My.Resources.rank_16
+
+                ElseIf Compagny.Contains("Général de brigade") Then
+                    PictureBox_grade.Image = My.Resources.rank_17
+
+                ElseIf Compagny.Contains("Général de division") Then
+                    PictureBox_grade.Image = My.Resources.rank_18
+
+                ElseIf Compagny.Contains("Général de corps d'armée") Then
+                    PictureBox_grade.Image = My.Resources.rank_19
+
+                ElseIf Compagny.Contains("Général d'Armée") Then
+                    PictureBox_grade.Image = My.Resources.rank_20
+
+                ElseIf Compagny.Contains("Grade de Hors la loi") Then
+                    PictureBox_grade.Image = My.Resources.rank22
+
+                Else PictureBox_grade.Image = My.Resources.rank_99
+
+                End If
+
+
                 Console.WriteLine(Compagny)
                 Console.WriteLine("---------------------------------------")
 
