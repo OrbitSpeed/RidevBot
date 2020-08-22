@@ -884,6 +884,7 @@ Public Class Form_Game
 
 #Region "Click Zone"
 
+#Region "4-1"
     Private Async Sub PORTAIL_41_to_14()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -928,8 +929,9 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
-
+#Region "4-2"
     Private Async Sub PORTAIL_42_to_24()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -974,8 +976,10 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
 
+#Region "4-3"
     Private Async Sub PORTAIL_43_to_34()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1025,7 +1029,9 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
+#Region "1-4"
     Private Async Sub PORTAIL_14_to_41()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1037,7 +1043,9 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
+#Region "2-4"
     Private Async Sub PORTAIL_24_to_42()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1049,7 +1057,9 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
+#Region "3-4"
     Private Async Sub PORTAIL_34_to_43()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1063,6 +1073,7 @@ Public Class Form_Game
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
 
 
@@ -1072,6 +1083,7 @@ Public Class Form_Game
 
 
 
+#Region "BL"
     Private Async Sub PORTAIL_1BL_MMO()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1106,6 +1118,7 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
+#End Region
 
 
     Private Async Sub PORTAIL_15_TO_44()
@@ -1124,9 +1137,12 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 623, 540
+        Dim randomX = Utils.GetPortalZone(623, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 623, 523)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1150,9 +1166,12 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 719, 485
+        Dim randomX = Utils.GetPortalZone(719, "x")
+        Dim randomY = Utils.GetPortalZone(485, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 720, 467)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1171,14 +1190,20 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
+
+
+#Region "4-4"
     Private Async Sub PORTAIL_44_to_35()
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 719, 593
+        Dim randomX = Utils.GetPortalZone(719, "x")
+        Dim randomY = Utils.GetPortalZone(593, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 718, 575)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1191,9 +1216,12 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 679, 540
+        Dim randomX = Utils.GetPortalZone(679, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 679, 522)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1203,9 +1231,12 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 691, 533
+        Dim randomX = Utils.GetPortalZone(691, "x")
+        Dim randomY = Utils.GetPortalZone(533, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 691, 515)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1215,23 +1246,30 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 691, 545
+        Dim randomX = Utils.GetPortalZone(691, "x")
+        Dim randomY = Utils.GetPortalZone(545, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 691, 527)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
+#End Region
 
 
-
+#Region "4-5"
     Private Async Sub PORTAIL_45_to_15()
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 623, 540
+        Dim randomX = Utils.GetPortalZone(623, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 621, 517)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1252,8 +1290,9 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Ne pas faire le centre : 719, 596
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 717, 571)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 719, 596)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1263,8 +1302,11 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 647, 540
+        Dim randomX = Utils.GetPortalZone(647, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 645, 517)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1274,8 +1316,11 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 705, 508
+        Dim randomX = Utils.GetPortalZone(705, "x")
+        Dim randomY = Utils.GetPortalZone(508, "y")
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 703, 486)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1291,17 +1336,22 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
+#End Region
 
 
 
+#Region "4-5 Indépendant"
     Private Async Sub PORTAIL_45_MMO()
         If User_Stop_Bot Then
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 610, 584
+        Dim randomX = Utils.GetPortalZone(610, "x")
+        Dim randomY = Utils.GetPortalZone(584, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 570)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
@@ -1310,9 +1360,12 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 760, 584
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(584, "y")
 
         ' BAS DROITE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 562)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
@@ -1322,15 +1375,20 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
+        'Centre : 745, 493
+        Dim randomX = Utils.GetPortalZone(745, "x")
+        Dim randomY = Utils.GetPortalZone(493, "y")
 
         ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 741, 476)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
+#End Region
 
 
 
+#Region "Portails généraux"
     Private Async Sub PORTAIL_HAUT_DROITE()
         If User_Stop_Bot Then
             Stop_Bot()
@@ -1409,6 +1467,7 @@ Public Class Form_Game
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
+#End Region
 
     Private Async Sub POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
