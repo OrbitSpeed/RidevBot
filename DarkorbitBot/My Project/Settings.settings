@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="Username" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Password</Value>
     </Setting>
     <Setting Name="License" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">FREE</Value>
     </Setting>
     <Setting Name="server" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">eg1</Value>
     </Setting>
     <Setting Name="UserAccounts" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
@@ -90,25 +90,25 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Password2" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Password</Value>
     </Setting>
     <Setting Name="Username1" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="Username2" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="Password3" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Password</Value>
     </Setting>
     <Setting Name="Password4" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Password1" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Password</Value>
     </Setting>
     <Setting Name="Username3" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="Saved_Earned_stats" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

@@ -45,15 +45,13 @@ Public Class Form_Startup
         End If
 
 #Region "Location and resize"
-        PanelUserAndPass.Location = New Point(0, 55)
+        PanelUserAndPass.Location = New Point(0, 18)
         PanelUserAndPass.Size = New Size(256, 221)
 
-        Panel_ProfilConnection.Location = New Point(0, 37)
-        Panel_SidConnexion.Location = New Point(0, 37)
-        PanelConnection.Location = New Point(0, 37)
+        Panel_ProfilConnection.Location = New Point(0, 35)
+        Panel_SidConnexion.Location = New Point(0, 35)
+        PanelConnection.Location = New Point(0, 35)
 
-        Panel_profil.Location = New Point(0, 55)
-        Panel_license.Location = New Point(0, 55)
 #End Region
 
         Label_Title.Text = "RidevBot v" + Application.ProductVersion
@@ -247,78 +245,54 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Credentials_Button_Click(sender As Object, e As EventArgs) Handles Credentials_Button.Click
+    Private Sub Credentials_Button_Click(sender As Object, e As EventArgs)
 
         ' button credentials '
 
         Me.Size = New Size(256, 251)
         PanelUserAndPass.Visible = True
-        Panel_profil.Visible = False
-        Panel_license.Visible = False
-
-        Credentials_Button.Enabled = False
-        Portail_Button.Enabled = True
-        License_Button.Enabled = True
 
         UserAndPass_Button.PerformClick()
 
     End Sub
 
-    Private Sub Portail_Button_Click(sender As Object, e As EventArgs) Handles Portail_Button.Click
+    Private Sub Portail_Button_Click(sender As Object, e As EventArgs)
 
         ' button Portal '
 
         Me.Size = New Size(256, 251)
         PanelUserAndPass.Visible = False
-        Panel_profil.Visible = True
-        Panel_license.Visible = False
-
-        Credentials_Button.Enabled = True
-        Portail_Button.Enabled = False
-        License_Button.Enabled = True
 
     End Sub
 
-    Private Sub License_Button_Click(sender As Object, e As EventArgs) Handles License_Button.Click
+    Private Sub License_Button_Click(sender As Object, e As EventArgs)
 
         ' button License '
 
         Me.Size = New Size(256, 251)
         PanelUserAndPass.Visible = False
-        Panel_profil.Visible = False
-        Panel_license.Visible = True
-
-        Credentials_Button.Enabled = True
-        Portail_Button.Enabled = True
-        License_Button.Enabled = False
 
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button_ridevbotBrowser.Click
+    Private Sub Button15_Click(sender As Object, e As EventArgs)
 
         ' button browser Ridevbot '
 
         Load_Button.Visible = True
-        Button4.Visible = False
 
-        Button_ridevbotBrowser.Enabled = False
-        Button_OfficialLauncherBrowser.Enabled = True
 
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button_OfficialLauncherBrowser.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs)
 
         ' button browser launcher '
 
         Load_Button.Visible = False
-        Button4.Visible = True
 
-        Button_ridevbotBrowser.Enabled = True
-        Button_OfficialLauncherBrowser.Enabled = False
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
 
         ' button Load 2 > User&&Pass > Launcher'
 
@@ -443,7 +417,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Button_resetAll_accounts_Click(sender As Object, e As EventArgs) Handles Button_resetAll_accounts.Click
+    Private Sub Button_resetAll_accounts_Click(sender As Object, e As EventArgs)
 
         TextBox_UsernamePasswordProfil1username.Text = ""
         TextBoxUsernamePasswordProfil1password.Text = ""
@@ -491,6 +465,10 @@ Public Class Form_Startup
     End Sub
 
     Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
+
+    End Sub
+
+    Private Sub PanelUserAndPass_Paint(sender As Object, e As PaintEventArgs) Handles PanelUserAndPass.Paint
 
     End Sub
 End Class
