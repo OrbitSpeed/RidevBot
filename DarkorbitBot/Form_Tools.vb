@@ -2615,7 +2615,7 @@ Public Class Form_Tools
             Rex_Button.BackColor = Color.FromArgb(30, 30, 30)
             Button_Howuse.BackColor = Color.FromArgb(30, 30, 30)
 
-            Me.BackColor = .BackColor = Color.FromArgb(30, 30, 30)
+            Me.BackColor = Color.FromArgb(30, 30, 30)
 
 
 
