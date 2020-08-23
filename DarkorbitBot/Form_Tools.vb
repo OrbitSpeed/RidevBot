@@ -2299,96 +2299,118 @@ Public Class Form_Tools
                 Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
 
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
+                'Compagny = Compagny.replace(vbCr, "-").replace(vbLf, "|")
+                'Clipboard.SetText(Compagny)
                 Dim username As String
                 Dim clan As String
                 Dim grade As String
                 Dim niveau As String
-                If Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Count = 4 Then
-                    username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
-                    clan = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
-                    grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
-                    niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(4).ToString.Replace(" ", "")
+                Dim options As RegexOptions = RegexOptions.IgnoreCase _
+                                Or RegexOptions.IgnorePatternWhitespace _
+                                Or RegexOptions.Multiline Or RegexOptions.ExplicitCapture
+                Dim compagny_regex = Regex.Matches(Compagny, ":.([\s\S]*?)\n", options)
+                'Console.WriteLine(compagny_regex.Count)
+                'For Each grp As Group In compagny_regex
+                '    Console.WriteLine(grp.ToString)
+                '    Console.WriteLine("--")
+                'Next
+                'Console.WriteLine("---------")
+                'Console.WriteLine(compagny_regex.Item(0).ToString.Replace(" ", ""))
+
+                If compagny_regex.Count = 4 Then
+                    username = compagny_regex.Item(0).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
+                    clan = compagny_regex.Item(1).ToString.Replace(": ", "").Replace(vbCr, "").Replace(vbLf, "")
+                    grade = compagny_regex.Item(2).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
+                    niveau = compagny_regex.Item(3).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                 Else
-                    username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
+                    username = compagny_regex.Item(0).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                     clan = "None"
-                    grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
-                    niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
+                    grade = compagny_regex.Item(1).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
+                    niveau = compagny_regex.Item(2).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                 End If
+                'Console.WriteLine("Compagny info")
+                'Console.WriteLine(username)
+                'Console.WriteLine(clan)
+                'Console.WriteLine(grade)
+                'Console.WriteLine(niveau)
+
 
                 Console.WriteLine("---------------------------------------")
 
                 TextBox_username.Text = username
                 TextBox_clan.Text = clan
 
-                If Compagny.Contains("Pilote de 1ère classe") Then
-                    PictureBox_grade.Image = My.Resources.rank_1
+                Select Case grade
+                    Case "Pilote de 1ère classe"
+                        PictureBox_grade.Image = My.Resources.rank_1
 
-                ElseIf Compagny.Contains("Caporal") Then
-                    PictureBox_grade.Image = My.Resources.rank_2
+                    Case "Caporal"
+                        PictureBox_grade.Image = My.Resources.rank_2
 
-                ElseIf Compagny.Contains("Caporal-chef") Then
-                    PictureBox_grade.Image = My.Resources.rank_3
+                    Case "Caporal-chef"
+                        PictureBox_grade.Image = My.Resources.rank_3
 
-                ElseIf Compagny.Contains("Sergent") Then
-                    PictureBox_grade.Image = My.Resources.rank_4
+                    Case "Sergent"
+                        PictureBox_grade.Image = My.Resources.rank_4
 
-                ElseIf Compagny.Contains("Sergent-chef") Then
-                    PictureBox_grade.Image = My.Resources.rank_5
+                    Case "Sergent-chef"
+                        PictureBox_grade.Image = My.Resources.rank_5
 
-                ElseIf Compagny.Contains("Adjudant") Then
-                    PictureBox_grade.Image = My.Resources.rank_6
+                    Case "Adjudant"
+                        PictureBox_grade.Image = My.Resources.rank_6
 
-                ElseIf Compagny.Contains("Adjudant-chef") Then
-                    PictureBox_grade.Image = My.Resources.rank_7
+                    Case "Adjudant-chef"
+                        PictureBox_grade.Image = My.Resources.rank_7
 
-                ElseIf Compagny.Contains("Major") Then
-                    PictureBox_grade.Image = My.Resources.rank_8
+                    Case "Major"
+                        PictureBox_grade.Image = My.Resources.rank_8
 
-                ElseIf Compagny.Contains("Sous-lieutenant") Then
-                    PictureBox_grade.Image = My.Resources.rank_9
+                    Case "Sous-lieutenant"
+                        PictureBox_grade.Image = My.Resources.rank_9
 
-                ElseIf Compagny.Contains("Lieutenant") Then
-                    PictureBox_grade.Image = My.Resources.rank_10
+                    Case "Lieutenant"
+                        PictureBox_grade.Image = My.Resources.rank_10
 
-                ElseIf Compagny.Contains("Capitaine") Then
-                    PictureBox_grade.Image = My.Resources.rank_11
+                    Case "Capitaine"
+                        PictureBox_grade.Image = My.Resources.rank_11
 
-                ElseIf Compagny.Contains("Capitaine d'escadron") Then
-                    PictureBox_grade.Image = My.Resources.rank_12
+                    Case "Capitaine d'escadron"
+                        PictureBox_grade.Image = My.Resources.rank_12
 
-                ElseIf Compagny.Contains("Commandant") Then
-                    PictureBox_grade.Image = My.Resources.rank_13
+                    Case "Commandant"
+                        PictureBox_grade.Image = My.Resources.rank_13
 
-                ElseIf Compagny.Contains("Commandant d'escadron") Then
-                    PictureBox_grade.Image = My.Resources.rank_14
+                    Case "Commandant d'escadron"
+                        PictureBox_grade.Image = My.Resources.rank_14
 
-                ElseIf Compagny.Contains("Lieutenant-colonel") Then
-                    PictureBox_grade.Image = My.Resources.rank_15
+                    Case "Lieutenant-colonel"
+                        PictureBox_grade.Image = My.Resources.rank_15
 
-                ElseIf Compagny.Contains("Colonel") Then
-                    PictureBox_grade.Image = My.Resources.rank_16
+                    Case "Colonel"
+                        PictureBox_grade.Image = My.Resources.rank_16
 
-                ElseIf Compagny.Contains("Général de brigade") Then
-                    PictureBox_grade.Image = My.Resources.rank_17
+                    Case "Général de brigade"
+                        PictureBox_grade.Image = My.Resources.rank_17
 
-                ElseIf Compagny.Contains("Général de division") Then
-                    PictureBox_grade.Image = My.Resources.rank_18
+                    Case "Général de division"
+                        PictureBox_grade.Image = My.Resources.rank_18
 
-                ElseIf Compagny.Contains("Général de corps d'armée") Then
-                    PictureBox_grade.Image = My.Resources.rank_19
+                    Case "Général de corps d'armée"
+                        PictureBox_grade.Image = My.Resources.rank_19
 
-                ElseIf Compagny.Contains("Général d'Armée") Then
-                    PictureBox_grade.Image = My.Resources.rank_20
+                    Case "Général d'Armée"
+                        PictureBox_grade.Image = My.Resources.rank_20
 
-                ElseIf Compagny.Contains("Grade de Hors la loi") Then
-                    PictureBox_grade.Image = My.Resources.rank22
+                    Case "Grade de Hors la loi"
+                        PictureBox_grade.Image = My.Resources.rank_22
 
-                Else PictureBox_grade.Image = My.Resources.rank_99
+                    Case Else
+                        PictureBox_grade.Image = My.Resources.rank_99
 
-                End If
+                End Select
 
 
-                Console.WriteLine(Compagny)
+            Console.WriteLine(Compagny)
                 Console.WriteLine("---------------------------------------")
 
                 'If TextBox_username Then
