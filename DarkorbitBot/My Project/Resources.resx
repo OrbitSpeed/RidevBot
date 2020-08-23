@@ -2002,17 +2002,6 @@
         AHo30BHFQiDAnlqBNgB9rK8lD+XDgZISALhpyVOBOOa1AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="rank22" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAASxJREFUOE+1
-        kzFOhFAQhrkGvVtQ0VBQWNERCytbo4nUWtgS6Kg4A5yAhmb3DNyCY9j8vm/evk3WoO6a+CdkmJn/Z+bN
-        PKL/gMKj+8fT+/H5FYrjWGmaKs9zfdzemcUnTt7TtqHdzU5FUUgPL9Lzq6qqkp7ezCdOHp6nn8OSZVlK
-        1bvqulbf92qaxiw+cfLffcRXdqSu6zQMo6Zp0jzPZkfnEycPD76XedgZaZNKwzDosN9rWRZlWWYWn7h1
-        4njw0Xm5e2FQnJV2qYhoXVcbHBafOHlmAx+dV7tVMW0Gxplpm8qIARafeNs2xoN/XLHhug4c76wDByVJ
-        csEMxtMM4KPzco8vWxisYtgC/k9bAJv3oN24B1vVAyxpnbg2r72JATa4v/4LAYF4wd8YRZ8e/4JRYN6k
-        mwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="rank_0" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAgACAIEAAP///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAAAACwAAAAAAgAC
@@ -2307,6 +2296,17 @@
         nwssRODQ0SZGogAULE0KUYGDBxSJBlAAcQGEBgUQdOjwoOyDAAAQJEjgVUCGAAEMYMAwYQIAAxMyHPBK
         QEGACReyTjAQdcCCBX3pKth54IACDIENL9jwOPCGnRIUXAjcQOPhiZcFSBg98bDDD4cHiJYwoIDp0w4P
         y9Z4OiAAOw==
+</value>
+  </data>
+  <data name="rank_22" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAASxJREFUOE+1
+        kzFOhFAQhrkGvVtQ0VBQWNERCytbo4nUWtgS6Kg4A5yAhmb3DNyCY9j8vm/evk3WoO6a+CdkmJn/Z+bN
+        PKL/gMKj+8fT+/H5FYrjWGmaKs9zfdzemcUnTt7TtqHdzU5FUUgPL9Lzq6qqkp7ezCdOHp6nn8OSZVlK
+        1bvqulbf92qaxiw+cfLffcRXdqSu6zQMo6Zp0jzPZkfnEycPD76XedgZaZNKwzDosN9rWRZlWWYWn7h1
+        4njw0Xm5e2FQnJV2qYhoXVcbHBafOHlmAx+dV7tVMW0Gxplpm8qIARafeNs2xoN/XLHhug4c76wDByVJ
+        csEMxtMM4KPzco8vWxisYtgC/k9bAJv3oN24B1vVAyxpnbg2r72JATa4v/4LAYF4wd8YRZ8e/4JRYN6k
+        mwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="rank_3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

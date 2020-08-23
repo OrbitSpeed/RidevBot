@@ -1172,6 +1172,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property rank_22() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("rank_22", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property rank_3() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("rank_3", resourceCulture)
@@ -1245,16 +1255,6 @@ Namespace My.Resources
         Friend ReadOnly Property rank_99() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("rank_99", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property rank22() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("rank22", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

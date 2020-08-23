@@ -33,6 +33,7 @@ Partial Class Form_Tools
         Me.textbox_stade = New System.Windows.Forms.Label()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Panel_Info = New System.Windows.Forms.Panel()
+        Me.TextBox_clan = New System.Windows.Forms.TextBox()
         Me.PictureBox_grade = New System.Windows.Forms.PictureBox()
         Me.TextBox_secondsdouble = New System.Windows.Forms.TextBox()
         Me.TextBox_Get_Dosid = New System.Windows.Forms.TextBox()
@@ -267,7 +268,7 @@ Partial Class Form_Tools
         Me.Stats_Button = New System.Windows.Forms.Button()
         Me.Rex_Button = New System.Windows.Forms.Button()
         Me.Divers_Button = New System.Windows.Forms.Button()
-        Me.TextBox_clan = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -403,6 +404,7 @@ Partial Class Form_Tools
         'Panel_general
         '
         Me.Panel_general.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_general.Controls.Add(Me.TextBox2)
         Me.Panel_general.Controls.Add(Me.textbox_stade)
         Me.Panel_general.Controls.Add(Me.ComboBox_autologin)
         Me.Panel_general.Controls.Add(Me.Panel_Info)
@@ -469,6 +471,21 @@ Partial Class Form_Tools
         Me.Panel_Info.Name = "Panel_Info"
         Me.Panel_Info.Size = New System.Drawing.Size(279, 125)
         Me.Panel_Info.TabIndex = 28
+        '
+        'TextBox_clan
+        '
+        Me.TextBox_clan.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TextBox_clan.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_clan.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_clan.Location = New System.Drawing.Point(47, 6)
+        Me.TextBox_clan.MaxLength = 20
+        Me.TextBox_clan.Multiline = True
+        Me.TextBox_clan.Name = "TextBox_clan"
+        Me.TextBox_clan.ReadOnly = True
+        Me.TextBox_clan.Size = New System.Drawing.Size(40, 20)
+        Me.TextBox_clan.TabIndex = 61
+        Me.TextBox_clan.Text = "[ 0000 ] "
+        Me.TextBox_clan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox_grade
         '
@@ -3644,19 +3661,13 @@ Partial Class Form_Tools
         Me.Divers_Button.Text = "Divers"
         Me.Divers_Button.UseVisualStyleBackColor = False
         '
-        'TextBox_clan
+        'TextBox2
         '
-        Me.TextBox_clan.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_clan.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_clan.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_clan.Location = New System.Drawing.Point(47, 6)
-        Me.TextBox_clan.MaxLength = 20
-        Me.TextBox_clan.Name = "TextBox_clan"
-        Me.TextBox_clan.ReadOnly = True
-        Me.TextBox_clan.Size = New System.Drawing.Size(40, 15)
-        Me.TextBox_clan.TabIndex = 61
-        Me.TextBox_clan.Text = "[ 0000 ] "
-        Me.TextBox_clan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox2.Location = New System.Drawing.Point(86, 78)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(132, 57)
+        Me.TextBox2.TabIndex = 77
         '
         'Form_Tools
         '
@@ -4008,4 +4019,5 @@ Partial Class Form_Tools
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox_Get_id As TextBox
     Friend WithEvents TextBox_clan As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class
