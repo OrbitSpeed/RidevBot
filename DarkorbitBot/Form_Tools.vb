@@ -2666,9 +2666,12 @@ Public Class Form_Tools
             If CheckedListBox_listbox.GetItemChecked(CheckedListBox_listbox.SelectedIndex) Then
                 'MsgBox("item checked")
                 CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Unchecked)
+                'CheckedListBox_listbox.SetSelected(CheckedListBox_listbox.SelectedIndex, False)
+
             Else
                 'MsgBox("item not checked")
                 CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Checked)
+                'CheckedListBox_listbox.SetSelected(CheckedListBox_listbox.SelectedIndex, False)
             End If
         End If
     End Sub
