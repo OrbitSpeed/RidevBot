@@ -904,6 +904,7 @@ Partial Class Form_Tools
         '
         Me.CheckedListBox_npc.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_npc.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CheckedListBox_npc.CheckOnClick = True
         Me.CheckedListBox_npc.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_npc.FormattingEnabled = True
         Me.CheckedListBox_npc.Location = New System.Drawing.Point(3, 26)
@@ -928,6 +929,7 @@ Partial Class Form_Tools
         '
         Me.CheckedListBox_listbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CheckedListBox_listbox.CheckOnClick = True
         Me.CheckedListBox_listbox.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_listbox.FormattingEnabled = True
         Me.CheckedListBox_listbox.Location = New System.Drawing.Point(155, 26)

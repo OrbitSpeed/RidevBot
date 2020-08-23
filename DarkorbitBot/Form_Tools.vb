@@ -2646,33 +2646,4 @@ Public Class Form_Tools
         Size = New Size(390, 358)
 
     End Sub
-
-    Private Sub CheckedListBox_npc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_npc.SelectedIndexChanged
-        If CheckedListBox_npc.SelectedItem.ToString IsNot Nothing Then
-            'MsgBox("debug true")
-            If CheckedListBox_npc.GetItemChecked(CheckedListBox_npc.SelectedIndex) Then
-                'MsgBox("item checked")
-                CheckedListBox_npc.SetItemCheckState(CheckedListBox_npc.SelectedIndex, CheckState.Unchecked)
-            Else
-                'MsgBox("item not checked")
-                CheckedListBox_npc.SetItemCheckState(CheckedListBox_npc.SelectedIndex, CheckState.Checked)
-            End If
-        End If
-    End Sub
-
-    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_listbox.SelectedIndexChanged
-        If CheckedListBox_listbox.SelectedItem.ToString IsNot Nothing Then
-            'MsgBox("debug true")
-            If CheckedListBox_listbox.GetItemChecked(CheckedListBox_listbox.SelectedIndex) Then
-                'MsgBox("item checked")
-                CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Unchecked)
-                'CheckedListBox_listbox.SetSelected(CheckedListBox_listbox.SelectedIndex, False)
-
-            Else
-                'MsgBox("item not checked")
-                CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Checked)
-                'CheckedListBox_listbox.SetSelected(CheckedListBox_listbox.SelectedIndex, False)
-            End If
-        End If
-    End Sub
 End Class
