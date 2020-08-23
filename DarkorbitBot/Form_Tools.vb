@@ -47,7 +47,7 @@ Public Class Form_Tools
     Public Sub Reload()
 
         If Reloader = 0 Then
-            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", vbHide)
+            Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", AppWinStyle.Hide)
             Reloader = 1
         End If
 
@@ -2611,10 +2611,6 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub ComboBox_colormod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_colormod.SelectedIndexChanged
 
         If ComboBox_colormod.Text = "Dark&Red  ( By _Dev )" Then
@@ -2649,5 +2645,31 @@ Public Class Form_Tools
 
         Size = New Size(390, 358)
 
+    End Sub
+
+    Private Sub CheckedListBox_npc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_npc.SelectedIndexChanged
+        If CheckedListBox_npc.SelectedItem.ToString IsNot Nothing Then
+            'MsgBox("debug true")
+            If CheckedListBox_npc.GetItemChecked(CheckedListBox_npc.SelectedIndex) Then
+                'MsgBox("item checked")
+                CheckedListBox_npc.SetItemCheckState(CheckedListBox_npc.SelectedIndex, CheckState.Unchecked)
+            Else
+                'MsgBox("item not checked")
+                CheckedListBox_npc.SetItemCheckState(CheckedListBox_npc.SelectedIndex, CheckState.Checked)
+            End If
+        End If
+    End Sub
+
+    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_listbox.SelectedIndexChanged
+        If CheckedListBox_listbox.SelectedItem.ToString IsNot Nothing Then
+            'MsgBox("debug true")
+            If CheckedListBox_listbox.GetItemChecked(CheckedListBox_listbox.SelectedIndex) Then
+                'MsgBox("item checked")
+                CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Unchecked)
+            Else
+                'MsgBox("item not checked")
+                CheckedListBox_listbox.SetItemCheckState(CheckedListBox_listbox.SelectedIndex, CheckState.Checked)
+            End If
+        End If
     End Sub
 End Class
