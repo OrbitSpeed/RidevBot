@@ -118,7 +118,7 @@ Public Class Form_Tools
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         CenterToScreen()
 
         If Form_Game.Visible = True Then
@@ -167,7 +167,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         'CenterToScreen()
 
     End Sub
@@ -199,7 +199,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(677, 333)
+        Size = New Size(390, 525)
         'CenterToScreen()
 
     End Sub
@@ -232,7 +232,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         ' CenterToScreen()
 
     End Sub
@@ -260,11 +260,11 @@ Public Class Form_Tools
             If result = DialogResult.OK Then
                 General_button.Enabled = False
                 Panel_general.Visible = True
-                Size = New Size(390, 333)
+                Size = New Size(390, 358)
             Else
                 General_button.Enabled = False
                 Panel_general.Visible = True
-                Size = New Size(390, 333)
+                Size = New Size(390, 358)
             End If
         Else
 
@@ -313,7 +313,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         ' CenterToScreen()
 
     End Sub
@@ -350,23 +350,23 @@ Public Class Form_Tools
             If result = DialogResult.OK Then
                 General_button.Enabled = False
                 Panel_general.Visible = True
-                Size = New Size(390, 333)
+                Size = New Size(390, 358)
             Else
                 General_button.Enabled = False
                 Panel_general.Visible = True
-                Size = New Size(390, 333)
+                Size = New Size(390, 358)
             End If
 
 
             General_button.Enabled = False
             Panel_general.Visible = True
-            Size = New Size(390, 333)
+            Size = New Size(390, 358)
 
         Else
 
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
-            Size = New Size(390, 356)
+            Size = New Size(390, 358)
 
             Utils.checkStats = True
             BackPage_Form.Show()
@@ -410,7 +410,7 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         ' CenterToScreen()
 
     End Sub
@@ -442,7 +442,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-        Size = New Size(390, 333)
+        Size = New Size(390, 358)
         ' CenterToScreen()
 
     End Sub
@@ -2577,7 +2577,43 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_listbox.SelectedIndexChanged
+    Private Sub CheckedListBox_listbox_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ComboBox_colormod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_colormod.SelectedIndexChanged
+
+        If ComboBox_colormod.Text = "Dark&Red  ( By _Dev )" Then
+
+            Button_OpenLoginPanel.FlatAppearance.BorderColor = Color.Red
+
+            Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
+            CheckBox_AutoUpdate.BackColor = Color.FromArgb(30, 30, 30)
+            Button_OpenLoginPanel.BackColor = Color.FromArgb(30, 30, 30)
+            CheckBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
+            ComboBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
+
+            General_button.BackColor = Color.FromArgb(30, 30, 30)
+            NPC_Button.BackColor = Color.FromArgb(30, 30, 30)
+            Stats_Button.BackColor = Color.FromArgb(30, 30, 30)
+            LogUpdate_button.BackColor = Color.FromArgb(30, 30, 30)
+            GalaxyGates_Button.BackColor = Color.FromArgb(30, 30, 30)
+            Pirates_Button.BackColor = Color.FromArgb(30, 30, 30)
+            Divers_Button.BackColor = Color.FromArgb(30, 30, 30)
+            Rex_Button.BackColor = Color.FromArgb(30, 30, 30)
+            Button_Howuse.BackColor = Color.FromArgb(30, 30, 30)
+
+            Me.BackColor = .BackColor = Color.FromArgb(30, 30, 30)
+
+
+
+        End If
+
+    End Sub
+
+    Private Sub Button_Howuse_Click(sender As Object, e As EventArgs) Handles Button_Howuse.Click
+
+        Size = New Size(390, 358)
 
     End Sub
 End Class
