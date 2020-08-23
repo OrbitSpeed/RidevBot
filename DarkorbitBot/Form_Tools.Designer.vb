@@ -416,8 +416,9 @@ Partial Class Form_Tools
         Me.Panel_general.Controls.Add(Me.Button_LaunchGameRidevBrowser)
         Me.Panel_general.Controls.Add(Me.CheckBox_AutoLogin)
         Me.Panel_general.Controls.Add(Me.Label_GENERAL_A_SUPPRIMER)
+        Me.Panel_general.Controls.Add(Me.TextBox_Get_id)
         Me.Panel_general.ForeColor = System.Drawing.Color.White
-        Me.Panel_general.Location = New System.Drawing.Point(135, 36)
+        Me.Panel_general.Location = New System.Drawing.Point(94, 25)
         Me.Panel_general.Name = "Panel_general"
         Me.Panel_general.Size = New System.Drawing.Size(304, 346)
         Me.Panel_general.TabIndex = 41
@@ -864,7 +865,7 @@ Partial Class Form_Tools
         Me.Panel_Npc.Controls.Add(Me.Panel2)
         Me.Panel_Npc.Controls.Add(Me.TableLayoutPanel4)
         Me.Panel_Npc.ForeColor = System.Drawing.Color.White
-        Me.Panel_Npc.Location = New System.Drawing.Point(445, 36)
+        Me.Panel_Npc.Location = New System.Drawing.Point(94, 377)
         Me.Panel_Npc.Name = "Panel_Npc"
         Me.Panel_Npc.Size = New System.Drawing.Size(304, 507)
         Me.Panel_Npc.TabIndex = 42
@@ -1328,7 +1329,7 @@ Partial Class Form_Tools
         Me.Panel_collector.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_collector.Controls.Add(Me.TextBox_Changelog)
         Me.Panel_collector.ForeColor = System.Drawing.Color.White
-        Me.Panel_collector.Location = New System.Drawing.Point(1375, 36)
+        Me.Panel_collector.Location = New System.Drawing.Point(94, 890)
         Me.Panel_collector.Name = "Panel_collector"
         Me.Panel_collector.Size = New System.Drawing.Size(304, 346)
         Me.Panel_collector.TabIndex = 43
@@ -1353,9 +1354,9 @@ Partial Class Form_Tools
         Me.Panel_Palladium.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Palladium.Controls.Add(Me.Label_PALADIUM_A_SUPPRIMER)
         Me.Panel_Palladium.ForeColor = System.Drawing.Color.White
-        Me.Panel_Palladium.Location = New System.Drawing.Point(1405, 389)
+        Me.Panel_Palladium.Location = New System.Drawing.Point(1334, 24)
         Me.Panel_Palladium.Name = "Panel_Palladium"
-        Me.Panel_Palladium.Size = New System.Drawing.Size(304, 342)
+        Me.Panel_Palladium.Size = New System.Drawing.Size(304, 346)
         Me.Panel_Palladium.TabIndex = 45
         Me.Panel_Palladium.Visible = False
         '
@@ -1462,7 +1463,7 @@ Partial Class Form_Tools
         Me.Panel_stats.Controls.Add(Me.Label_Stats_Earned)
         Me.Panel_stats.Controls.Add(Me.Label_Total_Current)
         Me.Panel_stats.ForeColor = System.Drawing.Color.White
-        Me.Panel_stats.Location = New System.Drawing.Point(1065, 36)
+        Me.Panel_stats.Location = New System.Drawing.Point(714, 24)
         Me.Panel_stats.Name = "Panel_stats"
         Me.Panel_stats.Size = New System.Drawing.Size(304, 346)
         Me.Panel_stats.TabIndex = 46
@@ -1906,7 +1907,7 @@ Partial Class Form_Tools
         Me.Panel_rex.Controls.Add(Me.Panel_PET_selection)
         Me.Panel_rex.Controls.Add(Me.Label8rex_A_SUPPRIMER)
         Me.Panel_rex.ForeColor = System.Drawing.Color.White
-        Me.Panel_rex.Location = New System.Drawing.Point(755, 36)
+        Me.Panel_rex.Location = New System.Drawing.Point(404, 25)
         Me.Panel_rex.Name = "Panel_rex"
         Me.Panel_rex.Size = New System.Drawing.Size(304, 346)
         Me.Panel_rex.TabIndex = 47
@@ -2085,9 +2086,9 @@ Partial Class Form_Tools
         Me.Panel_divers.Controls.Add(Me.ComboBox_colormod)
         Me.Panel_divers.Controls.Add(Me.CheckBox1)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
-        Me.Panel_divers.Location = New System.Drawing.Point(1095, 388)
+        Me.Panel_divers.Location = New System.Drawing.Point(1024, 24)
         Me.Panel_divers.Name = "Panel_divers"
-        Me.Panel_divers.Size = New System.Drawing.Size(304, 343)
+        Me.Panel_divers.Size = New System.Drawing.Size(304, 346)
         Me.Panel_divers.TabIndex = 48
         Me.Panel_divers.Visible = False
         '
@@ -2167,11 +2168,11 @@ Partial Class Form_Tools
         Me.TextBox_GGinfoGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_GGinfoGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_GGinfoGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(487, 1069)
+        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(404, 939)
         Me.TextBox_GGinfoGGS.Multiline = True
         Me.TextBox_GGinfoGGS.Name = "TextBox_GGinfoGGS"
         Me.TextBox_GGinfoGGS.ReadOnly = True
-        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(258, 10)
+        Me.TextBox_GGinfoGGS.Size = New System.Drawing.Size(72, 10)
         Me.TextBox_GGinfoGGS.TabIndex = 75
         Me.TextBox_GGinfoGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -2181,7 +2182,6 @@ Partial Class Form_Tools
         Me.Panel_Title.Controls.Add(Me.PictureBox_LaunchBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_BackgroundBot)
         Me.Panel_Title.Controls.Add(Me.PictureBox_epinglerBot)
-        Me.Panel_Title.Controls.Add(Me.TextBox_Get_id)
         Me.Panel_Title.Controls.Add(Me.FlatMini_reduction_de_formtools)
         Me.Panel_Title.Controls.Add(Me.PictureBox_close1)
         Me.Panel_Title.Controls.Add(Me.Title_form)
@@ -2189,7 +2189,7 @@ Partial Class Form_Tools
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
-        Me.Panel_Title.Size = New System.Drawing.Size(1940, 18)
+        Me.Panel_Title.Size = New System.Drawing.Size(1654, 18)
         Me.Panel_Title.TabIndex = 24
         '
         'PictureBox_LaunchBot
@@ -2197,7 +2197,7 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_LaunchBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_LaunchBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_suivant
-        Me.PictureBox_LaunchBot.Location = New System.Drawing.Point(195, 0)
+        Me.PictureBox_LaunchBot.Location = New System.Drawing.Point(110, 0)
         Me.PictureBox_LaunchBot.Name = "PictureBox_LaunchBot"
         Me.PictureBox_LaunchBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_LaunchBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2209,7 +2209,7 @@ Partial Class Form_Tools
         Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_accueil
-        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(214, 0)
+        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(129, 0)
         Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
         Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2221,7 +2221,7 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.img_unpin
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(233, 0)
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(148, 0)
         Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
         Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2235,13 +2235,14 @@ Partial Class Form_Tools
         Me.TextBox_Get_id.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_Get_id.Enabled = False
         Me.TextBox_Get_id.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_Get_id.Location = New System.Drawing.Point(103, -1)
+        Me.TextBox_Get_id.Location = New System.Drawing.Point(6, 6)
         Me.TextBox_Get_id.Name = "TextBox_Get_id"
         Me.TextBox_Get_id.ReadOnly = True
         Me.TextBox_Get_id.Size = New System.Drawing.Size(92, 20)
         Me.TextBox_Get_id.TabIndex = 61
         Me.TextBox_Get_id.Text = "0000000000"
         Me.TextBox_Get_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_Get_id.Visible = False
         '
         'PictureBox_close1
         '
@@ -2249,7 +2250,7 @@ Partial Class Form_Tools
         Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1636, 0)
         Me.PictureBox_close1.Name = "PictureBox_close1"
         Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3395,7 +3396,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Alpha)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
-        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(94, 546)
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(404, 377)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
         Me.Panel_GalaxyGates.Size = New System.Drawing.Size(995, 514)
         Me.Panel_GalaxyGates.TabIndex = 44
@@ -3564,17 +3565,17 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_DebugGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_DebugGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(748, 1069)
+        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(404, 923)
         Me.TextBox_DebugGGS.Multiline = True
         Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
         Me.TextBox_DebugGGS.ReadOnly = True
-        Me.TextBox_DebugGGS.Size = New System.Drawing.Size(258, 10)
+        Me.TextBox_DebugGGS.Size = New System.Drawing.Size(72, 10)
         Me.TextBox_DebugGGS.TabIndex = 69
         Me.TextBox_DebugGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'WebBrowser_GGInfo
         '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1012, 1062)
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(404, 897)
         Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
         Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
@@ -3584,7 +3585,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_Synchronisation
         '
-        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1037, 1062)
+        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(429, 897)
         Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
         Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
@@ -3594,7 +3595,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1062, 1062)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(454, 897)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
@@ -3678,7 +3679,7 @@ Partial Class Form_Tools
         Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
         Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1618, 0)
         Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
         Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
         Me.FlatMini_reduction_de_formtools.TabIndex = 0
@@ -3701,7 +3702,7 @@ Partial Class Form_Tools
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.ClientSize = New System.Drawing.Size(1940, 1100)
+        Me.ClientSize = New System.Drawing.Size(1654, 1100)
         Me.Controls.Add(Me.Panel_GalaxyGates)
         Me.Controls.Add(Me.Button_Howuse)
         Me.Controls.Add(Me.Pirates_Button)
