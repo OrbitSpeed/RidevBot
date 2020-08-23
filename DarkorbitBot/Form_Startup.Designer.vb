@@ -598,7 +598,7 @@ Partial Class Form_Startup
         Me.PanelUserAndPass.Controls.Add(Me.PanelConnection)
         Me.PanelUserAndPass.Location = New System.Drawing.Point(48, 24)
         Me.PanelUserAndPass.Name = "PanelUserAndPass"
-        Me.PanelUserAndPass.Size = New System.Drawing.Size(847, 636)
+        Me.PanelUserAndPass.Size = New System.Drawing.Size(810, 392)
         Me.PanelUserAndPass.TabIndex = 18
         '
         'Button_License_Verify
@@ -817,7 +817,7 @@ Partial Class Form_Startup
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1052, 671)
+        Me.ClientSize = New System.Drawing.Size(869, 427)
         Me.Controls.Add(Me.Label_point_de_chute)
         Me.Controls.Add(Me.Panel_Title)
         Me.Controls.Add(Me.PanelUserAndPass)

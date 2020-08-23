@@ -368,14 +368,14 @@ Public Class Form_Tools
             Panel_stats.Visible = True
             Size = New Size(390, 358)
 
-            Utils.checkStats = True
-            BackPage_Form.Show()
-            Reader = 1
-            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-            BackPage_Form.WindowState = FormWindowState.Minimized
+            '   Utils.checkStats = True
+            ' BackPage_Form.Show()
+            ' Reader = 1
+            '  BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            '   BackPage_Form.WindowState = FormWindowState.Minimized
 
-            BackPage_Form.ShowIcon = False
-            BackPage_Form.ShowInTaskbar = False
+            ' BackPage_Form.ShowIcon = False
+            '  BackPage_Form.ShowInTaskbar = False
 
         End If
 
