@@ -2299,10 +2299,22 @@ Public Class Form_Tools
                 Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
 
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
-                Dim username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
-                Dim clan = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
-                Dim grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
-                Dim niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(4).ToString.Replace(" ", "")
+                Dim username As String
+                Dim clan As String
+                Dim grade As String
+                Dim niveau As String
+                If Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Count = 4 Then
+                    username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
+                    clan = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
+                    grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
+                    niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(4).ToString.Replace(" ", "")
+                Else
+                    username = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(1).ToString.Replace(" ", "")
+                    clan = "None"
+                    grade = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(2).ToString.Replace(" ", "")
+                    niveau = Regex.Match(Compagny, ":.*?([\s\S]*?)\n").Groups.Item(3).ToString.Replace(" ", "")
+                End If
+
                 Console.WriteLine("---------------------------------------")
 
                 TextBox_username.Text = username
@@ -2384,34 +2396,34 @@ Public Class Form_Tools
                 'End If
 
                 TextBox_Get_Server.Text = Utils.server
-                    Utils.UpdateStats()
+                Utils.UpdateStats()
 
-                    textbox_stade.Text = "Server : OK  ---  2/2"
+                textbox_stade.Text = "Server : OK  ---  2/2"
 
-                    textbox_stade.Text = "Done."
+                textbox_stade.Text = "Done."
 
-                    Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-                    Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+                Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                    If BackgroundWorker_Timer.IsBusy <> True Then
-                        BackgroundWorker_Timer.RunWorkerAsync()
-                    End If
-
-                    WebBrowser_Synchronisation.Navigate("about:blank")
-
-                    If CheckBox_LaunchGameAuto.Checked = True Then
-
-                        textbox_stade.Text = "Launching the game wait ... "
-
-                        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-                        Form_Game.Show()
-
-                    End If
+                If BackgroundWorker_Timer.IsBusy <> True Then
+                    BackgroundWorker_Timer.RunWorkerAsync()
                 End If
 
-                '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+                WebBrowser_Synchronisation.Navigate("about:blank")
+
+                If CheckBox_LaunchGameAuto.Checked = True Then
+
+                    textbox_stade.Text = "Launching the game wait ... "
+
+                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Form_Game.Show()
+
+                End If
             End If
+
+            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
+        End If
 
     End Sub
 
