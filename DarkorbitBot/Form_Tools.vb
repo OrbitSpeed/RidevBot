@@ -256,16 +256,10 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         If Utils.server = "" Then
-            Dim result = MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            If result = DialogResult.OK Then
-                General_button.Enabled = False
-                Panel_general.Visible = True
-                Size = New Size(390, 358)
-            Else
-                General_button.Enabled = False
-                Panel_general.Visible = True
-                Size = New Size(390, 358)
-            End If
+            MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            General_button.Enabled = False
+            Panel_general.Visible = True
+            Size = New Size(390, 358)
         Else
 
             GalaxyGates_Button.Enabled = False
@@ -346,18 +340,7 @@ Public Class Form_Tools
 
         If Utils.server = "" Then
 
-            Dim result = MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            If result = DialogResult.OK Then
-                General_button.Enabled = False
-                Panel_general.Visible = True
-                Size = New Size(390, 358)
-            Else
-                General_button.Enabled = False
-                Panel_general.Visible = True
-                Size = New Size(390, 358)
-            End If
-
-
+            MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             General_button.Enabled = False
             Panel_general.Visible = True
             Size = New Size(390, 358)
