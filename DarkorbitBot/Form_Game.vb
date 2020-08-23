@@ -3489,6 +3489,10 @@ Public Class Form_Game
         End If
 
     End Sub
+
+    Private Sub Label_Title_Click(sender As Object, e As EventArgs) Handles Label_Title.Click
+
+    End Sub
 End Class
 
 'npc killer

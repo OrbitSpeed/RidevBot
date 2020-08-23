@@ -24,21 +24,25 @@ Partial Class AutoUpdater
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AutoUpdater))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
-        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
-        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
         Me.Button_Update = New System.Windows.Forms.Button()
         Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.FlatTextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.Panel_utilites = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
+        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_utilites.SuspendLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel1.Controls.Add(Me.PictureBox_close1)
         Me.Panel1.Controls.Add(Me.FlatLabel_Title)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -46,53 +50,15 @@ Partial Class AutoUpdater
         Me.Panel1.Size = New System.Drawing.Size(363, 18)
         Me.Panel1.TabIndex = 0
         '
-        'FlatLabel_Title
-        '
-        Me.FlatLabel_Title.AutoSize = True
-        Me.FlatLabel_Title.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_Title.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.FlatLabel_Title.ForeColor = System.Drawing.Color.Black
-        Me.FlatLabel_Title.Location = New System.Drawing.Point(91, -2)
-        Me.FlatLabel_Title.Name = "FlatLabel_Title"
-        Me.FlatLabel_Title.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FlatLabel_Title.Size = New System.Drawing.Size(182, 21)
-        Me.FlatLabel_Title.TabIndex = 1
-        Me.FlatLabel_Title.Text = "RidevBot AutoUpdater"
-        Me.FlatLabel_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'FlatLabel_isUpdated
-        '
-        Me.FlatLabel_isUpdated.AutoSize = True
-        Me.FlatLabel_isUpdated.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_isUpdated.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FlatLabel_isUpdated.ForeColor = System.Drawing.Color.Lime
-        Me.FlatLabel_isUpdated.Location = New System.Drawing.Point(37, 52)
-        Me.FlatLabel_isUpdated.Name = "FlatLabel_isUpdated"
-        Me.FlatLabel_isUpdated.Size = New System.Drawing.Size(122, 17)
-        Me.FlatLabel_isUpdated.TabIndex = 4
-        Me.FlatLabel_isUpdated.Text = "You are up to date"
-        '
-        'FlatLabel_Version
-        '
-        Me.FlatLabel_Version.AutoSize = True
-        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Transparent
-        Me.FlatLabel_Version.Location = New System.Drawing.Point(45, 35)
-        Me.FlatLabel_Version.Name = "FlatLabel_Version"
-        Me.FlatLabel_Version.Size = New System.Drawing.Size(106, 17)
-        Me.FlatLabel_Version.TabIndex = 3
-        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
-        '
         'Button_Update
         '
         Me.Button_Update.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Update.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button_Update.Enabled = False
         Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Update.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Update.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Update.ForeColor = System.Drawing.Color.White
-        Me.Button_Update.Location = New System.Drawing.Point(22, 351)
+        Me.Button_Update.Location = New System.Drawing.Point(42, 354)
         Me.Button_Update.Name = "Button_Update"
         Me.Button_Update.Size = New System.Drawing.Size(114, 34)
         Me.Button_Update.TabIndex = 33
@@ -102,22 +68,21 @@ Partial Class AutoUpdater
         'AxWindowsMediaPlayer1
         '
         Me.AxWindowsMediaPlayer1.Enabled = True
-        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(-6, 3)
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(0, -8)
         Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(375, 292)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(363, 292)
         Me.AxWindowsMediaPlayer1.TabIndex = 100
         '
         'FlatTextBox_Changelog
         '
         Me.FlatTextBox_Changelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.FlatTextBox_Changelog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlatTextBox_Changelog.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(0, 217)
+        Me.FlatTextBox_Changelog.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatTextBox_Changelog.Location = New System.Drawing.Point(19, 201)
         Me.FlatTextBox_Changelog.Multiline = True
         Me.FlatTextBox_Changelog.Name = "FlatTextBox_Changelog"
-        Me.FlatTextBox_Changelog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(363, 114)
+        Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(327, 139)
         Me.FlatTextBox_Changelog.TabIndex = 101
         '
         'Panel_utilites
@@ -129,6 +94,65 @@ Partial Class AutoUpdater
         Me.Panel_utilites.Name = "Panel_utilites"
         Me.Panel_utilites.Size = New System.Drawing.Size(200, 105)
         Me.Panel_utilites.TabIndex = 102
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel2.Location = New System.Drawing.Point(0, 191)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(363, 140)
+        Me.Panel2.TabIndex = 103
+        '
+        'PictureBox_close1
+        '
+        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_close1.Location = New System.Drawing.Point(345, 0)
+        Me.PictureBox_close1.Name = "PictureBox_close1"
+        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_close1.TabIndex = 33
+        Me.PictureBox_close1.TabStop = False
+        '
+        'FlatLabel_Version
+        '
+        Me.FlatLabel_Version.AutoSize = True
+        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Transparent
+        Me.FlatLabel_Version.Location = New System.Drawing.Point(47, 38)
+        Me.FlatLabel_Version.Name = "FlatLabel_Version"
+        Me.FlatLabel_Version.Size = New System.Drawing.Size(100, 17)
+        Me.FlatLabel_Version.TabIndex = 3
+        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
+        '
+        'FlatLabel_isUpdated
+        '
+        Me.FlatLabel_isUpdated.AutoSize = True
+        Me.FlatLabel_isUpdated.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_isUpdated.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel_isUpdated.ForeColor = System.Drawing.Color.Lime
+        Me.FlatLabel_isUpdated.Location = New System.Drawing.Point(39, 55)
+        Me.FlatLabel_isUpdated.Name = "FlatLabel_isUpdated"
+        Me.FlatLabel_isUpdated.Size = New System.Drawing.Size(122, 17)
+        Me.FlatLabel_isUpdated.TabIndex = 4
+        Me.FlatLabel_isUpdated.Text = "You are up to date"
+        '
+        'FlatLabel_Title
+        '
+        Me.FlatLabel_Title.AutoSize = True
+        Me.FlatLabel_Title.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel_Title.ForeColor = System.Drawing.Color.Black
+        Me.FlatLabel_Title.Location = New System.Drawing.Point(0, -1)
+        Me.FlatLabel_Title.Name = "FlatLabel_Title"
+        Me.FlatLabel_Title.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.FlatLabel_Title.Size = New System.Drawing.Size(167, 20)
+        Me.FlatLabel_Title.TabIndex = 1
+        Me.FlatLabel_Title.Text = "RidevBot Auto Updater"
+        Me.FlatLabel_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AutoUpdater
         '
@@ -142,6 +166,7 @@ Partial Class AutoUpdater
         Me.Controls.Add(Me.Panel_utilites)
         Me.Controls.Add(Me.Button_Update)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.AxWindowsMediaPlayer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -153,6 +178,7 @@ Partial Class AutoUpdater
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_utilites.ResumeLayout(False)
         Me.Panel_utilites.PerformLayout()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,4 +192,6 @@ Partial Class AutoUpdater
     Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents FlatTextBox_Changelog As TextBox
     Friend WithEvents Panel_utilites As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox_close1 As PictureBox
 End Class

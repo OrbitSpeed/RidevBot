@@ -31,6 +31,7 @@ Partial Class Form_Game
         Me.Button_bonusbox = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -63,7 +64,6 @@ Partial Class Form_Game
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,12 +72,12 @@ Partial Class Form_Game
         'Label_Title
         '
         Me.Label_Title.AutoSize = True
-        Me.Label_Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Title.Location = New System.Drawing.Point(2, 0)
+        Me.Label_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Title.Location = New System.Drawing.Point(0, -1)
         Me.Label_Title.Name = "Label_Title"
-        Me.Label_Title.Size = New System.Drawing.Size(144, 18)
+        Me.Label_Title.Size = New System.Drawing.Size(141, 20)
         Me.Label_Title.TabIndex = 22
-        Me.Label_Title.Text = "RidevBot Browser"
+        Me.Label_Title.Text = "RidevBot Browser | "
         '
         'Panel7
         '
@@ -116,11 +116,11 @@ Partial Class Form_Game
         'Label_PerformanceMemoire
         '
         Me.Label_PerformanceMemoire.AutoSize = True
-        Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_PerformanceMemoire.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(152, 0)
+        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(135, -1)
         Me.Label_PerformanceMemoire.Name = "Label_PerformanceMemoire"
-        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(107, 18)
+        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(96, 20)
         Me.Label_PerformanceMemoire.TabIndex = 32
         Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
         '
@@ -136,10 +136,10 @@ Partial Class Form_Game
         'Label_map_location
         '
         Me.Label_map_location.AutoSize = True
-        Me.Label_map_location.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_map_location.Location = New System.Drawing.Point(694, 0)
+        Me.Label_map_location.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_map_location.Location = New System.Drawing.Point(706, -1)
         Me.Label_map_location.Name = "Label_map_location"
-        Me.Label_map_location.Size = New System.Drawing.Size(79, 18)
+        Me.Label_map_location.Size = New System.Drawing.Size(74, 20)
         Me.Label_map_location.TabIndex = 31
         Me.Label_map_location.Text = "Map : 0-0"
         '
@@ -151,6 +151,19 @@ Partial Class Form_Game
         Me.Button_Bot.TabIndex = 29
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
         '
         'TextBox_getserver
         '
@@ -417,19 +430,6 @@ Partial Class Form_Game
         Me.Button25.TabIndex = 58
         Me.Button25.Text = "Lordakium Spore"
         Me.Button25.UseVisualStyleBackColor = True
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
         '
         'WebBrowser_Game_Ridevbot
         '
