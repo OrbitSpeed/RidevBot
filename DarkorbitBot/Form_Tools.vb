@@ -90,8 +90,10 @@ Public Class Form_Tools
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Panel_autospin.Location = New Point(53, 508)
+        TextBox_WinGGS.Visible = True
         Panel_autospin.Visible = False
+        TextBox_WinGGS.Size = New Size(258, 171)
+        Panel_GalaxyGates.Size = New Size(467, 606)
 
         Calculator = 1
         textbox_stade.Text = "Checking URL Profil ... "
@@ -99,11 +101,6 @@ Public Class Form_Tools
         Panel_infoPartGG3.Visible = False
         Panel_infoPartGG_GG2.Visible = False
         Panel_infoPartGG_GG3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
 
         WebBrowser_galaxyGates2.Visible = False
         WebBrowser_galaxyGates3.Visible = False
@@ -268,7 +265,7 @@ Public Class Form_Tools
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
             TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(553, 622)
+            Size = New Size(561, 550)
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
@@ -478,6 +475,10 @@ Public Class Form_Tools
     Public AlphaBetaGammaReupload3 As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
+        CenterToScreen()
+
+        Panel_autospin.Location = New Point(985, 6)
+
         ABG = True
 
         ComboBox_autospin.Text = "ABG"
@@ -513,9 +514,9 @@ Public Class Form_Tools
         WebBrowser_galaxyGates2.Visible = True
         WebBrowser_galaxyGates3.Visible = True
 
-        Panel_GalaxyGates.Size = New Size(995, 514)
-        Me.Size = New Size(1079, 532)
-        TextBox_WinGGS.Size = New Size(768, 181)
+        Panel_GalaxyGates.Size = New Size(1270, 532)
+        Me.Size = New Size(1270, 550)
+        TextBox_WinGGS.Size = New Size(771, 198)
 
     End Sub
 
@@ -549,7 +550,7 @@ Public Class Form_Tools
 
             Panel_GalaxyGates.Size = New Size(467, 606)
             TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(553, 622)
+            Size = New Size(561, 550)
 
             If DataAlpha = Nothing Then
             Else
@@ -561,10 +562,11 @@ Public Class Form_Tools
                 Utils.setInfoPartGG_InMap(DataAlpha)
                 Utils.setLivesLeft(DataAlpha)
                 Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+                WebBrowser_galaxyGates.Refresh()
 
             End If
 
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
         Else
 
@@ -578,12 +580,12 @@ Public Class Form_Tools
                 Utils.setInfoPartGG_InMap(DataAlpha)
                 Utils.setLivesLeft(DataAlpha)
                 Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+                WebBrowser_galaxyGates.Refresh()
 
             End If
 
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
             CheckedAlphaBetaGammaStats = 1
-
 
         End If
 
@@ -618,7 +620,7 @@ Public Class Form_Tools
 
             Panel_GalaxyGates.Size = New Size(467, 606)
             TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(553, 622)
+            Size = New Size(561, 550)
 
             If DataBeta = Nothing Then
             Else
@@ -630,11 +632,9 @@ Public Class Form_Tools
                 Utils.setInfoPartGG_InMap(DataBeta)
                 Utils.setLivesLeft(DataBeta)
                 Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+                WebBrowser_galaxyGates.Refresh()
             End If
-
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
         Else
 
@@ -684,9 +684,11 @@ Public Class Form_Tools
                     Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
                 End If
 
+                WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+                WebBrowser_galaxyGates2.Refresh()
+
             End If
 
-            WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
             CheckedAlphaBetaGammaStats2 = 1
 
         End If
@@ -722,7 +724,7 @@ Public Class Form_Tools
 
             Panel_GalaxyGates.Size = New Size(467, 606)
             TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(553, 622)
+            Size = New Size(561, 550)
 
             If DataGamma = Nothing Then
             Else
@@ -734,11 +736,10 @@ Public Class Form_Tools
                 Utils.setInfoPartGG_InMap(DataGamma)
                 Utils.setLivesLeft(DataGamma)
                 Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+                WebBrowser_galaxyGates.Refresh()
 
             End If
-
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
         Else
 
@@ -790,11 +791,12 @@ Public Class Form_Tools
                 End If
 
                 AlphaBetaGammaReupload = 0
+                WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+                WebBrowser_galaxyGates.Refresh()
 
             End If
 
 
-            WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
             CheckedAlphaBetaGammaStats3 = 1
 
         End If
@@ -825,8 +827,8 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        Size = New Size(553, 622)
         TextBox_WinGGS.Size = New Size(258, 181)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -890,7 +892,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -947,7 +949,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1011,7 +1013,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1075,7 +1077,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1141,7 +1143,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1205,7 +1207,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1269,7 +1271,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(553, 622)
+        Size = New Size(561, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1338,6 +1340,7 @@ Public Class Form_Tools
 
         Button_delta.Enabled = True
         Button_Delta_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_delta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
@@ -1359,6 +1362,7 @@ Public Class Form_Tools
 
         Button_epsilon.Enabled = True
         Button_Epsilon_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_epsilon.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
@@ -1380,6 +1384,7 @@ Public Class Form_Tools
 
         Button_zeta.Enabled = True
         Button_Zeta_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_zeta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
@@ -1401,6 +1406,7 @@ Public Class Form_Tools
 
         Button_Kappa.Enabled = True
         Button_Kappa_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_Kappa.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
@@ -1423,6 +1429,7 @@ Public Class Form_Tools
         Button_lambda.Enabled = True
         Button_Lambda_GGS.Enabled = False
         Button_lambda.PerformClick()
+        Button_autospinner.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
 
@@ -1443,6 +1450,7 @@ Public Class Form_Tools
 
         Button_kuiper.Enabled = True
         Button_Kuiper_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_kuiper.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&streuner=1&sample=1&multiplier=1")
@@ -1464,6 +1472,7 @@ Public Class Form_Tools
 
         Button_hades.Enabled = True
         Button_Hades_GGS.Enabled = False
+        Button_autospinner.PerformClick()
         Button_hades.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
@@ -2622,13 +2631,17 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_Uridum_ExtraEnnergy_left_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Uridum_ExtraEnnergy_left.Paint
+    Private Sub Panel_Uridum_ExtraEnnergy_left_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button_autospinner_Click(sender As Object, e As EventArgs) Handles Button_autospinner.Click
 
-        Panel_autospin.Location = New Point(0, 20)
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
+
         Panel_autospin.Visible = True
     End Sub
 
@@ -2636,8 +2649,16 @@ Public Class Form_Tools
 
         Button_stopSpin.PerformClick()
         Await Task.Delay(500)
-        Panel_autospin.Location = New Point(53, 508)
+        Size = New Size(561, 550)
         Panel_autospin.Visible = False
+
+    End Sub
+
+    Private Sub Panel_Palladium_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Palladium.Paint
+
+    End Sub
+
+    Private Sub Panel_autospin_Paint(sender As Object, e As PaintEventArgs) Handles Panel_autospin.Paint
 
     End Sub
 End Class
