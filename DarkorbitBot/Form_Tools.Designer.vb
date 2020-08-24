@@ -3297,7 +3297,7 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
         Me.TextBox_WinGGS.Size = New System.Drawing.Size(771, 198)
         Me.TextBox_WinGGS.TabIndex = 93
-        Me.TextBox_WinGGS.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Spinner Initialized -" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- All GalaxyGates are worked !"
+        Me.TextBox_WinGGS.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Spinner Initialized -" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- All GalaxyGates are working !"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button_Alpha
