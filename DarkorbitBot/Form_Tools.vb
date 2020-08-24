@@ -90,6 +90,9 @@ Public Class Form_Tools
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Panel_autospin.Location = New Point(53, 508)
+        Panel_autospin.Visible = False
+
         Calculator = 1
         textbox_stade.Text = "Checking URL Profil ... "
         Panel_infoPartGG2.Visible = False
@@ -264,14 +267,13 @@ Public Class Form_Tools
 
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
+            TextBox_WinGGS.Size = New Size(258, 181)
             Size = New Size(553, 622)
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
             ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
-
-            TextBox_WinGGS.Visible = True
 
         End If
 
@@ -477,6 +479,7 @@ Public Class Form_Tools
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         ABG = True
+
         ComboBox_autospin.Text = "ABG"
 
         If CheckedAlphaBetaGammaStats = 0 Then
@@ -512,8 +515,7 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(995, 514)
         Me.Size = New Size(1079, 532)
-        TextBox_WinGGS.Size = New Size(521, 162)
-        TextBox_WinGGS.Location = New Point(461, 340)
+        TextBox_WinGGS.Size = New Size(768, 181)
 
     End Sub
 
@@ -546,8 +548,7 @@ Public Class Form_Tools
             WebBrowser_galaxyGates3.Visible = False
 
             Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(439, 86)
-            TextBox_WinGGS.Location = New Point(15, 508)
+            TextBox_WinGGS.Size = New Size(258, 181)
             Size = New Size(553, 622)
 
             If DataAlpha = Nothing Then
@@ -616,8 +617,7 @@ Public Class Form_Tools
             WebBrowser_galaxyGates3.Visible = False
 
             Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(439, 86)
-            TextBox_WinGGS.Location = New Point(15, 508)
+            TextBox_WinGGS.Size = New Size(258, 181)
             Size = New Size(553, 622)
 
             If DataBeta = Nothing Then
@@ -721,8 +721,7 @@ Public Class Form_Tools
             WebBrowser_galaxyGates3.Visible = False
 
             Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(439, 86)
-            TextBox_WinGGS.Location = New Point(15, 508)
+            TextBox_WinGGS.Size = New Size(258, 181)
             Size = New Size(553, 622)
 
             If DataGamma = Nothing Then
@@ -827,8 +826,8 @@ Public Class Form_Tools
 
         Panel_GalaxyGates.Size = New Size(467, 606)
         Size = New Size(553, 622)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
+
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
         Button_gamma.Enabled = True
@@ -890,8 +889,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -948,8 +946,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -1013,8 +1010,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -1078,8 +1074,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -1145,8 +1140,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -1210,8 +1204,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -1275,8 +1268,7 @@ Public Class Form_Tools
         WebBrowser_galaxyGates3.Visible = False
 
         Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(439, 86)
-        TextBox_WinGGS.Location = New Point(15, 508)
+        TextBox_WinGGS.Size = New Size(258, 181)
         Size = New Size(553, 622)
 
         Button_Alpha.Enabled = True
@@ -2627,6 +2619,25 @@ Public Class Form_Tools
     Private Sub Button_Howuse_Click(sender As Object, e As EventArgs) Handles Button_Howuse.Click
 
         Size = New Size(390, 358)
+
+    End Sub
+
+    Private Sub Panel_Uridum_ExtraEnnergy_left_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Uridum_ExtraEnnergy_left.Paint
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Panel_autospin.Location = New Point(0, 20)
+        Panel_autospin.Visible = True
+    End Sub
+
+    Private Async Sub Button_backGGS_Click(sender As Object, e As EventArgs) Handles Button_backGGS.Click
+
+        Button_stopSpin.PerformClick()
+        Await Task.Delay(500)
+        Panel_autospin.Location = New Point(53, 508)
+        Panel_autospin.Visible = False
 
     End Sub
 End Class
