@@ -1340,7 +1340,10 @@ Public Class Form_Tools
 
         Button_delta.Enabled = True
         Button_Delta_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_delta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
@@ -1362,7 +1365,10 @@ Public Class Form_Tools
 
         Button_epsilon.Enabled = True
         Button_Epsilon_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_epsilon.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
@@ -1384,7 +1390,10 @@ Public Class Form_Tools
 
         Button_zeta.Enabled = True
         Button_Zeta_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_zeta.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
@@ -1406,7 +1415,10 @@ Public Class Form_Tools
 
         Button_Kappa.Enabled = True
         Button_Kappa_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_Kappa.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
@@ -1428,7 +1440,10 @@ Public Class Form_Tools
 
         Button_lambda.Enabled = True
         Button_Lambda_GGS.Enabled = False
-        Button_lambda.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_autospinner.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
@@ -1450,7 +1465,10 @@ Public Class Form_Tools
 
         Button_kuiper.Enabled = True
         Button_Kuiper_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_kuiper.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&streuner=1&sample=1&multiplier=1")
@@ -1472,7 +1490,10 @@ Public Class Form_Tools
 
         Button_hades.Enabled = True
         Button_Hades_GGS.Enabled = False
-        Button_autospinner.PerformClick()
+        Panel_GalaxyGates.Size = New Size(669, 532)
+        Panel_autospin.Location = New Point(469, 7)
+        Panel_autospin.Size = New Size(200, 525)
+        Size = New Size(746, 550)
         Button_hades.PerformClick()
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
