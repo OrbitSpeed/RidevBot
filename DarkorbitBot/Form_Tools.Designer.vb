@@ -33,7 +33,7 @@ Partial Class Form_Tools
         Me.textbox_stade = New System.Windows.Forms.Label()
         Me.ComboBox_firme = New System.Windows.Forms.ComboBox()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label_choose_firm = New System.Windows.Forms.Label()
         Me.Panel_Info = New System.Windows.Forms.Panel()
         Me.TextBox_clan = New System.Windows.Forms.TextBox()
         Me.PictureBox_grade = New System.Windows.Forms.PictureBox()
@@ -64,8 +64,16 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game = New System.Windows.Forms.TextBox()
         Me.CheckBox_Refresh_Game = New System.Windows.Forms.CheckBox()
         Me.Panel_Npc = New System.Windows.Forms.Panel()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.CheckedListBox_npc = New System.Windows.Forms.CheckedListBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CheckedListBox_listbox = New System.Windows.Forms.CheckedListBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -98,6 +106,7 @@ Partial Class Form_Tools
         Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.Panel_Palladium = New System.Windows.Forms.Panel()
         Me.Label_PALADIUM_A_SUPPRIMER = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.TextBox_DebugGGS = New System.Windows.Forms.TextBox()
@@ -260,26 +269,16 @@ Partial Class Form_Tools
         Me.Stats_Button = New System.Windows.Forms.Button()
         Me.Rex_Button = New System.Windows.Forms.Button()
         Me.Divers_Button = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
         Me.Button_Howuse = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Npc.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
@@ -308,9 +307,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG3.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -406,7 +402,7 @@ Partial Class Form_Tools
         Me.Panel_general.Controls.Add(Me.textbox_stade)
         Me.Panel_general.Controls.Add(Me.ComboBox_firme)
         Me.Panel_general.Controls.Add(Me.ComboBox_autologin)
-        Me.Panel_general.Controls.Add(Me.Label6)
+        Me.Panel_general.Controls.Add(Me.Label_choose_firm)
         Me.Panel_general.Controls.Add(Me.Panel_Info)
         Me.Panel_general.Controls.Add(Me.CheckBox_LaunchGameAuto)
         Me.Panel_general.Controls.Add(Me.Button_LaunchGameRidevBrowser)
@@ -460,17 +456,17 @@ Partial Class Form_Tools
         Me.ComboBox_autologin.TabIndex = 5
         Me.ComboBox_autologin.Text = Global.DarkorbitBot.My.MySettings.Default.AutoLoginCombobox
         '
-        'Label6
+        'Label_choose_firm
         '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(166, 15)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 13)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Choose your Firm :"
+        Me.Label_choose_firm.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_choose_firm.AutoSize = True
+        Me.Label_choose_firm.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_choose_firm.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_choose_firm.Location = New System.Drawing.Point(166, 15)
+        Me.Label_choose_firm.Name = "Label_choose_firm"
+        Me.Label_choose_firm.Size = New System.Drawing.Size(103, 13)
+        Me.Label_choose_firm.TabIndex = 47
+        Me.Label_choose_firm.Text = "Choose your Firm :"
         '
         'Panel_Info
         '
@@ -887,10 +883,90 @@ Partial Class Form_Tools
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
         '
+        'CheckBox13
+        '
+        Me.CheckBox13.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.BackColor = System.Drawing.Color.Blue
+        Me.CheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox13.Enabled = False
+        Me.CheckBox13.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.CheckBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox13.Location = New System.Drawing.Point(31, 147)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(12, 11)
+        Me.CheckBox13.TabIndex = 99
+        Me.CheckBox13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox13.UseVisualStyleBackColor = False
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.BackColor = System.Drawing.Color.White
+        Me.CheckBox12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox12.Enabled = False
+        Me.CheckBox12.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.CheckBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox12.Location = New System.Drawing.Point(43, 128)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(12, 11)
+        Me.CheckBox12.TabIndex = 98
+        Me.CheckBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox12.UseVisualStyleBackColor = False
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.BackColor = System.Drawing.Color.Green
+        Me.CheckBox11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox11.Enabled = False
+        Me.CheckBox11.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox11.Location = New System.Drawing.Point(43, 109)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(12, 11)
+        Me.CheckBox11.TabIndex = 97
+        Me.CheckBox11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox11.UseVisualStyleBackColor = False
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.BackColor = System.Drawing.Color.Red
+        Me.CheckBox9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox9.Enabled = False
+        Me.CheckBox9.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.CheckBox9.FlatAppearance.BorderSize = 0
+        Me.CheckBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox9.Location = New System.Drawing.Point(43, 71)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(12, 11)
+        Me.CheckBox9.TabIndex = 95
+        Me.CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox9.UseVisualStyleBackColor = False
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.BackColor = System.Drawing.Color.DarkBlue
+        Me.CheckBox10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox10.Enabled = False
+        Me.CheckBox10.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox10.Location = New System.Drawing.Point(43, 90)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(12, 11)
+        Me.CheckBox10.TabIndex = 96
+        Me.CheckBox10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox10.UseVisualStyleBackColor = False
+        '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel2.Controls.Add(Me.TabControl1)
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(10, 316)
@@ -898,30 +974,68 @@ Partial Class Form_Tools
         Me.Panel2.Size = New System.Drawing.Size(284, 181)
         Me.Panel2.TabIndex = 62
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(284, 181)
+        Me.TabControl1.TabIndex = 92
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.CheckedListBox_npc)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(276, 155)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Npc List"
+        '
         'CheckedListBox_npc
         '
-        Me.CheckedListBox_npc.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CheckedListBox_npc.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_npc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox_npc.CheckOnClick = True
+        Me.CheckedListBox_npc.Dock = System.Windows.Forms.DockStyle.Left
         Me.CheckedListBox_npc.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_npc.FormattingEnabled = True
-        Me.CheckedListBox_npc.Location = New System.Drawing.Point(2, 1)
+        Me.CheckedListBox_npc.Location = New System.Drawing.Point(3, 3)
         Me.CheckedListBox_npc.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox_npc.Name = "CheckedListBox_npc"
-        Me.CheckedListBox_npc.Size = New System.Drawing.Size(165, 153)
+        Me.CheckedListBox_npc.Size = New System.Drawing.Size(159, 149)
         Me.CheckedListBox_npc.TabIndex = 88
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.CheckedListBox_listbox)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(0)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(276, 155)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Collectable"
         '
         'CheckedListBox_listbox
         '
         Me.CheckedListBox_listbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox_listbox.CheckOnClick = True
+        Me.CheckedListBox_listbox.Dock = System.Windows.Forms.DockStyle.Left
         Me.CheckedListBox_listbox.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_listbox.FormattingEnabled = True
-        Me.CheckedListBox_listbox.Location = New System.Drawing.Point(2, 1)
+        Me.CheckedListBox_listbox.Location = New System.Drawing.Point(3, 3)
         Me.CheckedListBox_listbox.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox_listbox.Name = "CheckedListBox_listbox"
-        Me.CheckedListBox_listbox.Size = New System.Drawing.Size(159, 391)
+        Me.CheckedListBox_listbox.Size = New System.Drawing.Size(159, 149)
         Me.CheckedListBox_listbox.TabIndex = 89
         '
         'TableLayoutPanel4
@@ -1342,13 +1456,10 @@ Partial Class Form_Tools
         '
         'Panel_Palladium
         '
+        Me.Panel_Palladium.AutoScroll = True
         Me.Panel_Palladium.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Palladium.Controls.Add(Me.Label_PALADIUM_A_SUPPRIMER)
-        Me.Panel_Palladium.Controls.Add(Me.WebBrowser_GGInfo)
-        Me.Panel_Palladium.Controls.Add(Me.WebBrowser_GGspinner)
-        Me.Panel_Palladium.Controls.Add(Me.TextBox_DebugGGS)
-        Me.Panel_Palladium.Controls.Add(Me.TextBox_GGinfoGGS)
-        Me.Panel_Palladium.Controls.Add(Me.WebBrowser_Synchronisation)
+        Me.Panel_Palladium.Controls.Add(Me.TableLayoutPanel5)
         Me.Panel_Palladium.ForeColor = System.Drawing.Color.White
         Me.Panel_Palladium.Location = New System.Drawing.Point(1334, 24)
         Me.Panel_Palladium.Name = "Panel_Palladium"
@@ -1366,9 +1477,71 @@ Partial Class Form_Tools
         Me.Label_PALADIUM_A_SUPPRIMER.Text = "enchere"
         Me.Label_PALADIUM_A_SUPPRIMER.Visible = False
         '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 2
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 50
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(281, 1205)
+        Me.TableLayoutPanel5.TabIndex = 84
+        '
         'WebBrowser_GGInfo
         '
-        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(85, 107)
+        Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(1742, 65)
         Me.WebBrowser_GGInfo.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGInfo.Name = "WebBrowser_GGInfo"
         Me.WebBrowser_GGInfo.ScriptErrorsSuppressed = True
@@ -1378,7 +1551,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_GGspinner
         '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(135, 107)
+        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(1792, 65)
         Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
         Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
@@ -1391,7 +1564,7 @@ Partial Class Form_Tools
         Me.TextBox_DebugGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_DebugGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_DebugGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(85, 133)
+        Me.TextBox_DebugGGS.Location = New System.Drawing.Point(1742, 91)
         Me.TextBox_DebugGGS.Multiline = True
         Me.TextBox_DebugGGS.Name = "TextBox_DebugGGS"
         Me.TextBox_DebugGGS.ReadOnly = True
@@ -1404,7 +1577,7 @@ Partial Class Form_Tools
         Me.TextBox_GGinfoGGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_GGinfoGGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_GGinfoGGS.ForeColor = System.Drawing.Color.White
-        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(85, 149)
+        Me.TextBox_GGinfoGGS.Location = New System.Drawing.Point(1742, 107)
         Me.TextBox_GGinfoGGS.Multiline = True
         Me.TextBox_GGinfoGGS.Name = "TextBox_GGinfoGGS"
         Me.TextBox_GGinfoGGS.ReadOnly = True
@@ -1414,7 +1587,7 @@ Partial Class Form_Tools
         '
         'WebBrowser_Synchronisation
         '
-        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(110, 107)
+        Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(1767, 65)
         Me.WebBrowser_Synchronisation.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.Name = "WebBrowser_Synchronisation"
         Me.WebBrowser_Synchronisation.ScriptErrorsSuppressed = True
@@ -3599,14 +3772,14 @@ Partial Class Form_Tools
         Me.Divers_Button.Text = "Divers"
         Me.Divers_Button.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'Panel_suppresor_controler
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(-9, 357)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(96, 744)
-        Me.Panel1.TabIndex = 46
+        Me.Panel_suppresor_controler.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_suppresor_controler.ForeColor = System.Drawing.Color.White
+        Me.Panel_suppresor_controler.Location = New System.Drawing.Point(-9, 357)
+        Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
+        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(96, 744)
+        Me.Panel_suppresor_controler.TabIndex = 46
         '
         'Button_Howuse
         '
@@ -3623,204 +3796,6 @@ Partial Class Form_Tools
         Me.Button_Howuse.Text = "How use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
         '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(282, 179)
-        Me.TabControl1.TabIndex = 92
-        '
-        'TabPage1
-        '
-        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TabPage1.Controls.Add(Me.CheckBox18)
-        Me.TabPage1.Controls.Add(Me.CheckBox17)
-        Me.TabPage1.Controls.Add(Me.CheckBox16)
-        Me.TabPage1.Controls.Add(Me.CheckBox15)
-        Me.TabPage1.Controls.Add(Me.CheckBox14)
-        Me.TabPage1.Controls.Add(Me.CheckedListBox_npc)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(274, 153)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Npc List"
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.CheckedListBox_listbox)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(274, 153)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Collectable"
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.BackColor = System.Drawing.Color.Red
-        Me.CheckBox9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox9.Enabled = False
-        Me.CheckBox9.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox9.FlatAppearance.BorderSize = 0
-        Me.CheckBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox9.Location = New System.Drawing.Point(43, 71)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox9.TabIndex = 95
-        Me.CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox9.UseVisualStyleBackColor = False
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.BackColor = System.Drawing.Color.DarkBlue
-        Me.CheckBox10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox10.Enabled = False
-        Me.CheckBox10.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox10.Location = New System.Drawing.Point(43, 90)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox10.TabIndex = 96
-        Me.CheckBox10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox10.UseVisualStyleBackColor = False
-        '
-        'CheckBox11
-        '
-        Me.CheckBox11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.BackColor = System.Drawing.Color.Green
-        Me.CheckBox11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox11.Enabled = False
-        Me.CheckBox11.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox11.Location = New System.Drawing.Point(43, 109)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox11.TabIndex = 97
-        Me.CheckBox11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox11.UseVisualStyleBackColor = False
-        '
-        'CheckBox12
-        '
-        Me.CheckBox12.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.BackColor = System.Drawing.Color.White
-        Me.CheckBox12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox12.Enabled = False
-        Me.CheckBox12.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.CheckBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox12.Location = New System.Drawing.Point(43, 128)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox12.TabIndex = 98
-        Me.CheckBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox12.UseVisualStyleBackColor = False
-        '
-        'CheckBox13
-        '
-        Me.CheckBox13.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox13.Enabled = False
-        Me.CheckBox13.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox13.Location = New System.Drawing.Point(31, 147)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox13.TabIndex = 99
-        Me.CheckBox13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox13.UseVisualStyleBackColor = False
-        '
-        'CheckBox18
-        '
-        Me.CheckBox18.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox18.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox18.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox18.Location = New System.Drawing.Point(258, 3)
-        Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox18.TabIndex = 105
-        Me.CheckBox18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox18.UseVisualStyleBackColor = False
-        '
-        'CheckBox17
-        '
-        Me.CheckBox17.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.BackColor = System.Drawing.Color.White
-        Me.CheckBox17.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox17.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.CheckBox17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox17.Location = New System.Drawing.Point(229, 3)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox17.TabIndex = 104
-        Me.CheckBox17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox17.UseVisualStyleBackColor = False
-        '
-        'CheckBox16
-        '
-        Me.CheckBox16.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.BackColor = System.Drawing.Color.Green
-        Me.CheckBox16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox16.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox16.Location = New System.Drawing.Point(211, 3)
-        Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox16.TabIndex = 103
-        Me.CheckBox16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox16.UseVisualStyleBackColor = False
-        '
-        'CheckBox15
-        '
-        Me.CheckBox15.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.BackColor = System.Drawing.Color.DarkBlue
-        Me.CheckBox15.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox15.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox15.Location = New System.Drawing.Point(193, 3)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox15.TabIndex = 102
-        Me.CheckBox15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox15.UseVisualStyleBackColor = False
-        '
-        'CheckBox14
-        '
-        Me.CheckBox14.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.BackColor = System.Drawing.Color.Red
-        Me.CheckBox14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox14.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.CheckBox14.FlatAppearance.BorderSize = 0
-        Me.CheckBox14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox14.Location = New System.Drawing.Point(175, 3)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(12, 11)
-        Me.CheckBox14.TabIndex = 101
-        Me.CheckBox14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox14.UseVisualStyleBackColor = False
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3828,9 +3803,14 @@ Partial Class Form_Tools
         Me.BackColor = System.Drawing.SystemColors.HotTrack
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
         Me.Controls.Add(Me.Panel_GalaxyGates)
+        Me.Controls.Add(Me.WebBrowser_GGInfo)
+        Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Controls.Add(Me.Button_Howuse)
+        Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.Pirates_Button)
+        Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.Divers_Button)
+        Me.Controls.Add(Me.WebBrowser_Synchronisation)
         Me.Controls.Add(Me.Panel_divers)
         Me.Controls.Add(Me.Panel_rex)
         Me.Controls.Add(Me.Panel_stats)
@@ -3845,7 +3825,7 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.NPC_Button)
         Me.Controls.Add(Me.General_button)
         Me.Controls.Add(Me.Panel_Title)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel_suppresor_controler)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
@@ -3859,6 +3839,9 @@ Partial Class Form_Tools
         Me.Panel_Npc.ResumeLayout(False)
         Me.Panel_Npc.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         Me.Panel_collector.ResumeLayout(False)
@@ -3907,11 +3890,8 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -4063,7 +4043,7 @@ Partial Class Form_Tools
     Friend WithEvents Label7 As Label
     Friend WithEvents ComboBox_map_to_travel As ComboBox
     Friend WithEvents ComboBox_firme As ComboBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents Label_choose_firm As Label
     Friend WithEvents TextBox_DebugGGS As TextBox
     Friend WithEvents TextBox_jump_key As TextBox
     Friend WithEvents Label8 As Label
@@ -4106,7 +4086,7 @@ Partial Class Form_Tools
     Friend WithEvents Divers_Button As Button
     Friend WithEvents TextBox_Get_id As TextBox
     Friend WithEvents TextBox_clan As TextBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel_suppresor_controler As Panel
     Friend WithEvents Button_Howuse As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents CheckedListBox_npc As CheckedListBox
@@ -4161,10 +4141,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox10 As CheckBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents CheckBox18 As CheckBox
-    Friend WithEvents CheckBox17 As CheckBox
-    Friend WithEvents CheckBox16 As CheckBox
-    Friend WithEvents CheckBox15 As CheckBox
-    Friend WithEvents CheckBox14 As CheckBox
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
 End Class

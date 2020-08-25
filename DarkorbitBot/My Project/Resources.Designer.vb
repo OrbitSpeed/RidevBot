@@ -482,6 +482,46 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Locked_Four() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Locked_Four", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Locked_One() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Locked_One", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Locked_Three() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Locked_Three", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Locked_Two() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Locked_Two", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property logfile_30x30() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logfile_30x30", resourceCulture)

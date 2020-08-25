@@ -2621,13 +2621,52 @@ Public Class Form_Tools
         If ComboBox_colormod.Text = "Dark&Red  ( By _Dev )" Then
 
             Button_OpenLoginPanel.FlatAppearance.BorderColor = Color.Red
+            Button_LaunchGameRidevBrowser.FlatAppearance.BorderColor = Color.Red
+            Button_revive_sid.FlatAppearance.BorderColor = Color.Red
 
+            CheckBox_AutoLogin.ForeColor = Color.Red
+            Label_choose_firm.ForeColor = Color.Red
+            CheckBox_LaunchGameAuto.ForeColor = Color.Red
+            CheckBox_colormod.ForeColor = Color.Red
+            textbox_stade.ForeColor = Color.Red
+            CheckBox_AutoUpdate.ForeColor = Color.Red
+            TextBox_username.ForeColor = Color.Red
+            TextBox_clan.ForeColor = Color.Red
+            TextBox_Get_Server.ForeColor = Color.Red
+            TextBox_ProfilSelected.ForeColor = Color.Red
+            TextBox_minutedouble_dixieme.ForeColor = Color.Red
+            TextBox_minutedouble.ForeColor = Color.Red
+            TextBox_secondsdouble2.ForeColor = Color.Red
+            TextBox_secondsdouble.ForeColor = Color.Red
+            TextBox_Get_Dosid.ForeColor = Color.Red
+
+            TextBox_username.BackColor = Color.FromArgb(30, 30, 30)
+            PictureBox_grade.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_clan.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_Get_Server.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_minutedouble_dixieme.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_minutedouble.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_secondsdouble2.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_secondsdouble.BackColor = Color.FromArgb(30, 30, 30)
+            Label_separator2.BackColor = Color.FromArgb(30, 30, 30)
+            TextBox_Get_Dosid.BackColor = Color.FromArgb(30, 30, 30)
+            Label_Dosid.BackColor = Color.FromArgb(30, 30, 30)
+            Label_timeticks.BackColor = Color.FromArgb(30, 30, 30)
+            Label_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
+            Label_ID.BackColor = Color.FromArgb(30, 30, 30)
+            Button_LaunchGameRidevBrowser.BackColor = Color.FromArgb(30, 30, 30)
+            Button_revive_sid.BackColor = Color.FromArgb(30, 30, 30)
+            CheckBox_AutoLogin.BackColor = Color.FromArgb(30, 30, 30)
+            Label_choose_firm.BackColor = Color.FromArgb(30, 30, 30)
+            CheckBox_LaunchGameAuto.BackColor = Color.FromArgb(30, 30, 30)
+            textbox_stade.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_Info.BackColor = Color.FromArgb(30, 30, 30)
             Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
             CheckBox_AutoUpdate.BackColor = Color.FromArgb(30, 30, 30)
             Button_OpenLoginPanel.BackColor = Color.FromArgb(30, 30, 30)
             CheckBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
             ComboBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
-
             General_button.BackColor = Color.FromArgb(30, 30, 30)
             NPC_Button.BackColor = Color.FromArgb(30, 30, 30)
             Stats_Button.BackColor = Color.FromArgb(30, 30, 30)
@@ -2637,6 +2676,15 @@ Public Class Form_Tools
             Divers_Button.BackColor = Color.FromArgb(30, 30, 30)
             Rex_Button.BackColor = Color.FromArgb(30, 30, 30)
             Button_Howuse.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_suppresor_controler.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_general.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_autospin.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_collector.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_Info.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
+            Panel_GalaxyGates.BackColor = Color.FromArgb(30, 30, 30)
+            ComboBox_firme.BackColor = Color.FromArgb(30, 30, 30)
+            ComboBox_autologin.BackColor = Color.FromArgb(30, 30, 30)
 
             Me.BackColor = Color.FromArgb(30, 30, 30)
 
@@ -2649,10 +2697,6 @@ Public Class Form_Tools
     Private Sub Button_Howuse_Click(sender As Object, e As EventArgs) Handles Button_Howuse.Click
 
         Size = New Size(390, 358)
-
-    End Sub
-
-    Private Sub Panel_Uridum_ExtraEnnergy_left_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
@@ -2672,14 +2716,6 @@ Public Class Form_Tools
         Await Task.Delay(500)
         Size = New Size(561, 550)
         Panel_autospin.Visible = False
-
-    End Sub
-
-    Private Sub Panel_Palladium_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Palladium.Paint
-
-    End Sub
-
-    Private Sub Panel_autospin_Paint(sender As Object, e As PaintEventArgs) Handles Panel_autospin.Paint
 
     End Sub
 End Class
