@@ -920,10 +920,10 @@ Public Class Form_Tools
             ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
                 BackgroundWorkerAutospin = True
                 MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            ElseIf Val(TextBox_spintimes_GGS.Text) < 100 Then
-                TextBox_spintimes_GGS.Text = 100
+            ElseIf Val(TextBox_spintimes_GGS.Text) < 200 Then
+                TextBox_spintimes_GGS.Text = 200
                 BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, you can't put less than 150ms.{vbNewLine}Starting with 100ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                MessageBox.Show($"Error, you can't put less than 200ms.{vbNewLine}Starting with 200ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Else
                 BackgroundWorkerAutospin = False
             End If
@@ -970,9 +970,19 @@ Public Class Form_Tools
                         ClickGG(data, TextBox_spintimes_GGS.Text)
 
                     Case Else
-
                         BackgroundWorkerAutospin = False
                         MessageBox.Show("Erreur, Aucune GG selectionnée", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        Button_stopSpin.PerformClick()
+                        ComboBox_autospin.Text = "ABG"
+                        'Dim SpinList As New ArrayList
+                        'For Each elm In ComboBox_autospin.Items
+                        '    SpinList.Add(elm)
+                        'Next
+                        'ComboBox_autospin.Items.Clear()
+                        'For Each elm In SpinList
+                        '    ComboBox_autospin.Items.Add(elm)
+                        'Next
+                        ComboBox_autospin.Refresh()
 
                 End Select
             Else BackgroundWorkerAutospin = False
@@ -1026,7 +1036,7 @@ Public Class Form_Tools
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
         End If
-        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
+        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) <Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) Uridium is lowest than the Uridium to keep..." + TextBox_WinGGS.Text
         End If
@@ -1564,7 +1574,7 @@ Public Class Form_Tools
                 TextBox_clan.Text = clan
 
                 Select Case grade
-                    Case "Pilote de 1ère classe"
+                    Case "Pilote 1ère classe"
                         PictureBox_grade.Image = My.Resources.rank_1
 
                     Case "Caporal"
@@ -1628,7 +1638,12 @@ Public Class Form_Tools
                         PictureBox_grade.Image = My.Resources.rank_22
 
                     Case Else
-                        PictureBox_grade.Image = My.Resources.rank_99
+                        If grade.Contains("Pilote") Then
+                            PictureBox_grade.Image = My.Resources.rank_1
+                        Else
+                            PictureBox_grade.Image = My.Resources.rank_99
+                        End If
+
 
                 End Select
 

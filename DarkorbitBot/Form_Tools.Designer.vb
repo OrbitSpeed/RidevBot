@@ -2780,7 +2780,7 @@ Partial Class Form_Tools
         Me.TextBox_spintimes_GGS.Name = "TextBox_spintimes_GGS"
         Me.TextBox_spintimes_GGS.Size = New System.Drawing.Size(38, 15)
         Me.TextBox_spintimes_GGS.TabIndex = 5
-        Me.TextBox_spintimes_GGS.Text = "101"
+        Me.TextBox_spintimes_GGS.Text = "200"
         Me.TextBox_spintimes_GGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'CheckBox_PrepareGatesIfBuiled
