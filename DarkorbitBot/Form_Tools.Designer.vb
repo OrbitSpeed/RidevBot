@@ -2472,7 +2472,6 @@ Partial Class Form_Tools
         '
         Me.Button_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_ABG_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_ABG_GGS.Enabled = False
         Me.Button_ABG_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_ABG_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_ABG_GGS.ForeColor = System.Drawing.Color.Black
@@ -2487,7 +2486,6 @@ Partial Class Form_Tools
         '
         Me.Button_Delta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Delta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Delta_GGS.Enabled = False
         Me.Button_Delta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Delta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Delta_GGS.ForeColor = System.Drawing.Color.Black
@@ -2502,7 +2500,6 @@ Partial Class Form_Tools
         '
         Me.Button_Epsilon_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Epsilon_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Epsilon_GGS.Enabled = False
         Me.Button_Epsilon_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Epsilon_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Epsilon_GGS.ForeColor = System.Drawing.Color.Black
@@ -2517,7 +2514,6 @@ Partial Class Form_Tools
         '
         Me.Button_Kappa_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Kappa_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kappa_GGS.Enabled = False
         Me.Button_Kappa_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Kappa_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Kappa_GGS.ForeColor = System.Drawing.Color.Black
@@ -2532,7 +2528,6 @@ Partial Class Form_Tools
         '
         Me.Button_Lambda_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Lambda_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Lambda_GGS.Enabled = False
         Me.Button_Lambda_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Lambda_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Lambda_GGS.ForeColor = System.Drawing.Color.Black
@@ -2547,7 +2542,6 @@ Partial Class Form_Tools
         '
         Me.Button_Kuiper_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Kuiper_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kuiper_GGS.Enabled = False
         Me.Button_Kuiper_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Kuiper_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Kuiper_GGS.ForeColor = System.Drawing.Color.Black
@@ -2562,7 +2556,6 @@ Partial Class Form_Tools
         '
         Me.Button_Zeta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Zeta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Zeta_GGS.Enabled = False
         Me.Button_Zeta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Zeta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Zeta_GGS.ForeColor = System.Drawing.Color.Black
@@ -2577,7 +2570,6 @@ Partial Class Form_Tools
         '
         Me.Button_Hades_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_Hades_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Hades_GGS.Enabled = False
         Me.Button_Hades_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Hades_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Hades_GGS.ForeColor = System.Drawing.Color.Black
@@ -2592,7 +2584,6 @@ Partial Class Form_Tools
         '
         Me.Button_StartSpin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Button_StartSpin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_StartSpin.Enabled = False
         Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
