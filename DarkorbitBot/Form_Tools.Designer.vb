@@ -164,6 +164,7 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -171,6 +172,7 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
@@ -254,8 +256,6 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
         Me.Button_Howuse = New System.Windows.Forms.Button()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -486,7 +486,6 @@ Partial Class Form_Tools
         Me.TextBox_clan.ReadOnly = True
         Me.TextBox_clan.Size = New System.Drawing.Size(40, 15)
         Me.TextBox_clan.TabIndex = 61
-        Me.TextBox_clan.Text = "[ 0000 ] "
         Me.TextBox_clan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox_grade
@@ -521,7 +520,6 @@ Partial Class Form_Tools
         Me.TextBox_Get_Dosid.ReadOnly = True
         Me.TextBox_Get_Dosid.Size = New System.Drawing.Size(230, 15)
         Me.TextBox_Get_Dosid.TabIndex = 6
-        Me.TextBox_Get_Dosid.Text = "4ez1f2s2s6d1f1e2k5u6g2d6e1q3z564984"
         Me.TextBox_Get_Dosid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_username
@@ -535,7 +533,6 @@ Partial Class Form_Tools
         Me.TextBox_username.ReadOnly = True
         Me.TextBox_username.Size = New System.Drawing.Size(130, 15)
         Me.TextBox_username.TabIndex = 60
-        Me.TextBox_username.Text = "00000000000000000000"
         Me.TextBox_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_secondsdouble2
@@ -634,7 +631,6 @@ Partial Class Form_Tools
         Me.TextBox_ProfilSelected.ReadOnly = True
         Me.TextBox_ProfilSelected.Size = New System.Drawing.Size(227, 15)
         Me.TextBox_ProfilSelected.TabIndex = 9
-        Me.TextBox_ProfilSelected.Text = "נє_ѕυιѕ_υη_тєѕт"
         Me.TextBox_ProfilSelected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_Get_Server
@@ -647,7 +643,6 @@ Partial Class Form_Tools
         Me.TextBox_Get_Server.ReadOnly = True
         Me.TextBox_Get_Server.Size = New System.Drawing.Size(33, 15)
         Me.TextBox_Get_Server.TabIndex = 7
-        Me.TextBox_Get_Server.Text = "ds7"
         Me.TextBox_Get_Server.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label_ProfilSelected
@@ -2337,6 +2332,18 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2423,6 +2430,19 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabIndex = 10
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_close1
         '
@@ -3575,31 +3595,6 @@ Partial Class Form_Tools
         Me.Button_Howuse.TabIndex = 77
         Me.Button_Howuse.Text = "How use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '

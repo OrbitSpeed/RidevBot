@@ -3080,6 +3080,39 @@ Public Class Form_Game
 
     End Sub
 
+    Public LOCKEDTRUE As String = 1
+
+    Private Async Sub If_Locked()
+
+        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        Await Task.Delay(700)
+
+Label_General:
+
+        Client_Screen = Update_Screen()
+        Dim Locked1 = My.Resources.Locked_One
+        Dim Locked2 = My.Resources.Locked_Two
+        Dim Locked3 = My.Resources.Locked_Three
+        Dim Locked4 = My.Resources.Locked_Four
+        Dim Locked1_1 As Point = Client_Screen.Contains(Locked1)
+        Dim Locked2_1 As Point = Client_Screen.Contains(Locked2)
+        Dim Locked3_1 As Point = Client_Screen.Contains(Locked3)
+        Dim Locked4_1 As Point = Client_Screen.Contains(Locked4)
+
+        If Locked1_1 <> Nothing Or Locked2_1 <> Nothing Or Locked3_1 <> Nothing Or Locked4_1 <> Nothing Then
+
+            Console.WriteLine("Locked1")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 280, Locked1_1.Y)
+            Await Task.Delay(250)
+
+            GoTo Label_General
+        End If
+
+        Console.WriteLine("finish")
+        Exit Sub
+
+    End Sub
+
     Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Client_Screen = Update_Screen()
@@ -3089,9 +3122,8 @@ Public Class Form_Game
 
             Console.WriteLine("Un Aider_Streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Aider_Streuner1.X + 30, Aider_Streuner1.Y - 55)
-            Await Task.Delay(100)
 
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+            If_Locked()
 
         End If
 
@@ -3107,81 +3139,12 @@ Public Class Form_Game
 
             Console.WriteLine("Un Recruit_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Recruit_streuner1.X + 30, Recruit_streuner1.Y - 55)
-            Await Task.Delay(100)
 
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+            If_Locked()
 
         End If
 
     End Sub
-
-    Public LOCKEDTRUE As String = 1
-
-    Private Async Sub If_Locked()
-
-        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-        Await Task.Delay(1200)
-
-Label_General:
-
-        Client_Screen = Update_Screen()
-        Dim Locked = My.Resources.Locked_One
-        Dim Locked2 = My.Resources.Locked_Two
-        Dim Locked3 = My.Resources.Locked_Three
-        Dim Locked4 = My.Resources.Locked_Four
-        Dim Locked1 As Point = Client_Screen.Contains(Locked)
-        Dim Locked2_1 As Point = Client_Screen.Contains(Locked2)
-        Dim Locked3_1 As Point = Client_Screen.Contains(Locked3)
-        Dim Locked4_1 As Point = Client_Screen.Contains(Locked4)
-
-        If Locked1 <> Nothing Then
-
-            Console.WriteLine("Locked1")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1.X + 281, Locked1.Y)
-            Await Task.Delay(300)
-            GoTo Label_General
-
-        ElseIf Locked2_1 <> Nothing Then
-
-            Console.WriteLine("Locked2")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_1.X + 381, Locked2_1.Y)
-            Await Task.Delay(300)
-            GoTo Label_General
-
-        ElseIf Locked3_1 <> Nothing Then
-
-            Console.WriteLine("Locked3")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_1.X + 301, Locked3_1.Y)
-            Await Task.Delay(300)
-            GoTo Label_General
-
-        ElseIf Locked4_1 <> Nothing Then
-
-            Console.WriteLine("Locked4")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_1.X + 281, Locked4_1.Y)
-            Await Task.Delay(300)
-            GoTo Label_General
-
-        End If
-
-        'If LOCKEDTRUE = 1 Then
-
-        '    Console.WriteLine("relance")
-        '    Await Task.Delay(300)
-        '    GoTo Label_General
-        '    LOCKEDTRUE = 2
-
-        'ElseIf LOCKEDTRUE = 2 Then
-
-        Console.WriteLine("finish")
-            Exit Sub
-
-        'End If
-
-    End Sub
-
-
-
 
     Private Async Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
@@ -3192,7 +3155,6 @@ Label_General:
 
             Console.WriteLine("Un streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, streuner1.X + 30, streuner1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3208,7 +3170,6 @@ Label_General:
 
             Console.WriteLine("Un Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Lordakia1.X + 30, Lordakia1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3224,7 +3185,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_streuner1.X + 30, Boss_streuner1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3240,7 +3200,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Lordakia1.X + 30, Boss_Lordakia1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3256,7 +3215,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Saimon1.X + 30, Saimon1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3272,7 +3230,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Saimon1.X + 30, Boss_Saimon1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3288,7 +3245,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Mordon1.X + 30, Mordon1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3304,7 +3260,6 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, boss_mordon1.X + 30, boss_mordon1.Y - 55)
-            Await Task.Delay(100)
 
             If_Locked()
         End If
@@ -3317,28 +3272,40 @@ Label_General:
 
 
 
-    Private Sub Label_Title_Click(sender As Object, e As EventArgs) Handles Label_Title.Click
-
-    End Sub
 
     Private Async Sub Alpha_module_Click(sender As Object, e As EventArgs) Handles Alpha_module.Click
 
         Dim DataAlpha = Utils.getRegexGG(Form_Tools.TextBox_GGinfoGGS.Text, "alpha")
-        Console.WriteLine(DataAlpha)
-
         If DataAlpha = Nothing Then
+
+            MsgBox("GalaxyGates not Found")
         Else
+
             Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
             Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
             Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
             Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
-            Console.WriteLine(regex_currentWave)
-            Console.WriteLine(regex_totalWave)
-            Console.WriteLine(regex_currentPart)
-            Console.WriteLine(regex_TotalPart)
+
+            If Form_Tools.ComboBox_firme.Text = "MMO" Then
+
+
+
+            ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+
+
+
+            ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+
+
+
+            End If
+
+
+            Await Task.Delay(15000)
+
         End If
 
-        Await Task.Delay(15000)
+
 
     End Sub
 
