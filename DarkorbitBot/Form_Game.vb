@@ -3318,7 +3318,8 @@ Label_General:
 
         Try
 
-            Dim Red_dots = AutoIt.PixelSearch(HAUT_GAUCHE_X, HAUT_DROITE_Y, BAS_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
+            'Dim Red_dots = AutoIt.PixelSearch(HAUT_GAUCHE_X, HAUT_DROITE_Y, BAS_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
+            Dim Red_dots = AutoIt.PixelSearch(BAS_GAUCHE_X, HAUT_DROITE_Y, HAUT_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Red_dots.X, Red_dots.Y)
             Await Task.Delay(1000)
 
@@ -3341,11 +3342,11 @@ Label_General:
         Dim BAS_GAUCHE_X As Integer = "466"
         Dim BAS_DROITE_Y As Integer = "575"
 
-        Dim Randomize_click_X_position As New Random(), CLICK_X As Integer
-        CLICK_X = Randomize_click_X_position.Next(HAUT_GAUCHE_X, HAUT_DROITE_Y)
 
-        Dim Randomize_click_Y_position As New Random(), CLICK_Y As Integer
-        CLICK_Y = Randomize_click_Y_position.Next(BAS_GAUCHE_X, BAS_DROITE_Y)
+
+        Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
+
+        Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
 
