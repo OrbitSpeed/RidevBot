@@ -38,6 +38,7 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats As String
     Public CheckedAlphaBetaGammaStats2 As String
     Public CheckedAlphaBetaGammaStats3 As String
+    Public Opened As String = 1
 
     Public Check_message As Integer
     Public Reloader As Integer
@@ -91,19 +92,11 @@ Public Class Form_Tools
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TextBox_WinGGS.Visible = True
-        Panel_autospin.Visible = False
         TextBox_WinGGS.Size = New Size(258, 171)
         Panel_GalaxyGates.Size = New Size(467, 606)
 
         Calculator = 1
         textbox_stade.Text = "Checking URL Profil ... "
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
 
         ' -----------------------------------------------
 
@@ -142,13 +135,6 @@ Public Class Form_Tools
 #Region "Button"
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-
         General_button.Enabled = False
         NPC_Button.Enabled = True
         LogUpdate_button.Enabled = True
@@ -174,13 +160,6 @@ Public Class Form_Tools
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-
         General_button.Enabled = True
         NPC_Button.Enabled = False
         LogUpdate_button.Enabled = True
@@ -205,13 +184,6 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
-
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -264,8 +236,8 @@ Public Class Form_Tools
 
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
-            TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(561, 550)
+            Panel_GalaxyGates.Size = New Size(669, 531)
+            Size = New Size(746, 550)
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
@@ -280,13 +252,6 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
-
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -312,13 +277,6 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
-
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -367,13 +325,6 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-
         General_button.Enabled = True
         NPC_Button.Enabled = True
         LogUpdate_button.Enabled = True
@@ -398,13 +349,6 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
-
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
 
         General_button.Enabled = True
         NPC_Button.Enabled = True
@@ -475,25 +419,8 @@ Public Class Form_Tools
     Public AlphaBetaGammaReupload3 As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
-        CenterToScreen()
-
-        Panel_autospin.Location = New Point(985, 6)
-
-        ABG = True
-
-        ComboBox_autospin.Text = "ABG"
-
-        If CheckedAlphaBetaGammaStats = 0 Then
-
-            Button_Alpha.PerformClick()
-            Button_beta.PerformClick()
-            Button_gamma.PerformClick()
-
-        End If
-
-        Button_Alpha.Enabled = False
-        Button_beta.Enabled = False
-        Button_gamma.Enabled = False
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         CheckedEpsilonStats = 0
         CheckedDeltaStats = 0
@@ -504,28 +431,15 @@ Public Class Form_Tools
         CheckedHadesStats = 0
 
         Button_ABG_GGS.Enabled = False
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
 
-        Panel_infoPartGG2.Visible = True
-        Panel_infoPartGG3.Visible = True
-        Panel_infoPartGG_GG2.Visible = True
-        Panel_infoPartGG_GG3.Visible = True
-        WebBrowser_galaxyGates2.Visible = True
-        WebBrowser_galaxyGates3.Visible = True
-
-        Panel_GalaxyGates.Size = New Size(1270, 532)
-        Me.Size = New Size(1270, 550)
-        TextBox_WinGGS.Size = New Size(771, 198)
 
     End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-
-        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
-
-        ComboBox_autospin.Text = "ABG"
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = False
         Button_beta.Enabled = True
@@ -539,53 +453,19 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedAlphaBetaGammaStats = 1 Then
-
-            Panel_infoPartGG2.Visible = False
-            Panel_infoPartGG3.Visible = False
-            Panel_infoPartGG_GG2.Visible = False
-            Panel_infoPartGG_GG3.Visible = False
-            WebBrowser_galaxyGates2.Visible = False
-            WebBrowser_galaxyGates3.Visible = False
-
-            Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(561, 550)
-
-            If DataAlpha = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-                Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-                Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
-
-                Utils.setInfoPartGG_InMap(DataAlpha)
-                Utils.setLivesLeft(DataAlpha)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
-                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-                WebBrowser_galaxyGates.Refresh()
-
-            End If
-
-
+        Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
+        If DataAlpha = Nothing Then
         Else
 
-            If DataAlpha = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-                Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-                Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
-
-                Utils.setInfoPartGG_InMap(DataAlpha)
-                Utils.setLivesLeft(DataAlpha)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
-                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-                WebBrowser_galaxyGates.Refresh()
-
-            End If
-
-            CheckedAlphaBetaGammaStats = 1
+            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+            Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+            Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
+            Utils.setInfoPartGG_InMap(DataAlpha)
+            Utils.setLivesLeft(DataAlpha)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+            WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -593,10 +473,9 @@ Public Class Form_Tools
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
-        ComboBox_autospin.Text = "ABG"
-        '
         Button_Alpha.Enabled = True
         Button_beta.Enabled = False
         Button_gamma.Enabled = True
@@ -609,97 +488,32 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedAlphaBetaGammaStats2 = 1 Then
 
-            Panel_infoPartGG2.Visible = False
-            Panel_infoPartGG3.Visible = False
-            Panel_infoPartGG_GG2.Visible = False
-            Panel_infoPartGG_GG3.Visible = False
-            WebBrowser_galaxyGates2.Visible = False
-            WebBrowser_galaxyGates3.Visible = False
-
-            Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(561, 550)
-
-            If DataBeta = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-                Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-                Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-                Dim regex_totalPart = Utils.getTotalPart(DataBeta)
-
-                Utils.setInfoPartGG_InMap(DataBeta)
-                Utils.setLivesLeft(DataBeta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-                WebBrowser_galaxyGates.Refresh()
-            End If
-
+        Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
+        If DataBeta = Nothing Then
         Else
 
-            If DataBeta = Nothing Then
-            Else
-
-                If DataBeta.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap2.Text = "On map : 1"
-
-                ElseIf DataBeta.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap2.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataBeta, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft2.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft2.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft2.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
-                Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-                Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-                Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-
-                If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave2.Text = "Wave : " + "?" + " / " + "Unknown"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG2.Text = "Part : " + regex_currentPart + " / 48"
-                Else
-                    Label_InfoPartGG2.Text = "Part : " + "?" + " / 48"
-                End If
-
-                WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-                WebBrowser_galaxyGates2.Refresh()
-
-            End If
-
-            CheckedAlphaBetaGammaStats2 = 1
+            Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
+            Dim regex_totalWave = Utils.getTotalWave(DataBeta)
+            Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+            Dim regex_totalPart = Utils.getTotalPart(DataBeta)
+            Utils.setInfoPartGG_InMap(DataBeta)
+            Utils.setLivesLeft(DataBeta)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+            WebBrowser_galaxyGates.Refresh()
 
         End If
+
+
+
 
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
-
-        ComboBox_autospin.Text = "ABG"
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -713,91 +527,18 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedAlphaBetaGammaStats3 = 1 Then
-
-            Panel_infoPartGG2.Visible = False
-            Panel_infoPartGG3.Visible = False
-            Panel_infoPartGG_GG2.Visible = False
-            Panel_infoPartGG_GG3.Visible = False
-            WebBrowser_galaxyGates2.Visible = False
-            WebBrowser_galaxyGates3.Visible = False
-
-            Panel_GalaxyGates.Size = New Size(467, 606)
-            TextBox_WinGGS.Size = New Size(258, 181)
-            Size = New Size(561, 550)
-
-            If DataGamma = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-                Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-                Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-                Dim regex_totalPart = Utils.getTotalPart(DataGamma)
-
-                Utils.setInfoPartGG_InMap(DataGamma)
-                Utils.setLivesLeft(DataGamma)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-                WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-                WebBrowser_galaxyGates.Refresh()
-
-            End If
-
+        Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
+        If DataGamma = Nothing Then
         Else
-
-            If DataGamma = Nothing Then
-            Else
-
-                If DataGamma.Contains("prepared1") Then
-
-                    Label_infoPartGG_InMap3.Text = "On map : 1"
-
-                ElseIf DataGamma.Contains("prepared0") Then
-
-                    Label_infoPartGG_InMap3.Text = "On map : 0"
-
-                End If
-
-                Dim regex_livesLeft = Regex.Match(DataGamma, "livesLeft.*?([\s\S]*?)\ ").Groups.Item(1).ToString
-                If Not regex_livesLeft.Length = 0 Then
-
-                    If regex_livesLeft > 5 Then
-                        Label_LivesLeft3.Text = "Lives left : 5+"
-
-                    ElseIf regex_livesLeft = -1 Then
-                        Label_LivesLeft3.Text = "Lives left : -1"
-                    Else
-                        Label_LivesLeft3.Text = "Lives left : " + regex_livesLeft
-
-                    End If
-                End If
-
-                Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-                Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-                Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-                Dim regex_totalPart = Utils.getTotalPart(DataGamma)
-
-                If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
-                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
-
-                Else
-                    Label_infoPartGG_CurrentWave3.Text = "Wave : " + "?" + " / " + "?"
-                End If
-
-                If Not regex_currentPart = "?" Then
-
-
-                    Label_InfoPartGG3.Text = "Part : " + regex_currentPart + " / 82"
-                Else
-                    Label_InfoPartGG3.Text = "Part : " + "?" + " / 82"
-                End If
-
-                AlphaBetaGammaReupload = 0
-                WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-                WebBrowser_galaxyGates.Refresh()
-
-            End If
-
-
-            CheckedAlphaBetaGammaStats3 = 1
+            Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
+            Dim regex_totalWave = Utils.getTotalWave(DataGamma)
+            Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+            Dim regex_totalPart = Utils.getTotalPart(DataGamma)
+            Utils.setInfoPartGG_InMap(DataGamma)
+            Utils.setLivesLeft(DataGamma)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+            WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -805,30 +546,8 @@ Public Class Form_Tools
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
-        ComboBox_autospin.Text = "Delta"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedkuiperStats = 0
-        CheckedkappaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedZetaStats = 0
-        CheckedLambdaStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -842,26 +561,20 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedDeltaStats = 0 Then
-
-            Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
-
-            If DataDelta = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
-                Dim regex_totalWave = Utils.getTotalWave(DataDelta)
-                Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
-                Dim regex_totalPart = Utils.getTotalPart(DataDelta)
-
-                Utils.setInfoPartGG_InMap(DataDelta)
-                Utils.setLivesLeft(DataDelta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
-            CheckedDeltaStats = 1
+        Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
+        If DataDelta = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
+            Dim regex_totalWave = Utils.getTotalWave(DataDelta)
+            Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
+            Dim regex_totalPart = Utils.getTotalPart(DataDelta)
+            Utils.setInfoPartGG_InMap(DataDelta)
+            Utils.setLivesLeft(DataDelta)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
 
 
@@ -869,30 +582,10 @@ Public Class Form_Tools
 
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
 
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -907,49 +600,27 @@ Public Class Form_Tools
         Button_kronos.Enabled = False
 
         Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "chronos") ' Info GG chronos
-
         If DataChronos = Nothing Then
         Else
+
             Dim regex_currentWave = Utils.getCurrentWave(DataChronos)
             Dim regex_totalWave = Utils.getTotalWave(DataChronos)
             Dim regex_currentPart = Utils.getCurrentPart(DataChronos)
             Dim regex_totalPart = Utils.getTotalPart(DataChronos)
-
             Utils.setInfoPartGG_InMap(DataChronos)
             Utils.setLivesLeft(DataChronos)
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=12&type=full")
+            WebBrowser_galaxyGates.Refresh()
 
         End If
 
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=12&type=full")
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
-        ComboBox_autospin.Text = "Hades"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -963,57 +634,29 @@ Public Class Form_Tools
         Button_hades.Enabled = False
         Button_kronos.Enabled = True
 
-        If CheckedHadesStats = 0 Then
-
-            Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
-
-            If DataHades = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataHades)
-                Dim regex_totalWave = Utils.getTotalWave(DataHades)
-                Dim regex_currentPart = Utils.getCurrentPart(DataHades)
-                Dim regex_totalPart = Utils.getTotalPart(DataHades)
-
-                Utils.setInfoPartGG_InMap(DataHades)
-                Utils.setLivesLeft(DataHades)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
-            CheckedHadesStats = 1
-
+        Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
+        If DataHades = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataHades)
+            Dim regex_totalWave = Utils.getTotalWave(DataHades)
+            Dim regex_currentPart = Utils.getCurrentPart(DataHades)
+            Dim regex_totalPart = Utils.getTotalPart(DataHades)
+            Utils.setInfoPartGG_InMap(DataHades)
+            Utils.setLivesLeft(DataHades)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
+
 
     End Sub
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
 
-        ComboBox_autospin.Text = "Kuiper"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1027,57 +670,29 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedkuiperStats = 0 Then
-
-            Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
-
-            If DataKuiper = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
-                Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
-                Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
-                Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
-
-                Utils.setInfoPartGG_InMap(DataKuiper)
-                Utils.setLivesLeft(DataKuiper)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
-            CheckedkuiperStats = 1
-
+        Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
+        If DataKuiper = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
+            Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
+            Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
+            Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
+            Utils.setInfoPartGG_InMap(DataKuiper)
+            Utils.setLivesLeft(DataKuiper)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
+
 
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
-        ComboBox_autospin.Text = "Lambda"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1091,28 +706,22 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedLambdaStats = 0 Then
-
-            Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
-
-            If DataLambda = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
-                Dim regex_totalWave = Utils.getTotalWave(DataLambda)
-                Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
-                Dim regex_totalPart = Utils.getTotalPart(DataLambda)
-
-                Utils.setInfoPartGG_InMap(DataLambda)
-                Utils.setLivesLeft(DataLambda)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
-            CheckedLambdaStats = 1
-
+        Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
+        If DataLambda = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
+            Dim regex_totalWave = Utils.getTotalWave(DataLambda)
+            Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
+            Dim regex_totalPart = Utils.getTotalPart(DataLambda)
+            Utils.setInfoPartGG_InMap(DataLambda)
+            Utils.setLivesLeft(DataLambda)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
+
 
 
 
@@ -1120,30 +729,8 @@ Public Class Form_Tools
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
 
-        ComboBox_autospin.Text = "Kappa"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedkuiperStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedLambdaStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1157,57 +744,29 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedkappaStats = 0 Then
-
-            Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
-
-            If DataKappa = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
-                Dim regex_totalWave = Utils.getTotalWave(DataKappa)
-                Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
-                Dim regex_totalPart = Utils.getTotalPart(DataKappa)
-
-                Utils.setInfoPartGG_InMap(DataKappa)
-                Utils.setLivesLeft(DataKappa)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
-            CheckedkappaStats = 1
-
+        Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
+        If DataKappa = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
+            Dim regex_totalWave = Utils.getTotalWave(DataKappa)
+            Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
+            Dim regex_totalPart = Utils.getTotalPart(DataKappa)
+            Utils.setInfoPartGG_InMap(DataKappa)
+            Utils.setLivesLeft(DataKappa)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
+
 
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
-        ComboBox_autospin.Text = "Zeta"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1221,57 +780,30 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedZetaStats = 0 Then
-
-            Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
-
-            If DataZeta = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
-                Dim regex_totalWave = Utils.getTotalWave(DataZeta)
-                Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
-                Dim regex_totalPart = Utils.getTotalPart(DataZeta)
-
-                Utils.setInfoPartGG_InMap(DataZeta)
-                Utils.setLivesLeft(DataZeta)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
-            CheckedZetaStats = 1
-
+        Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
+        If DataZeta = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
+            Dim regex_totalWave = Utils.getTotalWave(DataZeta)
+            Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
+            Dim regex_totalPart = Utils.getTotalPart(DataZeta)
+            Utils.setInfoPartGG_InMap(DataZeta)
+            Utils.setLivesLeft(DataZeta)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
+
+
 
     End Sub
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
-        ComboBox_autospin.Text = "Epsilon"
-
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        '
-        CheckedAlphaBetaGammaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkappaStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
-
-        Panel_infoPartGG2.Visible = False
-        Panel_infoPartGG3.Visible = False
-        Panel_infoPartGG_GG2.Visible = False
-        Panel_infoPartGG_GG3.Visible = False
-        WebBrowser_galaxyGates2.Visible = False
-        WebBrowser_galaxyGates3.Visible = False
-
-        Panel_GalaxyGates.Size = New Size(467, 606)
-        TextBox_WinGGS.Size = New Size(258, 181)
-        Size = New Size(561, 550)
+        Panel_GalaxyGates.Size = New Size(669, 531)
+        Size = New Size(746, 550)
 
         Button_Alpha.Enabled = True
         Button_beta.Enabled = True
@@ -1285,32 +817,22 @@ Public Class Form_Tools
         Button_hades.Enabled = True
         Button_kronos.Enabled = True
 
-        If CheckedEpsilonStats = 0 Then
-
-            Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
-            '
-            If DataEpsilon = Nothing Then
-            Else
-                Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
-                Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
-                Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
-                Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
-
-                Utils.setInfoPartGG_InMap(DataEpsilon)
-                Utils.setLivesLeft(DataEpsilon)
-                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-            End If
-
-            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
-            CheckedEpsilonStats = 1
-
+        Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
+        If DataEpsilon = Nothing Then
         Else
+
+            Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
+            Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
+            Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
+            Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
+            Utils.setInfoPartGG_InMap(DataEpsilon)
+            Utils.setLivesLeft(DataEpsilon)
+            Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
+            WebBrowser_galaxyGates.Refresh()
+
         End If
 
-
-        '
-        '
 
     End Sub
 #End Region
@@ -1327,175 +849,49 @@ Public Class Form_Tools
 #Region "Button Click GGS"
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
 
-        'delta
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         Button_delta.Enabled = True
-        Button_Delta_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_delta.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
 
-        ' epsilon
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         Button_epsilon.Enabled = True
-        Button_Epsilon_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_epsilon.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
 
-        'zeta
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         Button_zeta.Enabled = True
-        Button_Zeta_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_zeta.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
 
-        ' kappa
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         Button_Kappa.Enabled = True
-        Button_Kappa_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_Kappa.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
 
-        'lambda
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedkuiperStats = 0
-        CheckedHadesStats = 0
-
         Button_lambda.Enabled = True
-        Button_Lambda_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_autospinner.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
 
-        'kuiper
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedHadesStats = 0
-
         Button_kuiper.Enabled = True
-        Button_Kuiper_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_kuiper.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&streuner=1&sample=1&multiplier=1")
 
     End Sub
 
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
 
-        'hades
-        CheckedAlphaBetaGammaStats2 = 0
-        CheckedAlphaBetaGammaStats3 = 0
-        CheckedAlphaBetaGammaStats = 0
-        CheckedEpsilonStats = 0
-        CheckedDeltaStats = 0
-        CheckedZetaStats = 0
-        CheckedkappaStats = 0
-        CheckedLambdaStats = 0
-        CheckedkuiperStats = 0
-
         Button_hades.Enabled = True
-        Button_Hades_GGS.Enabled = False
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-        Button_hades.PerformClick()
-
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
 
     End Sub
@@ -1505,6 +901,28 @@ Public Class Form_Tools
     Public numberToSpin As String
     Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
+
+        Button_Alpha.Enabled = False
+        Button_beta.Enabled = False
+        Button_gamma.Enabled = False
+        Button_delta.Enabled = False
+        Button_epsilon.Enabled = False
+        Button_zeta.Enabled = False
+        Button_Kappa.Enabled = False
+        Button_lambda.Enabled = False
+        Button_kuiper.Enabled = False
+        Button_hades.Enabled = False
+        Button_kronos.Enabled = False
+
+
+        Button_ABG_GGS.Enabled = False
+        Button_Delta_GGS.Enabled = False
+        Button_Epsilon_GGS.Enabled = False
+        Button_Zeta_GGS.Enabled = False
+        Button_Kappa_GGS.Enabled = False
+        Button_Lambda_GGS.Enabled = False
+        Button_Kuiper_GGS.Enabled = False
+        Button_Hades_GGS.Enabled = False
 
         If BackgroundWorkerAutospin = False Then
 
@@ -1536,23 +954,30 @@ Public Class Form_Tools
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Delta"
                         '  MsgBox(data)
+                        Button_Delta_GGS.Enabled = True
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Epsilon"
                         '   MsgBox(data)
+                        Button_Epsilon_GGS.Enabled = True
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Zeta"
+                        Button_Zeta_GGS.Enabled = True
                         '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kappa"
+                        Button_Kappa_GGS.Enabled = True
                         '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Lambda"
+                        Button_Lambda_GGS.Enabled = True
                         '   MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Kuiper"
+                        Button_Kuiper_GGS.Enabled = True
                         '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
                     Case "Hades"
+                        Button_Hades_GGS.Enabled = True
                         '  MsgBox(data)
                         ClickGG(data, TextBox_spintimes_GGS.Text)
 
@@ -1575,9 +1000,31 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
+
+        Button_Alpha.Enabled = True
+        Button_beta.Enabled = True
+        Button_gamma.Enabled = True
+        Button_delta.Enabled = True
+        Button_epsilon.Enabled = True
+        Button_zeta.Enabled = True
+        Button_Kappa.Enabled = True
+        Button_lambda.Enabled = True
+        Button_kuiper.Enabled = True
+        Button_hades.Enabled = True
+        Button_kronos.Enabled = True
+
+        Button_ABG_GGS.Enabled = True
+        Button_Delta_GGS.Enabled = True
+        Button_Epsilon_GGS.Enabled = True
+        Button_Zeta_GGS.Enabled = True
+        Button_Kappa_GGS.Enabled = True
+        Button_Lambda_GGS.Enabled = True
+        Button_Kuiper_GGS.Enabled = True
+        Button_Hades_GGS.Enabled = True
+
         If BackgroundWorkerAutospin = True Then
             BackgroundWorkerAutospin = False
-            MessageBox.Show("Autospinner deactivated.")
+            Console.WriteLine("Autospinner deactivated.")
         End If
 
         Button_StartSpin.Enabled = True
@@ -1586,6 +1033,7 @@ Public Class Form_Tools
     End Sub
 
     Private Async Sub ClickGG(portail As String, temps As Integer)
+
         Dim delay = Task.Delay(temps)
         If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
             BackgroundWorkerAutospin = False
@@ -1767,18 +1215,14 @@ Public Class Form_Tools
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
         End If
 
-        'https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=TONID&sid=TONSID&action=setupGate&gateID=1
-
     End Sub
 
 
     Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
-        'Après le click
 #Region "WebBrowser_GGspinner"
+
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
-        'Console.WriteLine(html5)
-        'Clipboard.SetText(html5)
 
         Dim mode = Regex.Match(TextBox_DebugGGS.Text, "mode<\/SPAN><SPAN class=""m"">&gt;<\/SPAN><SPAN class=""tx"".*?>([\s\S]*?)<\/SPAN>") ' quel type de GG
         Console.WriteLine(mode.Groups.Item(1).ToString)
@@ -1816,7 +1260,10 @@ Public Class Form_Tools
             TextBox_WinGGS.Text = vbNewLine + "Materializer locked !"
         Else
 
-            If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
+            If DataWinned2 Is Nothing And DataWinned.Contains("Part") Then
+                DataWinned = "Booster x2 added for next spin"
+
+            ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
                 DataWinned = "MCB-25"
 
             ElseIf DataWinned.Contains("battery") AndAlso DataWinned2.Contains("3") Then
@@ -1843,236 +1290,76 @@ Public Class Form_Tools
             ElseIf DataWinned.Contains("voucher") Then
                 DataWinned = "Mine"
 
-            ElseIf DataWinned.Contains("part") Then
+            Else DataWinned = "Part assigned"
 
 #Region "Delta"
-                If Button_delta.Enabled = False Then
+                If ComboBox_autospin.Text = "Delta" Then
 
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
-                    Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
+                    Button_delta.PerformClick()
 
-                    If DataDelta = Nothing Then
-                    Else
-                        Dim regex_currentWave As String = Utils.getCurrentWave(DataDelta)
-                        Dim regex_totalWave As String = Utils.getTotalWave(DataDelta)
-                        Dim regex_currentPart As String = Utils.getCurrentPart(DataDelta)
-                        Dim regex_totalPart = Utils.getTotalPart(DataDelta)
-
-                        Utils.setInfoPartGG_InMap(DataDelta)
-                        Utils.setLivesLeft(DataDelta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
-                    CheckedDeltaStats = 1
                 End If
 #End Region
 
 #Region "Epsilon"
-                If Button_epsilon.Enabled = False Then
+                If ComboBox_autospin.Text = "Epsilon" Then
 
-                    Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
-                    '
-                    If DataEpsilon = Nothing Then
-                    Else
+                    Button_epsilon.PerformClick()
 
-                        Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
-                        Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
-                        Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
-
-                        Utils.setInfoPartGG_InMap(DataEpsilon)
-                        Utils.setLivesLeft(DataEpsilon)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
-                    CheckedEpsilonStats = 1
                 End If
 #End Region
 
 #Region "Zeta"
-                If Button_zeta.Enabled = False Then
+                If ComboBox_autospin.Text = "Zeta" Then
 
-                    Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
-
-                    If DataZeta = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
-                        Dim regex_totalWave = Utils.getTotalWave(DataZeta)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
-                        Dim regex_totalPart = Utils.getTotalPart(DataZeta)
-
-                        Utils.setInfoPartGG_InMap(DataZeta)
-                        Utils.setLivesLeft(DataZeta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
-                    CheckedZetaStats = 1
+                    Button_zeta.PerformClick()
                 End If
 #End Region
 
 #Region "Kappa"
-                If Button_Kappa.Enabled = False Then
+                If ComboBox_autospin.Text = "Kappa" Then
 
-                    Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
+                    Button_Kappa.PerformClick()
 
-                    If DataKappa = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
-                        Dim regex_totalWave = Utils.getTotalWave(DataKappa)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataKappa)
-                        Dim regex_totalPart = Utils.getTotalPart(DataKappa)
-
-                        Utils.setInfoPartGG_InMap(DataKappa)
-                        Utils.setLivesLeft(DataKappa)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
-                    CheckedkappaStats = 1
                 End If
 #End Region
 
 #Region "Lambda"
-                If Button_lambda.Enabled = False Then
+                If ComboBox_autospin.Text = "Lambda" Then
 
-                    Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
+                    Button_lambda.PerformClick()
 
-                    If DataLambda = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
-                        Dim regex_totalWave = Utils.getTotalWave(DataLambda)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
-                        Dim regex_totalPart = Utils.getTotalPart(DataLambda)
-
-                        Utils.setInfoPartGG_InMap(DataLambda)
-                        Utils.setLivesLeft(DataLambda)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
-                    CheckedLambdaStats = 1
                 End If
 #End Region
 
 #Region "Kuiper"
-                If Button_kuiper.Enabled = False Then
+                If ComboBox_autospin.Text = "Kuiper" Then
 
-                    Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
+                    Button_kuiper.PerformClick()
 
-                    If DataKuiper = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
-                        Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
-                        Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
-
-                        Utils.setInfoPartGG_InMap(DataKuiper)
-                        Utils.setLivesLeft(DataKuiper)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
-                    CheckedkuiperStats = 1
                 End If
 #End Region
 
 #Region "Hades"
-                If Button_hades.Enabled = False Then
+                If ComboBox_autospin.Text = "Hades" Then
 
-                    Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
+                    Button_hades.PerformClick()
 
-                    If DataHades = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataHades)
-                        Dim regex_totalWave = Utils.getTotalWave(DataHades)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataHades)
-                        Dim regex_totalPart = Utils.getTotalPart(DataHades)
-
-                        Utils.setInfoPartGG_InMap(DataHades)
-                        Utils.setLivesLeft(DataHades)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                    End If
-
-                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
-                    CheckedHadesStats = 1
                 End If
 #End Region
 
 #Region "ABG"
-                If Button_Alpha.Enabled = False Then
+                If ComboBox_autospin.Text = "ABG" Then
 
-                    Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' info GG Alpha
-                    If DataAlpha = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-                        Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-                        Dim regex_totalPart = Utils.getTotalPart(DataAlpha)
-
-                        Utils.setInfoPartGG_InMap(DataAlpha)
-                        Utils.setLivesLeft(DataAlpha)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-
-                        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-                        CheckedAlphaBetaGammaStats = 1
-
-                    End If
-                    Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
-                    If DataBeta = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-                        Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-                        Dim regex_totalPart = Utils.getTotalPart(DataBeta)
-
-                        Utils.setInfoPartGG_InMap(DataBeta)
-                        Utils.setLivesLeft(DataBeta)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-                        WebBrowser_galaxyGates2.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-                        CheckedAlphaBetaGammaStats2 = 1
-
-                    End If
-                    Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
-                    If DataGamma = Nothing Then
-                    Else
-                        Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-                        Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-                        Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-                        Dim regex_totalPart = Utils.getTotalPart(DataGamma)
-
-                        Utils.setInfoPartGG_InMap(DataGamma)
-                        Utils.setLivesLeft(DataGamma)
-                        Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
-
-
-                        AlphaBetaGammaReupload = 0
-
-                        WebBrowser_galaxyGates3.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-                        CheckedAlphaBetaGammaStats3 = 1
-                    End If
-
-
+                    Button_Alpha.PerformClick()
 
                 End If
 #End Region
 
-                DataWinned = "Part/ Multiplier assigned"
             End If
 
         End If
 
         TextBox_WinGGS.Text = vbNewLine + "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
-
 
         If DataWinned Is Nothing And DataWinned2 Is Nothing Then
         Else
@@ -2124,8 +1411,8 @@ Public Class Form_Tools
 
         End If
 
-
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+
 #End Region
 
     End Sub
@@ -2170,7 +1457,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button_resettabspin_Click(sender As Object, e As EventArgs) Handles Button_resettabspin.Click
 
         Label_MCB25_Earned.Text = 0
         Label_MCB50_Earned.Text = 0
@@ -2184,8 +1471,6 @@ Public Class Form_Tools
         Label_Logfile_Earned.Text = 0
         TextBox_total_spinned.Text = 0
         TextBox_total_gates_builded.Text = 0
-
-        TextBox_WinGGS.Text = ""
 
     End Sub
 
@@ -2700,22 +1985,9 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_autospinner_Click(sender As Object, e As EventArgs) Handles Button_autospinner.Click
+    Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
 
-        Panel_GalaxyGates.Size = New Size(669, 532)
-        Panel_autospin.Location = New Point(469, 7)
-        Panel_autospin.Size = New Size(200, 525)
-        Size = New Size(746, 550)
-
-        Panel_autospin.Visible = True
-    End Sub
-
-    Private Async Sub Button_backGGS_Click(sender As Object, e As EventArgs) Handles Button_backGGS.Click
-
-        Button_stopSpin.PerformClick()
-        Await Task.Delay(500)
-        Size = New Size(561, 550)
-        Panel_autospin.Visible = False
+        TextBox_WinGGS.Text = ""
 
     End Sub
 End Class
