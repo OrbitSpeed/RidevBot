@@ -54,7 +54,6 @@ Partial Class Form_Tools
         Me.CheckBox_LaunchGameAuto = New System.Windows.Forms.CheckBox()
         Me.Button_LaunchGameRidevBrowser = New System.Windows.Forms.Button()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
-        Me.Label_GENERAL_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.TextBox_Get_id = New System.Windows.Forms.TextBox()
         Me.ComboBox_map_to_travel = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -388,7 +387,6 @@ Partial Class Form_Tools
         Me.Panel_general.Controls.Add(Me.CheckBox_LaunchGameAuto)
         Me.Panel_general.Controls.Add(Me.Button_LaunchGameRidevBrowser)
         Me.Panel_general.Controls.Add(Me.CheckBox_AutoLogin)
-        Me.Panel_general.Controls.Add(Me.Label_GENERAL_A_SUPPRIMER)
         Me.Panel_general.Controls.Add(Me.TextBox_Get_id)
         Me.Panel_general.ForeColor = System.Drawing.Color.White
         Me.Panel_general.Location = New System.Drawing.Point(94, 25)
@@ -713,16 +711,6 @@ Partial Class Form_Tools
         Me.CheckBox_AutoLogin.TabIndex = 6
         Me.CheckBox_AutoLogin.Text = "Auto login with :"
         Me.CheckBox_AutoLogin.UseVisualStyleBackColor = False
-        '
-        'Label_GENERAL_A_SUPPRIMER
-        '
-        Me.Label_GENERAL_A_SUPPRIMER.AutoSize = True
-        Me.Label_GENERAL_A_SUPPRIMER.Location = New System.Drawing.Point(260, 293)
-        Me.Label_GENERAL_A_SUPPRIMER.Name = "Label_GENERAL_A_SUPPRIMER"
-        Me.Label_GENERAL_A_SUPPRIMER.Size = New System.Drawing.Size(44, 13)
-        Me.Label_GENERAL_A_SUPPRIMER.TabIndex = 0
-        Me.Label_GENERAL_A_SUPPRIMER.Text = "General"
-        Me.Label_GENERAL_A_SUPPRIMER.Visible = False
         '
         'TextBox_Get_id
         '
@@ -3690,7 +3678,6 @@ Partial Class Form_Tools
     Friend WithEvents PictureBox_Start As PictureBox
     Friend WithEvents Pirates_Button As Button
     Friend WithEvents Panel_general As Panel
-    Friend WithEvents Label_GENERAL_A_SUPPRIMER As Label
     Friend WithEvents Panel_Npc As Panel
     Friend WithEvents Panel_collector As Panel
     Friend WithEvents Panel_Palladium As Panel
