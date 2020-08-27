@@ -449,6 +449,7 @@ Public Class Form_Tools
         Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
         If DataAlpha = Nothing Then
         Else
+            ComboBox_autospin.Text = "ABG"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
             Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
@@ -459,7 +460,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
             '    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -486,6 +487,7 @@ Public Class Form_Tools
         Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
         If DataBeta = Nothing Then
         Else
+            ComboBox_autospin.Text = "ABG"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
             Dim regex_totalWave = Utils.getTotalWave(DataBeta)
@@ -496,7 +498,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             ' WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -525,6 +527,8 @@ Public Class Form_Tools
         Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
         If DataGamma = Nothing Then
         Else
+            ComboBox_autospin.Text = "ABG"
+
             Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
             Dim regex_totalWave = Utils.getTotalWave(DataGamma)
             Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
@@ -534,7 +538,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -545,6 +549,7 @@ Public Class Form_Tools
         Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
         If DataDelta = Nothing Then
         Else
+            ComboBox_autospin.Text = "Delta"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
             Dim regex_totalWave = Utils.getTotalWave(DataDelta)
@@ -593,7 +598,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=12&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -619,6 +624,7 @@ Public Class Form_Tools
         Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
         If DataHades = Nothing Then
         Else
+            ComboBox_autospin.Text = "Hades"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataHades)
             Dim regex_totalWave = Utils.getTotalWave(DataHades)
@@ -629,7 +635,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -656,6 +662,7 @@ Public Class Form_Tools
         Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
         If DataKuiper = Nothing Then
         Else
+            ComboBox_autospin.Text = "Kuiper"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
             Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
@@ -666,7 +673,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -693,6 +700,7 @@ Public Class Form_Tools
         Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
         If DataLambda = Nothing Then
         Else
+            ComboBox_autospin.Text = "Lambda"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
             Dim regex_totalWave = Utils.getTotalWave(DataLambda)
@@ -703,7 +711,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '   WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -732,6 +740,7 @@ Public Class Form_Tools
         Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
         If DataKappa = Nothing Then
         Else
+            ComboBox_autospin.Text = "Kappa"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataKappa)
             Dim regex_totalWave = Utils.getTotalWave(DataKappa)
@@ -742,7 +751,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '   WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -769,6 +778,7 @@ Public Class Form_Tools
         Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
         If DataZeta = Nothing Then
         Else
+            ComboBox_autospin.Text = "Zeta"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
             Dim regex_totalWave = Utils.getTotalWave(DataZeta)
@@ -779,7 +789,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             '   WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
@@ -807,6 +817,7 @@ Public Class Form_Tools
         Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
         If DataEpsilon = Nothing Then
         Else
+            ComboBox_autospin.Text = "Epsilon"
 
             Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
             Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
@@ -817,7 +828,7 @@ Public Class Form_Tools
             Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
             ' WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
             WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
-            WebBrowser_galaxyGates.Refresh()
+            'WebBrowser_galaxyGates.Refresh()
 
         End If
 
