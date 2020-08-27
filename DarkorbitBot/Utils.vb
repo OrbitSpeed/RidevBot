@@ -221,10 +221,13 @@ Public Class Utils
         End If
     End Sub
 
+
+#End Region
     Public Shared Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer
         Dim Generator As Random = New Random()
         Return Generator.Next(Min, Max)
     End Function
+
     Public Shared Function GetPortalZone(ByVal Number As Integer, ByVal x_or_y As String) As Integer
         If x_or_y = "x" Then
             'C'est X, donc on enlève pas 18
@@ -240,7 +243,20 @@ Public Class Utils
         End If
     End Function
 
-#End Region
+    Public Shared Function GetPortalCenter(ByVal Number As Integer, ByVal x_or_y As String) As Integer
+        If x_or_y = "x" Then
+            'C'est X, donc on enlève pas 18
+            Dim Generator As Random = New Random()
+            Return Generator.Next(Number, Number)
+        ElseIf x_or_y = "y" Then
+            'C'est Y, donc on enlève 18
+            Dim Generator As Random = New Random()
+            Return Generator.Next((Number - 18), (Number - 18))
+        Else
+            Console.WriteLine("Can't get the X or Y, is it defined in the call of the function ?")
+            Return 0
+        End If
+    End Function
 
     Public Shared Sub SetNPCAndCollectibleListBox(ByVal Map_actuelle As String)
 

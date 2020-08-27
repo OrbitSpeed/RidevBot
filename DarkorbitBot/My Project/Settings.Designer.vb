@@ -787,7 +787,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Choose")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("NONE")>  _
         Public Property map_to_travel() As String
             Get
                 Return CType(Me("map_to_travel"),String)
@@ -818,6 +818,18 @@ Namespace My
             End Get
             Set
                 Me("Rex_dead") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("NONE")>  _
+        Public Property Repair() As String
+            Get
+                Return CType(Me("Repair"),String)
+            End Get
+            Set
+                Me("Repair") = value
             End Set
         End Property
     End Class

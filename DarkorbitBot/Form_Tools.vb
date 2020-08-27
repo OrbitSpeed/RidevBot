@@ -178,7 +178,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 525)
+        Size = New Size(608, 658)
         'CenterToScreen()
 
     End Sub
@@ -1036,7 +1036,7 @@ Public Class Form_Tools
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
         End If
-        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) <Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
+        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
             BackgroundWorkerAutospin = False
             TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) Uridium is lowest than the Uridium to keep..." + TextBox_WinGGS.Text
         End If
@@ -1939,4 +1939,15 @@ Public Class Form_Tools
 
     End Sub
 
+    Private Sub Panel_GalaxyGates_Paint(sender As Object, e As PaintEventArgs) Handles Panel_GalaxyGates.Paint
+
+    End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox_x3.TextChanged
+
+    End Sub
+
+    Private Sub Panel_Npc_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Npc.Paint
+
+    End Sub
 End Class

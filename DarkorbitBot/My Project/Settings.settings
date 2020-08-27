@@ -186,13 +186,16 @@
       <Value Profile="(Default)">J</Value>
     </Setting>
     <Setting Name="map_to_travel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Choose</Value>
+      <Value Profile="(Default)">NONE</Value>
     </Setting>
     <Setting Name="FIRME" Type="System.String" Scope="User">
       <Value Profile="(Default)">NONE</Value>
     </Setting>
     <Setting Name="Rex_dead" Type="System.String" Scope="User">
       <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="Repair" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NONE</Value>
     </Setting>
   </Settings>
 </SettingsFile>

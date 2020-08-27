@@ -197,6 +197,7 @@
     <Compile Include="Form_Close.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReadWritingMemory.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

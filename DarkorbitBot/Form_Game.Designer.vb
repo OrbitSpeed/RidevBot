@@ -25,12 +25,13 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button25 = New System.Windows.Forms.Button()
         Me.Red_dots_function = New System.Windows.Forms.Button()
         Me.Alpha_module = New System.Windows.Forms.Button()
         Me.Button_REX = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
-        Me.Button_bonusbox = New System.Windows.Forms.Button()
+        Me.Button_Traveling_Module = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
@@ -68,7 +69,6 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button26 = New System.Windows.Forms.Button()
-        Me.Button25 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -93,7 +93,7 @@ Partial Class Form_Game
         Me.Panel7.Controls.Add(Me.Button_REX)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
-        Me.Panel7.Controls.Add(Me.Button_bonusbox)
+        Me.Panel7.Controls.Add(Me.Button_Traveling_Module)
         Me.Panel7.Controls.Add(Me.Label_map_location)
         Me.Panel7.Controls.Add(Me.Button_Bot)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
@@ -102,6 +102,15 @@ Partial Class Form_Game
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
+        '
+        'Button25
+        '
+        Me.Button25.Location = New System.Drawing.Point(286, -1)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(89, 19)
+        Me.Button25.TabIndex = 36
+        Me.Button25.Text = "random move"
+        Me.Button25.UseVisualStyleBackColor = True
         '
         'Red_dots_function
         '
@@ -150,14 +159,14 @@ Partial Class Form_Game
         Me.Label_PerformanceMemoire.TabIndex = 32
         Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
         '
-        'Button_bonusbox
+        'Button_Traveling_Module
         '
-        Me.Button_bonusbox.Location = New System.Drawing.Point(407, -2)
-        Me.Button_bonusbox.Name = "Button_bonusbox"
-        Me.Button_bonusbox.Size = New System.Drawing.Size(57, 20)
-        Me.Button_bonusbox.TabIndex = 30
-        Me.Button_bonusbox.Text = "Traveling"
-        Me.Button_bonusbox.UseVisualStyleBackColor = True
+        Me.Button_Traveling_Module.Location = New System.Drawing.Point(407, -2)
+        Me.Button_Traveling_Module.Name = "Button_Traveling_Module"
+        Me.Button_Traveling_Module.Size = New System.Drawing.Size(57, 20)
+        Me.Button_Traveling_Module.TabIndex = 30
+        Me.Button_Traveling_Module.Text = "Traveling"
+        Me.Button_Traveling_Module.UseVisualStyleBackColor = True
         '
         'Label_map_location
         '
@@ -502,15 +511,6 @@ Partial Class Form_Game
         Me.Button26.Text = "*Lordakium spore*"
         Me.Button26.UseVisualStyleBackColor = True
         '
-        'Button25
-        '
-        Me.Button25.Location = New System.Drawing.Point(286, -1)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(89, 19)
-        Me.Button25.TabIndex = 36
-        Me.Button25.Text = "random move"
-        Me.Button25.UseVisualStyleBackColor = True
-        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -546,7 +546,7 @@ Partial Class Form_Game
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
     Friend WithEvents Button_Bot As Button
-    Friend WithEvents Button_bonusbox As Button
+    Friend WithEvents Button_Traveling_Module As Button
     Friend WithEvents Button_cargobox As Button
     Friend WithEvents Label_map_location As Label
     Friend WithEvents BackgroundWorker_Performance As System.ComponentModel.BackgroundWorker

@@ -2583,6 +2583,11 @@ Public Class Form_Game
                 If BackgroundWorker_Startup_Bot.IsBusy = False Then
                     BackgroundWorker_Startup_Bot.RunWorkerAsync()
                     Console.WriteLine("On relance le startup (Traveling_module)")
+
+                    If Form_Tools.ComboBox_map_to_travel.Text = "Alpha" Then
+                        Alpha_module.PerformClick()
+
+                    End If
                 End If
 
             End If
@@ -2618,7 +2623,7 @@ Public Class Form_Game
 
     End Sub
 
-    Private Sub Button_bonusbox_Click(sender As Object, e As EventArgs) Handles Button_bonusbox.Click
+    Private Sub Button_Traveling_Module_Click(sender As Object, e As EventArgs) Handles Button_Traveling_Module.Click
 
         Traveling_module()
 
@@ -3316,21 +3321,50 @@ Label_General:
 
             Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
             Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-            Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-            Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
 
-            If Form_Tools.ComboBox_firme.Text = "MMO" Then
+            Console.WriteLine($"current:{regex_currentWave}")
+            Console.WriteLine($"total:{regex_totalWave}")
+
+            Client_Screen = Update_Screen()
+            Dim current_map_is_1_1 As Point = Client_Screen.Contains(New Bitmap(My.Resources.map1_1))
+
+            If current_map_is_1_1 <> Nothing Then
+                Console.WriteLine("tes sur la bonne map")
+
+                If Form_Tools.ComboBox_firme.Text = "MMO" Then
+
+                    '  Dim alpha_portal_x = Utils.GetPortalCenter(628, "x")
+                    '   Dim alpha_portal_y = Utils.GetPortalCenter(488, "y")
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, 628, 488)
+
+                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
 
 
-
-            ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-
+                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
 
 
-            ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+                End If
+            Else
 
+                If Form_Tools.ComboBox_firme.Text = "MMO" Then
 
+                    Form_Tools.ComboBox_map_to_travel.Text = "1-1"
+                    Await Task.Delay(150)
+                    Traveling_module()
 
+                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+
+                    Form_Tools.ComboBox_map_to_travel.Text = "2-1"
+                    Await Task.Delay(150)
+                    Traveling_module()
+
+                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+
+                    Form_Tools.ComboBox_map_to_travel.Text = "3-1"
+                    Await Task.Delay(150)
+                    Traveling_module()
+
+                End If
             End If
 
 
@@ -3384,6 +3418,7 @@ Label_General:
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
 
     End Sub
+
 End Class
 
 'npc killer
