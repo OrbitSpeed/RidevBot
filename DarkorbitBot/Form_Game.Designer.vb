@@ -27,7 +27,7 @@ Partial Class Form_Game
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.Red_dots_function = New System.Windows.Forms.Button()
-        Me.Alpha_module = New System.Windows.Forms.Button()
+        Me.Button_Alpha_Module = New System.Windows.Forms.Button()
         Me.Button_REX = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
@@ -69,6 +69,7 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button26 = New System.Windows.Forms.Button()
+        Me.Button_dead = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -87,9 +88,10 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Button_dead)
         Me.Panel7.Controls.Add(Me.Button25)
         Me.Panel7.Controls.Add(Me.Red_dots_function)
-        Me.Panel7.Controls.Add(Me.Alpha_module)
+        Me.Panel7.Controls.Add(Me.Button_Alpha_Module)
         Me.Panel7.Controls.Add(Me.Button_REX)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
@@ -121,14 +123,14 @@ Partial Class Form_Game
         Me.Red_dots_function.Text = "red dots"
         Me.Red_dots_function.UseVisualStyleBackColor = True
         '
-        'Alpha_module
+        'Button_Alpha_Module
         '
-        Me.Alpha_module.Location = New System.Drawing.Point(559, -1)
-        Me.Alpha_module.Name = "Alpha_module"
-        Me.Alpha_module.Size = New System.Drawing.Size(47, 19)
-        Me.Alpha_module.TabIndex = 34
-        Me.Alpha_module.Text = "Alpha"
-        Me.Alpha_module.UseVisualStyleBackColor = True
+        Me.Button_Alpha_Module.Location = New System.Drawing.Point(559, -1)
+        Me.Button_Alpha_Module.Name = "Button_Alpha_Module"
+        Me.Button_Alpha_Module.Size = New System.Drawing.Size(47, 19)
+        Me.Button_Alpha_Module.TabIndex = 34
+        Me.Button_Alpha_Module.Text = "Alpha"
+        Me.Button_Alpha_Module.UseVisualStyleBackColor = True
         '
         'Button_REX
         '
@@ -511,6 +513,15 @@ Partial Class Form_Game
         Me.Button26.Text = "*Lordakium spore*"
         Me.Button26.UseVisualStyleBackColor = True
         '
+        'Button_dead
+        '
+        Me.Button_dead.Location = New System.Drawing.Point(655, -1)
+        Me.Button_dead.Name = "Button_dead"
+        Me.Button_dead.Size = New System.Drawing.Size(58, 19)
+        Me.Button_dead.TabIndex = 37
+        Me.Button_dead.Text = "Dead"
+        Me.Button_dead.UseVisualStyleBackColor = True
+        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -583,7 +594,8 @@ Partial Class Form_Game
     Friend WithEvents Button24 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button26 As Button
-    Friend WithEvents Alpha_module As Button
+    Friend WithEvents Button_Alpha_Module As Button
     Friend WithEvents Red_dots_function As Button
     Friend WithEvents Button25 As Button
+    Friend WithEvents Button_dead As Button
 End Class

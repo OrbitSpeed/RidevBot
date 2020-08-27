@@ -2584,8 +2584,8 @@ Public Class Form_Game
                     BackgroundWorker_Startup_Bot.RunWorkerAsync()
                     Console.WriteLine("On relance le startup (Traveling_module)")
 
-                    If Form_Tools.ComboBox_map_to_travel.Text = "Alpha" Then
-                        Alpha_module.PerformClick()
+                    If Traveling_return = 1 Then
+                        Button_Alpha_Module.PerformClick()
 
                     End If
                 End If
@@ -3085,6 +3085,7 @@ Public Class Form_Game
 
     End Sub
 
+#Region "npc et lock test"
     Public LOCKEDTRUE As String = 1
 
     Private Async Sub If_Locked()
@@ -3151,7 +3152,7 @@ Label_General:
 
     End Sub
 
-    Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Client_Screen = Update_Screen()
         Dim Aider_Streuner = My.Resources.Aider_streuner
@@ -3160,7 +3161,6 @@ Label_General:
 
             Console.WriteLine("Un Aider_Streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Aider_Streuner1.X + 30, Aider_Streuner1.Y - 55)
-
             If_Locked()
 
         End If
@@ -3168,7 +3168,7 @@ Label_General:
 
     End Sub
 
-    Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         Client_Screen = Update_Screen()
         Dim Recruit_streuner = My.Resources.recruit_streuner
@@ -3177,14 +3177,13 @@ Label_General:
 
             Console.WriteLine("Un Recruit_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Recruit_streuner1.X + 30, Recruit_streuner1.Y - 55)
-
             If_Locked()
 
         End If
 
     End Sub
 
-    Private Async Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         Client_Screen = Update_Screen()
         Dim streuner = My.Resources.streuner
@@ -3193,13 +3192,13 @@ Label_General:
 
             Console.WriteLine("Un streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, streuner1.X + 30, streuner1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Client_Screen = Update_Screen()
         Dim Lordakia = My.Resources.lordakia
@@ -3208,13 +3207,13 @@ Label_General:
 
             Console.WriteLine("Un Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Lordakia1.X + 30, Lordakia1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
         Client_Screen = Update_Screen()
         Dim Boss_streuner = My.Resources.boss_streuner
@@ -3223,13 +3222,13 @@ Label_General:
 
             Console.WriteLine("Un Boss_streuner trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_streuner1.X + 30, Boss_streuner1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
         Client_Screen = Update_Screen()
         Dim Boss_Lordakia = My.Resources.boss_Lordakia
@@ -3238,13 +3237,13 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Lordakia1.X + 30, Boss_Lordakia1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
         Client_Screen = Update_Screen()
         Dim Saimon = My.Resources.Saimon
@@ -3253,13 +3252,13 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Saimon1.X + 30, Saimon1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
         Client_Screen = Update_Screen()
         Dim Boss_Saimon = My.Resources.Boss_Saimon
@@ -3268,13 +3267,13 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Boss_Saimon1.X + 30, Boss_Saimon1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
 
         Client_Screen = Update_Screen()
         Dim Mordon = My.Resources.Mordon
@@ -3283,13 +3282,13 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Mordon1.X + 30, Mordon1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
-    Private Async Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
 
         Client_Screen = Update_Screen()
         Dim boss_mordon = My.Resources.boss_mordon
@@ -3298,79 +3297,98 @@ Label_General:
 
             Console.WriteLine("Un Boss_Lordakia trouver")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, boss_mordon1.X + 30, boss_mordon1.Y - 55)
-
             If_Locked()
+
         End If
 
     End Sub
 
+#End Region
 
+    '  Dim alpha_portal_x = Utils.GetPortalCenter(628, "x")
+    '   Dim alpha_portal_y = Utils.GetPortalCenter(488, "y")
+    ' AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, 628, 488)
 
+    Public Traveling_return As Integer = 0
 
+    Private Async Sub Button_Alpha_Module_Click(sender As Object, e As EventArgs) Handles Button_Alpha_Module.Click
 
+        Dim firm As Integer = 0
 
+        If Traveling_return = 1 Then
 
+            GoTo Traveling_return
+            Traveling_return = 0
 
-    Private Async Sub Alpha_module_Click(sender As Object, e As EventArgs) Handles Alpha_module.Click
+        End If
 
+        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Await Task.Delay(500)
         Dim DataAlpha = Utils.getRegexGG(Form_Tools.TextBox_GGinfoGGS.Text, "alpha")
         If DataAlpha = Nothing Then
 
-            MsgBox("GalaxyGates not Found")
+            MsgBox("You doesn't have Gates")
+
         Else
 
-            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-
-            Console.WriteLine($"current:{regex_currentWave}")
-            Console.WriteLine($"total:{regex_totalWave}")
-
-            Client_Screen = Update_Screen()
-            Dim current_map_is_1_1 As Point = Client_Screen.Contains(New Bitmap(My.Resources.map1_1))
-
-            If current_map_is_1_1 <> Nothing Then
-                Console.WriteLine("tes sur la bonne map")
-
+            If Form_Tools.ComboBox_map_to_travel.Text.Contains("Alpha") Then
                 If Form_Tools.ComboBox_firme.Text = "MMO" Then
-
-                    '  Dim alpha_portal_x = Utils.GetPortalCenter(628, "x")
-                    '   Dim alpha_portal_y = Utils.GetPortalCenter(488, "y")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, 628, 488)
-
-                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-
-
-                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
-
-
-                End If
-            Else
-
-                If Form_Tools.ComboBox_firme.Text = "MMO" Then
-
+                    firm = 1
+                    Await Task.Delay(100)
                     Form_Tools.ComboBox_map_to_travel.Text = "1-1"
-                    Await Task.Delay(150)
+                    Traveling_return = 1
+                    Await Task.Delay(100)
+                    Button_Traveling_Module.PerformClick()
+                    Exit Sub
+
+                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+                    firm = 2
+                    Form_Tools.ComboBox_map_to_travel.Text = "2-1"
+                    Traveling_return = 1
+                    Await Task.Delay(1000)
                     Traveling_module()
+                    Exit Sub
+
+                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+                    firm = 3
+                    Form_Tools.ComboBox_map_to_travel.Text = "3-1"
+                    Traveling_return = 1
+                    Await Task.Delay(1000)
+                    Traveling_module()
+                    Exit Sub
+
+                End If
+
+Traveling_return:
+
+                Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                Await Task.Delay(500)
+                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+
+                Console.WriteLine($"current:{regex_currentWave}")
+                Console.WriteLine($"total:{regex_totalWave}")
+                ' trouver l'emplacement de la gg 
+                If Form_Tools.ComboBox_firme.Text = "MMO" Then
+
+                    MsgBox("trouver l'emplacement de la gg ")
 
                 ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
 
-                    Form_Tools.ComboBox_map_to_travel.Text = "2-1"
-                    Await Task.Delay(150)
-                    Traveling_module()
+                    MsgBox("trouver l'emplacement de la gg ")
 
                 ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
 
-                    Form_Tools.ComboBox_map_to_travel.Text = "3-1"
-                    Await Task.Delay(150)
-                    Traveling_module()
+                    MsgBox("trouver l'emplacement de la gg ")
 
                 End If
+
             End If
-
-
-            Await Task.Delay(15000)
-
         End If
+
+
+
+
 
 
 
@@ -3419,6 +3437,11 @@ Label_General:
 
     End Sub
 
+    Private Sub Button_dead_Click(sender As Object, e As EventArgs) Handles Button_dead.Click
+
+
+
+    End Sub
 End Class
 
 'npc killer

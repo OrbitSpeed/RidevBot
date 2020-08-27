@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Net
-Imports AxMediaPlayer
+'Imports AxMediaPlayer
 
 Public Class AutoUpdater
     Public StartupPath As String = Application.StartupPath
