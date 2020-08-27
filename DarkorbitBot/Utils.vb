@@ -232,11 +232,11 @@ Public Class Utils
         If x_or_y = "x" Then
             'C'est X, donc on enlève pas 18
             Dim Generator As Random = New Random()
-            Return Generator.Next(Number - 4, Number + 4)
+            Return Generator.Next(Number - 1, Number + 1)
         ElseIf x_or_y = "y" Then
             'C'est Y, donc on enlève 18
             Dim Generator As Random = New Random()
-            Return Generator.Next((Number - 18) - 4, (Number - 18) + 4)
+            Return Generator.Next((Number - 18) - 1, (Number - 18) + 1)
         Else
             Console.WriteLine("Can't get the X or Y, is it defined in the call of the function ?")
             Return 0
@@ -254,7 +254,7 @@ Public Class Utils
             Return Generator.Next((Number - 18), (Number - 18))
         Else
             Console.WriteLine("Can't get the X or Y, is it defined in the call of the function ?")
-            Return 0
+            Return Number
         End If
     End Function
 
