@@ -2585,7 +2585,7 @@ Public Class Form_Game
                     Console.WriteLine("On relance le startup (Traveling_module)")
 
                     If Traveling_return = 1 Then
-                        Button_Alpha_Module.PerformClick()
+                        Button28.PerformClick()
 
                     End If
                 End If
@@ -2657,8 +2657,8 @@ Public Class Form_Game
 
     Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
         Dim myProcess = Process.GetCurrentProcess()
+        Console.WriteLine($"{myProcess} -")
 
-        'Console.WriteLine($"{myProcess} -")
         'Console.WriteLine("-------------------------------------")
         'Console.WriteLine($"  Physical memory usage     : {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))}")
         'Console.WriteLine($"  Base priority             : {myProcess.BasePriority}")
@@ -3311,7 +3311,56 @@ Label_General:
 
     Public Traveling_return As Integer = 0
 
-    Private Async Sub Button_Alpha_Module_Click(sender As Object, e As EventArgs) Handles Button_Alpha_Module.Click
+    Private Async Sub Red_dots_function_Click(sender As Object, e As EventArgs) Handles Red_dots_function.Click
+
+        Dim HAUT_GAUCHE_X As Integer = "599"
+        Dim HAUT_DROITE_Y As Integer = "774"
+        Dim BAS_GAUCHE_X As Integer = "466"
+        Dim BAS_DROITE_Y As Integer = "575"
+
+        Try
+
+            'Dim Red_dots = AutoIt.PixelSearch(HAUT_GAUCHE_X, HAUT_DROITE_Y, BAS_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
+            Dim Red_dots = AutoIt.PixelSearch(BAS_GAUCHE_X, HAUT_DROITE_Y, HAUT_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Red_dots.X, Red_dots.Y)
+            Await Task.Delay(1000)
+
+        Catch Red_dots_not_found As Exception
+
+            Console.WriteLine("Error 3286")
+
+        End Try
+
+
+
+
+
+    End Sub
+
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+
+        Dim HAUT_GAUCHE_X As Integer = "599"
+        Dim HAUT_DROITE_Y As Integer = "774"
+        Dim BAS_GAUCHE_X As Integer = "466"
+        Dim BAS_DROITE_Y As Integer = "575"
+
+
+
+        Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
+
+        Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
+
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
+
+    End Sub
+
+    Private Sub Button_dead_Click(sender As Object, e As EventArgs) Handles Button_dead.Click
+
+
+
+    End Sub
+
+    Private Async Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
 
         Dim firm As Integer = 0
 
@@ -3388,56 +3437,6 @@ Traveling_return:
 
 
 
-
-
-
-
-    End Sub
-
-    Private Async Sub Red_dots_function_Click(sender As Object, e As EventArgs) Handles Red_dots_function.Click
-
-        Dim HAUT_GAUCHE_X As Integer = "599"
-        Dim HAUT_DROITE_Y As Integer = "774"
-        Dim BAS_GAUCHE_X As Integer = "466"
-        Dim BAS_DROITE_Y As Integer = "575"
-
-        Try
-
-            'Dim Red_dots = AutoIt.PixelSearch(HAUT_GAUCHE_X, HAUT_DROITE_Y, BAS_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
-            Dim Red_dots = AutoIt.PixelSearch(BAS_GAUCHE_X, HAUT_DROITE_Y, HAUT_GAUCHE_X, BAS_DROITE_Y, 13369344, 1, 1)
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Red_dots.X, Red_dots.Y)
-            Await Task.Delay(1000)
-
-        Catch Red_dots_not_found As Exception
-
-            Console.WriteLine("Error 3286")
-
-        End Try
-
-
-
-
-
-    End Sub
-
-    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
-
-        Dim HAUT_GAUCHE_X As Integer = "599"
-        Dim HAUT_DROITE_Y As Integer = "774"
-        Dim BAS_GAUCHE_X As Integer = "466"
-        Dim BAS_DROITE_Y As Integer = "575"
-
-
-
-        Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
-
-        Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
-
-    End Sub
-
-    Private Sub Button_dead_Click(sender As Object, e As EventArgs) Handles Button_dead.Click
 
 
 

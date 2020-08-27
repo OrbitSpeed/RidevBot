@@ -25,9 +25,9 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button_dead = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.Red_dots_function = New System.Windows.Forms.Button()
-        Me.Button_Alpha_Module = New System.Windows.Forms.Button()
         Me.Button_REX = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
@@ -69,7 +69,7 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button26 = New System.Windows.Forms.Button()
-        Me.Button_dead = New System.Windows.Forms.Button()
+        Me.Button28 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -91,7 +91,6 @@ Partial Class Form_Game
         Me.Panel7.Controls.Add(Me.Button_dead)
         Me.Panel7.Controls.Add(Me.Button25)
         Me.Panel7.Controls.Add(Me.Red_dots_function)
-        Me.Panel7.Controls.Add(Me.Button_Alpha_Module)
         Me.Panel7.Controls.Add(Me.Button_REX)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
@@ -105,6 +104,15 @@ Partial Class Form_Game
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
         '
+        'Button_dead
+        '
+        Me.Button_dead.Location = New System.Drawing.Point(622, -1)
+        Me.Button_dead.Name = "Button_dead"
+        Me.Button_dead.Size = New System.Drawing.Size(58, 19)
+        Me.Button_dead.TabIndex = 37
+        Me.Button_dead.Text = "Dead"
+        Me.Button_dead.UseVisualStyleBackColor = True
+        '
         'Button25
         '
         Me.Button25.Location = New System.Drawing.Point(286, -1)
@@ -116,21 +124,12 @@ Partial Class Form_Game
         '
         'Red_dots_function
         '
-        Me.Red_dots_function.Location = New System.Drawing.Point(598, -1)
+        Me.Red_dots_function.Location = New System.Drawing.Point(565, -1)
         Me.Red_dots_function.Name = "Red_dots_function"
         Me.Red_dots_function.Size = New System.Drawing.Size(58, 19)
         Me.Red_dots_function.TabIndex = 35
         Me.Red_dots_function.Text = "red dots"
         Me.Red_dots_function.UseVisualStyleBackColor = True
-        '
-        'Button_Alpha_Module
-        '
-        Me.Button_Alpha_Module.Location = New System.Drawing.Point(559, -1)
-        Me.Button_Alpha_Module.Name = "Button_Alpha_Module"
-        Me.Button_Alpha_Module.Size = New System.Drawing.Size(47, 19)
-        Me.Button_Alpha_Module.TabIndex = 34
-        Me.Button_Alpha_Module.Text = "Alpha"
-        Me.Button_Alpha_Module.UseVisualStyleBackColor = True
         '
         'Button_REX
         '
@@ -513,14 +512,14 @@ Partial Class Form_Game
         Me.Button26.Text = "*Lordakium spore*"
         Me.Button26.UseVisualStyleBackColor = True
         '
-        'Button_dead
+        'Button28
         '
-        Me.Button_dead.Location = New System.Drawing.Point(655, -1)
-        Me.Button_dead.Name = "Button_dead"
-        Me.Button_dead.Size = New System.Drawing.Size(58, 19)
-        Me.Button_dead.TabIndex = 37
-        Me.Button_dead.Text = "Dead"
-        Me.Button_dead.UseVisualStyleBackColor = True
+        Me.Button28.Location = New System.Drawing.Point(12, 409)
+        Me.Button28.Name = "Button28"
+        Me.Button28.Size = New System.Drawing.Size(47, 19)
+        Me.Button28.TabIndex = 60
+        Me.Button28.Text = "Alpha"
+        Me.Button28.UseVisualStyleBackColor = True
         '
         'Form_Game
         '
@@ -528,6 +527,7 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
+        Me.Controls.Add(Me.Button28)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
@@ -594,8 +594,8 @@ Partial Class Form_Game
     Friend WithEvents Button24 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button26 As Button
-    Friend WithEvents Button_Alpha_Module As Button
     Friend WithEvents Red_dots_function As Button
     Friend WithEvents Button25 As Button
     Friend WithEvents Button_dead As Button
+    Friend WithEvents Button28 As Button
 End Class
