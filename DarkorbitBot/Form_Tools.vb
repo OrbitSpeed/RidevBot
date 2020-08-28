@@ -593,10 +593,10 @@ Public Class Form_Tools
             ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
                 BackgroundWorkerAutospin = True
                 MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            ElseIf Val(TextBox_spintimes_GGS.Text) < 500 Then
+            ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
                 TextBox_spintimes_GGS.Text = 500
                 BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, you can't put less than 500ms.{vbNewLine}Starting with 500ms by default", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                MessageBox.Show($"Error, Starting with 500ms by default, other is EXPERIMENTAL request for highet computer", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Else
                 BackgroundWorkerAutospin = False
             End If

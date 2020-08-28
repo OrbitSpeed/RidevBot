@@ -161,7 +161,6 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -169,7 +168,6 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
@@ -253,6 +251,8 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
         Me.Button_Howuse = New System.Windows.Forms.Button()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2280,18 +2280,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2379,19 +2367,6 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
         '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_close1
         '
         Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2425,7 +2400,7 @@ Partial Class Form_Tools
         Me.Button_ABG_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 329)
         Me.Button_ABG_GGS.Name = "Button_ABG_GGS"
-        Me.Button_ABG_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_ABG_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_ABG_GGS.TabIndex = 43
         Me.Button_ABG_GGS.Text = "Spin ABG"
         Me.Button_ABG_GGS.UseVisualStyleBackColor = False
@@ -2439,7 +2414,7 @@ Partial Class Form_Tools
         Me.Button_Delta_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Delta_GGS.Location = New System.Drawing.Point(8, 353)
         Me.Button_Delta_GGS.Name = "Button_Delta_GGS"
-        Me.Button_Delta_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Delta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Delta_GGS.TabIndex = 44
         Me.Button_Delta_GGS.Text = "Spin DELTA"
         Me.Button_Delta_GGS.UseVisualStyleBackColor = False
@@ -2453,7 +2428,7 @@ Partial Class Form_Tools
         Me.Button_Epsilon_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Epsilon_GGS.Location = New System.Drawing.Point(8, 377)
         Me.Button_Epsilon_GGS.Name = "Button_Epsilon_GGS"
-        Me.Button_Epsilon_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Epsilon_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Epsilon_GGS.TabIndex = 45
         Me.Button_Epsilon_GGS.Text = "Spin EPSILON"
         Me.Button_Epsilon_GGS.UseVisualStyleBackColor = False
@@ -2467,7 +2442,7 @@ Partial Class Form_Tools
         Me.Button_Kappa_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Kappa_GGS.Location = New System.Drawing.Point(8, 425)
         Me.Button_Kappa_GGS.Name = "Button_Kappa_GGS"
-        Me.Button_Kappa_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Kappa_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Kappa_GGS.TabIndex = 47
         Me.Button_Kappa_GGS.Text = "Spin KAPPA"
         Me.Button_Kappa_GGS.UseVisualStyleBackColor = False
@@ -2481,7 +2456,7 @@ Partial Class Form_Tools
         Me.Button_Lambda_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Lambda_GGS.Location = New System.Drawing.Point(8, 449)
         Me.Button_Lambda_GGS.Name = "Button_Lambda_GGS"
-        Me.Button_Lambda_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Lambda_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Lambda_GGS.TabIndex = 48
         Me.Button_Lambda_GGS.Text = "Spin LAMBDA"
         Me.Button_Lambda_GGS.UseVisualStyleBackColor = False
@@ -2495,7 +2470,7 @@ Partial Class Form_Tools
         Me.Button_Kuiper_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Kuiper_GGS.Location = New System.Drawing.Point(8, 497)
         Me.Button_Kuiper_GGS.Name = "Button_Kuiper_GGS"
-        Me.Button_Kuiper_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Kuiper_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Kuiper_GGS.TabIndex = 49
         Me.Button_Kuiper_GGS.Text = "Spin KUIPER"
         Me.Button_Kuiper_GGS.UseVisualStyleBackColor = False
@@ -2509,7 +2484,7 @@ Partial Class Form_Tools
         Me.Button_Zeta_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Zeta_GGS.Location = New System.Drawing.Point(8, 401)
         Me.Button_Zeta_GGS.Name = "Button_Zeta_GGS"
-        Me.Button_Zeta_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Zeta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Zeta_GGS.TabIndex = 46
         Me.Button_Zeta_GGS.Text = "Spin ZETA"
         Me.Button_Zeta_GGS.UseVisualStyleBackColor = False
@@ -2523,7 +2498,7 @@ Partial Class Form_Tools
         Me.Button_Hades_GGS.ForeColor = System.Drawing.Color.Black
         Me.Button_Hades_GGS.Location = New System.Drawing.Point(8, 473)
         Me.Button_Hades_GGS.Name = "Button_Hades_GGS"
-        Me.Button_Hades_GGS.Size = New System.Drawing.Size(140, 25)
+        Me.Button_Hades_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Hades_GGS.TabIndex = 50
         Me.Button_Hades_GGS.Text = "Spin HADES"
         Me.Button_Hades_GGS.UseVisualStyleBackColor = False
@@ -2549,7 +2524,6 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.Label17)
         Me.Panel_autospin.Controls.Add(Me.Button_resettabspin)
         Me.Panel_autospin.Controls.Add(Me.Button_stopSpin)
-        Me.Panel_autospin.Controls.Add(Me.Button_PrepareGates)
         Me.Panel_autospin.Controls.Add(Me.Label16)
         Me.Panel_autospin.Controls.Add(Me.Button_StartSpin)
         Me.Panel_autospin.Controls.Add(Me.Label_UridiumtoKeepGGS)
@@ -2639,11 +2613,11 @@ Partial Class Form_Tools
         Me.Button_PrepareGates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_PrepareGates.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_PrepareGates.ForeColor = System.Drawing.Color.Black
-        Me.Button_PrepareGates.Location = New System.Drawing.Point(147, 329)
+        Me.Button_PrepareGates.Location = New System.Drawing.Point(279, 291)
         Me.Button_PrepareGates.Name = "Button_PrepareGates"
-        Me.Button_PrepareGates.Size = New System.Drawing.Size(31, 193)
+        Me.Button_PrepareGates.Size = New System.Drawing.Size(120, 25)
         Me.Button_PrepareGates.TabIndex = 61
-        Me.Button_PrepareGates.Text = "P" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "r" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "r" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "G" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "t" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "s"
+        Me.Button_PrepareGates.Text = "Prepare Gates"
         Me.Button_PrepareGates.UseVisualStyleBackColor = False
         '
         'Label16
@@ -2904,6 +2878,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_total_gates_builded)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_autospin)
+        Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Alpha)
@@ -3534,6 +3509,31 @@ Partial Class Form_Tools
         Me.Button_Howuse.TabIndex = 77
         Me.Button_Howuse.Text = "How use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '
