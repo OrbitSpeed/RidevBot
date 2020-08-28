@@ -184,7 +184,6 @@ Partial Class Form_Tools
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button_resettabspin = New System.Windows.Forms.Button()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
-        Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
         Me.TextBox_uridiumtokeepGGS = New System.Windows.Forms.TextBox()
@@ -196,6 +195,7 @@ Partial Class Form_Tools
         Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
+        Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.TextBox_total_gates_builded = New System.Windows.Forms.TextBox()
         Me.Label_total_gates_builded = New System.Windows.Forms.Label()
         Me.TextBox_total_spinned = New System.Windows.Forms.TextBox()
@@ -2606,20 +2606,6 @@ Partial Class Form_Tools
         Me.Button_stopSpin.Text = "Stop"
         Me.Button_stopSpin.UseVisualStyleBackColor = False
         '
-        'Button_PrepareGates
-        '
-        Me.Button_PrepareGates.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_PrepareGates.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_PrepareGates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_PrepareGates.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_PrepareGates.ForeColor = System.Drawing.Color.Black
-        Me.Button_PrepareGates.Location = New System.Drawing.Point(279, 291)
-        Me.Button_PrepareGates.Name = "Button_PrepareGates"
-        Me.Button_PrepareGates.Size = New System.Drawing.Size(120, 25)
-        Me.Button_PrepareGates.TabIndex = 61
-        Me.Button_PrepareGates.Text = "Prepare Gates"
-        Me.Button_PrepareGates.UseVisualStyleBackColor = False
-        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -2675,9 +2661,9 @@ Partial Class Form_Tools
         Me.CheckBox_BuildOneAndStop.ForeColor = System.Drawing.Color.Black
         Me.CheckBox_BuildOneAndStop.Location = New System.Drawing.Point(27, 101)
         Me.CheckBox_BuildOneAndStop.Name = "CheckBox_BuildOneAndStop"
-        Me.CheckBox_BuildOneAndStop.Size = New System.Drawing.Size(137, 30)
+        Me.CheckBox_BuildOneAndStop.Size = New System.Drawing.Size(133, 30)
         Me.CheckBox_BuildOneAndStop.TabIndex = 93
-        Me.CheckBox_BuildOneAndStop.Text = "Stop spin if your have " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "One gates builded !"
+        Me.CheckBox_BuildOneAndStop.Text = "Stop spin if you have " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "One gate built !"
         Me.CheckBox_BuildOneAndStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckBox_BuildOneAndStop.UseVisualStyleBackColor = False
         '
@@ -2758,6 +2744,20 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.Size = New System.Drawing.Size(75, 21)
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
+        '
+        'Button_PrepareGates
+        '
+        Me.Button_PrepareGates.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_PrepareGates.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_PrepareGates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_PrepareGates.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_PrepareGates.ForeColor = System.Drawing.Color.Black
+        Me.Button_PrepareGates.Location = New System.Drawing.Point(279, 497)
+        Me.Button_PrepareGates.Name = "Button_PrepareGates"
+        Me.Button_PrepareGates.Size = New System.Drawing.Size(120, 25)
+        Me.Button_PrepareGates.TabIndex = 61
+        Me.Button_PrepareGates.Text = "Prepare Gates"
+        Me.Button_PrepareGates.UseVisualStyleBackColor = False
         '
         'TextBox_total_gates_builded
         '
@@ -2846,7 +2846,7 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.Controls.Add(Me.Label_infoPartGG_CurrentWave)
         Me.Panel_infoPartGG_GG.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_infoPartGG_GG.ForeColor = System.Drawing.Color.Black
-        Me.Panel_infoPartGG_GG.Location = New System.Drawing.Point(211, 318)
+        Me.Panel_infoPartGG_GG.Location = New System.Drawing.Point(211, 313)
         Me.Panel_infoPartGG_GG.Name = "Panel_infoPartGG_GG"
         Me.Panel_infoPartGG_GG.Size = New System.Drawing.Size(257, 18)
         Me.Panel_infoPartGG_GG.TabIndex = 79
@@ -2885,7 +2885,6 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG_GG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_lambda)
-        Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.Label_total_gates_builded)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_Kappa)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_total_spinned)
@@ -2902,6 +2901,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.Label_ExtraEnergyGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_kuiper)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_uridiumGGS)
+        Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
         Me.Panel_GalaxyGates.Location = New System.Drawing.Point(405, 377)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
@@ -2970,11 +2970,11 @@ Partial Class Form_Tools
         Me.Label_Mine.AutoSize = True
         Me.Label_Mine.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Mine.ForeColor = System.Drawing.Color.White
-        Me.Label_Mine.Location = New System.Drawing.Point(26, 116)
+        Me.Label_Mine.Location = New System.Drawing.Point(27, 116)
         Me.Label_Mine.Name = "Label_Mine"
-        Me.Label_Mine.Size = New System.Drawing.Size(34, 15)
+        Me.Label_Mine.Size = New System.Drawing.Size(33, 15)
         Me.Label_Mine.TabIndex = 86
-        Me.Label_Mine.Text = "Mine"
+        Me.Label_Mine.Text = "ACM"
         '
         'Label_UCB100
         '
@@ -3210,7 +3210,7 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.Location = New System.Drawing.Point(211, 337)
         Me.TextBox_WinGGS.Multiline = True
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
-        Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 188)
+        Me.TextBox_WinGGS.Size = New System.Drawing.Size(257, 147)
         Me.TextBox_WinGGS.TabIndex = 93
         Me.TextBox_WinGGS.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Spinner Initialized -" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- All GalaxyGates are working !"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

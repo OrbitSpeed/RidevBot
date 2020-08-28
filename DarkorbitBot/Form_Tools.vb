@@ -1,5 +1,8 @@
 ﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
+Imports System
+Imports System.Net
+Imports System.IO
 
 Public Class Form_Tools
 
@@ -425,7 +428,7 @@ Public Class Form_Tools
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        ComboBox_autospin.Text = "Alpha"
+        ComboBox_autospin.Text = "ABG"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
@@ -433,7 +436,7 @@ Public Class Form_Tools
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        ComboBox_autospin.Text = "Beta"
+        ComboBox_autospin.Text = "ABG"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
@@ -441,11 +444,14 @@ Public Class Form_Tools
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        ComboBox_autospin.Text = "Gamma"
+        ComboBox_autospin.Text = "ABG"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
     End Sub
+
+    Public Const BufferSize As Integer = 512 * 1024
+    Public Const BufferReadSize As Integer = 1024
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
@@ -456,8 +462,6 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
 
         Dim DataChronos = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "chronos") ' Info GG chronos
         If DataChronos = Nothing Then
