@@ -21,51 +21,44 @@ Public Class AutoUpdater
 
     Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ProgressBar1.Value = "5"
+        Timer_bar_cancel_auto_login.Start()
 
         Me.Size = New Size(363, 410)
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
-        ProgressBar1.Value = "8"
 
         'Console.WriteLine(My.Computer.Registry.LocalMachine)
         Dim Everest_Registry As Microsoft.Win32.RegistryKey = My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\WOW6432Node\AutoIt v3\AutoIt")
         If Everest_Registry Is Nothing Then
             'key does not exist
-            'MsgBox("Key does not exist")
+            'MsgBox("Key does Not exist")
             MessageBox.Show($"It seems that you don't have our dependancies, we will now download them, and install them.{vbNewLine}{vbNewLine}If a popup is shown, click ""Yes"" in order to use the bot", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             AddHandler WC_Download_AutoIt.DownloadFileCompleted, AddressOf WC_Download_AutoIt_DownloadFileAsyncCompleted
             WC_Download_AutoIt.DownloadFileAsync(New Uri("https://www.dropbox.com/s/clvd8vmulmiqxbl/autoit-v3-setup.exe?raw=1"), Path.Combine(Path.GetTempPath, "autoit-setup.exe"))
             FlatTextBox_Changelog.Text = $"Downloading the dependancies...{vbNewLine}Please wait..."
 
-            ProgressBar1.Value = "100"
-            ProgressBar1.BackColor = Color.Red
+            ProgressBar_cancel_autotlogin.Value = "100"
+            ProgressBar_cancel_autotlogin.ForeColor = Color.Red
 
         Else
 
-            ProgressBar1.Value = "20"
             AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
             WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
             '---
-            ProgressBar1.Value = "40"
             AddHandler WC_Update_Version.DownloadStringCompleted, AddressOf WC_Update_Version_DownloadStringCompleted
             WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/5ergvrkppscoupo/Version.txt?dl=1"))
             '---
-            ProgressBar1.Value = "60"
             AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
             WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
 
-            ProgressBar1.Value = ""
-            AxWindowsMediaPlayer1.URL = FilePath
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            Video_ridevbot_MediaPlayerAx.URL = FilePath
+            Video_ridevbot_MediaPlayerAx.Ctlcontrols.play()
             Await Task.Delay(265)
-            ProgressBar1.Value = "65"
-            AxWindowsMediaPlayer1.Visible = True
+            Video_ridevbot_MediaPlayerAx.Visible = True
 
             Await Task.Delay(2200)
-            ProgressBar1.Value = "95"
-            AxWindowsMediaPlayer1.Ctlcontrols.pause()
+            Video_ridevbot_MediaPlayerAx.Ctlcontrols.pause()
             'key is valid, display actual name
             'MsgBox(Everest_Registry.Name)
             'Console.WriteLine(Everest_Registry.Name)
@@ -126,6 +119,9 @@ Public Class AutoUpdater
             File.WriteAllBytes(FileUpdater, My.Resources.RidevBotUpdater)
         End If
 
+
+        ProgressBar_cancel_autotlogin.Value = "100"
+        ProgressBar_cancel_autotlogin.ForeColor = Color.DarkRed
         Dim result = MessageBox.Show("A new update is available (" & LastVersion & ")" & vbNewLine & vbNewLine & LastChangeLog & vbNewLine & vbNewLine & "-----------------------------------------------------------------" & vbNewLine & "The bot will now update.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         If result = DialogResult.OK Then
@@ -212,5 +208,11 @@ Public Class AutoUpdater
         End Try
     End Sub
 
+    Private Sub Timer_bar_cancel_auto_login_Tick(sender As Object, e As EventArgs) Handles Timer_bar_cancel_auto_login.Tick
 
+        If ProgressBar_cancel_autotlogin.Value = 100 Then
+        Else ProgressBar_cancel_autotlogin.Value = ProgressBar_cancel_autotlogin.Value + 1
+        End If
+
+    End Sub
 End Class
