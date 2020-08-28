@@ -1147,8 +1147,8 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
-        Dim randomX = Utils.GetPortalZone(758, "x")
-        Dim randomY = Utils.GetPortalZone(492, "y")
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(497, "y")
 
         'HAUT DROITE 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1166,8 +1166,8 @@ Public Class Form_Game
         'Dim randomX = Utils.GetRandom(608, 616)
         'Dim randomY = Utils.GetRandom(474, 482)
 
-        Dim randomX = Utils.GetPortalZone(608, "x")
-        Dim randomY = Utils.GetPortalZone(492, "y")
+        Dim randomX = Utils.GetPortalZone(610, "x")
+        Dim randomY = Utils.GetPortalZone(497, "y")
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1183,8 +1183,8 @@ Public Class Form_Game
 
         ' BAS DROITE
         'Centre : 758, 579
-        Dim randomX = Utils.GetPortalZone(758, "x")
-        Dim randomY = Utils.GetPortalZone(579, "y")
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(585, "y")
 
         'Dim randomX = Utils.GetRandom(756, 765)
         'Dim randomY = Utils.GetRandom(562, 569)
@@ -1206,8 +1206,8 @@ Public Class Form_Game
         End If
         '610, 584
         'Centre : 608, 579
-        Dim randomX = Utils.GetPortalZone(608, "x")
-        Dim randomY = Utils.GetPortalZone(579, "y")
+        Dim randomX = Utils.GetPortalZone(610, "x")
+        Dim randomY = Utils.GetPortalZone(584, "y")
 
         'Dim randomX = Utils.GetRandom(610, 618)
         'Dim randomY = Utils.GetRandom(566, 574)
@@ -2014,14 +2014,16 @@ Public Class Form_Game
                         (Map_roaming = "1-1" Or
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
-                        Map_roaming = "1-4") Then
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "4-1") Then
                     PORTAIL_43_to_41()
 
                 ElseIf Map_actuelle = "4-3" And
                         (Map_roaming = "2-1" Or
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "4-2") Then
                     PORTAIL_43_to_42()
 
                 ElseIf Map_actuelle = "4-3" And
@@ -2040,7 +2042,8 @@ Public Class Form_Game
                     Map_roaming = "5-1" Or
                     Map_roaming = "5-2" Or
                     Map_roaming = "5-3" Or
-                    Map_roaming = "4-5") Then
+                    Map_roaming = "4-5" Or
+                    Map_roaming = "4-4") Then
                     PORTAIL_43_to_44()
 
 #End Region ' VALIDER
@@ -2057,14 +2060,16 @@ Public Class Form_Game
                         (Map_roaming = "3-1" Or
                         Map_roaming = "3-2" Or
                         Map_roaming = "3-3" Or
-                        Map_roaming = "3-4") Then
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "4-3") Then
                     PORTAIL_42_to_43()
 
                 ElseIf Map_actuelle = "4-2" And
                         (Map_roaming = "1-1" Or
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
-                        Map_roaming = "1-4") Then
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "4-1") Then
                     PORTAIL_42_to_41()
 
                 ElseIf Map_actuelle = "4-2" And
@@ -2083,7 +2088,8 @@ Public Class Form_Game
                         Map_roaming = "5-1" Or
                         Map_roaming = "5-2" Or
                         Map_roaming = "5-3" Or
-                        Map_roaming = "4-5") Then
+                        Map_roaming = "4-5" Or
+                        Map_roaming = "4-4") Then
                     PORTAIL_42_to_44()
 
 #End Region ' VALIDER
@@ -2100,7 +2106,8 @@ Public Class Form_Game
                         (Map_roaming = "2-1" Or
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "4-2") Then
                     PORTAIL_41_to_42()
 
                 ElseIf Map_actuelle = "4-1" And
@@ -2126,7 +2133,8 @@ Public Class Form_Game
                         Map_roaming = "5-1" Or
                         Map_roaming = "5-2" Or
                         Map_roaming = "5-3" Or
-                        Map_roaming = "4-5") Then
+                        Map_roaming = "4-5" Or
+                        Map_roaming = "4-4") Then
 
                     PORTAIL_41_to_44()
 
@@ -2139,7 +2147,7 @@ Public Class Form_Game
                     PORTAIL_HAUT_GAUCHE()
 
                 ElseIf Map_actuelle = "1-4" And
-                                  (Map_roaming = "1-3" Or
+                    (Map_roaming = "1-3" Or
                     Map_roaming = "2-1" Or
                     Map_roaming = "2-2" Or
                     Map_roaming = "2-3" Or
@@ -2657,7 +2665,7 @@ Public Class Form_Game
 
     Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
         Dim myProcess = Process.GetCurrentProcess()
-        Console.WriteLine($"{myProcess} -")
+        'Console.WriteLine($"{myProcess} -")
 
         'Console.WriteLine("-------------------------------------")
         'Console.WriteLine($"  Physical memory usage     : {Convert.ToInt32(myProcess.WorkingSet64 / (1024.0F * 1024.0F))}")
@@ -3407,37 +3415,33 @@ Label_General:
                     Exit Sub
 
                 End If
+            End If
+        End If
+        Exit Sub
 
 Traveling_return:
 
-                Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-                Await Task.Delay(500)
-                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+            Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+            Await Task.Delay(500)
+            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
 
-                Console.WriteLine($"current:{regex_currentWave}")
-                Console.WriteLine($"total:{regex_totalWave}")
-                ' trouver l'emplacement de la gg 
-                If Form_Tools.ComboBox_firme.Text = "MMO" Then
+            Console.WriteLine($"current:{regex_currentWave}")
+            Console.WriteLine($"total:{regex_totalWave}")
+            ' trouver l'emplacement de la gg 
+            If Form_Tools.ComboBox_firme.Text = "MMO" Then
 
-                    MsgBox("trouver l'emplacement de la gg ")
+                MsgBox("trouver l'emplacement de la gg ")
 
-                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+            ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
 
-                    MsgBox("trouver l'emplacement de la gg ")
+                MsgBox("trouver l'emplacement de la gg ")
 
-                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+            ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
 
-                    MsgBox("trouver l'emplacement de la gg ")
-
-                End If
+                MsgBox("trouver l'emplacement de la gg ")
 
             End If
-        End If
-
-
-
-
 
 
     End Sub
