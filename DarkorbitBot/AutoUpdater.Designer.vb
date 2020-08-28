@@ -61,7 +61,7 @@ Partial Class AutoUpdater
         Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Update.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Update.ForeColor = System.Drawing.Color.White
-        Me.Button_Update.Location = New System.Drawing.Point(90, 34)
+        Me.Button_Update.Location = New System.Drawing.Point(90, 32)
         Me.Button_Update.Name = "Button_Update"
         Me.Button_Update.Size = New System.Drawing.Size(185, 46)
         Me.Button_Update.TabIndex = 33
@@ -113,7 +113,7 @@ Partial Class AutoUpdater
         Me.Button_cancel_auto_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_cancel_auto_login.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_cancel_auto_login.ForeColor = System.Drawing.Color.White
-        Me.Button_cancel_auto_login.Location = New System.Drawing.Point(113, 122)
+        Me.Button_cancel_auto_login.Location = New System.Drawing.Point(113, 121)
         Me.Button_cancel_auto_login.Name = "Button_cancel_auto_login"
         Me.Button_cancel_auto_login.Size = New System.Drawing.Size(138, 34)
         Me.Button_cancel_auto_login.TabIndex = 105

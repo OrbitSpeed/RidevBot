@@ -746,6 +746,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\png-transparent-squircle-square-rectangle-information-others-miscellaneous-angle-simple.png" />
     <None Include="Resources\Locked_Two.png" />
     <None Include="Resources\Locked_Three.png" />
     <None Include="Resources\Locked_One.png" />

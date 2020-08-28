@@ -30,7 +30,6 @@ Partial Class Form_Startup
         Me.PanelConnection = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
         Me.Button_License_Verify = New System.Windows.Forms.Button()
         Me.Load_Button = New System.Windows.Forms.Button()
         Me.TextBox_license = New System.Windows.Forms.TextBox()
@@ -47,36 +46,39 @@ Partial Class Form_Startup
         Me.Button_SID_Load = New System.Windows.Forms.Button()
         Me.TextBox_sid = New System.Windows.Forms.TextBox()
         Me.Panel_ProfilConnection = New System.Windows.Forms.Panel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBoxUsernamePasswordProfil3view = New System.Windows.Forms.PictureBox()
-        Me.PictureBoxUsernamePasswordProfil2view = New System.Windows.Forms.PictureBox()
-        Me.PictureBoxUsernamePasswordProfil1view = New System.Windows.Forms.PictureBox()
-        Me.PictureBoxUsernamePasswordProfil3eyes = New System.Windows.Forms.PictureBox()
         Me.TextBox_UsernamePasswordProfil3username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil3texte = New System.Windows.Forms.Label()
         Me.TextBoxUsernamePasswordProfil3password = New System.Windows.Forms.TextBox()
-        Me.PictureBoxUsernamePasswordProfil2eyes = New System.Windows.Forms.PictureBox()
         Me.TextBox_UsernamePasswordProfil2username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil2texte = New System.Windows.Forms.Label()
         Me.TextBoxUsernamePasswordProfil2password = New System.Windows.Forms.TextBox()
-        Me.PictureBoxUsernamePasswordProfil1eyes = New System.Windows.Forms.PictureBox()
         Me.TextBox_UsernamePasswordProfil1username = New System.Windows.Forms.TextBox()
         Me.Label_UsernamePasswordProfil1texte = New System.Windows.Forms.Label()
         Me.TextBoxUsernamePasswordProfil1password = New System.Windows.Forms.TextBox()
         Me.PanelUserAndPass = New System.Windows.Forms.Panel()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.button_MinimizeForm = New DarkorbitBot.FlatMini()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.Label_Title = New System.Windows.Forms.Label()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil3view = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil2view = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil1view = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil3eyes = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil2eyes = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUsernamePasswordProfil1eyes = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
         Me.PanelConnection.SuspendLayout()
-        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_SidConnexion.SuspendLayout()
         Me.Panel_ProfilConnection.SuspendLayout()
+        Me.PanelUserAndPass.SuspendLayout()
+        Me.Panel_Title.SuspendLayout()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,9 +88,7 @@ Partial Class Form_Startup
         CType(Me.PictureBoxUsernamePasswordProfil3eyes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil2eyes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUsernamePasswordProfil1eyes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelUserAndPass.SuspendLayout()
-        Me.Panel_Title.SuspendLayout()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserAndPass_Button
@@ -183,18 +183,6 @@ Partial Class Form_Startup
         Me.Label6.Size = New System.Drawing.Size(50, 13)
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "Current :"
-        '
-        'PictureBox_PasswordHider
-        '
-        Me.PictureBox_PasswordHider.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox_PasswordHider.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
-        Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(225, 48)
-        Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
-        Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(31, 20)
-        Me.PictureBox_PasswordHider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_PasswordHider.TabIndex = 22
-        Me.PictureBox_PasswordHider.TabStop = False
         '
         'Button_License_Verify
         '
@@ -421,45 +409,6 @@ Partial Class Form_Startup
         Me.Panel_ProfilConnection.TabIndex = 11
         Me.Panel_ProfilConnection.Visible = False
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox5.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.PictureBox5.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
-        Me.PictureBox5.Location = New System.Drawing.Point(238, 52)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(12, 7)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox5.TabIndex = 14
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox1.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
-        Me.PictureBox1.Location = New System.Drawing.Point(238, 251)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(12, 7)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 15
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid3
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
-        Me.PictureBox4.Location = New System.Drawing.Point(238, 153)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(12, 7)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox4.TabIndex = 16
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid2
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -489,57 +438,6 @@ Partial Class Form_Startup
         Me.Label3.Size = New System.Drawing.Size(11, 13)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "-"
-        '
-        'PictureBoxUsernamePasswordProfil3view
-        '
-        Me.PictureBoxUsernamePasswordProfil3view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil3view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBoxUsernamePasswordProfil3view.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil3view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
-        Me.PictureBoxUsernamePasswordProfil3view.Location = New System.Drawing.Point(234, 268)
-        Me.PictureBoxUsernamePasswordProfil3view.Name = "PictureBoxUsernamePasswordProfil3view"
-        Me.PictureBoxUsernamePasswordProfil3view.Size = New System.Drawing.Size(22, 22)
-        Me.PictureBoxUsernamePasswordProfil3view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBoxUsernamePasswordProfil3view.TabIndex = 39
-        Me.PictureBoxUsernamePasswordProfil3view.TabStop = False
-        '
-        'PictureBoxUsernamePasswordProfil2view
-        '
-        Me.PictureBoxUsernamePasswordProfil2view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil2view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBoxUsernamePasswordProfil2view.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil2view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
-        Me.PictureBoxUsernamePasswordProfil2view.Location = New System.Drawing.Point(234, 170)
-        Me.PictureBoxUsernamePasswordProfil2view.Name = "PictureBoxUsernamePasswordProfil2view"
-        Me.PictureBoxUsernamePasswordProfil2view.Size = New System.Drawing.Size(22, 22)
-        Me.PictureBoxUsernamePasswordProfil2view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBoxUsernamePasswordProfil2view.TabIndex = 38
-        Me.PictureBoxUsernamePasswordProfil2view.TabStop = False
-        '
-        'PictureBoxUsernamePasswordProfil1view
-        '
-        Me.PictureBoxUsernamePasswordProfil1view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil1view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBoxUsernamePasswordProfil1view.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil1view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
-        Me.PictureBoxUsernamePasswordProfil1view.Location = New System.Drawing.Point(234, 69)
-        Me.PictureBoxUsernamePasswordProfil1view.Name = "PictureBoxUsernamePasswordProfil1view"
-        Me.PictureBoxUsernamePasswordProfil1view.Size = New System.Drawing.Size(22, 22)
-        Me.PictureBoxUsernamePasswordProfil1view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBoxUsernamePasswordProfil1view.TabIndex = 37
-        Me.PictureBoxUsernamePasswordProfil1view.TabStop = False
-        '
-        'PictureBoxUsernamePasswordProfil3eyes
-        '
-        Me.PictureBoxUsernamePasswordProfil3eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil3eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil3eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
-        Me.PictureBoxUsernamePasswordProfil3eyes.Location = New System.Drawing.Point(0, 269)
-        Me.PictureBoxUsernamePasswordProfil3eyes.Name = "PictureBoxUsernamePasswordProfil3eyes"
-        Me.PictureBoxUsernamePasswordProfil3eyes.Size = New System.Drawing.Size(31, 20)
-        Me.PictureBoxUsernamePasswordProfil3eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxUsernamePasswordProfil3eyes.TabIndex = 35
-        Me.PictureBoxUsernamePasswordProfil3eyes.TabStop = False
         '
         'TextBox_UsernamePasswordProfil3username
         '
@@ -582,18 +480,6 @@ Partial Class Form_Startup
         Me.TextBoxUsernamePasswordProfil3password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
         '
-        'PictureBoxUsernamePasswordProfil2eyes
-        '
-        Me.PictureBoxUsernamePasswordProfil2eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil2eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil2eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
-        Me.PictureBoxUsernamePasswordProfil2eyes.Location = New System.Drawing.Point(0, 171)
-        Me.PictureBoxUsernamePasswordProfil2eyes.Name = "PictureBoxUsernamePasswordProfil2eyes"
-        Me.PictureBoxUsernamePasswordProfil2eyes.Size = New System.Drawing.Size(31, 20)
-        Me.PictureBoxUsernamePasswordProfil2eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxUsernamePasswordProfil2eyes.TabIndex = 31
-        Me.PictureBoxUsernamePasswordProfil2eyes.TabStop = False
-        '
         'TextBox_UsernamePasswordProfil2username
         '
         Me.TextBox_UsernamePasswordProfil2username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -634,18 +520,6 @@ Partial Class Form_Startup
         Me.TextBoxUsernamePasswordProfil2password.Text = Global.DarkorbitBot.My.MySettings.Default.Password2
         Me.TextBoxUsernamePasswordProfil2password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
-        '
-        'PictureBoxUsernamePasswordProfil1eyes
-        '
-        Me.PictureBoxUsernamePasswordProfil1eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBoxUsernamePasswordProfil1eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil1eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
-        Me.PictureBoxUsernamePasswordProfil1eyes.Location = New System.Drawing.Point(0, 70)
-        Me.PictureBoxUsernamePasswordProfil1eyes.Name = "PictureBoxUsernamePasswordProfil1eyes"
-        Me.PictureBoxUsernamePasswordProfil1eyes.Size = New System.Drawing.Size(31, 20)
-        Me.PictureBoxUsernamePasswordProfil1eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxUsernamePasswordProfil1eyes.TabIndex = 27
-        Me.PictureBoxUsernamePasswordProfil1eyes.TabStop = False
         '
         'TextBox_UsernamePasswordProfil1username
         '
@@ -727,6 +601,17 @@ Partial Class Form_Startup
         Me.button_MinimizeForm.Text = "button_MinimizeForm"
         Me.button_MinimizeForm.TextColor = System.Drawing.Color.Black
         '
+        'Label_Title
+        '
+        Me.Label_Title.AutoSize = True
+        Me.Label_Title.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Title.Location = New System.Drawing.Point(0, -1)
+        Me.Label_Title.Name = "Label_Title"
+        Me.Label_Title.Size = New System.Drawing.Size(126, 20)
+        Me.Label_Title.TabIndex = 22
+        Me.Label_Title.Text = "RidevBot v0.0.0.0"
+        '
         'PictureBox_Close
         '
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
@@ -740,16 +625,131 @@ Partial Class Form_Startup
         Me.PictureBox_Close.TabIndex = 24
         Me.PictureBox_Close.TabStop = False
         '
-        'Label_Title
+        'PictureBox5
         '
-        Me.Label_Title.AutoSize = True
-        Me.Label_Title.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Title.Location = New System.Drawing.Point(0, -1)
-        Me.Label_Title.Name = "Label_Title"
-        Me.Label_Title.Size = New System.Drawing.Size(126, 20)
-        Me.Label_Title.TabIndex = 22
-        Me.Label_Title.Text = "RidevBot v0.0.0.0"
+        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox5.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.PictureBox5.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
+        Me.PictureBox5.Location = New System.Drawing.Point(238, 52)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(12, 7)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox5.TabIndex = 14
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox1.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid3", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
+        Me.PictureBox1.Location = New System.Drawing.Point(238, 251)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(12, 7)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid3
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Visible", Global.DarkorbitBot.My.MySettings.Default, "Visible_Account_Valid2", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.icon_elite_12x7
+        Me.PictureBox4.Location = New System.Drawing.Point(238, 153)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(12, 7)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox4.TabIndex = 16
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = Global.DarkorbitBot.My.MySettings.Default.Visible_Account_Valid2
+        '
+        'PictureBoxUsernamePasswordProfil3view
+        '
+        Me.PictureBoxUsernamePasswordProfil3view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil3view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxUsernamePasswordProfil3view.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil3view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
+        Me.PictureBoxUsernamePasswordProfil3view.Location = New System.Drawing.Point(234, 268)
+        Me.PictureBoxUsernamePasswordProfil3view.Name = "PictureBoxUsernamePasswordProfil3view"
+        Me.PictureBoxUsernamePasswordProfil3view.Size = New System.Drawing.Size(22, 22)
+        Me.PictureBoxUsernamePasswordProfil3view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxUsernamePasswordProfil3view.TabIndex = 39
+        Me.PictureBoxUsernamePasswordProfil3view.TabStop = False
+        '
+        'PictureBoxUsernamePasswordProfil2view
+        '
+        Me.PictureBoxUsernamePasswordProfil2view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil2view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxUsernamePasswordProfil2view.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil2view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
+        Me.PictureBoxUsernamePasswordProfil2view.Location = New System.Drawing.Point(234, 170)
+        Me.PictureBoxUsernamePasswordProfil2view.Name = "PictureBoxUsernamePasswordProfil2view"
+        Me.PictureBoxUsernamePasswordProfil2view.Size = New System.Drawing.Size(22, 22)
+        Me.PictureBoxUsernamePasswordProfil2view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxUsernamePasswordProfil2view.TabIndex = 38
+        Me.PictureBoxUsernamePasswordProfil2view.TabStop = False
+        '
+        'PictureBoxUsernamePasswordProfil1view
+        '
+        Me.PictureBoxUsernamePasswordProfil1view.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil1view.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxUsernamePasswordProfil1view.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil1view.Image = Global.DarkorbitBot.My.Resources.Resources.prometium
+        Me.PictureBoxUsernamePasswordProfil1view.Location = New System.Drawing.Point(234, 69)
+        Me.PictureBoxUsernamePasswordProfil1view.Name = "PictureBoxUsernamePasswordProfil1view"
+        Me.PictureBoxUsernamePasswordProfil1view.Size = New System.Drawing.Size(22, 22)
+        Me.PictureBoxUsernamePasswordProfil1view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxUsernamePasswordProfil1view.TabIndex = 37
+        Me.PictureBoxUsernamePasswordProfil1view.TabStop = False
+        '
+        'PictureBoxUsernamePasswordProfil3eyes
+        '
+        Me.PictureBoxUsernamePasswordProfil3eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil3eyes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil3eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil3eyes.Location = New System.Drawing.Point(0, 269)
+        Me.PictureBoxUsernamePasswordProfil3eyes.Name = "PictureBoxUsernamePasswordProfil3eyes"
+        Me.PictureBoxUsernamePasswordProfil3eyes.Size = New System.Drawing.Size(31, 20)
+        Me.PictureBoxUsernamePasswordProfil3eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUsernamePasswordProfil3eyes.TabIndex = 35
+        Me.PictureBoxUsernamePasswordProfil3eyes.TabStop = False
+        '
+        'PictureBoxUsernamePasswordProfil2eyes
+        '
+        Me.PictureBoxUsernamePasswordProfil2eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil2eyes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil2eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil2eyes.Location = New System.Drawing.Point(0, 171)
+        Me.PictureBoxUsernamePasswordProfil2eyes.Name = "PictureBoxUsernamePasswordProfil2eyes"
+        Me.PictureBoxUsernamePasswordProfil2eyes.Size = New System.Drawing.Size(31, 20)
+        Me.PictureBoxUsernamePasswordProfil2eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUsernamePasswordProfil2eyes.TabIndex = 31
+        Me.PictureBoxUsernamePasswordProfil2eyes.TabStop = False
+        '
+        'PictureBoxUsernamePasswordProfil1eyes
+        '
+        Me.PictureBoxUsernamePasswordProfil1eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBoxUsernamePasswordProfil1eyes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxUsernamePasswordProfil1eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil1eyes.Location = New System.Drawing.Point(0, 70)
+        Me.PictureBoxUsernamePasswordProfil1eyes.Name = "PictureBoxUsernamePasswordProfil1eyes"
+        Me.PictureBoxUsernamePasswordProfil1eyes.Size = New System.Drawing.Size(31, 20)
+        Me.PictureBoxUsernamePasswordProfil1eyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUsernamePasswordProfil1eyes.TabIndex = 27
+        Me.PictureBoxUsernamePasswordProfil1eyes.TabStop = False
+        '
+        'PictureBox_PasswordHider
+        '
+        Me.PictureBox_PasswordHider.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox_PasswordHider.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(225, 48)
+        Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
+        Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(31, 20)
+        Me.PictureBox_PasswordHider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox_PasswordHider.TabIndex = 22
+        Me.PictureBox_PasswordHider.TabStop = False
         '
         'Form_Startup
         '
@@ -770,11 +770,14 @@ Partial Class Form_Startup
         Me.Text = "RidevBot"
         Me.PanelConnection.ResumeLayout(False)
         Me.PanelConnection.PerformLayout()
-        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_SidConnexion.ResumeLayout(False)
         Me.Panel_SidConnexion.PerformLayout()
         Me.Panel_ProfilConnection.ResumeLayout(False)
         Me.Panel_ProfilConnection.PerformLayout()
+        Me.PanelUserAndPass.ResumeLayout(False)
+        Me.Panel_Title.ResumeLayout(False)
+        Me.Panel_Title.PerformLayout()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -784,10 +787,7 @@ Partial Class Form_Startup
         CType(Me.PictureBoxUsernamePasswordProfil3eyes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil2eyes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUsernamePasswordProfil1eyes, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelUserAndPass.ResumeLayout(False)
-        Me.Panel_Title.ResumeLayout(False)
-        Me.Panel_Title.PerformLayout()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
