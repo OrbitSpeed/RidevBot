@@ -598,9 +598,9 @@ Public Class Form_Tools
                 BackgroundWorkerAutospin = True
                 MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
-                TextBox_spintimes_GGS.Text = 500
+                TextBox_spintimes_GGS.Text = 300
                 BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, Starting with 500ms by default, other is EXPERIMENTAL request for highet computer", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                MessageBox.Show($"Error, Starting with 300ms by default, other is EXPERIMENTAL request for highet computer", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Else
                 BackgroundWorkerAutospin = False
             End If
@@ -994,8 +994,8 @@ Public Class Form_Tools
 
                 Else
 
-                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates" + (mode.Groups.Item(1).ToString) + "added" + TextBox_WinGGS.Text
-
+                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates " + (mode.Groups.Item(1).ToString) + "added" + TextBox_WinGGS.Text
+                    Exit Sub
                 End If
 
 #Region "Delta"
@@ -1024,7 +1024,7 @@ Public Class Form_Tools
 #End Region
 
 #Region "Zeta"
-                    If ComboBox_autospin.Text = "Zeta" Then
+                If ComboBox_autospin.Text = "Zeta" Then
 
                     Button_zeta.Enabled = False
                     Button_Zeta_GGS.Enabled = False
@@ -1035,7 +1035,7 @@ Public Class Form_Tools
 #End Region
 
 #Region "Kappa"
-                    If ComboBox_autospin.Text = "Kappa" Then
+                If ComboBox_autospin.Text = "Kappa" Then
 
                     Button_Kappa.Enabled = False
                     Button_Kappa_GGS.Enabled = False
@@ -1070,7 +1070,7 @@ Public Class Form_Tools
 
 #Region "Hades"
 
-                    If ComboBox_autospin.Text = "Hades" Then
+                If ComboBox_autospin.Text = "Hades" Then
 
                     Button_hades.Enabled = False
                     Button_Hades_GGS.Enabled = False
@@ -1083,7 +1083,7 @@ Public Class Form_Tools
 
 #Region "ABG"
 
-                    If ComboBox_autospin.Text = "ABG" Then
+                If ComboBox_autospin.Text = "ABG" Then
 
                     Button_Alpha.Enabled = False
                     Button_beta.Enabled = False
@@ -1128,36 +1128,36 @@ Public Class Form_Tools
 
         If ComboBox_autospin.Text = "Alpha" Then
 
-                Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
-                If DataAlpha = Nothing Then
-                Else
+            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
+            If DataAlpha = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-                    Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-                    Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
-                    Utils.setInfoPartGG_InMap(DataAlpha)
-                    Utils.setLivesLeft(DataAlpha)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+                Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+                Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+                Dim regex_TotalPart = Utils.getTotalPart(DataAlpha)
+                Utils.setInfoPartGG_InMap(DataAlpha)
+                Utils.setLivesLeft(DataAlpha)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_TotalPart)
 
                 Button_Alpha.Enabled = True
                 Button_ABG_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Beta" Then
+        ElseIf ComboBox_autospin.Text = "Beta" Then
 
-                Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
-                If DataBeta = Nothing Then
-                Else
+            Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
+            If DataBeta = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-                    Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-                    Dim regex_totalPart = Utils.getTotalPart(DataBeta)
-                    Utils.setInfoPartGG_InMap(DataBeta)
-                    Utils.setLivesLeft(DataBeta)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
+                Dim regex_totalWave = Utils.getTotalWave(DataBeta)
+                Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+                Dim regex_totalPart = Utils.getTotalPart(DataBeta)
+                Utils.setInfoPartGG_InMap(DataBeta)
+                Utils.setLivesLeft(DataBeta)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_beta.Enabled = True
                 Button_ABG_GGS.Enabled = True
@@ -1165,37 +1165,37 @@ Public Class Form_Tools
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Gamma" Then
+        ElseIf ComboBox_autospin.Text = "Gamma" Then
 
-                Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
-                If DataGamma = Nothing Then
-                Else
+            Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
+            If DataGamma = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-                    Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-                    Dim regex_totalPart = Utils.getTotalPart(DataGamma)
-                    Utils.setInfoPartGG_InMap(DataGamma)
-                    Utils.setLivesLeft(DataGamma)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
+                Dim regex_totalWave = Utils.getTotalWave(DataGamma)
+                Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+                Dim regex_totalPart = Utils.getTotalPart(DataGamma)
+                Utils.setInfoPartGG_InMap(DataGamma)
+                Utils.setLivesLeft(DataGamma)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_gamma.Enabled = True
                 Button_ABG_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Delta" Then
+        ElseIf ComboBox_autospin.Text = "Delta" Then
 
-                Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
-                If DataDelta = Nothing Then
-                Else
+            Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
+            If DataDelta = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
-                    Dim regex_totalWave = Utils.getTotalWave(DataDelta)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
-                    Dim regex_totalPart = Utils.getTotalPart(DataDelta)
-                    Utils.setInfoPartGG_InMap(DataDelta)
-                    Utils.setLivesLeft(DataDelta)
+                Dim regex_currentWave = Utils.getCurrentWave(DataDelta)
+                Dim regex_totalWave = Utils.getTotalWave(DataDelta)
+                Dim regex_currentPart = Utils.getCurrentPart(DataDelta)
+                Dim regex_totalPart = Utils.getTotalPart(DataDelta)
+                Utils.setInfoPartGG_InMap(DataDelta)
+                Utils.setLivesLeft(DataDelta)
                 Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_delta.Enabled = True
@@ -1203,46 +1203,46 @@ Public Class Form_Tools
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Epsilon" Then
+        ElseIf ComboBox_autospin.Text = "Epsilon" Then
 
-                Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
-                If DataEpsilon = Nothing Then
-                Else
+            Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
+            If DataEpsilon = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
-                    Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
-                    Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
-                    Utils.setInfoPartGG_InMap(DataEpsilon)
-                    Utils.setLivesLeft(DataEpsilon)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataEpsilon)
+                Dim regex_totalWave = Utils.getTotalWave(DataEpsilon)
+                Dim regex_currentPart = Utils.getCurrentPart(DataEpsilon)
+                Dim regex_totalPart = Utils.getTotalPart(DataEpsilon)
+                Utils.setInfoPartGG_InMap(DataEpsilon)
+                Utils.setLivesLeft(DataEpsilon)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_epsilon.Enabled = True
                 Button_Epsilon_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Zeta" Then
+        ElseIf ComboBox_autospin.Text = "Zeta" Then
 
 
-                Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
-                If DataZeta = Nothing Then
-                Else
+            Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
+            If DataZeta = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
-                    Dim regex_totalWave = Utils.getTotalWave(DataZeta)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
-                    Dim regex_totalPart = Utils.getTotalPart(DataZeta)
-                    Utils.setInfoPartGG_InMap(DataZeta)
-                    Utils.setLivesLeft(DataZeta)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataZeta)
+                Dim regex_totalWave = Utils.getTotalWave(DataZeta)
+                Dim regex_currentPart = Utils.getCurrentPart(DataZeta)
+                Dim regex_totalPart = Utils.getTotalPart(DataZeta)
+                Utils.setInfoPartGG_InMap(DataZeta)
+                Utils.setLivesLeft(DataZeta)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_zeta.Enabled = True
                 Button_Zeta_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Kappa" Then
+        ElseIf ComboBox_autospin.Text = "Kappa" Then
 
             Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
             If DataKappa = Nothing Then
@@ -1263,62 +1263,62 @@ Public Class Form_Tools
 
         ElseIf ComboBox_autospin.Text = "Lambda" Then
 
-                Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
-                If DataLambda = Nothing Then
-                Else
+            Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
+            If DataLambda = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
-                    Dim regex_totalWave = Utils.getTotalWave(DataLambda)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
-                    Dim regex_totalPart = Utils.getTotalPart(DataLambda)
-                    Utils.setInfoPartGG_InMap(DataLambda)
-                    Utils.setLivesLeft(DataLambda)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataLambda)
+                Dim regex_totalWave = Utils.getTotalWave(DataLambda)
+                Dim regex_currentPart = Utils.getCurrentPart(DataLambda)
+                Dim regex_totalPart = Utils.getTotalPart(DataLambda)
+                Utils.setInfoPartGG_InMap(DataLambda)
+                Utils.setLivesLeft(DataLambda)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_lambda.Enabled = True
                 Button_Lambda_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Hades" Then
+        ElseIf ComboBox_autospin.Text = "Hades" Then
 
-                Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
-                If DataHades = Nothing Then
-                Else
+            Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
+            If DataHades = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataHades)
-                    Dim regex_totalWave = Utils.getTotalWave(DataHades)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataHades)
-                    Dim regex_totalPart = Utils.getTotalPart(DataHades)
-                    Utils.setInfoPartGG_InMap(DataHades)
-                    Utils.setLivesLeft(DataHades)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataHades)
+                Dim regex_totalWave = Utils.getTotalWave(DataHades)
+                Dim regex_currentPart = Utils.getCurrentPart(DataHades)
+                Dim regex_totalPart = Utils.getTotalPart(DataHades)
+                Utils.setInfoPartGG_InMap(DataHades)
+                Utils.setLivesLeft(DataHades)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_hades.Enabled = True
                 Button_Hades_GGS.Enabled = True
 
             End If
 
-            ElseIf ComboBox_autospin.Text = "Kuiper" Then
+        ElseIf ComboBox_autospin.Text = "Kuiper" Then
 
-                Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
-                If DataKuiper = Nothing Then
-                Else
+            Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
+            If DataKuiper = Nothing Then
+            Else
 
-                    Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
-                    Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
-                    Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
-                    Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
-                    Utils.setInfoPartGG_InMap(DataKuiper)
-                    Utils.setLivesLeft(DataKuiper)
-                    Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+                Dim regex_currentWave = Utils.getCurrentWave(DataKuiper)
+                Dim regex_totalWave = Utils.getTotalWave(DataKuiper)
+                Dim regex_currentPart = Utils.getCurrentPart(DataKuiper)
+                Dim regex_totalPart = Utils.getTotalPart(DataKuiper)
+                Utils.setInfoPartGG_InMap(DataKuiper)
+                Utils.setLivesLeft(DataKuiper)
+                Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
 
                 Button_kuiper.Enabled = True
                 Button_Kuiper_GGS.Enabled = True
 
             End If
 
-            End If
+        End If
 
     End Sub
 
@@ -1711,17 +1711,6 @@ Public Class Form_Tools
         End If
     End Sub
 
-    Private Sub Random_movement()
-
-
-        'Dim random As New Random(), rndnbr As Integer
-        '    rndnbr = random.Next(A6 + 60, A62 + 60)
-        '    Dim random2 As New Random(), rndnbr2 As Integer
-        '    rndnbr2 = random2.Next(A61 - 20, A63 - 20)
-
-        '    AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
-
-    End Sub
 
     Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
         If Form_Game.User_Stop_Bot = True Then
@@ -1848,9 +1837,6 @@ Public Class Form_Tools
             ComboBox_autologin.BackColor = Color.FromArgb(30, 30, 30)
 
             Me.BackColor = Color.FromArgb(30, 30, 30)
-
-
-
         End If
 
     End Sub
@@ -1864,18 +1850,6 @@ Public Class Form_Tools
     Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
 
         TextBox_WinGGS.Text = ""
-
-    End Sub
-
-    Private Sub Panel_GalaxyGates_Paint(sender As Object, e As PaintEventArgs) Handles Panel_GalaxyGates.Paint
-
-    End Sub
-
-    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox_x3.TextChanged
-
-    End Sub
-
-    Private Sub Panel_Npc_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Npc.Paint
 
     End Sub
 End Class

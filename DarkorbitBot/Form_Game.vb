@@ -3447,6 +3447,19 @@ Traveling_return:
     End Sub
 End Class
 
+'Private Sub Random_movement()
+
+
+'    'Dim random As New Random(), rndnbr As Integer
+'    '    rndnbr = random.Next(A6 + 60, A62 + 60)
+'    '    Dim random2 As New Random(), rndnbr2 As Integer
+'    '    rndnbr2 = random2.Next(A61 - 20, A63 - 20)
+
+'    '    AutoIt.ControlClick("Form3", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, rndnbr, rndnbr2)
+
+'End Sub
+
+
 'npc killer
 
 'Try
