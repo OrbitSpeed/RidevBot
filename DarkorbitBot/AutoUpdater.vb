@@ -21,9 +21,12 @@ Public Class AutoUpdater
 
     Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ProgressBar1.Value = "5"
+
         Me.Size = New Size(363, 410)
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
+        ProgressBar1.Value = "8"
 
         'Console.WriteLine(My.Computer.Registry.LocalMachine)
         Dim Everest_Registry As Microsoft.Win32.RegistryKey = My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\WOW6432Node\AutoIt v3\AutoIt")
@@ -35,25 +38,33 @@ Public Class AutoUpdater
             AddHandler WC_Download_AutoIt.DownloadFileCompleted, AddressOf WC_Download_AutoIt_DownloadFileAsyncCompleted
             WC_Download_AutoIt.DownloadFileAsync(New Uri("https://www.dropbox.com/s/clvd8vmulmiqxbl/autoit-v3-setup.exe?raw=1"), Path.Combine(Path.GetTempPath, "autoit-setup.exe"))
             FlatTextBox_Changelog.Text = $"Downloading the dependancies...{vbNewLine}Please wait..."
+
+            ProgressBar1.Value = "100"
+            ProgressBar1.BackColor = Color.Red
+
         Else
 
+            ProgressBar1.Value = "20"
             AddHandler WC_Check_Maintenance.DownloadStringCompleted, AddressOf WC_Check_Maintenance_DownloadStringCompleted
             WC_Check_Maintenance.DownloadStringAsync(New Uri("https://www.dropbox.com/s/povcf3bfxjxy8ir/Maintenance.txt?dl=1"))
             '---
+            ProgressBar1.Value = "40"
             AddHandler WC_Update_Version.DownloadStringCompleted, AddressOf WC_Update_Version_DownloadStringCompleted
             WC_Update_Version.DownloadStringAsync(New Uri("https://www.dropbox.com/s/5ergvrkppscoupo/Version.txt?dl=1"))
             '---
+            ProgressBar1.Value = "60"
             AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
             WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
 
-
+            ProgressBar1.Value = ""
             AxWindowsMediaPlayer1.URL = FilePath
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             Await Task.Delay(265)
+            ProgressBar1.Value = "65"
             AxWindowsMediaPlayer1.Visible = True
 
             Await Task.Delay(2200)
-
+            ProgressBar1.Value = "95"
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
             'key is valid, display actual name
             'MsgBox(Everest_Registry.Name)

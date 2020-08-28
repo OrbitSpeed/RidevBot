@@ -783,7 +783,7 @@ Partial Class Form_Tools
         Me.Panel_Npc.ForeColor = System.Drawing.Color.White
         Me.Panel_Npc.Location = New System.Drawing.Point(1390, 377)
         Me.Panel_Npc.Name = "Panel_Npc"
-        Me.Panel_Npc.Size = New System.Drawing.Size(510, 618)
+        Me.Panel_Npc.Size = New System.Drawing.Size(510, 531)
         Me.Panel_Npc.TabIndex = 42
         Me.Panel_Npc.Visible = False
         '
