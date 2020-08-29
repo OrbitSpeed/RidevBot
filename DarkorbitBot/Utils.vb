@@ -143,7 +143,8 @@ Public Class Utils
         DataKuiper = Replace(DataKuiper, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m""> /&gt;</SPAN>", "")
         DataKuiper = Replace(DataKuiper, "<SPAN class=""m"">""</SPAN><SPAN class=""t"">", "")
         DataKuiper = Replace(DataKuiper, "</B><SPAN class=""m"">""</SPAN><SPAN class=""m"">&gt;</SPAN>", "")
-        DataKuiper = Replace(DataKuiper, "  total</SPAN><SPAN class="" m"">=""</SPAN><B>", "")
+        'DataKuiper = Replace(DataKuiper, "  total</SPAN><SPAN class="" m"">=""</SPAN><B>", "")
+        Console.WriteLine("DataGG=" + DataKuiper)
 
         Return DataKuiper
     End Function
@@ -172,7 +173,8 @@ Public Class Utils
         ElseIf Data.Length = 0 Then
             Return "?"
         End If
-        Return Regex.Match(Data, "current(.*?)\ ").Groups.Item(1).ToString
+        'Return Regex.Match(Data, "current(.*?)\ ").Groups.Item(1).ToString
+        Return Regex.Match(Data, "current.*?([\s\S]*?)\ ").Groups.Item(1).ToString
     End Function
     Public Shared Function getTotalPart(Data As String)
         If Data = Nothing Then
@@ -180,7 +182,8 @@ Public Class Utils
         ElseIf Data.Length = 0 Then
             Return "?"
         End If
-        Return Regex.Match(Data, "total(.*?)\ ").Groups.Item(1).ToString
+        'Return Regex.Match(Data, "total(.*?)\ ").Groups.Item(1).ToString
+        Return Regex.Match(Data, "total.*?([\s\S]*?)\ ").Groups.Item(1).ToString
     End Function
 
     Public Shared Sub setLivesLeft(Data As String)

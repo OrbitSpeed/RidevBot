@@ -1354,7 +1354,7 @@ Public Class Form_Tools
 
         ElseIf ComboBox_autospin.Text = "Kuiper" Then
 
-            Dim DataKuiper = Utils.getKuiperGG(TextBox_GGinfoGGS.Text)
+            Dim DataKuiper = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kuiper")
             If DataKuiper = Nothing Then
             Else
 
