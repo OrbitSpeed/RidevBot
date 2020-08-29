@@ -1,5 +1,8 @@
 ﻿Imports System.Drawing.Imaging
+Imports System.IO
 Imports System.Runtime.InteropServices
+Imports System.Security.Cryptography
+Imports System.Text
 Imports System.Text.RegularExpressions
 
 Public Class Utils
@@ -511,4 +514,60 @@ Public Class Utils
         Form_Tools.CheckedListBox_npc.Refresh()
         Form_Tools.ComboBoxLabel_pet_locator_list.Refresh()
     End Sub
+
+#Region "Hashing Data"
+    Public Function AESEncryptStringToBase64(strPlainText As String, strKey As String) As String
+        Dim Algo As RijndaelManaged = RijndaelManaged.Create()
+
+        With Algo
+            .BlockSize = 128
+            .FeedbackSize = 128
+            .KeySize = 256
+            .Mode = CipherMode.CBC
+            .IV = Guid.NewGuid().ToByteArray()
+            .Key = Encoding.ASCII.GetBytes(strKey)
+        End With
+
+
+        Using Encryptor As ICryptoTransform = Algo.CreateEncryptor()
+            Using MemStream As New MemoryStream
+                Using CryptStream As New CryptoStream(MemStream, Encryptor, CryptoStreamMode.Write)
+                    Using Writer As New StreamWriter(CryptStream)
+                        Writer.Write(strPlainText)
+                    End Using
+
+                    AESEncryptStringToBase64 = Convert.ToBase64String(Algo.IV.Concat(MemStream.ToArray()).ToArray())
+                End Using
+            End Using
+        End Using
+    End Function
+
+    Public Function AESDecryptBase64ToString(strCipherText As String, strKey As String) As String
+        Dim arrSaltAndCipherText As Byte() = Convert.FromBase64String(strCipherText)
+
+        Dim Algo As RijndaelManaged = RijndaelManaged.Create()
+
+        With Algo
+            .BlockSize = 128
+            .FeedbackSize = 128
+            .KeySize = 256
+            .Mode = CipherMode.CBC
+            .IV = arrSaltAndCipherText.Take(16).ToArray()
+            .Key = Encoding.ASCII.GetBytes(strKey)
+        End With
+
+
+        Using Decryptor As ICryptoTransform = Algo.CreateDecryptor()
+            Using MemStream As New MemoryStream(arrSaltAndCipherText.Skip(16).ToArray())
+                Using CryptStream As New CryptoStream(MemStream, Decryptor, CryptoStreamMode.Read)
+                    Using Reader As New StreamReader(CryptStream)
+                        AESDecryptBase64ToString = Reader.ReadToEnd()
+                    End Using
+                End Using
+            End Using
+        End Using
+    End Function
+
+
+#End Region
 End Class

@@ -829,10 +829,10 @@ Public Class Form_Tools
                     If CheckBox_PrepareGatesIfBuiled.Checked Then
                         Button_PrepareGates.PerformClick()
                         TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
-                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
+                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap{vbNewLine}" + TextBox_WinGGS.Text
                         If CheckBox_BuildOneAndStop.Checked Then
                             BackgroundWorkerAutospin = False
-                            TextBox_WinGGS.Text = vbNewLine + $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed." + TextBox_WinGGS.Text
+                            TextBox_WinGGS.Text = $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed.{vbNewLine}" + TextBox_WinGGS.Text
                             MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     Else

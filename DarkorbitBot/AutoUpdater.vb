@@ -21,6 +21,19 @@ Public Class AutoUpdater
 
     Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
+            'Console.WriteLine(f)
+            If Not f.Contains("RidevBot.exe") Then
+                'Console.WriteLine($"Deleted-{f}")
+                Try
+                    File.Delete(f)
+                Catch ex As Exception
+                    Console.WriteLine($"Seems that i can't delete the file {f}")
+                End Try
+            End If
+        Next
+
+
         Timer_bar_cancel_auto_login.Start()
 
         Me.Size = New Size(363, 410)
