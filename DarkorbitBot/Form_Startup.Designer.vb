@@ -386,7 +386,7 @@ Partial Class Form_Startup
         Me.TextBox_sid.Name = "TextBox_sid"
         Me.TextBox_sid.Size = New System.Drawing.Size(256, 22)
         Me.TextBox_sid.TabIndex = 17
-        Me.TextBox_sid.Text = "0123"
+        Me.TextBox_sid.Text = "0123456789abcdefgh"
         Me.TextBox_sid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel_ProfilConnection

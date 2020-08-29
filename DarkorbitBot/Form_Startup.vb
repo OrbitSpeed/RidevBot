@@ -429,7 +429,24 @@ Public Class Form_Startup
     Private Sub Textbox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles Textbox_Password.KeyDown
         If e.KeyCode = Keys.Enter Then
             Button_Load.PerformClick()
-            'MessageBox.Show("Enter key pressed")
+        End If
+    End Sub
+
+    Private Sub TextBoxUsernamePasswordProfil2password_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxUsernamePasswordProfil2password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            PictureBoxUsernamePasswordProfil2view_Click(Nothing, Nothing)
+        End If
+    End Sub
+
+    Private Sub TextBoxUsernamePasswordProfil3password_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxUsernamePasswordProfil3password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            PictureBoxUsernamePasswordProfil3view_Click(Nothing, Nothing)
+        End If
+    End Sub
+
+    Private Sub TextBox_license_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox_license.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button_License_Verify.PerformClick()
         End If
     End Sub
 End Class
