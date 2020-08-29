@@ -453,11 +453,62 @@ Public Class Form_Tools
     Public Const BufferSize As Integer = 512 * 1024
     Public Const BufferReadSize As Integer = 1024
 
+    Private Function GetImageFromURL(ByVal url As String) As Image
+
+        Dim retVal As Image = Nothing
+
+        Try
+            If Not String.IsNullOrWhiteSpace(url) Then
+                Dim req As System.Net.WebRequest = System.Net.WebRequest.Create(url.Trim)
+
+                Using request As System.Net.WebResponse = req.GetResponse
+                    Using stream As System.IO.Stream = request.GetResponseStream
+                        retVal = New Bitmap(System.Drawing.Image.FromStream(stream))
+                    End Using
+                End Using
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(String.Format("An error occurred:{0}{0}{1}",
+                                          vbCrLf, ex.Message),
+                                          "Exception Thrown",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Warning)
+
+        End Try
+
+        Return retVal
+
+    End Function
+
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
         ComboBox_autospin.Text = "Delta"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
+        '   WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
+
+        'Using c As New Net.WebClient
+        '    c.Headers.Add(“User-Agent”, “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063”)
+
+        '    Dim b = c.DownloadData(“https://fr1.darkorbit.com/jumpgate.php?userID=168449162&gateID=4&type=full”)
+        '    Using s As New MemoryStream(b)
+        '        Dim i = Image.FromStream(s)
+        '        PictureBox1.Image = i
+        '    End Using
+        'End Using
+
+        'Dim url As String =
+        '    "https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full"
+
+        'With PictureBox1
+        '    .SizeMode = PictureBoxSizeMode.Zoom
+
+        '    Dim img As Image = GetImageFromURL(url)
+
+        '    If img IsNot Nothing Then
+        '        .Image = img
+        '    End If
+        'End With
 
     End Sub
 
