@@ -69,7 +69,7 @@ Public Class Form_Startup
                     Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text
                     Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
                     CheckedStats = 1
-                    Load_Button.PerformClick()
+                    Button_Load.PerformClick()
 
                 ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 2" Then
 
@@ -77,7 +77,7 @@ Public Class Form_Startup
                     Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text
                     Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
                     CheckedStats = 1
-                    Load_Button.PerformClick()
+                    Button_Load.PerformClick()
 
                 ElseIf Form_Tools.ComboBox_autologin.Text = "Profil 3" Then
 
@@ -85,7 +85,7 @@ Public Class Form_Startup
                     Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text
                     Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text
                     CheckedStats = 1
-                    Load_Button.PerformClick()
+                    Button_Load.PerformClick()
 
 
                 Else CheckedStats = 1
@@ -163,7 +163,7 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Load_Button.Click
+    Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Button_Load.Click
 
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
@@ -272,7 +272,7 @@ Public Class Form_Startup
 
         ' button browser Ridevbot '
 
-        Load_Button.Visible = True
+        Button_Load.Visible = True
 
 
     End Sub
@@ -281,7 +281,7 @@ Public Class Form_Startup
 
         ' button browser launcher '
 
-        Load_Button.Visible = False
+        Button_Load.Visible = False
 
 
     End Sub
@@ -375,7 +375,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 1"
         UserAndPass_Button.PerformClick()
-        Load_Button.PerformClick()
+        Button_Load.PerformClick()
 
     End Sub
 
@@ -390,7 +390,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 2"
         UserAndPass_Button.PerformClick()
-        Load_Button.PerformClick()
+        Button_Load.PerformClick()
 
     End Sub
 
@@ -406,7 +406,7 @@ Public Class Form_Startup
         Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text
         Form_Tools.ComboBox_autologin.Text = "Profil 3"
         UserAndPass_Button.PerformClick()
-        Load_Button.PerformClick()
+        Button_Load.PerformClick()
 
 
     End Sub
@@ -426,4 +426,10 @@ Public Class Form_Startup
 
     End Sub
 
+    Private Sub Textbox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles Textbox_Password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button_Load.PerformClick()
+            'MessageBox.Show("Enter key pressed")
+        End If
+    End Sub
 End Class

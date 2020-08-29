@@ -32,7 +32,7 @@ Partial Class Form_Startup
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox_PasswordHider = New System.Windows.Forms.PictureBox()
         Me.Button_License_Verify = New System.Windows.Forms.Button()
-        Me.Load_Button = New System.Windows.Forms.Button()
+        Me.Button_Load = New System.Windows.Forms.Button()
         Me.TextBox_license = New System.Windows.Forms.TextBox()
         Me.Label_license = New System.Windows.Forms.Label()
         Me.Textbox_Username = New System.Windows.Forms.TextBox()
@@ -152,7 +152,7 @@ Partial Class Form_Startup
         Me.PanelConnection.Controls.Add(Me.Label6)
         Me.PanelConnection.Controls.Add(Me.PictureBox_PasswordHider)
         Me.PanelConnection.Controls.Add(Me.Button_License_Verify)
-        Me.PanelConnection.Controls.Add(Me.Load_Button)
+        Me.PanelConnection.Controls.Add(Me.Button_Load)
         Me.PanelConnection.Controls.Add(Me.TextBox_license)
         Me.PanelConnection.Controls.Add(Me.Label_license)
         Me.PanelConnection.Controls.Add(Me.Textbox_Username)
@@ -209,18 +209,18 @@ Partial Class Form_Startup
         Me.Button_License_Verify.Text = "Verify"
         Me.Button_License_Verify.UseVisualStyleBackColor = False
         '
-        'Load_Button
+        'Button_Load
         '
-        Me.Load_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Load_Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Load_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Load_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Load_Button.Location = New System.Drawing.Point(89, 151)
-        Me.Load_Button.Name = "Load_Button"
-        Me.Load_Button.Size = New System.Drawing.Size(149, 31)
-        Me.Load_Button.TabIndex = 15
-        Me.Load_Button.Text = "Load"
-        Me.Load_Button.UseVisualStyleBackColor = False
+        Me.Button_Load.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_Load.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Load.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Load.Location = New System.Drawing.Point(89, 151)
+        Me.Button_Load.Name = "Button_Load"
+        Me.Button_Load.Size = New System.Drawing.Size(149, 31)
+        Me.Button_Load.TabIndex = 15
+        Me.Button_Load.Text = "Load"
+        Me.Button_Load.UseVisualStyleBackColor = False
         '
         'TextBox_license
         '
@@ -801,7 +801,7 @@ Partial Class Form_Startup
     Friend WithEvents Panel_SidConnexion As Panel
     Friend WithEvents Panel_ProfilConnection As Panel
     Friend WithEvents TextBox_sid As TextBox
-    Friend WithEvents Load_Button As Button
+    Friend WithEvents Button_Load As Button
     Friend WithEvents Button_SID_Load As Button
     Friend WithEvents PanelUserAndPass As Panel
     Friend WithEvents Label_license As Label
