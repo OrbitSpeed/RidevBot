@@ -2663,9 +2663,9 @@ Partial Class Form_Tools
         Me.CheckBox_BuildOneAndStop.ForeColor = System.Drawing.Color.Black
         Me.CheckBox_BuildOneAndStop.Location = New System.Drawing.Point(27, 101)
         Me.CheckBox_BuildOneAndStop.Name = "CheckBox_BuildOneAndStop"
-        Me.CheckBox_BuildOneAndStop.Size = New System.Drawing.Size(133, 30)
+        Me.CheckBox_BuildOneAndStop.Size = New System.Drawing.Size(130, 30)
         Me.CheckBox_BuildOneAndStop.TabIndex = 93
-        Me.CheckBox_BuildOneAndStop.Text = "Stop spin if you have " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "One gate built !"
+        Me.CheckBox_BuildOneAndStop.Text = "Stop spin if you have" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "one gate built "
         Me.CheckBox_BuildOneAndStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckBox_BuildOneAndStop.UseVisualStyleBackColor = False
         '
