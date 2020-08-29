@@ -600,7 +600,7 @@ Public Class Form_Tools
             ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
                 TextBox_spintimes_GGS.Text = 300
                 BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, Starting with 300ms by default, other is EXPERIMENTAL request for highet computer", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                MessageBox.Show($"Error, Starting with 300ms by default, we don't recommand to go lower", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Else
                 BackgroundWorkerAutospin = False
             End If
@@ -850,34 +850,30 @@ Public Class Form_Tools
 
     Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
-        If Button_Alpha.Enabled = False Then
+        If ComboBox_autospin.Text = "ABG" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
-
-        ElseIf Button_beta.Enabled = False Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
-
-        ElseIf Button_gamma.Enabled = False Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
 
-        ElseIf Button_delta.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Delta" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
 
-        ElseIf Button_epsilon.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Epsilon" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
 
-        ElseIf Button_zeta.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Zeta" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
 
-        ElseIf Button_Kappa.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Kappa" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
 
-        ElseIf Button_lambda.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Lambda" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
 
-        ElseIf Button_hades.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Hades" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
 
-        ElseIf Button_kuiper.Enabled = False Then
+        ElseIf ComboBox_autospin.Text = "Kuiper" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
         End If
 
