@@ -2878,7 +2878,6 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_GalaxyGates.Controls.Add(Me.PictureBox1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_total_gates_builded)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_autospin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
@@ -2914,11 +2913,12 @@ Partial Class Form_Tools
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(214, 283)
+        Me.PictureBox1.Location = New System.Drawing.Point(100, 754)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(254, 242)
         Me.PictureBox1.TabIndex = 99
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'TableLayoutPanel1
         '
@@ -3518,7 +3518,7 @@ Partial Class Form_Tools
         Me.Button_Howuse.Name = "Button_Howuse"
         Me.Button_Howuse.Size = New System.Drawing.Size(86, 40)
         Me.Button_Howuse.TabIndex = 77
-        Me.Button_Howuse.Text = "How use RidevBot"
+        Me.Button_Howuse.Text = "How to use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
         '
         'FlatMini_reduction_de_formtools
@@ -3552,6 +3552,7 @@ Partial Class Form_Tools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.HotTrack
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel_GalaxyGates)
         Me.Controls.Add(Me.WebBrowser_GGInfo)
         Me.Controls.Add(Me.WebBrowser_GGspinner)

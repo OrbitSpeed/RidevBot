@@ -181,7 +181,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(608, 658)
+        Size = New Size(608, 448)
         'CenterToScreen()
 
     End Sub
@@ -666,7 +666,7 @@ Public Class Form_Tools
                 Select Case data
                     Case "ABG"
 
-                        Button_Delta_GGS.Enabled = True
+                        Button_ABG_GGS.Enabled = True
                         ClickGG(data, TextBox_spintimes_GGS.Text)
 
                     Case "Delta"
@@ -834,7 +834,13 @@ Public Class Form_Tools
                             BackgroundWorkerAutospin = False
                             TextBox_WinGGS.Text = $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed.{vbNewLine}" + TextBox_WinGGS.Text
                             MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            Button_stopSpin.PerformClick()
+                            Button_PrepareGates.PerformClick()
+                            Await Task.Delay(1500)
+                            Button_StartSpin.PerformClick()
                         End If
+
                     Else
                         BackgroundWorkerAutospin = False
                         MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)

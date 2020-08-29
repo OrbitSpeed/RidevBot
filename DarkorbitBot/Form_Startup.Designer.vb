@@ -188,7 +188,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox_PasswordHider.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox_PasswordHider.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
         Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(225, 48)
         Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
         Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(31, 20)
@@ -532,7 +532,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil3eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil3eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil3eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil3eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
         Me.PictureBoxUsernamePasswordProfil3eyes.Location = New System.Drawing.Point(0, 269)
         Me.PictureBoxUsernamePasswordProfil3eyes.Name = "PictureBoxUsernamePasswordProfil3eyes"
         Me.PictureBoxUsernamePasswordProfil3eyes.Size = New System.Drawing.Size(31, 20)
@@ -585,7 +585,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil2eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil2eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil2eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil2eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
         Me.PictureBoxUsernamePasswordProfil2eyes.Location = New System.Drawing.Point(0, 171)
         Me.PictureBoxUsernamePasswordProfil2eyes.Name = "PictureBoxUsernamePasswordProfil2eyes"
         Me.PictureBoxUsernamePasswordProfil2eyes.Size = New System.Drawing.Size(31, 20)
@@ -638,7 +638,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil1eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil1eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil1eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeOpen
+        Me.PictureBoxUsernamePasswordProfil1eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
         Me.PictureBoxUsernamePasswordProfil1eyes.Location = New System.Drawing.Point(0, 70)
         Me.PictureBoxUsernamePasswordProfil1eyes.Name = "PictureBoxUsernamePasswordProfil1eyes"
         Me.PictureBoxUsernamePasswordProfil1eyes.Size = New System.Drawing.Size(31, 20)
