@@ -253,6 +253,7 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
         Me.Button_Howuse = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -285,6 +286,7 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -2901,6 +2903,7 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_GalaxyGates.Controls.Add(Me.PictureBox1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_total_gates_builded)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_autospin)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
@@ -3535,6 +3538,14 @@ Partial Class Form_Tools
         Me.Button_Howuse.Text = "How use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(214, 283)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(254, 242)
+        Me.PictureBox1.TabIndex = 99
+        Me.PictureBox1.TabStop = False
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3620,6 +3631,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3855,4 +3867,5 @@ Partial Class Form_Tools
     Friend WithEvents Label_repair As Label
     Friend WithEvents ComboBox_repair As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
