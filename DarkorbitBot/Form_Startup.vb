@@ -15,12 +15,6 @@ Public Class Form_Startup
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If Form_Tools.Check_message = 1 Then
-
-            MsgBox("Error", "Check your credentials")
-
-        End If
-
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
 
             ProfilSelected = 1
@@ -95,7 +89,7 @@ Public Class Form_Startup
 
 
                 Else CheckedStats = 1
-                    MsgBox("if your active ""Auto Login"" option , select Profil")
+                    MessageBox.Show("If you active the ""Auto Login"" option, please select Profil")
 
 
                 End If
@@ -432,43 +426,4 @@ Public Class Form_Startup
 
     End Sub
 
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseDown
-
-    End Sub
-
-    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseUp
-
-    End Sub
-
-    Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
-
-    End Sub
-
-    Private Sub PanelUserAndPass_Paint(sender As Object, e As PaintEventArgs) Handles PanelUserAndPass.Paint
-
-    End Sub
 End Class

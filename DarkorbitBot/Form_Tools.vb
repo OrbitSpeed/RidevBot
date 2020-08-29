@@ -1452,6 +1452,7 @@ Public Class Form_Tools
             Form_Startup.Visible = True
             WebBrowser_Synchronisation.Navigate("about:blank")
             Check_message = 1
+            MessageBox.Show("Can't connect to your account, check your credentials.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
 
 
@@ -1461,6 +1462,7 @@ Public Class Form_Tools
             Form_Game.Visible = False
             Form_Startup.Visible = True
             WebBrowser_Synchronisation.Navigate("about:blank")
+            MessageBox.Show("Can't connect to your account, check your credentials.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Check_message = 1
             Me.Close()
 
@@ -1641,7 +1643,6 @@ Public Class Form_Tools
 
                 textbox_stade.Text = "Server : OK  ---  2/2"
 
-                textbox_stade.Text = "Done."
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -1651,6 +1652,7 @@ Public Class Form_Tools
                 End If
 
                 WebBrowser_Synchronisation.Navigate("about:blank")
+                textbox_stade.Text = "Done."
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
