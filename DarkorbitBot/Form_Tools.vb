@@ -1040,14 +1040,14 @@ Public Class Form_Tools
                 Dim compare = "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
                 If compare.Contains("Part ()") Then
 
-                    TextBox_WinGGS.Text = vbNewLine + "Part(s) for Galaxy Gates" + (mode.Groups.Item(1).ToString) + "added" + TextBox_WinGGS.Text
+                    TextBox_WinGGS.Text = vbNewLine + "Part(s) for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added" + TextBox_WinGGS.Text
 
                     Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
                     TextBox_total_spinned.Text = Val(TextBox_total_spinned.Text) + 1
 
                 Else
 
-                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates " + (mode.Groups.Item(1).ToString) + "added" + TextBox_WinGGS.Text
+                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added" + TextBox_WinGGS.Text
                     Exit Sub
                 End If
 
