@@ -3098,8 +3098,9 @@ Public Class Form_Game
 
     Private Async Sub If_Locked()
 
+        Await Task.Delay(350)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-        Await Task.Delay(500)
+        Await Task.Delay(650)
 
 Label_General:
 
@@ -3111,11 +3112,23 @@ Label_General:
         If Locked1_1 <> Nothing Then
 
             Console.WriteLine("Locked droite")
-            If Locked1_1.X >= Me.Size.Width Then
+            If Locked1_1.X + 400 >= 800 Then
+                Locked1_1.X = 799
                 Console.WriteLine("en dehors du form")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X, Locked1_1.Y)
+            Else
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 400, Locked1_1.Y)
+                Client_Screen = Update_Screen()
+                Locked1_1 = Client_Screen.Contains(Locked1)
+                Await Task.Delay(350)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 350, Locked1_1.Y)
+                Client_Screen = Update_Screen()
+                Locked1_1 = Client_Screen.Contains(Locked1)
+                Await Task.Delay(350)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 400, Locked1_1.Y)
             End If
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 320, Locked1_1.Y)
-            Await Task.Delay(100)
+            Console.WriteLine(Locked1_1.X)
+            Await Task.Delay(500)
             GoTo Label_General
 
         End If
@@ -3126,8 +3139,8 @@ Label_General:
         If Locked2_1 <> Nothing Then
 
             Console.WriteLine("Locked gauche")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_1.X + 360, Locked2_1.Y)
-            Await Task.Delay(100)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_1.X - 360, Locked2_1.Y)
+            Await Task.Delay(500)
             GoTo Label_General
 
         End If
@@ -3138,8 +3151,8 @@ Label_General:
         If Locked3_1 <> Nothing Then
 
             Console.WriteLine("Locked haut")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_1.X + 320, Locked3_1.Y)
-            Await Task.Delay(100)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_1.X - 360, Locked3_1.Y)
+            Await Task.Delay(500)
             GoTo Label_General
 
         End If
@@ -3151,7 +3164,7 @@ Label_General:
 
             Console.WriteLine("Locked bas")
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_1.X + 360, Locked4_1.Y)
-            Await Task.Delay(100)
+            Await Task.Delay(500)
             GoTo Label_General
 
         Else
