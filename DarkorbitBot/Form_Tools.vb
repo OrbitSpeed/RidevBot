@@ -485,7 +485,7 @@ Public Class Form_Tools
 
         ComboBox_autospin.Text = "Delta"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
-        '   WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
 
         'Using c As New Net.WebClient
         '    c.Headers.Add(“User-Agent”, “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063”)
@@ -497,8 +497,11 @@ Public Class Form_Tools
         '    End Using
         'End Using
 
-        'Dim url As String =
-        '    "https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full"
+        'Dim myWebClient As New System.Net.WebClient
+        'myWebClient.DownloadFile("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full", "C:\Users\DilanTC\Desktop\c5af1a32844e12c2dd92b3c1cba4b1c0.png")
+        '  PictureBox1.Image = Image.FromFile(myWebClient)
+
+        'Dim url As String = "https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full"
 
         'With PictureBox1
         '    .SizeMode = PictureBoxSizeMode.Zoom
@@ -1040,14 +1043,14 @@ Public Class Form_Tools
                 Dim compare = "(" + (spinamount_selected.Groups.Item(1).ToString) + ") " + (mode.Groups.Item(1).ToString) + " - " + (DataWinned) + " (" + (DataWinned3) + ")" + TextBox_WinGGS.Text
                 If compare.Contains("Part ()") Then
 
-                    TextBox_WinGGS.Text = vbNewLine + "Part(s) for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added" + TextBox_WinGGS.Text
-
-                    Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + DataWinned3
                     TextBox_total_spinned.Text = Val(TextBox_total_spinned.Text) + 1
+                    Label_Part_Earned.Text = Val(Label_Part_Earned.Text) + 1
+                    TextBox_WinGGS.Text = vbNewLine + "Part(s) for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added " + TextBox_WinGGS.Text
 
                 Else
 
-                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added" + TextBox_WinGGS.Text
+                    TextBox_WinGGS.Text = vbNewLine + "DoubleSpin for Galaxy Gates " + (mode.Groups.Item(1).ToString) + " added " + TextBox_WinGGS.Text
+
                     Exit Sub
                 End If
 

@@ -247,7 +247,6 @@ Partial Class Form_Tools
         Me.Button_kuiper = New System.Windows.Forms.Button()
         Me.TextBox_uridiumGGS = New System.Windows.Forms.TextBox()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker_Timer = New System.ComponentModel.BackgroundWorker()
         Me.Stats_Button = New System.Windows.Forms.Button()
         Me.Rex_Button = New System.Windows.Forms.Button()
@@ -286,7 +285,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -3464,15 +3462,6 @@ Partial Class Form_Tools
         Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(257, 312)
         Me.WebBrowser_galaxyGates.TabIndex = 39
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(100, 754)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(254, 242)
-        Me.PictureBox1.TabIndex = 99
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
-        '
         'BackgroundWorker_Timer
         '
         Me.BackgroundWorker_Timer.WorkerSupportsCancellation = True
@@ -3631,7 +3620,6 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
