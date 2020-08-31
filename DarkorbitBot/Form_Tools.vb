@@ -378,9 +378,9 @@ Public Class Form_Tools
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
-        If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
+        If Button_LaunchGameRidevBrowser.Text = "          Open RidevBot Browser" Then
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "Connecting..."
+            Button_LaunchGameRidevBrowser.Text = "          Connecting..."
 
             Reload()
 
@@ -389,10 +389,10 @@ Public Class Form_Tools
 
 
 
-        ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
+        ElseIf Button_LaunchGameRidevBrowser.Text = "          Reload RidevBot Browser" Then
 
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "Connecting..."
+            Button_LaunchGameRidevBrowser.Text = "          Connecting..."
 
             Reloader = 0
             Reload()
@@ -400,7 +400,7 @@ Public Class Form_Tools
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
-        Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
+        Else Button_LaunchGameRidevBrowser.Text = "          Already..."
         End If
 
 

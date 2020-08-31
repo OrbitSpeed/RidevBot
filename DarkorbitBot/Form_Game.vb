@@ -13,7 +13,7 @@ Public Class Form_Game
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
 
         CloseForm.ShowDialog(Me)
-        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+        Form_Tools.Button_LaunchGameRidevBrowser.Text = "          Open RidevBot Browser"
         Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
         Form_Tools.Reloader = 0
@@ -27,7 +27,7 @@ Public Class Form_Game
             Form_Tools.textbox_stade.Text = "Game loaded. Have fun botting !"
         End If
 
-        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+        Form_Tools.Button_LaunchGameRidevBrowser.Text = "          Reload RidevBot Browser"
         Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
     End Sub
