@@ -2861,6 +2861,9 @@
         IooEAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="traveling_indication" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Paint_Test\traveling_indication.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ucb_100_30x30" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAMBQTFRFRUhJ

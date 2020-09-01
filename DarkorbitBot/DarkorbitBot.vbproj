@@ -815,6 +815,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Paint_Test\traveling_indication.png" />
     <None Include="Resources\Crosshair_locked.png" />
     <None Include="Paint_Test\Crosshair_locked.png" />
     <None Include="Paint_Test\test de la fin.png" />

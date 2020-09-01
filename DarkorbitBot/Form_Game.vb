@@ -646,7 +646,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 606, 516)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_41_to_43()
@@ -657,7 +674,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 566)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_41_to_42()
@@ -668,7 +702,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 479)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_41_to_44()
@@ -679,7 +730,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -693,7 +761,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 475)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_42_to_41()
@@ -704,7 +789,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_42_to_43()
@@ -715,7 +817,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 759, 567)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_42_to_44()
@@ -726,7 +845,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -741,7 +877,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 516)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_43_to_41()
@@ -752,7 +905,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_43_to_42()
@@ -793,7 +963,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -807,7 +994,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 570)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -823,7 +1027,24 @@ Public Class Form_Game
         Dim randomY = Utils.GetPortalZone(493, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -845,7 +1066,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 691, 556)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_2BL_EIC()
@@ -855,7 +1093,24 @@ Public Class Form_Game
         End If
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 692, 563)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -867,7 +1122,24 @@ Public Class Form_Game
         End If
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 692, 562)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -882,7 +1154,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_44_to_15()
@@ -896,7 +1185,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -910,7 +1216,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 569)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -925,7 +1248,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -939,7 +1279,24 @@ Public Class Form_Game
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -957,7 +1314,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -975,7 +1349,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -990,7 +1381,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1005,7 +1413,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1023,7 +1448,24 @@ Public Class Form_Game
         Dim randomY = Utils.GetPortalZone(540, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1034,7 +1476,24 @@ Public Class Form_Game
         End If
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 717, 463)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1046,7 +1505,24 @@ Public Class Form_Game
         'Ne pas faire le centre : 719, 596
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 719, 596)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1060,7 +1536,24 @@ Public Class Form_Game
         Dim randomY = Utils.GetPortalZone(540, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1074,7 +1567,24 @@ Public Class Form_Game
         Dim randomY = Utils.GetPortalZone(508, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1085,7 +1595,24 @@ Public Class Form_Game
         End If
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 703, 550)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1100,12 +1627,30 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 610, 584
-        Dim randomX = Utils.GetPortalZone(610, "x")
-        Dim randomY = Utils.GetPortalZone(584, "y")
+        'Vrai centre : 764, 534
+        Dim randomX = Utils.GetPortalZone(764, "x")
+        Dim randomY = Utils.GetPortalZone(534, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
     Private Async Sub PORTAIL_45_EIC()
@@ -1119,7 +1664,24 @@ Public Class Form_Game
 
         ' BAS DROITE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1134,7 +1696,24 @@ Public Class Form_Game
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Sub
 #End Region
@@ -1152,7 +1731,24 @@ Public Class Form_Game
 
         'HAUT DROITE 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1171,7 +1767,24 @@ Public Class Form_Game
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1189,12 +1802,25 @@ Public Class Form_Game
         'Dim randomX = Utils.GetRandom(756, 765)
         'Dim randomY = Utils.GetRandom(562, 569)
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-
-
-
-
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 567)
-        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1212,11 +1838,26 @@ Public Class Form_Game
         'Dim randomX = Utils.GetRandom(610, 618)
         'Dim randomY = Utils.GetRandom(566, 574)
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-
-
+        Await Task.Delay(1500)
+        Client_Screen = Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
+            Console.WriteLine("traveling indication trouvée")
+            Do Until traveling_indication_point = Nothing
+                Client_Screen = Update_Screen()
+                traveling_indication_point = Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Await Task.Delay(1200)
+                    Console.WriteLine("on reboucle pour revérifier")
+                Else
+                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
+                    Exit Do
+                End If
+            Loop
+        End If
         ' BAS GAUCHE
         'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        Await Task.Delay(10000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Sub
@@ -1229,6 +1870,10 @@ Public Class Form_Game
             Exit Sub
         End If
 
+        Client_Screen = Update_Screen()
+        Checking_map_actuel(True)
+        Await Task.Delay(1000)
+
         Dim Map_actuelle_reconize = Label_map_location.Text.Replace("Map : ", "")
         Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
         Console.WriteLine(Map_actuelle_reconize)
@@ -1238,7 +1883,7 @@ Public Class Form_Game
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
             AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-            Console.WriteLine("Point de chute du click traveling atteint and Sended -- TextBox_jump_key.Text")
+            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
             Await Task.Delay(10000)
             Checking_map_actuel(True)
             Traveling_module()
@@ -1275,6 +1920,7 @@ Public Class Form_Game
             End If
 
         End If
+
 
         Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
         If Save_point_original.X = "762" Then
@@ -1833,7 +2479,8 @@ Public Class Form_Game
                     Map_roaming = "5-2" Or
                     Map_roaming = "5-3" Or
                     Map_roaming = "3-5" Or
-                    Map_roaming = "1-5") Then
+                    Map_roaming = "1-5" Or
+                    Map_roaming = "2-5") Then
                     PORTAIL_45_VRU()
 
                 ElseIf Map_actuelle = "3-5" And
@@ -1841,6 +2488,8 @@ Public Class Form_Game
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
                         Map_roaming = "1-4" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
                         Map_roaming = "2-1" Or
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
@@ -3128,7 +3777,7 @@ Label_General:
                 Await Task.Delay(100)
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) + 20, (Height / 2))
                 Await Task.Delay(250)
-            ElseIf Locked1_point.x >= 160 Then
+            ElseIf Locked1_point.X >= 160 Then
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 450, Locked1_point.Y)
             Else
                 AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
@@ -3451,30 +4100,31 @@ Label_General:
 
 Traveling_return:
 
-            Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-            Await Task.Delay(500)
-            Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Await Task.Delay(500)
+        Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+        Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
 
-            Console.WriteLine($"current:{regex_currentWave}")
-            Console.WriteLine($"total:{regex_totalWave}")
-            ' trouver l'emplacement de la gg 
-            If Form_Tools.ComboBox_firme.Text = "MMO" Then
+        Console.WriteLine($"current:{regex_currentWave}")
+        Console.WriteLine($"total:{regex_totalWave}")
+        ' trouver l'emplacement de la gg 
+        If Form_Tools.ComboBox_firme.Text = "MMO" Then
 
-                MsgBox("trouver l'emplacement de la gg ")
+            MsgBox("trouver l'emplacement de la gg ")
 
-            ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+        ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
 
-                MsgBox("trouver l'emplacement de la gg ")
+            MsgBox("trouver l'emplacement de la gg ")
 
-            ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+        ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
 
-                MsgBox("trouver l'emplacement de la gg ")
+            MsgBox("trouver l'emplacement de la gg ")
 
-            End If
+        End If
 
 
     End Sub
+
 End Class
 
 'Private Sub Random_movement()

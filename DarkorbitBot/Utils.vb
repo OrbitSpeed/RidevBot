@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
+Imports AutoItX3Lib
 
 Public Class Utils
 #Region "Cookie Manager"
@@ -573,4 +574,5 @@ Public Class Utils
 
 
 #End Region
+
 End Class
