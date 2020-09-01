@@ -20,6 +20,7 @@ Public Class AutoUpdater
     Public Check_Maintenance As Boolean
 
     Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = New Size(363, 264)
 
         For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
             'Console.WriteLine(f)
@@ -36,7 +37,6 @@ Public Class AutoUpdater
 
         Timer_bar_cancel_auto_login.Start()
 
-        Me.Size = New Size(363, 410)
         FlatLabel_Version.Text = "Version : " + Application.ProductVersion
         FlatLabel_isUpdated.Select()
 
@@ -226,6 +226,14 @@ Public Class AutoUpdater
         If ProgressBar_cancel_autotlogin.Value = 100 Then
         Else ProgressBar_cancel_autotlogin.Value = ProgressBar_cancel_autotlogin.Value + 1
         End If
+
+    End Sub
+
+    Private Sub Button_cancel_auto_login_Click(sender As Object, e As EventArgs) Handles Button_cancel_auto_login.Click
+
+        Form_Tools.CheckBox_AutoLogin.Checked = False
+        Timer_bar_cancel_auto_login.Stop()
+        Button_cancel_auto_login.Text = "Canceled.  Wait..."
 
     End Sub
 End Class

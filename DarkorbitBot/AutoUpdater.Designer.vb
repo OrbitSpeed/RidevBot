@@ -28,7 +28,6 @@ Partial Class AutoUpdater
         Me.Button_Update = New System.Windows.Forms.Button()
         Me.Video_ridevbot_MediaPlayerAx = New AxWMPLib.AxWindowsMediaPlayer()
         Me.FlatTextBox_Changelog = New System.Windows.Forms.TextBox()
-        Me.Panel_utilites = New System.Windows.Forms.Panel()
         Me.Panel_continue = New System.Windows.Forms.Panel()
         Me.Button_cancel_auto_login = New System.Windows.Forms.Button()
         Me.ProgressBar_cancel_autotlogin = New System.Windows.Forms.ProgressBar()
@@ -61,12 +60,13 @@ Partial Class AutoUpdater
         Me.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Update.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Update.ForeColor = System.Drawing.Color.White
-        Me.Button_Update.Location = New System.Drawing.Point(90, 32)
+        Me.Button_Update.Location = New System.Drawing.Point(115, 106)
         Me.Button_Update.Name = "Button_Update"
-        Me.Button_Update.Size = New System.Drawing.Size(185, 46)
+        Me.Button_Update.Size = New System.Drawing.Size(185, 40)
         Me.Button_Update.TabIndex = 33
         Me.Button_Update.Text = "Continue"
         Me.Button_Update.UseVisualStyleBackColor = False
+        Me.Button_Update.Visible = False
         '
         'Video_ridevbot_MediaPlayerAx
         '
@@ -88,19 +88,11 @@ Partial Class AutoUpdater
         Me.FlatTextBox_Changelog.Size = New System.Drawing.Size(327, 127)
         Me.FlatTextBox_Changelog.TabIndex = 101
         '
-        'Panel_utilites
-        '
-        Me.Panel_utilites.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_utilites.Location = New System.Drawing.Point(163, 316)
-        Me.Panel_utilites.Name = "Panel_utilites"
-        Me.Panel_utilites.Size = New System.Drawing.Size(200, 105)
-        Me.Panel_utilites.TabIndex = 102
-        '
         'Panel_continue
         '
         Me.Panel_continue.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_continue.Controls.Add(Me.ProgressBar_cancel_autotlogin)
         Me.Panel_continue.Controls.Add(Me.Button_cancel_auto_login)
-        Me.Panel_continue.Controls.Add(Me.Button_Update)
         Me.Panel_continue.Location = New System.Drawing.Point(0, 191)
         Me.Panel_continue.Name = "Panel_continue"
         Me.Panel_continue.Size = New System.Drawing.Size(363, 217)
@@ -113,9 +105,9 @@ Partial Class AutoUpdater
         Me.Button_cancel_auto_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_cancel_auto_login.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_cancel_auto_login.ForeColor = System.Drawing.Color.White
-        Me.Button_cancel_auto_login.Location = New System.Drawing.Point(113, 121)
+        Me.Button_cancel_auto_login.Location = New System.Drawing.Point(89, 27)
         Me.Button_cancel_auto_login.Name = "Button_cancel_auto_login"
-        Me.Button_cancel_auto_login.Size = New System.Drawing.Size(138, 34)
+        Me.Button_cancel_auto_login.Size = New System.Drawing.Size(185, 26)
         Me.Button_cancel_auto_login.TabIndex = 105
         Me.Button_cancel_auto_login.Text = "Cancel AutoLogin"
         Me.Button_cancel_auto_login.UseVisualStyleBackColor = False
@@ -124,11 +116,11 @@ Partial Class AutoUpdater
         '
         Me.ProgressBar_cancel_autotlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.ProgressBar_cancel_autotlogin.ForeColor = System.Drawing.Color.White
-        Me.ProgressBar_cancel_autotlogin.Location = New System.Drawing.Point(35, 359)
+        Me.ProgressBar_cancel_autotlogin.Location = New System.Drawing.Point(18, 0)
         Me.ProgressBar_cancel_autotlogin.MarqueeAnimationSpeed = 200
         Me.ProgressBar_cancel_autotlogin.Name = "ProgressBar_cancel_autotlogin"
         Me.ProgressBar_cancel_autotlogin.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ProgressBar_cancel_autotlogin.Size = New System.Drawing.Size(294, 22)
+        Me.ProgressBar_cancel_autotlogin.Size = New System.Drawing.Size(327, 15)
         Me.ProgressBar_cancel_autotlogin.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar_cancel_autotlogin.TabIndex = 104
         '
@@ -181,14 +173,13 @@ Partial Class AutoUpdater
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.ClientSize = New System.Drawing.Size(363, 410)
+        Me.ClientSize = New System.Drawing.Size(363, 264)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ProgressBar_cancel_autotlogin)
         Me.Controls.Add(Me.Panel_title)
         Me.Controls.Add(Me.Panel_continue)
         Me.Controls.Add(Me.Video_ridevbot_MediaPlayerAx)
         Me.Controls.Add(Me.FlatTextBox_Changelog)
-        Me.Controls.Add(Me.Panel_utilites)
+        Me.Controls.Add(Me.Button_Update)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AutoUpdater"
@@ -210,7 +201,6 @@ Partial Class AutoUpdater
     Friend WithEvents Button_Update As Button
     Friend WithEvents Video_ridevbot_MediaPlayerAx As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents FlatTextBox_Changelog As TextBox
-    Friend WithEvents Panel_utilites As Panel
     Friend WithEvents Panel_continue As Panel
     Friend WithEvents ProgressBar_cancel_autotlogin As ProgressBar
     Friend WithEvents Button_cancel_auto_login As Button
