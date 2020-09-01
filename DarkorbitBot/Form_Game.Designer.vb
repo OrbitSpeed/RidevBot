@@ -498,7 +498,7 @@ Partial Class Form_Game
         Me.Panel1.Controls.Add(Me.Button13)
         Me.Panel1.Controls.Add(Me.Button11)
         Me.Panel1.Controls.Add(Me.Button14)
-        Me.Panel1.Location = New System.Drawing.Point(0, 434)
+        Me.Panel1.Location = New System.Drawing.Point(701, 47)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(99, 180)
         Me.Panel1.TabIndex = 59
@@ -514,7 +514,7 @@ Partial Class Form_Game
         '
         'Button28
         '
-        Me.Button28.Location = New System.Drawing.Point(12, 409)
+        Me.Button28.Location = New System.Drawing.Point(713, 22)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(47, 19)
         Me.Button28.TabIndex = 60

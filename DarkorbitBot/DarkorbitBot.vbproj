@@ -815,6 +815,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Crosshair_locked.png" />
+    <None Include="Paint_Test\Crosshair_locked.png" />
     <None Include="Paint_Test\test de la fin.png" />
     <None Include="Paint_Test\lordakium_test2.png" />
     <None Include="Resources\png-transparent-squircle-square-rectangle-information-others-miscellaneous-angle-simple.png" />

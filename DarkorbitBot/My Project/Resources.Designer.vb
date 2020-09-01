@@ -502,16 +502,6 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property locked_test() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("locked_test", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Locked_Three() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Locked_Three", resourceCulture)
@@ -1425,16 +1415,6 @@ Namespace My.Resources
         Friend ReadOnly Property systeme_stellaire() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("systeme_stellaire", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property test_de_la_fin() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("test_de_la_fin", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

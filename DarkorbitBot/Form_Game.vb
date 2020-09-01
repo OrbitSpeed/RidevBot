@@ -3107,73 +3107,86 @@ Label_General:
         Client_Screen = Update_Screen()
 
         Dim Locked1 = My.Resources.Locked_One
-        Dim Locked1_1 As Point = Client_Screen.Contains(Locked1)
+        Dim Locked1_point As Point = Client_Screen.Contains(Locked1)
 
-        If Locked1_1 <> Nothing Then
+        'Dim locked_test = My.Resources.Crosshair_locked
+        'Dim locked_test_point As Point = Client_Screen.Contains(locked_test)
+
+        'If locked_test_point <> Nothing Then
+        '    Console.WriteLine("le locked rouge nouveau est trouvé")
+        'End If
+
+        If Locked1_point <> Nothing Then
 
             Console.WriteLine("Locked droite")
-            If Locked1_1.X + 400 >= 800 Then
-                Locked1_1.X = 799
+            If Locked1_point.X + 400 >= 800 Then
+                Locked1_point.X = 600
                 Console.WriteLine("en dehors du form")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X, Locked1_1.Y)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X, Locked1_point.Y)
+            ElseIf Locked1_point.X <= 100 Then
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) - 50, (Height / 2))
+                Await Task.Delay(100)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) + 20, (Height / 2))
+                Await Task.Delay(250)
+            ElseIf Locked1_point.x >= 160 Then
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 450, Locked1_point.Y)
             Else
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 400, Locked1_1.Y)
-                Client_Screen = Update_Screen()
-                Locked1_1 = Client_Screen.Contains(Locked1)
-                Await Task.Delay(350)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 350, Locked1_1.Y)
-                Client_Screen = Update_Screen()
-                Locked1_1 = Client_Screen.Contains(Locked1)
-                Await Task.Delay(350)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_1.X + 400, Locked1_1.Y)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
+                'Client_Screen = Update_Screen()
+                'Locked1_1 = Client_Screen.Contains(Locked1)
+                'Await Task.Delay(350)
+                'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 300, Locked1_point.Y)
+                'Client_Screen = Update_Screen()
+                'Locked1_1 = Client_Screen.Contains(Locked1)
+                'Await Task.Delay(350)
+                'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
             End If
-            Console.WriteLine(Locked1_1.X)
-            Await Task.Delay(500)
+            Console.WriteLine(Locked1_point.X)
+            Await Task.Delay(250)
             GoTo Label_General
 
         End If
 
         Dim Locked2 = My.Resources.Locked_Two
-        Dim Locked2_1 As Point = Client_Screen.Contains(Locked2)
+        Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
 
-        If Locked2_1 <> Nothing Then
+        If Locked2_point <> Nothing Then
 
             Console.WriteLine("Locked gauche")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_1.X - 360, Locked2_1.Y)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_point.X - 360, Locked2_point.Y)
             Await Task.Delay(500)
             GoTo Label_General
 
         End If
 
         Dim Locked3 = My.Resources.Locked_Three
-        Dim Locked3_1 As Point = Client_Screen.Contains(Locked3)
+        Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
 
-        If Locked3_1 <> Nothing Then
+        If Locked3_point <> Nothing Then
 
             Console.WriteLine("Locked haut")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_1.X - 360, Locked3_1.Y)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_point.X - 360, Locked3_point.Y)
             Await Task.Delay(500)
             GoTo Label_General
 
         End If
 
         Dim Locked4 = My.Resources.Locked_Four
-        Dim Locked4_1 As Point = Client_Screen.Contains(Locked4)
+        Dim Locked4_point As Point = Client_Screen.Contains(Locked4)
 
-        If Locked4_1 <> Nothing Then
+        If Locked4_point <> Nothing Then
 
             Console.WriteLine("Locked bas")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_1.X + 360, Locked4_1.Y)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_point.X + 360, Locked4_point.Y)
             Await Task.Delay(500)
             GoTo Label_General
-
-        Else
-
-            Console.WriteLine("finish")
-            Exit Sub
-
         End If
 
+        'If Locked1_point = Nothing And Locked2_point = Nothing Or Locked3_point = Nothing Or Locked4_point = Nothing Then
+        '    Console.WriteLine("finish")
+        '    Exit Sub
+        'End If
+        Console.WriteLine("finish")
 
     End Sub
 
