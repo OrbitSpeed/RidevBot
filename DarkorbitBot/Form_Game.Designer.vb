@@ -70,6 +70,7 @@ Partial Class Form_Game
         Me.Button28 = New System.Windows.Forms.Button()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
+        Me.Button27 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -225,7 +226,7 @@ Partial Class Form_Game
         Me.Button1.ForeColor = System.Drawing.Color.Green
         Me.Button1.Location = New System.Drawing.Point(3, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 19)
+        Me.Button1.Size = New System.Drawing.Size(37, 19)
         Me.Button1.TabIndex = 34
         Me.Button1.Text = "Aider"
         Me.Button1.UseVisualStyleBackColor = True
@@ -450,6 +451,7 @@ Partial Class Form_Game
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button27)
         Me.Panel1.Controls.Add(Me.Button26)
         Me.Panel1.Controls.Add(Me.Button15)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -521,6 +523,16 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
+        '
+        'Button27
+        '
+        Me.Button27.ForeColor = System.Drawing.Color.Green
+        Me.Button27.Location = New System.Drawing.Point(41, 3)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(37, 19)
+        Me.Button27.TabIndex = 59
+        Me.Button27.Text = "If locked"
+        Me.Button27.UseVisualStyleBackColor = True
         '
         'Form_Game
         '
@@ -598,4 +610,5 @@ Partial Class Form_Game
     Friend WithEvents Button25 As Button
     Friend WithEvents Button_dead As Button
     Friend WithEvents Button28 As Button
+    Friend WithEvents Button27 As Button
 End Class
