@@ -3237,19 +3237,19 @@ Public Class Form_Game
                 End If
 
             Else
+
                 If BackgroundWorker_Startup_Bot.IsBusy = False Then
                     BackgroundWorker_Startup_Bot.RunWorkerAsync()
                     Console.WriteLine("On relance le startup (Traveling_module)")
 
-                    If Traveling_return = 1 Then
-                        Button28.PerformClick()
-
-                    End If
                 End If
+
 
             End If
 
+
         End If
+
 
     End Sub
 
@@ -3749,94 +3749,293 @@ Public Class Form_Game
 
         Await Task.Delay(350)
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-        Await Task.Delay(650)
 
 Label_General:
 
-        Client_Screen = Update_Screen()
 
         Dim Locked1 = My.Resources.Locked_One
-        Dim Locked1_point As Point = Client_Screen.Contains(Locked1)
-
-        'Dim locked_test = My.Resources.Crosshair_locked
-        'Dim locked_test_point As Point = Client_Screen.Contains(locked_test)
-
-        'If locked_test_point <> Nothing Then
-        '    Console.WriteLine("le locked rouge nouveau est trouvé")
-        'End If
-
-        If Locked1_point <> Nothing Then
-
-            Console.WriteLine("Locked droite")
-            If Locked1_point.X + 400 >= 800 Then
-                Locked1_point.X = 600
-                Console.WriteLine("en dehors du form")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X, Locked1_point.Y)
-            ElseIf Locked1_point.X <= 100 Then
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) - 50, (Height / 2))
-                Await Task.Delay(100)
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) + 20, (Height / 2))
-                Await Task.Delay(250)
-            ElseIf Locked1_point.X >= 160 Then
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 450, Locked1_point.Y)
-            Else
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
-                'Client_Screen = Update_Screen()
-                'Locked1_1 = Client_Screen.Contains(Locked1)
-                'Await Task.Delay(350)
-                'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 300, Locked1_point.Y)
-                'Client_Screen = Update_Screen()
-                'Locked1_1 = Client_Screen.Contains(Locked1)
-                'Await Task.Delay(350)
-                'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
-            End If
-            Console.WriteLine(Locked1_point.X)
-            Await Task.Delay(250)
-            GoTo Label_General
-
-        End If
-
         Dim Locked2 = My.Resources.Locked_Two
-        Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
-
-        If Locked2_point <> Nothing Then
-
-            Console.WriteLine("Locked gauche")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_point.X - 360, Locked2_point.Y)
-            Await Task.Delay(500)
-            GoTo Label_General
-
-        End If
-
         Dim Locked3 = My.Resources.Locked_Three
-        Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
-
-        If Locked3_point <> Nothing Then
-
-            Console.WriteLine("Locked haut")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_point.X - 360, Locked3_point.Y)
-            Await Task.Delay(500)
-            GoTo Label_General
-
-        End If
-
         Dim Locked4 = My.Resources.Locked_Four
+
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked1_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
         Dim Locked4_point As Point = Client_Screen.Contains(Locked4)
 
-        If Locked4_point <> Nothing Then
+        If Locked1_point <> Nothing Or Locked2_point <> Nothing Or Locked3_point <> Nothing Or Locked4_point <> Nothing Then
+            Console.WriteLine("Locked")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 792, 338)
+            Await Task.Delay(1000)
+        Else
+            Await Task.Delay(1000)
 
-            Console.WriteLine("Locked bas")
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_point.X + 360, Locked4_point.Y)
-            Await Task.Delay(500)
-            GoTo Label_General
+            Client_Screen = Update_Screen()
+            Dim Locked12_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked22_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked32_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked42_point As Point = Client_Screen.Contains(Locked4)
+
+            If Locked12_point <> Nothing Or Locked22_point <> Nothing Or Locked32_point <> Nothing Or Locked42_point <> Nothing Then
+                Console.WriteLine("Locked_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 792, 338)
+                Await Task.Delay(100)
+           
+            Else GoTo Label_General
+
+
+            End If
         End If
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked11_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked21_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked31_point As Point = Client_Screen.Contains(Locked3)
+        Dim Locked41_point As Point = Client_Screen.Contains(Locked4)
+
+        If Locked11_point <> Nothing Or Locked21_point <> Nothing Or Locked31_point <> Nothing Or Locked41_point <> Nothing Then
+            Console.WriteLine("Locked2")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 592, 21)
+            Await Task.Delay(1000)
+        Else
+            Await Task.Delay(1000)
+
+            Client_Screen = Update_Screen()
+            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+
+            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
+                Console.WriteLine("Locked2_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 592, 21)
+                Await Task.Delay(1000)
+
+            Else GoTo Label_General
+
+            End If
+        End If
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked111_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked211_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked311_point As Point = Client_Screen.Contains(Locked3)
+        Dim Locked411_point As Point = Client_Screen.Contains(Locked4)
+
+        If Locked111_point <> Nothing Or Locked211_point <> Nothing Or Locked311_point <> Nothing Or Locked411_point <> Nothing Then
+
+            Console.WriteLine("Locked3")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 4, 64)
+            Await Task.Delay(1000)
+
+        Else
+            Await Task.Delay(1000)
+
+            Client_Screen = Update_Screen()
+            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
+
+                Console.WriteLine("Locked3_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 4, 64)
+                Await Task.Delay(1000)
+
+            Else GoTo Label_General
+
+            End If
+        End If
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked1111_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked2111_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked3111_point As Point = Client_Screen.Contains(Locked3)
+        Dim Locked4111_point As Point = Client_Screen.Contains(Locked4)
+
+        If Locked1111_point <> Nothing Or Locked2111_point <> Nothing Or Locked3111_point <> Nothing Or Locked4111_point <> Nothing Then
+
+            Console.WriteLine("Locked4")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 4, 580)
+            Await Task.Delay(1000)
+        Else
+            Await Task.Delay(1000)
+
+            Client_Screen = Update_Screen()
+            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
+
+                Console.WriteLine("Locked4_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 4, 580)
+                Await Task.Delay(1000)
+
+            Else GoTo Label_General
+
+
+            End If
+        End If
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked11111_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked21111_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked31111_point As Point = Client_Screen.Contains(Locked3)
+        Dim Locked41111_point As Point = Client_Screen.Contains(Locked4)
+
+        If Locked11111_point <> Nothing Or Locked21111_point <> Nothing Or Locked31111_point <> Nothing Or Locked41111_point <> Nothing Then
+
+            Console.WriteLine("Locked5")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 530, 580)
+            Await Task.Delay(1000)
+        Else
+            Await Task.Delay(1000)
+
+            Client_Screen = Update_Screen()
+            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
+
+                Console.WriteLine("Locked5_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 530, 580)
+                Await Task.Delay(1000)
+
+            Else GoTo Label_General
+
+            End If
+        End If
+
+        ' ----------------------------------------
+
+        Client_Screen = Update_Screen()
+        Dim Locked111111_point As Point = Client_Screen.Contains(Locked1)
+        Dim Locked211111_point As Point = Client_Screen.Contains(Locked2)
+        Dim Locked311111_point As Point = Client_Screen.Contains(Locked3)
+        Dim Locked411111_point As Point = Client_Screen.Contains(Locked4)
+
+        If Locked111111_point <> Nothing Or Locked211111_point <> Nothing Or Locked311111_point <> Nothing Or Locked411111_point <> Nothing Then
+
+            Console.WriteLine("Locked6")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 792, 338)
+            Await Task.Delay(1000)
+        Else
+            Await Task.Delay(1000)
+
+            Client_Screen = Update_Screen()
+            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
+            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
+            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
+            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
+
+                Console.WriteLine("Locked6_else")
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 792, 338)
+                Await Task.Delay(1000)
+
+            Else GoTo Label_General
+
+            End If
+        End If
+
+        ' ----------------------------------------
+
+        Console.WriteLine("finish")
+        Await Task.Delay(500)
+        GoTo Label_General
+
+
+        ' ----------------------------------------
+        ' ----------------------------------------
+        ' ----------------------------------------
+
+
+
+
+
+
+
+
+
+        'If Locked1_point.X + 400 >= 800 Then
+        '    Locked1_point.X = 600
+        '    Console.WriteLine("en dehors du form")
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X, Locked1_point.Y)
+        'ElseIf Locked1_point.X <= 100 Then
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) - 50, (Height / 2))
+        '    Await Task.Delay(100)
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, (Size.Width / 2) + 20, (Height / 2))
+        '    Await Task.Delay(250)
+        'ElseIf Locked1_point.X >= 160 Then
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 450, Locked1_point.Y)
+        'Else
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
+        '    'Client_Screen = Update_Screen()
+        '    'Locked1_1 = Client_Screen.Contains(Locked1)
+        '    'Await Task.Delay(350)
+        '    'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 300, Locked1_point.Y)
+        '    'Client_Screen = Update_Screen()
+        '    'Locked1_1 = Client_Screen.Contains(Locked1)
+        '    'Await Task.Delay(350)
+        '    'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
+        'End If
+        'Console.WriteLine(Locked1_point.X)
+        'Await Task.Delay(250)
+        'GoTo Label_General
+
+        'Dim Locked2 = My.Resources.Locked_Two
+        'Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
+
+        'If Locked2_point <> Nothing Then
+
+        '    Console.WriteLine("Locked gauche")
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked2_point.X - 360, Locked2_point.Y)
+        '    Await Task.Delay(500)
+        '    GoTo Label_General
+
+        'End If
+
+        'Dim Locked3 = My.Resources.Locked_Three
+        'Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
+
+        'If Locked3_point <> Nothing Then
+
+        '    Console.WriteLine("Locked haut")
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked3_point.X - 360, Locked3_point.Y)
+        '    Await Task.Delay(500)
+        '    GoTo Label_General
+
+        'End If
+
+        'Dim Locked4 = My.Resources.Locked_Four
+        'Dim Locked4_point As Point = Client_Screen.Contains(Locked4)
+
+        'If Locked4_point <> Nothing Then
+
+        '    Console.WriteLine("Locked bas")
+        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked4_point.X + 360, Locked4_point.Y)
+        '    Await Task.Delay(500)
+        '    GoTo Label_General
+        'End If
 
         'If Locked1_point = Nothing And Locked2_point = Nothing Or Locked3_point = Nothing Or Locked4_point = Nothing Then
         '    Console.WriteLine("finish")
         '    Exit Sub
         'End If
-        Console.WriteLine("finish")
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -4049,82 +4248,87 @@ Label_General:
 
     Private Async Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
 
-        Dim firm As Integer = 0
-
-        If Traveling_return = 1 Then
-
-            GoTo Traveling_return
-            Traveling_return = 0
-
-        End If
-
         Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         Await Task.Delay(500)
         Dim DataAlpha = Utils.getRegexGG(Form_Tools.TextBox_GGinfoGGS.Text, "alpha")
-        If DataAlpha = Nothing Then
+        Console.WriteLine(DataAlpha)
 
-            MsgBox("You doesn't have Gates")
-
-        Else
+        If DataAlpha.contains("prepared1") Then
 
             If Form_Tools.ComboBox_map_to_travel.Text.Contains("Alpha") Then
                 If Form_Tools.ComboBox_firme.Text = "MMO" Then
-                    firm = 1
-                    Await Task.Delay(100)
+
                     Form_Tools.ComboBox_map_to_travel.Text = "1-1"
-                    Traveling_return = 1
-                    Await Task.Delay(100)
+                    Form_Tools.ComboBox_map_to_travel.Refresh()
                     Button_Traveling_Module.PerformClick()
                     Exit Sub
 
                 ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-                    firm = 2
+
                     Form_Tools.ComboBox_map_to_travel.Text = "2-1"
-                    Traveling_return = 1
-                    Await Task.Delay(1000)
-                    Traveling_module()
+                    Form_Tools.ComboBox_map_to_travel.Refresh()
+                    Button_Traveling_Module.PerformClick()
                     Exit Sub
 
                 ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
-                    firm = 3
+
                     Form_Tools.ComboBox_map_to_travel.Text = "3-1"
-                    Traveling_return = 1
-                    Await Task.Delay(1000)
-                    Traveling_module()
+                    Form_Tools.ComboBox_map_to_travel.Refresh()
+                    Button_Traveling_Module.PerformClick()
                     Exit Sub
+
 
                 End If
             End If
-        End If
-        Exit Sub
+        Else
+            MessageBox.Show("You don't have any Alpha on your motherboard. Aborting.")
 
-Traveling_return:
-
-        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        Await Task.Delay(500)
-        Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-        Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-
-        Console.WriteLine($"current:{regex_currentWave}")
-        Console.WriteLine($"total:{regex_totalWave}")
-        ' trouver l'emplacement de la gg 
-        If Form_Tools.ComboBox_firme.Text = "MMO" Then
-
-            MsgBox("trouver l'emplacement de la gg ")
-
-        ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-
-            MsgBox("trouver l'emplacement de la gg ")
-
-        ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
-
-            MsgBox("trouver l'emplacement de la gg ")
 
         End If
+
+        '        Exit Sub
+
+        'Traveling_return:
+
+        '        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        '        Await Task.Delay(500)
+        '        Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+        '        Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+
+        '        Console.WriteLine($"current:{regex_currentWave}")
+        '        Console.WriteLine($"total:{regex_totalWave}")
+        '        ' trouver l'emplacement de la gg 
+        '        If Form_Tools.ComboBox_firme.Text = "MMO" Then
+
+        '            MsgBox("trouver l'emplacement de la gg ")
+
+        '        ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
+
+        '            MsgBox("trouver l'emplacement de la gg ")
+
+        '        ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
+
+        '            MsgBox("trouver l'emplacement de la gg ")
+
+        '        End If
 
 
     End Sub
 
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+
+        Client_Screen = Update_Screen()
+        Dim Sibelonit = My.Resources.sibelonit
+        Dim Sibelonit1 As Point = Client_Screen.Contains(Sibelonit)
+        If Sibelonit1 <> Nothing Then
+
+            Console.WriteLine("Un Sibelonit trouver")
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Sibelonit1.X + 30, Sibelonit1.Y - 55)
+            If_Locked()
+
+        End If
+
+    End Sub
 End Class
 
 'Private Sub Random_movement()

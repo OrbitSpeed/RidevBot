@@ -34,7 +34,6 @@ Partial Class Form_Game
         Me.Button_Traveling_Module = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -66,13 +65,14 @@ Partial Class Form_Game
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
-        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.Button28 = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Title
@@ -88,6 +88,7 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Button28)
         Me.Panel7.Controls.Add(Me.Button_dead)
         Me.Panel7.Controls.Add(Me.Button25)
         Me.Panel7.Controls.Add(Me.Red_dots_function)
@@ -188,19 +189,6 @@ Partial Class Form_Game
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
         '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
-        '
         'TextBox_getserver
         '
         Me.TextBox_getserver.Location = New System.Drawing.Point(12, 24)
@@ -235,7 +223,7 @@ Partial Class Form_Game
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.Color.Green
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Location = New System.Drawing.Point(3, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(78, 19)
         Me.Button1.TabIndex = 34
@@ -245,7 +233,7 @@ Partial Class Form_Game
         'Button2
         '
         Me.Button2.ForeColor = System.Drawing.Color.Green
-        Me.Button2.Location = New System.Drawing.Point(0, 18)
+        Me.Button2.Location = New System.Drawing.Point(3, 21)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(78, 19)
         Me.Button2.TabIndex = 35
@@ -255,7 +243,7 @@ Partial Class Form_Game
         'Button3
         '
         Me.Button3.ForeColor = System.Drawing.Color.Green
-        Me.Button3.Location = New System.Drawing.Point(0, 36)
+        Me.Button3.Location = New System.Drawing.Point(3, 39)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(78, 19)
         Me.Button3.TabIndex = 36
@@ -265,7 +253,7 @@ Partial Class Form_Game
         'Button4
         '
         Me.Button4.ForeColor = System.Drawing.Color.Green
-        Me.Button4.Location = New System.Drawing.Point(0, 53)
+        Me.Button4.Location = New System.Drawing.Point(3, 56)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(78, 19)
         Me.Button4.TabIndex = 37
@@ -275,7 +263,7 @@ Partial Class Form_Game
         'Button5
         '
         Me.Button5.ForeColor = System.Drawing.Color.Green
-        Me.Button5.Location = New System.Drawing.Point(0, 70)
+        Me.Button5.Location = New System.Drawing.Point(3, 73)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(78, 19)
         Me.Button5.TabIndex = 38
@@ -285,7 +273,7 @@ Partial Class Form_Game
         'Button6
         '
         Me.Button6.ForeColor = System.Drawing.Color.Green
-        Me.Button6.Location = New System.Drawing.Point(0, 87)
+        Me.Button6.Location = New System.Drawing.Point(3, 90)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(78, 19)
         Me.Button6.TabIndex = 39
@@ -295,7 +283,7 @@ Partial Class Form_Game
         'Button7
         '
         Me.Button7.ForeColor = System.Drawing.Color.Green
-        Me.Button7.Location = New System.Drawing.Point(0, 105)
+        Me.Button7.Location = New System.Drawing.Point(3, 108)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(78, 19)
         Me.Button7.TabIndex = 40
@@ -305,7 +293,7 @@ Partial Class Form_Game
         'Button8
         '
         Me.Button8.ForeColor = System.Drawing.Color.Green
-        Me.Button8.Location = New System.Drawing.Point(-1, 123)
+        Me.Button8.Location = New System.Drawing.Point(2, 126)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(79, 19)
         Me.Button8.TabIndex = 41
@@ -315,7 +303,7 @@ Partial Class Form_Game
         'Button9
         '
         Me.Button9.ForeColor = System.Drawing.Color.Green
-        Me.Button9.Location = New System.Drawing.Point(-1, 159)
+        Me.Button9.Location = New System.Drawing.Point(2, 162)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(79, 19)
         Me.Button9.TabIndex = 43
@@ -325,7 +313,7 @@ Partial Class Form_Game
         'Button10
         '
         Me.Button10.ForeColor = System.Drawing.Color.Green
-        Me.Button10.Location = New System.Drawing.Point(-1, 141)
+        Me.Button10.Location = New System.Drawing.Point(2, 144)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(79, 19)
         Me.Button10.TabIndex = 42
@@ -334,7 +322,7 @@ Partial Class Form_Game
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(-1, 195)
+        Me.Button11.Location = New System.Drawing.Point(2, 198)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(79, 19)
         Me.Button11.TabIndex = 45
@@ -343,7 +331,7 @@ Partial Class Form_Game
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(-1, 177)
+        Me.Button12.Location = New System.Drawing.Point(2, 180)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(79, 19)
         Me.Button12.TabIndex = 44
@@ -352,7 +340,7 @@ Partial Class Form_Game
         '
         'Button13
         '
-        Me.Button13.Location = New System.Drawing.Point(-1, 231)
+        Me.Button13.Location = New System.Drawing.Point(2, 234)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(79, 19)
         Me.Button13.TabIndex = 47
@@ -361,7 +349,7 @@ Partial Class Form_Game
         '
         'Button14
         '
-        Me.Button14.Location = New System.Drawing.Point(-1, 213)
+        Me.Button14.Location = New System.Drawing.Point(2, 216)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(79, 19)
         Me.Button14.TabIndex = 46
@@ -370,7 +358,7 @@ Partial Class Form_Game
         '
         'Button15
         '
-        Me.Button15.Location = New System.Drawing.Point(-1, 267)
+        Me.Button15.Location = New System.Drawing.Point(2, 270)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(79, 19)
         Me.Button15.TabIndex = 49
@@ -379,7 +367,7 @@ Partial Class Form_Game
         '
         'Button16
         '
-        Me.Button16.Location = New System.Drawing.Point(-1, 249)
+        Me.Button16.Location = New System.Drawing.Point(2, 252)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(79, 19)
         Me.Button16.TabIndex = 48
@@ -388,7 +376,7 @@ Partial Class Form_Game
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(-1, 303)
+        Me.Button17.Location = New System.Drawing.Point(2, 306)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(79, 34)
         Me.Button17.TabIndex = 51
@@ -397,7 +385,7 @@ Partial Class Form_Game
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(-1, 285)
+        Me.Button18.Location = New System.Drawing.Point(2, 288)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(79, 19)
         Me.Button18.TabIndex = 50
@@ -406,7 +394,7 @@ Partial Class Form_Game
         '
         'Button19
         '
-        Me.Button19.Location = New System.Drawing.Point(-1, 387)
+        Me.Button19.Location = New System.Drawing.Point(2, 390)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(79, 19)
         Me.Button19.TabIndex = 53
@@ -415,7 +403,7 @@ Partial Class Form_Game
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(-1, 369)
+        Me.Button20.Location = New System.Drawing.Point(2, 372)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(79, 19)
         Me.Button20.TabIndex = 52
@@ -424,7 +412,7 @@ Partial Class Form_Game
         '
         'Button21
         '
-        Me.Button21.Location = New System.Drawing.Point(-1, 423)
+        Me.Button21.Location = New System.Drawing.Point(2, 426)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(79, 38)
         Me.Button21.TabIndex = 55
@@ -433,7 +421,7 @@ Partial Class Form_Game
         '
         'Button22
         '
-        Me.Button22.Location = New System.Drawing.Point(-1, 405)
+        Me.Button22.Location = New System.Drawing.Point(2, 408)
         Me.Button22.Name = "Button22"
         Me.Button22.Size = New System.Drawing.Size(79, 19)
         Me.Button22.TabIndex = 54
@@ -442,7 +430,7 @@ Partial Class Form_Game
         '
         'Button23
         '
-        Me.Button23.Location = New System.Drawing.Point(-1, 478)
+        Me.Button23.Location = New System.Drawing.Point(2, 481)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(79, 43)
         Me.Button23.TabIndex = 57
@@ -451,23 +439,12 @@ Partial Class Form_Game
         '
         'Button24
         '
-        Me.Button24.Location = New System.Drawing.Point(-1, 460)
+        Me.Button24.Location = New System.Drawing.Point(2, 463)
         Me.Button24.Name = "Button24"
         Me.Button24.Size = New System.Drawing.Size(79, 19)
         Me.Button24.TabIndex = 56
         Me.Button24.Text = "StreuneR"
         Me.Button24.UseVisualStyleBackColor = True
-        '
-        'WebBrowser_Game_Ridevbot
-        '
-        Me.WebBrowser_Game_Ridevbot.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
-        Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"
-        Me.WebBrowser_Game_Ridevbot.ScriptErrorsSuppressed = True
-        Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
-        Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
-        Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
         'Panel1
         '
@@ -498,14 +475,14 @@ Partial Class Form_Game
         Me.Panel1.Controls.Add(Me.Button13)
         Me.Panel1.Controls.Add(Me.Button11)
         Me.Panel1.Controls.Add(Me.Button14)
-        Me.Panel1.Location = New System.Drawing.Point(701, 47)
+        Me.Panel1.Location = New System.Drawing.Point(4, 563)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(99, 180)
+        Me.Panel1.Size = New System.Drawing.Size(99, 43)
         Me.Panel1.TabIndex = 59
         '
         'Button26
         '
-        Me.Button26.Location = New System.Drawing.Point(-1, 336)
+        Me.Button26.Location = New System.Drawing.Point(2, 339)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(79, 34)
         Me.Button26.TabIndex = 58
@@ -514,12 +491,36 @@ Partial Class Form_Game
         '
         'Button28
         '
-        Me.Button28.Location = New System.Drawing.Point(713, 22)
+        Me.Button28.Location = New System.Drawing.Point(686, -1)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(47, 19)
         Me.Button28.TabIndex = 60
         Me.Button28.Text = "Alpha"
         Me.Button28.UseVisualStyleBackColor = True
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
+        '
+        'WebBrowser_Game_Ridevbot
+        '
+        Me.WebBrowser_Game_Ridevbot.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser_Game_Ridevbot.Location = New System.Drawing.Point(0, 18)
+        Me.WebBrowser_Game_Ridevbot.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_Game_Ridevbot.Name = "WebBrowser_Game_Ridevbot"
+        Me.WebBrowser_Game_Ridevbot.ScriptErrorsSuppressed = True
+        Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
+        Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
+        Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
         'Form_Game
         '
@@ -527,7 +528,6 @@ Partial Class Form_Game
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(800, 618)
-        Me.Controls.Add(Me.Button28)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.WebBrowser_Game_Ridevbot)
@@ -542,8 +542,8 @@ Partial Class Form_Game
         Me.Text = "RidevBot"
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -815,6 +815,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\sibelonit.png" />
+    <None Include="Resources\kristallon.png" />
+    <None Include="Resources\Kristallin.png" />
+    <None Include="Resources\dead_and_repair_portal.png" />
+    <None Include="Resources\dead_and_repair_instant.png" />
+    <None Include="Resources\dead_and_repair_button_repair.png" />
+    <None Include="Resources\Dead_and_repair_base.png" />
+    <None Include="Resources\boss_sibelonit.png" />
+    <None Include="Resources\Blighted_Kristallon.png" />
     <None Include="Paint_Test\traveling_indication.png" />
     <None Include="Resources\Crosshair_locked.png" />
     <None Include="Paint_Test\Crosshair_locked.png" />
