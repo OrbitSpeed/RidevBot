@@ -231,6 +231,18 @@
         v9JZBhMWMv14eHh4eHh4ePijWQf6sb1ew5jeAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Click_Zone_Possible" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAIAAAD9MqGbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAioABgYABE4AARZcjU8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Click_Zone_Possible2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAMAAAAPCAIAAACuiOKTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAA1JREFUGFdjGISAgQEAAJYAARp5q0UAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="Combo_material_module_pet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

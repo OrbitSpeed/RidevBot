@@ -193,6 +193,26 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Click_Zone_Possible() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Click_Zone_Possible", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Click_Zone_Possible2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Click_Zone_Possible2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Combo_material_module_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Combo_material_module_pet", resourceCulture)

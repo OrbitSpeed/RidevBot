@@ -815,6 +815,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Click_Zone_Possible2.png" />
+    <None Include="Resources\Click_Zone_Possible.png" />
     <None Include="Resources\sibelonit.png" />
     <None Include="Resources\kristallon.png" />
     <None Include="Resources\Kristallin.png" />
