@@ -3776,79 +3776,88 @@ Label_GotoHome:
         If Locked_Droite <> Nothing Or Locked_Gauche <> Nothing Or Locked_Haut <> Nothing Or Locked_Bas <> Nothing Then
 
             If Locked_Droite <> Nothing Then
-                Dim Locked_True = Locked_Droite.X + 410
-                If Locked_True >= 800 Then
+                Dim Locked_True = Locked_Droite.X + 370    '                         >>> |
+                If Locked_True <= 799 Then
 
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X - 90, Locked_Droite.Y)
-                    Await Task.Delay(200)
                     Console.WriteLine("Locked")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X - 410, Locked_Droite.Y)
-                    Locked = 3
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X + 370, Locked_Droite.Y)
+                    Await Task.Delay(1000)
+                    GoTo Label_GotoHome
+
+                Else
+                    Dim Locked_True2 = Locked_Droite.X - 370
+                    If Locked_True2 >= 20 Then        '                          | <<<
+
+                        Console.WriteLine("Locked_else")
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X - 370, Locked_Droite.Y)
+                        Await Task.Delay(1000)
+                        GoTo Label_GotoHome
+
+                    Else
+
+                        Console.WriteLine("Locked_else_else")
+                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X - 200, Locked_Droite.Y)
+                        Await Task.Delay(1000)
+                        GoTo Label_GotoHome
+
+                    End If
+
+
+
+
+                End If
+                End If
+
+            If Locked_Gauche <> Nothing Then
+                Dim Locked_True = Locked_Gauche.X - 390
+                If Locked_True >= 0 Then
+
+                    Console.WriteLine("Locked2")
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X - 380, Locked_Gauche.Y)
+                    Locked = 1
                     Await Task.Delay(1000)
                     GoTo Label_GotoHome
 
                 End If
 
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X + 40, Locked_Droite.Y)
-                Await Task.Delay(200)
-                Console.WriteLine("Locked_else")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X + 410, Locked_Droite.Y)
-                Locked = 1
-                Await Task.Delay(1000)
-                GoTo Label_GotoHome
-
-            End If
-
-            If Locked_Gauche <> Nothing Then
-                Dim Locked_True = Locked_Gauche.X - 360
-                If Locked_True >= 0 Then
-
-                    Console.WriteLine("Locked2")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X - 390, Locked_Gauche.Y)
-                    Locked = 1
-                    Await Task.Delay(100)
-                    GoTo Label_GotoHome
-
-                End If
-
                 Console.WriteLine("Locked2_else")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X + 390, Locked_Gauche.Y)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X + 380, Locked_Gauche.Y)
                 Locked = 3
-                Await Task.Delay(100)
+                Await Task.Delay(1000)
                 GoTo Label_GotoHome
             End If
 
             If Locked_Haut <> Nothing Then
-                Dim Locked_True = Locked_Haut.Y - 360
+                Dim Locked_True = Locked_Haut.Y - 330
                 If Locked_True >= 90 Then
 
                     Console.WriteLine("Locked3")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y - 390)
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y - 300)
                     Locked = 4
-                    Await Task.Delay(100)
+                    Await Task.Delay(1000)
                     GoTo Label_GotoHome
                 End If
 
                 Console.WriteLine("Locked3_else")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y + 390)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y + 320)
                 Locked = 2
-                Await Task.Delay(100)
+                Await Task.Delay(1000)
                 GoTo Label_GotoHome
             End If
 
             If Locked_Bas <> Nothing Then
-                Dim Locked_True = Locked_Bas.Y + 360
+                Dim Locked_True = Locked_Bas.Y + 330
                 If Locked_True >= 618 Then
 
                     Console.WriteLine("Locked4")
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y - 390)
+                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y - 300)
                     Await Task.Delay(100)
                     Locked = 3
                     GoTo Label_GotoHome
                 End If
 
                 Console.WriteLine("Locked4_else")
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y + 390)
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y + 320)
                 Await Task.Delay(100)
                 GoTo Label_GotoHome
             End If
