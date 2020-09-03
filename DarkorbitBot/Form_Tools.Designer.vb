@@ -158,7 +158,6 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -166,7 +165,6 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
@@ -250,6 +248,8 @@ Partial Class Form_Tools
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
         Me.Button_Howuse = New System.Windows.Forms.Button()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel_Info.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2029,7 +2029,7 @@ Partial Class Form_Tools
         Me.ComboBoxLabel_pet_locator_list.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxLabel_pet_locator_list.ForeColor = System.Drawing.Color.White
         Me.ComboBoxLabel_pet_locator_list.FormattingEnabled = True
-        Me.ComboBoxLabel_pet_locator_list.Items.AddRange(New Object() {"-=[ Streuner ]=-", "..::{ Boss Streuner }::..", "-=[ Lordakia ]=-", "..::{ Boss Lordakia }::..", "-=[ Recruit Streuner ]=-", "-=[ Aider Streuner ]=-", "-=[ Saimon ]=-", "..::{ Boss Saimon }::..", "-=[ Mordon ]=-", "..::{ Boss Mordon }::..", "-=[ Devolarium ]=-", "..::{ Boss Devolarium }::..", "-=[ Sibelon ]=-", "..::{ Boss Sibelon }::..", "-=[ Sibelonit ]=-", "..::{ Boss Sibelonit }::..", "-=[ Lordakium ]=-", "..::{ Boss Lordakium }::..", "-=[ Kristallin ]=-", "..::{ Boss Kristallin }::..", "-=[ Kristallon ]=-", "..::{ Boss Kristallon }::..", "-=[ StreuneR ]=-", "..::{ Boss StreuneR }::..", "-=[ Protegit ]=-", "-=[ Cubikon ]=-", "\\ Invoke XVI //"})
+        Me.ComboBoxLabel_pet_locator_list.Items.AddRange(New Object() {"-=[ Streuner ]=-", "..:   { Boss Streuner } :..", "-=[ Lordakia ]= -", "..:   { Boss Lordakia } :..", "-=[ Recruit Streuner ]= -", "-=[ Aider Streuner ]=-", "-=[ Saimon ]=-", "..:   { Boss Saimon } :..", "-=[ Mordon ]= -", "..:   { Boss Mordon } :..", "-=[ Devolarium ]= -", "..:   { Boss Devolarium } :..", "-=[ Sibelon ]= -", "..:   { Boss Sibelon } :..", "-=[ Sibelonit ]= -", "..:   { Boss Sibelonit } :..", "-=[ Lordakium ]= -", "..:   { Boss Lordakium } :..", "-=[ Kristallin ]= -", "..:   { Boss Kristallin } :..", "-=[ Kristallon ]= -", "..:   { Boss Kristallon } :..", "-=[ StreuneR ]= -", "..:   { Boss StreuneR } :..", "-=[ Protegit ]= -", "-=[ Cubikon ]=-", "\\ Invoke XVI //"})
         Me.ComboBoxLabel_pet_locator_list.Location = New System.Drawing.Point(59, 111)
         Me.ComboBoxLabel_pet_locator_list.Name = "ComboBoxLabel_pet_locator_list"
         Me.ComboBoxLabel_pet_locator_list.Size = New System.Drawing.Size(153, 21)
@@ -2188,18 +2188,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2286,19 +2274,6 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabIndex = 10
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_close1
         '
@@ -3442,6 +3417,31 @@ Partial Class Form_Tools
         Me.Button_Howuse.TabIndex = 77
         Me.Button_Howuse.Text = "How to use RidevBot"
         Me.Button_Howuse.UseVisualStyleBackColor = False
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '

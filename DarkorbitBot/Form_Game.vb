@@ -342,14 +342,24 @@ Public Class Form_Game
 
             Invoke(New MethodInvoker(Async Sub()
                                          BlockInput(True)
+
+                                         '     Dim cursor_Pos = Cursor.Position
+                                         'AutoIt.MouseClickDrag(Minimap_move.X - 40, Minimap_move.Y + 20, 599, 759, 10)
+                                         '  Cursor.Position = cursor_Pos
+
+
                                          Dim cursor_Pos = Cursor.Position
                                          Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
                                          AutoIt.MouseDown("LEFT")
-                                         Await Task.Delay(100)
+                                         Await Task.Delay(10)
                                          Cursor.Position = New Point(759, 599)
                                          AutoIt.MouseUp("LEFT")
                                          Cursor.Position = cursor_Pos
-                                         'Await Task.Delay(1200)
+                                         Await Task.Delay(1200)
+
+
+
+
                                          Console.WriteLine("déplacement minimap ok")
                                          BlockInput(False)
 
@@ -3570,8 +3580,57 @@ Public Class Form_Game
                 Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
                 If npc_locator_module_pet1 <> Nothing Then
 
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+                    'AutoIt.ControlGetPosX("RidevBot", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", npc_locator_module_pet1.X)
+                    'AutoIt.ControlGetPosY("RidevBot", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", npc_locator_module_pet1.Y)
                     Await Task.Delay(1000)
+
+                    Dim cursor_Pos = Cursor.Position
+                    Cursor.Position = New Point(npc_locator_module_pet1.X + 2, npc_locator_module_pet1.Y + 19)
+                    Await Task.Delay(10)
+                    Cursor.Position = cursor_Pos
+
+
+                    If Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then
+
+                        MsgBox($" Select in first Npc in list ")
+
+                        '        ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then
+
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Lordakia ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Aider Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Recruit Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Saimon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Mordon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Devolarium ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Sibelon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Sibelonit ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Lordakium ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Kristallin ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Kristallon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ StreuneR ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Protegit ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Cubikon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "\\ Invoke XVI //" Then
+
+
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Streuner } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Lordakia } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Saimon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Mordon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Devolarium } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Sibelon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Sibelonit } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Lordakium } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Kristallin } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Kristallon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss StreuneR } :.. " Then
+
+
+
+                    End If
+
+                    Await Task.Delay(5000)
 
                 Else
                 End If
@@ -3710,11 +3769,65 @@ Public Class Form_Game
                 Dim npc_locator_module_pet1 As Point = Client_Screen.Contains(npc_locator_module_pet)
                 If npc_locator_module_pet1 <> Nothing Then
 
-                    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+
+                    'AutoIt.ControlGetPosX("RidevBot", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", npc_locator_module_pet1.X)
+                    'AutoIt.ControlGetPosY("RidevBot", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", npc_locator_module_pet1.Y)
+
                     Await Task.Delay(1000)
 
-                Else
-                End If
+                    Dim cursor_Pos = Cursor.Position
+                    Cursor.Position = New Point(npc_locator_module_pet1.X + 2, npc_locator_module_pet1.Y + 19)
+                    Await Task.Delay(10)
+                    Cursor.Position = cursor_Pos
+
+                    If Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then
+
+                        MsgBox($" Select in first Npc in list ")
+
+                        '        ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then
+
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Lordakia ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Aider Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Recruit Streuner ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Saimon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Mordon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Devolarium ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Sibelon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Sibelonit ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Lordakium ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Kristallin ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Kristallon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ StreuneR ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Protegit ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Cubikon ]=-" Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "\\ Invoke XVI //" Then
+
+
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Streuner } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Lordakia } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Saimon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Mordon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Devolarium } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Sibelon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Sibelonit } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Lordakium } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Kristallin } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss Kristallon } :.." Then
+                    ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "..: { Boss StreuneR } :.. " Then
+
+
+
+                    End If
+
+                    Await Task.Delay(5000)
+
+                        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", "", npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+                        'Await Task.Delay(1000)
+
+
+                    Else
+                    End If
             Else Console.WriteLine("Not added")
 
                 Client_Screen = Update_Screen()
