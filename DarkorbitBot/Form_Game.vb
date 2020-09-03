@@ -3596,6 +3596,8 @@ Public Class Form_Game
 
                         '        ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then
 
+                        ' IL FAUT RAJOUTER LES PETITES IMAGE + EFFECTUER UN CLICK 
+
                     ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Streuner ]=-" Then
                     ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Lordakia ]=-" Then
                     ElseIf Form_Tools.ComboBoxLabel_pet_locator_list.Text = "-=[ Aider Streuner ]=-" Then

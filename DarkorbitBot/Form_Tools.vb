@@ -428,7 +428,7 @@ Public Class Form_Tools
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        ComboBox_autospin.Text = "ABG"
+        ComboBox_autospin.Text = "Alpha"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
@@ -436,7 +436,7 @@ Public Class Form_Tools
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
-        ComboBox_autospin.Text = "ABG"
+        ComboBox_autospin.Text = "Beta"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
@@ -444,7 +444,7 @@ Public Class Form_Tools
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
-        ComboBox_autospin.Text = "ABG"
+        ComboBox_autospin.Text = "Gamma"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
@@ -1373,6 +1373,38 @@ Public Class Form_Tools
                 Button_Kuiper_GGS.Enabled = True
 
             End If
+
+        ElseIf ComboBox_autospin.Text = "ABG" Then
+
+            'Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
+            'Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
+            'Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
+            'Dim regex_totalPart = Utils.getTotalPart(DataAlpha)
+            'Utils.setInfoPartGG_InMap(DataAlpha)
+            'Utils.setLivesLeft(DataAlpha)
+            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+
+            'Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
+            'Dim regex_totalWave = Utils.getTotalWave(DataBeta)
+            'Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
+            'Dim regex_totalPart = Utils.getTotalPart(DataBeta)
+            'Utils.setInfoPartGG_InMap(DataBeta)
+            'Utils.setLivesLeft(DataBeta)
+            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+
+            'Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
+            'Dim regex_totalWave = Utils.getTotalWave(DataGamma)
+            'Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
+            'Dim regex_totalPart = Utils.getTotalPart(DataGamma)
+            'Utils.setInfoPartGG_InMap(DataGamma)
+            'Utils.setLivesLeft(DataGamma)
+            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+
+            Button_Alpha.Enabled = True
+            Button_beta.Enabled = True
+            Button_gamma.Enabled = True
+            Button_ABG_GGS.Enabled = True
+
 
         End If
 
