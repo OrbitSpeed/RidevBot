@@ -139,11 +139,8 @@ Public Class Form_Tools
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        TextBox_WinGGS.Visible = True
-        TextBox_WinGGS.Size = New Size(258, 171)
-        Panel_GalaxyGates.Size = New Size(467, 606)
-
         Calculator = 1
+        Panel_autospin.Location = New Point(495, 66)
         Panel_palladium_palladium.Location = New Point(0, 66)
         panel_npc_npc.Location = New Point(0, 66)
         Panel_collectable.Location = New Point(0, 66)
@@ -192,7 +189,7 @@ Public Class Form_Tools
         Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
-        Size = New Size(530, 412)
+        Size = New Size(497, 412)
 
     End Sub
 
@@ -214,7 +211,7 @@ Public Class Form_Tools
         Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
-        Size = New Size(530, 412)
+        Size = New Size(497, 412)
 
     End Sub
 
@@ -236,7 +233,7 @@ Public Class Form_Tools
         Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
-        Size = New Size(530, 412)
+        Size = New Size(497, 412)
 
     End Sub
 
@@ -280,7 +277,7 @@ Public Class Form_Tools
         Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
-        Size = New Size(497, 480)
+        Size = New Size(497, 600)
 
     End Sub
 
@@ -342,11 +339,17 @@ Public Class Form_Tools
             Panel_divers.Visible = False
             Panel_GalaxyGates.Visible = True
 
+            If Button_suppresor_controler_GGS.Text = "⬇" Then
+                Size = New Size(497, 705)
+
+            ElseIf Button_suppresor_controler_GGS.Text = "⬆" Then
+                Size = New Size(689, 705)
+            End If
+
             Panel_suppresor_controler2.Size = New Size(168, 47)
             Button_suppresor_controler2.Text = "⬇"
             Panel_suppresor_controler.Size = New Size(168, 47)
             Button_suppresor_controler.Text = "⬇"
-            Size = New Size(497, 550)
 
             TextBox_uridiumGGS.Text = Utils.currentUridium
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
@@ -468,6 +471,7 @@ Public Class Form_Tools
         Size = New Size(497, 412)
 
     End Sub
+
     Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
         Panel_palladium_palladium.Visible = False
@@ -493,6 +497,22 @@ Public Class Form_Tools
 
     Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles Button_How_use.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Size = New Size(497, 412)
 
     End Sub
@@ -1761,5 +1781,18 @@ Label_ClickGalaxyGates:
 
     End Sub ' Supressor controler TOOLBAR Configuration
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
+        If Button_suppresor_controler_GGS.Text = "⬇" Then
+            Button_suppresor_controler_GGS.Text = "⬆"
+            Size = New Size(689, 705)
+
+
+        ElseIf Button_suppresor_controler_GGS.Text = "⬆" Then
+            Button_suppresor_controler_GGS.Text = "⬇"
+            Size = New Size(497, 705)
+
+        End If
+
+    End Sub
 End Class
