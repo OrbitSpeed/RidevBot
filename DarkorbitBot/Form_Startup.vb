@@ -200,10 +200,6 @@ Public Class Form_Startup
             Form_Tools.BackgroundWorker_Timer.CancelAsync()
         End If
 
-        Form_Tools.TextBox_minutedouble_dixieme.Text = "0"
-        Form_Tools.TextBox_minutedouble.Text = "0"
-        Form_Tools.TextBox_secondsdouble2.Text = "0"
-        Form_Tools.TextBox_secondsdouble.Text = "0"
         Form_Tools.TextBox_Get_Dosid.Text = ""
         Form_Tools.TextBox_Get_id.Text = ""
         Form_Tools.TextBox_Get_Server.Text = ""

@@ -151,7 +151,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Passive")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Profil 1")>  _
         Public Property AutoLoginCombobox() As String
             Get
                 Return CType(Me("AutoLoginCombobox"),String)

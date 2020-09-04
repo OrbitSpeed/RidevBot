@@ -99,22 +99,21 @@ Public Class Form_Tools
         Panel_GalaxyGates.Size = New Size(467, 606)
 
         Calculator = 1
-        textbox_stade.Text = "Checking URL Profil ... "
 
         ' -----------------------------------------------
 
-        Panel_general.Location = New Point(86, 18)
-        Panel_Npc.Location = New Point(86, 18)
-        Panel_collector.Location = New Point(86, 18)
-        Panel_GalaxyGates.Location = New Point(86, 18)
-        Panel_Palladium.Location = New Point(86, 18)
-        Panel_stats.Location = New Point(86, 18)
-        Panel_rex.Location = New Point(86, 18)
-        Panel_divers.Location = New Point(86, 18)
+        Panel_general.Location = New Point(0, 66)
+        Panel_Npc.Location = New Point(0, 66)
+        Panel_collector.Location = New Point(0, 66)
+        Panel_GalaxyGates.Location = New Point(0, 66)
+        Panel_Palladium.Location = New Point(0, 66)
+        Panel_stats.Location = New Point(0, 66)
+        Panel_rex.Location = New Point(0, 66)
+        Panel_divers.Location = New Point(0, 66)
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         CenterToScreen()
 
         If Form_Game.Visible = True Then
@@ -156,7 +155,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         'CenterToScreen()
 
     End Sub
@@ -181,7 +180,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(608, 448)
+        Size = New Size(530, 412)
         'CenterToScreen()
 
     End Sub
@@ -207,7 +206,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         ' CenterToScreen()
 
     End Sub
@@ -234,7 +233,7 @@ Public Class Form_Tools
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             General_button.Enabled = False
             Panel_general.Visible = True
-            Size = New Size(390, 358)
+            Size = New Size(497, 412)
         Else
 
             GalaxyGates_Button.Enabled = False
@@ -274,7 +273,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         ' CenterToScreen()
 
     End Sub
@@ -303,13 +302,13 @@ Public Class Form_Tools
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             General_button.Enabled = False
             Panel_general.Visible = True
-            Size = New Size(390, 358)
+            Size = New Size(497, 412)
 
         Else
 
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
-            Size = New Size(390, 358)
+            Size = New Size(497, 412)
 
             '   Utils.checkStats = True
             ' BackPage_Form.Show()
@@ -346,7 +345,7 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         ' CenterToScreen()
 
     End Sub
@@ -371,16 +370,16 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
         ' CenterToScreen()
 
     End Sub
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
-        If Button_LaunchGameRidevBrowser.Text = "          Open RidevBot Browser" Then
+        If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "          Connecting..."
+            Button_LaunchGameRidevBrowser.Text = "Connecting..."
 
             Reload()
 
@@ -389,10 +388,10 @@ Public Class Form_Tools
 
 
 
-        ElseIf Button_LaunchGameRidevBrowser.Text = "          Reload RidevBot Browser" Then
+        ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
 
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "          Connecting..."
+            Button_LaunchGameRidevBrowser.Text = "Connecting..."
 
             Reloader = 0
             Reload()
@@ -400,7 +399,7 @@ Public Class Form_Tools
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
-        Else Button_LaunchGameRidevBrowser.Text = "          Already..."
+        Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
         End If
 
 
@@ -1504,8 +1503,6 @@ Public Class Form_Tools
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
 
-            textbox_stade.Text = "Checking URL Profil ... "
-
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_username").SetAttribute("value", Form_Startup.Textbox_Username.Text)
             WebBrowser_Synchronisation.Document.GetElementById("bgcdw_login_form_password").SetAttribute("value", Form_Startup.Textbox_Password.Text)
             For Each p As HtmlElement In WebBrowser_Synchronisation.Document.GetElementsByTagName("input")
@@ -1514,15 +1511,9 @@ Public Class Form_Tools
                 End If
             Next
 
-            textbox_stade.Text = "Verifying URL Profil ... "
-
-
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
 
-            textbox_stade.Text = "URL : OK  ---  1/2"
-
             Check_message = 0
-
             Reload()
 
             ' Lance le jeu'
@@ -1588,7 +1579,7 @@ Public Class Form_Tools
 
                 Console.WriteLine("---------------------------------------")
 
-                TextBox_username.Text = username
+                TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
                 TextBox_clan.Text = clan
 
                 Select Case grade
@@ -1676,9 +1667,6 @@ Public Class Form_Tools
                 TextBox_Get_Server.Text = Utils.server
                 Utils.UpdateStats()
 
-                textbox_stade.Text = "Server : OK  ---  2/2"
-
-
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
@@ -1687,11 +1675,7 @@ Public Class Form_Tools
                 End If
 
                 WebBrowser_Synchronisation.Navigate("about:blank")
-                textbox_stade.Text = "Done."
-
                 If CheckBox_LaunchGameAuto.Checked = True Then
-
-                    textbox_stade.Text = "Launching the game wait ... "
 
                     Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
                     Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
@@ -1727,7 +1711,6 @@ Public Class Form_Tools
         'TextBox_minutedouble.Text = "0"
         'TextBox_secondsdouble2.Text = "0"
         'TextBox_secondsdouble.Text = "0"
-        textbox_stade.Text = "Checking URL Profil ... "
 
     End Sub
 
@@ -1773,25 +1756,6 @@ Public Class Form_Tools
 
         End If
 
-        Try
-            Invoke(New MethodInvoker(Sub()
-                                         Try
-                                             TextBox_minutedouble_dixieme.Text = SID_Minutes_dixaine
-                                             TextBox_minutedouble.Text = SID_Minutes
-                                             TextBox_secondsdouble2.Text = SID_Seconds_dixaine
-                                             TextBox_secondsdouble.Text = SID_Seconds
-
-                                             TextBox_minutedouble_dixieme.Refresh()
-                                             TextBox_minutedouble.Refresh()
-                                             TextBox_secondsdouble2.Refresh()
-                                             TextBox_secondsdouble.Refresh()
-                                         Catch MethodInvoker As Exception
-                                             Console.WriteLine($"Error on MethodInvoker {MethodInvoker.Message}")
-                                         End Try
-                                     End Sub))
-        Catch invoke_error As Exception
-            Console.WriteLine($"Error on Invoke_error {invoke_error.Message}")
-        End Try
     End Sub
 
     Private Async Sub BackgroundWorker_Timer_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Timer.RunWorkerCompleted
@@ -1868,31 +1832,19 @@ Public Class Form_Tools
             Label_choose_firm.ForeColor = Color.Red
             CheckBox_LaunchGameAuto.ForeColor = Color.Red
             CheckBox_colormod.ForeColor = Color.Red
-            textbox_stade.ForeColor = Color.Red
             CheckBox_AutoUpdate.ForeColor = Color.Red
             TextBox_username.ForeColor = Color.Red
             TextBox_clan.ForeColor = Color.Red
             TextBox_Get_Server.ForeColor = Color.Red
             TextBox_ProfilSelected.ForeColor = Color.Red
-            TextBox_minutedouble_dixieme.ForeColor = Color.Red
-            TextBox_minutedouble.ForeColor = Color.Red
-            TextBox_secondsdouble2.ForeColor = Color.Red
-            TextBox_secondsdouble.ForeColor = Color.Red
             TextBox_Get_Dosid.ForeColor = Color.Red
-
             TextBox_username.BackColor = Color.FromArgb(30, 30, 30)
             PictureBox_grade.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_clan.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_Get_Server.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_minutedouble_dixieme.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_minutedouble.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_secondsdouble2.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_secondsdouble.BackColor = Color.FromArgb(30, 30, 30)
-            Label_separator2.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_Get_Dosid.BackColor = Color.FromArgb(30, 30, 30)
             Label_Dosid.BackColor = Color.FromArgb(30, 30, 30)
-            Label_timeticks.BackColor = Color.FromArgb(30, 30, 30)
             Label_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
             Label_ID.BackColor = Color.FromArgb(30, 30, 30)
             Button_LaunchGameRidevBrowser.BackColor = Color.FromArgb(30, 30, 30)
@@ -1900,8 +1852,6 @@ Public Class Form_Tools
             CheckBox_AutoLogin.BackColor = Color.FromArgb(30, 30, 30)
             Label_choose_firm.BackColor = Color.FromArgb(30, 30, 30)
             CheckBox_LaunchGameAuto.BackColor = Color.FromArgb(30, 30, 30)
-            textbox_stade.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_Info.BackColor = Color.FromArgb(30, 30, 30)
             Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
             CheckBox_AutoUpdate.BackColor = Color.FromArgb(30, 30, 30)
             Button_OpenLoginPanel.BackColor = Color.FromArgb(30, 30, 30)
@@ -1920,11 +1870,10 @@ Public Class Form_Tools
             Panel_general.BackColor = Color.FromArgb(30, 30, 30)
             Panel_autospin.BackColor = Color.FromArgb(30, 30, 30)
             Panel_collector.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_Info.BackColor = Color.FromArgb(30, 30, 30)
             Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
             Panel_GalaxyGates.BackColor = Color.FromArgb(30, 30, 30)
             ComboBox_firme.BackColor = Color.FromArgb(30, 30, 30)
-            ComboBox_autologin.BackColor = Color.FromArgb(30, 30, 30)
+            ComboBox_autologin.BackColor = Color.FromArgb(20, 25, 53)
 
             Me.BackColor = Color.FromArgb(30, 30, 30)
         End If
@@ -1940,6 +1889,39 @@ Public Class Form_Tools
     Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
 
         TextBox_WinGGS.Text = ""
+
+    End Sub
+
+    Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
+
+        If Button_suppresor_controler.Text = "⬇" Then
+            Panel_suppresor_controler.Size = New Size(168, 375)
+            Button_suppresor_controler.Text = "⬆"
+
+        ElseIf Button_suppresor_controler.Text = "⬆" Then
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
+
+        End If
+
+
+    End Sub
+
+    Private Sub Panel_stats_Paint(sender As Object, e As PaintEventArgs) Handles Panel_stats.Paint
+
+    End Sub
+
+    Private Sub Button_suppresor_controler2_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler2.Click
+
+        If Button_suppresor_controler2.Text = "⬇" Then
+            Panel_suppresor_controler2.Size = New Size(165, 217)
+            Button_suppresor_controler2.Text = "⬆"
+
+        ElseIf Button_suppresor_controler2.Text = "⬆" Then
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler2.Text = "⬇"
+
+        End If
 
     End Sub
 End Class
