@@ -57,6 +57,7 @@ Public Class Form_Tools
     Public GalaxyGatesNumber As String
     Public exitGGS As String = 0
     Public Spintimes As String
+    Public GalaxyGatesChecker As String = 0
 
     Public Sub Reload()
 
@@ -352,6 +353,7 @@ Public Class Form_Tools
             Button_suppresor_controler.Text = "⬇"
 
             TextBox_uridiumGGS.Text = Utils.currentUridium
+            ComboBox_autospin.Text = "ABG"
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
         End If
@@ -654,7 +656,23 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
 
     End Sub
+    Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
 
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&alpha=1&sample=1&multiplier=1")
+
+    End Sub
+
+    Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&beta=1&sample=1&multiplier=1")
+
+    End Sub
+
+    Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_Gamma_GGS.Click
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&Gamma=1&sample=1&multiplier=1")
+
+    End Sub
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
@@ -696,6 +714,7 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
 
     End Sub
+
 #End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
 
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
@@ -705,30 +724,30 @@ Public Class Form_Tools
 
         If TextBox_spintimes_GGS.Text.Contains(".") Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + ""
+            TextBox_WinGGS.Text = vbNewLine + $"Error :"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time."
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+            TextBox_WinGGS.Text = vbNewLine + $""
 
         ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"Error :"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time."
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+            TextBox_WinGGS.Text = vbNewLine + $""
 
         ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Starting With 300ms by Default, we don't recommand to go lower.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"Error :"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"Starting With 300ms by Default, we don't recommand to go lower."
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+            TextBox_WinGGS.Text = vbNewLine + $""
 
             TextBox_spintimes_GGS.Text = 300
         End If
@@ -736,35 +755,65 @@ Public Class Form_Tools
         Data = ComboBox_autospin.Text
         Select Case Data
             Case "ABG"
+                Button_alpha_GGS.Visible = False
+                Button_beta_GGS.Visible = False
+                Button_Gamma_GGS.Visible = False
+                WebBrowser_galaxyGates.Navigate("About:blank")
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Delta"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Epsilon"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Zeta"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Kappa"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Lambda"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Kuiper"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Hades"
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case Else
+                Button_alpha_GGS.Visible = True
+                Button_beta_GGS.Visible = True
+                Button_Gamma_GGS.Visible = True
                 Button_stopSpin.PerformClick()
                 ComboBox_autospin.Text = "ABG"
                 ComboBox_autospin.Refresh()
 
         End Select
+
+        exitGGS = 0
 
     End Sub ' Start Galaxy Gates Spinner 
 
@@ -772,10 +821,10 @@ Public Class Form_Tools
 
         Console.WriteLine("Autospinner deactivated.")
 
-        TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
-        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-        TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+        TextBox_WinGGS.Text = vbNewLine + $""
+        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
+        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+        TextBox_WinGGS.Text = vbNewLine + $""
 
         exitGGS = 1
         Button_StartSpin.Enabled = True
@@ -791,19 +840,19 @@ Label_ClickGalaxyGates:
         infoinMapGG = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
         infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
 
+
         If exitGGS = 1 Then
 
             Exit Sub
         End If
 
 
-
         If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy."
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+            TextBox_WinGGS.Text = vbNewLine + $""
 
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
@@ -812,10 +861,10 @@ Label_ClickGalaxyGates:
 
         ElseIf Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium."
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+            TextBox_WinGGS.Text = vbNewLine + $""
 
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
@@ -834,25 +883,24 @@ Label_ClickGalaxyGates:
 
         If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
             If GalaxyGatesNumber = 1 Then
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox...{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Wait...{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed"
+                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox..."
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"Wait..."
+                TextBox_WinGGS.Text = vbNewLine + $""
+                GalaxyGatesChecker = 1
 
                 TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
 
-                WebBrowser_galaxyGates.Navigate("About:blank")
-                Await Task.Delay(1000)
                 Button_PrepareGates.PerformClick()
                 Await Task.Delay(5000)
 
             Else
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed"
+                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
+                TextBox_WinGGS.Text = vbNewLine + $""
 
                 Button_StartSpin.Enabled = True
                 Button_stopSpin.Enabled = False
@@ -862,10 +910,10 @@ Label_ClickGalaxyGates:
 
             If CheckBox_BuildOneAndStop.Checked = True Then
 
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
                 TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is true.{vbNewLine}"
                 TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
 
                 Button_StartSpin.Enabled = True
                 Button_stopSpin.Enabled = False
@@ -875,17 +923,17 @@ Label_ClickGalaxyGates:
 
             Else
 
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Wait...{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false."
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"Wait..."
+                TextBox_WinGGS.Text = vbNewLine + $""
 
                 Await Task.Delay(1000)
 
                 WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-
+                WebBrowser_galaxyGates.Refresh()
                 Await Task.Delay(1000)
 
             End If
@@ -919,10 +967,10 @@ Label_ClickGalaxyGates:
                 Button_Hades_GGS.PerformClick()
 
             Case Else
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Select valid Gates in first.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"Select valid Gates in first."
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
+                TextBox_WinGGS.Text = vbNewLine + $""
 
         End Select
 
@@ -939,54 +987,68 @@ Label_ClickGalaxyGates:
 
     Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
-        If ComboBox_autospin.Text = "ABG" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
-            Await Task.Delay("5000")
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
-            Await Task.Delay("5000")
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
-            Await Task.Delay("5000")
+        If GalaxyGatesChecker = 1 Then
+            If ComboBox_autospin.Text = "ABG" Then
 
-        ElseIf ComboBox_autospin.Text = "Alpha" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
-            Await Task.Delay("5000")
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Beta" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
-            Await Task.Delay("5000")
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Gamma" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
-            Await Task.Delay("5000")
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Delta" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Alpha" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Epsilon" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Beta" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Zeta" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Gamma" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Kappa" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Delta" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Lambda" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Epsilon" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Hades" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Zeta" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
+                Await Task.Delay("4000")
 
-        ElseIf ComboBox_autospin.Text = "Kuiper" Then
-            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
-            Await Task.Delay("5000")
+            ElseIf ComboBox_autospin.Text = "Kappa" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
+                Await Task.Delay("4000")
+
+            ElseIf ComboBox_autospin.Text = "Lambda" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
+                Await Task.Delay("4000")
+
+            ElseIf ComboBox_autospin.Text = "Hades" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
+                Await Task.Delay("4000")
+
+            ElseIf ComboBox_autospin.Text = "Kuiper" Then
+                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
+                Await Task.Delay("4000")
+            End If
+
+            GalaxyGatesChecker = 0
+            WebBrowser_galaxyGates.Refresh()
+
+            Button_stopSpin.PerformClick()
+            Await Task.Delay("100")
+            Button_StartSpin.PerformClick()
+
         End If
+
 
     End Sub ' button prepare Gates
 
@@ -1053,8 +1115,16 @@ Label_ClickGalaxyGates:
 
 #End Region ' Ici on lie la Balise HTLM5 de WebBrowser_GGspinner 
 
-        If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
+        If GalaxyGatesChecker = 1 Then
+
+            TextBox_WinGGS.Text = vbNewLine + "Preparing Gates..."
+            GalaxyGatesChecker = 0
+
+        ElseIf DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
+
+
             TextBox_WinGGS.Text = vbNewLine + "Materializer locked !"
+
         Else
 
             If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
@@ -1127,6 +1197,74 @@ Label_ClickGalaxyGates:
 
                     Exit Sub
                 End If
+
+#Region "ABG"
+
+                If ComboBox_autospin.Text = "ABG" Then
+
+                    Button_Alpha.Enabled = False
+                    Button_alpha_GGS.Enabled = False
+
+                    Button_beta.Enabled = False
+                    Button_beta_GGS.Enabled = False
+
+                    Button_gamma.Enabled = False
+                    Button_Gamma_GGS.Enabled = False
+
+                    Button_ABG_GGS.Enabled = False
+
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+
+                    ' check piece savoir laquel a afficher
+                    ' WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+
+                End If
+
+
+
+#End Region
+
+#Region "Alpha"
+
+                If ComboBox_autospin.Text = "Alpha" Then
+
+                    Button_Alpha.Enabled = False
+                    Button_alpha_GGS.Enabled = False
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+
+                End If
+
+
+#End Region
+
+#Region "Beta"
+
+                If ComboBox_autospin.Text = "Beta" Then
+
+                    Button_beta.Enabled = False
+                    Button_beta_GGS.Enabled = False
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
+
+                End If
+
+
+#End Region
+
+#Region "Gamma"
+
+                If ComboBox_autospin.Text = "Gamma" Then
+
+                    Button_gamma.Enabled = False
+                    Button_Gamma_GGS.Enabled = False
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
+
+                End If
+
+
+#End Region
 
 #Region "Delta"
 
@@ -1211,30 +1349,12 @@ Label_ClickGalaxyGates:
 
 #End Region
 
-#Region "ABG"
-
-                If ComboBox_autospin.Text = "ABG" Then
-
-                    Button_Alpha.Enabled = False
-                    Button_beta.Enabled = False
-                    Button_gamma.Enabled = False
-                    Button_ABG_GGS.Enabled = False
-
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-
-                End If
-
-
-
-#End Region
-
-
 
             End If ' ERREUR ICI A COMPLETER JUSTE ABG !!!!
 
         End If
 
-    End Sub ' GALAXY GATES SPINNER < HTML5 > -- BUG ABG
+    End Sub ' GALAXY GATES SPINNER < HTML5 > 
 
     Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGInfo.DocumentCompleted
 
@@ -1254,7 +1374,7 @@ Label_ClickGalaxyGates:
         TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(EERestant, ".")
 
         If ComboBox_autospin.Text = "Alpha" Then
-            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
+            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' Info GG Alpha
             If DataAlpha = Nothing Then
             Else
 
@@ -1417,7 +1537,7 @@ Label_ClickGalaxyGates:
             End If
 
         ElseIf ComboBox_autospin.Text = "Kuiper" Then
-            Dim DataKuiper = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kuiper")
+            Dim DataKuiper = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kuiper") ' Info GG Kuiper
             If DataKuiper = Nothing Then
             Else
 
@@ -1434,36 +1554,37 @@ Label_ClickGalaxyGates:
 
             End If
 
-        ElseIf ComboBox_autospin.Text = "ABG" Then
+        ElseIf ComboBox_autospin.Text = "ABG" Then ' Info GG Alpha / beta / Gamma
 
-            'Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-            'Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-            'Dim regex_currentPart = Utils.getCurrentPart(DataAlpha)
-            'Dim regex_totalPart = Utils.getTotalPart(DataAlpha)
-            'Utils.setInfoPartGG_InMap(DataAlpha)
-            'Utils.setLivesLeft(DataAlpha)
-            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha") ' Info GG Alpha
+            If DataAlpha = Nothing Then
+            Else
+                Dim Alpha_currentPart = Utils.getCurrentPart(DataAlpha)
+                Dim Alpha_totalPart = Utils.getTotalPart(DataAlpha)
+                Label_Alpha_ABG_GGS_part.Text = $"Part : {Alpha_currentPart} / {Alpha_totalPart}"
+            End If
 
-            'Dim regex_currentWave = Utils.getCurrentWave(DataBeta)
-            'Dim regex_totalWave = Utils.getTotalWave(DataBeta)
-            'Dim regex_currentPart = Utils.getCurrentPart(DataBeta)
-            'Dim regex_totalPart = Utils.getTotalPart(DataBeta)
-            'Utils.setInfoPartGG_InMap(DataBeta)
-            'Utils.setLivesLeft(DataBeta)
-            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta 
+            If DataBeta = Nothing Then
+            Else
+                Dim Beta_currentPart = Utils.getCurrentPart(DataBeta)
+                Dim Beta_totalPart = Utils.getTotalPart(DataBeta)
+                Label_Beta_ABG_GGS_part.Text = $"Part : {Beta_currentPart} / {Beta_totalPart}"
+            End If
 
-            'Dim regex_currentWave = Utils.getCurrentWave(DataGamma)
-            'Dim regex_totalWave = Utils.getTotalWave(DataGamma)
-            'Dim regex_currentPart = Utils.getCurrentPart(DataGamma)
-            'Dim regex_totalPart = Utils.getTotalPart(DataGamma)
-            'Utils.setInfoPartGG_InMap(DataGamma)
-            'Utils.setLivesLeft(DataGamma)
-            'Utils.setWavePart(regex_currentWave, regex_totalWave, regex_currentPart, regex_totalPart)
+            Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
+            If DataGamma = Nothing Then
+            Else
+                Dim Gamma_currentPart = Utils.getCurrentPart(DataGamma)
+                Dim Gamma_totalPart = Utils.getTotalPart(DataGamma)
+                Label_Gamma_ABG_GGS_part.Text = $"Part : {Gamma_currentPart} / {Gamma_totalPart}"
+            End If
 
             Button_Alpha.Enabled = True
             Button_beta.Enabled = True
             Button_gamma.Enabled = True
             Button_ABG_GGS.Enabled = True
+
 
 
         End If
@@ -1781,7 +1902,7 @@ Label_ClickGalaxyGates:
 
     End Sub ' Supressor controler TOOLBAR Configuration
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
+    Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
         If Button_suppresor_controler_GGS.Text = "⬇" Then
             Button_suppresor_controler_GGS.Text = "⬆"
@@ -1791,6 +1912,28 @@ Label_ClickGalaxyGates:
         ElseIf Button_suppresor_controler_GGS.Text = "⬆" Then
             Button_suppresor_controler_GGS.Text = "⬇"
             Size = New Size(497, 705)
+
+        End If
+
+    End Sub  ' Supressor controler INBAR GGS
+
+    Private Sub ComboBox_autospin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.SelectedIndexChanged
+
+        If Text = "ABG" Then
+
+            Panel_Alpha_ABG_GGS.Visible = True
+            Panel_Beta_ABG_GGS.Visible = True
+            Panel_Gamma_ABG_GGS.Visible = True
+            Button_alpha_GGS.Visible = False
+            Button_beta_GGS.Visible = False
+            Button_Gamma_GGS.Visible = False
+        Else
+            Panel_Alpha_ABG_GGS.Visible = False
+            Panel_Beta_ABG_GGS.Visible = False
+            Panel_Gamma_ABG_GGS.Visible = False
+            Button_alpha_GGS.Visible = True
+            Button_beta_GGS.Visible = True
+            Button_Gamma_GGS.Visible = True
 
         End If
 
