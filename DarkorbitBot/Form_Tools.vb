@@ -47,6 +47,12 @@ Public Class Form_Tools
     Public Reloader As Integer
     Public Reader As Integer
 
+    Public PartAlpha As String
+    Public PartBeta As String
+    Public PartGamma As String
+    Public AlphaBetaGammaReupload As String
+    Public AlphaBetaGammaReupload2 As String
+    Public AlphaBetaGammaReupload3 As String
 
     Public Sub Reload()
 
@@ -56,7 +62,7 @@ Public Class Form_Tools
         End If
 
 
-    End Sub
+    End Sub ' Sert a recharger le jeu
 
 #Region "Panel_Title (Move)"
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
@@ -90,7 +96,7 @@ Public Class Form_Tools
         End If
 
     End Sub
-#End Region
+#End Region ' Sert a Déplacer la fenetre ( form )
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -99,8 +105,6 @@ Public Class Form_Tools
         Panel_GalaxyGates.Size = New Size(467, 606)
 
         Calculator = 1
-
-        ' -----------------------------------------------
 
         Panel_general.Location = New Point(0, 66)
         Panel_Npc.Location = New Point(0, 66)
@@ -122,124 +126,83 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         End If
 
-        'TODO
-        'Pour les thèmes (prend uniquement dans le controle et pas dans un panel) (donc à faire)
-        'For Each b As Button In Me.Controls.OfType(Of Button)()
-        '    b.BackColor = Color.Red
-        'Next
-    End Sub
+    End Sub ' Ouverture du Program ( form )
 
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
         CloseForm.ShowDialog(Me)
-        'CloseForm1.Show()
-    End Sub
+    End Sub ' fermeture de la form par appel ( form )
 
 #Region "Button"
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Size = New Size(530, 412)
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Size = New Size(530, 412)
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Size = New Size(530, 412)
+
+    End Sub
+
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
-        General_button.Enabled = False
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = True
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
-        'CenterToScreen()
 
     End Sub
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = False
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = True
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(530, 412)
-        'CenterToScreen()
 
     End Sub
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = False
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
 
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = True
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
-        ' CenterToScreen()
 
     End Sub
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             General_button.Enabled = False
             Panel_general.Visible = True
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
+            Button_suppresor_controler2.Text = "⬇"
             Size = New Size(497, 412)
         Else
 
+            Size = New Size(497, 550)
             GalaxyGates_Button.Enabled = False
             Panel_GalaxyGates.Visible = True
             Panel_GalaxyGates.Size = New Size(669, 531)
-            Size = New Size(746, 550)
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
+            Button_suppresor_controler2.Text = "⬇"
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
@@ -255,47 +218,13 @@ Public Class Form_Tools
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = False
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = True
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
-        ' CenterToScreen()
 
     End Sub
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
-
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
-
 
         If Utils.server = "" Then
 
@@ -303,75 +232,35 @@ Public Class Form_Tools
             General_button.Enabled = False
             Panel_general.Visible = True
             Size = New Size(497, 412)
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
 
         Else
 
             Stats_Button.Enabled = False
             Panel_stats.Visible = True
             Size = New Size(497, 412)
-
-            '   Utils.checkStats = True
-            ' BackPage_Form.Show()
-            ' Reader = 1
-            '  BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-            '   BackPage_Form.WindowState = FormWindowState.Minimized
-
-            ' BackPage_Form.ShowIcon = False
-            '  BackPage_Form.ShowInTaskbar = False
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
 
         End If
-
-        '  CenterToScreen()
 
     End Sub
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = False
-        Divers_Button.Enabled = True
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = True
-        Panel_divers.Visible = False
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
-        ' CenterToScreen()
 
     End Sub
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
 
-        General_button.Enabled = True
-        NPC_Button.Enabled = True
-        LogUpdate_button.Enabled = True
-        GalaxyGates_Button.Enabled = True
-        Pirates_Button.Enabled = True
-        Stats_Button.Enabled = True
-        Rex_Button.Enabled = True
-        Divers_Button.Enabled = False
-
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = True
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
-        ' CenterToScreen()
 
     End Sub
 
@@ -380,22 +269,16 @@ Public Class Form_Tools
         If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
-
             Reload()
-
             Form_Game.Show()
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-
-
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
 
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
-
             Reloader = 0
             Reload()
-
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
@@ -408,17 +291,9 @@ Public Class Form_Tools
 #End Region
 
 #Region "Galaxy Gates"
-    ' full = toute la gg 
-    ' last = derniere piece
 
 #Region "GG Click Portail"
 
-    Dim PartAlpha As String
-    Dim PartBeta As String
-    Dim PartGamma As String
-    Public AlphaBetaGammaReupload As String
-    Public AlphaBetaGammaReupload2 As String
-    Public AlphaBetaGammaReupload3 As String
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
@@ -585,8 +460,8 @@ Public Class Form_Tools
 
     Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
-        'button open Login Box'
-
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Form_Startup.CheckedStats = 1
         Form_Startup.Show()
 
@@ -1843,7 +1718,7 @@ Public Class Form_Tools
 
     Private Sub Button_Howuse_Click(sender As Object, e As EventArgs) Handles Button_Howuse.Click
 
-        Size = New Size(390, 358)
+        Size = New Size(497, 412)
 
     End Sub
 
@@ -1856,8 +1731,10 @@ Public Class Form_Tools
     Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
 
         If Button_suppresor_controler.Text = "⬇" Then
-            Panel_suppresor_controler.Size = New Size(168, 375)
+            Panel_suppresor_controler.Size = New Size(168, 299)
             Button_suppresor_controler.Text = "⬆"
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler2.Text = "⬇"
 
         ElseIf Button_suppresor_controler.Text = "⬆" Then
             Panel_suppresor_controler.Size = New Size(168, 47)
@@ -1877,6 +1754,8 @@ Public Class Form_Tools
         If Button_suppresor_controler2.Text = "⬇" Then
             Panel_suppresor_controler2.Size = New Size(165, 217)
             Button_suppresor_controler2.Text = "⬆"
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
 
         ElseIf Button_suppresor_controler2.Text = "⬆" Then
             Panel_suppresor_controler2.Size = New Size(168, 47)
@@ -1885,4 +1764,6 @@ Public Class Form_Tools
         End If
 
     End Sub
+
+
 End Class
