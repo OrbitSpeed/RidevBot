@@ -144,7 +144,9 @@ Public Class Form_Tools
         Panel_GalaxyGates.Size = New Size(467, 606)
 
         Calculator = 1
-
+        Panel_palladium_palladium.Location = New Point(0, 66)
+        panel_npc_npc.Location = New Point(0, 66)
+        Panel_collectable.Location = New Point(0, 66)
         Panel_general.Location = New Point(0, 66)
         Panel_Npc.Location = New Point(0, 66)
         Panel_collector.Location = New Point(0, 66)

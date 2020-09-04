@@ -35,8 +35,8 @@
                 Await Task.Delay(1250)
             End If
         End If
-        Form_Tools.BackgroundWorker_Timer.CancelAsync()
-        'Await Task.Delay(1000)
+        Form_Tools.Button_stopSpin.PerformClick()
+        Await Task.Delay(1000)
         Form_Startup.Close()
         BackPage_Form.Close()
         Form_Game.Close()

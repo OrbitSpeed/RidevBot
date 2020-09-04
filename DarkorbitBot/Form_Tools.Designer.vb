@@ -85,14 +85,10 @@ Partial Class Form_Tools
         Me.CheckBox_red_dots_module = New System.Windows.Forms.CheckBox()
         Me.Label_repair = New System.Windows.Forms.Label()
         Me.ComboBox_map_to_travel = New System.Windows.Forms.ComboBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.CheckedListBox2 = New System.Windows.Forms.CheckedListBox()
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.CheckedListBox_npc = New System.Windows.Forms.CheckedListBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CheckedListBox_listbox = New System.Windows.Forms.CheckedListBox()
         Me.Panel_collector = New System.Windows.Forms.Panel()
         Me.TextBox_Changelog = New System.Windows.Forms.TextBox()
@@ -151,7 +147,6 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -159,7 +154,6 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
@@ -267,15 +261,14 @@ Partial Class Form_Tools
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel_palladium_palladium = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Npc.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
         Me.Panel_Palladium.SuspendLayout()
         Me.Panel_stats.SuspendLayout()
@@ -306,7 +299,6 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.SuspendLayout()
         Me.Panel_suppresor_controler2.SuspendLayout()
         Me.Panel_suppresor_controler3.SuspendLayout()
-        Me.Panel_suppresor_controler4.SuspendLayout()
         Me.Panel_collectable.SuspendLayout()
         Me.panel_npc_npc.SuspendLayout()
         Me.Panel_palladium_palladium.SuspendLayout()
@@ -344,7 +336,7 @@ Partial Class Form_Tools
         Me.NPC_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.NPC_Button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NPC_Button.ForeColor = System.Drawing.Color.White
-        Me.NPC_Button.Location = New System.Drawing.Point(183, 5)
+        Me.NPC_Button.Location = New System.Drawing.Point(5, 4)
         Me.NPC_Button.Name = "NPC_Button"
         Me.NPC_Button.Size = New System.Drawing.Size(125, 35)
         Me.NPC_Button.TabIndex = 26
@@ -359,7 +351,7 @@ Partial Class Form_Tools
         Me.General_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.General_button.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.General_button.ForeColor = System.Drawing.Color.White
-        Me.General_button.Location = New System.Drawing.Point(19, 5)
+        Me.General_button.Location = New System.Drawing.Point(8, 4)
         Me.General_button.Name = "General_button"
         Me.General_button.Size = New System.Drawing.Size(125, 35)
         Me.General_button.TabIndex = 25
@@ -1206,54 +1198,11 @@ Partial Class Form_Tools
         Me.ComboBox_map_to_travel.TabIndex = 57
         Me.ComboBox_map_to_travel.Text = Global.DarkorbitBot.My.MySettings.Default.map_to_travel
         '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(15, 566)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(482, 205)
-        Me.TabControl1.TabIndex = 92
-        '
-        'TabPage1
-        '
-        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TabPage1.Controls.Add(Me.TextBox2)
-        Me.TabPage1.Controls.Add(Me.Panel5)
-        Me.TabPage1.Controls.Add(Me.CheckedListBox2)
-        Me.TabPage1.Controls.Add(Me.CheckedListBox1)
-        Me.TabPage1.Controls.Add(Me.CheckedListBox_npc)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(474, 179)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Npc List"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(271, -183)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(16, 15)
-        Me.TextBox2.TabIndex = 45
-        Me.TextBox2.Text = "0"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.ForeColor = System.Drawing.Color.White
-        Me.Panel5.Location = New System.Drawing.Point(231, 3)
+        Me.Panel5.Location = New System.Drawing.Point(257, 36)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(34, 173)
         Me.Panel5.TabIndex = 91
@@ -1264,14 +1213,13 @@ Partial Class Form_Tools
         Me.CheckedListBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox2.CheckOnClick = True
-        Me.CheckedListBox2.Dock = System.Windows.Forms.DockStyle.Left
         Me.CheckedListBox2.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox2.FormattingEnabled = True
         Me.CheckedListBox2.Items.AddRange(New Object() {"P :", "P :", "P :", "P :", "P :", "P :", "P :", "P :", "P :", "P :", "P :"})
-        Me.CheckedListBox2.Location = New System.Drawing.Point(196, 3)
+        Me.CheckedListBox2.Location = New System.Drawing.Point(222, 36)
         Me.CheckedListBox2.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox2.Name = "CheckedListBox2"
-        Me.CheckedListBox2.Size = New System.Drawing.Size(35, 173)
+        Me.CheckedListBox2.Size = New System.Drawing.Size(35, 165)
         Me.CheckedListBox2.TabIndex = 90
         '
         'CheckedListBox1
@@ -1279,14 +1227,13 @@ Partial Class Form_Tools
         Me.CheckedListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox1.CheckOnClick = True
-        Me.CheckedListBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.CheckedListBox1.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Items.AddRange(New Object() {"x1", "x2", "x3", "x4", "Sab", "Rsb"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(155, 3)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(181, 36)
         Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(41, 173)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(41, 165)
         Me.CheckedListBox1.TabIndex = 89
         '
         'CheckedListBox_npc
@@ -1294,39 +1241,25 @@ Partial Class Form_Tools
         Me.CheckedListBox_npc.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_npc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox_npc.CheckOnClick = True
-        Me.CheckedListBox_npc.Dock = System.Windows.Forms.DockStyle.Left
         Me.CheckedListBox_npc.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_npc.FormattingEnabled = True
-        Me.CheckedListBox_npc.Location = New System.Drawing.Point(3, 3)
+        Me.CheckedListBox_npc.Location = New System.Drawing.Point(27, 34)
         Me.CheckedListBox_npc.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox_npc.Name = "CheckedListBox_npc"
-        Me.CheckedListBox_npc.Size = New System.Drawing.Size(152, 173)
+        Me.CheckedListBox_npc.Size = New System.Drawing.Size(152, 165)
         Me.CheckedListBox_npc.TabIndex = 88
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.CheckedListBox_listbox)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(0)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(474, 179)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Collectable"
         '
         'CheckedListBox_listbox
         '
         Me.CheckedListBox_listbox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.CheckedListBox_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CheckedListBox_listbox.CheckOnClick = True
-        Me.CheckedListBox_listbox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CheckedListBox_listbox.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox_listbox.FormattingEnabled = True
-        Me.CheckedListBox_listbox.Location = New System.Drawing.Point(3, 3)
+        Me.CheckedListBox_listbox.Location = New System.Drawing.Point(9, 15)
         Me.CheckedListBox_listbox.Margin = New System.Windows.Forms.Padding(5)
         Me.CheckedListBox_listbox.Name = "CheckedListBox_listbox"
-        Me.CheckedListBox_listbox.Size = New System.Drawing.Size(468, 173)
+        Me.CheckedListBox_listbox.Size = New System.Drawing.Size(468, 105)
         Me.CheckedListBox_listbox.TabIndex = 89
         '
         'Panel_collector
@@ -1360,7 +1293,7 @@ Partial Class Form_Tools
         Me.Panel_Palladium.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_Palladium.Controls.Add(Me.Label18)
         Me.Panel_Palladium.ForeColor = System.Drawing.Color.White
-        Me.Panel_Palladium.Location = New System.Drawing.Point(392, 154)
+        Me.Panel_Palladium.Location = New System.Drawing.Point(412, 486)
         Me.Panel_Palladium.Name = "Panel_Palladium"
         Me.Panel_Palladium.Size = New System.Drawing.Size(496, 346)
         Me.Panel_Palladium.TabIndex = 45
@@ -1373,7 +1306,7 @@ Partial Class Form_Tools
         Me.Label18.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(231, 167)
+        Me.Label18.Location = New System.Drawing.Point(221, 8)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(48, 13)
         Me.Label18.TabIndex = 43
@@ -2137,18 +2070,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2238,20 +2159,6 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabIndex = 10
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
-        '
-        'FlatMini_reduction_de_formtools
-        '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.Text = "1"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
         '
         'PictureBox_close1
         '
@@ -3502,14 +3409,16 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_suppresor_controler.Controls.Add(Me.Button_OpenLoginPanel)
         Me.Panel_suppresor_controler.Controls.Add(Me.LogUpdate_button)
+        Me.Panel_suppresor_controler.Controls.Add(Me.Button_suppresor_controler)
         Me.Panel_suppresor_controler.Controls.Add(Me.Button_How_use)
+        Me.Panel_suppresor_controler.Controls.Add(Me.General_button)
         Me.Panel_suppresor_controler.Controls.Add(Me.Pirates_Button)
         Me.Panel_suppresor_controler.Controls.Add(Me.Stats_Button)
         Me.Panel_suppresor_controler.Controls.Add(Me.Divers_Button)
         Me.Panel_suppresor_controler.ForeColor = System.Drawing.Color.White
         Me.Panel_suppresor_controler.Location = New System.Drawing.Point(-1, 20)
         Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
-        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(168, 315)
+        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(168, 47)
         Me.Panel_suppresor_controler.TabIndex = 46
         '
         'Button_How_use
@@ -3533,7 +3442,7 @@ Partial Class Form_Tools
         Me.Button_suppresor_controler.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_suppresor_controler.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_suppresor_controler.ForeColor = System.Drawing.Color.White
-        Me.Button_suppresor_controler.Location = New System.Drawing.Point(143, 5)
+        Me.Button_suppresor_controler.Location = New System.Drawing.Point(132, 4)
         Me.Button_suppresor_controler.Name = "Button_suppresor_controler"
         Me.Button_suppresor_controler.Size = New System.Drawing.Size(31, 35)
         Me.Button_suppresor_controler.TabIndex = 27
@@ -3547,7 +3456,7 @@ Partial Class Form_Tools
         Me.Button_suppresor_controler2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_suppresor_controler2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_suppresor_controler2.ForeColor = System.Drawing.Color.White
-        Me.Button_suppresor_controler2.Location = New System.Drawing.Point(307, 5)
+        Me.Button_suppresor_controler2.Location = New System.Drawing.Point(129, 4)
         Me.Button_suppresor_controler2.Name = "Button_suppresor_controler2"
         Me.Button_suppresor_controler2.Size = New System.Drawing.Size(31, 35)
         Me.Button_suppresor_controler2.TabIndex = 28
@@ -3600,6 +3509,8 @@ Partial Class Form_Tools
         '
         Me.Panel_suppresor_controler2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_suppresor_controler2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_suppresor_controler2.Controls.Add(Me.NPC_Button)
+        Me.Panel_suppresor_controler2.Controls.Add(Me.Button_suppresor_controler2)
         Me.Panel_suppresor_controler2.Controls.Add(Me.Rex_Button)
         Me.Panel_suppresor_controler2.Controls.Add(Me.Button_collectable_toolbar)
         Me.Panel_suppresor_controler2.Controls.Add(Me.Button_palladium_toolbar)
@@ -3623,23 +3534,20 @@ Partial Class Form_Tools
         'Panel_suppresor_controler4
         '
         Me.Panel_suppresor_controler4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_suppresor_controler4.Controls.Add(Me.NPC_Button)
-        Me.Panel_suppresor_controler4.Controls.Add(Me.Button_suppresor_controler2)
-        Me.Panel_suppresor_controler4.Controls.Add(Me.Button_suppresor_controler)
-        Me.Panel_suppresor_controler4.Controls.Add(Me.General_button)
         Me.Panel_suppresor_controler4.ForeColor = System.Drawing.Color.White
-        Me.Panel_suppresor_controler4.Location = New System.Drawing.Point(-11, 20)
+        Me.Panel_suppresor_controler4.Location = New System.Drawing.Point(496, 20)
         Me.Panel_suppresor_controler4.Name = "Panel_suppresor_controler4"
-        Me.Panel_suppresor_controler4.Size = New System.Drawing.Size(1972, 47)
+        Me.Panel_suppresor_controler4.Size = New System.Drawing.Size(1465, 47)
         Me.Panel_suppresor_controler4.TabIndex = 82
         '
         'Panel_collectable
         '
         Me.Panel_collectable.AutoScroll = True
         Me.Panel_collectable.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_collectable.Controls.Add(Me.CheckedListBox_listbox)
         Me.Panel_collectable.Controls.Add(Me.Label13)
         Me.Panel_collectable.ForeColor = System.Drawing.Color.White
-        Me.Panel_collectable.Location = New System.Drawing.Point(191, 91)
+        Me.Panel_collectable.Location = New System.Drawing.Point(185, 560)
         Me.Panel_collectable.Name = "Panel_collectable"
         Me.Panel_collectable.Size = New System.Drawing.Size(496, 346)
         Me.Panel_collectable.TabIndex = 46
@@ -3663,8 +3571,12 @@ Partial Class Form_Tools
         Me.panel_npc_npc.AutoScroll = True
         Me.panel_npc_npc.BackColor = System.Drawing.SystemColors.HotTrack
         Me.panel_npc_npc.Controls.Add(Me.Label14)
+        Me.panel_npc_npc.Controls.Add(Me.Panel5)
+        Me.panel_npc_npc.Controls.Add(Me.CheckedListBox2)
+        Me.panel_npc_npc.Controls.Add(Me.CheckedListBox_npc)
+        Me.panel_npc_npc.Controls.Add(Me.CheckedListBox1)
         Me.panel_npc_npc.ForeColor = System.Drawing.Color.White
-        Me.panel_npc_npc.Location = New System.Drawing.Point(172, 101)
+        Me.panel_npc_npc.Location = New System.Drawing.Point(239, 705)
         Me.panel_npc_npc.Name = "panel_npc_npc"
         Me.panel_npc_npc.Size = New System.Drawing.Size(496, 346)
         Me.panel_npc_npc.TabIndex = 47
@@ -3677,7 +3589,7 @@ Partial Class Form_Tools
         Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(231, 167)
+        Me.Label14.Location = New System.Drawing.Point(312, 22)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(28, 13)
         Me.Label14.TabIndex = 43
@@ -3689,7 +3601,7 @@ Partial Class Form_Tools
         Me.Panel_palladium_palladium.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_palladium_palladium.Controls.Add(Me.Label19)
         Me.Panel_palladium_palladium.ForeColor = System.Drawing.Color.White
-        Me.Panel_palladium_palladium.Location = New System.Drawing.Point(286, 94)
+        Me.Panel_palladium_palladium.Location = New System.Drawing.Point(855, 73)
         Me.Panel_palladium_palladium.Name = "Panel_palladium_palladium"
         Me.Panel_palladium_palladium.Size = New System.Drawing.Size(496, 346)
         Me.Panel_palladium_palladium.TabIndex = 48
@@ -3702,11 +3614,37 @@ Partial Class Form_Tools
         Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(231, 167)
+        Me.Label19.Location = New System.Drawing.Point(15, 2)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(59, 13)
         Me.Label19.TabIndex = 43
         Me.Label19.Text = "Palladium"
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.Text = "1"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '
@@ -3714,9 +3652,8 @@ Partial Class Form_Tools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.HotTrack
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
-        Me.Controls.Add(Me.Panel_palladium_palladium)
-        Me.Controls.Add(Me.panel_npc_npc)
-        Me.Controls.Add(Me.Panel_collectable)
+        Me.Controls.Add(Me.Panel_suppresor_controler2)
+        Me.Controls.Add(Me.Panel_suppresor_controler)
         Me.Controls.Add(Me.Panel_suppresor_controler3)
         Me.Controls.Add(Me.Panel_general)
         Me.Controls.Add(Me.Panel_GalaxyGates)
@@ -3731,12 +3668,12 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.CheckBox_AutoUpdate)
         Me.Controls.Add(Me.Panel_Npc)
         Me.Controls.Add(Me.Panel_Title)
-        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel_divers)
-        Me.Controls.Add(Me.Panel_Palladium)
         Me.Controls.Add(Me.Panel_suppresor_controler4)
-        Me.Controls.Add(Me.Panel_suppresor_controler)
-        Me.Controls.Add(Me.Panel_suppresor_controler2)
+        Me.Controls.Add(Me.Panel_palladium_palladium)
+        Me.Controls.Add(Me.panel_npc_npc)
+        Me.Controls.Add(Me.Panel_collectable)
+        Me.Controls.Add(Me.Panel_Palladium)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
@@ -3750,10 +3687,6 @@ Partial Class Form_Tools
         Me.Panel_Npc.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
         Me.Panel_collector.ResumeLayout(False)
         Me.Panel_collector.PerformLayout()
         Me.Panel_Palladium.ResumeLayout(False)
@@ -3802,7 +3735,6 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.ResumeLayout(False)
         Me.Panel_suppresor_controler2.ResumeLayout(False)
         Me.Panel_suppresor_controler3.ResumeLayout(False)
-        Me.Panel_suppresor_controler4.ResumeLayout(False)
         Me.Panel_collectable.ResumeLayout(False)
         Me.Panel_collectable.PerformLayout()
         Me.panel_npc_npc.ResumeLayout(False)
@@ -4010,10 +3942,7 @@ Partial Class Form_Tools
     Friend WithEvents Button_kuiper As Button
     Friend WithEvents TextBox_uridiumGGS As TextBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Button_resetlog As Button
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents CheckedListBox_listbox As CheckedListBox
     Friend WithEvents Label_repair As Label
     Friend WithEvents ComboBox_repair As ComboBox
@@ -4031,7 +3960,6 @@ Partial Class Form_Tools
     Friend WithEvents Label5 As Label
     Friend WithEvents CheckedListBox2 As CheckedListBox
     Friend WithEvents CheckedListBox1 As CheckedListBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Button_suppresor_controler As Button
     Friend WithEvents Button_suppresor_controler2 As Button
