@@ -195,11 +195,6 @@ Public Class Form_Startup
 
         End If
 
-        'Form_Tools.Timer_SID.Stop()
-        If Form_Tools.BackgroundWorker_Timer.IsBusy = True Then
-            Form_Tools.BackgroundWorker_Timer.CancelAsync()
-        End If
-
         Form_Tools.TextBox_Get_Dosid.Text = ""
 
     End Sub

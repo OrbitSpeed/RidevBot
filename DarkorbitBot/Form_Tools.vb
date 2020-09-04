@@ -1,17 +1,22 @@
 ﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
-Imports System
-Imports System.Net
-Imports System.IO
 
 Public Class Form_Tools
 
-    Public BOL_Redimensionnement As Boolean 'variable publique pour stocker le redimensionnement
+    Public BOL_Redimensionnement As Boolean
     Public BeingDragged As Boolean
+    Public ABG As Boolean
+    Public BackgroundWorkerAutospin As Boolean
+
     Public MouseDownX As Integer
     Public MouseDownY As Integer
-    Public Calculator As String
+    Public Check_message As Integer
+    Public Reloader As Integer
+    Public Reader As Integer
+    Public Const BufferSize As Integer = 512 * 1024
+    Public Const BufferReadSize As Integer = 1024
 
+    Public Calculator As String
     Public UridiumCalculator As String
     Public CreditCalculator As String
     Public HonorCalculator As String
@@ -27,10 +32,6 @@ Public Class Form_Tools
     Public HonorCalculator3 As String
     Public ExpCalculator3 As String
     Public RPCalculator3 As String
-    Public ABG As Boolean
-
-    Public BackgroundWorkerAutospin As Boolean
-
     Public CheckedDeltaStats As String
     Public CheckedEpsilonStats As String
     Public CheckedZetaStats As String
@@ -42,17 +43,20 @@ Public Class Form_Tools
     Public CheckedAlphaBetaGammaStats2 As String
     Public CheckedAlphaBetaGammaStats3 As String
     Public Opened As String = 1
-
-    Public Check_message As Integer
-    Public Reloader As Integer
-    Public Reader As Integer
-
     Public PartAlpha As String
     Public PartBeta As String
     Public PartGamma As String
     Public AlphaBetaGammaReupload As String
     Public AlphaBetaGammaReupload2 As String
     Public AlphaBetaGammaReupload3 As String
+    Public numberToSpin As String
+    Public uridiumToKeep As String
+    Public Data As String
+    Public infoPartGG As String
+    Public infoinMapGG As String
+    Public GalaxyGatesNumber As String
+    Public exitGGS As String = 0
+    Public Spintimes As String
 
     Public Sub Reload()
 
@@ -65,6 +69,7 @@ Public Class Form_Tools
     End Sub ' Sert a recharger le jeu
 
 #Region "Panel_Title (Move)"
+
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
 
         If BeingDragged = True Then
@@ -96,6 +101,40 @@ Public Class Form_Tools
         End If
 
     End Sub
+
+    Private Sub Title_form_MouseDown(sender As Object, e As MouseEventArgs) Handles Title_form.MouseDown
+
+        If e.Button = MouseButtons.Left Then
+            BeingDragged = True
+            MouseDownX = e.X
+            MouseDownY = e.Y
+        End If
+
+    End Sub
+
+    Private Sub Title_form_MouseUp(sender As Object, e As MouseEventArgs) Handles Title_form.MouseUp
+
+        If e.Button = MouseButtons.Left Then
+            BeingDragged = False
+        End If
+
+    End Sub
+
+    Private Sub Title_form_MouseMove(sender As Object, e As MouseEventArgs) Handles Title_form.MouseMove
+
+        If BeingDragged = True Then
+            Dim tmp As Point = New Point()
+
+            tmp.X = Me.Location.X + (e.X - MouseDownX)
+            tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
+            Me.Location = tmp
+
+            tmp = Nothing
+        End If
+
+    End Sub
+
+
 #End Region ' Sert a Déplacer la fenetre ( form )
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -132,33 +171,89 @@ Public Class Form_Tools
         CloseForm.ShowDialog(Me)
     End Sub ' fermeture de la form par appel ( form )
 
-#Region "Button"
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
+#Region "Button toolbar"
+    Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
+
+        Panel_palladium_palladium.Visible = True
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
         Panel_suppresor_controler2.Size = New Size(168, 47)
         Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(530, 412)
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
+    Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
+
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = True
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
         Panel_suppresor_controler2.Size = New Size(168, 47)
         Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(530, 412)
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
+    Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
+
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = True
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
         Panel_suppresor_controler2.Size = New Size(168, 47)
         Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
         Size = New Size(530, 412)
 
     End Sub
 
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = True
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
@@ -167,15 +262,42 @@ Public Class Form_Tools
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = True
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
-        Size = New Size(530, 412)
+        Size = New Size(497, 480)
 
     End Sub
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = True
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
 
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
@@ -186,38 +308,67 @@ Public Class Form_Tools
 
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            General_button.Enabled = False
+
             Panel_general.Visible = True
-            Panel_suppresor_controler.Size = New Size(168, 47)
+            Panel_palladium_palladium.Visible = False
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_Npc.Visible = False
+            Panel_collector.Visible = False
+            Panel_GalaxyGates.Visible = False
+            Panel_Palladium.Visible = False
+            Panel_stats.Visible = False
+            Panel_rex.Visible = False
+            Panel_divers.Visible = False
+
             Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
             Button_suppresor_controler2.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
             Size = New Size(497, 412)
         Else
 
-            Size = New Size(497, 550)
-            GalaxyGates_Button.Enabled = False
+            Panel_palladium_palladium.Visible = False
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_general.Visible = False
+            Panel_Npc.Visible = False
+            Panel_collector.Visible = False
+            Panel_Palladium.Visible = False
+            Panel_stats.Visible = False
+            Panel_rex.Visible = False
+            Panel_divers.Visible = False
             Panel_GalaxyGates.Visible = True
-            Panel_GalaxyGates.Size = New Size(669, 531)
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
-            Button_suppresor_controler2.Text = "⬇"
-            TextBox_uridiumGGS.Text = Utils.currentUridium
 
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler2.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(168, 47)
+            Button_suppresor_controler.Text = "⬇"
+            Size = New Size(497, 550)
+
+            TextBox_uridiumGGS.Text = Utils.currentUridium
             WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
-            ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
-
         End If
-
-        '
-        '  CenterToScreen()
 
     End Sub
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = True
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
@@ -229,19 +380,44 @@ Public Class Form_Tools
         If Utils.server = "" Then
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            General_button.Enabled = False
+
             Panel_general.Visible = True
-            Size = New Size(497, 412)
+            Panel_palladium_palladium.Visible = False
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_Npc.Visible = False
+            Panel_collector.Visible = False
+            Panel_GalaxyGates.Visible = False
+            Panel_Palladium.Visible = False
+            Panel_stats.Visible = False
+            Panel_rex.Visible = False
+            Panel_divers.Visible = False
+
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler2.Text = "⬇"
             Panel_suppresor_controler.Size = New Size(168, 47)
             Button_suppresor_controler.Text = "⬇"
+            Size = New Size(497, 412)
 
         Else
 
-            Stats_Button.Enabled = False
+            Panel_palladium_palladium.Visible = False
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_general.Visible = False
+            Panel_Npc.Visible = False
+            Panel_collector.Visible = False
+            Panel_GalaxyGates.Visible = False
+            Panel_Palladium.Visible = False
             Panel_stats.Visible = True
-            Size = New Size(497, 412)
+            Panel_rex.Visible = False
+            Panel_divers.Visible = False
+
+            Panel_suppresor_controler2.Size = New Size(168, 47)
+            Button_suppresor_controler2.Text = "⬇"
             Panel_suppresor_controler.Size = New Size(168, 47)
             Button_suppresor_controler.Text = "⬇"
+            Size = New Size(497, 412)
 
         End If
 
@@ -249,8 +425,21 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
-        Panel_suppresor_controler.Size = New Size(168, 47)
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = True
+        Panel_divers.Visible = False
+
         Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
         Size = New Size(497, 412)
 
@@ -258,11 +447,54 @@ Public Class Form_Tools
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
 
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = True
+
         Panel_suppresor_controler.Size = New Size(168, 47)
         Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
         Size = New Size(497, 412)
 
     End Sub
+    Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
+
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Form_Startup.CheckedStats = 1
+        Form_Startup.Show()
+
+    End Sub
+
+    Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles Button_How_use.Click
+
+        Size = New Size(497, 412)
+
+    End Sub
+#End Region ' Ici se trouve tout les bouttons de la toolbar
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
@@ -287,18 +519,9 @@ Public Class Form_Tools
 
 
 
-    End Sub
-#End Region
-
-#Region "Galaxy Gates"
+    End Sub ' Boutton pour Ouvrir le bot Browser
 
 #Region "GG Click Portail"
-
-    Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
-
-    End Sub
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
@@ -324,68 +547,59 @@ Public Class Form_Tools
 
     End Sub
 
-    Public Const BufferSize As Integer = 512 * 1024
-    Public Const BufferReadSize As Integer = 1024
-
-    Private Function GetImageFromURL(ByVal url As String) As Image
-
-        Dim retVal As Image = Nothing
-
-        Try
-            If Not String.IsNullOrWhiteSpace(url) Then
-                Dim req As System.Net.WebRequest = System.Net.WebRequest.Create(url.Trim)
-
-                Using request As System.Net.WebResponse = req.GetResponse
-                    Using stream As System.IO.Stream = request.GetResponseStream
-                        retVal = New Bitmap(System.Drawing.Image.FromStream(stream))
-                    End Using
-                End Using
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show(String.Format("An error occurred:{0}{0}{1}",
-                                          vbCrLf, ex.Message),
-                                          "Exception Thrown",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Warning)
-
-        End Try
-
-        Return retVal
-
-    End Function
-
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
         ComboBox_autospin.Text = "Delta"
         WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
 
-        'Using c As New Net.WebClient
-        '    c.Headers.Add(“User-Agent”, “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063”)
+    End Sub
 
-        '    Dim b = c.DownloadData(“https://fr1.darkorbit.com/jumpgate.php?userID=168449162&gateID=4&type=full”)
-        '    Using s As New MemoryStream(b)
-        '        Dim i = Image.FromStream(s)
-        '        PictureBox1.Image = i
-        '    End Using
-        'End Using
+    Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
-        'Dim myWebClient As New System.Net.WebClient
-        'myWebClient.DownloadFile("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full", "C:\Users\DilanTC\Desktop\c5af1a32844e12c2dd92b3c1cba4b1c0.png")
-        '  PictureBox1.Image = Image.FromFile(myWebClient)
+        ComboBox_autospin.Text = "Epsilon"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
 
-        'Dim url As String = "https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full"
+    End Sub
 
-        'With PictureBox1
-        '    .SizeMode = PictureBoxSizeMode.Zoom
+    Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
-        '    Dim img As Image = GetImageFromURL(url)
+        ComboBox_autospin.Text = "Zeta"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
 
-        '    If img IsNot Nothing Then
-        '        .Image = img
-        '    End If
-        'End With
+    End Sub
+
+    Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
+
+        ComboBox_autospin.Text = "Kappa"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
+
+    End Sub
+
+    Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
+
+        ComboBox_autospin.Text = "Lambda"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
+
+    End Sub
+
+    Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
+
+        ComboBox_autospin.Text = "Hades"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
+
+    End Sub
+
+    Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
+
+        ComboBox_autospin.Text = "Kuiper"
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
 
     End Sub
 
@@ -409,65 +623,16 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-
-        ComboBox_autospin.Text = "Hades"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
-
-    End Sub
-
-    Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-
-        ComboBox_autospin.Text = "Kuiper"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
-
-    End Sub
-
-    Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-
-        ComboBox_autospin.Text = "Lambda"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
-
-    End Sub
-
-    Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-
-        ComboBox_autospin.Text = "Kappa"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
-
-    End Sub
-
-    Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-
-        ComboBox_autospin.Text = "Zeta"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
-
-    End Sub
-
-    Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-
-        ComboBox_autospin.Text = "Epsilon"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
-
-    End Sub
-#End Region
-
-    Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
-
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Form_Startup.CheckedStats = 1
-        Form_Startup.Show()
-
-    End Sub
+#End Region ' ici se trouve tout les Bouttons pour voir la GG Uniquement
 
 #Region "Button Click GGS"
+
+    Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
+
+        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
+
+    End Sub
+
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
 
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
@@ -509,314 +674,326 @@ Public Class Form_Tools
         WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
 
     End Sub
-#End Region
+#End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
 
-#Region "Spin Click"
-    Public numberToSpin As String
-    Public uridiumToKeep As String
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
-        If BackgroundWorkerAutospin = False Then
+        Button_StartSpin.Enabled = False
+        Button_stopSpin.Enabled = True
 
-            If TextBox_spintimes_GGS.Text.Contains(".") Then
-                BackgroundWorkerAutospin = True
-                MessageBox.Show($"Error, you can't put a dot in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        If TextBox_spintimes_GGS.Text.Contains(".") Then
 
-            ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
-                BackgroundWorkerAutospin = True
-                MessageBox.Show($"Error, you can't put a space in the spin time.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
-                TextBox_spintimes_GGS.Text = 300
-                BackgroundWorkerAutospin = False
-                MessageBox.Show($"Error, Starting with 300ms by default, we don't recommand to go lower", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            Else
-                BackgroundWorkerAutospin = False
-            End If
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
 
-            If BackgroundWorkerAutospin = False Then
-                BackgroundWorkerAutospin = True
+        ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
 
-                Button_StartSpin.Enabled = False
-                Button_stopSpin.Enabled = True
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
 
-                Dim data = ComboBox_autospin.Text
-                Select Case data
-                    Case "ABG"
+        ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
 
-                        Button_ABG_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Error :{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Starting With 300ms by Default, we don't recommand to go lower.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
 
-                    Case "Delta"
-                        Button_Delta_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Epsilon"
-                        Button_Epsilon_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Zeta"
-                        Button_Zeta_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Kappa"
-                        Button_Kappa_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Lambda"
-                        Button_Lambda_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Kuiper"
-                        Button_Kuiper_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case "Hades"
-                        Button_Hades_GGS.Enabled = True
-                        ClickGG(data, TextBox_spintimes_GGS.Text)
-
-                    Case Else
-                        BackgroundWorkerAutospin = False
-                        MessageBox.Show("Erreur, Aucune GG selectionnée", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        Button_stopSpin.PerformClick()
-                        ComboBox_autospin.Text = "ABG"
-                        ComboBox_autospin.Refresh()
-
-                End Select
-            Else BackgroundWorkerAutospin = False
-            End If
-        Else
-
-            MessageBox.Show($"GG Snipper already started{vbNewLine}Stop it before starting it again", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Button_StartSpin.Enabled = True
-
+            TextBox_spintimes_GGS.Text = 300
         End If
-    End Sub
+
+        Data = ComboBox_autospin.Text
+        Select Case Data
+            Case "ABG"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Delta"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Epsilon"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Zeta"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Kappa"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Lambda"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Kuiper"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case "Hades"
+                ClickGG(Data, TextBox_spintimes_GGS.Text)
+
+            Case Else
+                Button_stopSpin.PerformClick()
+                ComboBox_autospin.Text = "ABG"
+                ComboBox_autospin.Refresh()
+
+        End Select
+
+    End Sub ' Start Galaxy Gates Spinner 
 
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
 
-        Button_Alpha.Enabled = True
-        Button_beta.Enabled = True
-        Button_gamma.Enabled = True
-        Button_delta.Enabled = True
-        Button_epsilon.Enabled = True
-        Button_zeta.Enabled = True
-        Button_Kappa.Enabled = True
-        Button_lambda.Enabled = True
-        Button_kuiper.Enabled = True
-        Button_hades.Enabled = True
-        Button_kronos.Enabled = True
+        Console.WriteLine("Autospinner deactivated.")
 
-        Button_ABG_GGS.Enabled = True
-        Button_Delta_GGS.Enabled = True
-        Button_Epsilon_GGS.Enabled = True
-        Button_Zeta_GGS.Enabled = True
-        Button_Kappa_GGS.Enabled = True
-        Button_Lambda_GGS.Enabled = True
-        Button_Kuiper_GGS.Enabled = True
-        Button_Hades_GGS.Enabled = True
+        TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
+        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+        TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
 
+        exitGGS = 1
         Button_StartSpin.Enabled = True
         Button_stopSpin.Enabled = False
         ComboBox_autospin.Enabled = True
 
-        If BackgroundWorkerAutospin = True Then
-            BackgroundWorkerAutospin = False
-            Console.WriteLine("Autospinner deactivated.")
-        End If
-
-    End Sub
+    End Sub ' Stop Galaxy Gates Spinner 
 
     Private Async Sub ClickGG(portail As String, temps As Integer)
 
-        Dim delay = Task.Delay(temps)
+Label_ClickGalaxyGates:
+
+        infoinMapGG = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
+        infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
+
+        If exitGGS = 1 Then
+
+            Exit Sub
+        End If
+
+
+
         If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
-            BackgroundWorkerAutospin = False
-            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) There is no more EE left..." + TextBox_WinGGS.Text
-        End If
-        If Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
-            BackgroundWorkerAutospin = False
-            TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) Uridium is lowest than the Uridium to keep..." + TextBox_WinGGS.Text
-        End If
 
-        If BackgroundWorkerAutospin = True Then
-            uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
-            ComboBox_autospin.Enabled = False
-            'DoWork ici
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
 
-            Select Case portail
-                Case "ABG"
-                    If Button_ABG_GGS.Enabled = True Then
-                        Button_ABG_GGS.PerformClick()
-                    End If
-
-                Case "Delta"
-                    If Button_Delta_GGS.Enabled = True Then
-                        Button_Delta_GGS.PerformClick()
-                    End If
-
-                Case "Epsilon"
-                    If Button_Epsilon_GGS.Enabled = True Then
-                        Button_Epsilon_GGS.PerformClick()
-                    End If
-
-                Case "Zeta"
-                    If Button_Zeta_GGS.Enabled = True Then
-                        Button_Zeta_GGS.PerformClick()
-                    End If
-
-                Case "Kappa"
-                    If Button_Kappa_GGS.Enabled = True Then
-                        Button_Kappa_GGS.PerformClick()
-                    End If
-
-                Case "Lambda"
-                    If Button_Lambda_GGS.Enabled = True Then
-                        Button_Lambda_GGS.PerformClick()
-                    End If
-
-                Case "Kuiper"
-                    If Button_Kuiper_GGS.Enabled = True Then
-                        Button_Kuiper_GGS.PerformClick()
-                    End If
-
-                Case "Hades"
-                    If Button_Hades_GGS.Enabled = True Then
-                        Button_Hades_GGS.PerformClick()
-                    End If
-
-
-                Case Else
-                    BackgroundWorkerAutospin = False
-                    MsgBox("Erreur, Aucune GG selectionnée")
-            End Select
-
-            'Avant le timer
-            Await delay
-            'Apres le timer
-
-
-            'TODO: Verification uri et prepare gates
-
-            Dim infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
-            Dim infoinMapGG As Boolean = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
-            Console.WriteLine($"DEBUG-{infoinMapGG}")
-
-            If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
-                If infoinMapGG = False Then
-                    If CheckBox_PrepareGatesIfBuiled.Checked Then
-                        Button_PrepareGates.PerformClick()
-                        TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
-                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap{vbNewLine}" + TextBox_WinGGS.Text
-                        If CheckBox_BuildOneAndStop.Checked Then
-                            BackgroundWorkerAutospin = False
-                            TextBox_WinGGS.Text = $"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed.{vbNewLine}" + TextBox_WinGGS.Text
-                            MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            Button_stopSpin.PerformClick()
-                            Button_PrepareGates.PerformClick()
-                            Await Task.Delay(1500)
-                            Button_StartSpin.PerformClick()
-                        End If
-
-                    Else
-                        BackgroundWorkerAutospin = False
-                        MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 2/2 completed{vbNewLine}Stopping the spinner.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-                Else
-                    'Déjà une map en carte mère (prepared : 1)
-                    If CheckBox_BuildOneAndStop.Checked Or CheckBox_PrepareGatesIfBuiled.Checked Then
-                        BackgroundWorkerAutospin = False
-                        If CheckBox_PrepareGatesIfBuiled.Checked Then
-                            Button_PrepareGates.PerformClick()
-                            TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
-                        End If
-                        TextBox_WinGGS.Text = vbNewLine + $"(Galaxy Gates - {ComboBox_autospin.Text}) was put in your mothermap" + TextBox_WinGGS.Text
-                        MessageBox.Show($"The Galaxy Gates {ComboBox_autospin.Text} is 1/2 completed", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-                End If
-            End If
-
-
-            ClickGG(portail, temps)
-        Else
-            BackgroundWorkerAutospin = False
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
             ComboBox_autospin.Enabled = True
+            Exit Sub
 
+        ElseIf Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
+
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+            TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+            Button_StartSpin.Enabled = True
+            Button_stopSpin.Enabled = False
+            ComboBox_autospin.Enabled = True
+            Exit Sub
         End If
-    End Sub
-#End Region
 
-#End Region
+
+
+        If infoinMapGG.Split(" / ").First = infoinMapGG.Split(" / ").Last Then
+            GalaxyGatesNumber = 2
+        Else GalaxyGatesNumber = 1
+        End If
+
+
+
+        If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
+            If GalaxyGatesNumber = 1 Then
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox...{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Wait...{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+                TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
+
+                WebBrowser_galaxyGates.Navigate("About:blank")
+                Await Task.Delay(1000)
+                Button_PrepareGates.PerformClick()
+                Await Task.Delay(5000)
+
+            Else
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+                Button_StartSpin.Enabled = True
+                Button_stopSpin.Enabled = False
+                ComboBox_autospin.Enabled = True
+                Exit Sub
+            End If
+
+            If CheckBox_BuildOneAndStop.Checked = True Then
+
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is true.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+                Button_StartSpin.Enabled = True
+                Button_stopSpin.Enabled = False
+                ComboBox_autospin.Enabled = True
+
+                Exit Sub
+
+            Else
+
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Wait...{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+                Await Task.Delay(1000)
+
+                WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+
+                Await Task.Delay(1000)
+
+            End If
+        End If
+
+        uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
+
+        Select Case portail
+            Case "ABG"
+                Button_ABG_GGS.PerformClick()
+
+            Case "Delta"
+                Button_Delta_GGS.PerformClick()
+
+            Case "Epsilon"
+                Button_Epsilon_GGS.PerformClick()
+
+            Case "Zeta"
+                Button_Zeta_GGS.PerformClick()
+
+            Case "Kappa"
+                Button_Kappa_GGS.PerformClick()
+
+            Case "Lambda"
+                Button_Lambda_GGS.PerformClick()
+
+            Case "Kuiper"
+                Button_Kuiper_GGS.PerformClick()
+
+            Case "Hades"
+                Button_Hades_GGS.PerformClick()
+
+            Case Else
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Select valid Gates in first.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated.{vbNewLine}"
+                TextBox_WinGGS.Text = vbNewLine + $"{vbNewLine}"
+
+        End Select
+
+        Spintimes = TextBox_spintimes_GGS.Text
+        Await Task.Delay(Spintimes)
+
+        GoTo Label_ClickGalaxyGates
+
+    End Sub ' boucle click GG
+
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
         TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
-    End Sub
+    End Sub ' pour afficher les energie lors de l'ouverture de GG Spinner
 
-    Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
-
-        Calculator = 1
-        TextBox_uridiumCurrent.Text = 0
-        TextBox_creditCurrent.Text = 0
-        TextBox_honorCurrent.Text = 0
-        TextBox_experienceCurrent.Text = 0
-        TextBox_RPCurrent.Text = 0
-        TextBox_LevelCurrent.Text = 0
-
-        TextBox_uridiumEarned.Text = 0
-        TextBox_creditEarned.Text = 0
-        TextBox_honorEarned.Text = 0
-        TextBox_experienceEarned.Text = 0
-        TextBox_RPEarned.Text = 0
-
-
-        Reader = 1
-        BackPage_Form.ShowIcon = False
-        BackPage_Form.ShowInTaskbar = False
-
-        Utils.checkStats = True
-        BackPage_Form.Show()
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        BackPage_Form.WindowState = FormWindowState.Minimized
-
-
-    End Sub
-
-    Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
+    Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
         If ComboBox_autospin.Text = "ABG" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
+            Await Task.Delay("5000")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
+            Await Task.Delay("5000")
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
+            Await Task.Delay("5000")
+
+        ElseIf ComboBox_autospin.Text = "Alpha" Then
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
+            Await Task.Delay("5000")
+
+        ElseIf ComboBox_autospin.Text = "Beta" Then
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
+            Await Task.Delay("5000")
+
+        ElseIf ComboBox_autospin.Text = "Gamma" Then
+            WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Delta" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Epsilon" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Zeta" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Kappa" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Lambda" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Hades" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
+            Await Task.Delay("5000")
 
         ElseIf ComboBox_autospin.Text = "Kuiper" Then
             WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
+            Await Task.Delay("5000")
         End If
 
-    End Sub
+    End Sub ' button prepare Gates
 
+    Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
+
+        TextBox_WinGGS.Text = ""
+
+    End Sub ' ici on reset les log du GGSpiner
+
+    Private Sub Button_resettabspin_Click(sender As Object, e As EventArgs) Handles Button_resettabspin.Click
+
+        Label_MCB25_Earned.Text = 0
+        Label_MCB50_Earned.Text = 0
+        Label_UCB100_Earned.Text = 0
+        Label_SAB50_Earned.Text = 0
+        Label_PLT2021_Earned.Text = 0
+        Label_Part_Earned.Text = 0
+        Label_Xenomit_Earned.Text = 0
+        Label_Nanohull_Earned.Text = 0
+        Label_Mine_Earned.Text = 0
+        Label_Logfile_Earned.Text = 0
+        TextBox_total_spinned.Text = 0
+        TextBox_total_gates_builded.Text = 0
+
+    End Sub ' ici on reset les stats du GGSpinner 
 
     Private Sub WebBrowser_GGspinner_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGspinner.DocumentCompleted
-#Region "WebBrowser_GGspinner"
 
+#Region "HTML5"
         Dim html5 = WebBrowser_GGspinner.DocumentText.Clone
         TextBox_DebugGGS.Text = html5
 
@@ -852,10 +1029,11 @@ Public Class Form_Tools
         TextBox_uridiumGGS.Text = Utils.NumberToHumanReadable(money.Groups.Item(1).ToString, ".")
         TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(DataSamples, ".")
 
+#End Region ' Ici on lie la Balise HTLM5 de WebBrowser_GGspinner 
+
         If DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
             TextBox_WinGGS.Text = vbNewLine + "Materializer locked !"
         Else
-
 
             If DataWinned.Contains("battery") AndAlso DataWinned2.Contains("2") Then
                 DataWinned = "MCB-25"
@@ -1030,16 +1208,13 @@ Public Class Form_Tools
 
 
 
-            End If
+            End If ' ERREUR ICI A COMPLETER JUSTE ABG !!!!
+
         End If
 
-#End Region
-
-    End Sub
+    End Sub ' GALAXY GATES SPINNER < HTML5 > -- BUG ABG
 
     Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_GGInfo.DocumentCompleted
-
-        'Lors du click "Galaxy Gates"
 
         Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
         TextBox_GGinfoGGS.Text = html107
@@ -1057,7 +1232,6 @@ Public Class Form_Tools
         TextBox_ExtraEnergy_GGS.Text = Utils.NumberToHumanReadable(EERestant, ".")
 
         If ComboBox_autospin.Text = "Alpha" Then
-
             Dim DataAlpha = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "alpha")
             If DataAlpha = Nothing Then
             Else
@@ -1076,7 +1250,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Beta" Then
-
             Dim DataBeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "beta") ' Info GG Beta
             If DataBeta = Nothing Then
             Else
@@ -1096,7 +1269,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Gamma" Then
-
             Dim DataGamma = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "gamma") ' Info GG gamma
             If DataGamma = Nothing Then
             Else
@@ -1115,7 +1287,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Delta" Then
-
             Dim DataDelta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "delta") ' Info GG Delta
             If DataDelta = Nothing Then
             Else
@@ -1134,7 +1305,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Epsilon" Then
-
             Dim DataEpsilon = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "epsilon") ' Info GG epsilon
             If DataEpsilon = Nothing Then
             Else
@@ -1153,8 +1323,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Zeta" Then
-
-
             Dim DataZeta = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "zeta") ' Info GG zeta
             If DataZeta = Nothing Then
             Else
@@ -1173,7 +1341,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Kappa" Then
-
             Dim DataKappa = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kappa") ' Info GG kappa
             If DataKappa = Nothing Then
             Else
@@ -1192,7 +1359,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Lambda" Then
-
             Dim DataLambda = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "lambda") ' Info GG lambda
             If DataLambda = Nothing Then
             Else
@@ -1211,7 +1377,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Hades" Then
-
             Dim DataHades = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "hades") ' Info GG hades
             If DataHades = Nothing Then
             Else
@@ -1230,7 +1395,6 @@ Public Class Form_Tools
             End If
 
         ElseIf ComboBox_autospin.Text = "Kuiper" Then
-
             Dim DataKuiper = Utils.getRegexGG(TextBox_GGinfoGGS.Text, "kuiper")
             If DataKuiper = Nothing Then
             Else
@@ -1282,30 +1446,36 @@ Public Class Form_Tools
 
         End If
 
-    End Sub
+    End Sub  ' GALAXY GATES SPINNER < HTML107 > -- BUG ABG
 
-    Private Sub PictureBox_close1_Click(sender As Object, e As EventArgs) Handles PictureBox_close1.Click
+    Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
 
-        CloseForm.ShowDialog(Me)
+        Calculator = 1
+        TextBox_uridiumCurrent.Text = 0
+        TextBox_creditCurrent.Text = 0
+        TextBox_honorCurrent.Text = 0
+        TextBox_experienceCurrent.Text = 0
+        TextBox_RPCurrent.Text = 0
+        TextBox_LevelCurrent.Text = 0
 
-    End Sub
+        TextBox_uridiumEarned.Text = 0
+        TextBox_creditEarned.Text = 0
+        TextBox_honorEarned.Text = 0
+        TextBox_experienceEarned.Text = 0
+        TextBox_RPEarned.Text = 0
 
-    Private Sub Button_resettabspin_Click(sender As Object, e As EventArgs) Handles Button_resettabspin.Click
 
-        Label_MCB25_Earned.Text = 0
-        Label_MCB50_Earned.Text = 0
-        Label_UCB100_Earned.Text = 0
-        Label_SAB50_Earned.Text = 0
-        Label_PLT2021_Earned.Text = 0
-        Label_Part_Earned.Text = 0
-        Label_Xenomit_Earned.Text = 0
-        Label_Nanohull_Earned.Text = 0
-        Label_Mine_Earned.Text = 0
-        Label_Logfile_Earned.Text = 0
-        TextBox_total_spinned.Text = 0
-        TextBox_total_gates_builded.Text = 0
+        Reader = 1
+        BackPage_Form.ShowIcon = False
+        BackPage_Form.ShowInTaskbar = False
 
-    End Sub
+        Utils.checkStats = True
+        BackPage_Form.Show()
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WindowState = FormWindowState.Minimized
+
+
+    End Sub ' ici on reset les stats du panel STATS !
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
@@ -1317,10 +1487,16 @@ Public Class Form_Tools
         BackPage_Form.WindowState = FormWindowState.Minimized
         BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
-    End Sub
+    End Sub ' ici on refresh les stats du panel STATS !
+
+    Private Sub PictureBox_close1_Click(sender As Object, e As EventArgs) Handles PictureBox_close1.Click
+
+        CloseForm.ShowDialog(Me)
+
+    End Sub 'Close
 
     Private Sub PictureBox_epinglerBot_Click(sender As Object, e As EventArgs) Handles PictureBox_epinglerBot.Click
-        'Console.WriteLine("click !")
+
         Dim tagBoolean As Boolean = PictureBox_epinglerBot.Tag
 
         If tagBoolean Then
@@ -1333,7 +1509,7 @@ Public Class Form_Tools
             Me.TopMost = True
         End If
 
-    End Sub
+    End Sub ' button epingler topbar
 
     Private Sub PictureBox_BackgroundBot_Click(sender As Object, e As EventArgs) Handles PictureBox_BackgroundBot.Click
 
@@ -1351,7 +1527,7 @@ Public Class Form_Tools
         End If
 
 
-    End Sub
+    End Sub ' button Home TopBar
 
     Private Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
 
@@ -1511,10 +1687,6 @@ Public Class Form_Tools
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                If BackgroundWorker_Timer.IsBusy <> True Then
-                    BackgroundWorker_Timer.RunWorkerAsync()
-                End If
-
                 WebBrowser_Synchronisation.Navigate("about:blank")
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
@@ -1527,84 +1699,21 @@ Public Class Form_Tools
 
         End If
 
-    End Sub
+    End Sub ' !!!!! A VERIFIER ET A OPTIMISER !!!
 
     Private Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
-        'Timer_SID.Stop()
-
-        If BackgroundWorker_Timer.IsBusy = True Then
-            BackgroundWorker_Timer.CancelAsync()
-            SID_Minutes_dixaine = 0
-            SID_Minutes = 0
-            SID_Seconds_dixaine = 0
-            SID_Seconds = 0
-        End If
-
         TextBox_Get_Dosid.Text = ""
-
+        TextBox_username.Text = ""
+        TextBox_clan.Text = ""
+        TextBox_Get_Dosid.Text = ""
+        PictureBox_grade.Image = My.Resources.rank_99
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
-        'TextBox_minutedouble_dixieme.Text = "0"
-        'TextBox_minutedouble.Text = "0"
-        'TextBox_secondsdouble2.Text = "0"
-        'TextBox_secondsdouble.Text = "0"
-
-    End Sub
-
-    Private SID_Minutes_dixaine As Integer
-    Private SID_Minutes As Integer
-    Private SID_Seconds_dixaine As Integer
-    Private SID_Seconds As Integer
-
-    Private Sub BackgroundWorker_Timer_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Timer.DoWork
-
-        SID_Seconds += 1
-        If SID_Seconds = 10 Then
-            SID_Seconds_dixaine += 1
-            SID_Seconds = 0
-        End If
-
-        If SID_Seconds_dixaine = 6 Then
-            SID_Seconds_dixaine = 0
-            SID_Minutes += 1
-        End If
-
-        If SID_Minutes = 10 Then
-            SID_Minutes = 0
-            SID_Seconds_dixaine = 1
-        End If
-
-        If SID_Minutes_dixaine = 1 Then
-
-            Invoke(New MethodInvoker(Sub()
-                                         Try
-                                             Button_revive_sid.PerformClick()
-                                         Catch ex As Exception
-                                             Console.WriteLine($"Method invoker SID minutes dixaine error - {ex.Message}")
-                                         End Try
-                                     End Sub))
-
-            'TextBox_minutedouble_dixieme.Text = "0"
-            'TextBox_minutedouble.Text = "0"
-            'TextBox_secondsdouble2.Text = "0"
-            'TextBox_secondsdouble.Text = "0"
-
-            'TextBox_minutedouble_dixieme.Text = Val(TextBox_minutedouble_dixieme.Text) + 1
-
-        End If
-
-    End Sub
-
-    Private Async Sub BackgroundWorker_Timer_RunWorkCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Timer.RunWorkerCompleted
-        Await Task.Delay(980)
-        If BackgroundWorker_Timer.IsBusy = False Then
-            BackgroundWorker_Timer.RunWorkerAsync()
-        End If
-    End Sub
-
+    End Sub ' button revive Sid & reload
 
     Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
+
         If Form_Game.User_Stop_Bot = True Then
             PictureBox_LaunchBot.Image = My.Resources.img_pause
             Form_Game.User_Stop_Bot = False
@@ -1615,118 +1724,7 @@ Public Class Form_Tools
         End If
 
 
-    End Sub
-
-    Private Sub PictureBox_StopBot_Click(sender As Object, e As EventArgs)
-
-        'Form_Game.User_Stop_Bot = True
-        'PictureBox_LaunchBot.Visible = True
-        'PictureBox_StopBot.Visible = False
-        '
-
-    End Sub
-
-    Private Sub Title_form_MouseDown(sender As Object, e As MouseEventArgs) Handles Title_form.MouseDown
-
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = True
-            MouseDownX = e.X
-            MouseDownY = e.Y
-        End If
-
-    End Sub
-
-    Private Sub Title_form_MouseUp(sender As Object, e As MouseEventArgs) Handles Title_form.MouseUp
-
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = False
-        End If
-
-    End Sub
-
-    Private Sub Title_form_MouseMove(sender As Object, e As MouseEventArgs) Handles Title_form.MouseMove
-
-        If BeingDragged = True Then
-            Dim tmp As Point = New Point()
-
-            tmp.X = Me.Location.X + (e.X - MouseDownX)
-            tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
-            Me.Location = tmp
-
-            tmp = Nothing
-        End If
-
-    End Sub
-
-    Private Sub ComboBox_colormod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_colormod.SelectedIndexChanged
-
-        If ComboBox_colormod.Text = "Dark&Red  ( By _Dev )" Then
-
-            Button_OpenLoginPanel.FlatAppearance.BorderColor = Color.Red
-            Button_LaunchGameRidevBrowser.FlatAppearance.BorderColor = Color.Red
-            Button_revive_sid.FlatAppearance.BorderColor = Color.Red
-
-            CheckBox_AutoLogin.ForeColor = Color.Red
-            Label_choose_firm.ForeColor = Color.Red
-            CheckBox_LaunchGameAuto.ForeColor = Color.Red
-            CheckBox_colormod.ForeColor = Color.Red
-            CheckBox_AutoUpdate.ForeColor = Color.Red
-            TextBox_username.ForeColor = Color.Red
-            TextBox_clan.ForeColor = Color.Red
-            TextBox_ProfilSelected.ForeColor = Color.Red
-            TextBox_Get_Dosid.ForeColor = Color.Red
-            TextBox_username.BackColor = Color.FromArgb(30, 30, 30)
-            PictureBox_grade.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_clan.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_Get_Dosid.BackColor = Color.FromArgb(30, 30, 30)
-            Label_Dosid.BackColor = Color.FromArgb(30, 30, 30)
-            Label_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
-            Label_ID.BackColor = Color.FromArgb(30, 30, 30)
-            Button_LaunchGameRidevBrowser.BackColor = Color.FromArgb(30, 30, 30)
-            Button_revive_sid.BackColor = Color.FromArgb(30, 30, 30)
-            CheckBox_AutoLogin.BackColor = Color.FromArgb(30, 30, 30)
-            Label_choose_firm.BackColor = Color.FromArgb(30, 30, 30)
-            CheckBox_LaunchGameAuto.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
-            CheckBox_AutoUpdate.BackColor = Color.FromArgb(30, 30, 30)
-            Button_OpenLoginPanel.BackColor = Color.FromArgb(30, 30, 30)
-            CheckBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
-            ComboBox_colormod.BackColor = Color.FromArgb(30, 30, 30)
-            General_button.BackColor = Color.FromArgb(30, 30, 30)
-            NPC_Button.BackColor = Color.FromArgb(30, 30, 30)
-            Stats_Button.BackColor = Color.FromArgb(30, 30, 30)
-            LogUpdate_button.BackColor = Color.FromArgb(30, 30, 30)
-            GalaxyGates_Button.BackColor = Color.FromArgb(30, 30, 30)
-            Pirates_Button.BackColor = Color.FromArgb(30, 30, 30)
-            Divers_Button.BackColor = Color.FromArgb(30, 30, 30)
-            Rex_Button.BackColor = Color.FromArgb(30, 30, 30)
-            Button_Howuse.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_suppresor_controler.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_general.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_autospin.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_collector.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_divers.BackColor = Color.FromArgb(30, 30, 30)
-            Panel_GalaxyGates.BackColor = Color.FromArgb(30, 30, 30)
-            ComboBox_firme.BackColor = Color.FromArgb(30, 30, 30)
-            ComboBox_autologin.BackColor = Color.FromArgb(20, 25, 53)
-
-            Me.BackColor = Color.FromArgb(30, 30, 30)
-        End If
-
-    End Sub
-
-    Private Sub Button_Howuse_Click(sender As Object, e As EventArgs) Handles Button_Howuse.Click
-
-        Size = New Size(497, 412)
-
-    End Sub
-
-    Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
-
-        TextBox_WinGGS.Text = ""
-
-    End Sub
+    End Sub ' Start Bot
 
     Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
 
@@ -1743,11 +1741,7 @@ Public Class Form_Tools
         End If
 
 
-    End Sub
-
-    Private Sub Panel_stats_Paint(sender As Object, e As PaintEventArgs) Handles Panel_stats.Paint
-
-    End Sub
+    End Sub ' Supressor controler TOOLBAR General
 
     Private Sub Button_suppresor_controler2_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler2.Click
 
@@ -1763,7 +1757,7 @@ Public Class Form_Tools
 
         End If
 
-    End Sub
+    End Sub ' Supressor controler TOOLBAR Configuration
 
 
 End Class
