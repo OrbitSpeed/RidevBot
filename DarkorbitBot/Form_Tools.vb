@@ -242,7 +242,7 @@ Public Class Form_Tools
             Size = New Size(746, 550)
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
-            WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+            WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
             ' https://fr1.darkorbit.com/flashinput/galaxyGates.php?userID=168449162&action=init&sid=b1b8a3c2e29ac06147fea27af6fac2bb
 
@@ -428,7 +428,7 @@ Public Class Form_Tools
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
         ComboBox_autospin.Text = "Alpha"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
     End Sub
@@ -436,7 +436,7 @@ Public Class Form_Tools
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
 
         ComboBox_autospin.Text = "Beta"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
     End Sub
@@ -444,7 +444,7 @@ Public Class Form_Tools
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
 
         ComboBox_autospin.Text = "Gamma"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
     End Sub
@@ -483,7 +483,7 @@ Public Class Form_Tools
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
 
         ComboBox_autospin.Text = "Delta"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
 
         'Using c As New Net.WebClient
@@ -537,7 +537,7 @@ Public Class Form_Tools
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
 
         ComboBox_autospin.Text = "Hades"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
 
     End Sub
@@ -545,7 +545,7 @@ Public Class Form_Tools
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
 
         ComboBox_autospin.Text = "Kuiper"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
 
     End Sub
@@ -553,7 +553,7 @@ Public Class Form_Tools
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
 
         ComboBox_autospin.Text = "Lambda"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
 
     End Sub
@@ -561,7 +561,7 @@ Public Class Form_Tools
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
 
         ComboBox_autospin.Text = "Kappa"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
 
     End Sub
@@ -569,7 +569,7 @@ Public Class Form_Tools
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
 
         ComboBox_autospin.Text = "Zeta"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
 
     End Sub
@@ -577,7 +577,7 @@ Public Class Form_Tools
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
 
         ComboBox_autospin.Text = "Epsilon"
-        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+        WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
 
     End Sub
@@ -1059,7 +1059,7 @@ Public Class Form_Tools
 
                     Button_delta.Enabled = False
                     Button_Delta_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
 
                 End If
@@ -1072,7 +1072,7 @@ Public Class Form_Tools
 
                     Button_epsilon.Enabled = False
                     Button_Epsilon_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
 
                 End If
@@ -1083,7 +1083,7 @@ Public Class Form_Tools
 
                     Button_zeta.Enabled = False
                     Button_Zeta_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
 
                 End If
@@ -1094,7 +1094,7 @@ Public Class Form_Tools
 
                     Button_Kappa.Enabled = False
                     Button_Kappa_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
 
                 End If
@@ -1105,7 +1105,7 @@ Public Class Form_Tools
 
                     Button_lambda.Enabled = False
                     Button_Lambda_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
 
                 End If
@@ -1116,7 +1116,7 @@ Public Class Form_Tools
 
                     Button_kuiper.Enabled = False
                     Button_Kuiper_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
 
                 End If
@@ -1129,7 +1129,7 @@ Public Class Form_Tools
 
                     Button_hades.Enabled = False
                     Button_Hades_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
 
                 End If
@@ -1145,7 +1145,7 @@ Public Class Form_Tools
                     Button_gamma.Enabled = False
                     Button_ABG_GGS.Enabled = False
 
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + TextBox_Get_id.Text + "&action=init&sid=" + Utils.dosid)
+                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
                 End If
 
@@ -1462,7 +1462,7 @@ Public Class Form_Tools
 
     Private Sub PictureBox_BackgroundBot_Click(sender As Object, e As EventArgs) Handles PictureBox_BackgroundBot.Click
 
-        If TextBox_Get_Dosid.Text = "" Then
+        If Utils.userid = "" Then
 
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -1489,8 +1489,6 @@ Public Class Form_Tools
             MessageBox.Show("Can't connect to your account, check your credentials.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
 
-
-
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
 
             Form_Game.Visible = False
@@ -1499,7 +1497,6 @@ Public Class Form_Tools
             MessageBox.Show("Can't connect to your account, check your credentials.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Check_message = 1
             Me.Close()
-
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("22.bpsecure.com") Then
 
@@ -1523,17 +1520,10 @@ Public Class Form_Tools
             Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
             If dosid_regex.Success Then
 
-                ' System.Text.UTF7Encoding :   18  23  :7A 61 2B 41 77 59 42 2F 51 4F 79 32 50 2F 63 2F 77 2D
-                ' System.Text.UTF8Encoding :  12  24  :7A 61 CC 86 C7 BD CE B2 F1 8F B3 BF
-                ' System.Text.UnicodeEncoding :  14  16  :7A 00 61 00 06 03 FD 01 B2 03 FF D8 FF DC
-                ' System.Text.UnicodeEncoding :  14  16  :00 7A 00 61 03 06 01 FD 03 B2 D8 FF DC FF
-                ' System.Text.UTF32Encoding :  24  32  :7A 00 00 00 61 00 00 00 06 03 00 00 FD 01 00 00 B2 03 00 00 FF FC 04 00
-
                 Utils.dosid = dosid_regex.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                TextBox_Get_id.Text = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
                 TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
-                TextBox_Get_Server.Text = Replace(Utils.server, " ", "")
+                Utils.server = Replace(Utils.server, " ", "")
                 Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
                 Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
                 Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
@@ -1541,8 +1531,6 @@ Public Class Form_Tools
                 Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
 
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
-                'Compagny = Compagny.replace(vbCr, "-").replace(vbLf, "|")
-                'Clipboard.SetText(Compagny)
                 Dim username As String
                 Dim clan As String
                 Dim grade As String
@@ -1551,13 +1539,6 @@ Public Class Form_Tools
                                 Or RegexOptions.IgnorePatternWhitespace _
                                 Or RegexOptions.Multiline Or RegexOptions.ExplicitCapture
                 Dim compagny_regex = Regex.Matches(Compagny, ":.([\s\S]*?)\n", options)
-                'Console.WriteLine(compagny_regex.Count)
-                'For Each grp As Group In compagny_regex
-                '    Console.WriteLine(grp.ToString)
-                '    Console.WriteLine("--")
-                'Next
-                'Console.WriteLine("---------")
-                'Console.WriteLine(compagny_regex.Item(0).ToString.Replace(" ", ""))
 
                 If compagny_regex.Count = 4 Then
                     username = compagny_regex.Item(0).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
@@ -1570,12 +1551,6 @@ Public Class Form_Tools
                     grade = compagny_regex.Item(1).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                     niveau = compagny_regex.Item(2).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                 End If
-                'Console.WriteLine("Compagny info")
-                'Console.WriteLine(username)
-                'Console.WriteLine(clan)
-                'Console.WriteLine(grade)
-                'Console.WriteLine(niveau)
-
 
                 Console.WriteLine("---------------------------------------")
 
@@ -1656,15 +1631,6 @@ Public Class Form_Tools
 
                 End Select
 
-
-                Console.WriteLine(Compagny)
-                Console.WriteLine("---------------------------------------")
-
-                'If TextBox_username Then
-
-                'End If
-
-                TextBox_Get_Server.Text = Utils.server
                 Utils.UpdateStats()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
@@ -1684,7 +1650,6 @@ Public Class Form_Tools
                 End If
             End If
 
-            '   My.Computer.Audio.Play(My.Resources.connected, AudioPlayMode.Background)
         End If
 
     End Sub
@@ -1702,8 +1667,6 @@ Public Class Form_Tools
         End If
 
         TextBox_Get_Dosid.Text = ""
-        TextBox_Get_id.Text = ""
-        TextBox_Get_Server.Text = ""
 
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
@@ -1835,13 +1798,11 @@ Public Class Form_Tools
             CheckBox_AutoUpdate.ForeColor = Color.Red
             TextBox_username.ForeColor = Color.Red
             TextBox_clan.ForeColor = Color.Red
-            TextBox_Get_Server.ForeColor = Color.Red
             TextBox_ProfilSelected.ForeColor = Color.Red
             TextBox_Get_Dosid.ForeColor = Color.Red
             TextBox_username.BackColor = Color.FromArgb(30, 30, 30)
             PictureBox_grade.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_clan.BackColor = Color.FromArgb(30, 30, 30)
-            TextBox_Get_Server.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_ProfilSelected.BackColor = Color.FromArgb(30, 30, 30)
             TextBox_Get_Dosid.BackColor = Color.FromArgb(30, 30, 30)
             Label_Dosid.BackColor = Color.FromArgb(30, 30, 30)

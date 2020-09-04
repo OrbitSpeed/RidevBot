@@ -201,8 +201,7 @@ Public Class Form_Startup
         End If
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
-        Form_Tools.TextBox_Get_id.Text = ""
-        Form_Tools.TextBox_Get_Server.Text = ""
+
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs)
