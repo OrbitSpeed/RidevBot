@@ -755,55 +755,34 @@ Public Class Form_Tools
         Data = ComboBox_autospin.Text
         Select Case Data
             Case "ABG"
-                Button_alpha_GGS.Visible = False
-                Button_beta_GGS.Visible = False
-                Button_Gamma_GGS.Visible = False
                 WebBrowser_galaxyGates.Navigate("About:blank")
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Delta"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Epsilon"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Zeta"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Kappa"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Lambda"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Kuiper"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Hades"
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case Else
+                Panel_Alpha_ABG_GGS.Visible = False
+                Panel_Beta_ABG_GGS.Visible = False
+                Panel_Gamma_ABG_GGS.Visible = False
                 Button_alpha_GGS.Visible = True
                 Button_beta_GGS.Visible = True
                 Button_Gamma_GGS.Visible = True
@@ -1917,7 +1896,7 @@ Label_ClickGalaxyGates:
 
     End Sub  ' Supressor controler INBAR GGS
 
-    Private Sub ComboBox_autospin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.SelectedIndexChanged
+    Private Sub ComboBox_autospin_MouseClick(sender As Object, e As MouseEventArgs) Handles ComboBox_autospin.MouseClick
 
         If Text = "ABG" Then
 
@@ -1927,7 +1906,9 @@ Label_ClickGalaxyGates:
             Button_alpha_GGS.Visible = False
             Button_beta_GGS.Visible = False
             Button_Gamma_GGS.Visible = False
+
         Else
+
             Panel_Alpha_ABG_GGS.Visible = False
             Panel_Beta_ABG_GGS.Visible = False
             Panel_Gamma_ABG_GGS.Visible = False
@@ -1936,6 +1917,10 @@ Label_ClickGalaxyGates:
             Button_Gamma_GGS.Visible = True
 
         End If
+
+    End Sub
+
+    Private Sub ComboBox_autospin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.SelectedIndexChanged
 
     End Sub
 End Class

@@ -160,9 +160,6 @@ Partial Class Form_Tools
         Me.Button_Hades_GGS = New System.Windows.Forms.Button()
         Me.Button_StartSpin = New System.Windows.Forms.Button()
         Me.Panel_autospin = New System.Windows.Forms.Panel()
-        Me.Button_Gamma_GGS = New System.Windows.Forms.Button()
-        Me.Button_beta_GGS = New System.Windows.Forms.Button()
-        Me.Button_alpha_GGS = New System.Windows.Forms.Button()
         Me.Button_resetlog = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button_resettabspin = New System.Windows.Forms.Button()
@@ -177,6 +174,21 @@ Partial Class Form_Tools
         Me.Label_Spintimes_MS_text = New System.Windows.Forms.Label()
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
+        Me.Button_Gamma_GGS = New System.Windows.Forms.Button()
+        Me.Button_beta_GGS = New System.Windows.Forms.Button()
+        Me.Button_alpha_GGS = New System.Windows.Forms.Button()
+        Me.Panel_Gamma_ABG_GGS = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label_Gamma_ABG_GGS_part = New System.Windows.Forms.Label()
+        Me.Label_Gamma_ABG_GGS_onmap = New System.Windows.Forms.Label()
+        Me.Panel_Beta_ABG_GGS = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label_Beta_ABG_GGS_onmap = New System.Windows.Forms.Label()
+        Me.Label_Beta_ABG_GGS_part = New System.Windows.Forms.Label()
+        Me.Panel_Alpha_ABG_GGS = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label_Alpha_ABG_GGS_onmap = New System.Windows.Forms.Label()
+        Me.Label_Alpha_ABG_GGS_part = New System.Windows.Forms.Label()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.TextBox_total_gates_builded = New System.Windows.Forms.TextBox()
         Me.Label_total_gates_builded = New System.Windows.Forms.Label()
@@ -264,18 +276,6 @@ Partial Class Form_Tools
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel_palladium_palladium = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Panel_Alpha_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label_Alpha_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Label_Alpha_ABG_GGS_part = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel_Beta_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label_Beta_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Label_Beta_ABG_GGS_part = New System.Windows.Forms.Label()
-        Me.Panel_Gamma_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label_Gamma_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Label_Gamma_ABG_GGS_part = New System.Windows.Forms.Label()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -301,6 +301,9 @@ Partial Class Form_Tools
         CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_autospin.SuspendLayout()
+        Me.Panel_Gamma_ABG_GGS.SuspendLayout()
+        Me.Panel_Beta_ABG_GGS.SuspendLayout()
+        Me.Panel_Alpha_ABG_GGS.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
@@ -315,9 +318,6 @@ Partial Class Form_Tools
         Me.TableLayoutPanel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_palladium_palladium.SuspendLayout()
-        Me.Panel_Alpha_ABG_GGS.SuspendLayout()
-        Me.Panel_Beta_ABG_GGS.SuspendLayout()
-        Me.Panel_Gamma_ABG_GGS.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -2130,7 +2130,7 @@ Partial Class Form_Tools
         Me.Button_ABG_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_ABG_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 359)
+        Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 362)
         Me.Button_ABG_GGS.Name = "Button_ABG_GGS"
         Me.Button_ABG_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_ABG_GGS.TabIndex = 43
@@ -2274,60 +2274,18 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.Label_Spintimes_MS_text)
         Me.Panel_autospin.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
         Me.Panel_autospin.Controls.Add(Me.ComboBox_autospin)
+        Me.Panel_autospin.Controls.Add(Me.Button_ABG_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_Gamma_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Controls.Add(Me.Panel_Gamma_ABG_GGS)
         Me.Panel_autospin.Controls.Add(Me.Panel_Beta_ABG_GGS)
         Me.Panel_autospin.Controls.Add(Me.Panel_Alpha_ABG_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_ABG_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_autospin.Location = New System.Drawing.Point(495, 67)
         Me.Panel_autospin.Name = "Panel_autospin"
         Me.Panel_autospin.Size = New System.Drawing.Size(192, 639)
         Me.Panel_autospin.TabIndex = 78
-        '
-        'Button_Gamma_GGS
-        '
-        Me.Button_Gamma_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Gamma_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Gamma_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Gamma_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Gamma_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Gamma_GGS.Location = New System.Drawing.Point(8, 359)
-        Me.Button_Gamma_GGS.Name = "Button_Gamma_GGS"
-        Me.Button_Gamma_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Gamma_GGS.TabIndex = 104
-        Me.Button_Gamma_GGS.Text = "Spin GAMMA"
-        Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
-        '
-        'Button_beta_GGS
-        '
-        Me.Button_beta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_beta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 328)
-        Me.Button_beta_GGS.Name = "Button_beta_GGS"
-        Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_beta_GGS.TabIndex = 103
-        Me.Button_beta_GGS.Text = "Spin BETA"
-        Me.Button_beta_GGS.UseVisualStyleBackColor = False
-        '
-        'Button_alpha_GGS
-        '
-        Me.Button_alpha_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_alpha_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 297)
-        Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
-        Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_alpha_GGS.TabIndex = 102
-        Me.Button_alpha_GGS.Text = "Spin ALPHA"
-        Me.Button_alpha_GGS.UseVisualStyleBackColor = False
         '
         'Button_resetlog
         '
@@ -2349,7 +2307,7 @@ Partial Class Form_Tools
         Me.Label17.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(25, 275)
+        Me.Label17.Location = New System.Drawing.Point(23, 266)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(89, 15)
         Me.Label17.TabIndex = 100
@@ -2507,6 +2465,193 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.Size = New System.Drawing.Size(75, 21)
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
+        '
+        'Button_Gamma_GGS
+        '
+        Me.Button_Gamma_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_Gamma_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Gamma_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Gamma_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Gamma_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_Gamma_GGS.Location = New System.Drawing.Point(8, 359)
+        Me.Button_Gamma_GGS.Name = "Button_Gamma_GGS"
+        Me.Button_Gamma_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_Gamma_GGS.TabIndex = 104
+        Me.Button_Gamma_GGS.Text = "Spin GAMMA"
+        Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
+        Me.Button_Gamma_GGS.Visible = False
+        '
+        'Button_beta_GGS
+        '
+        Me.Button_beta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_beta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 328)
+        Me.Button_beta_GGS.Name = "Button_beta_GGS"
+        Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_beta_GGS.TabIndex = 103
+        Me.Button_beta_GGS.Text = "Spin BETA"
+        Me.Button_beta_GGS.UseVisualStyleBackColor = False
+        Me.Button_beta_GGS.Visible = False
+        '
+        'Button_alpha_GGS
+        '
+        Me.Button_alpha_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_alpha_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 297)
+        Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
+        Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_alpha_GGS.TabIndex = 102
+        Me.Button_alpha_GGS.Text = "Spin ALPHA"
+        Me.Button_alpha_GGS.UseVisualStyleBackColor = False
+        Me.Button_alpha_GGS.Visible = False
+        '
+        'Panel_Gamma_ABG_GGS
+        '
+        Me.Panel_Gamma_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_Gamma_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label11)
+        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_part)
+        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_onmap)
+        Me.Panel_Gamma_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel_Gamma_ABG_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Panel_Gamma_ABG_GGS.Location = New System.Drawing.Point(8, 340)
+        Me.Panel_Gamma_ABG_GGS.Name = "Panel_Gamma_ABG_GGS"
+        Me.Panel_Gamma_ABG_GGS.Size = New System.Drawing.Size(170, 18)
+        Me.Panel_Gamma_ABG_GGS.TabIndex = 106
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Gold
+        Me.Label11.Location = New System.Drawing.Point(79, 2)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(15, 15)
+        Me.Label11.TabIndex = 79
+        Me.Label11.Text = "G"
+        '
+        'Label_Gamma_ABG_GGS_part
+        '
+        Me.Label_Gamma_ABG_GGS_part.AutoSize = True
+        Me.Label_Gamma_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Gamma_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
+        Me.Label_Gamma_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
+        Me.Label_Gamma_ABG_GGS_part.Name = "Label_Gamma_ABG_GGS_part"
+        Me.Label_Gamma_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
+        Me.Label_Gamma_ABG_GGS_part.TabIndex = 77
+        Me.Label_Gamma_ABG_GGS_part.Text = "Part : 00 / 82"
+        '
+        'Label_Gamma_ABG_GGS_onmap
+        '
+        Me.Label_Gamma_ABG_GGS_onmap.AutoSize = True
+        Me.Label_Gamma_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Gamma_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
+        Me.Label_Gamma_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
+        Me.Label_Gamma_ABG_GGS_onmap.Name = "Label_Gamma_ABG_GGS_onmap"
+        Me.Label_Gamma_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
+        Me.Label_Gamma_ABG_GGS_onmap.TabIndex = 78
+        Me.Label_Gamma_ABG_GGS_onmap.Text = "On map : 0"
+        '
+        'Panel_Beta_ABG_GGS
+        '
+        Me.Panel_Beta_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_Beta_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label7)
+        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_onmap)
+        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_part)
+        Me.Panel_Beta_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel_Beta_ABG_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Panel_Beta_ABG_GGS.Location = New System.Drawing.Point(8, 313)
+        Me.Panel_Beta_ABG_GGS.Name = "Panel_Beta_ABG_GGS"
+        Me.Panel_Beta_ABG_GGS.Size = New System.Drawing.Size(170, 18)
+        Me.Panel_Beta_ABG_GGS.TabIndex = 106
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Gold
+        Me.Label7.Location = New System.Drawing.Point(79, 2)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 15)
+        Me.Label7.TabIndex = 79
+        Me.Label7.Text = "B"
+        '
+        'Label_Beta_ABG_GGS_onmap
+        '
+        Me.Label_Beta_ABG_GGS_onmap.AutoSize = True
+        Me.Label_Beta_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Beta_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
+        Me.Label_Beta_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
+        Me.Label_Beta_ABG_GGS_onmap.Name = "Label_Beta_ABG_GGS_onmap"
+        Me.Label_Beta_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
+        Me.Label_Beta_ABG_GGS_onmap.TabIndex = 78
+        Me.Label_Beta_ABG_GGS_onmap.Text = "On map : 0"
+        '
+        'Label_Beta_ABG_GGS_part
+        '
+        Me.Label_Beta_ABG_GGS_part.AutoSize = True
+        Me.Label_Beta_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Beta_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
+        Me.Label_Beta_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
+        Me.Label_Beta_ABG_GGS_part.Name = "Label_Beta_ABG_GGS_part"
+        Me.Label_Beta_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
+        Me.Label_Beta_ABG_GGS_part.TabIndex = 77
+        Me.Label_Beta_ABG_GGS_part.Text = "Part : 00 / 48"
+        '
+        'Panel_Alpha_ABG_GGS
+        '
+        Me.Panel_Alpha_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_Alpha_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label6)
+        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_onmap)
+        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_part)
+        Me.Panel_Alpha_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel_Alpha_ABG_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Panel_Alpha_ABG_GGS.Location = New System.Drawing.Point(8, 286)
+        Me.Panel_Alpha_ABG_GGS.Name = "Panel_Alpha_ABG_GGS"
+        Me.Panel_Alpha_ABG_GGS.Size = New System.Drawing.Size(170, 18)
+        Me.Panel_Alpha_ABG_GGS.TabIndex = 105
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Gold
+        Me.Label6.Location = New System.Drawing.Point(79, 2)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(15, 15)
+        Me.Label6.TabIndex = 79
+        Me.Label6.Text = "A"
+        '
+        'Label_Alpha_ABG_GGS_onmap
+        '
+        Me.Label_Alpha_ABG_GGS_onmap.AutoSize = True
+        Me.Label_Alpha_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Alpha_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
+        Me.Label_Alpha_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
+        Me.Label_Alpha_ABG_GGS_onmap.Name = "Label_Alpha_ABG_GGS_onmap"
+        Me.Label_Alpha_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
+        Me.Label_Alpha_ABG_GGS_onmap.TabIndex = 78
+        Me.Label_Alpha_ABG_GGS_onmap.Text = "On map : 0"
+        Me.Label_Alpha_ABG_GGS_onmap.Visible = False
+        '
+        'Label_Alpha_ABG_GGS_part
+        '
+        Me.Label_Alpha_ABG_GGS_part.AutoSize = True
+        Me.Label_Alpha_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Alpha_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
+        Me.Label_Alpha_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
+        Me.Label_Alpha_ABG_GGS_part.Name = "Label_Alpha_ABG_GGS_part"
+        Me.Label_Alpha_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
+        Me.Label_Alpha_ABG_GGS_part.TabIndex = 77
+        Me.Label_Alpha_ABG_GGS_part.Text = "Part : 00 / 34"
         '
         'Button_PrepareGates
         '
@@ -3751,150 +3896,6 @@ Partial Class Form_Tools
         Me.Label19.TabIndex = 43
         Me.Label19.Text = "Palladium"
         '
-        'Panel_Alpha_ABG_GGS
-        '
-        Me.Panel_Alpha_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Alpha_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label6)
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_onmap)
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_part)
-        Me.Panel_Alpha_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Alpha_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Alpha_ABG_GGS.Location = New System.Drawing.Point(8, 297)
-        Me.Panel_Alpha_ABG_GGS.Name = "Panel_Alpha_ABG_GGS"
-        Me.Panel_Alpha_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Alpha_ABG_GGS.TabIndex = 105
-        Me.Panel_Alpha_ABG_GGS.Visible = False
-        '
-        'Label_Alpha_ABG_GGS_onmap
-        '
-        Me.Label_Alpha_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Alpha_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Alpha_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Alpha_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Alpha_ABG_GGS_onmap.Name = "Label_Alpha_ABG_GGS_onmap"
-        Me.Label_Alpha_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Alpha_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Alpha_ABG_GGS_onmap.Text = "On map : 0"
-        '
-        'Label_Alpha_ABG_GGS_part
-        '
-        Me.Label_Alpha_ABG_GGS_part.AutoSize = True
-        Me.Label_Alpha_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Alpha_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Alpha_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Alpha_ABG_GGS_part.Name = "Label_Alpha_ABG_GGS_part"
-        Me.Label_Alpha_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Alpha_ABG_GGS_part.TabIndex = 77
-        Me.Label_Alpha_ABG_GGS_part.Text = "Part : 00 / 34"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Gold
-        Me.Label6.Location = New System.Drawing.Point(79, 2)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(15, 15)
-        Me.Label6.TabIndex = 79
-        Me.Label6.Text = "A"
-        '
-        'Panel_Beta_ABG_GGS
-        '
-        Me.Panel_Beta_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Beta_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label7)
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_onmap)
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_part)
-        Me.Panel_Beta_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Beta_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Beta_ABG_GGS.Location = New System.Drawing.Point(8, 317)
-        Me.Panel_Beta_ABG_GGS.Name = "Panel_Beta_ABG_GGS"
-        Me.Panel_Beta_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Beta_ABG_GGS.TabIndex = 106
-        Me.Panel_Beta_ABG_GGS.Visible = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Gold
-        Me.Label7.Location = New System.Drawing.Point(79, 2)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(14, 15)
-        Me.Label7.TabIndex = 79
-        Me.Label7.Text = "B"
-        '
-        'Label_Beta_ABG_GGS_onmap
-        '
-        Me.Label_Beta_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Beta_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Beta_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Beta_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Beta_ABG_GGS_onmap.Name = "Label_Beta_ABG_GGS_onmap"
-        Me.Label_Beta_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Beta_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Beta_ABG_GGS_onmap.Text = "On map : 0"
-        '
-        'Label_Beta_ABG_GGS_part
-        '
-        Me.Label_Beta_ABG_GGS_part.AutoSize = True
-        Me.Label_Beta_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Beta_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Beta_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Beta_ABG_GGS_part.Name = "Label_Beta_ABG_GGS_part"
-        Me.Label_Beta_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Beta_ABG_GGS_part.TabIndex = 77
-        Me.Label_Beta_ABG_GGS_part.Text = "Part : 00 / 48"
-        '
-        'Panel_Gamma_ABG_GGS
-        '
-        Me.Panel_Gamma_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Gamma_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label11)
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_part)
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_onmap)
-        Me.Panel_Gamma_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Gamma_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Gamma_ABG_GGS.Location = New System.Drawing.Point(8, 337)
-        Me.Panel_Gamma_ABG_GGS.Name = "Panel_Gamma_ABG_GGS"
-        Me.Panel_Gamma_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Gamma_ABG_GGS.TabIndex = 106
-        Me.Panel_Gamma_ABG_GGS.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Gold
-        Me.Label11.Location = New System.Drawing.Point(79, 2)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(15, 15)
-        Me.Label11.TabIndex = 79
-        Me.Label11.Text = "G"
-        '
-        'Label_Gamma_ABG_GGS_onmap
-        '
-        Me.Label_Gamma_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Gamma_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Gamma_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Gamma_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Gamma_ABG_GGS_onmap.Name = "Label_Gamma_ABG_GGS_onmap"
-        Me.Label_Gamma_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Gamma_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Gamma_ABG_GGS_onmap.Text = "On map : 0"
-        '
-        'Label_Gamma_ABG_GGS_part
-        '
-        Me.Label_Gamma_ABG_GGS_part.AutoSize = True
-        Me.Label_Gamma_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Gamma_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Gamma_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Gamma_ABG_GGS_part.Name = "Label_Gamma_ABG_GGS_part"
-        Me.Label_Gamma_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Gamma_ABG_GGS_part.TabIndex = 77
-        Me.Label_Gamma_ABG_GGS_part.Text = "Part : 00 / 82"
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3966,6 +3967,12 @@ Partial Class Form_Tools
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_autospin.ResumeLayout(False)
         Me.Panel_autospin.PerformLayout()
+        Me.Panel_Gamma_ABG_GGS.ResumeLayout(False)
+        Me.Panel_Gamma_ABG_GGS.PerformLayout()
+        Me.Panel_Beta_ABG_GGS.ResumeLayout(False)
+        Me.Panel_Beta_ABG_GGS.PerformLayout()
+        Me.Panel_Alpha_ABG_GGS.ResumeLayout(False)
+        Me.Panel_Alpha_ABG_GGS.PerformLayout()
         Me.Panel_infoPartGG.ResumeLayout(False)
         Me.Panel_infoPartGG.PerformLayout()
         Me.Panel_infoPartGG_GG.ResumeLayout(False)
@@ -3989,12 +3996,6 @@ Partial Class Form_Tools
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_palladium_palladium.ResumeLayout(False)
         Me.Panel_palladium_palladium.PerformLayout()
-        Me.Panel_Alpha_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Alpha_ABG_GGS.PerformLayout()
-        Me.Panel_Beta_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Beta_ABG_GGS.PerformLayout()
-        Me.Panel_Gamma_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Gamma_ABG_GGS.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
