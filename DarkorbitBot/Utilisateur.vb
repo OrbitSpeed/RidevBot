@@ -1,7 +1,9 @@
 ﻿Public Class Utilisateur
     Public Property NomUtilisateur As String
     Public Property PasswordUtilisateur As String
-    Public Property License As Date
+    Public Property LicenseEndTime As Date
+    Public Property LicenseKey As String
+    Public Property LicenseActivated As Boolean
 
     Public Shared Function IsEqual(user1 As Utilisateur, user2 As Utilisateur)
         If user1 Is Nothing Or user2 Is Nothing Then

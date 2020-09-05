@@ -653,26 +653,7 @@ Public Class Utils
     End Function
 
 #End Region
-    'Public Shared Function GetNistTime() As DateTime
-    '    Dim dateTime As DateTime = DateTime.MinValue
-    '    Dim request As HttpWebRequest = CType(WebRequest.Create("http://nist.time.gov/actualtime.cgi?lzbc=siqm9b"), HttpWebRequest)
-    '    request.Method = "GET"
-    '    request.Accept = "text/html, application/xhtml+xml, */*"
-    '    request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)"
-    '    request.ContentType = "application/x-www-form-urlencoded"
-    '    request.CachePolicy = New RequestCachePolicy(RequestCacheLevel.NoCacheNoStore)
-    '    Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-
-    '    If response.StatusCode = HttpStatusCode.OK Then
-    '        Dim stream As StreamReader = New StreamReader(response.GetResponseStream())
-    '        Dim html As String = stream.ReadToEnd()
-    '        Dim time As String = Regex.Match(html, "(?<=\btime="")[^""]*").Value
-    '        Dim milliseconds As Double = Convert.ToInt64(time) / 1000.0
-    '        dateTime = New DateTime(1970, 1, 1).AddMilliseconds(milliseconds).ToLocalTime()
-    '    End If
-
-    '    Return dateTime
-    'End Function
+    Public Shared DateDistant As Date
 
     Public Shared Function GetNistTime() As DateTime
         Dim client = New TcpClient("time.nist.gov", 13)
@@ -680,10 +661,69 @@ Public Class Utils
         Using streamReader = New StreamReader(client.GetStream())
             Dim response = streamReader.ReadToEnd()
             Dim utcDateTimeString = response.Substring(7, 17)
-            Dim localDateTime = Date.Parse(utcDateTimeString)
+            Console.WriteLine(utcDateTimeString)
+            Dim localDateTime = DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
+            'Dim localDateTime = Date.Parse(utcDateTimeString).Date
+            'Console.WriteLine(localDateTime)
+            'Console.WriteLine(Date.Now)
+            DateDistant = localDateTime
             Return localDateTime
         End Using
-        '.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
+    End Function
+
+    Public Shared Function String_Random(intMinLength As Integer,
+    intMaxLength As Integer,
+    strPrepend As String,
+    strAppend As String,
+    intCase As Integer,
+    bIncludeDigits As Boolean) As String
+
+        ' Allowed characters variable
+        Dim s As String = String.Empty
+
+        ' Set the variable to user's choice of allowed characters
+        Select Case intCase
+
+            Case 1
+
+                ' Uppercase
+                s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+            Case 2
+
+                ' Lowercase
+                s = "abcdefghijklmnopqrstuvwxyz"
+
+            Case Else
+
+                ' Case Insensitive + Numbers
+                s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+        End Select
+
+        ' Add numbers to the allowed characters if user chose so
+        If bIncludeDigits = True Then s &= "0123456789"
+
+        Static r As New Random
+
+        Dim chactersInString As Integer = r.Next(intMinLength, intMaxLength)
+        Dim sb As New StringBuilder
+
+        ' Add the prepend string if one was passed
+        If String.IsNullOrEmpty(strPrepend) = False Then sb.Append(strPrepend)
+
+        For i As Integer = 1 To chactersInString
+
+            Dim idx As Integer = r.Next(0, s.Length)
+
+            sb.Append(s.Substring(idx, 1))
+
+        Next
+
+        ' Add the append string if one was passed
+        If String.IsNullOrEmpty(strAppend) = False Then sb.Append(strAppend)
+
+        Return sb.ToString()
 
     End Function
 End Class

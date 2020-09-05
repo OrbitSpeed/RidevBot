@@ -17,6 +17,7 @@ Public Class ConnectionForm
     Private Sub ConnectionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             client = New FirebaseClient(fcon)
+            Utils.GetNistTime()
             'MsgBox(Utils.GetNistTime)
         Catch ex As Exception
             MessageBox.Show($"Erreur:{ex.ToString}")
@@ -28,23 +29,31 @@ Public Class ConnectionForm
             MsgBox("null")
             Return
         End If
+        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
 
-        Dim res = client.Get("Users/" + TextBox_username.Text)
-        Dim resUser = res.ResultAs(Of Utilisateur)
+
+        Dim res = client.Get("Users/" + user_key)
+        Console.WriteLine(res.Body)
+        If res.Body <> "null" Then
+            MessageBox.Show("Your account already exist")
+            Exit Sub
+        End If
+
         Dim CurUser As New Utilisateur() With
             {
             .NomUtilisateur = TextBox_username.Text,
             .PasswordUtilisateur = TextBox_password.Text,
-            .License = Date.Now.AddDays(30)
+            .LicenseEndTime = Utils.DateDistant.AddDays(30),
+            .LicenseKey = user_key,
+            .LicenseActivated = False
             }
 
-        If Utilisateur.IsEqual(resUser, CurUser) Then
-            MsgBox("Your account already exist")
-        Else
-            Dim setter = client.Set("Users/" + TextBox_username.Text, CurUser)
-            MessageBox.Show("Your account is now added")
 
-        End If
+        Dim setter = client.Set("Users/" + user_key, CurUser)
+        Console.WriteLine(setter.Body)
+        Console.WriteLine(setter.StatusCode)
+        MessageBox.Show("Your account is now added")
+
 
 
     End Sub
@@ -54,19 +63,27 @@ Public Class ConnectionForm
             MsgBox("null")
             Return
         End If
+        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
 
-        Dim res = client.Get("Users/" + TextBox_username.Text)
+        Dim res = client.Get("Users/" + user_key)
+        If res.Body = "null" Then
+            MessageBox.Show("Your account doesn't exist")
+            Exit Sub
+        End If
+
         Dim resUser = res.ResultAs(Of Utilisateur)
 
         Dim CurUser As New Utilisateur With
             {
             .NomUtilisateur = TextBox_username.Text,
             .PasswordUtilisateur = TextBox_password.Text,
-            .License = Date.Now
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key
             }
 
         If Utilisateur.IsEqual(resUser, CurUser) Then
-            If resUser.License.CompareTo(Utils.GetNistTime) = -1 Then
+            If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
                 MsgBox("t'as pas payé enculé")
                 Exit Sub
             End If
@@ -76,5 +93,41 @@ Public Class ConnectionForm
             MsgBox("Can't find your account, check your credentials")
         End If
 
+    End Sub
+
+    Private Sub Button_validate_Click(sender As Object, e As EventArgs) Handles Button_validate.Click
+        If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
+            MsgBox("null")
+            Return
+        End If
+        Dim user_key = TextBox_license_check.Text
+
+        Dim res = client.Get("Users/" + user_key)
+        If res.Body = "null" Then
+            MessageBox.Show("Your account doesn't exist")
+            Exit Sub
+        End If
+
+        Dim resUser = res.ResultAs(Of Utilisateur)
+
+        Dim CurUser As New Utilisateur With
+            {
+            .NomUtilisateur = TextBox_username.Text,
+            .PasswordUtilisateur = TextBox_password.Text,
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key
+            }
+
+        'If Utilisateur.IsEqual(resUser, CurUser) Then
+        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+            MsgBox("t'as pas payé enculé")
+            Exit Sub
+        End If
+
+        MsgBox($"Welcome {resUser.NomUtilisateur}")
+        'Else
+        'MsgBox("Can't find your account, check your credentials")
+        'End If
     End Sub
 End Class

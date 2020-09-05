@@ -14,22 +14,10 @@ Public Class Form_Startup
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim test = Utils.AESEncryptStringToBase64("8In7LbaTfBHlNv5J85zOZSJun1pGGObxCgjXlhUQ", "00000000000000000000000000000000")
-        'MsgBox(test)
-        'Dim test1 = Utils.AESEncryptStringToBase64(Utils.Firebase_Secret, "dont_search_you_cant_find_our_crypted_shit_because_you_are_fucking_bad")
-        'MsgBox(test1)
+
         Dim test1 = Utils.GenerateSHA512String(Utils.Firebase_Secret)
         MsgBox(test1)
 
-        'Dim toi = Utils.getMD5Hash("rapstar55")
-        'Console.WriteLine(toi)
-        'Dim moi = Utils.getMD5Hash("rapstar55")
-        'Console.WriteLine(moi)
-        'If moi = toi Then
-        '    Console.WriteLine("Même hash")
-        'Else
-        '    Console.WriteLine("Pas le même hash")
-        'End If
         'Console.WriteLine("----------")
         'sKZhQw5brMKAHXuUuyjYgmGNTNUwbpQPQ7b87ABYSevjugXRnDxmWes6GA5VEAYU, 1475a6209fc4fce52a6acc08a642d36caa916738
         ' coté serveur :  Dim dans_base_de_donnee = "1475a6209fc4fce52a6acc08a642d36caa916738"

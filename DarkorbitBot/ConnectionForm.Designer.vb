@@ -26,6 +26,8 @@ Partial Class ConnectionForm
         Me.Button_connect = New System.Windows.Forms.Button()
         Me.TextBox_username = New System.Windows.Forms.TextBox()
         Me.TextBox_password = New System.Windows.Forms.TextBox()
+        Me.Button_validate = New System.Windows.Forms.Button()
+        Me.TextBox_license_check = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button_reg
@@ -62,11 +64,30 @@ Partial Class ConnectionForm
         Me.TextBox_password.TabIndex = 2
         Me.TextBox_password.Text = "password"
         '
+        'Button_validate
+        '
+        Me.Button_validate.Location = New System.Drawing.Point(344, 175)
+        Me.Button_validate.Name = "Button_validate"
+        Me.Button_validate.Size = New System.Drawing.Size(327, 23)
+        Me.Button_validate.TabIndex = 3
+        Me.Button_validate.Text = "validate"
+        Me.Button_validate.UseVisualStyleBackColor = True
+        '
+        'TextBox_license_check
+        '
+        Me.TextBox_license_check.Location = New System.Drawing.Point(344, 143)
+        Me.TextBox_license_check.Name = "TextBox_license_check"
+        Me.TextBox_license_check.Size = New System.Drawing.Size(327, 20)
+        Me.TextBox_license_check.TabIndex = 4
+        Me.TextBox_license_check.Text = "license"
+        '
         'ConnectionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TextBox_license_check)
+        Me.Controls.Add(Me.Button_validate)
         Me.Controls.Add(Me.TextBox_password)
         Me.Controls.Add(Me.TextBox_username)
         Me.Controls.Add(Me.Button_connect)
@@ -82,4 +103,6 @@ Partial Class ConnectionForm
     Friend WithEvents Button_connect As Button
     Friend WithEvents TextBox_username As TextBox
     Friend WithEvents TextBox_password As TextBox
+    Friend WithEvents Button_validate As Button
+    Friend WithEvents TextBox_license_check As TextBox
 End Class
