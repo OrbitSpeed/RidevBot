@@ -724,30 +724,27 @@ Public Class Form_Tools
 
         If TextBox_spintimes_GGS.Text.Contains(".") Then
 
-            TextBox_WinGGS.Text = vbNewLine + ""
-            TextBox_WinGGS.Text = vbNewLine + $"Error :"
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time."
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
         ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
 
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"Error :"
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time."
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
-        ElseIf Val(TextBox_spintimes_GGS.Text) < 300 Then
+        ElseIf Val(TextBox_spintimes_GGS.Text) < 200 Then
 
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"Error :"
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"Starting With 300ms by Default, we don't recommand to go lower."
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Starting with 300ms by Default, we don't recommand to go lower." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
             TextBox_spintimes_GGS.Text = 300
         End If
@@ -800,10 +797,10 @@ Public Class Form_Tools
 
         Console.WriteLine("Autospinner deactivated.")
 
-        TextBox_WinGGS.Text = vbNewLine + $""
-        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
-        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-        TextBox_WinGGS.Text = vbNewLine + $""
+        TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
+        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+        TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
         exitGGS = 1
         Button_StartSpin.Enabled = True
@@ -828,10 +825,10 @@ Label_ClickGalaxyGates:
 
         If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
 
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy."
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
@@ -840,10 +837,10 @@ Label_ClickGalaxyGates:
 
         ElseIf Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
 
-            TextBox_WinGGS.Text = vbNewLine + $""
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium."
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-            TextBox_WinGGS.Text = vbNewLine + $""
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
             Button_StartSpin.Enabled = True
             Button_stopSpin.Enabled = False
@@ -855,19 +852,20 @@ Label_ClickGalaxyGates:
 
         If infoinMapGG.Split(" / ").First = infoinMapGG.Split(" / ").Last Then
             GalaxyGatesNumber = 2
-        Else GalaxyGatesNumber = 1
+        Else
+            GalaxyGatesNumber = 1
         End If
 
 
 
         If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
             If GalaxyGatesNumber = 1 Then
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed"
-                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox..."
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"Wait..."
-                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox..." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Wait..." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
                 GalaxyGatesChecker = 1
 
                 TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
@@ -876,10 +874,10 @@ Label_ClickGalaxyGates:
                 Await Task.Delay(5000)
 
             Else
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed"
-                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped."
-                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
                 Button_StartSpin.Enabled = True
                 Button_stopSpin.Enabled = False
@@ -889,10 +887,10 @@ Label_ClickGalaxyGates:
 
             If CheckBox_BuildOneAndStop.Checked = True Then
 
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is true.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}"
-                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is true.{vbNewLine}" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
                 Button_StartSpin.Enabled = True
                 Button_stopSpin.Enabled = False
@@ -902,12 +900,12 @@ Label_ClickGalaxyGates:
 
             Else
 
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false."
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"Wait..."
-                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Wait..." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
                 Await Task.Delay(1000)
 
@@ -946,10 +944,10 @@ Label_ClickGalaxyGates:
                 Button_Hades_GGS.PerformClick()
 
             Case Else
-                TextBox_WinGGS.Text = vbNewLine + $""
-                TextBox_WinGGS.Text = vbNewLine + $"Select valid Gates in first."
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated."
-                TextBox_WinGGS.Text = vbNewLine + $""
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Select a valid Gate first." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
+                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
         End Select
 
@@ -1096,13 +1094,13 @@ Label_ClickGalaxyGates:
 
         If GalaxyGatesChecker = 1 Then
 
-            TextBox_WinGGS.Text = vbNewLine + "Preparing Gates..."
+            TextBox_WinGGS.Text = vbNewLine + "Preparing Gates..." + TextBox_WinGGS.Text
             GalaxyGatesChecker = 0
 
         ElseIf DataWinned Is Nothing AndAlso DataWinned2 Is Nothing Then
 
 
-            TextBox_WinGGS.Text = vbNewLine + "Materializer locked !"
+            TextBox_WinGGS.Text = vbNewLine + "Materializer locked !" + TextBox_WinGGS.Text
 
         Else
 
@@ -1896,9 +1894,9 @@ Label_ClickGalaxyGates:
 
     End Sub  ' Supressor controler INBAR GGS
 
-    Private Sub ComboBox_autospin_MouseClick(sender As Object, e As MouseEventArgs) Handles ComboBox_autospin.MouseClick
+    Private Sub ComboBox_autospin_TextChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.TextChanged
 
-        If Text = "ABG" Then
+        If ComboBox_autospin.Text = "ABG" Then
 
             Panel_Alpha_ABG_GGS.Visible = True
             Panel_Beta_ABG_GGS.Visible = True
@@ -1917,10 +1915,5 @@ Label_ClickGalaxyGates:
             Button_Gamma_GGS.Visible = True
 
         End If
-
-    End Sub
-
-    Private Sub ComboBox_autospin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.SelectedIndexChanged
-
-    End Sub
+    End Sub 'Permet de récuperer le nom du autospin et de définir si ABG
 End Class

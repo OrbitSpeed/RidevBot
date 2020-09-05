@@ -342,7 +342,8 @@ Public Class Form_Game
                                          BlockInput(True)
 
                                          '     Dim cursor_Pos = Cursor.Position
-                                         'AutoIt.MouseClickDrag(Minimap_move.X - 40, Minimap_move.Y + 20, 599, 759, 10)
+                                         'AutoIt.MouseClickDrag(Minimap_move.X - 40, Minimap_move.Y + 20, 759, 599, 10)
+                                         'Await Task.Delay(200)
                                          '  Cursor.Position = cursor_Pos
 
 
@@ -3858,24 +3859,24 @@ Public Class Form_Game
 #Region "npc et lock test"
     Public LOCKEDTRUE As String = 1
 
+    '                                                                                                               IDEE NUMERO 2
     Private Async Sub If_Locked()
 
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         Await Task.Delay(350)
 
-        '                                                                                                               IDEE NUMERO 2
 
 
 
-
-
-Label_GotoHome:
 
         Dim DROITE = My.Resources.Locked_One
         Dim GAUCHE = My.Resources.Locked_Two
         Dim HAUT = My.Resources.Locked_Three
         Dim BAS = My.Resources.Locked_Four
         Dim Click_Zone = My.Resources.Click_Zone_Possible2
+
+Label_GotoHome:
+
 
         ' ----------------------------------------
 
@@ -3978,7 +3979,7 @@ Label_GotoHome:
 
                         ElseIf Click_Zone_possible.X = Locked_True2 - 100 Then
 
-                            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X + 370, Locked_Gauche.Y)
+                            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X + 270, Locked_Gauche.Y)
                             Await Task.Delay(1000)
                             GoTo Label_GotoHome
 

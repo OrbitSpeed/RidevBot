@@ -175,8 +175,6 @@ Partial Class Form_Tools
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Button_Gamma_GGS = New System.Windows.Forms.Button()
-        Me.Button_beta_GGS = New System.Windows.Forms.Button()
-        Me.Button_alpha_GGS = New System.Windows.Forms.Button()
         Me.Panel_Gamma_ABG_GGS = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label_Gamma_ABG_GGS_part = New System.Windows.Forms.Label()
@@ -189,6 +187,8 @@ Partial Class Form_Tools
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label_Alpha_ABG_GGS_onmap = New System.Windows.Forms.Label()
         Me.Label_Alpha_ABG_GGS_part = New System.Windows.Forms.Label()
+        Me.Button_beta_GGS = New System.Windows.Forms.Button()
+        Me.Button_alpha_GGS = New System.Windows.Forms.Button()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
         Me.TextBox_total_gates_builded = New System.Windows.Forms.TextBox()
         Me.Label_total_gates_builded = New System.Windows.Forms.Label()
@@ -2481,36 +2481,6 @@ Partial Class Form_Tools
         Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
         Me.Button_Gamma_GGS.Visible = False
         '
-        'Button_beta_GGS
-        '
-        Me.Button_beta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_beta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 328)
-        Me.Button_beta_GGS.Name = "Button_beta_GGS"
-        Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_beta_GGS.TabIndex = 103
-        Me.Button_beta_GGS.Text = "Spin BETA"
-        Me.Button_beta_GGS.UseVisualStyleBackColor = False
-        Me.Button_beta_GGS.Visible = False
-        '
-        'Button_alpha_GGS
-        '
-        Me.Button_alpha_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_alpha_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 297)
-        Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
-        Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_alpha_GGS.TabIndex = 102
-        Me.Button_alpha_GGS.Text = "Spin ALPHA"
-        Me.Button_alpha_GGS.UseVisualStyleBackColor = False
-        Me.Button_alpha_GGS.Visible = False
-        '
         'Panel_Gamma_ABG_GGS
         '
         Me.Panel_Gamma_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -2652,6 +2622,36 @@ Partial Class Form_Tools
         Me.Label_Alpha_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
         Me.Label_Alpha_ABG_GGS_part.TabIndex = 77
         Me.Label_Alpha_ABG_GGS_part.Text = "Part : 00 / 34"
+        '
+        'Button_beta_GGS
+        '
+        Me.Button_beta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_beta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 328)
+        Me.Button_beta_GGS.Name = "Button_beta_GGS"
+        Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_beta_GGS.TabIndex = 103
+        Me.Button_beta_GGS.Text = "Spin BETA"
+        Me.Button_beta_GGS.UseVisualStyleBackColor = False
+        Me.Button_beta_GGS.Visible = False
+        '
+        'Button_alpha_GGS
+        '
+        Me.Button_alpha_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_alpha_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 297)
+        Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
+        Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_alpha_GGS.TabIndex = 102
+        Me.Button_alpha_GGS.Text = "Spin ALPHA"
+        Me.Button_alpha_GGS.UseVisualStyleBackColor = False
+        Me.Button_alpha_GGS.Visible = False
         '
         'Button_PrepareGates
         '

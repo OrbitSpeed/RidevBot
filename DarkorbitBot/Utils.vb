@@ -177,6 +177,26 @@ Public Class Utils
         'Return Regex.Match(Data, "current(.*?)\ ").Groups.Item(1).ToString
         Return Regex.Match(Data, "current.*?([\s\S]*?)\ ").Groups.Item(1).ToString
     End Function
+
+    Public Shared Function getGalaxyGatesState(Data As String) As Boolean
+        If Data = Nothing Then
+            Return "?"
+        ElseIf Data.Length = 0 Then
+            Return "?"
+        End If
+        'Return Regex.Match(Data, "current(.*?)\ ").Groups.Item(1).ToString
+        Dim currentState As String = Regex.Match(Data, "state.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+        If currentState = "finished" Then
+            Return True
+        ElseIf currentState = "in_progress" Then
+            Return False
+        Else
+            Console.WriteLine("--getGalaxyGatesState error, can't get the currentData--| returning false by default")
+            Return False
+        End If
+        'Return Regex.Match(Data, "state.*?([\s\S]*?)\ ").Groups.Item(1).ToString
+    End Function
+
     Public Shared Function getTotalPart(Data As String)
         If Data = Nothing Then
             Return "?"
@@ -520,7 +540,7 @@ Public Class Utils
     End Sub
 
 #Region "Hashing Data"
-    Public Function AESEncryptStringToBase64(strPlainText As String, strKey As String) As String
+    Public Shared Function AESEncryptStringToBase64(strPlainText As String, strKey As String) As String
         Dim Algo As RijndaelManaged = RijndaelManaged.Create()
 
         With Algo
@@ -546,7 +566,7 @@ Public Class Utils
         End Using
     End Function
 
-    Public Function AESDecryptBase64ToString(strCipherText As String, strKey As String) As String
+    Public Shared Function AESDecryptBase64ToString(strCipherText As String, strKey As String) As String
         Dim arrSaltAndCipherText As Byte() = Convert.FromBase64String(strCipherText)
 
         Dim Algo As RijndaelManaged = RijndaelManaged.Create()
@@ -572,6 +592,25 @@ Public Class Utils
         End Using
     End Function
 
+    Shared Function setMd5Hash(theInput As String) As String
+
+        Using hasher As MD5 = MD5.Create()    ' create hash object
+
+            ' Convert to byte array and get hash
+            Dim dbytes As Byte() = hasher.ComputeHash(Encoding.UTF8.GetBytes(theInput))
+
+            ' sb to create string from bytes
+            Dim sBuilder As New StringBuilder()
+
+            ' convert byte data to hex string
+            For n As Integer = 0 To dbytes.Length - 1
+                sBuilder.Append(dbytes(n).ToString("X2"))
+            Next n
+
+            Return sBuilder.ToString()
+        End Using
+
+    End Function
 
 #End Region
 

@@ -10,11 +10,22 @@ Public Class Form_Startup
     Public ProfilSelected As String = 0
     Public CheckedStats As String = 0
 
+    Public getMdpFromDBB As String = "mon mot de passe caché"
+
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'Dim test = Utils.AESEncryptStringToBase64("motdepasse", "123456789012345678901234567890")
+        Dim toi = Utils.setMd5Hash("rapstar55")
+        Console.WriteLine(toi)
+        Dim moi = Utils.setMd5Hash("rapstar55")
+        Console.WriteLine(moi)
+        If moi = toi Then
+            Console.WriteLine("Même hash")
+        Else
+            Console.WriteLine("Pas le même hash")
+        End If
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
 
