@@ -1,5 +1,9 @@
 ﻿Imports System.Drawing.Imaging
+Imports System.Globalization
 Imports System.IO
+Imports System.Net
+Imports System.Net.Cache
+Imports System.Net.Sockets
 Imports System.Runtime.InteropServices
 Imports System.Security.Cryptography
 Imports System.Text
@@ -632,11 +636,11 @@ Public Class Utils
     End Function
 
     Public Shared Function GenerateSHA512String(ByVal inputString As String) As String
-            Dim sha512 As SHA512 = SHA512Managed.Create()
-            Dim bytes As Byte() = Encoding.UTF8.GetBytes(inputString)
-            Dim hash As Byte() = sha512.ComputeHash(bytes)
-            Return GetStringFromHash(hash)
-        End Function
+        Dim sha512 As SHA512 = SHA512Managed.Create()
+        Dim bytes As Byte() = Encoding.UTF8.GetBytes(inputString)
+        Dim hash As Byte() = sha512.ComputeHash(bytes)
+        Return GetStringFromHash(hash)
+    End Function
 
     Private Shared Function GetStringFromHash(ByVal hash As Byte()) As String
         Dim result As StringBuilder = New StringBuilder()
@@ -649,5 +653,37 @@ Public Class Utils
     End Function
 
 #End Region
+    'Public Shared Function GetNistTime() As DateTime
+    '    Dim dateTime As DateTime = DateTime.MinValue
+    '    Dim request As HttpWebRequest = CType(WebRequest.Create("http://nist.time.gov/actualtime.cgi?lzbc=siqm9b"), HttpWebRequest)
+    '    request.Method = "GET"
+    '    request.Accept = "text/html, application/xhtml+xml, */*"
+    '    request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)"
+    '    request.ContentType = "application/x-www-form-urlencoded"
+    '    request.CachePolicy = New RequestCachePolicy(RequestCacheLevel.NoCacheNoStore)
+    '    Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
 
+    '    If response.StatusCode = HttpStatusCode.OK Then
+    '        Dim stream As StreamReader = New StreamReader(response.GetResponseStream())
+    '        Dim html As String = stream.ReadToEnd()
+    '        Dim time As String = Regex.Match(html, "(?<=\btime="")[^""]*").Value
+    '        Dim milliseconds As Double = Convert.ToInt64(time) / 1000.0
+    '        dateTime = New DateTime(1970, 1, 1).AddMilliseconds(milliseconds).ToLocalTime()
+    '    End If
+
+    '    Return dateTime
+    'End Function
+
+    Public Shared Function GetNistTime() As DateTime
+        Dim client = New TcpClient("time.nist.gov", 13)
+
+        Using streamReader = New StreamReader(client.GetStream())
+            Dim response = streamReader.ReadToEnd()
+            Dim utcDateTimeString = response.Substring(7, 17)
+            Dim localDateTime = Date.Parse(utcDateTimeString)
+            Return localDateTime
+        End Using
+        '.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
+
+    End Function
 End Class

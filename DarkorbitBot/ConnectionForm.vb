@@ -17,9 +17,9 @@ Public Class ConnectionForm
     Private Sub ConnectionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             client = New FirebaseClient(fcon)
-
+            'MsgBox(Utils.GetNistTime)
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show($"Erreur:{ex.ToString}")
         End Try
     End Sub
 
@@ -66,7 +66,7 @@ Public Class ConnectionForm
             }
 
         If Utilisateur.IsEqual(resUser, CurUser) Then
-            If resUser.License.CompareTo(Date.Now) = -1 Then
+            If resUser.License.CompareTo(Utils.GetNistTime) = -1 Then
                 MsgBox("t'as pas payé enculé")
                 Exit Sub
             End If
