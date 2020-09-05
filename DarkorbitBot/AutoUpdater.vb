@@ -14,6 +14,7 @@ Public Class AutoUpdater
     Private WC_Update_ChangeLog As New WebClient
     Private WC_Check_Maintenance As New WebClient
     Private WC_Download_AutoIt As New WebClient
+    Private WC_Firebase_Secret As New WebClient
 
     Public LastVersion As String '= WC.DownloadString("")
     Public LastChangeLog As String
@@ -64,6 +65,9 @@ Public Class AutoUpdater
             '---
             AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
             WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
+            '---
+            AddHandler WC_Firebase_Secret.DownloadStringCompleted, AddressOf WC_Firebase_Secret_DownloadStringCompleted
+            WC_Firebase_Secret.DownloadStringAsync(New Uri("https://www.dropbox.com/s/9yhkt6o33my54d0/Firebase_secret.txt?dl=1"))
 
             Video_ridevbot_MediaPlayerAx.URL = FilePath
             Video_ridevbot_MediaPlayerAx.Ctlcontrols.play()
@@ -156,7 +160,8 @@ Public Class AutoUpdater
             If File.Exists(FileUpdater) Then
                 File.Delete(FileUpdater)
             End If
-            Form_Startup.Show()
+            'Form_Startup.Show()
+            ConnectionForm.Show()
 
             Close()
         End If
@@ -221,6 +226,16 @@ Public Class AutoUpdater
         End Try
     End Sub
 
+    Private Sub WC_Firebase_Secret_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
+        'MsgBox(e.Result)
+        Try
+            Utils.Firebase_Secret = e.Result
+
+        Catch ex As Exception
+            MessageBox.Show($"Can't retrieve, error-69.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Close()
+        End Try
+    End Sub
     Private Sub Timer_bar_cancel_auto_login_Tick(sender As Object, e As EventArgs) Handles Timer_bar_cancel_auto_login.Tick
 
         If ProgressBar_cancel_autotlogin.Value = 100 Then

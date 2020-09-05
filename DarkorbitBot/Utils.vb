@@ -31,6 +31,8 @@ Public Class Utils
     Public Shared currentHonnor As String = 0
     Public Shared currentRankPoints As String = 0
 
+    Public Shared Firebase_Secret As String
+
     Public Shared Sub UpdateStats()
         If Not currentUridium = "0" Then
             Form_Tools.TextBox_creditCurrent.Text = currentCredits
@@ -592,7 +594,7 @@ Public Class Utils
         End Using
     End Function
 
-    Shared Function setMd5Hash(theInput As String) As String
+    Shared Function getMD5Hash(theInput As String) As String
 
         Using hasher As MD5 = MD5.Create()    ' create hash object
 
@@ -604,12 +606,46 @@ Public Class Utils
 
             ' convert byte data to hex string
             For n As Integer = 0 To dbytes.Length - 1
-                sBuilder.Append(dbytes(n).ToString("X2"))
+                sBuilder.Append(dbytes(n).ToString("x2"))
             Next n
 
             Return sBuilder.ToString()
         End Using
 
+    End Function
+
+    Public Shared Function getSHA1Hash(ByVal strToHash As String) As String
+
+        Dim sha1Obj As New SHA1CryptoServiceProvider
+        Dim bytesToHash() As Byte = Encoding.ASCII.GetBytes(strToHash)
+
+        bytesToHash = sha1Obj.ComputeHash(bytesToHash)
+
+        Dim strResult As String = ""
+
+        For Each b As Byte In bytesToHash
+            strResult += b.ToString("x2")
+        Next
+
+        Return strResult
+
+    End Function
+
+    Public Shared Function GenerateSHA512String(ByVal inputString As String) As String
+            Dim sha512 As SHA512 = SHA512Managed.Create()
+            Dim bytes As Byte() = Encoding.UTF8.GetBytes(inputString)
+            Dim hash As Byte() = sha512.ComputeHash(bytes)
+            Return GetStringFromHash(hash)
+        End Function
+
+    Private Shared Function GetStringFromHash(ByVal hash As Byte()) As String
+        Dim result As StringBuilder = New StringBuilder()
+
+        For i As Integer = 0 To hash.Length - 1
+            result.Append(hash(i).ToString("x2"))
+        Next
+
+        Return result.ToString()
     End Function
 
 #End Region
