@@ -141,7 +141,7 @@ Public Class Form_Tools
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Calculator = 1
-        Panel_autospin.Location = New Point(495, 66)
+        Panel_autospin.Location = New Point(495, 68)
         Panel_palladium_palladium.Location = New Point(0, 66)
         panel_npc_npc.Location = New Point(0, 66)
         Panel_collectable.Location = New Point(0, 66)
