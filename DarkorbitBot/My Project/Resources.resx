@@ -3357,8 +3357,13 @@
         IooEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="traveling_indication" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Paint_Test\traveling_indication.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="traveling_indication" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAHJJREFUGFdjyCsqdfcJkFZUgyOGvMKy////79q919HFS15ZC4gYAkMiz549DxQF
+        gg2btphZOTBAFIfHxF+6fAUiwQBRDNT+/PkLqFBiSuajR48hnAULl6hpGYJsBHJWrl6rY2QOtTE7r8jK
+        1hmiHYSUtQCFxETPFM7QnAAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="ucb_100_30x30" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

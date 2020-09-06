@@ -511,6 +511,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="AutoUpdater.Designer.vb">
       <DependentUpon>AutoUpdater.vb</DependentUpon>
     </Compile>

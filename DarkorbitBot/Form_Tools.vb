@@ -167,6 +167,7 @@ Public Class Form_Tools
         Panel_divers.Location = New Point(0, 66)
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
+        TextBox_license_username.Text = TextBox_ProfilSelected.Text
 
         Size = New Size(497, 412)
         CenterToScreen()
@@ -809,9 +810,10 @@ Public Class Form_Tools
         End If
 
         Data = ComboBox_autospin.Text
+        exitGGS = 0
         Select Case Data
             Case "ABG"
-                WebBrowser_galaxyGates.Navigate("About:blank")
+                WebBrowser_galaxyGates.Navigate("about:blank")
                 ClickGG(Data, TextBox_spintimes_GGS.Text)
 
             Case "Delta"
@@ -848,7 +850,6 @@ Public Class Form_Tools
 
         End Select
 
-        exitGGS = 0
 
     End Sub ' Start Galaxy Gates Spinner 
 
@@ -877,7 +878,7 @@ Label_ClickGalaxyGates:
 
 
         If exitGGS = 1 Then
-
+            Console.WriteLine($"exitGGS = 1")
             Exit Sub
         End If
 
@@ -1010,8 +1011,7 @@ Label_ClickGalaxyGates:
 
         End Select
 
-        Spintimes = TextBox_spintimes_GGS.Text
-        Await Task.Delay(Spintimes)
+        Await Task.Delay(temps)
 
         GoTo Label_ClickGalaxyGates
 
@@ -1979,6 +1979,8 @@ Label_ClickGalaxyGates:
     Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
         If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
             MessageBox.Show("You didn't put a license")
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
             Exit Sub
         End If
         Dim user_key = TextBox_license_check.Text
@@ -1987,11 +1989,16 @@ Label_ClickGalaxyGates:
             res = client.Get("Users/" + user_key)
         Catch ex As Exception
             MessageBox.Show("Can't get your license, check it correctly.")
-            TextBox_license_check.Text = ""
+            TextBox_license_check.Text = "Your license here"
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
             Exit Sub
         End Try
-        If Res.Body = "null" Then 'vérifie si le compte est null (introuvable)
+        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
             MessageBox.Show("Your account doesn't exist")
+            TextBox_license_check.Text = "Your license here"
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
             Exit Sub
         End If
 
@@ -1999,7 +2006,7 @@ Label_ClickGalaxyGates:
 
         Dim CurUser As New Utilisateur With
             {
-            .NomUtilisateur = TextBox_username.Text,
+            .NomUtilisateur = TextBox_license_username.Text,
             .PasswordUtilisateur = TextBox_license_password.Text,
             .LicenseEndTime = Utils.DateDistant,
             .LicenseActivated = False,
@@ -2008,19 +2015,23 @@ Label_ClickGalaxyGates:
 
         If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
             MsgBox("t'as pas payé enculé")
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+
             Exit Sub
         End If
 
         Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
         MsgBox($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days")
         PictureBox_license_check.Image = My.Resources.success_icon
+        PictureBox_license_check.Tag = True
     End Sub
 
     Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
-        If PictureBox_license_check.Image.Equals(My.Resources.success_icon) Then
-            MsgBox("true")
+        If PictureBox_license_check.Tag = True Then
+            MessageBox.Show("Your license is valid, you don't need to register")
+            Exit Sub
         End If
-
         If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
             MessageBox.Show("You didn't put a correct username")
             Exit Sub
@@ -2029,7 +2040,7 @@ Label_ClickGalaxyGates:
             MessageBox.Show("You didn't put a correct password")
             Exit Sub
         End If
-        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
+        Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
 
         Dim res = client.Get("Users/" + user_key)
         If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
@@ -2039,7 +2050,7 @@ Label_ClickGalaxyGates:
 
         Dim CurUser As New Utilisateur With
             {
-            .NomUtilisateur = TextBox_username.Text,
+            .NomUtilisateur = TextBox_license_username.Text,
             .PasswordUtilisateur = TextBox_license_password.Text,
             .LicenseEndTime = Utils.DateDistant,
             .LicenseActivated = False,
@@ -2048,12 +2059,4 @@ Label_ClickGalaxyGates:
         Dim setter = client.Set("Users/" + user_key, CurUser)
         MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
     End Sub
-
-    Private Async Sub SetPictureBoxWaiting(ByVal image As PictureBox)
-        image.Image = My.Resources.loading
-        Await Task.Delay(300)
-
-    End Sub
-
-
 End Class

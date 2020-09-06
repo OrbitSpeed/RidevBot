@@ -3994,6 +3994,7 @@ Partial Class Form_Tools
         Me.PictureBox_license_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox_license_check.TabIndex = 52
         Me.PictureBox_license_check.TabStop = False
+        Me.PictureBox_license_check.Tag = "false"
         '
         'TextBox_license_check
         '
@@ -4043,6 +4044,7 @@ Partial Class Form_Tools
         Me.TextBox_license_username.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_license_username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_license_username.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_license_username.Enabled = False
         Me.TextBox_license_username.Location = New System.Drawing.Point(77, 14)
         Me.TextBox_license_username.Name = "TextBox_license_username"
         Me.TextBox_license_username.Size = New System.Drawing.Size(204, 13)
