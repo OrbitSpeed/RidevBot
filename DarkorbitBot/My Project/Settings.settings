@@ -198,7 +198,7 @@
       <Value Profile="(Default)">NONE</Value>
     </Setting>
     <Setting Name="License_check" Type="System.String" Scope="User">
-      <Value Profile="(Default)">text</Value>
+      <Value Profile="(Default)">Your license here</Value>
     </Setting>
   </Settings>
 </SettingsFile>

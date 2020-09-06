@@ -671,62 +671,6 @@ Public Class Utils
         End Using
     End Function
 
-    Public Shared Function String_Random(intMinLength As Integer,
-    intMaxLength As Integer,
-    strPrepend As String,
-    strAppend As String,
-    intCase As Integer,
-    bIncludeDigits As Boolean) As String
-
-        ' Allowed characters variable
-        Dim s As String = String.Empty
-
-        ' Set the variable to user's choice of allowed characters
-        Select Case intCase
-
-            Case 1
-
-                ' Uppercase
-                s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-            Case 2
-
-                ' Lowercase
-                s = "abcdefghijklmnopqrstuvwxyz"
-
-            Case Else
-
-                ' Case Insensitive + Numbers
-                s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-
-        End Select
-
-        ' Add numbers to the allowed characters if user chose so
-        If bIncludeDigits = True Then s &= "0123456789"
-
-        Static r As New Random
-
-        Dim chactersInString As Integer = r.Next(intMinLength, intMaxLength)
-        Dim sb As New StringBuilder
-
-        ' Add the prepend string if one was passed
-        If String.IsNullOrEmpty(strPrepend) = False Then sb.Append(strPrepend)
-
-        For i As Integer = 1 To chactersInString
-
-            Dim idx As Integer = r.Next(0, s.Length)
-
-            sb.Append(s.Substring(idx, 1))
-
-        Next
-
-        ' Add the append string if one was passed
-        If String.IsNullOrEmpty(strAppend) = False Then sb.Append(strAppend)
-
-        Return sb.ToString()
-
-    End Function
-
     Public Shared Function calculateDiffDates(ByVal StartDate As DateTime, ByVal EndDate As DateTime) As Integer
         Dim diff As Integer
         diff = (EndDate - StartDate).TotalDays

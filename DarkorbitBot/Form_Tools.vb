@@ -1982,9 +1982,15 @@ Label_ClickGalaxyGates:
             Exit Sub
         End If
         Dim user_key = TextBox_license_check.Text
-
-        Dim res = client.Get("Users/" + user_key)
-        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
+        Dim res
+        Try
+            res = client.Get("Users/" + user_key)
+        Catch ex As Exception
+            MessageBox.Show("Can't get your license, check it correctly.")
+            TextBox_license_check.Text = ""
+            Exit Sub
+        End Try
+        If Res.Body = "null" Then 'vérifie si le compte est null (introuvable)
             MessageBox.Show("Your account doesn't exist")
             Exit Sub
         End If
@@ -2009,5 +2015,45 @@ Label_ClickGalaxyGates:
         MsgBox($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days")
         PictureBox_license_check.Image = My.Resources.success_icon
     End Sub
+
+    Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
+        If PictureBox_license_check.Image.Equals(My.Resources.success_icon) Then
+            MsgBox("true")
+        End If
+
+        If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
+            MessageBox.Show("You didn't put a correct username")
+            Exit Sub
+        End If
+        If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
+            MessageBox.Show("You didn't put a correct password")
+            Exit Sub
+        End If
+        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
+
+        Dim res = client.Get("Users/" + user_key)
+        If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
+            MessageBox.Show("Your account already exist")
+            Exit Sub
+        End If
+
+        Dim CurUser As New Utilisateur With
+            {
+            .NomUtilisateur = TextBox_username.Text,
+            .PasswordUtilisateur = TextBox_license_password.Text,
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key
+            }
+        Dim setter = client.Set("Users/" + user_key, CurUser)
+        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+    End Sub
+
+    Private Async Sub SetPictureBoxWaiting(ByVal image As PictureBox)
+        image.Image = My.Resources.loading
+        Await Task.Delay(300)
+
+    End Sub
+
 
 End Class
