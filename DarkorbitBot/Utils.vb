@@ -50,6 +50,7 @@ Public Class Utils
     End Sub
 #End Region
 
+
     Public Shared Function NumberToHumanReadable(number As String, espacement As String)
         If espacement.Length = 0 Then
             Debug.WriteLine("espacement est NUL !!!!")
