@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
+Imports FireSharp
+Imports FireSharp.Config
 
 Public Class Form_Tools
 
@@ -58,6 +60,15 @@ Public Class Form_Tools
     Public exitGGS As String = 0
     Public Spintimes As String
     Public GalaxyGatesChecker As String = 0
+
+
+    Private client As FirebaseClient
+
+    Public fcon As New FirebaseConfig() With
+        {
+        .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
+        .AuthSecret = Utils.Firebase_Secret
+        }
 
     Public Sub Reload()
 
@@ -141,6 +152,7 @@ Public Class Form_Tools
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Calculator = 1
+        Panel_license.Location = New Point(0, 66)
         Panel_autospin.Location = New Point(495, 68)
         Panel_palladium_palladium.Location = New Point(0, 66)
         panel_npc_npc.Location = New Point(0, 66)
@@ -158,11 +170,22 @@ Public Class Form_Tools
 
         Size = New Size(497, 412)
         CenterToScreen()
+        Try
+            client = New FirebaseClient(fcon)
+            Utils.GetNistTime()
+        Catch ex As Exception
+            MessageBox.Show($"Erreur:{ex.ToString}")
+        End Try
+
 
         If Form_Game.Visible = True Then
             Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
         Else
             Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+        End If
+
+        If My.Settings.License_check <> "Your license here" Then
+            Button_license_verify_Click(Nothing, Nothing)
         End If
 
     End Sub ' Ouverture du Program ( form )
@@ -174,6 +197,7 @@ Public Class Form_Tools
 #Region "Button toolbar"
     Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = True
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -196,6 +220,7 @@ Public Class Form_Tools
 
     Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = True
         Panel_collectable.Visible = False
@@ -218,6 +243,7 @@ Public Class Form_Tools
 
     Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = True
@@ -240,6 +266,7 @@ Public Class Form_Tools
 
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -262,6 +289,7 @@ Public Class Form_Tools
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -284,6 +312,7 @@ Public Class Form_Tools
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -309,6 +338,7 @@ Public Class Form_Tools
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            Panel_license.Visible = False
             Panel_general.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
@@ -328,6 +358,7 @@ Public Class Form_Tools
             Size = New Size(497, 412)
         Else
 
+            Panel_license.Visible = False
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
@@ -362,6 +393,7 @@ Public Class Form_Tools
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -388,6 +420,7 @@ Public Class Form_Tools
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            Panel_license.Visible = False
             Panel_general.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
@@ -408,6 +441,7 @@ Public Class Form_Tools
 
         Else
 
+            Panel_license.Visible = False
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
@@ -432,6 +466,7 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -454,6 +489,7 @@ Public Class Form_Tools
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -476,6 +512,7 @@ Public Class Form_Tools
 
     Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -496,9 +533,31 @@ Public Class Form_Tools
         Form_Startup.Show()
 
     End Sub
+    Private Sub Button_license_Click(sender As Object, e As EventArgs) Handles Button_license.Click
 
+        Panel_license.Visible = True
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_general.Visible = False
+        Panel_Npc.Visible = False
+        Panel_collector.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_Palladium.Visible = False
+        Panel_stats.Visible = False
+        Panel_rex.Visible = False
+        Panel_divers.Visible = False
+
+        Panel_suppresor_controler.Size = New Size(168, 47)
+        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler2.Size = New Size(168, 47)
+        Button_suppresor_controler2.Text = "⬇"
+        Size = New Size(497, 412)
+
+    End Sub
     Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles Button_How_use.Click
 
+        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -1849,7 +1908,7 @@ Label_ClickGalaxyGates:
     Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
 
         If Button_suppresor_controler.Text = "⬇" Then
-            Panel_suppresor_controler.Size = New Size(168, 299)
+            Panel_suppresor_controler.Size = New Size(168, 350)
             Button_suppresor_controler.Text = "⬆"
             Panel_suppresor_controler2.Size = New Size(168, 47)
             Button_suppresor_controler2.Text = "⬇"
@@ -1916,4 +1975,39 @@ Label_ClickGalaxyGates:
 
         End If
     End Sub 'Permet de récuperer le nom du autospin et de définir si ABG
+
+    Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
+        If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
+            MessageBox.Show("You didn't put a license")
+            Exit Sub
+        End If
+        Dim user_key = TextBox_license_check.Text
+
+        Dim res = client.Get("Users/" + user_key)
+        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
+            MessageBox.Show("Your account doesn't exist")
+            Exit Sub
+        End If
+
+        Dim resUser = res.ResultAs(Of Utilisateur)
+
+        Dim CurUser As New Utilisateur With
+            {
+            .NomUtilisateur = TextBox_username.Text,
+            .PasswordUtilisateur = TextBox_license_password.Text,
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key
+            }
+
+        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+            MsgBox("t'as pas payé enculé")
+            Exit Sub
+        End If
+
+        Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
+        MsgBox($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days")
+        PictureBox_license_check.Image = My.Resources.success_icon
+    End Sub
+
 End Class

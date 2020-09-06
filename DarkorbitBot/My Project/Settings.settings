@@ -197,5 +197,8 @@
     <Setting Name="Repair" Type="System.String" Scope="User">
       <Value Profile="(Default)">NONE</Value>
     </Setting>
+    <Setting Name="License_check" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Your license here</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -160,8 +160,8 @@ Public Class AutoUpdater
             If File.Exists(FileUpdater) Then
                 File.Delete(FileUpdater)
             End If
-            'Form_Startup.Show()
-            ConnectionForm.Show()
+            Form_Startup.Show()
+            ' ConnectionForm.Show()
 
             Close()
         End If

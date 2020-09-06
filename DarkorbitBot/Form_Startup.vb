@@ -15,8 +15,8 @@ Public Class Form_Startup
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim test1 = Utils.GenerateSHA512String(Utils.Firebase_Secret)
-        MsgBox(test1)
+        'Dim test1 = Utils.GenerateSHA512String(Utils.Firebase_Secret)
+        'MsgBox(test1)
 
         'Console.WriteLine("----------")
         'sKZhQw5brMKAHXuUuyjYgmGNTNUwbpQPQ7b87ABYSevjugXRnDxmWes6GA5VEAYU, 1475a6209fc4fce52a6acc08a642d36caa916738

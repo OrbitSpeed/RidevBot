@@ -832,6 +832,18 @@ Namespace My
                 Me("Repair") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Your license here")>  _
+        Public Property License_check() As String
+            Get
+                Return CType(Me("License_check"),String)
+            End Get
+            Set
+                Me("License_check") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

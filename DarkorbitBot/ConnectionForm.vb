@@ -17,7 +17,7 @@ Public Class ConnectionForm
     Private Sub ConnectionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             client = New FirebaseClient(fcon)
-            Utils.GetNistTime()
+            'Utils.GetNistTime()
             'MsgBox(Utils.GetNistTime)
         Catch ex As Exception
             MessageBox.Show($"Erreur:{ex.ToString}")

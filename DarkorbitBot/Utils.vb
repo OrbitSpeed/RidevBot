@@ -655,7 +655,7 @@ Public Class Utils
 #End Region
     Public Shared DateDistant As Date
 
-    Public Shared Function GetNistTime() As DateTime
+    Public Shared Async Function GetNistTime() As Task(Of DateTime)
         Dim client = New TcpClient("time.nist.gov", 13)
 
         Using streamReader = New StreamReader(client.GetStream())
@@ -726,4 +726,11 @@ Public Class Utils
         Return sb.ToString()
 
     End Function
+
+    Public Shared Function calculateDiffDates(ByVal StartDate As DateTime, ByVal EndDate As DateTime) As Integer
+        Dim diff As Integer
+        diff = (EndDate - StartDate).TotalDays
+        Return diff
+    End Function
+
 End Class
