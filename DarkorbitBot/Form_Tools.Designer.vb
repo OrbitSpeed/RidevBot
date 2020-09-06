@@ -30,7 +30,6 @@ Partial Class Form_Tools
         Me.GalaxyGates_Button = New System.Windows.Forms.Button()
         Me.Pirates_Button = New System.Windows.Forms.Button()
         Me.Panel_general = New System.Windows.Forms.Panel()
-        Me.Button_validate = New System.Windows.Forms.Button()
         Me.ComboBox_autologin = New System.Windows.Forms.ComboBox()
         Me.Button_LaunchGameRidevBrowser = New System.Windows.Forms.Button()
         Me.CheckBox_AutoLogin = New System.Windows.Forms.CheckBox()
@@ -139,6 +138,7 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -146,6 +146,7 @@ Partial Class Form_Tools
         Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
         Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
+        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
         Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
         Me.Button_ABG_GGS = New System.Windows.Forms.Button()
@@ -276,18 +277,29 @@ Partial Class Form_Tools
         Me.Panel_palladium_palladium = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PictureBox_license_check = New System.Windows.Forms.PictureBox()
-        Me.Label_license = New System.Windows.Forms.Label()
         Me.TextBox_license_check = New System.Windows.Forms.TextBox()
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Button_reg = New System.Windows.Forms.Button()
         Me.TextBox_license_username = New System.Windows.Forms.TextBox()
         Me.TextBox_license_password = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel_create_account = New System.Windows.Forms.Panel()
         Me.Button_license_verify = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel_license = New System.Windows.Forms.Panel()
-        Me.FlatMini_reduction_de_formtools = New DarkorbitBot.FlatMini()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Panel_txtbx = New System.Windows.Forms.Panel()
+        Me.Label_username_register = New System.Windows.Forms.Label()
+        Me.Label_password_register = New System.Windows.Forms.Label()
+        Me.Label_separator = New System.Windows.Forms.Label()
+        Me.Label_explain = New System.Windows.Forms.Label()
+        Me.Panel_actv_license = New System.Windows.Forms.Panel()
+        Me.Label_separator2 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -331,8 +343,11 @@ Partial Class Form_Tools
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_palladium_palladium.SuspendLayout()
         CType(Me.PictureBox_license_check, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.Panel_create_account.SuspendLayout()
         Me.Panel_license.SuspendLayout()
+        Me.Panel_txtbx.SuspendLayout()
+        Me.Panel_actv_license.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -419,7 +434,6 @@ Partial Class Form_Tools
         'Panel_general
         '
         Me.Panel_general.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_general.Controls.Add(Me.Button_validate)
         Me.Panel_general.Controls.Add(Me.ComboBox_autologin)
         Me.Panel_general.Controls.Add(Me.Button_LaunchGameRidevBrowser)
         Me.Panel_general.Controls.Add(Me.CheckBox_AutoLogin)
@@ -430,16 +444,6 @@ Partial Class Form_Tools
         Me.Panel_general.Name = "Panel_general"
         Me.Panel_general.Size = New System.Drawing.Size(496, 346)
         Me.Panel_general.TabIndex = 41
-        '
-        'Button_validate
-        '
-        Me.Button_validate.ForeColor = System.Drawing.Color.Black
-        Me.Button_validate.Location = New System.Drawing.Point(355, 162)
-        Me.Button_validate.Name = "Button_validate"
-        Me.Button_validate.Size = New System.Drawing.Size(68, 31)
-        Me.Button_validate.TabIndex = 50
-        Me.Button_validate.Text = "validate"
-        Me.Button_validate.UseVisualStyleBackColor = True
         '
         'ComboBox_autologin
         '
@@ -490,7 +494,11 @@ Partial Class Form_Tools
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel7.Controls.Add(Me.Label25)
         Me.Panel7.Controls.Add(Me.TableLayoutPanel3)
+        Me.Panel7.Controls.Add(Me.Label12)
+        Me.Panel7.Controls.Add(Me.Label10)
+        Me.Panel7.Controls.Add(Me.Label8)
         Me.Panel7.ForeColor = System.Drawing.Color.White
         Me.Panel7.Location = New System.Drawing.Point(7, 159)
         Me.Panel7.Name = "Panel7"
@@ -723,7 +731,7 @@ Partial Class Form_Tools
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
         Me.Label_Minutes_Avant_Refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label_Minutes_Avant_Refresh.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(404, 222)
+        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(418, 309)
         Me.Label_Minutes_Avant_Refresh.Name = "Label_Minutes_Avant_Refresh"
         Me.Label_Minutes_Avant_Refresh.Size = New System.Drawing.Size(67, 19)
         Me.Label_Minutes_Avant_Refresh.TabIndex = 31
@@ -1949,7 +1957,7 @@ Partial Class Form_Tools
         Me.Panel_divers.Controls.Add(Me.ComboBox_colormod)
         Me.Panel_divers.Controls.Add(Me.CheckBox1)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
-        Me.Panel_divers.Location = New System.Drawing.Point(0, 66)
+        Me.Panel_divers.Location = New System.Drawing.Point(643, 125)
         Me.Panel_divers.Name = "Panel_divers"
         Me.Panel_divers.Size = New System.Drawing.Size(496, 345)
         Me.Panel_divers.TabIndex = 48
@@ -1991,6 +1999,18 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_Pause
         '
@@ -2081,6 +2101,20 @@ Partial Class Form_Tools
         Me.PictureBox_epinglerBot.TabIndex = 10
         Me.PictureBox_epinglerBot.TabStop = False
         Me.PictureBox_epinglerBot.Tag = "0"
+        '
+        'FlatMini_reduction_de_formtools
+        '
+        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
+        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
+        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini_reduction_de_formtools.TabIndex = 0
+        Me.FlatMini_reduction_de_formtools.Text = "1"
+        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
         '
         'PictureBox_close1
         '
@@ -3900,25 +3934,12 @@ Partial Class Form_Tools
         Me.PictureBox_license_check.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox_license_check.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_license_check.Image = Global.DarkorbitBot.My.Resources.Resources.error_icon
-        Me.PictureBox_license_check.Location = New System.Drawing.Point(317, 115)
+        Me.PictureBox_license_check.Location = New System.Drawing.Point(192, 101)
         Me.PictureBox_license_check.Name = "PictureBox_license_check"
-        Me.PictureBox_license_check.Size = New System.Drawing.Size(46, 46)
+        Me.PictureBox_license_check.Size = New System.Drawing.Size(39, 39)
         Me.PictureBox_license_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox_license_check.TabIndex = 52
         Me.PictureBox_license_check.TabStop = False
-        '
-        'Label_license
-        '
-        Me.Label_license.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_license.AutoSize = True
-        Me.Label_license.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_license.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label_license.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_license.Location = New System.Drawing.Point(160, 3)
-        Me.Label_license.Name = "Label_license"
-        Me.Label_license.Size = New System.Drawing.Size(46, 15)
-        Me.Label_license.TabIndex = 87
-        Me.Label_license.Text = "License"
         '
         'TextBox_license_check
         '
@@ -3927,9 +3948,9 @@ Partial Class Form_Tools
         Me.TextBox_license_check.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_license_check.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "License_check", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.TextBox_license_check.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_license_check.Location = New System.Drawing.Point(8, 139)
+        Me.TextBox_license_check.Location = New System.Drawing.Point(10, 56)
         Me.TextBox_license_check.Name = "TextBox_license_check"
-        Me.TextBox_license_check.Size = New System.Drawing.Size(328, 16)
+        Me.TextBox_license_check.Size = New System.Drawing.Size(269, 16)
         Me.TextBox_license_check.TabIndex = 51
         Me.TextBox_license_check.Text = Global.DarkorbitBot.My.MySettings.Default.License_check
         Me.TextBox_license_check.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -3956,9 +3977,9 @@ Partial Class Form_Tools
         '
         Me.Button_reg.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_reg.Location = New System.Drawing.Point(138, 65)
+        Me.Button_reg.Location = New System.Drawing.Point(56, 116)
         Me.Button_reg.Name = "Button_reg"
-        Me.Button_reg.Size = New System.Drawing.Size(90, 22)
+        Me.Button_reg.Size = New System.Drawing.Size(175, 39)
         Me.Button_reg.TabIndex = 40
         Me.Button_reg.Text = "Register"
         Me.Button_reg.UseVisualStyleBackColor = True
@@ -3967,71 +3988,56 @@ Partial Class Form_Tools
         '
         Me.TextBox_license_username.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_license_username.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_license_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_license_username.Location = New System.Drawing.Point(1, 19)
+        Me.TextBox_license_username.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_license_username.Location = New System.Drawing.Point(77, 14)
         Me.TextBox_license_username.Name = "TextBox_license_username"
-        Me.TextBox_license_username.Size = New System.Drawing.Size(363, 20)
+        Me.TextBox_license_username.Size = New System.Drawing.Size(204, 13)
         Me.TextBox_license_username.TabIndex = 41
-        Me.TextBox_license_username.Text = "username"
+        Me.TextBox_license_username.Text = "text"
         Me.TextBox_license_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox_license_password
         '
         Me.TextBox_license_password.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_license_password.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.TextBox_license_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox_license_password.Location = New System.Drawing.Point(1, 42)
+        Me.TextBox_license_password.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox_license_password.Location = New System.Drawing.Point(77, 40)
         Me.TextBox_license_password.Name = "TextBox_license_password"
-        Me.TextBox_license_password.Size = New System.Drawing.Size(363, 20)
+        Me.TextBox_license_password.Size = New System.Drawing.Size(204, 13)
         Me.TextBox_license_password.TabIndex = 42
-        Me.TextBox_license_password.Text = "password"
+        Me.TextBox_license_password.Text = "text"
         Me.TextBox_license_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel1
+        'Panel_create_account
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Button_license_verify)
-        Me.Panel1.Controls.Add(Me.PictureBox_license_check)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.TextBox_license_check)
-        Me.Panel1.Controls.Add(Me.TextBox_license_password)
-        Me.Panel1.Controls.Add(Me.Label_license)
-        Me.Panel1.Controls.Add(Me.TextBox_license_username)
-        Me.Panel1.Controls.Add(Me.Button_reg)
-        Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(10, 14)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(368, 206)
-        Me.Panel1.TabIndex = 88
+        Me.Panel_create_account.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_create_account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_create_account.Controls.Add(Me.Label_explain)
+        Me.Panel_create_account.Controls.Add(Me.Button_reg)
+        Me.Panel_create_account.Controls.Add(Me.Panel_txtbx)
+        Me.Panel_create_account.ForeColor = System.Drawing.Color.White
+        Me.Panel_create_account.Location = New System.Drawing.Point(8, 8)
+        Me.Panel_create_account.Name = "Panel_create_account"
+        Me.Panel_create_account.Size = New System.Drawing.Size(292, 169)
+        Me.Panel_create_account.TabIndex = 88
         '
         'Button_license_verify
         '
         Me.Button_license_verify.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_license_verify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_license_verify.Location = New System.Drawing.Point(142, 159)
+        Me.Button_license_verify.Location = New System.Drawing.Point(56, 101)
         Me.Button_license_verify.Name = "Button_license_verify"
-        Me.Button_license_verify.Size = New System.Drawing.Size(90, 22)
+        Me.Button_license_verify.Size = New System.Drawing.Size(134, 39)
         Me.Button_license_verify.TabIndex = 90
         Me.Button_license_verify.Text = "Verify"
         Me.Button_license_verify.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(151, 118)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 13)
-        Me.Label5.TabIndex = 89
-        Me.Label5.Text = "Your license"
         '
         'Panel_license
         '
         Me.Panel_license.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_license.Controls.Add(Me.Panel1)
+        Me.Panel_license.Controls.Add(Me.Panel_actv_license)
+        Me.Panel_license.Controls.Add(Me.Panel_create_account)
         Me.Panel_license.ForeColor = System.Drawing.Color.White
         Me.Panel_license.Location = New System.Drawing.Point(1, 448)
         Me.Panel_license.Name = "Panel_license"
@@ -4039,31 +4045,212 @@ Partial Class Form_Tools
         Me.Panel_license.TabIndex = 49
         Me.Panel_license.Visible = False
         '
-        'FlatMini_reduction_de_formtools
+        'Label8
         '
-        Me.FlatMini_reduction_de_formtools.BackColor = System.Drawing.Color.Black
-        Me.FlatMini_reduction_de_formtools.BaseColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
-        Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
-        Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini_reduction_de_formtools.TabIndex = 0
-        Me.FlatMini_reduction_de_formtools.Text = "1"
-        Me.FlatMini_reduction_de_formtools.TextColor = System.Drawing.Color.Black
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(36, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 17)
+        Me.Label8.TabIndex = 89
+        Me.Label8.Text = "Server :"
         '
-        'FlatMini1
+        'Label10
         '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(97, 10)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(51, 17)
+        Me.Label10.TabIndex = 90
+        Me.Label10.Text = "Offline"
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(194, 10)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 17)
+        Me.Label12.TabIndex = 91
+        Me.Label12.Text = "Statue :"
+        '
+        'Label25
+        '
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label25.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.Red
+        Me.Label25.Location = New System.Drawing.Point(255, 10)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(51, 17)
+        Me.Label25.TabIndex = 92
+        Me.Label25.Text = "Offline"
+        '
+        'Panel_txtbx
+        '
+        Me.Panel_txtbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_txtbx.Controls.Add(Me.Label_password_register)
+        Me.Panel_txtbx.Controls.Add(Me.Label_username_register)
+        Me.Panel_txtbx.Controls.Add(Me.TextBox_license_username)
+        Me.Panel_txtbx.Controls.Add(Me.TextBox_license_password)
+        Me.Panel_txtbx.Controls.Add(Me.Label_separator)
+        Me.Panel_txtbx.ForeColor = System.Drawing.Color.White
+        Me.Panel_txtbx.Location = New System.Drawing.Point(-1, 31)
+        Me.Panel_txtbx.Name = "Panel_txtbx"
+        Me.Panel_txtbx.Size = New System.Drawing.Size(289, 71)
+        Me.Panel_txtbx.TabIndex = 89
+        '
+        'Label_username_register
+        '
+        Me.Label_username_register.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_username_register.AutoSize = True
+        Me.Label_username_register.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_username_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_username_register.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_username_register.ForeColor = System.Drawing.Color.White
+        Me.Label_username_register.Location = New System.Drawing.Point(8, 14)
+        Me.Label_username_register.Name = "Label_username_register"
+        Me.Label_username_register.Size = New System.Drawing.Size(65, 13)
+        Me.Label_username_register.TabIndex = 91
+        Me.Label_username_register.Text = "Username :"
+        '
+        'Label_password_register
+        '
+        Me.Label_password_register.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_password_register.AutoSize = True
+        Me.Label_password_register.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_password_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_password_register.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_password_register.ForeColor = System.Drawing.Color.White
+        Me.Label_password_register.Location = New System.Drawing.Point(8, 40)
+        Me.Label_password_register.Name = "Label_password_register"
+        Me.Label_password_register.Size = New System.Drawing.Size(63, 13)
+        Me.Label_password_register.TabIndex = 92
+        Me.Label_password_register.Text = "Password :"
+        '
+        'Label_separator
+        '
+        Me.Label_separator.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_separator.AutoSize = True
+        Me.Label_separator.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_separator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator.ForeColor = System.Drawing.Color.White
+        Me.Label_separator.Location = New System.Drawing.Point(74, 22)
+        Me.Label_separator.Name = "Label_separator"
+        Me.Label_separator.Size = New System.Drawing.Size(207, 13)
+        Me.Label_separator.TabIndex = 91
+        Me.Label_separator.Text = "________________________________________"
+        '
+        'Label_explain
+        '
+        Me.Label_explain.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_explain.AutoSize = True
+        Me.Label_explain.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_explain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_explain.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_explain.ForeColor = System.Drawing.Color.White
+        Me.Label_explain.Location = New System.Drawing.Point(14, 10)
+        Me.Label_explain.Name = "Label_explain"
+        Me.Label_explain.Size = New System.Drawing.Size(50, 13)
+        Me.Label_explain.TabIndex = 91
+        Me.Label_explain.Text = "Account"
+        '
+        'Panel_actv_license
+        '
+        Me.Panel_actv_license.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel_actv_license.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_actv_license.Controls.Add(Me.Label2)
+        Me.Panel_actv_license.Controls.Add(Me.TextBox_license_check)
+        Me.Panel_actv_license.Controls.Add(Me.PictureBox_license_check)
+        Me.Panel_actv_license.Controls.Add(Me.Button_license_verify)
+        Me.Panel_actv_license.Controls.Add(Me.Label_separator2)
+        Me.Panel_actv_license.Controls.Add(Me.Label5)
+        Me.Panel_actv_license.ForeColor = System.Drawing.Color.White
+        Me.Panel_actv_license.Location = New System.Drawing.Point(7, 183)
+        Me.Panel_actv_license.Name = "Panel_actv_license"
+        Me.Panel_actv_license.Size = New System.Drawing.Size(292, 154)
+        Me.Panel_actv_license.TabIndex = 92
+        '
+        'Label_separator2
+        '
+        Me.Label_separator2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_separator2.AutoSize = True
+        Me.Label_separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_separator2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_separator2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_separator2.ForeColor = System.Drawing.Color.White
+        Me.Label_separator2.Location = New System.Drawing.Point(39, 69)
+        Me.Label_separator2.Name = "Label_separator2"
+        Me.Label_separator2.Size = New System.Drawing.Size(207, 13)
+        Me.Label_separator2.TabIndex = 92
+        Me.Label_separator2.Text = "________________________________________"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(15, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 13)
+        Me.Label2.TabIndex = 93
+        Me.Label2.Text = "License"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(39, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(207, 13)
+        Me.Label5.TabIndex = 94
+        Me.Label5.Text = "________________________________________"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label27)
+        Me.Panel1.ForeColor = System.Drawing.Color.White
+        Me.Panel1.Location = New System.Drawing.Point(306, 8)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(183, 329)
+        Me.Panel1.TabIndex = 93
+        '
+        'Label27
+        '
+        Me.Label27.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label27.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.White
+        Me.Label27.Location = New System.Drawing.Point(51, 5)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(84, 20)
+        Me.Label27.TabIndex = 92
+        Me.Label27.Text = "How Use ? "
         '
         'Form_Tools
         '
@@ -4071,7 +4258,6 @@ Partial Class Form_Tools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.HotTrack
         Me.ClientSize = New System.Drawing.Size(1940, 1100)
-        Me.Controls.Add(Me.Panel_license)
         Me.Controls.Add(Me.Panel_autospin)
         Me.Controls.Add(Me.Panel_suppresor_controler2)
         Me.Controls.Add(Me.Panel_suppresor_controler)
@@ -4095,6 +4281,7 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Panel_collectable)
         Me.Controls.Add(Me.Panel_Palladium)
         Me.Controls.Add(Me.Panel_palladium_palladium)
+        Me.Controls.Add(Me.Panel_license)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_Tools"
@@ -4103,6 +4290,7 @@ Partial Class Form_Tools
         Me.Panel_general.ResumeLayout(False)
         Me.Panel_general.PerformLayout()
         Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4168,9 +4356,15 @@ Partial Class Form_Tools
         Me.Panel_palladium_palladium.ResumeLayout(False)
         Me.Panel_palladium_palladium.PerformLayout()
         CType(Me.PictureBox_license_check, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_create_account.ResumeLayout(False)
+        Me.Panel_create_account.PerformLayout()
+        Me.Panel_license.ResumeLayout(False)
+        Me.Panel_txtbx.ResumeLayout(False)
+        Me.Panel_txtbx.PerformLayout()
+        Me.Panel_actv_license.ResumeLayout(False)
+        Me.Panel_actv_license.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel_license.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4430,15 +4624,27 @@ Partial Class Form_Tools
     Friend WithEvents Label_Alpha_ABG_GGS_onmap As Label
     Friend WithEvents Label_Alpha_ABG_GGS_part As Label
     Friend WithEvents TextBox_license_check As TextBox
-    Friend WithEvents Button_validate As Button
     Friend WithEvents PictureBox_license_check As PictureBox
-    Friend WithEvents Label_license As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel_create_account As Panel
     Friend WithEvents TextBox_license_username As TextBox
     Friend WithEvents TextBox_license_password As TextBox
     Friend WithEvents Button_reg As Button
     Friend WithEvents Button_license As Button
     Friend WithEvents Panel_license As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Button_license_verify As Button
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel_txtbx As Panel
+    Friend WithEvents Label_password_register As Label
+    Friend WithEvents Label_username_register As Label
+    Friend WithEvents Label_separator As Label
+    Friend WithEvents Label_explain As Label
+    Friend WithEvents Panel_actv_license As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label_separator2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label27 As Label
 End Class

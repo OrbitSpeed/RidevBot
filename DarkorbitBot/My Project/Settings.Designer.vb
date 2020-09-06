@@ -835,7 +835,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Your license here")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("text")>  _
         Public Property License_check() As String
             Get
                 Return CType(Me("License_check"),String)
