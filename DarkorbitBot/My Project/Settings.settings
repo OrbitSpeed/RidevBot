@@ -6,13 +6,13 @@
       <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Password</Value>
+      <Value Profile="(Default)">0000000</Value>
     </Setting>
     <Setting Name="License" Type="System.String" Scope="User">
       <Value Profile="(Default)">FREE</Value>
     </Setting>
     <Setting Name="server" Type="System.String" Scope="User">
-      <Value Profile="(Default)">eg1</Value>
+      <Value Profile="(Default)">server</Value>
     </Setting>
     <Setting Name="UserAccounts" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />

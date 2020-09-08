@@ -2163,7 +2163,7 @@ Partial Class Form_Tools
         Me.FlatMini_reduction_de_formtools.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatMini_reduction_de_formtools.Dock = System.Windows.Forms.DockStyle.Right
         Me.FlatMini_reduction_de_formtools.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1904, 0)
+        Me.FlatMini_reduction_de_formtools.Location = New System.Drawing.Point(1902, 0)
         Me.FlatMini_reduction_de_formtools.Name = "FlatMini_reduction_de_formtools"
         Me.FlatMini_reduction_de_formtools.Size = New System.Drawing.Size(18, 18)
         Me.FlatMini_reduction_de_formtools.TabIndex = 0
@@ -2176,9 +2176,9 @@ Partial Class Form_Tools
         Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
-        Me.PictureBox_close1.Location = New System.Drawing.Point(1922, 0)
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1920, 0)
         Me.PictureBox_close1.Name = "PictureBox_close1"
-        Me.PictureBox_close1.Size = New System.Drawing.Size(18, 20)
+        Me.PictureBox_close1.Size = New System.Drawing.Size(20, 20)
         Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox_close1.TabIndex = 32
         Me.PictureBox_close1.TabStop = False
@@ -3529,7 +3529,7 @@ Partial Class Form_Tools
         Me.Button_license.Name = "Button_license"
         Me.Button_license.Size = New System.Drawing.Size(155, 35)
         Me.Button_license.TabIndex = 78
-        Me.Button_license.Text = "License"
+        Me.Button_license.Text = "Nothing"
         Me.Button_license.UseVisualStyleBackColor = False
         '
         'Button_How_use

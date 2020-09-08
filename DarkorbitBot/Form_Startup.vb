@@ -48,12 +48,10 @@ Public Class Form_Startup
         End If
 
 #Region "Location and resize"
-        PanelUserAndPass.Location = New Point(0, 18)
-        PanelUserAndPass.Size = New Size(256, 221)
 
-        Panel_ProfilConnection.Location = New Point(0, 35)
-        Panel_SidConnexion.Location = New Point(0, 35)
-        PanelConnection.Location = New Point(0, 35)
+        Panel_ProfilConnection.Location = New Point(0, 55)
+        Panel_SidConnexion.Location = New Point(0, 55)
+        PanelConnection.Location = New Point(0, 55)
 
 #End Region
 
@@ -113,7 +111,6 @@ Public Class Form_Startup
 
         Label_point_de_chute.Select()
 
-        PanelUserAndPass.Size = New Size(256, 251)
         Me.Size = New Size(256, 251)
         PanelConnection.Visible = True
         Panel_SidConnexion.Visible = False
@@ -131,9 +128,8 @@ Public Class Form_Startup
 
         ' Button 1 = SID login '
 
-        PanelUserAndPass.Size = New Size(256, 251)
-        Me.Size = New Size(256, 251)
         Label_point_de_chute.Select()
+        Me.Size = New Size(256, 251)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = True
@@ -150,8 +146,7 @@ Public Class Form_Startup
         ' Button 1 = Saved '
 
         Label_point_de_chute.Select()
-        PanelUserAndPass.Size = New Size(256, 358)
-        Me.Size = New Size(256, 358)
+        Me.Size = New Size(256, 395)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = False
@@ -245,7 +240,6 @@ Public Class Form_Startup
         ' button credentials '
 
         Me.Size = New Size(256, 251)
-        PanelUserAndPass.Visible = True
 
         UserAndPass_Button.PerformClick()
 
@@ -256,7 +250,6 @@ Public Class Form_Startup
         ' button Portal '
 
         Me.Size = New Size(256, 251)
-        PanelUserAndPass.Visible = False
 
     End Sub
 
@@ -265,7 +258,6 @@ Public Class Form_Startup
         ' button License '
 
         Me.Size = New Size(256, 251)
-        PanelUserAndPass.Visible = False
 
     End Sub
 
@@ -445,9 +437,40 @@ Public Class Form_Startup
         End If
     End Sub
 
-    Private Sub TextBox_license_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox_license.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Button_License_Verify.PerformClick()
-        End If
+    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseDown
+
     End Sub
+
+    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseUp
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
+
+    End Sub
+
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
+
+    End Sub
+
+    'If e.KeyCode = Keys.Enter Then
+    '    Button_License_Verify.PerformClick()
+    'End If
+
 End Class
