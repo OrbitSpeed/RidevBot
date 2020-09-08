@@ -111,7 +111,7 @@ Public Class Form_Startup
 
         Label_point_de_chute.Select()
 
-        Me.Size = New Size(256, 251)
+        Me.Size = New Size(256, 201)
         PanelConnection.Visible = True
         Panel_SidConnexion.Visible = False
         Panel_ProfilConnection.Visible = False
@@ -129,7 +129,7 @@ Public Class Form_Startup
         ' Button 1 = SID login '
 
         Label_point_de_chute.Select()
-        Me.Size = New Size(256, 251)
+        Me.Size = New Size(256, 201)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = True
@@ -325,35 +325,35 @@ Public Class Form_Startup
 #Region "Yeux"
     Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseDown
         Textbox_Password.UseSystemPasswordChar = False
-        PictureBox_PasswordHider.Image = My.Resources.img_eyeOpen
+        PictureBox_PasswordHider.Image = My.Resources._162_visibility
     End Sub
     Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseUp
         Textbox_Password.UseSystemPasswordChar = True
-        PictureBox_PasswordHider.Image = My.Resources.img_eyeClose
+        PictureBox_PasswordHider.Image = My.Resources._140_visibility_1
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
         TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.img_eyeOpen
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources._162_visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
         TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.img_eyeClose
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources._140_visibility_1
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
         TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.img_eyeOpen
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources._162_visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
         TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.img_eyeClose
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources._140_visibility_1
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
         TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.img_eyeOpen
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources._162_visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
         TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.img_eyeClose
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources._140_visibility_1
     End Sub
 #End Region
 
@@ -425,11 +425,13 @@ Public Class Form_Startup
         End If
     End Sub
 
+
     Private Sub TextBoxUsernamePasswordProfil2password_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxUsernamePasswordProfil2password.KeyDown
         If e.KeyCode = Keys.Enter Then
             PictureBoxUsernamePasswordProfil2view_Click(Nothing, Nothing)
         End If
     End Sub
+
 
     Private Sub TextBoxUsernamePasswordProfil3password_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxUsernamePasswordProfil3password.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -437,35 +439,7 @@ Public Class Form_Startup
         End If
     End Sub
 
-    Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseDown
-
-    End Sub
-
-    Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox_PasswordHider.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
-
-    End Sub
-
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
+    Private Sub PictureBoxUsernamePasswordProfil1eyes_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.Click
 
     End Sub
 

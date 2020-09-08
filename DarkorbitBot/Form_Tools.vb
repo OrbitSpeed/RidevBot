@@ -1894,11 +1894,11 @@ Label_ClickGalaxyGates:
     Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
 
         If Form_Game.User_Stop_Bot = True Then
-            PictureBox_LaunchBot.Image = My.Resources.img_pause
+            PictureBox_LaunchBot.Image = My.Resources._087_pause
             Form_Game.User_Stop_Bot = False
             Form_Game.Button_Bot.PerformClick()
         Else
-            PictureBox_LaunchBot.Image = My.Resources.img_suivant
+            PictureBox_LaunchBot.Image = My.Resources._080_play
             Form_Game.User_Stop_Bot = True
         End If
 

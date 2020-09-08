@@ -169,7 +169,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox_PasswordHider.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox_PasswordHider.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_PasswordHider.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
+        Me.PictureBox_PasswordHider.Image = CType(resources.GetObject("PictureBox_PasswordHider.Image"), System.Drawing.Image)
         Me.PictureBox_PasswordHider.Location = New System.Drawing.Point(226, 27)
         Me.PictureBox_PasswordHider.Name = "PictureBox_PasswordHider"
         Me.PictureBox_PasswordHider.Size = New System.Drawing.Size(22, 19)
@@ -183,7 +183,7 @@ Partial Class Form_Startup
         Me.Button_Load.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Load.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Load.Location = New System.Drawing.Point(29, 92)
+        Me.Button_Load.Location = New System.Drawing.Point(29, 81)
         Me.Button_Load.Name = "Button_Load"
         Me.Button_Load.Size = New System.Drawing.Size(202, 31)
         Me.Button_Load.TabIndex = 15
@@ -271,7 +271,7 @@ Partial Class Form_Startup
         Me.Button_SID_Load.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button_SID_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_SID_Load.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_SID_Load.Location = New System.Drawing.Point(30, 92)
+        Me.Button_SID_Load.Location = New System.Drawing.Point(30, 81)
         Me.Button_SID_Load.Name = "Button_SID_Load"
         Me.Button_SID_Load.Size = New System.Drawing.Size(201, 31)
         Me.Button_SID_Load.TabIndex = 18
@@ -380,7 +380,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox9.Image = Global.DarkorbitBot.My.Resources.Resources._29709
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
         Me.PictureBox9.Location = New System.Drawing.Point(39, 258)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(20, 20)
@@ -404,7 +404,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox7.Image = Global.DarkorbitBot.My.Resources.Resources.lockedpadlockincircularbutton_80106
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(39, 40)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(20, 20)
@@ -440,7 +440,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.trash_can_black_symbol_icon_icons_com_72914
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(17, 150)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(20, 20)
@@ -452,7 +452,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.DarkorbitBot.My.Resources.Resources.trash_can_black_symbol_icon_icons_com_72914
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(17, 258)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
@@ -476,7 +476,7 @@ Partial Class Form_Startup
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.DarkorbitBot.My.Resources.Resources.trash_can_black_symbol_icon_icons_com_72914
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(17, 40)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(20, 20)
@@ -527,7 +527,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil3eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil3eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil3eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
+        Me.PictureBoxUsernamePasswordProfil3eyes.Image = CType(resources.GetObject("PictureBoxUsernamePasswordProfil3eyes.Image"), System.Drawing.Image)
         Me.PictureBoxUsernamePasswordProfil3eyes.Location = New System.Drawing.Point(61, 258)
         Me.PictureBoxUsernamePasswordProfil3eyes.Name = "PictureBoxUsernamePasswordProfil3eyes"
         Me.PictureBoxUsernamePasswordProfil3eyes.Size = New System.Drawing.Size(20, 20)
@@ -580,7 +580,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil2eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil2eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil2eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
+        Me.PictureBoxUsernamePasswordProfil2eyes.Image = CType(resources.GetObject("PictureBoxUsernamePasswordProfil2eyes.Image"), System.Drawing.Image)
         Me.PictureBoxUsernamePasswordProfil2eyes.Location = New System.Drawing.Point(61, 150)
         Me.PictureBoxUsernamePasswordProfil2eyes.Name = "PictureBoxUsernamePasswordProfil2eyes"
         Me.PictureBoxUsernamePasswordProfil2eyes.Size = New System.Drawing.Size(20, 20)
@@ -633,7 +633,7 @@ Partial Class Form_Startup
         '
         Me.PictureBoxUsernamePasswordProfil1eyes.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.PictureBoxUsernamePasswordProfil1eyes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxUsernamePasswordProfil1eyes.Image = Global.DarkorbitBot.My.Resources.Resources.img_eyeClose
+        Me.PictureBoxUsernamePasswordProfil1eyes.Image = CType(resources.GetObject("PictureBoxUsernamePasswordProfil1eyes.Image"), System.Drawing.Image)
         Me.PictureBoxUsernamePasswordProfil1eyes.Location = New System.Drawing.Point(61, 40)
         Me.PictureBoxUsernamePasswordProfil1eyes.Name = "PictureBoxUsernamePasswordProfil1eyes"
         Me.PictureBoxUsernamePasswordProfil1eyes.Size = New System.Drawing.Size(20, 20)
@@ -755,7 +755,7 @@ Partial Class Form_Startup
         Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
         Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.img_cross_full
+        Me.PictureBox_Close.Image = CType(resources.GetObject("PictureBox_Close.Image"), System.Drawing.Image)
         Me.PictureBox_Close.Location = New System.Drawing.Point(236, 0)
         Me.PictureBox_Close.Name = "PictureBox_Close"
         Me.PictureBox_Close.Size = New System.Drawing.Size(20, 20)
