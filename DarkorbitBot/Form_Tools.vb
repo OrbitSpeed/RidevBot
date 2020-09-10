@@ -1680,11 +1680,11 @@ Label_ClickGalaxyGates:
 
         If tagBoolean Then
             PictureBox_epinglerBot.Tag = "0"
-            PictureBox_epinglerBot.Image = My.Resources.img_unpin
+            PictureBox_epinglerBot.Image = My.Resources.lock__2_
             Me.TopMost = False
         Else
             PictureBox_epinglerBot.Tag = "1"
-            PictureBox_epinglerBot.Image = My.Resources.img_pin
+            PictureBox_epinglerBot.Image = My.Resources.lock_open
             Me.TopMost = True
         End If
 
@@ -1894,11 +1894,11 @@ Label_ClickGalaxyGates:
     Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
 
         If Form_Game.User_Stop_Bot = True Then
-            PictureBox_LaunchBot.Image = My.Resources._087_pause
+            PictureBox_LaunchBot.Image = My.Resources.cancel_presentation
             Form_Game.User_Stop_Bot = False
             Form_Game.Button_Bot.PerformClick()
         Else
-            PictureBox_LaunchBot.Image = My.Resources._080_play
+            PictureBox_LaunchBot.Image = My.Resources.play_circle_filled_white
             Form_Game.User_Stop_Bot = True
         End If
 

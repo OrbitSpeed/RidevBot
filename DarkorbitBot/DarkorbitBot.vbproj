@@ -669,363 +669,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\img_play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_cross.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-ios-rempli-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-paramètres-de-porte-documents-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-paramètres-de-surbalayage-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_pause.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-rectangle-arrondi-tracé-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-rectangle-arrondi-tracé-96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-rectangle-arrondi-tracé-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_repeat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_repeat_one.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_stats.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_suivant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_verifie.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prometium.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img_eyeOpen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cargoBox.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_eyeClose.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\greenBooty.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img_abeille.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_accueil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-arrêter-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-carré-arrondi-100%281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-carré-arrondi-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_check_mark.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_unpin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_north.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_no.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_pin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_cross_full.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
-    <None Include="Resources\231-wheelchair.png" />
-    <None Include="Resources\230-shield.png" />
-    <None Include="Resources\229-add.png" />
-    <None Include="Resources\228-shopping-cart.png" />
-    <None Include="Resources\227-aeroplane.png" />
-    <None Include="Resources\226-alarm-clock.png" />
-    <None Include="Resources\225-anchor.png" />
-    <None Include="Resources\224-warning.png" />
-    <None Include="Resources\223-inbox.png" />
-    <None Include="Resources\222-inbox-1.png" />
-    <None Include="Resources\221-pencil-case.png" />
-    <None Include="Resources\220-arroba.png" />
-    <None Include="Resources\219-left-arrow.png" />
-    <None Include="Resources\218-dollar.png" />
-    <None Include="Resources\217-bar-chart.png" />
-    <None Include="Resources\216-battery.png" />
-    <None Include="Resources\215-battery-1.png" />
-    <None Include="Resources\214-battery-2.png" />
-    <None Include="Resources\213-battery-3.png" />
-    <None Include="Resources\212-quaver.png" />
-    <None Include="Resources\211-notification.png" />
-    <None Include="Resources\210-file.png" />
-    <None Include="Resources\209-book.png" />
-    <None Include="Resources\208-bookmark.png" />
-    <None Include="Resources\207-package.png" />
-    <None Include="Resources\206-briefcase.png" />
-    <None Include="Resources\205-bug.png" />
-    <None Include="Resources\204-birthday-cake.png" />
-    <None Include="Resources\203-calculator.png" />
-    <None Include="Resources\202-calendar.png" />
-    <None Include="Resources\201-photo-camera.png" />
-    <None Include="Resources\200-shutter.png" />
-    <None Include="Resources\199-car.png" />
-    <None Include="Resources\198-cassette.png" />
-    <None Include="Resources\197-clipboard.png" />
-    <None Include="Resources\196-check.png" />
-    <None Include="Resources\195-clapperboard.png" />
-    <None Include="Resources\194-wall-clock.png" />
-    <None Include="Resources\193-cancel.png" />
-    <None Include="Resources\192-cloud.png" />
-    <None Include="Resources\191-coding.png" />
-    <None Include="Resources\190-network.png" />
-    <None Include="Resources\189-analytics.png" />
-    <None Include="Resources\188-compass.png" />
-    <None Include="Resources\187-monitor.png" />
-    <None Include="Resources\186-mouse.png" />
-    <None Include="Resources\185-network-1.png" />
-    <None Include="Resources\184-credit-card.png" />
-    <None Include="Resources\183-crop.png" />
-    <None Include="Resources\182-trophy.png" />
-    <None Include="Resources\181-cursor.png" />
-    <None Include="Resources\180-cut.png" />
-    <None Include="Resources\179-server.png" />
-    <None Include="Resources\178-shield-1.png" />
-    <None Include="Resources\177-cube.png" />
-    <None Include="Resources\176-diamond.png" />
-    <None Include="Resources\175-notebook.png" />
-    <None Include="Resources\174-dice.png" />
-    <None Include="Resources\173-compact-disc.png" />
-    <None Include="Resources\172-hard-drive.png" />
-    <None Include="Resources\171-door.png" />
-    <None Include="Resources\170-key.png" />
-    <None Include="Resources\169-pie-chart.png" />
-    <None Include="Resources\168-download.png" />
-    <None Include="Resources\167-cloud-computing.png" />
-    <None Include="Resources\166-planet-earth.png" />
-    <None Include="Resources\165-eject.png" />
-    <None Include="Resources\164-cancel-1.png" />
-    <None Include="Resources\163-warning-1.png" />
-    <None Include="Resources\162-visibility.png" />
-    <None Include="Resources\161-quill.png" />
-    <None Include="Resources\160-woman.png" />
-    <None Include="Resources\159-file-1.png" />
-    <None Include="Resources\158-fingerprint.png" />
-    <None Include="Resources\157-flag.png" />
-    <None Include="Resources\156-flash.png" />
-    <None Include="Resources\155-flashlight.png" />
-    <None Include="Resources\154-flowchart.png" />
-    <None Include="Resources\153-folder.png" />
-    <None Include="Resources\152-size.png" />
-    <None Include="Resources\151-wine.png" />
-    <None Include="Resources\150-eyeglasses.png" />
-    <None Include="Resources\149-worldwide.png" />
-    <None Include="Resources\148-menu.png" />
-    <None Include="Resources\147-help.png" />
-    <None Include="Resources\146-handshake.png" />
-    <None Include="Resources\145-heart.png" />
-    <None Include="Resources\144-home.png" />
-    <None Include="Resources\143-coffee-cup.png" />
-    <None Include="Resources\142-hourglass.png" />
-    <None Include="Resources\141-information.png" />
-    <None Include="Resources\140-visibility-1.png" />
-    <None Include="Resources\139-key-1.png" />
-    <None Include="Resources\138-keyboard.png" />
-    <None Include="Resources\137-layers.png" />
-    <None Include="Resources\136-leaf.png" />
-    <None Include="Resources\135-left-arrow-1.png" />
-    <None Include="Resources\134-lifesaver.png" />
-    <None Include="Resources\133-idea.png" />
-    <None Include="Resources\132-profits.png" />
-    <None Include="Resources\131-link.png" />
-    <None Include="Resources\130-list.png" />
-    <None Include="Resources\129-placeholder.png" />
-    <None Include="Resources\128-pin.png" />
-    <None Include="Resources\127-padlock.png" />
-    <None Include="Resources\126-unlock.png" />
-    <None Include="Resources\125-login.png" />
-    <None Include="Resources\124-logout.png" />
-    <None Include="Resources\123-magnet.png" />
-    <None Include="Resources\122-email.png" />
-    <None Include="Resources\121-email-1.png" />
-    <None Include="Resources\120-mailbox.png" />
-    <None Include="Resources\119-email-2.png" />
-    <None Include="Resources\118-settings.png" />
-    <None Include="Resources\117-man.png" />
-    <None Include="Resources\116-map.png" />
-    <None Include="Resources\115-placeholder-1.png" />
-    <None Include="Resources\114-maximize.png" />
-    <None Include="Resources\113-medal.png" />
-    <None Include="Resources\112-megaphone.png" />
-    <None Include="Resources\111-more.png" />
-    <None Include="Resources\110-karaoke.png" />
-    <None Include="Resources\109-minimize.png" />
-    <None Include="Resources\108-smartphone.png" />
-    <None Include="Resources\107-dollar-1.png" />
-    <None Include="Resources\106-mute.png" />
-    <None Include="Resources\105-cursor-1.png" />
-    <None Include="Resources\104-newspaper.png" />
-    <None Include="Resources\103-wifi.png" />
-    <None Include="Resources\102-battery-4.png" />
-    <None Include="Resources\101-no-camera.png" />
-    <None Include="Resources\100-flash-1.png" />
-    <None Include="Resources\099-no-sound.png" />
-    <None Include="Resources\098-no-wifi.png" />
-    <None Include="Resources\097-laptop.png" />
-    <None Include="Resources\096-cloud-computing-1.png" />
-    <None Include="Resources\095-folder-1.png" />
-    <None Include="Resources\094-email-3.png" />
-    <None Include="Resources\093-paint-brush.png" />
-    <None Include="Resources\092-paint-palette.png" />
-    <None Include="Resources\091-stop.png" />
-    <None Include="Resources\090-cursor-2.png" />
-    <None Include="Resources\089-paperclip.png" />
-    <None Include="Resources\088-satellite-dish.png" />
-    <None Include="Resources\087-pause.png" />
-    <None Include="Resources\086-school-material.png" />
-    <None Include="Resources\085-pencil.png" />
-    <None Include="Resources\084-percentage.png" />
-    <None Include="Resources\083-telephone.png" />
-    <None Include="Resources\082-picture.png" />
-    <None Include="Resources\081-picture-1.png" />
-    <None Include="Resources\080-play.png" />
-    <None Include="Resources\079-plug.png" />
-    <None Include="Resources\078-puzzle.png" />
-    <None Include="Resources\077-power.png" />
-    <None Include="Resources\076-gift.png" />
-    <None Include="Resources\075-presentation.png" />
-    <None Include="Resources\074-printer.png" />
-    <None Include="Resources\073-shield-2.png" />
-    <None Include="Resources\072-pie-chart-1.png" />
-    <None Include="Resources\071-question.png" />
-    <None Include="Resources\070-radar.png" />
-    <None Include="Resources\069-radio.png" />
-    <None Include="Resources\068-refresh.png" />
-    <None Include="Resources\067-reload.png" />
-    <None Include="Resources\066-remove.png" />
-    <None Include="Resources\065-shopping-cart-1.png" />
-    <None Include="Resources\064-previous.png" />
-    <None Include="Resources\063-next.png" />
-    <None Include="Resources\062-startup.png" />
-    <None Include="Resources\061-ruler.png" />
-    <None Include="Resources\060-diskette.png" />
-    <None Include="Resources\059-loupe.png" />
-    <None Include="Resources\058-server-1.png" />
-    <None Include="Resources\057-settings-1.png" />
-    <None Include="Resources\056-share.png" />
-    <None Include="Resources\055-shop.png" />
-    <None Include="Resources\054-shopping-bag.png" />
-    <None Include="Resources\053-shopping-basket.png" />
-    <None Include="Resources\052-shopping-cart-2.png" />
-    <None Include="Resources\051-shuffle.png" />
-    <None Include="Resources\050-signal.png" />
-    <None Include="Resources\049-panel.png" />
-    <None Include="Resources\048-sim-card.png" />
-    <None Include="Resources\047-levels.png" />
-    <None Include="Resources\046-chat.png" />
-    <None Include="Resources\045-chat-1.png" />
-    <None Include="Resources\044-star.png" />
-    <None Include="Resources\043-stop-1.png" />
-    <None Include="Resources\042-microphone.png" />
-    <None Include="Resources\041-suitcase.png" />
-    <None Include="Resources\040-sun.png" />
-    <None Include="Resources\039-price-tag.png" />
-    <None Include="Resources\038-target.png" />
-    <None Include="Resources\037-dislike.png" />
-    <None Include="Resources\036-like.png" />
-    <None Include="Resources\035-push-pin.png" />
-    <None Include="Resources\034-tick.png" />
-    <None Include="Resources\033-ticket.png" />
-    <None Include="Resources\032-wall-clock-1.png" />
-    <None Include="Resources\031-switch.png" />
-    <None Include="Resources\030-switch-1.png" />
-    <None Include="Resources\029-wifi-1.png" />
-    <None Include="Resources\028-trash.png" />
-    <None Include="Resources\027-trash-1.png" />
-    <None Include="Resources\026-sort.png" />
-    <None Include="Resources\025-type.png" />
-    <None Include="Resources\024-umbrella.png" />
-    <None Include="Resources\023-undo.png" />
-    <None Include="Resources\022-up-arrow.png" />
-    <None Include="Resources\021-upload.png" />
-    <None Include="Resources\020-upload-1.png" />
-    <None Include="Resources\019-computing-cloud.png" />
-    <None Include="Resources\018-usb.png" />
-    <None Include="Resources\017-usb-1.png" />
-    <None Include="Resources\016-user.png" />
-    <None Include="Resources\015-user-1.png" />
-    <None Include="Resources\014-user-2.png" />
-    <None Include="Resources\013-video-camera.png" />
-    <None Include="Resources\012-voice-recorder.png" />
-    <None Include="Resources\011-volume.png" />
-    <None Include="Resources\010-wallet.png" />
-    <None Include="Resources\009-wallet-1.png" />
-    <None Include="Resources\008-watch.png" />
-    <None Include="Resources\007-broken-link.png" />
-    <None Include="Resources\006-browser.png" />
-    <None Include="Resources\005-wifi-2.png" />
-    <None Include="Resources\004-wifi-3.png" />
-    <None Include="Resources\003-yin-yang.png" />
-    <None Include="Resources\002-zoom-in.png" />
-    <None Include="Resources\001-zoom-out.png" />
-    <None Include="Resources\29848.png" />
-    <None Include="Resources\29709.png" />
-    <None Include="Resources\water-drop-in-a-rounded-square_icon-icons.com_70575.png" />
-    <None Include="Resources\verificationcheckmarksymbolinblackcircularbutton_104800.png" />
-    <None Include="Resources\trash-can-black-symbol_icon-icons.com_72914.png" />
+    <None Include="Resources\visibility-off.png" />
+    <None Include="Resources\visibility.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\play-circle-filled-white.png" />
+    <None Include="Resources\place.png" />
+    <None Include="Resources\pin-drop.png" />
+    <None Include="Resources\person-pin.png" />
+    <None Include="Resources\pause-presentation.png" />
+    <None Include="Resources\lock-open.png" />
+    <None Include="Resources\lock %282%29.png" />
+    <None Include="Resources\label.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\exit-to-app.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\cancel-presentation.png" />
     <None Include="Resources\success_icon.png" />
-    <None Include="Resources\star-blade-on-square-background_icon-icons.com_70372.png" />
-    <None Include="Resources\square-black-geometric-shape_icon-icons.com_72927.png" />
-    <None Include="Resources\settings-cogwheel-inside-black-square_icon-icons.com_72558.png" />
-    <None Include="Resources\searchsymbolinblackcircularbutton_104758.png" />
-    <None Include="Resources\recyclebinblackcircularbutton_104781.png" />
-    <None Include="Resources\portail_alpha.png" />
-    <None Include="Resources\plus-symbol-in-a-rounded-black-square_icon-icons.com_73451.png" />
     <None Include="Resources\playwithcircularbuttonwithrightarrowofboldroundedfilledtriangle_80162.png" />
-    <None Include="Resources\playblackcircularbutton_104778.png" />
     <None Include="Resources\pausewithcircularbutton_80264.png" />
-    <None Include="Resources\pause_solid_icon_124893.png" />
-    <None Include="Resources\newemailoutlinesymbolinblackcircularbutton_104753.png" />
-    <None Include="Resources\minus-solid-black-square-button_icon-icons.com_72985.png" />
-    <None Include="Resources\minus-sign-inside-a-black-rounded-square-shape_icon-icons.com_73487.png" />
-    <None Include="Resources\lockedpadlockincircularbutton_80106.png" />
-    <None Include="Resources\information-black-solid-circular-web-interface-button_icon-icons.com_54505.png" />
-    <None Include="Resources\home-silhouette-on-black-square-background_icon-icons.com_70471.png" />
-    <None Include="Resources\homecircularbuttonwithhouseoutlineshape_104751.png" />
-    <None Include="Resources\exclamation_solid_icon_124976.png" />
-    <None Include="Resources\counterclockwisecirculararrowinblackbutton_104775.png" />
-    <None Include="Resources\closecrossthinsymbolinblackcircularbutton_104745.png" />
-    <None Include="Resources\check-mark-checkbox-license.jpg" />
-    <None Include="Resources\basic-gunsight_98155.png" />
-    <None Include="Resources\arrows-couple-counterclockwise-rotating-symbol_icon-icons.com_73096.png" />
-    <None Include="Resources\airplane-shape-in-a-rounded-square_icon-icons.com_70810.png" />
-    <None Include="Resources\addblackcircularbutton_104741.png" />
     <None Include="Resources\Click_Zone_Possible2.png" />
     <None Include="Resources\Click_Zone_Possible.png" />
     <None Include="Resources\sibelonit.png" />
@@ -1038,8 +712,6 @@
     <None Include="Resources\boss_sibelonit.png" />
     <None Include="Resources\Blighted_Kristallon.png" />
     <None Include="Paint_Test\traveling_indication.png" />
-    <None Include="Resources\Crosshair_locked.png" />
-    <None Include="Resources\png-transparent-squircle-square-rectangle-information-others-miscellaneous-angle-simple.png" />
     <None Include="Resources\Locked_Two.png" />
     <None Include="Resources\Locked_Three.png" />
     <None Include="Resources\Locked_One.png" />
@@ -1195,7 +867,6 @@
     <None Include="bin\v1.5\Interop.WMPLib.dll" />
     <None Include="bin\v1.5\AxInterop.WMPLib.dll" />
     <None Include="ridevbotuniverse.mp4" />
-    <None Include="Resources\lolololololo.mp4" />
     <None Include="Resources\connected_moins_fort.wav" />
     <None Include="Resources\RidevBotUpdater.exe" />
   </ItemGroup>

@@ -49,9 +49,9 @@ Public Class Form_Startup
 
 #Region "Location and resize"
 
-        Panel_ProfilConnection.Location = New Point(0, 55)
-        Panel_SidConnexion.Location = New Point(0, 55)
-        PanelConnection.Location = New Point(0, 55)
+        Panel_ProfilConnection.Location = New Point(0, 58)
+        Panel_SidConnexion.Location = New Point(0, 58)
+        PanelConnection.Location = New Point(0, 58)
 
 #End Region
 
@@ -325,35 +325,35 @@ Public Class Form_Startup
 #Region "Yeux"
     Private Sub PictureBox_PasswordHider_MouseDown(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseDown
         Textbox_Password.UseSystemPasswordChar = False
-        PictureBox_PasswordHider.Image = My.Resources._162_visibility
+        PictureBox_PasswordHider.Image = My.Resources.visibility
     End Sub
     Private Sub PictureBox_PasswordHider_MouseUp(sender As Object, e As EventArgs) Handles PictureBox_PasswordHider.MouseUp
         Textbox_Password.UseSystemPasswordChar = True
-        PictureBox_PasswordHider.Image = My.Resources._140_visibility_1
+        PictureBox_PasswordHider.Image = My.Resources.visibility_off
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseDown
         TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources._162_visibility
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil1eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.MouseUp
         TextBoxUsernamePasswordProfil1password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources._140_visibility_1
+        PictureBoxUsernamePasswordProfil1eyes.Image = My.Resources.visibility_off
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseDown
         TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources._162_visibility
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil2eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2eyes.MouseUp
         TextBoxUsernamePasswordProfil2password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources._140_visibility_1
+        PictureBoxUsernamePasswordProfil2eyes.Image = My.Resources.visibility_off
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseDown(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseDown
         TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = False
-        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources._162_visibility
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.visibility
     End Sub
     Private Sub PictureBoxUsernamePasswordProfil3eyes_MouseUp(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3eyes.MouseUp
         TextBoxUsernamePasswordProfil3password.UseSystemPasswordChar = True
-        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources._140_visibility_1
+        PictureBoxUsernamePasswordProfil3eyes.Image = My.Resources.visibility_off
     End Sub
 #End Region
 
@@ -439,7 +439,9 @@ Public Class Form_Startup
         End If
     End Sub
 
-    Private Sub PictureBoxUsernamePasswordProfil1eyes_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil1eyes.Click
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+
+        Me.MinimizeBox = True
 
     End Sub
 
