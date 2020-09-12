@@ -681,6 +681,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="dll\System.Net.Http.Primitives.dll" />
+    <None Include="dll\System.Net.Http.Extensions.dll" />
+    <None Include="dll\Newtonsoft.Json.dll" />
+    <None Include="dll\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
+    <None Include="dll\Microsoft.Threading.Tasks.dll" />
+    <None Include="dll\FireSharp.dll" />
     <None Include="Resources\visibility-off.png" />
     <None Include="Resources\visibility.png" />
     <None Include="Resources\trash.png" />

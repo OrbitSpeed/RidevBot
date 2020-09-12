@@ -654,22 +654,21 @@ Public Class Utils
     End Function
 
 #End Region
+
     Public Shared DateDistant As Date
 
-    Public Shared Async Function GetNistTime() As Task(Of DateTime)
+    Public Shared Async Function GetNistTime() As Task
         Dim client = New TcpClient("time.nist.gov", 13)
 
         Using streamReader = New StreamReader(client.GetStream())
-            Dim response = streamReader.ReadToEnd()
+            Dim response = Await streamReader.ReadToEndAsync()
             Dim utcDateTimeString = response.Substring(7, 17)
-            Console.WriteLine(utcDateTimeString)
             Dim localDateTime = DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
-            'Dim localDateTime = Date.Parse(utcDateTimeString).Date
             'Console.WriteLine(localDateTime)
-            'Console.WriteLine(Date.Now)
             DateDistant = localDateTime
-            Return localDateTime
+            streamReader.Close()
         End Using
+
     End Function
 
     Public Shared Function calculateDiffDates(ByVal StartDate As DateTime, ByVal EndDate As DateTime) As Integer

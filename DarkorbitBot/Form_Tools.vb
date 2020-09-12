@@ -62,13 +62,13 @@ Public Class Form_Tools
     Public GalaxyGatesChecker As String = 0
 
 
-    Private client As FirebaseClient
+    'Private client As FirebaseClient
 
-    Public fcon As New FirebaseConfig() With
-        {
-        .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
-        .AuthSecret = Utils.Firebase_Secret
-        }
+    'Public fcon As New FirebaseConfig() With
+    '    {
+    '    .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
+    '    .AuthSecret = Utils.Firebase_Secret
+    '    }
 
     Public Sub Reload()
 
@@ -152,7 +152,6 @@ Public Class Form_Tools
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Calculator = 1
-        Panel_license.Location = New Point(0, 66)
         Panel_autospin.Location = New Point(495, 68)
         Panel_palladium_palladium.Location = New Point(0, 66)
         panel_npc_npc.Location = New Point(0, 66)
@@ -167,17 +166,19 @@ Public Class Form_Tools
         Panel_divers.Location = New Point(0, 66)
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
-        TextBox_license_username.Text = TextBox_ProfilSelected.Text
 
         Size = New Size(497, 412)
         CenterToScreen()
-        Try
-            client = New FirebaseClient(fcon)
-            Utils.GetNistTime()
-        Catch ex As Exception
-            MessageBox.Show($"Erreur:{ex.ToString}")
-        End Try
+        'Try
+        '    client = New FirebaseClient(fcon)
+        '    Utils.GetNistTime()
+        'Catch ex As Exception
+        '    MessageBox.Show($"Erreur:{ex.ToString}")
+        'End Try
 
+        'If My.Settings.License_check <> "Your license here" Then
+        '    Button_license_verify_Click(Nothing, Nothing)
+        'End If
 
         If Form_Game.Visible = True Then
             Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
@@ -185,9 +186,6 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
         End If
 
-        If My.Settings.License_check <> "Your license here" Then
-            Button_license_verify_Click(Nothing, Nothing)
-        End If
 
     End Sub ' Ouverture du Program ( form )
 
@@ -198,7 +196,6 @@ Public Class Form_Tools
 #Region "Button toolbar"
     Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = True
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -221,7 +218,6 @@ Public Class Form_Tools
 
     Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = True
         Panel_collectable.Visible = False
@@ -244,7 +240,6 @@ Public Class Form_Tools
 
     Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = True
@@ -267,7 +262,6 @@ Public Class Form_Tools
 
     Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -290,7 +284,6 @@ Public Class Form_Tools
 
     Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -313,7 +306,6 @@ Public Class Form_Tools
 
     Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -339,7 +331,6 @@ Public Class Form_Tools
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Panel_license.Visible = False
             Panel_general.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
@@ -359,7 +350,6 @@ Public Class Form_Tools
             Size = New Size(497, 412)
         Else
 
-            Panel_license.Visible = False
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
@@ -394,7 +384,6 @@ Public Class Form_Tools
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -421,7 +410,6 @@ Public Class Form_Tools
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Panel_license.Visible = False
             Panel_general.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
@@ -442,7 +430,6 @@ Public Class Form_Tools
 
         Else
 
-            Panel_license.Visible = False
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
@@ -467,7 +454,6 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -490,7 +476,6 @@ Public Class Form_Tools
 
     Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -513,7 +498,6 @@ Public Class Form_Tools
 
     Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -536,7 +520,6 @@ Public Class Form_Tools
     End Sub
     Private Sub Button_license_Click(sender As Object, e As EventArgs) Handles Button_license.Click
 
-        Panel_license.Visible = True
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -558,7 +541,6 @@ Public Class Form_Tools
     End Sub
     Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles Button_How_use.Click
 
-        Panel_license.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -1680,11 +1662,11 @@ Label_ClickGalaxyGates:
 
         If tagBoolean Then
             PictureBox_epinglerBot.Tag = "0"
-            PictureBox_epinglerBot.Image = My.Resources.lock__2_
+            PictureBox_epinglerBot.Image = My.Resources.lock_open
             Me.TopMost = False
         Else
             PictureBox_epinglerBot.Tag = "1"
-            PictureBox_epinglerBot.Image = My.Resources.lock_open
+            PictureBox_epinglerBot.Image = My.Resources.lock__2_
             Me.TopMost = True
         End If
 
@@ -1715,8 +1697,8 @@ Label_ClickGalaxyGates:
             Form_Game.Visible = False
             Form_Startup.Visible = True
             WebBrowser_Synchronisation.Navigate("about:blank")
-            Check_message = 1
             MessageBox.Show("Can't connect to your account, check your credentials.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Check_message = 1
             Me.Close()
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("authUser=291") Then
@@ -1739,6 +1721,9 @@ Label_ClickGalaxyGates:
             Next
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
+
+            Label_ServerStatus.Text = "Online"
+            Label_ServerStatus.ForeColor = Color.LimeGreen
 
             Check_message = 0
             Reload()
@@ -1976,87 +1961,95 @@ Label_ClickGalaxyGates:
         End If
     End Sub 'Permet de récuperer le nom du autospin et de définir si ABG
 
-    Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
-        If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
-            MessageBox.Show("You didn't put a license")
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            Exit Sub
-        End If
-        Dim user_key = TextBox_license_check.Text
-        Dim res
-        Try
-            res = client.Get("Users/" + user_key)
-        Catch ex As Exception
-            MessageBox.Show("Can't get your license, check it correctly.")
-            TextBox_license_check.Text = "Your license here"
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            Exit Sub
-        End Try
-        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account doesn't exist")
-            TextBox_license_check.Text = "Your license here"
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            Exit Sub
-        End If
+    Private Sub Button_license_verify_Click(sender As Object, e As EventArgs)
+        'If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
+        '    MessageBox.Show("You didn't put a license")
+        '    PictureBox_license_check.Image = My.Resources.error_icon
+        '    PictureBox_license_check.Tag = False
+        '    Exit Sub
+        'End If
+        'Dim user_key = TextBox_license_check.Text
+        'Dim res
+        'Try
+        '    res = client.Get("Users/" + user_key)
+        'Catch ex As Exception
+        '    MessageBox.Show("Can't get your license, check it correctly.")
+        '    TextBox_license_check.Text = "Your license here"
+        '    PictureBox_license_check.Image = My.Resources.error_icon
+        '    PictureBox_license_check.Tag = False
+        '    Exit Sub
+        'End Try
+        'If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
+        '    MessageBox.Show("Your account doesn't exist")
+        '    TextBox_license_check.Text = "Your license here"
+        '    PictureBox_license_check.Image = My.Resources.error_icon
+        '    PictureBox_license_check.Tag = False
+        '    Exit Sub
+        'End If
 
-        Dim resUser = res.ResultAs(Of Utilisateur)
+        'Dim resUser = res.ResultAs(Of Utilisateur)
 
-        Dim CurUser As New Utilisateur With
-            {
-            .NomUtilisateur = TextBox_license_username.Text,
-            .PasswordUtilisateur = TextBox_license_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
-            .LicenseActivated = False,
-            .LicenseKey = user_key
-            }
+        'Dim CurUser As New Utilisateur With
+        '    {
+        '    .NomUtilisateur = TextBox_license_username.Text,
+        '    .PasswordUtilisateur = TextBox_license_password.Text,
+        '    .LicenseEndTime = Utils.DateDistant,
+        '    .LicenseActivated = False,
+        '    .LicenseKey = user_key
+        '    }
 
-        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
-            MsgBox("t'as pas payé enculé")
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
+        'If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+        '    MsgBox("t'as pas payé enculé")
+        '    PictureBox_license_check.Image = My.Resources.error_icon
+        '    PictureBox_license_check.Tag = False
 
-            Exit Sub
-        End If
+        '    Exit Sub
+        'End If
 
-        Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
-        MsgBox($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days")
-        PictureBox_license_check.Image = My.Resources.success_icon
-        PictureBox_license_check.Tag = True
+        'Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
+
+        'If Not resUser.NomUtilisateur = TextBox_username.Text Then
+        '    MessageBox.Show($"Your license is not for this account.{vbNewLine}Please buy an another one that is linked with this one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Form_Startup.Show()
+        '    Close()
+        'Else
+        '    MessageBox.Show($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    PictureBox_license_check.Image = My.Resources.success_icon
+        '    PictureBox_license_check.Tag = True
+        'End If
+
     End Sub
 
-    Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
-        If PictureBox_license_check.Tag = True Then
-            MessageBox.Show("Your license is valid, you don't need to register")
-            Exit Sub
-        End If
-        If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
-            MessageBox.Show("You didn't put a correct username")
-            Exit Sub
-        End If
-        If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
-            MessageBox.Show("You didn't put a correct password")
-            Exit Sub
-        End If
-        Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
+    Private Sub Button_reg_Click(sender As Object, e As EventArgs)
+        'If PictureBox_license_check.Tag = True Then
+        '    MessageBox.Show("Your license is valid, you don't need to register")
+        '    Exit Sub
+        'End If
+        'If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
+        '    MessageBox.Show("You didn't put a correct username")
+        '    Exit Sub
+        'End If
+        'If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
+        '    MessageBox.Show("You didn't put a correct password")
+        '    Exit Sub
+        'End If
+        'Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
 
-        Dim res = client.Get("Users/" + user_key)
-        If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account already exist")
-            Exit Sub
-        End If
+        'Dim res = client.Get("Users/" + user_key)
+        'If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
+        '    MessageBox.Show("Your account already exist")
+        '    Exit Sub
+        'End If
 
-        Dim CurUser As New Utilisateur With
-            {
-            .NomUtilisateur = TextBox_license_username.Text,
-            .PasswordUtilisateur = TextBox_license_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
-            .LicenseActivated = False,
-            .LicenseKey = user_key
-            }
-        Dim setter = client.Set("Users/" + user_key, CurUser)
-        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+        'Dim CurUser As New Utilisateur With
+        '    {
+        '    .NomUtilisateur = TextBox_license_username.Text,
+        '    .PasswordUtilisateur = TextBox_license_password.Text,
+        '    .LicenseEndTime = Utils.DateDistant,
+        '    .LicenseActivated = False,
+        '    .LicenseKey = user_key
+        '    }
+        'Dim setter = client.Set("Users/" + user_key, CurUser)
+        'MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
     End Sub
 End Class

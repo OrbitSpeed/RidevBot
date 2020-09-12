@@ -340,6 +340,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property FireSharp() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("FireSharp", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property greenBooty() As System.Drawing.Bitmap
@@ -950,6 +960,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Microsoft_Threading_Tasks() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Microsoft_Threading_Tasks", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Microsoft_Threading_Tasks_Extensions_Desktop() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Microsoft_Threading_Tasks_Extensions_Desktop", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property Minimap_closed() As System.Drawing.Bitmap
@@ -1006,6 +1036,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("mucosum", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Newtonsoft_Json() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Newtonsoft_Json", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
@@ -1456,6 +1496,26 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("success_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Net_Http_Extensions() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Net_Http_Extensions", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Net_Http_Primitives() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Net_Http_Primitives", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

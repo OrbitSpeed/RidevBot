@@ -4,6 +4,7 @@
     Public Property LicenseEndTime As Date
     Public Property LicenseKey As String
     Public Property LicenseActivated As Boolean
+    Public Property UserMail As String
 
     Public Shared Function IsEqual(user1 As Utilisateur, user2 As Utilisateur)
         If user1 Is Nothing Or user2 Is Nothing Then

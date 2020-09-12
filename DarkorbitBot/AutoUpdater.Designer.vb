@@ -25,16 +25,16 @@ Partial Class AutoUpdater
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AutoUpdater))
         Me.Panel_title = New System.Windows.Forms.Panel()
+        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
+        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
         Me.Button_Update = New System.Windows.Forms.Button()
         Me.Video_ridevbot_MediaPlayerAx = New AxWMPLib.AxWindowsMediaPlayer()
         Me.FlatTextBox_Changelog = New System.Windows.Forms.TextBox()
         Me.Panel_continue = New System.Windows.Forms.Panel()
-        Me.Button_cancel_auto_login = New System.Windows.Forms.Button()
         Me.ProgressBar_cancel_autotlogin = New System.Windows.Forms.ProgressBar()
+        Me.Button_cancel_auto_login = New System.Windows.Forms.Button()
         Me.Timer_bar_cancel_auto_login = New System.Windows.Forms.Timer(Me.components)
-        Me.FlatLabel_isUpdated = New DarkorbitBot.FlatLabel()
-        Me.FlatLabel_Version = New DarkorbitBot.FlatLabel()
-        Me.FlatLabel_Title = New DarkorbitBot.FlatLabel()
         Me.Panel_title.SuspendLayout()
         CType(Me.Video_ridevbot_MediaPlayerAx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_continue.SuspendLayout()
@@ -51,6 +51,44 @@ Partial Class AutoUpdater
         Me.Panel_title.Name = "Panel_title"
         Me.Panel_title.Size = New System.Drawing.Size(363, 18)
         Me.Panel_title.TabIndex = 0
+        '
+        'FlatLabel_isUpdated
+        '
+        Me.FlatLabel_isUpdated.AutoSize = True
+        Me.FlatLabel_isUpdated.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_isUpdated.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.FlatLabel_isUpdated.ForeColor = System.Drawing.Color.Lime
+        Me.FlatLabel_isUpdated.Location = New System.Drawing.Point(193, -1)
+        Me.FlatLabel_isUpdated.Name = "FlatLabel_isUpdated"
+        Me.FlatLabel_isUpdated.Size = New System.Drawing.Size(135, 20)
+        Me.FlatLabel_isUpdated.TabIndex = 4
+        Me.FlatLabel_isUpdated.Text = "You are up to date"
+        '
+        'FlatLabel_Version
+        '
+        Me.FlatLabel_Version.AutoSize = True
+        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Black
+        Me.FlatLabel_Version.Location = New System.Drawing.Point(60, -1)
+        Me.FlatLabel_Version.Name = "FlatLabel_Version"
+        Me.FlatLabel_Version.Size = New System.Drawing.Size(116, 20)
+        Me.FlatLabel_Version.TabIndex = 3
+        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
+        '
+        'FlatLabel_Title
+        '
+        Me.FlatLabel_Title.AutoSize = True
+        Me.FlatLabel_Title.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.FlatLabel_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel_Title.ForeColor = System.Drawing.Color.Black
+        Me.FlatLabel_Title.Location = New System.Drawing.Point(0, -1)
+        Me.FlatLabel_Title.Name = "FlatLabel_Title"
+        Me.FlatLabel_Title.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.FlatLabel_Title.Size = New System.Drawing.Size(65, 20)
+        Me.FlatLabel_Title.TabIndex = 1
+        Me.FlatLabel_Title.Text = "Updater"
+        Me.FlatLabel_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button_Update
         '
@@ -98,6 +136,18 @@ Partial Class AutoUpdater
         Me.Panel_continue.Size = New System.Drawing.Size(363, 217)
         Me.Panel_continue.TabIndex = 103
         '
+        'ProgressBar_cancel_autotlogin
+        '
+        Me.ProgressBar_cancel_autotlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.ProgressBar_cancel_autotlogin.ForeColor = System.Drawing.Color.White
+        Me.ProgressBar_cancel_autotlogin.Location = New System.Drawing.Point(18, 0)
+        Me.ProgressBar_cancel_autotlogin.MarqueeAnimationSpeed = 200
+        Me.ProgressBar_cancel_autotlogin.Name = "ProgressBar_cancel_autotlogin"
+        Me.ProgressBar_cancel_autotlogin.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.ProgressBar_cancel_autotlogin.Size = New System.Drawing.Size(327, 15)
+        Me.ProgressBar_cancel_autotlogin.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+        Me.ProgressBar_cancel_autotlogin.TabIndex = 104
+        '
         'Button_cancel_auto_login
         '
         Me.Button_cancel_auto_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -112,60 +162,10 @@ Partial Class AutoUpdater
         Me.Button_cancel_auto_login.Text = "Cancel AutoLogin"
         Me.Button_cancel_auto_login.UseVisualStyleBackColor = False
         '
-        'ProgressBar_cancel_autotlogin
-        '
-        Me.ProgressBar_cancel_autotlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.ProgressBar_cancel_autotlogin.ForeColor = System.Drawing.Color.White
-        Me.ProgressBar_cancel_autotlogin.Location = New System.Drawing.Point(18, 0)
-        Me.ProgressBar_cancel_autotlogin.MarqueeAnimationSpeed = 200
-        Me.ProgressBar_cancel_autotlogin.Name = "ProgressBar_cancel_autotlogin"
-        Me.ProgressBar_cancel_autotlogin.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ProgressBar_cancel_autotlogin.Size = New System.Drawing.Size(327, 15)
-        Me.ProgressBar_cancel_autotlogin.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.ProgressBar_cancel_autotlogin.TabIndex = 104
-        '
         'Timer_bar_cancel_auto_login
         '
         Me.Timer_bar_cancel_auto_login.Enabled = True
         Me.Timer_bar_cancel_auto_login.Interval = 8
-        '
-        'FlatLabel_isUpdated
-        '
-        Me.FlatLabel_isUpdated.AutoSize = True
-        Me.FlatLabel_isUpdated.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_isUpdated.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.FlatLabel_isUpdated.ForeColor = System.Drawing.Color.Lime
-        Me.FlatLabel_isUpdated.Location = New System.Drawing.Point(193, -1)
-        Me.FlatLabel_isUpdated.Name = "FlatLabel_isUpdated"
-        Me.FlatLabel_isUpdated.Size = New System.Drawing.Size(135, 20)
-        Me.FlatLabel_isUpdated.TabIndex = 4
-        Me.FlatLabel_isUpdated.Text = "You are up to date"
-        '
-        'FlatLabel_Version
-        '
-        Me.FlatLabel_Version.AutoSize = True
-        Me.FlatLabel_Version.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_Version.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.FlatLabel_Version.ForeColor = System.Drawing.Color.Black
-        Me.FlatLabel_Version.Location = New System.Drawing.Point(60, -1)
-        Me.FlatLabel_Version.Name = "FlatLabel_Version"
-        Me.FlatLabel_Version.Size = New System.Drawing.Size(116, 20)
-        Me.FlatLabel_Version.TabIndex = 3
-        Me.FlatLabel_Version.Text = "Version : 0.0.0.0"
-        '
-        'FlatLabel_Title
-        '
-        Me.FlatLabel_Title.AutoSize = True
-        Me.FlatLabel_Title.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.FlatLabel_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FlatLabel_Title.ForeColor = System.Drawing.Color.Black
-        Me.FlatLabel_Title.Location = New System.Drawing.Point(0, -1)
-        Me.FlatLabel_Title.Name = "FlatLabel_Title"
-        Me.FlatLabel_Title.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FlatLabel_Title.Size = New System.Drawing.Size(65, 20)
-        Me.FlatLabel_Title.TabIndex = 1
-        Me.FlatLabel_Title.Text = "Updater"
-        Me.FlatLabel_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AutoUpdater
         '

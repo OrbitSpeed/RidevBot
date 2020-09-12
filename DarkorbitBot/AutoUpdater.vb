@@ -120,6 +120,13 @@ Public Class AutoUpdater
             If Check_Maintenance Then
                 MessageBox.Show($"A maintenance is actually underway...{vbNewLine}Please, try again later.{vbNewLine}If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Close()
+            Else
+                Try
+                    Form_Tools.Label_BotStatus.Text = "Online"
+                    Form_Tools.Label_BotStatus.ForeColor = Color.LimeGreen
+                Catch ex As Exception
+
+                End Try
             End If
             FlatLabel_isUpdated.Select()
         Catch ex As Exception

@@ -1,5 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
+Imports FireSharp
+Imports FireSharp.Config
 
 Public Class Form_Startup
 
@@ -10,10 +12,33 @@ Public Class Form_Startup
     Public ProfilSelected As String = 0
     Public CheckedStats As String = 0
 
+    Private client As FirebaseClient
+
+    Public fcon As New FirebaseConfig() With
+        {
+        .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
+        .AuthSecret = Utils.Firebase_Secret
+        }
+
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
     End Sub
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label_Title.Text = "RidevBot v" + Application.ProductVersion
+        client = New FirebaseClient(fcon)
+
+        Me.Size = New Size(256, 251)
+        CenterToScreen()
+        Label_point_de_chute.Select()
+
+        Button_Load.Enabled = False
+        Button_SID_Load.Enabled = False
+        Try
+            Await Utils.GetNistTime()
+        Catch ex As Exception
+            Console.WriteLine($"Erreur:{ex.ToString}")
+        End Try
+
 
         'Dim test1 = Utils.GenerateSHA512String(Utils.Firebase_Secret)
         'MsgBox(test1)
@@ -23,6 +48,9 @@ Public Class Form_Startup
         ' coté serveur :  Dim dans_base_de_donnee = "1475a6209fc4fce52a6acc08a642d36caa916738"
         ' coté client Console.WriteLine(Utils.getSHA1Hash("sKZhQw5brMKAHXuUuyjYgmGNTNUwbpQPQ7b87ABYSevjugXRnDxmWes6GA5VEAYU"))
 
+        If My.Settings.License_check <> "Your license here" Then
+            Button_license_verify_Click(Nothing, Nothing)
+        End If
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
 
@@ -52,13 +80,10 @@ Public Class Form_Startup
         Panel_ProfilConnection.Location = New Point(0, 58)
         Panel_SidConnexion.Location = New Point(0, 58)
         PanelConnection.Location = New Point(0, 58)
+        Panel_License.Location = New Point(0, 58)
 
 #End Region
 
-        Label_Title.Text = "RidevBot v" + Application.ProductVersion
-        Me.Size = New Size(256, 251)
-        CenterToScreen()
-        Label_point_de_chute.Select()
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
 
@@ -103,10 +128,14 @@ Public Class Form_Startup
             End If
         End If
 
+
+        Me.Size = New Size(256, 251)
+        CenterToScreen()
+        Label_point_de_chute.Select()
+
     End Sub
 
     Private Sub UserAndPass_Button_Click(sender As Object, e As EventArgs) Handles UserAndPass_Button.Click
-
         ' Button 1 = User && Pass '
 
         Label_point_de_chute.Select()
@@ -115,17 +144,31 @@ Public Class Form_Startup
         PanelConnection.Visible = True
         Panel_SidConnexion.Visible = False
         Panel_ProfilConnection.Visible = False
+        Panel_License.Visible = False
 
         UserAndPass_Button.Enabled = False
         SID_Login_Button.Enabled = True
         Saved_Button.Enabled = True
-
-
-
+        Button_License.Enabled = True
     End Sub
 
-    Private Sub SID_Login_Button_Click(sender As Object, e As EventArgs) Handles SID_Login_Button.Click
+    Private Sub Button_License_Click(sender As Object, e As EventArgs) Handles Button_License.Click
+        ' License
 
+        Label_point_de_chute.Select()
+
+        Me.Size = New Size(291, 410)
+        PanelConnection.Visible = False
+        Panel_SidConnexion.Visible = False
+        Panel_ProfilConnection.Visible = False
+        Panel_License.Visible = True
+
+        UserAndPass_Button.Enabled = True
+        SID_Login_Button.Enabled = True
+        Saved_Button.Enabled = True
+        Button_License.Enabled = False
+    End Sub
+    Private Sub SID_Login_Button_Click(sender As Object, e As EventArgs) Handles SID_Login_Button.Click
         ' Button 1 = SID login '
 
         Label_point_de_chute.Select()
@@ -138,7 +181,7 @@ Public Class Form_Startup
         UserAndPass_Button.Enabled = True
         SID_Login_Button.Enabled = False
         Saved_Button.Enabled = True
-
+        Button_License.Enabled = True
     End Sub
 
     Private Sub Saved_Button_Click(sender As Object, e As EventArgs) Handles Saved_Button.Click
@@ -151,10 +194,12 @@ Public Class Form_Startup
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = False
         Panel_ProfilConnection.Visible = True
+        Panel_License.Visible = False
 
         UserAndPass_Button.Enabled = True
         SID_Login_Button.Enabled = True
         Saved_Button.Enabled = False
+        Button_License.Enabled = True
 
     End Sub
 
@@ -164,7 +209,6 @@ Public Class Form_Startup
         Label_point_de_chute.Select()
         Form_Tools.Show()
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
-        Form_Tools.TextBox_license_username.Text = Form_Tools.TextBox_ProfilSelected.Text
         Close()
 
     End Sub
@@ -439,11 +483,131 @@ Public Class Form_Startup
         End If
     End Sub
 
-    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs)
 
         Me.MinimizeBox = True
 
     End Sub
+
+    Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
+        If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
+            MessageBox.Show("You didn't put a license")
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            Button_Load.Enabled = False
+            Button_SID_Load.Enabled = False
+            Exit Sub
+        End If
+        Dim user_key = TextBox_license_check.Text
+        Dim res
+        Try
+            res = client.Get("Users/" + user_key)
+        Catch ex As Exception
+            MessageBox.Show("Can't get your license, check it correctly.")
+            TextBox_license_check.Text = "Your license here"
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            Button_Load.Enabled = False
+            Button_SID_Load.Enabled = False
+            Exit Sub
+        End Try
+        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
+            MessageBox.Show("Your account doesn't exist")
+            TextBox_license_check.Text = "Your license here"
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            Button_Load.Enabled = False
+            Button_SID_Load.Enabled = False
+            Exit Sub
+        End If
+
+        Dim resUser = res.ResultAs(Of Utilisateur)
+
+        Dim CurUser As New Utilisateur With
+            {
+            .NomUtilisateur = TextBox_license_username.Text,
+            .PasswordUtilisateur = TextBox_license_password.Text,
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key
+            }
+
+        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+            MessageBox.Show("t'as pas payé enculé")
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            Button_Load.Enabled = False
+            Button_SID_Load.Enabled = False
+            Exit Sub
+        End If
+
+        Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
+
+        If Not resUser.NomUtilisateur = Textbox_Username.Text Then
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            Button_Load.Enabled = False
+            Button_SID_Load.Enabled = False
+            MessageBox.Show($"Your license is not for this account.{vbNewLine}Please buy an another one that is linked with this one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Form_Startup.Show()
+            'Close()
+        Else
+            PictureBox_license_check.Image = My.Resources.success_icon
+            PictureBox_license_check.Tag = True
+
+            Button_Load.Enabled = True
+            Button_SID_Load.Enabled = True
+            MessageBox.Show($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
+        If PictureBox_license_check.Tag = True Then
+            MessageBox.Show("Your license is valid, you don't need to register")
+            Exit Sub
+        End If
+        If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
+            MessageBox.Show("You didn't put a correct username")
+            Exit Sub
+        End If
+        If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
+            MessageBox.Show("You didn't put a correct password")
+            Exit Sub
+        End If
+        If String.IsNullOrWhiteSpace(TextBox_UserMail.Text) Then
+            MessageBox.Show("You didn't put a correct mail")
+            Exit Sub
+        End If
+        If TextBox_UserMail.Text = "Your_Mail" Or
+            Not TextBox_UserMail.Text.Contains("@") Or
+            Not TextBox_UserMail.Text.Contains(".") Then
+
+            MessageBox.Show("You didn't put a correct mail")
+            Exit Sub
+        End If
+
+
+        Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
+
+        Dim res = client.Get("Users/" + user_key)
+        If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
+            MessageBox.Show("Your account already exist")
+            Exit Sub
+        End If
+
+        Dim CurUser As New Utilisateur With
+            {
+            .NomUtilisateur = TextBox_license_username.Text,
+            .PasswordUtilisateur = TextBox_license_password.Text,
+            .LicenseEndTime = Utils.DateDistant,
+            .LicenseActivated = False,
+            .LicenseKey = user_key,
+            .UserMail = TextBox_UserMail.Text
+            }
+        Dim setter = client.Set("Users/" + user_key, CurUser)
+        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+    End Sub
+
 
     'If e.KeyCode = Keys.Enter Then
     '    Button_License_Verify.PerformClick()
