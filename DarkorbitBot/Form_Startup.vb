@@ -128,10 +128,6 @@ Public Class Form_Startup
             End If
         End If
 
-
-        CenterToScreen()
-        Label_point_de_chute.Select()
-
     End Sub
 
     Private Sub UserAndPass_Button_Click(sender As Object, e As EventArgs) Handles UserAndPass_Button.Click

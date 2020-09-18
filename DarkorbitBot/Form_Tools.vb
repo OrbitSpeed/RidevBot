@@ -153,17 +153,17 @@ Public Class Form_Tools
 
         Calculator = 1
         Panel_autospin.Location = New Point(495, 68)
-        Panel_palladium_palladium.Location = New Point(0, 66)
-        panel_npc_npc.Location = New Point(0, 66)
-        Panel_collectable.Location = New Point(0, 66)
-        Panel_general.Location = New Point(0, 66)
-        Panel_Npc.Location = New Point(0, 66)
-        Panel_collector.Location = New Point(0, 66)
-        Panel_GalaxyGates.Location = New Point(0, 66)
-        Panel_Palladium.Location = New Point(0, 66)
-        Panel_stats.Location = New Point(0, 66)
-        Panel_rex.Location = New Point(0, 66)
-        Panel_divers.Location = New Point(0, 66)
+        Panel_palladium_palladium.Location = New Point(0, 24)
+        panel_npc_npc.Location = New Point(0, 24)
+        Panel_collectable.Location = New Point(0, 24)
+        Panel_general.Location = New Point(0, 24)
+        Panel_Npc.Location = New Point(0, 24)
+        Panel_collector.Location = New Point(0, 24)
+        Panel_GalaxyGates.Location = New Point(0, 24)
+        Panel_Palladium.Location = New Point(0, 24)
+        Panel_stats.Location = New Point(0, 24)
+        Panel_rex.Location = New Point(0, 24)
+        Panel_divers.Location = New Point(0, 24)
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
@@ -208,10 +208,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -230,10 +228,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -252,10 +248,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -274,11 +268,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Size = New Size(497, 412)
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
+        Size = New Size(400, 371)
 
     End Sub
 
@@ -296,10 +288,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 600)
 
     End Sub
@@ -318,10 +308,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -343,10 +331,8 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_suppresor_controler.Text = "﹀"
             Size = New Size(497, 412)
         Else
 
@@ -369,10 +355,8 @@ Public Class Form_Tools
                 Size = New Size(689, 705)
             End If
 
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_suppresor_controler.Text = "﹀"
 
             TextBox_uridiumGGS.Text = Utils.currentUridium
             ComboBox_autospin.Text = "ABG"
@@ -396,10 +380,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -422,10 +404,8 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_suppresor_controler.Text = "﹀"
             Size = New Size(497, 412)
 
         Else
@@ -442,10 +422,8 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_suppresor_controler.Text = "﹀"
             Size = New Size(497, 412)
 
         End If
@@ -466,10 +444,8 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -488,10 +464,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -510,10 +484,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Form_Startup.CheckedStats = 1
         Form_Startup.Show()
 
@@ -532,10 +504,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -553,10 +523,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(168, 47)
-        Button_suppresor_controler.Text = "⬇"
-        Panel_suppresor_controler2.Size = New Size(168, 47)
-        Button_suppresor_controler2.Text = "⬇"
+        Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_suppresor_controler.Text = "﹀"
         Size = New Size(497, 412)
 
     End Sub
@@ -1892,36 +1860,18 @@ Label_ClickGalaxyGates:
 
     Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
 
-        If Button_suppresor_controler.Text = "⬇" Then
-            Panel_suppresor_controler.Size = New Size(168, 350)
-            Button_suppresor_controler.Text = "⬆"
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
+        If Button_suppresor_controler.Text = "﹀" Then
+            Panel_suppresor_controler.Size = New Size(125, 407)
+            Button_suppresor_controler.Text = "︿"
 
-        ElseIf Button_suppresor_controler.Text = "⬆" Then
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
+        ElseIf Button_suppresor_controler.Text = "︿" Then
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_suppresor_controler.Text = "﹀"
 
         End If
 
 
     End Sub ' Supressor controler TOOLBAR General
-
-    Private Sub Button_suppresor_controler2_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler2.Click
-
-        If Button_suppresor_controler2.Text = "⬇" Then
-            Panel_suppresor_controler2.Size = New Size(165, 217)
-            Button_suppresor_controler2.Text = "⬆"
-            Panel_suppresor_controler.Size = New Size(168, 47)
-            Button_suppresor_controler.Text = "⬇"
-
-        ElseIf Button_suppresor_controler2.Text = "⬆" Then
-            Panel_suppresor_controler2.Size = New Size(168, 47)
-            Button_suppresor_controler2.Text = "⬇"
-
-        End If
-
-    End Sub ' Supressor controler TOOLBAR Configuration
 
     Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
@@ -2051,5 +2001,11 @@ Label_ClickGalaxyGates:
         '    }
         'Dim setter = client.Set("Users/" + user_key, CurUser)
         'MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+    End Sub
+
+    Private Sub Button_menu_Click(sender As Object, e As EventArgs) Handles Button_menu.Click
+
+        Button_suppresor_controler.PerformClick()
+
     End Sub
 End Class
