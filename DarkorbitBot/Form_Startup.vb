@@ -27,7 +27,7 @@ Public Class Form_Startup
         Label_Title.Text = "RidevBot v" + Application.ProductVersion
         client = New FirebaseClient(fcon)
 
-        Me.Size = New Size(256, 251)
+        Me.Size = New Size(303, 200)
         CenterToScreen()
         Label_point_de_chute.Select()
 
@@ -129,7 +129,6 @@ Public Class Form_Startup
         End If
 
 
-        Me.Size = New Size(256, 251)
         CenterToScreen()
         Label_point_de_chute.Select()
 
@@ -140,7 +139,7 @@ Public Class Form_Startup
 
         Label_point_de_chute.Select()
 
-        Me.Size = New Size(256, 201)
+        Me.Size = New Size(303, 200)
         PanelConnection.Visible = True
         Panel_SidConnexion.Visible = False
         Panel_ProfilConnection.Visible = False
@@ -157,7 +156,7 @@ Public Class Form_Startup
 
         Label_point_de_chute.Select()
 
-        Me.Size = New Size(291, 410)
+        Me.Size = New Size(303, 399)
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = False
         Panel_ProfilConnection.Visible = False
@@ -172,7 +171,7 @@ Public Class Form_Startup
         ' Button 1 = SID login '
 
         Label_point_de_chute.Select()
-        Me.Size = New Size(256, 201)
+        Me.Size = New Size(303, 200)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = True
@@ -189,7 +188,7 @@ Public Class Form_Startup
         ' Button 1 = Saved '
 
         Label_point_de_chute.Select()
-        Me.Size = New Size(256, 395)
+        Me.Size = New Size(303, 395)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = False

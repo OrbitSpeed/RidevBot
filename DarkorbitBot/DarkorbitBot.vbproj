@@ -681,6 +681,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\DividerLine2.png" />
+    <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\hhheades2-removebg-preview.png" />
+    <None Include="Resources\hheaders-removebg-preview.png" />
     <None Include="dll\System.Net.Http.Primitives.dll" />
     <None Include="dll\System.Net.Http.Extensions.dll" />
     <None Include="dll\Newtonsoft.Json.dll" />
