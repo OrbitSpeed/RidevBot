@@ -543,7 +543,7 @@ Public Class Form_Startup
             PictureBox_license_check.Tag = False
             Button_Load.Enabled = False
             Button_SID_Load.Enabled = False
-            MessageBox.Show($"Your license is not for this account.{vbNewLine}Please buy an another one that is linked with this one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '    MessageBox.Show($"Your license is not for this account.{vbNewLine}Please buy an another one that is linked with this one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'Form_Startup.Show()
             'Close()
         Else
@@ -552,32 +552,32 @@ Public Class Form_Startup
 
             Button_Load.Enabled = True
             Button_SID_Load.Enabled = True
-            MessageBox.Show($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '   MessageBox.Show($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
         If PictureBox_license_check.Tag = True Then
-            MessageBox.Show("Your license is valid, you don't need to register")
+            '    MessageBox.Show("Your license is valid, you don't need to register")
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
-            MessageBox.Show("You didn't put a correct username")
+            '      MessageBox.Show("You didn't put a correct username")
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
-            MessageBox.Show("You didn't put a correct password")
+            '     MessageBox.Show("You didn't put a correct password")
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_UserMail.Text) Then
-            MessageBox.Show("You didn't put a correct mail")
+            '       MessageBox.Show("You didn't put a correct mail")
             Exit Sub
         End If
         If TextBox_UserMail.Text = "Your_Mail" Or
             Not TextBox_UserMail.Text.Contains("@") Or
             Not TextBox_UserMail.Text.Contains(".") Then
 
-            MessageBox.Show("You didn't put a correct mail")
+            '    MessageBox.Show("You didn't put a correct mail")
             Exit Sub
         End If
 
@@ -586,7 +586,7 @@ Public Class Form_Startup
 
         Dim res = client.Get("Users/" + user_key)
         If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account already exist")
+            '   MessageBox.Show("Your account already exist")
             Exit Sub
         End If
 
@@ -600,7 +600,7 @@ Public Class Form_Startup
             .UserMail = TextBox_UserMail.Text
             }
         Dim setter = client.Set("Users/" + user_key, CurUser)
-        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+        '    MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
     End Sub
 
 
