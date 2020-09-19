@@ -566,15 +566,16 @@ Public Class Form_Tools
         '   Dim webClient As New System.Net.WebClient
         '   Dim result As String = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
-        Dim request = WebRequest.Create("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        request.Credentials = New System.Net.NetworkCredential("bgcdw_login_form_username", "bgcdw_login_form_password")
-        Console.WriteLine(request)
+        'Dim request = WebRequest.Create("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        'request.Credentials = New System.Net.NetworkCredential("TqtRhey", "lebse25660")
+        'Console.WriteLine(request)
+        'Console.WriteLine("-------------------------------------------")
 
-        Console.WriteLine("-------------------------------------------")
-
-        'Dim webClient2 As New System.Net.WebClient
+        Dim webClient2 As New System.Net.WebClient
+        webClient2.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
         'Dim result2 As String = webClient2.DownloadString("https: //" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        'Console.WriteLine(result2)
+        Dim result2 = webClient2.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Console.WriteLine(result2)
 
         'WebBrowser_GGInfo.Navigate("https:  //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         'WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
