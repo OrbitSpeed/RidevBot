@@ -254,7 +254,14 @@ Public Class Utils
             Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / ?"
         End If
     End Sub
-
+    '---
+    Public Shared Sub getGalaxyGates()
+        Dim webClient As New System.Net.WebClient
+        webClient.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        'Dim result2 As String = webClient2.DownloadString("https: //" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+        Dim result = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Console.WriteLine(result)
+    End Sub
 
 #End Region
     Public Shared Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer

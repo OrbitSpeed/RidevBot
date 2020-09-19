@@ -567,7 +567,6 @@ Public Class Form_Tools
         '   Dim result As String = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
         'Dim request = WebRequest.Create("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        'request.Credentials = New System.Net.NetworkCredential("TqtRhey", "lebse25660")
         'Console.WriteLine(request)
         'Console.WriteLine("-------------------------------------------")
 
