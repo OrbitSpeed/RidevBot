@@ -569,6 +569,16 @@ Public Class Form_Tools
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
+        'Test qui fonctionne !!
+        Console.WriteLine("---------------")
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "alpha"))
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "beta"))
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "gamma"))
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "delta"))
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "zeta"))
+        Console.WriteLine(Utils.getGalaxyGatesAndSetInfoUI(WebClient_Data, "kappa"))
+        Console.WriteLine("---------------")
+
         ' ON RECUPERE LA LIGNE QUE NOUS AVONS BESOIN 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate total=""34"".*?([\s\S]*?)>").Groups.Item(1).ToString
         Console.WriteLine(WebClient_GET_All_elements)

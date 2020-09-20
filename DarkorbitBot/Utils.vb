@@ -1,14 +1,11 @@
-﻿Imports System.Drawing.Imaging
-Imports System.Globalization
+﻿Imports System.Globalization
 Imports System.IO
 Imports System.Net
-Imports System.Net.Cache
 Imports System.Net.Sockets
 Imports System.Runtime.InteropServices
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
-Imports AutoItX3Lib
 
 Public Class Utils
 #Region "Cookie Manager"
@@ -116,10 +113,10 @@ Public Class Utils
             idGG = "7"
         ElseIf GGNumber = "lambda" Then
             idGG = "8"
-        ElseIf GGNumber = "hades" Then
-            idGG = "13"
         ElseIf GGNumber = "chronos" Then 'Or "21"
             idGG = "12"
+        ElseIf GGNumber = "hades" Then
+            idGG = "13"
         ElseIf GGNumber = "kuiper" Then 'Or "100"
             idGG = "19"
         Else
@@ -255,13 +252,61 @@ Public Class Utils
         End If
     End Sub
     '---
-    Public Shared Sub getGalaxyGates()
-        Dim webClient As New System.Net.WebClient
-        webClient.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        'Dim result2 As String = webClient2.DownloadString("https: //" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        Dim result = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        Console.WriteLine(result)
-    End Sub
+    Public Shared Function getGalaxyGatesAndSetInfoUI(Data As String, GGNumber As String)
+        GGNumber = GGNumber.ToString
+        Dim idGG As String
+        Dim pieceGG As Integer
+
+        If GGNumber = "alpha" Then 'Or GGNumber = "34" Then
+            idGG = "1"
+            pieceGG = "34"
+        ElseIf GGNumber = "beta" Then 'Or "48"
+            idGG = "2"
+            pieceGG = "48"
+        ElseIf GGNumber = "gamma" Then 'Or "82"
+            idGG = "3"
+            pieceGG = "82"
+        ElseIf GGNumber = "delta" Then 'Or "128"
+            idGG = "4"
+            pieceGG = "128"
+        ElseIf GGNumber = "epsilon" Then 'Or "99"
+            idGG = "5"
+            pieceGG = "99"
+        ElseIf GGNumber = "zeta" Then 'Or "111"
+            idGG = "6"
+            pieceGG = "111"
+        ElseIf GGNumber = "kappa" Then 'Or "120"
+            idGG = "7"
+            pieceGG = "120"
+        ElseIf GGNumber = "lambda" Then 'or 45
+            idGG = "8"
+            pieceGG = "45"
+        ElseIf GGNumber = "chronos" Then 'Or "21"
+            idGG = "12"
+            pieceGG = "21"
+        ElseIf GGNumber = "hades" Then 'or 45
+            idGG = "13"
+            pieceGG = "45"
+        ElseIf GGNumber = "kuiper" Then 'Or "100"
+            idGG = "19"
+            pieceGG = "100"
+        Else
+            idGG = "0"
+            MsgBox("Erreur lors du regex GG, si le problème persiste, contactez le support.")
+        End If
+
+        Dim DataToReturn As String = ""
+        'on recup la ligne qui contient la GG
+        DataToReturn = Regex.Match(Data, "<gate (.*id=""" + idGG + """.*) \/>").Groups.Item(1).ToString '<gate (.*id="1".*)\/>
+        Return DataToReturn
+
+        '--
+        'Dim webClient As New System.Net.WebClient
+        'webClient.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        ''Dim result2 As String = webClient2.DownloadString("https: //" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+        'Dim result = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        'Console.WriteLine(result)
+    End Function
 
 #End Region
     Public Shared Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer
