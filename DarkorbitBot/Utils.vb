@@ -219,12 +219,12 @@ Public Class Utils
         If Not regex_livesLeft.Length = 0 Then
 
             If regex_livesLeft > 5 Then
-                Form_Tools.Label_LivesLeft.Text = "Lives left : 5+"
+                Form_Tools.INFO_LIVES_LEFT_GG_LABEL.Text = "Lives left : 5+"
 
             ElseIf regex_livesLeft = -1 Then
-                Form_Tools.Label_LivesLeft.Text = "Lives left : -1"
+                Form_Tools.INFO_LIVES_LEFT_GG_LABEL.Text = "Lives left : -1"
             Else
-                Form_Tools.Label_LivesLeft.Text = "Lives left : " + regex_livesLeft
+                Form_Tools.INFO_LIVES_LEFT_GG_LABEL.Text = "Lives left : " + regex_livesLeft
 
             End If
         End If
@@ -232,26 +232,26 @@ Public Class Utils
 
     Public Shared Sub setInfoPartGG_InMap(Data As String)
         If Data.Contains("prepared1") Then
-            Form_Tools.Label_infoPartGG_InMap.Text = "On map : 1"
+            Form_Tools.INFO_ON_MAP_GG_LABEL.Text = "On map : 1"
 
         ElseIf Data.Contains("prepared0") Then
-            Form_Tools.Label_infoPartGG_InMap.Text = "On map : 0"
+            Form_Tools.INFO_ON_MAP_GG_LABEL.Text = "On map : 0"
 
         End If
     End Sub
     Public Shared Sub setWavePart(regex_currentWave As String, regex_totalWave As String, regex_currentPart As String, regex_totalPart As String)
         If Not regex_currentWave = "?" And Not regex_totalWave = "?" Then
-            Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
+            Form_Tools.INFO_WAVE_GG_LABEL.Text = "Wave : " + regex_currentWave + " / " + regex_totalWave
 
         Else
-            Form_Tools.Label_infoPartGG_CurrentWave.Text = "Wave : " + "?" + " / " + "?"
+            Form_Tools.INFO_WAVE_GG_LABEL.Text = "Wave : " + "?" + " / " + "?"
         End If
 
         If Not regex_currentPart = "?" And Not regex_totalPart = "?" Then
 
-            Form_Tools.Label_InfoPartGG.Text = "Part : " + regex_currentPart + " / " + regex_totalPart
+            Form_Tools.INFO_PART_GG_LABEL.Text = "Part : " + regex_currentPart + " / " + regex_totalPart
         Else
-            Form_Tools.Label_InfoPartGG.Text = "Part : " + "?" + " / ?"
+            Form_Tools.INFO_PART_GG_LABEL.Text = "Part : " + "?" + " / ?"
         End If
     End Sub
     '---

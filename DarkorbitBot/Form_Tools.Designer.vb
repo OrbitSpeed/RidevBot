@@ -195,11 +195,11 @@ Partial Class Form_Tools
         Me.TextBox_total_spinned = New System.Windows.Forms.TextBox()
         Me.Label_total_spinned = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG = New System.Windows.Forms.Panel()
-        Me.Label_infoPartGG_InMap = New System.Windows.Forms.Label()
-        Me.Label_InfoPartGG = New System.Windows.Forms.Label()
+        Me.INFO_ON_MAP_GG_LABEL = New System.Windows.Forms.Label()
+        Me.INFO_PART_GG_LABEL = New System.Windows.Forms.Label()
         Me.Panel_infoPartGG_GG = New System.Windows.Forms.Panel()
-        Me.Label_LivesLeft = New System.Windows.Forms.Label()
-        Me.Label_infoPartGG_CurrentWave = New System.Windows.Forms.Label()
+        Me.INFO_LIVES_LEFT_GG_LABEL = New System.Windows.Forms.Label()
+        Me.INFO_WAVE_GG_LABEL = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
         Me.Button_suppresor_controler_GGS = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -228,6 +228,8 @@ Partial Class Form_Tools
         Me.TextBox_ExtraEnergy_GGS = New System.Windows.Forms.TextBox()
         Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
         Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Button_lambda = New System.Windows.Forms.Button()
@@ -279,8 +281,6 @@ Partial Class Form_Tools
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -2730,8 +2730,8 @@ Partial Class Form_Tools
         'Panel_infoPartGG
         '
         Me.Panel_infoPartGG.BackColor = System.Drawing.Color.White
-        Me.Panel_infoPartGG.Controls.Add(Me.Label_infoPartGG_InMap)
-        Me.Panel_infoPartGG.Controls.Add(Me.Label_InfoPartGG)
+        Me.Panel_infoPartGG.Controls.Add(Me.INFO_ON_MAP_GG_LABEL)
+        Me.Panel_infoPartGG.Controls.Add(Me.INFO_PART_GG_LABEL)
         Me.Panel_infoPartGG.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_infoPartGG.ForeColor = System.Drawing.Color.Black
         Me.Panel_infoPartGG.Location = New System.Drawing.Point(218, 8)
@@ -2739,33 +2739,33 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG.Size = New System.Drawing.Size(272, 18)
         Me.Panel_infoPartGG.TabIndex = 78
         '
-        'Label_infoPartGG_InMap
+        'INFO_ON_MAP_GG_LABEL
         '
-        Me.Label_infoPartGG_InMap.AutoSize = True
-        Me.Label_infoPartGG_InMap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_infoPartGG_InMap.ForeColor = System.Drawing.Color.Black
-        Me.Label_infoPartGG_InMap.Location = New System.Drawing.Point(203, 2)
-        Me.Label_infoPartGG_InMap.Name = "Label_infoPartGG_InMap"
-        Me.Label_infoPartGG_InMap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_infoPartGG_InMap.TabIndex = 78
-        Me.Label_infoPartGG_InMap.Text = "On map : 0"
+        Me.INFO_ON_MAP_GG_LABEL.AutoSize = True
+        Me.INFO_ON_MAP_GG_LABEL.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.INFO_ON_MAP_GG_LABEL.ForeColor = System.Drawing.Color.Black
+        Me.INFO_ON_MAP_GG_LABEL.Location = New System.Drawing.Point(203, 2)
+        Me.INFO_ON_MAP_GG_LABEL.Name = "INFO_ON_MAP_GG_LABEL"
+        Me.INFO_ON_MAP_GG_LABEL.Size = New System.Drawing.Size(66, 15)
+        Me.INFO_ON_MAP_GG_LABEL.TabIndex = 78
+        Me.INFO_ON_MAP_GG_LABEL.Text = "On map : 0"
         '
-        'Label_InfoPartGG
+        'INFO_PART_GG_LABEL
         '
-        Me.Label_InfoPartGG.AutoSize = True
-        Me.Label_InfoPartGG.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_InfoPartGG.ForeColor = System.Drawing.Color.Black
-        Me.Label_InfoPartGG.Location = New System.Drawing.Point(0, 2)
-        Me.Label_InfoPartGG.Name = "Label_InfoPartGG"
-        Me.Label_InfoPartGG.Size = New System.Drawing.Size(62, 15)
-        Me.Label_InfoPartGG.TabIndex = 77
-        Me.Label_InfoPartGG.Text = "Part : 0 / 0"
+        Me.INFO_PART_GG_LABEL.AutoSize = True
+        Me.INFO_PART_GG_LABEL.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.INFO_PART_GG_LABEL.ForeColor = System.Drawing.Color.Black
+        Me.INFO_PART_GG_LABEL.Location = New System.Drawing.Point(0, 2)
+        Me.INFO_PART_GG_LABEL.Name = "INFO_PART_GG_LABEL"
+        Me.INFO_PART_GG_LABEL.Size = New System.Drawing.Size(62, 15)
+        Me.INFO_PART_GG_LABEL.TabIndex = 77
+        Me.INFO_PART_GG_LABEL.Text = "Part : 0 / 0"
         '
         'Panel_infoPartGG_GG
         '
         Me.Panel_infoPartGG_GG.BackColor = System.Drawing.Color.White
-        Me.Panel_infoPartGG_GG.Controls.Add(Me.Label_LivesLeft)
-        Me.Panel_infoPartGG_GG.Controls.Add(Me.Label_infoPartGG_CurrentWave)
+        Me.Panel_infoPartGG_GG.Controls.Add(Me.INFO_LIVES_LEFT_GG_LABEL)
+        Me.Panel_infoPartGG_GG.Controls.Add(Me.INFO_WAVE_GG_LABEL)
         Me.Panel_infoPartGG_GG.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_infoPartGG_GG.ForeColor = System.Drawing.Color.Black
         Me.Panel_infoPartGG_GG.Location = New System.Drawing.Point(218, 315)
@@ -2773,27 +2773,27 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.Size = New System.Drawing.Size(272, 18)
         Me.Panel_infoPartGG_GG.TabIndex = 79
         '
-        'Label_LivesLeft
+        'INFO_LIVES_LEFT_GG_LABEL
         '
-        Me.Label_LivesLeft.AutoSize = True
-        Me.Label_LivesLeft.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_LivesLeft.ForeColor = System.Drawing.Color.Black
-        Me.Label_LivesLeft.Location = New System.Drawing.Point(197, 0)
-        Me.Label_LivesLeft.Name = "Label_LivesLeft"
-        Me.Label_LivesLeft.Size = New System.Drawing.Size(72, 15)
-        Me.Label_LivesLeft.TabIndex = 78
-        Me.Label_LivesLeft.Text = "Lives left : -1"
+        Me.INFO_LIVES_LEFT_GG_LABEL.AutoSize = True
+        Me.INFO_LIVES_LEFT_GG_LABEL.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.INFO_LIVES_LEFT_GG_LABEL.ForeColor = System.Drawing.Color.Black
+        Me.INFO_LIVES_LEFT_GG_LABEL.Location = New System.Drawing.Point(197, 0)
+        Me.INFO_LIVES_LEFT_GG_LABEL.Name = "INFO_LIVES_LEFT_GG_LABEL"
+        Me.INFO_LIVES_LEFT_GG_LABEL.Size = New System.Drawing.Size(72, 15)
+        Me.INFO_LIVES_LEFT_GG_LABEL.TabIndex = 78
+        Me.INFO_LIVES_LEFT_GG_LABEL.Text = "Lives left : -1"
         '
-        'Label_infoPartGG_CurrentWave
+        'INFO_WAVE_GG_LABEL
         '
-        Me.Label_infoPartGG_CurrentWave.AutoSize = True
-        Me.Label_infoPartGG_CurrentWave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_infoPartGG_CurrentWave.ForeColor = System.Drawing.Color.Black
-        Me.Label_infoPartGG_CurrentWave.Location = New System.Drawing.Point(0, -1)
-        Me.Label_infoPartGG_CurrentWave.Name = "Label_infoPartGG_CurrentWave"
-        Me.Label_infoPartGG_CurrentWave.Size = New System.Drawing.Size(71, 15)
-        Me.Label_infoPartGG_CurrentWave.TabIndex = 77
-        Me.Label_infoPartGG_CurrentWave.Text = "Wave : 0 / 0"
+        Me.INFO_WAVE_GG_LABEL.AutoSize = True
+        Me.INFO_WAVE_GG_LABEL.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.INFO_WAVE_GG_LABEL.ForeColor = System.Drawing.Color.Black
+        Me.INFO_WAVE_GG_LABEL.Location = New System.Drawing.Point(0, -1)
+        Me.INFO_WAVE_GG_LABEL.Name = "INFO_WAVE_GG_LABEL"
+        Me.INFO_WAVE_GG_LABEL.Size = New System.Drawing.Size(71, 15)
+        Me.INFO_WAVE_GG_LABEL.TabIndex = 77
+        Me.INFO_WAVE_GG_LABEL.Text = "Wave : 0 / 0"
         '
         'Panel_GalaxyGates
         '
@@ -3209,6 +3209,31 @@ Partial Class Form_Tools
         Me.Label20.Size = New System.Drawing.Size(56, 15)
         Me.Label20.TabIndex = 100
         Me.Label20.Text = "Spin Tab."
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(17, 253)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 30)
+        Me.Label2.TabIndex = 101
+        Me.Label2.Text = "Repair credit"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label5.AutoSize = True
+        Me.Label5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Part", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(130, 261)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(14, 15)
+        Me.Label5.TabIndex = 102
+        Me.Label5.Text = Global.DarkorbitBot.My.MySettings.Default.Part
         '
         'TextBox_WinGGS
         '
@@ -3964,31 +3989,6 @@ Partial Class Form_Tools
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTip1.ToolTipTitle = "RidevBot Help"
         '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(17, 253)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 30)
-        Me.Label2.TabIndex = 101
-        Me.Label2.Text = "Repair credit"
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Part", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(130, 261)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(14, 15)
-        Me.Label5.TabIndex = 102
-        Me.Label5.Text = Global.DarkorbitBot.My.MySettings.Default.Part
-        '
         'FlatMini1
         '
         Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -4191,11 +4191,11 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_uridiumtokeepGGS As TextBox
     Friend WithEvents ComboBox_autospin As ComboBox
     Friend WithEvents Panel_infoPartGG As Panel
-    Friend WithEvents Label_infoPartGG_InMap As Label
-    Friend WithEvents Label_InfoPartGG As Label
+    Friend WithEvents INFO_ON_MAP_GG_LABEL As Label
+    Friend WithEvents INFO_PART_GG_LABEL As Label
     Friend WithEvents Panel_infoPartGG_GG As Panel
-    Friend WithEvents Label_LivesLeft As Label
-    Friend WithEvents Label_infoPartGG_CurrentWave As Label
+    Friend WithEvents INFO_LIVES_LEFT_GG_LABEL As Label
+    Friend WithEvents INFO_WAVE_GG_LABEL As Label
     Friend WithEvents Button_resettabspin As Button
     Friend WithEvents Panel_GalaxyGates As Panel
     Friend WithEvents PictureBox_epinglerBot As PictureBox

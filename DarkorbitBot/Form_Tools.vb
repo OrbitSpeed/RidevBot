@@ -560,24 +560,59 @@ Public Class Form_Tools
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
 
-        ComboBox_autospin.Text = "Alpha"
+        ComboBox_autospin.Text = "ABG"
 
-        '  Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-        '   Dim webClient As New System.Net.WebClient
-        '   Dim result As String = webClient.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        ' WebClient_POST > WebClient_Data > WebClient_GET_All_elements > WebClient_GET...
 
-        'Dim request = WebRequest.Create("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        'Console.WriteLine(request)
-        'Console.WriteLine("-------------------------------------------")
+        ' ON ENVOI UN POST/GET POUR LA GALAXY GATES + COOKIES MANAGER + STOCKAGE 
+        Dim WebClient_POST As New System.Net.WebClient
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
-        Dim webClient2 As New System.Net.WebClient
-        webClient2.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        'Dim result2 As String = webClient2.DownloadString("https: //" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-        Dim result2 = webClient2.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        Console.WriteLine(result2)
+        ' ON RECUPERE LA LIGNE QUE NOUS AVONS BESOIN 
+        Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate total=""34"".*?([\s\S]*?)>").Groups.Item(1).ToString
+        Console.WriteLine(WebClient_GET_All_elements)
 
-        'WebBrowser_GGInfo.Navigate("https:  //" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        'WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+        ' DEFINIR CURRENT WAVE AU PANEL + TOTAL WAVE
+        Dim WebClient_GET_currentWave = Regex.Match(WebClient_GET_All_elements, "currentWave="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_totalWave = Regex.Match(WebClient_GET_All_elements, "totalWave="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        INFO_WAVE_GG_LABEL.Text = "Wave : " + WebClient_GET_currentWave + " / " + WebClient_GET_totalWave
+
+        ' DEFINIR NOMBRE DE VIE RESTANT
+        Dim WebClient_GET_livesLeft = Regex.Match(WebClient_GET_All_elements, "livesLeft="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        INFO_LIVES_LEFT_GG_LABEL.Text = "Lives left : " + WebClient_GET_livesLeft
+
+        ' LE PRIX DE LA VIE SI TU VEUT EN ACHETER UNE NOUVELLE 
+        Dim WebClient_GET_current_part = Regex.Match(WebClient_GET_All_elements, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        INFO_PART_GG_LABEL.Text = "Part : " + WebClient_GET_current_part + " / 34"
+
+        ' LE PRIX DE LA VIE SI TU VEUT EN ACHETER UNE NOUVELLE 
+        Dim WebClient_GET_lifePrice = Regex.Match(WebClient_GET_All_elements, "lifePrice="".*?([\s\S]*?)""").Groups.Item(1).ToString
+
+        If WebClient_GET_All_elements.Contains("state=""in_progress""") Then
+
+            ' LA GG N'EST PAS COMPLETE
+
+        Else
+
+            ' LA GG EST COMPLETE
+
+        End If
+
+        If WebClient_GET_All_elements.Contains("prepared=""1""") Then
+
+            INFO_ON_MAP_GG_LABEL.Text = "On Map : 1"
+
+        Else
+
+            INFO_ON_MAP_GG_LABEL.Text = "On Map : 0"
+
+        End If
+
+
+        WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
+
+
 
     End Sub
 
@@ -839,8 +874,8 @@ Public Class Form_Tools
 
 Label_ClickGalaxyGates:
 
-        infoinMapGG = Label_infoPartGG_InMap.Text.Replace("On map : ", "")
-        infoPartGG = Label_InfoPartGG.Text.Replace("Part : ", "")
+        infoinMapGG = INFO_ON_MAP_GG_LABEL.Text.Replace("On map : ", "")
+        infoPartGG = INFO_PART_GG_LABEL.Text.Replace("Part : ", "")
 
 
         If exitGGS = 1 Then
@@ -1362,7 +1397,7 @@ Label_ClickGalaxyGates:
 
         Dim html107 = WebBrowser_GGInfo.DocumentText.Clone
         TextBox_GGinfoGGS.Text = html107
-
+        '
         Dim DataSamples2 = Regex.Match(TextBox_GGinfoGGS.Text, "<SPAN class=""m"">&lt;<\/SPAN>(<SPAN class=""t"">samples.*?>[\s\S]*?)class=""t"">samples<\/SPAN>").Groups.Item(1).ToString ' energy restante
 
         DataSamples2 = DataSamples2.Replace("<SPAN Class=""t" > "", "")
