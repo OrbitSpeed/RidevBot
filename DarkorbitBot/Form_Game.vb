@@ -61,6 +61,15 @@ Public Class Form_Game
         Return Client_primary
         'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
     End Function
+    Function Update_Screen_At_Zone(x As Integer, y As Integer)
+        Dim Client_primary = New Bitmap(x, y)
+        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
+        Invoke(New MethodInvoker(Sub()
+                                     Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(x, y), Client_primary.Size)
+                                 End Sub))
+        Return Client_primary
+        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
+    End Function
 
     Public User_Stop_Bot As Boolean = True
     Public CurrentMapUser = "0-0"
@@ -3865,10 +3874,6 @@ Public Class Form_Game
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
         Await Task.Delay(350)
 
-
-
-
-
         Dim DROITE = My.Resources.Locked_One
         Dim GAUCHE = My.Resources.Locked_Two
         Dim HAUT = My.Resources.Locked_Three
@@ -3876,7 +3881,6 @@ Public Class Form_Game
         Dim Click_Zone = My.Resources.Click_Zone_Possible2
 
 Label_GotoHome:
-
 
         ' ----------------------------------------
 
@@ -3898,7 +3902,12 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked")
 
+                    Client_Screen = Update_Screen_At_Zone(Locked_True, 300)
                     Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                    Console.WriteLine("---DEBUG---")
+                    Console.WriteLine(Click_Zone_possible.X)
+                    Console.WriteLine(Locked_True)
+                    Console.WriteLine("---DEBUG---")
                     If Click_Zone_possible.X = Locked_True Then
 
                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X + 370, Locked_Droite.Y)
@@ -4648,75 +4657,6 @@ Label_GotoHome:
 
     Private Sub Button_dead_Click(sender As Object, e As EventArgs) Handles Button_dead.Click
 
-
-
-    End Sub
-
-    Private Async Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
-
-        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        Await Task.Delay(500)
-        Dim DataAlpha = Utils.getRegexGG(Form_Tools.TextBox_GGinfoGGS.Text, "alpha")
-        Console.WriteLine(DataAlpha)
-
-        If DataAlpha.contains("prepared1") Then
-
-            If Form_Tools.ComboBox_map_to_travel.Text.Contains("Alpha") Then
-                If Form_Tools.ComboBox_firme.Text = "MMO" Then
-
-                    Form_Tools.ComboBox_map_to_travel.Text = "1-1"
-                    Form_Tools.ComboBox_map_to_travel.Refresh()
-                    Button_Traveling_Module.PerformClick()
-                    Exit Sub
-
-                ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-
-                    Form_Tools.ComboBox_map_to_travel.Text = "2-1"
-                    Form_Tools.ComboBox_map_to_travel.Refresh()
-                    Button_Traveling_Module.PerformClick()
-                    Exit Sub
-
-                ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
-
-                    Form_Tools.ComboBox_map_to_travel.Text = "3-1"
-                    Form_Tools.ComboBox_map_to_travel.Refresh()
-                    Button_Traveling_Module.PerformClick()
-                    Exit Sub
-
-
-                End If
-            End If
-        Else
-            MessageBox.Show("You don't have any Alpha on your motherboard. Aborting.")
-
-
-        End If
-
-        '        Exit Sub
-
-        'Traveling_return:
-
-        '        Form_Tools.WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-        '        Await Task.Delay(500)
-        '        Dim regex_currentWave = Utils.getCurrentWave(DataAlpha)
-        '        Dim regex_totalWave = Utils.getTotalWave(DataAlpha)
-
-        '        Console.WriteLine($"current:{regex_currentWave}")
-        '        Console.WriteLine($"total:{regex_totalWave}")
-        '        ' trouver l'emplacement de la gg 
-        '        If Form_Tools.ComboBox_firme.Text = "MMO" Then
-
-        '            MsgBox("trouver l'emplacement de la gg ")
-
-        '        ElseIf Form_Tools.ComboBox_firme.Text = "EIC" Then
-
-        '            MsgBox("trouver l'emplacement de la gg ")
-
-        '        ElseIf Form_Tools.ComboBox_firme.Text = "VRU" Then
-
-        '            MsgBox("trouver l'emplacement de la gg ")
-
-        '        End If
 
 
     End Sub

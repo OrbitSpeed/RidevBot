@@ -138,6 +138,7 @@ Partial Class Form_Tools
         Me.CheckBox_repair_pet_auto = New System.Windows.Forms.CheckBox()
         Me.Panel_divers = New System.Windows.Forms.Panel()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
+        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
@@ -175,18 +176,6 @@ Partial Class Form_Tools
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
         Me.Button_Gamma_GGS = New System.Windows.Forms.Button()
-        Me.Panel_Gamma_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label_Gamma_ABG_GGS_part = New System.Windows.Forms.Label()
-        Me.Label_Gamma_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Panel_Beta_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label_Beta_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Label_Beta_ABG_GGS_part = New System.Windows.Forms.Label()
-        Me.Panel_Alpha_ABG_GGS = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label_Alpha_ABG_GGS_onmap = New System.Windows.Forms.Label()
-        Me.Label_Alpha_ABG_GGS_part = New System.Windows.Forms.Label()
         Me.Button_beta_GGS = New System.Windows.Forms.Button()
         Me.Button_alpha_GGS = New System.Windows.Forms.Button()
         Me.Button_PrepareGates = New System.Windows.Forms.Button()
@@ -201,6 +190,29 @@ Partial Class Form_Tools
         Me.INFO_LIVES_LEFT_GG_LABEL = New System.Windows.Forms.Label()
         Me.INFO_WAVE_GG_LABEL = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label_alpha = New System.Windows.Forms.Label()
+        Me.Label_beta = New System.Windows.Forms.Label()
+        Me.Label_gamma = New System.Windows.Forms.Label()
+        Me.Label_delta = New System.Windows.Forms.Label()
+        Me.Button_Alpha = New System.Windows.Forms.Button()
+        Me.Label_epsilon = New System.Windows.Forms.Label()
+        Me.Button_lambda = New System.Windows.Forms.Button()
+        Me.Label_zeta = New System.Windows.Forms.Label()
+        Me.Label_kappa = New System.Windows.Forms.Label()
+        Me.Button_kronos = New System.Windows.Forms.Button()
+        Me.Button_Kappa = New System.Windows.Forms.Button()
+        Me.Label_lambda = New System.Windows.Forms.Label()
+        Me.Label_hades = New System.Windows.Forms.Label()
+        Me.Button_delta = New System.Windows.Forms.Button()
+        Me.Label_kuiper = New System.Windows.Forms.Label()
+        Me.Label_chronos = New System.Windows.Forms.Label()
+        Me.Button_hades = New System.Windows.Forms.Button()
+        Me.Button_kuiper = New System.Windows.Forms.Button()
+        Me.Button_beta = New System.Windows.Forms.Button()
+        Me.Button_gamma = New System.Windows.Forms.Button()
+        Me.Button_epsilon = New System.Windows.Forms.Button()
+        Me.Button_zeta = New System.Windows.Forms.Button()
         Me.Button_suppresor_controler_GGS = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label_Part = New System.Windows.Forms.Label()
@@ -231,17 +243,6 @@ Partial Class Form_Tools
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
-        Me.Button_Alpha = New System.Windows.Forms.Button()
-        Me.Button_lambda = New System.Windows.Forms.Button()
-        Me.Button_Kappa = New System.Windows.Forms.Button()
-        Me.Button_delta = New System.Windows.Forms.Button()
-        Me.Button_kronos = New System.Windows.Forms.Button()
-        Me.Button_gamma = New System.Windows.Forms.Button()
-        Me.Button_beta = New System.Windows.Forms.Button()
-        Me.Button_epsilon = New System.Windows.Forms.Button()
-        Me.Button_zeta = New System.Windows.Forms.Button()
-        Me.Button_hades = New System.Windows.Forms.Button()
-        Me.Button_kuiper = New System.Windows.Forms.Button()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Stats_Button = New System.Windows.Forms.Button()
         Me.Rex_Button = New System.Windows.Forms.Button()
@@ -276,7 +277,6 @@ Partial Class Form_Tools
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel_palladium_palladium = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.WebBrowser_GGInfo = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
@@ -308,12 +308,10 @@ Partial Class Form_Tools
         CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_autospin.SuspendLayout()
-        Me.Panel_Gamma_ABG_GGS.SuspendLayout()
-        Me.Panel_Beta_ABG_GGS.SuspendLayout()
-        Me.Panel_Alpha_ABG_GGS.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel_suppresor_controler.SuspendLayout()
         Me.Panel_collectable.SuspendLayout()
@@ -1961,8 +1959,9 @@ Partial Class Form_Tools
         Me.Panel_divers.Controls.Add(Me.CheckBox_colormod)
         Me.Panel_divers.Controls.Add(Me.ComboBox_colormod)
         Me.Panel_divers.Controls.Add(Me.CheckBox1)
+        Me.Panel_divers.Controls.Add(Me.CheckBox_AutoUpdate)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
-        Me.Panel_divers.Location = New System.Drawing.Point(863, 433)
+        Me.Panel_divers.Location = New System.Drawing.Point(1208, 390)
         Me.Panel_divers.Name = "Panel_divers"
         Me.Panel_divers.Size = New System.Drawing.Size(496, 345)
         Me.Panel_divers.TabIndex = 48
@@ -1977,6 +1976,24 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER.TabIndex = 0
         Me.Labe_DIVERS__A_SUPPRIMER.Text = "divers"
         Me.Labe_DIVERS__A_SUPPRIMER.Visible = False
+        '
+        'CheckBox_AutoUpdate
+        '
+        Me.CheckBox_AutoUpdate.AutoSize = True
+        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
+        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(55, 118)
+        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
+        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(138, 17)
+        Me.CheckBox_AutoUpdate.TabIndex = 36
+        Me.CheckBox_AutoUpdate.Text = "Auto Update RidevBot"
+        Me.CheckBox_AutoUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
+        Me.CheckBox_AutoUpdate.Visible = False
         '
         'Panel_MoveTitle
         '
@@ -2286,13 +2303,10 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.ComboBox_autospin)
         Me.Panel_autospin.Controls.Add(Me.Button_ABG_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_Gamma_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Panel_Gamma_ABG_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Panel_Beta_ABG_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Panel_Alpha_ABG_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_autospin.Location = New System.Drawing.Point(585, 1063)
+        Me.Panel_autospin.Location = New System.Drawing.Point(968, 412)
         Me.Panel_autospin.Name = "Panel_autospin"
         Me.Panel_autospin.Size = New System.Drawing.Size(192, 639)
         Me.Panel_autospin.TabIndex = 78
@@ -2491,148 +2505,6 @@ Partial Class Form_Tools
         Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
         Me.Button_Gamma_GGS.Visible = False
         '
-        'Panel_Gamma_ABG_GGS
-        '
-        Me.Panel_Gamma_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Gamma_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label11)
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_part)
-        Me.Panel_Gamma_ABG_GGS.Controls.Add(Me.Label_Gamma_ABG_GGS_onmap)
-        Me.Panel_Gamma_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Gamma_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Gamma_ABG_GGS.Location = New System.Drawing.Point(8, 340)
-        Me.Panel_Gamma_ABG_GGS.Name = "Panel_Gamma_ABG_GGS"
-        Me.Panel_Gamma_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Gamma_ABG_GGS.TabIndex = 106
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Gold
-        Me.Label11.Location = New System.Drawing.Point(79, 2)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(15, 15)
-        Me.Label11.TabIndex = 79
-        Me.Label11.Text = "G"
-        '
-        'Label_Gamma_ABG_GGS_part
-        '
-        Me.Label_Gamma_ABG_GGS_part.AutoSize = True
-        Me.Label_Gamma_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Gamma_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Gamma_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Gamma_ABG_GGS_part.Name = "Label_Gamma_ABG_GGS_part"
-        Me.Label_Gamma_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Gamma_ABG_GGS_part.TabIndex = 77
-        Me.Label_Gamma_ABG_GGS_part.Text = "Part : 00 / 82"
-        '
-        'Label_Gamma_ABG_GGS_onmap
-        '
-        Me.Label_Gamma_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Gamma_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Gamma_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Gamma_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Gamma_ABG_GGS_onmap.Name = "Label_Gamma_ABG_GGS_onmap"
-        Me.Label_Gamma_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Gamma_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Gamma_ABG_GGS_onmap.Text = "On map : 0"
-        '
-        'Panel_Beta_ABG_GGS
-        '
-        Me.Panel_Beta_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Beta_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label7)
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_onmap)
-        Me.Panel_Beta_ABG_GGS.Controls.Add(Me.Label_Beta_ABG_GGS_part)
-        Me.Panel_Beta_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Beta_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Beta_ABG_GGS.Location = New System.Drawing.Point(8, 313)
-        Me.Panel_Beta_ABG_GGS.Name = "Panel_Beta_ABG_GGS"
-        Me.Panel_Beta_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Beta_ABG_GGS.TabIndex = 106
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Gold
-        Me.Label7.Location = New System.Drawing.Point(79, 2)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(14, 15)
-        Me.Label7.TabIndex = 79
-        Me.Label7.Text = "B"
-        '
-        'Label_Beta_ABG_GGS_onmap
-        '
-        Me.Label_Beta_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Beta_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Beta_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Beta_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Beta_ABG_GGS_onmap.Name = "Label_Beta_ABG_GGS_onmap"
-        Me.Label_Beta_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Beta_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Beta_ABG_GGS_onmap.Text = "On map : 0"
-        '
-        'Label_Beta_ABG_GGS_part
-        '
-        Me.Label_Beta_ABG_GGS_part.AutoSize = True
-        Me.Label_Beta_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Beta_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Beta_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Beta_ABG_GGS_part.Name = "Label_Beta_ABG_GGS_part"
-        Me.Label_Beta_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Beta_ABG_GGS_part.TabIndex = 77
-        Me.Label_Beta_ABG_GGS_part.Text = "Part : 00 / 48"
-        '
-        'Panel_Alpha_ABG_GGS
-        '
-        Me.Panel_Alpha_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Alpha_ABG_GGS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label6)
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_onmap)
-        Me.Panel_Alpha_ABG_GGS.Controls.Add(Me.Label_Alpha_ABG_GGS_part)
-        Me.Panel_Alpha_ABG_GGS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_Alpha_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Panel_Alpha_ABG_GGS.Location = New System.Drawing.Point(8, 286)
-        Me.Panel_Alpha_ABG_GGS.Name = "Panel_Alpha_ABG_GGS"
-        Me.Panel_Alpha_ABG_GGS.Size = New System.Drawing.Size(170, 18)
-        Me.Panel_Alpha_ABG_GGS.TabIndex = 105
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Gold
-        Me.Label6.Location = New System.Drawing.Point(79, 2)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(15, 15)
-        Me.Label6.TabIndex = 79
-        Me.Label6.Text = "A"
-        '
-        'Label_Alpha_ABG_GGS_onmap
-        '
-        Me.Label_Alpha_ABG_GGS_onmap.AutoSize = True
-        Me.Label_Alpha_ABG_GGS_onmap.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Alpha_ABG_GGS_onmap.ForeColor = System.Drawing.Color.Black
-        Me.Label_Alpha_ABG_GGS_onmap.Location = New System.Drawing.Point(98, 2)
-        Me.Label_Alpha_ABG_GGS_onmap.Name = "Label_Alpha_ABG_GGS_onmap"
-        Me.Label_Alpha_ABG_GGS_onmap.Size = New System.Drawing.Size(66, 15)
-        Me.Label_Alpha_ABG_GGS_onmap.TabIndex = 78
-        Me.Label_Alpha_ABG_GGS_onmap.Text = "On map : 0"
-        Me.Label_Alpha_ABG_GGS_onmap.Visible = False
-        '
-        'Label_Alpha_ABG_GGS_part
-        '
-        Me.Label_Alpha_ABG_GGS_part.AutoSize = True
-        Me.Label_Alpha_ABG_GGS_part.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Alpha_ABG_GGS_part.ForeColor = System.Drawing.Color.Black
-        Me.Label_Alpha_ABG_GGS_part.Location = New System.Drawing.Point(0, 2)
-        Me.Label_Alpha_ABG_GGS_part.Name = "Label_Alpha_ABG_GGS_part"
-        Me.Label_Alpha_ABG_GGS_part.Size = New System.Drawing.Size(76, 15)
-        Me.Label_Alpha_ABG_GGS_part.TabIndex = 77
-        Me.Label_Alpha_ABG_GGS_part.Text = "Part : 00 / 34"
-        '
         'Button_beta_GGS
         '
         Me.Button_beta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
@@ -2640,7 +2512,7 @@ Partial Class Form_Tools
         Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 328)
+        Me.Button_beta_GGS.Location = New System.Drawing.Point(3, 306)
         Me.Button_beta_GGS.Name = "Button_beta_GGS"
         Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_beta_GGS.TabIndex = 103
@@ -2655,7 +2527,7 @@ Partial Class Form_Tools
         Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 297)
+        Me.Button_alpha_GGS.Location = New System.Drawing.Point(3, 275)
         Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
         Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_alpha_GGS.TabIndex = 102
@@ -2798,30 +2670,387 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel7)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_suppresor_controler_GGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_PrepareGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_Alpha)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG_GG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_lambda)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_Kappa)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_delta)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_kronos)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_gamma)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_beta)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_epsilon)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_zeta)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_hades)
-        Me.Panel_GalaxyGates.Controls.Add(Me.Button_kuiper)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
-        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(48, 379)
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(434, 389)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
         Me.Panel_GalaxyGates.Size = New System.Drawing.Size(497, 639)
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TableLayoutPanel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TableLayoutPanel7.ColumnCount = 2
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666!))
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_alpha, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_beta, 0, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_gamma, 0, 2)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_delta, 0, 3)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_Alpha, 1, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_epsilon, 0, 4)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_lambda, 1, 7)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_zeta, 0, 5)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_kappa, 0, 6)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_kronos, 1, 10)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_Kappa, 1, 6)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_lambda, 0, 7)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_hades, 0, 8)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_delta, 1, 3)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_kuiper, 0, 9)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label_chronos, 0, 10)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_hades, 1, 8)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_kuiper, 1, 9)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_beta, 1, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_gamma, 1, 2)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_epsilon, 1, 4)
+        Me.TableLayoutPanel7.Controls.Add(Me.Button_zeta, 1, 5)
+        Me.TableLayoutPanel7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel7.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(14, 8)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 11
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(193, 284)
+        Me.TableLayoutPanel7.TabIndex = 103
+        '
+        'Label_alpha
+        '
+        Me.Label_alpha.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_alpha.AutoSize = True
+        Me.Label_alpha.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_alpha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_alpha.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_alpha.ForeColor = System.Drawing.Color.Black
+        Me.Label_alpha.Location = New System.Drawing.Point(26, 4)
+        Me.Label_alpha.Name = "Label_alpha"
+        Me.Label_alpha.Size = New System.Drawing.Size(108, 17)
+        Me.Label_alpha.TabIndex = 90
+        Me.Label_alpha.Text = "Alpha  [ 00 / 00 ]"
+        '
+        'Label_beta
+        '
+        Me.Label_beta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_beta.AutoSize = True
+        Me.Label_beta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_beta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_beta.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_beta.ForeColor = System.Drawing.Color.Black
+        Me.Label_beta.Location = New System.Drawing.Point(30, 29)
+        Me.Label_beta.Name = "Label_beta"
+        Me.Label_beta.Size = New System.Drawing.Size(100, 17)
+        Me.Label_beta.TabIndex = 91
+        Me.Label_beta.Text = "Beta  [ 00 / 00 ]"
+        '
+        'Label_gamma
+        '
+        Me.Label_gamma.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_gamma.AutoSize = True
+        Me.Label_gamma.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_gamma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_gamma.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_gamma.ForeColor = System.Drawing.Color.Black
+        Me.Label_gamma.Location = New System.Drawing.Point(20, 54)
+        Me.Label_gamma.Name = "Label_gamma"
+        Me.Label_gamma.Size = New System.Drawing.Size(120, 17)
+        Me.Label_gamma.TabIndex = 92
+        Me.Label_gamma.Text = "Gamma  [ 00 / 00 ]"
+        '
+        'Label_delta
+        '
+        Me.Label_delta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_delta.AutoSize = True
+        Me.Label_delta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_delta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_delta.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_delta.ForeColor = System.Drawing.Color.Black
+        Me.Label_delta.Location = New System.Drawing.Point(28, 79)
+        Me.Label_delta.Name = "Label_delta"
+        Me.Label_delta.Size = New System.Drawing.Size(104, 17)
+        Me.Label_delta.TabIndex = 93
+        Me.Label_delta.Text = "Delta  [ 00 / 00 ]"
+        '
+        'Button_Alpha
+        '
+        Me.Button_Alpha.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_Alpha.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Alpha.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_Alpha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Alpha.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Alpha.ForeColor = System.Drawing.Color.White
+        Me.Button_Alpha.Image = CType(resources.GetObject("Button_Alpha.Image"), System.Drawing.Image)
+        Me.Button_Alpha.Location = New System.Drawing.Point(163, 3)
+        Me.Button_Alpha.Name = "Button_Alpha"
+        Me.Button_Alpha.Size = New System.Drawing.Size(27, 19)
+        Me.Button_Alpha.TabIndex = 27
+        Me.Button_Alpha.UseVisualStyleBackColor = False
+        '
+        'Label_epsilon
+        '
+        Me.Label_epsilon.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_epsilon.AutoSize = True
+        Me.Label_epsilon.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_epsilon.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_epsilon.ForeColor = System.Drawing.Color.Black
+        Me.Label_epsilon.Location = New System.Drawing.Point(22, 104)
+        Me.Label_epsilon.Name = "Label_epsilon"
+        Me.Label_epsilon.Size = New System.Drawing.Size(116, 17)
+        Me.Label_epsilon.TabIndex = 94
+        Me.Label_epsilon.Text = "Epsilon  [ 00 / 00 ]"
+        '
+        'Button_lambda
+        '
+        Me.Button_lambda.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_lambda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_lambda.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_lambda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_lambda.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_lambda.ForeColor = System.Drawing.Color.White
+        Me.Button_lambda.Image = CType(resources.GetObject("Button_lambda.Image"), System.Drawing.Image)
+        Me.Button_lambda.Location = New System.Drawing.Point(163, 178)
+        Me.Button_lambda.Name = "Button_lambda"
+        Me.Button_lambda.Size = New System.Drawing.Size(27, 19)
+        Me.Button_lambda.TabIndex = 34
+        Me.Button_lambda.UseVisualStyleBackColor = False
+        '
+        'Label_zeta
+        '
+        Me.Label_zeta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_zeta.AutoSize = True
+        Me.Label_zeta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_zeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_zeta.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_zeta.ForeColor = System.Drawing.Color.Black
+        Me.Label_zeta.Location = New System.Drawing.Point(30, 129)
+        Me.Label_zeta.Name = "Label_zeta"
+        Me.Label_zeta.Size = New System.Drawing.Size(100, 17)
+        Me.Label_zeta.TabIndex = 95
+        Me.Label_zeta.Text = "Zeta  [ 00 / 00 ]"
+        '
+        'Label_kappa
+        '
+        Me.Label_kappa.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_kappa.AutoSize = True
+        Me.Label_kappa.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_kappa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_kappa.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_kappa.ForeColor = System.Drawing.Color.Black
+        Me.Label_kappa.Location = New System.Drawing.Point(24, 154)
+        Me.Label_kappa.Name = "Label_kappa"
+        Me.Label_kappa.Size = New System.Drawing.Size(111, 17)
+        Me.Label_kappa.TabIndex = 96
+        Me.Label_kappa.Text = "Kappa  [ 00 / 00 ]"
+        '
+        'Button_kronos
+        '
+        Me.Button_kronos.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_kronos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kronos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.Button_kronos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kronos.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kronos.ForeColor = System.Drawing.Color.Gold
+        Me.Button_kronos.Image = CType(resources.GetObject("Button_kronos.Image"), System.Drawing.Image)
+        Me.Button_kronos.Location = New System.Drawing.Point(163, 253)
+        Me.Button_kronos.Name = "Button_kronos"
+        Me.Button_kronos.Size = New System.Drawing.Size(27, 28)
+        Me.Button_kronos.TabIndex = 36
+        Me.Button_kronos.UseVisualStyleBackColor = False
+        '
+        'Button_Kappa
+        '
+        Me.Button_Kappa.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_Kappa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Kappa.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_Kappa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Kappa.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Kappa.ForeColor = System.Drawing.Color.White
+        Me.Button_Kappa.Image = CType(resources.GetObject("Button_Kappa.Image"), System.Drawing.Image)
+        Me.Button_Kappa.Location = New System.Drawing.Point(163, 153)
+        Me.Button_Kappa.Name = "Button_Kappa"
+        Me.Button_Kappa.Size = New System.Drawing.Size(27, 19)
+        Me.Button_Kappa.TabIndex = 33
+        Me.Button_Kappa.UseVisualStyleBackColor = False
+        '
+        'Label_lambda
+        '
+        Me.Label_lambda.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_lambda.AutoSize = True
+        Me.Label_lambda.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_lambda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_lambda.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_lambda.ForeColor = System.Drawing.Color.Black
+        Me.Label_lambda.Location = New System.Drawing.Point(19, 179)
+        Me.Label_lambda.Name = "Label_lambda"
+        Me.Label_lambda.Size = New System.Drawing.Size(121, 17)
+        Me.Label_lambda.TabIndex = 97
+        Me.Label_lambda.Text = "Lambda  [ 00 / 00 ]"
+        '
+        'Label_hades
+        '
+        Me.Label_hades.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_hades.AutoSize = True
+        Me.Label_hades.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_hades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_hades.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_hades.ForeColor = System.Drawing.Color.Black
+        Me.Label_hades.Location = New System.Drawing.Point(24, 204)
+        Me.Label_hades.Name = "Label_hades"
+        Me.Label_hades.Size = New System.Drawing.Size(111, 17)
+        Me.Label_hades.TabIndex = 98
+        Me.Label_hades.Text = "Hades  [ 00 / 00 ]"
+        '
+        'Button_delta
+        '
+        Me.Button_delta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_delta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_delta.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_delta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_delta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_delta.ForeColor = System.Drawing.Color.White
+        Me.Button_delta.Image = CType(resources.GetObject("Button_delta.Image"), System.Drawing.Image)
+        Me.Button_delta.Location = New System.Drawing.Point(163, 78)
+        Me.Button_delta.Name = "Button_delta"
+        Me.Button_delta.Size = New System.Drawing.Size(27, 19)
+        Me.Button_delta.TabIndex = 30
+        Me.Button_delta.UseVisualStyleBackColor = False
+        '
+        'Label_kuiper
+        '
+        Me.Label_kuiper.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_kuiper.AutoSize = True
+        Me.Label_kuiper.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_kuiper.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_kuiper.ForeColor = System.Drawing.Color.Black
+        Me.Label_kuiper.Location = New System.Drawing.Point(24, 229)
+        Me.Label_kuiper.Name = "Label_kuiper"
+        Me.Label_kuiper.Size = New System.Drawing.Size(112, 17)
+        Me.Label_kuiper.TabIndex = 99
+        Me.Label_kuiper.Text = "Kuiper  [ 00 / 00 ]"
+        '
+        'Label_chronos
+        '
+        Me.Label_chronos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_chronos.AutoSize = True
+        Me.Label_chronos.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label_chronos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label_chronos.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_chronos.ForeColor = System.Drawing.Color.Gold
+        Me.Label_chronos.Location = New System.Drawing.Point(18, 258)
+        Me.Label_chronos.Name = "Label_chronos"
+        Me.Label_chronos.Size = New System.Drawing.Size(124, 17)
+        Me.Label_chronos.TabIndex = 100
+        Me.Label_chronos.Text = "Chronos  [ 00 / 00 ]"
+        '
+        'Button_hades
+        '
+        Me.Button_hades.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_hades.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_hades.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_hades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_hades.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_hades.ForeColor = System.Drawing.Color.White
+        Me.Button_hades.Image = CType(resources.GetObject("Button_hades.Image"), System.Drawing.Image)
+        Me.Button_hades.Location = New System.Drawing.Point(163, 203)
+        Me.Button_hades.Name = "Button_hades"
+        Me.Button_hades.Size = New System.Drawing.Size(27, 19)
+        Me.Button_hades.TabIndex = 37
+        Me.Button_hades.UseVisualStyleBackColor = False
+        '
+        'Button_kuiper
+        '
+        Me.Button_kuiper.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kuiper.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kuiper.ForeColor = System.Drawing.Color.Black
+        Me.Button_kuiper.Image = CType(resources.GetObject("Button_kuiper.Image"), System.Drawing.Image)
+        Me.Button_kuiper.Location = New System.Drawing.Point(163, 228)
+        Me.Button_kuiper.Name = "Button_kuiper"
+        Me.Button_kuiper.Size = New System.Drawing.Size(27, 19)
+        Me.Button_kuiper.TabIndex = 35
+        Me.Button_kuiper.UseVisualStyleBackColor = False
+        '
+        'Button_beta
+        '
+        Me.Button_beta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_beta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_beta.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_beta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_beta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_beta.ForeColor = System.Drawing.Color.White
+        Me.Button_beta.Image = CType(resources.GetObject("Button_beta.Image"), System.Drawing.Image)
+        Me.Button_beta.Location = New System.Drawing.Point(163, 28)
+        Me.Button_beta.Name = "Button_beta"
+        Me.Button_beta.Size = New System.Drawing.Size(27, 19)
+        Me.Button_beta.TabIndex = 28
+        Me.Button_beta.UseVisualStyleBackColor = False
+        '
+        'Button_gamma
+        '
+        Me.Button_gamma.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_gamma.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_gamma.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_gamma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_gamma.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_gamma.ForeColor = System.Drawing.Color.White
+        Me.Button_gamma.Image = CType(resources.GetObject("Button_gamma.Image"), System.Drawing.Image)
+        Me.Button_gamma.Location = New System.Drawing.Point(163, 53)
+        Me.Button_gamma.Name = "Button_gamma"
+        Me.Button_gamma.Size = New System.Drawing.Size(27, 19)
+        Me.Button_gamma.TabIndex = 29
+        Me.Button_gamma.UseVisualStyleBackColor = False
+        '
+        'Button_epsilon
+        '
+        Me.Button_epsilon.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_epsilon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_epsilon.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_epsilon.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_epsilon.ForeColor = System.Drawing.Color.White
+        Me.Button_epsilon.Image = CType(resources.GetObject("Button_epsilon.Image"), System.Drawing.Image)
+        Me.Button_epsilon.Location = New System.Drawing.Point(163, 103)
+        Me.Button_epsilon.Name = "Button_epsilon"
+        Me.Button_epsilon.Size = New System.Drawing.Size(27, 19)
+        Me.Button_epsilon.TabIndex = 31
+        Me.Button_epsilon.UseVisualStyleBackColor = False
+        '
+        'Button_zeta
+        '
+        Me.Button_zeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_zeta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_zeta.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button_zeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_zeta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_zeta.ForeColor = System.Drawing.Color.White
+        Me.Button_zeta.Image = CType(resources.GetObject("Button_zeta.Image"), System.Drawing.Image)
+        Me.Button_zeta.Location = New System.Drawing.Point(163, 128)
+        Me.Button_zeta.Name = "Button_zeta"
+        Me.Button_zeta.Size = New System.Drawing.Size(27, 19)
+        Me.Button_zeta.TabIndex = 32
+        Me.Button_zeta.UseVisualStyleBackColor = False
         '
         'Button_suppresor_controler_GGS
         '
@@ -3248,171 +3477,6 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.Text = "- Galaxy Gates Spinner Initialized -"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Button_Alpha
-        '
-        Me.Button_Alpha.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Alpha.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Alpha.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_Alpha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Alpha.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Alpha.ForeColor = System.Drawing.Color.White
-        Me.Button_Alpha.Location = New System.Drawing.Point(14, 8)
-        Me.Button_Alpha.Name = "Button_Alpha"
-        Me.Button_Alpha.Size = New System.Drawing.Size(66, 32)
-        Me.Button_Alpha.TabIndex = 27
-        Me.Button_Alpha.Text = "Alpha"
-        Me.Button_Alpha.UseVisualStyleBackColor = False
-        '
-        'Button_lambda
-        '
-        Me.Button_lambda.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_lambda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_lambda.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_lambda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_lambda.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_lambda.ForeColor = System.Drawing.Color.White
-        Me.Button_lambda.Location = New System.Drawing.Point(14, 163)
-        Me.Button_lambda.Name = "Button_lambda"
-        Me.Button_lambda.Size = New System.Drawing.Size(196, 32)
-        Me.Button_lambda.TabIndex = 34
-        Me.Button_lambda.Text = "Lambda"
-        Me.Button_lambda.UseVisualStyleBackColor = False
-        '
-        'Button_Kappa
-        '
-        Me.Button_Kappa.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Kappa.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kappa.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_Kappa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Kappa.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Kappa.ForeColor = System.Drawing.Color.White
-        Me.Button_Kappa.Location = New System.Drawing.Point(14, 132)
-        Me.Button_Kappa.Name = "Button_Kappa"
-        Me.Button_Kappa.Size = New System.Drawing.Size(196, 32)
-        Me.Button_Kappa.TabIndex = 33
-        Me.Button_Kappa.Text = "Kappa"
-        Me.Button_Kappa.UseVisualStyleBackColor = False
-        '
-        'Button_delta
-        '
-        Me.Button_delta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_delta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_delta.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_delta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_delta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_delta.ForeColor = System.Drawing.Color.White
-        Me.Button_delta.Location = New System.Drawing.Point(14, 39)
-        Me.Button_delta.Name = "Button_delta"
-        Me.Button_delta.Size = New System.Drawing.Size(196, 32)
-        Me.Button_delta.TabIndex = 30
-        Me.Button_delta.Text = "Delta"
-        Me.Button_delta.UseVisualStyleBackColor = False
-        '
-        'Button_kronos
-        '
-        Me.Button_kronos.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_kronos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_kronos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button_kronos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_kronos.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_kronos.ForeColor = System.Drawing.Color.Gold
-        Me.Button_kronos.Location = New System.Drawing.Point(14, 256)
-        Me.Button_kronos.Name = "Button_kronos"
-        Me.Button_kronos.Size = New System.Drawing.Size(196, 32)
-        Me.Button_kronos.TabIndex = 36
-        Me.Button_kronos.Text = "Kronos   [ 00 / 21 ]"
-        Me.Button_kronos.UseVisualStyleBackColor = False
-        '
-        'Button_gamma
-        '
-        Me.Button_gamma.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_gamma.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_gamma.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_gamma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_gamma.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_gamma.ForeColor = System.Drawing.Color.White
-        Me.Button_gamma.Location = New System.Drawing.Point(144, 8)
-        Me.Button_gamma.Name = "Button_gamma"
-        Me.Button_gamma.Size = New System.Drawing.Size(66, 32)
-        Me.Button_gamma.TabIndex = 29
-        Me.Button_gamma.Text = "Gamma"
-        Me.Button_gamma.UseVisualStyleBackColor = False
-        '
-        'Button_beta
-        '
-        Me.Button_beta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_beta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_beta.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_beta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_beta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_beta.ForeColor = System.Drawing.Color.White
-        Me.Button_beta.Location = New System.Drawing.Point(79, 8)
-        Me.Button_beta.Name = "Button_beta"
-        Me.Button_beta.Size = New System.Drawing.Size(66, 32)
-        Me.Button_beta.TabIndex = 28
-        Me.Button_beta.Text = "Beta"
-        Me.Button_beta.UseVisualStyleBackColor = False
-        '
-        'Button_epsilon
-        '
-        Me.Button_epsilon.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_epsilon.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_epsilon.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_epsilon.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_epsilon.ForeColor = System.Drawing.Color.White
-        Me.Button_epsilon.Location = New System.Drawing.Point(14, 70)
-        Me.Button_epsilon.Name = "Button_epsilon"
-        Me.Button_epsilon.Size = New System.Drawing.Size(196, 32)
-        Me.Button_epsilon.TabIndex = 31
-        Me.Button_epsilon.Text = "Epsilon"
-        Me.Button_epsilon.UseVisualStyleBackColor = False
-        '
-        'Button_zeta
-        '
-        Me.Button_zeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_zeta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_zeta.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_zeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_zeta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_zeta.ForeColor = System.Drawing.Color.White
-        Me.Button_zeta.Location = New System.Drawing.Point(14, 101)
-        Me.Button_zeta.Name = "Button_zeta"
-        Me.Button_zeta.Size = New System.Drawing.Size(196, 32)
-        Me.Button_zeta.TabIndex = 32
-        Me.Button_zeta.Text = "Zeta"
-        Me.Button_zeta.UseVisualStyleBackColor = False
-        '
-        'Button_hades
-        '
-        Me.Button_hades.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_hades.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_hades.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_hades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_hades.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_hades.ForeColor = System.Drawing.Color.White
-        Me.Button_hades.Location = New System.Drawing.Point(14, 194)
-        Me.Button_hades.Name = "Button_hades"
-        Me.Button_hades.Size = New System.Drawing.Size(196, 32)
-        Me.Button_hades.TabIndex = 37
-        Me.Button_hades.Text = "Hades"
-        Me.Button_hades.UseVisualStyleBackColor = False
-        '
-        'Button_kuiper
-        '
-        Me.Button_kuiper.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_kuiper.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_kuiper.ForeColor = System.Drawing.Color.White
-        Me.Button_kuiper.Location = New System.Drawing.Point(14, 225)
-        Me.Button_kuiper.Name = "Button_kuiper"
-        Me.Button_kuiper.Size = New System.Drawing.Size(196, 32)
-        Me.Button_kuiper.TabIndex = 35
-        Me.Button_kuiper.Text = "Kuiper"
-        Me.Button_kuiper.UseVisualStyleBackColor = False
-        '
         'WebBrowser_galaxyGates
         '
         Me.WebBrowser_galaxyGates.IsWebBrowserContextMenuEnabled = False
@@ -3491,7 +3555,7 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.ForeColor = System.Drawing.Color.White
         Me.Panel_suppresor_controler.Location = New System.Drawing.Point(219, 0)
         Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
-        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 24)
+        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 402)
         Me.Panel_suppresor_controler.TabIndex = 46
         '
         'Button_suppresor_controler
@@ -3595,7 +3659,7 @@ Partial Class Form_Tools
         Me.Button_menu.ForeColor = System.Drawing.Color.Black
         Me.Button_menu.Location = New System.Drawing.Point(5, -3)
         Me.Button_menu.Name = "Button_menu"
-        Me.Button_menu.Size = New System.Drawing.Size(116, 27)
+        Me.Button_menu.Size = New System.Drawing.Size(104, 27)
         Me.Button_menu.TabIndex = 79
         Me.Button_menu.Text = "-- Menu --"
         Me.Button_menu.UseVisualStyleBackColor = False
@@ -3933,24 +3997,6 @@ Partial Class Form_Tools
         Me.Label19.TabIndex = 43
         Me.Label19.Text = "Palladium"
         '
-        'CheckBox_AutoUpdate
-        '
-        Me.CheckBox_AutoUpdate.AutoSize = True
-        Me.CheckBox_AutoUpdate.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.CheckBox_AutoUpdate.Checked = Global.DarkorbitBot.My.MySettings.Default.AutoUpdate
-        Me.CheckBox_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(956, 522)
-        Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
-        Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(138, 17)
-        Me.CheckBox_AutoUpdate.TabIndex = 36
-        Me.CheckBox_AutoUpdate.Text = "Auto Update RidevBot"
-        Me.CheckBox_AutoUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.CheckBox_AutoUpdate.UseVisualStyleBackColor = False
-        Me.CheckBox_AutoUpdate.Visible = False
-        '
         'WebBrowser_GGInfo
         '
         Me.WebBrowser_GGInfo.Location = New System.Drawing.Point(12, 1035)
@@ -4020,7 +4066,6 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Panel_rex)
         Me.Controls.Add(Me.Panel_stats)
         Me.Controls.Add(Me.Panel_collector)
-        Me.Controls.Add(Me.CheckBox_AutoUpdate)
         Me.Controls.Add(Me.Panel_Npc)
         Me.Controls.Add(Me.Panel_Title)
         Me.Controls.Add(Me.Panel_divers)
@@ -4072,18 +4117,14 @@ Partial Class Form_Tools
         CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_autospin.ResumeLayout(False)
         Me.Panel_autospin.PerformLayout()
-        Me.Panel_Gamma_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Gamma_ABG_GGS.PerformLayout()
-        Me.Panel_Beta_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Beta_ABG_GGS.PerformLayout()
-        Me.Panel_Alpha_ABG_GGS.ResumeLayout(False)
-        Me.Panel_Alpha_ABG_GGS.PerformLayout()
         Me.Panel_infoPartGG.ResumeLayout(False)
         Me.Panel_infoPartGG.PerformLayout()
         Me.Panel_infoPartGG_GG.ResumeLayout(False)
         Me.Panel_infoPartGG_GG.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
         Me.Panel_GalaxyGates.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.TableLayoutPanel7.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel_suppresor_controler.ResumeLayout(False)
@@ -4340,18 +4381,6 @@ Partial Class Form_Tools
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Panel_Gamma_ABG_GGS As Panel
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label_Gamma_ABG_GGS_onmap As Label
-    Friend WithEvents Label_Gamma_ABG_GGS_part As Label
-    Friend WithEvents Panel_Beta_ABG_GGS As Panel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label_Beta_ABG_GGS_onmap As Label
-    Friend WithEvents Label_Beta_ABG_GGS_part As Label
-    Friend WithEvents Panel_Alpha_ABG_GGS As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label_Alpha_ABG_GGS_onmap As Label
-    Friend WithEvents Label_Alpha_ABG_GGS_part As Label
     Friend WithEvents Button_license As Button
     Friend WithEvents Label_BotStatus As Label
     Friend WithEvents Label_BotText As Label
@@ -4362,4 +4391,16 @@ Partial Class Form_Tools
     Friend WithEvents Button_menu As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents Label_alpha As Label
+    Friend WithEvents Label_beta As Label
+    Friend WithEvents Label_gamma As Label
+    Friend WithEvents Label_delta As Label
+    Friend WithEvents Label_epsilon As Label
+    Friend WithEvents Label_zeta As Label
+    Friend WithEvents Label_kappa As Label
+    Friend WithEvents Label_lambda As Label
+    Friend WithEvents Label_hades As Label
+    Friend WithEvents Label_kuiper As Label
+    Friend WithEvents Label_chronos As Label
 End Class

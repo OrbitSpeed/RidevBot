@@ -549,6 +549,7 @@
     <Compile Include="Form_Close.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GalaxyGates.vb" />
     <Compile Include="ReadWritingMemory.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
