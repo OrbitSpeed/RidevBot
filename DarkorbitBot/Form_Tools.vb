@@ -361,7 +361,7 @@ Public Class Form_Tools
             Button_suppresor_controler.Text = "﹀"
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
-            GalaxyGates.GalaxyGates_Load()
+            GalaxyGates.Load()
 
         End If
 
@@ -559,58 +559,79 @@ Public Class Form_Tools
 #Region "GG Click Portail"
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
-        GalaxyGates.Alpha()
+        GalaxyGates.GalaxyGates_Name = "Alpha"
+        GalaxyGates.GalaxyGates_id = "1"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
-        GalaxyGates.Beta()
+        GalaxyGates.GalaxyGates_Name = "Beta"
+        GalaxyGates.GalaxyGates_id = "2"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
-        GalaxyGates.Gamma()
+        GalaxyGates.GalaxyGates_Name = "Gamma"
+        GalaxyGates.GalaxyGates_id = "3"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
-
-        GalaxyGates.Delta()
+        GalaxyGates.GalaxyGates_Name = "Delta"
+        GalaxyGates.GalaxyGates_id = "4"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-        GalaxyGates.Epsilon()
+        GalaxyGates.GalaxyGates_Name = "Epsilon"
+        GalaxyGates.GalaxyGates_id = "5"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-        GalaxyGates.Zeta()
+        GalaxyGates.GalaxyGates_Name = "Zeta"
+        GalaxyGates.GalaxyGates_id = "6"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-        GalaxyGates.Kappa()
+        GalaxyGates.GalaxyGates_Name = "Kappa"
+        GalaxyGates.GalaxyGates_id = "7"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-        GalaxyGates.Lambda()
+        GalaxyGates.GalaxyGates_Name = "Lambda"
+        GalaxyGates.GalaxyGates_id = "8"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-        GalaxyGates.Hades()
+        GalaxyGates.GalaxyGates_Name = "Hades"
+        GalaxyGates.GalaxyGates_id = "13"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates.Kuiper()
+        GalaxyGates.GalaxyGates_Name = "Kuiper"
+        GalaxyGates.GalaxyGates_id = "19"
+        GalaxyGates.View()
 
     End Sub
 
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates.Chronos()
+        GalaxyGates.GalaxyGates_Name = "Chronos"
+        GalaxyGates.GalaxyGates_id = "12"
+        GalaxyGates.View()
 
     End Sub
 
