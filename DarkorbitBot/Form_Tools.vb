@@ -152,8 +152,9 @@ Public Class Form_Tools
 
     Private Sub Form_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         Calculator = 1
-        Panel_autospin.Location = New Point(495, 68)
+        Panel_autospin.Location = New Point(495, 24)
         Panel_palladium_palladium.Location = New Point(0, 24)
         panel_npc_npc.Location = New Point(0, 24)
         Panel_collectable.Location = New Point(0, 24)
@@ -559,80 +560,37 @@ Public Class Form_Tools
 #Region "GG Click Portail"
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
-        GalaxyGates.GalaxyGates_Name = "Alpha"
-        GalaxyGates.GalaxyGates_id = "1"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="1", GalaxyGates_Name:="alpha")
     End Sub
-
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
-        GalaxyGates.GalaxyGates_Name = "Beta"
-        GalaxyGates.GalaxyGates_id = "2"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="2", GalaxyGates_Name:="Beta")
     End Sub
-
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
-        GalaxyGates.GalaxyGates_Name = "Gamma"
-        GalaxyGates.GalaxyGates_id = "3"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="3", GalaxyGates_Name:="Gamma")
     End Sub
-
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
-        GalaxyGates.GalaxyGates_Name = "Delta"
-        GalaxyGates.GalaxyGates_id = "4"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="4", GalaxyGates_Name:="Delta")
     End Sub
-
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-        GalaxyGates.GalaxyGates_Name = "Epsilon"
-        GalaxyGates.GalaxyGates_id = "5"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="5", GalaxyGates_Name:="Epsilon")
     End Sub
-
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-        GalaxyGates.GalaxyGates_Name = "Zeta"
-        GalaxyGates.GalaxyGates_id = "6"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="6", GalaxyGates_Name:="Zeta")
     End Sub
-
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-        GalaxyGates.GalaxyGates_Name = "Kappa"
-        GalaxyGates.GalaxyGates_id = "7"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="7", GalaxyGates_Name:="Kappa")
     End Sub
-
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-        GalaxyGates.GalaxyGates_Name = "Lambda"
-        GalaxyGates.GalaxyGates_id = "8"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="8", GalaxyGates_Name:="Lambda")
     End Sub
-
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-        GalaxyGates.GalaxyGates_Name = "Hades"
-        GalaxyGates.GalaxyGates_id = "13"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="13", GalaxyGates_Name:="Hades")
     End Sub
-
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates.GalaxyGates_Name = "Kuiper"
-        GalaxyGates.GalaxyGates_id = "19"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="19", GalaxyGates_Name:="Kuiper")
     End Sub
-
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates.GalaxyGates_Name = "Chronos"
-        GalaxyGates.GalaxyGates_id = "12"
-        GalaxyGates.View()
-
+        GalaxyGates.View(GalaxyGates_id:="12", GalaxyGates_Name:="Chronos")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour voir la GG Uniquement
@@ -645,140 +603,108 @@ Public Class Form_Tools
 
     End Sub
     Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
-
-        ' ON ENVOI UN POST/GET POUR LA GALAXY GATES + COOKIES MANAGER + STOCKAGE 
-        Dim WebClient_POST As New System.Net.WebClient
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&alpha=1&sample=1&multiplier=1")
-        Console.WriteLine(WebClient_Data)
-
+        GalaxyGates.Spin(GalaxyGates_id:="1", GalaxyGates_Name:="alpha")
     End Sub
-
     Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&beta=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="2", GalaxyGates_Name:="Beta")
     End Sub
-
     Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_Gamma_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&Gamma=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="3", GalaxyGates_Name:="Gamma")
     End Sub
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=4&delta=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="4", GalaxyGates_Name:="Delta")
     End Sub
-
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=5&epsilon=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="5", GalaxyGates_Name:="Epsilon")
     End Sub
-
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=6&zeta=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="6", GalaxyGates_Name:="Zeta")
     End Sub
-
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=7&kappa=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="7", GalaxyGates_Name:="Kappa")
     End Sub
-
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=8&lambda=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="8", GalaxyGates_Name:="Lambda")
     End Sub
-
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=19&streuner=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="19", GalaxyGates_Name:="Kuiper")
     End Sub
-
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=13&hades=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="13", GalaxyGates_Name:="Hades")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
 
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
-        Button_StartSpin.Enabled = False
-        Button_stopSpin.Enabled = True
+        'Button_StartSpin.Enabled = False
+        'Button_stopSpin.Enabled = True
 
-        If TextBox_spintimes_GGS.Text.Contains(".") Then
+        'If TextBox_spintimes_GGS.Text.Contains(".") Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
-        ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
+        'ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
-        ElseIf Val(TextBox_spintimes_GGS.Text) < 200 Then
+        'ElseIf Val(TextBox_spintimes_GGS.Text) < 200 Then
 
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Starting with 300ms by Default, we don't recommand to go lower." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Starting with 300ms by Default, we don't recommand to go lower." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
+        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
 
-            TextBox_spintimes_GGS.Text = 300
-        End If
+        '    TextBox_spintimes_GGS.Text = 300
+        'End If
 
-        Data = ComboBox_autospin.Text
-        exitGGS = 0
-        Select Case Data
-            Case "ABG"
-                WebBrowser_galaxyGates.Navigate("about:blank")
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        'Data = ComboBox_autospin.Text
+        'exitGGS = 0
+        'Select Case Data
+        '    Case "ABG"
+        '        WebBrowser_galaxyGates.Navigate("about:blank")
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Delta"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Delta"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Epsilon"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Epsilon"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Zeta"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Zeta"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Kappa"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Kappa"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Lambda"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Lambda"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Kuiper"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Kuiper"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case "Hades"
-                ClickGG(Data, TextBox_spintimes_GGS.Text)
+        '    Case "Hades"
+        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
 
-            Case Else
+        '    Case Else
 
-                Button_alpha_GGS.Visible = True
-                Button_beta_GGS.Visible = True
-                Button_Gamma_GGS.Visible = True
-                Button_stopSpin.PerformClick()
-                ComboBox_autospin.Text = "ABG"
-                ComboBox_autospin.Refresh()
+        '        Button_alpha_GGS.Visible = True
+        '        Button_beta_GGS.Visible = True
+        '        Button_Gamma_GGS.Visible = True
+        '        Button_stopSpin.PerformClick()
+        '        ComboBox_autospin.Text = "ABG"
+        '        ComboBox_autospin.Refresh()
 
-        End Select
+        'End Select
 
 
     End Sub ' Start Galaxy Gates Spinner 
@@ -858,8 +784,6 @@ Label_ClickGalaxyGates:
                 TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
                 GalaxyGatesChecker = 1
 
-                TextBox_total_gates_builded.Text = Val(TextBox_total_gates_builded.Text) + 1
-
                 Button_PrepareGates.PerformClick()
                 Await Task.Delay(5000)
 
@@ -899,7 +823,6 @@ Label_ClickGalaxyGates:
 
                 Await Task.Delay(1000)
 
-                WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                 WebBrowser_galaxyGates.Refresh()
                 Await Task.Delay(1000)
 
@@ -1037,7 +960,6 @@ Label_ClickGalaxyGates:
         Label_Mine_Earned.Text = 0
         Label_Logfile_Earned.Text = 0
         TextBox_total_spinned.Text = 0
-        TextBox_total_gates_builded.Text = 0
 
     End Sub ' ici on reset les stats du GGSpinner 
 
@@ -1166,28 +1088,6 @@ Label_ClickGalaxyGates:
 
 #Region "ABG"
 
-                If ComboBox_autospin.Text = "ABG" Then
-
-                    Button_Alpha.Enabled = False
-                    Button_alpha_GGS.Enabled = False
-
-                    Button_beta.Enabled = False
-                    Button_beta_GGS.Enabled = False
-
-                    Button_gamma.Enabled = False
-                    Button_Gamma_GGS.Enabled = False
-
-                    Button_ABG_GGS.Enabled = False
-
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
-
-                    ' check piece savoir laquel a afficher
-                    ' WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
-
-                End If
-
-
-
 #End Region
 
 #Region "Alpha"
@@ -1196,7 +1096,7 @@ Label_ClickGalaxyGates:
 
                     Button_Alpha.Enabled = False
                     Button_alpha_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=1&type=full")
 
                 End If
@@ -1210,7 +1110,7 @@ Label_ClickGalaxyGates:
 
                     Button_beta.Enabled = False
                     Button_beta_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=2&type=full")
 
                 End If
@@ -1224,7 +1124,7 @@ Label_ClickGalaxyGates:
 
                     Button_gamma.Enabled = False
                     Button_Gamma_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    ' WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=3&type=full")
 
                 End If
@@ -1238,7 +1138,7 @@ Label_ClickGalaxyGates:
 
                     Button_delta.Enabled = False
                     Button_Delta_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=4&type=full")
 
                 End If
@@ -1251,7 +1151,7 @@ Label_ClickGalaxyGates:
 
                     Button_epsilon.Enabled = False
                     Button_Epsilon_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=5&type=full")
 
                 End If
@@ -1262,7 +1162,7 @@ Label_ClickGalaxyGates:
 
                     Button_zeta.Enabled = False
                     Button_Zeta_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=6&type=full")
 
                 End If
@@ -1273,7 +1173,7 @@ Label_ClickGalaxyGates:
 
                     Button_Kappa.Enabled = False
                     Button_Kappa_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=7&type=full")
 
                 End If
@@ -1284,7 +1184,7 @@ Label_ClickGalaxyGates:
 
                     Button_lambda.Enabled = False
                     Button_Lambda_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=8&type=full")
 
                 End If
@@ -1295,7 +1195,7 @@ Label_ClickGalaxyGates:
 
                     Button_kuiper.Enabled = False
                     Button_Kuiper_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '  WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=19&type=full")
 
                 End If
@@ -1308,7 +1208,7 @@ Label_ClickGalaxyGates:
 
                     Button_hades.Enabled = False
                     Button_Hades_GGS.Enabled = False
-                    WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+                    '   WebBrowser_GGInfo.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
                     WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=13&type=full")
 
                 End If
@@ -1620,35 +1520,18 @@ Label_ClickGalaxyGates:
 
     Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
-        If Button_suppresor_controler_GGS.Text = "⬇" Then
-            Button_suppresor_controler_GGS.Text = "⬆"
+        If Button_suppresor_controler_GGS.Text = "Open Gates Spinner" Then
+            Button_suppresor_controler_GGS.Text = "Close Gates Spinner"
             Size = New Size(689, 705)
 
 
-        ElseIf Button_suppresor_controler_GGS.Text = "⬆" Then
-            Button_suppresor_controler_GGS.Text = "⬇"
+        ElseIf Button_suppresor_controler_GGS.Text = "Close Gates Spinner" Then
+            Button_suppresor_controler_GGS.Text = "Open Gates Spinner"
             Size = New Size(497, 705)
 
         End If
 
     End Sub  ' Supressor controler INBAR GGS
-
-    Private Sub ComboBox_autospin_TextChanged(sender As Object, e As EventArgs) Handles ComboBox_autospin.TextChanged
-
-        If ComboBox_autospin.Text = "ABG" Then
-
-            Button_alpha_GGS.Visible = False
-            Button_beta_GGS.Visible = False
-            Button_Gamma_GGS.Visible = False
-
-        Else
-
-            Button_alpha_GGS.Visible = True
-            Button_beta_GGS.Visible = True
-            Button_Gamma_GGS.Visible = True
-
-        End If
-    End Sub 'Permet de récuperer le nom du autospin et de définir si ABG
 
     Private Sub Button_license_verify_Click(sender As Object, e As EventArgs)
         'If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
@@ -1748,4 +1631,27 @@ Label_ClickGalaxyGates:
 
     End Sub
 
+    Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs)
+
+    End Sub
+
+    Private Sub WebBrowser_galaxyGates_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_galaxyGates.DocumentCompleted
+
+        WebBrowser_galaxyGates.Document.BackColor = System.Drawing.Color.Transparent
+
+    End Sub
+
+    Private Sub Button_game_doodle_Click(sender As Object, e As EventArgs) Handles Button_game_doodle.Click
+
+        If Button_game_doodle.Text = "Game" Then
+            Button_game_doodle.Text = "Gates"
+
+        Else Button_game_doodle.Text = "Gates"
+            Button_game_doodle.Text = "Game"
+
+        End If
+
+        WebBrowser_galaxyGates.Navigate("http://doodlejumppc.net/doodlejump.swf")
+
+    End Sub
 End Class

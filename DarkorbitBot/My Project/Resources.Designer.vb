@@ -183,6 +183,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property breaking_news_bonusgg() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("breaking_news_bonusgg", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property cancel_presentation() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cancel_presentation", resourceCulture)
@@ -356,6 +366,26 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("FireSharp", resourceCulture)
                 Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gg_bonus_reward() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gg_bonus_reward", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gg_double_reward_day_s_201802() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gg_double_reward_day_s_201802", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

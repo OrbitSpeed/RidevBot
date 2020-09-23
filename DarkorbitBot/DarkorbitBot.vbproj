@@ -658,6 +658,15 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -682,6 +691,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\doodlejump.swf" />
+    <None Include="Resources\gg-bonus_reward.png" />
+    <None Include="Resources\gg_double-reward-day_s_201802.jpg" />
+    <None Include="Resources\breaking_news_bonusgg.jpg" />
     <None Include="Resources\DividerLine2.png" />
     <None Include="Resources\unnamed.jpg" />
     <None Include="Resources\hhheades2-removebg-preview.png" />
