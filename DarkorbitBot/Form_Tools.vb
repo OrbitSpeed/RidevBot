@@ -587,10 +587,10 @@ Public Class Form_Tools
         GalaxyGates.View(GalaxyGates_id:="13", GalaxyGates_Name:="Hades")
     End Sub
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates.View(GalaxyGates_id:="19", GalaxyGates_Name:="Kuiper")
+        GalaxyGates.View("19", "Kuiper")
     End Sub
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates.View(GalaxyGates_id:="12", GalaxyGates_Name:="Chronos")
+        GalaxyGates.View("12", "Chronos")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour voir la GG Uniquement
@@ -603,7 +603,7 @@ Public Class Form_Tools
 
     End Sub
     Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="1", GalaxyGates_Name:="alpha")
+        GalaxyGates.Spin("1", "alpha")
     End Sub
     Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
         GalaxyGates.Spin(GalaxyGates_id:="2", GalaxyGates_Name:="Beta")
