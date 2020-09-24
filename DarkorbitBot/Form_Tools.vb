@@ -763,49 +763,52 @@ HOME_BASIC_RETURN_IF_VALID:
         Dim GalaxyGates_id As Object = 0
         Dim PART_GG As Object = INFO_PART_GG_LABEL.Text
 
+
         Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
-        If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = 1 Then
+        Result_PART_GG = Result_PART_GG.Substring(1)
+        If Result_PART_GG = "34 / 34" AndAlso ComboBox_autospin.Text.ToLower = "alpha" Then
             GalaxyGates_id = 1
 
-        ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = 2 Then
+        ElseIf Result_PART_GG = "48 / 48" AndAlso ComboBox_autospin.Text.ToLower = "beta" Then
             GalaxyGates_id = 2
 
-        ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = 3 Then
+        ElseIf Result_PART_GG = "82 / 82" AndAlso ComboBox_autospin.Text.ToLower = "gamma" Then
             GalaxyGates_id = 3
 
-        ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = 4 Then
+        ElseIf Result_PART_GG = "128 / 128" AndAlso ComboBox_autospin.Text.ToLower = "delta" Then
             GalaxyGates_id = 4
 
-        ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = 5 Then
+        ElseIf Result_PART_GG = "99 / 99" AndAlso ComboBox_autospin.Text.ToLower = "epsilon" Then
             GalaxyGates_id = 5
 
-        ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = 6 Then
+        ElseIf Result_PART_GG = "111 / 111" AndAlso ComboBox_autospin.Text.ToLower = "zeta" Then
             GalaxyGates_id = 6
 
-        ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = 7 Then
+        ElseIf Result_PART_GG = "120 / 120" AndAlso ComboBox_autospin.Text.ToLower = "kappa" Then
             GalaxyGates_id = 7
 
-        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 8 Then
+        ElseIf Result_PART_GG = "45 / 45" AndAlso ComboBox_autospin.Text.ToLower = "lambda" Then
             GalaxyGates_id = 8
 
-        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 13 Then
+        ElseIf Result_PART_GG = "45 / 45" AndAlso ComboBox_autospin.Text.ToLower = "hades" Then
             GalaxyGates_id = 13
 
-        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = 19 Then
+        ElseIf Result_PART_GG = "100 / 100" AndAlso ComboBox_autospin.Text.ToLower = "kuiper" Then
             GalaxyGates_id = 19
 
-        ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = 12 Then
+        ElseIf Result_PART_GG = "21 / 21" AndAlso ComboBox_autospin.Text.ToLower = "chronos" Then
             GalaxyGates_id = 12
-
-        Else
-            GalaxyGates_id = GalaxyGates_id
 
         End If
 
+        Console.WriteLine(Result_PART_GG)
+        Console.WriteLine(GalaxyGates_id)
+        Console.WriteLine(ComboBox_autospin.Text.ToLower)
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+
         Dim Prepare_Gates_POST As New System.Net.WebClient
         Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
-
+        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
 
     End Sub ' button prepare Gates
 
