@@ -141,6 +141,7 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -161,7 +162,6 @@ Partial Class Form_Tools
         Me.Button_Hades_GGS = New System.Windows.Forms.Button()
         Me.Button_StartSpin = New System.Windows.Forms.Button()
         Me.Panel_autospin = New System.Windows.Forms.Panel()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label_UridiumtoKeepGGS = New System.Windows.Forms.Label()
@@ -184,6 +184,7 @@ Partial Class Form_Tools
         Me.INFO_LIVES_LEFT_GG_LABEL = New System.Windows.Forms.Label()
         Me.INFO_WAVE_GG_LABEL = New System.Windows.Forms.Label()
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
+        Me.DATE_REMAINING = New System.Windows.Forms.Label()
         Me.Button_game_doodle = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox_kappa_reward_day = New System.Windows.Forms.PictureBox()
@@ -217,7 +218,6 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Leaderprice_explain = New System.Windows.Forms.Label()
         Me.Label_Xenomit = New System.Windows.Forms.Label()
-        Me.Label_Part_Earned = New System.Windows.Forms.Label()
         Me.Label_Nanohull = New System.Windows.Forms.Label()
         Me.Label_Mine = New System.Windows.Forms.Label()
         Me.Label_Logfile = New System.Windows.Forms.Label()
@@ -241,6 +241,7 @@ Partial Class Form_Tools
         Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
         Me.Label_repairCR_explain = New System.Windows.Forms.Label()
         Me.Leaderprice = New System.Windows.Forms.Label()
+        Me.Label_Part_Earned = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
         Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Stats_Button = New System.Windows.Forms.Button()
@@ -280,7 +281,6 @@ Partial Class Form_Tools
         Me.ToolTip_GalaxyGates = New System.Windows.Forms.ToolTip(Me.components)
         Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -2026,6 +2026,18 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2161,11 +2173,11 @@ Partial Class Form_Tools
         Me.Button_ABG_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_ABG_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 570)
+        Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 546)
         Me.Button_ABG_GGS.Name = "Button_ABG_GGS"
         Me.Button_ABG_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_ABG_GGS.TabIndex = 43
-        Me.Button_ABG_GGS.Text = "Spin ABG"
+        Me.Button_ABG_GGS.Text = "Manually Spin ABG"
         Me.Button_ABG_GGS.UseVisualStyleBackColor = False
         '
         'Button_Delta_GGS
@@ -2175,11 +2187,11 @@ Partial Class Form_Tools
         Me.Button_Delta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Delta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Delta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Delta_GGS.Location = New System.Drawing.Point(8, 398)
+        Me.Button_Delta_GGS.Location = New System.Drawing.Point(8, 379)
         Me.Button_Delta_GGS.Name = "Button_Delta_GGS"
         Me.Button_Delta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Delta_GGS.TabIndex = 44
-        Me.Button_Delta_GGS.Text = "Spin DELTA"
+        Me.Button_Delta_GGS.Text = "Manually Spin DELTA"
         Me.Button_Delta_GGS.UseVisualStyleBackColor = False
         '
         'Button_Epsilon_GGS
@@ -2189,11 +2201,11 @@ Partial Class Form_Tools
         Me.Button_Epsilon_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Epsilon_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Epsilon_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Epsilon_GGS.Location = New System.Drawing.Point(8, 425)
+        Me.Button_Epsilon_GGS.Location = New System.Drawing.Point(8, 406)
         Me.Button_Epsilon_GGS.Name = "Button_Epsilon_GGS"
         Me.Button_Epsilon_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Epsilon_GGS.TabIndex = 45
-        Me.Button_Epsilon_GGS.Text = "Spin EPSILON"
+        Me.Button_Epsilon_GGS.Text = "Manually Spin EPSILON"
         Me.Button_Epsilon_GGS.UseVisualStyleBackColor = False
         '
         'Button_Kappa_GGS
@@ -2203,11 +2215,11 @@ Partial Class Form_Tools
         Me.Button_Kappa_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Kappa_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Kappa_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Kappa_GGS.Location = New System.Drawing.Point(8, 479)
+        Me.Button_Kappa_GGS.Location = New System.Drawing.Point(8, 460)
         Me.Button_Kappa_GGS.Name = "Button_Kappa_GGS"
         Me.Button_Kappa_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Kappa_GGS.TabIndex = 47
-        Me.Button_Kappa_GGS.Text = "Spin KAPPA"
+        Me.Button_Kappa_GGS.Text = "Manually Spin KAPPA"
         Me.Button_Kappa_GGS.UseVisualStyleBackColor = False
         '
         'Button_Lambda_GGS
@@ -2217,11 +2229,11 @@ Partial Class Form_Tools
         Me.Button_Lambda_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Lambda_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Lambda_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Lambda_GGS.Location = New System.Drawing.Point(8, 506)
+        Me.Button_Lambda_GGS.Location = New System.Drawing.Point(8, 487)
         Me.Button_Lambda_GGS.Name = "Button_Lambda_GGS"
         Me.Button_Lambda_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Lambda_GGS.TabIndex = 48
-        Me.Button_Lambda_GGS.Text = "Spin LAMBDA"
+        Me.Button_Lambda_GGS.Text = "Manually Spin LAMBDA"
         Me.Button_Lambda_GGS.UseVisualStyleBackColor = False
         '
         'Button_Kuiper_GGS
@@ -2231,11 +2243,11 @@ Partial Class Form_Tools
         Me.Button_Kuiper_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Kuiper_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Kuiper_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Kuiper_GGS.Location = New System.Drawing.Point(8, 533)
+        Me.Button_Kuiper_GGS.Location = New System.Drawing.Point(8, 514)
         Me.Button_Kuiper_GGS.Name = "Button_Kuiper_GGS"
         Me.Button_Kuiper_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Kuiper_GGS.TabIndex = 49
-        Me.Button_Kuiper_GGS.Text = "Spin KUIPER"
+        Me.Button_Kuiper_GGS.Text = "Manually Spin KUIPER"
         Me.Button_Kuiper_GGS.UseVisualStyleBackColor = False
         '
         'Button_Zeta_GGS
@@ -2245,11 +2257,11 @@ Partial Class Form_Tools
         Me.Button_Zeta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Zeta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Zeta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Zeta_GGS.Location = New System.Drawing.Point(8, 452)
+        Me.Button_Zeta_GGS.Location = New System.Drawing.Point(8, 433)
         Me.Button_Zeta_GGS.Name = "Button_Zeta_GGS"
         Me.Button_Zeta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Zeta_GGS.TabIndex = 46
-        Me.Button_Zeta_GGS.Text = "Spin ZETA"
+        Me.Button_Zeta_GGS.Text = "Manually Spin ZETA"
         Me.Button_Zeta_GGS.UseVisualStyleBackColor = False
         '
         'Button_Hades_GGS
@@ -2259,11 +2271,11 @@ Partial Class Form_Tools
         Me.Button_Hades_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Hades_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Hades_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Hades_GGS.Location = New System.Drawing.Point(8, 597)
+        Me.Button_Hades_GGS.Location = New System.Drawing.Point(8, 573)
         Me.Button_Hades_GGS.Name = "Button_Hades_GGS"
         Me.Button_Hades_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Hades_GGS.TabIndex = 50
-        Me.Button_Hades_GGS.Text = "Spin HADES"
+        Me.Button_Hades_GGS.Text = "Manually Spin Hades"
         Me.Button_Hades_GGS.UseVisualStyleBackColor = False
         '
         'Button_StartSpin
@@ -2275,7 +2287,7 @@ Partial Class Form_Tools
         Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
         Me.Button_StartSpin.Location = New System.Drawing.Point(8, 130)
         Me.Button_StartSpin.Name = "Button_StartSpin"
-        Me.Button_StartSpin.Size = New System.Drawing.Size(170, 26)
+        Me.Button_StartSpin.Size = New System.Drawing.Size(170, 47)
         Me.Button_StartSpin.TabIndex = 59
         Me.Button_StartSpin.Text = "Start"
         Me.Button_StartSpin.UseVisualStyleBackColor = False
@@ -2283,7 +2295,6 @@ Partial Class Form_Tools
         'Panel_autospin
         '
         Me.Panel_autospin.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_autospin.Controls.Add(Me.Label17)
         Me.Panel_autospin.Controls.Add(Me.Button_stopSpin)
         Me.Panel_autospin.Controls.Add(Me.Label16)
         Me.Panel_autospin.Controls.Add(Me.Button_StartSpin)
@@ -2305,22 +2316,10 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_autospin.Location = New System.Drawing.Point(666, 460)
+        Me.Panel_autospin.Location = New System.Drawing.Point(573, 382)
         Me.Panel_autospin.Name = "Panel_autospin"
-        Me.Panel_autospin.Size = New System.Drawing.Size(192, 639)
+        Me.Panel_autospin.Size = New System.Drawing.Size(192, 670)
         Me.Panel_autospin.TabIndex = 78
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(26, 278)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(89, 15)
-        Me.Label17.TabIndex = 100
-        Me.Label17.Text = "Spin Manually :"
         '
         'Button_stopSpin
         '
@@ -2330,9 +2329,9 @@ Partial Class Form_Tools
         Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_stopSpin.Location = New System.Drawing.Point(8, 158)
+        Me.Button_stopSpin.Location = New System.Drawing.Point(8, 186)
         Me.Button_stopSpin.Name = "Button_stopSpin"
-        Me.Button_stopSpin.Size = New System.Drawing.Size(170, 26)
+        Me.Button_stopSpin.Size = New System.Drawing.Size(170, 47)
         Me.Button_stopSpin.TabIndex = 60
         Me.Button_stopSpin.Text = "Stop"
         Me.Button_stopSpin.UseVisualStyleBackColor = False
@@ -2378,12 +2377,12 @@ Partial Class Form_Tools
         Me.Button_PrepareGates.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button_PrepareGates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_PrepareGates.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_PrepareGates.ForeColor = System.Drawing.Color.White
-        Me.Button_PrepareGates.Location = New System.Drawing.Point(8, 203)
+        Me.Button_PrepareGates.ForeColor = System.Drawing.Color.Black
+        Me.Button_PrepareGates.Location = New System.Drawing.Point(8, 605)
         Me.Button_PrepareGates.Name = "Button_PrepareGates"
-        Me.Button_PrepareGates.Size = New System.Drawing.Size(170, 35)
+        Me.Button_PrepareGates.Size = New System.Drawing.Size(170, 48)
         Me.Button_PrepareGates.TabIndex = 61
-        Me.Button_PrepareGates.Text = "Prepare Gates"
+        Me.Button_PrepareGates.Text = "Manually Prepare Gates"
         Me.Button_PrepareGates.UseVisualStyleBackColor = False
         '
         'CheckBox_BuildOneAndStop
@@ -2422,7 +2421,7 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_autospin.ForeColor = System.Drawing.Color.White
         Me.ComboBox_autospin.FormattingEnabled = True
-        Me.ComboBox_autospin.Items.AddRange(New Object() {"ABG", "Delta", "Epsilon", "Zeta", "Kappa", "Lambda", "Kuiper", "Hades"})
+        Me.ComboBox_autospin.Items.AddRange(New Object() {"abg", "delta", "epsilon", "zeta", "kappa", "lambda", "kuiper", "hades"})
         Me.ComboBox_autospin.Location = New System.Drawing.Point(78, 43)
         Me.ComboBox_autospin.Name = "ComboBox_autospin"
         Me.ComboBox_autospin.Size = New System.Drawing.Size(75, 21)
@@ -2436,13 +2435,12 @@ Partial Class Form_Tools
         Me.Button_Gamma_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Gamma_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Gamma_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Gamma_GGS.Location = New System.Drawing.Point(8, 361)
+        Me.Button_Gamma_GGS.Location = New System.Drawing.Point(8, 347)
         Me.Button_Gamma_GGS.Name = "Button_Gamma_GGS"
         Me.Button_Gamma_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_Gamma_GGS.TabIndex = 104
-        Me.Button_Gamma_GGS.Text = "Spin GAMMA"
+        Me.Button_Gamma_GGS.Text = "Manually Spin GAMMA"
         Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
-        Me.Button_Gamma_GGS.Visible = False
         '
         'Button_beta_GGS
         '
@@ -2451,13 +2449,12 @@ Partial Class Form_Tools
         Me.Button_beta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_beta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_beta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 334)
+        Me.Button_beta_GGS.Location = New System.Drawing.Point(8, 320)
         Me.Button_beta_GGS.Name = "Button_beta_GGS"
         Me.Button_beta_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_beta_GGS.TabIndex = 103
-        Me.Button_beta_GGS.Text = "Spin BETA"
+        Me.Button_beta_GGS.Text = "Manually Spin BETA"
         Me.Button_beta_GGS.UseVisualStyleBackColor = False
-        Me.Button_beta_GGS.Visible = False
         '
         'Button_alpha_GGS
         '
@@ -2466,13 +2463,12 @@ Partial Class Form_Tools
         Me.Button_alpha_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_alpha_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_alpha_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 307)
+        Me.Button_alpha_GGS.Location = New System.Drawing.Point(8, 293)
         Me.Button_alpha_GGS.Name = "Button_alpha_GGS"
         Me.Button_alpha_GGS.Size = New System.Drawing.Size(170, 25)
         Me.Button_alpha_GGS.TabIndex = 102
-        Me.Button_alpha_GGS.Text = "Spin ALPHA"
+        Me.Button_alpha_GGS.Text = "Manually Spin ALPHA"
         Me.Button_alpha_GGS.UseVisualStyleBackColor = False
-        Me.Button_alpha_GGS.Visible = False
         '
         'Button_resetlog
         '
@@ -2481,9 +2477,9 @@ Partial Class Form_Tools
         Me.Button_resetlog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_resetlog.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_resetlog.ForeColor = System.Drawing.Color.White
-        Me.Button_resetlog.Location = New System.Drawing.Point(218, 603)
+        Me.Button_resetlog.Location = New System.Drawing.Point(117, 627)
         Me.Button_resetlog.Name = "Button_resetlog"
-        Me.Button_resetlog.Size = New System.Drawing.Size(107, 26)
+        Me.Button_resetlog.Size = New System.Drawing.Size(93, 26)
         Me.Button_resetlog.TabIndex = 101
         Me.Button_resetlog.Text = "Reset Log."
         Me.Button_resetlog.UseVisualStyleBackColor = False
@@ -2495,11 +2491,11 @@ Partial Class Form_Tools
         Me.Button_resettabspin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_resettabspin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_resettabspin.ForeColor = System.Drawing.Color.White
-        Me.Button_resettabspin.Location = New System.Drawing.Point(331, 603)
+        Me.Button_resettabspin.Location = New System.Drawing.Point(14, 627)
         Me.Button_resettabspin.Name = "Button_resettabspin"
-        Me.Button_resettabspin.Size = New System.Drawing.Size(158, 26)
+        Me.Button_resettabspin.Size = New System.Drawing.Size(93, 26)
         Me.Button_resettabspin.TabIndex = 8
-        Me.Button_resettabspin.Text = "Reset Tab. && Spin"
+        Me.Button_resettabspin.Text = "Reset Tab. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Button_resettabspin.UseVisualStyleBackColor = False
         '
         'TextBox_total_spinned
@@ -2598,6 +2594,7 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_GalaxyGates.Controls.Add(Me.DATE_REMAINING)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG_GG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Button_game_doodle)
@@ -2614,11 +2611,25 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
-        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(84, 448)
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(48, 382)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
-        Me.Panel_GalaxyGates.Size = New System.Drawing.Size(497, 639)
+        Me.Panel_GalaxyGates.Size = New System.Drawing.Size(497, 670)
         Me.Panel_GalaxyGates.TabIndex = 44
         Me.Panel_GalaxyGates.Visible = False
+        '
+        'DATE_REMAINING
+        '
+        Me.DATE_REMAINING.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.DATE_REMAINING.AutoSize = True
+        Me.DATE_REMAINING.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.DATE_REMAINING.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DATE_REMAINING.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE_REMAINING.ForeColor = System.Drawing.Color.Black
+        Me.DATE_REMAINING.Location = New System.Drawing.Point(289, 631)
+        Me.DATE_REMAINING.Name = "DATE_REMAINING"
+        Me.DATE_REMAINING.Size = New System.Drawing.Size(106, 17)
+        Me.DATE_REMAINING.TabIndex = 110
+        Me.DATE_REMAINING.Text = "00000000000000"
         '
         'Button_game_doodle
         '
@@ -3171,18 +3182,18 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(196, 291)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(196, 283)
         Me.TableLayoutPanel1.TabIndex = 83
         '
         'Leaderprice_explain
         '
         Me.Leaderprice_explain.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Leaderprice_explain.AutoSize = True
-        Me.Leaderprice_explain.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Leaderprice_explain.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Leaderprice_explain.ForeColor = System.Drawing.Color.Gold
-        Me.Leaderprice_explain.Location = New System.Drawing.Point(8, 62)
+        Me.Leaderprice_explain.Location = New System.Drawing.Point(9, 62)
         Me.Leaderprice_explain.Name = "Leaderprice_explain"
-        Me.Leaderprice_explain.Size = New System.Drawing.Size(57, 15)
+        Me.Leaderprice_explain.Size = New System.Drawing.Size(55, 15)
         Me.Leaderprice_explain.TabIndex = 103
         Me.Leaderprice_explain.Text = "S. Price  :"
         '
@@ -3197,19 +3208,6 @@ Partial Class Form_Tools
         Me.Label_Xenomit.Size = New System.Drawing.Size(52, 15)
         Me.Label_Xenomit.TabIndex = 90
         Me.Label_Xenomit.Text = "Xenomit"
-        '
-        'Label_Part_Earned
-        '
-        Me.Label_Part_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Part_Earned.AutoSize = True
-        Me.Label_Part_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Part", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Part_Earned.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Part_Earned.ForeColor = System.Drawing.Color.Black
-        Me.Label_Part_Earned.Location = New System.Drawing.Point(128, 268)
-        Me.Label_Part_Earned.Name = "Label_Part_Earned"
-        Me.Label_Part_Earned.Size = New System.Drawing.Size(14, 15)
-        Me.Label_Part_Earned.TabIndex = 98
-        Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Part
         '
         'Label_Nanohull
         '
@@ -3480,7 +3478,7 @@ Partial Class Form_Tools
         Me.Label_repairCR_explain.AutoSize = True
         Me.Label_repairCR_explain.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_repairCR_explain.ForeColor = System.Drawing.Color.White
-        Me.Label_repairCR_explain.Location = New System.Drawing.Point(7, 268)
+        Me.Label_repairCR_explain.Location = New System.Drawing.Point(7, 264)
         Me.Label_repairCR_explain.Name = "Label_repairCR_explain"
         Me.Label_repairCR_explain.Size = New System.Drawing.Size(60, 15)
         Me.Label_repairCR_explain.TabIndex = 101
@@ -3490,13 +3488,26 @@ Partial Class Form_Tools
         '
         Me.Leaderprice.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Leaderprice.AutoSize = True
-        Me.Leaderprice.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Leaderprice.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Leaderprice.ForeColor = System.Drawing.Color.Gold
-        Me.Leaderprice.Location = New System.Drawing.Point(113, 62)
+        Me.Leaderprice.Location = New System.Drawing.Point(121, 62)
         Me.Leaderprice.Name = "Leaderprice"
-        Me.Leaderprice.Size = New System.Drawing.Size(43, 15)
+        Me.Leaderprice.Size = New System.Drawing.Size(28, 15)
         Me.Leaderprice.TabIndex = 79
-        Me.Leaderprice.Text = "100 U."
+        Me.Leaderprice.Text = "0 U."
+        '
+        'Label_Part_Earned
+        '
+        Me.Label_Part_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_Part_Earned.AutoSize = True
+        Me.Label_Part_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_Part_Earned.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Part_Earned.ForeColor = System.Drawing.Color.Black
+        Me.Label_Part_Earned.Location = New System.Drawing.Point(128, 264)
+        Me.Label_Part_Earned.Name = "Label_Part_Earned"
+        Me.Label_Part_Earned.Size = New System.Drawing.Size(14, 15)
+        Me.Label_Part_Earned.TabIndex = 98
+        Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
         '
         'TextBox_WinGGS
         '
@@ -3506,9 +3517,8 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.Location = New System.Drawing.Point(218, 341)
         Me.TextBox_WinGGS.Multiline = True
         Me.TextBox_WinGGS.Name = "TextBox_WinGGS"
-        Me.TextBox_WinGGS.Size = New System.Drawing.Size(272, 256)
+        Me.TextBox_WinGGS.Size = New System.Drawing.Size(272, 280)
         Me.TextBox_WinGGS.TabIndex = 93
-        Me.TextBox_WinGGS.Text = "- Galaxy Gates Spinner Initialized -"
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'WebBrowser_galaxyGates
@@ -4067,18 +4077,6 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4365,7 +4363,6 @@ Partial Class Form_Tools
     Friend WithEvents Button_hades As Button
     Friend WithEvents Button_kuiper As Button
     Friend WithEvents TextBox_uridiumGGS As TextBox
-    Friend WithEvents Label17 As Label
     Friend WithEvents Button_resetlog As Button
     Friend WithEvents CheckedListBox_listbox As CheckedListBox
     Friend WithEvents Label_repair As Label
@@ -4438,4 +4435,5 @@ Partial Class Form_Tools
     Friend WithEvents Leaderprice_explain As Label
     Friend WithEvents ToolTip_GalaxyGates As ToolTip
     Friend WithEvents Button_game_doodle As Button
+    Friend WithEvents DATE_REMAINING As Label
 End Class

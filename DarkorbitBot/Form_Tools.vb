@@ -6,61 +6,59 @@ Imports FireSharp.Config
 
 Public Class Form_Tools
 
-    Public BOL_Redimensionnement As Boolean
-    Public BeingDragged As Boolean
-    Public ABG As Boolean
-    Public BackgroundWorkerAutospin As Boolean
+    Public Shared BOL_Redimensionnement As Boolean
+    Public Shared BeingDragged As Boolean
+    Public Shared ABG As Boolean
+    Public Shared BackgroundWorkerAutospin As Boolean
 
-    Public MouseDownX As Integer
-    Public MouseDownY As Integer
-    Public Check_message As Integer
-    Public Reloader As Integer
-    Public Reader As Integer
-    Public Const BufferSize As Integer = 512 * 1024
-    Public Const BufferReadSize As Integer = 1024
+    Public Shared MouseDownX As Integer
+    Public Shared MouseDownY As Integer
+    Public Shared Check_message As Integer
+    Public Shared Reloader As Integer
+    Public Shared Reader As Integer
 
-    Public Calculator As String
-    Public UridiumCalculator As String
-    Public CreditCalculator As String
-    Public HonorCalculator As String
-    Public ExpCalculator As String
-    Public RPCalculator As String
-    Public UridiumCalculator2 As String
-    Public CreditCalculator2 As String
-    Public HonorCalculator2 As String
-    Public ExpCalculator2 As String
-    Public RPCalculator2 As String
-    Public UridiumCalculator3 As String
-    Public CreditCalculator3 As String
-    Public HonorCalculator3 As String
-    Public ExpCalculator3 As String
-    Public RPCalculator3 As String
-    Public CheckedDeltaStats As String
-    Public CheckedEpsilonStats As String
-    Public CheckedZetaStats As String
-    Public CheckedkappaStats As String
-    Public CheckedLambdaStats As String
-    Public CheckedkuiperStats As String
-    Public CheckedHadesStats As String
-    Public CheckedAlphaBetaGammaStats As String
-    Public CheckedAlphaBetaGammaStats2 As String
-    Public CheckedAlphaBetaGammaStats3 As String
-    Public Opened As String = 1
-    Public PartAlpha As String
-    Public PartBeta As String
-    Public PartGamma As String
-    Public AlphaBetaGammaReupload As String
-    Public AlphaBetaGammaReupload2 As String
-    Public AlphaBetaGammaReupload3 As String
-    Public numberToSpin As String
-    Public uridiumToKeep As String
-    Public Data As String
-    Public infoPartGG As String
-    Public infoinMapGG As String
-    Public GalaxyGatesNumber As String
-    Public exitGGS As String = 0
-    Public Spintimes As String
-    Public GalaxyGatesChecker As String = 0
+    Public Shared Calculator As String
+    Public Shared UridiumCalculator As String
+    Public Shared CreditCalculator As String
+    Public Shared HonorCalculator As String
+    Public Shared ExpCalculator As String
+    Public Shared RPCalculator As String
+    Public Shared UridiumCalculator2 As String
+    Public Shared CreditCalculator2 As String
+    Public Shared HonorCalculator2 As String
+    Public Shared ExpCalculator2 As String
+    Public Shared RPCalculator2 As String
+    Public Shared UridiumCalculator3 As String
+    Public Shared CreditCalculator3 As String
+    Public Shared HonorCalculator3 As String
+    Public Shared ExpCalculator3 As String
+    Public Shared RPCalculator3 As String
+    Public Shared CheckedDeltaStats As String
+    Public Shared CheckedEpsilonStats As String
+    Public Shared CheckedZetaStats As String
+    Public Shared CheckedkappaStats As String
+    Public Shared CheckedLambdaStats As String
+    Public Shared CheckedkuiperStats As String
+    Public Shared CheckedHadesStats As String
+    Public Shared CheckedAlphaBetaGammaStats As String
+    Public Shared CheckedAlphaBetaGammaStats2 As String
+    Public Shared CheckedAlphaBetaGammaStats3 As String
+    Public Shared Opened As String = 1
+    Public Shared PartAlpha As String
+    Public Shared PartBeta As String
+    Public Shared PartGamma As String
+    Public Shared AlphaBetaGammaReupload As String
+    Public Shared AlphaBetaGammaReupload2 As String
+    Public Shared AlphaBetaGammaReupload3 As String
+    Public Shared numberToSpin As String
+    Public Shared uridiumToKeep As String
+    Public Shared Data As String
+    Public Shared infoPartGG As String
+    Public Shared infoinMapGG As String
+    Public Shared GalaxyGatesNumber As String
+    Public Shared exitGGS As String = 0
+    Public Shared Spintimes As String
+    Public Shared GalaxyGatesChecker As String = 0
 
 
     'Private client As FirebaseClient
@@ -560,37 +558,48 @@ Public Class Form_Tools
 #Region "GG Click Portail"
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
-        GalaxyGates.View(GalaxyGates_id:="1", GalaxyGates_Name:="alpha")
+        GalaxyGates.View(GalaxyGates_id:="1",
+                         GalaxyGates_Name:="alpha")
     End Sub
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
-        GalaxyGates.View(GalaxyGates_id:="2", GalaxyGates_Name:="Beta")
+        GalaxyGates.View(GalaxyGates_id:="2",
+                         GalaxyGates_Name:="Beta")
     End Sub
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
-        GalaxyGates.View(GalaxyGates_id:="3", GalaxyGates_Name:="Gamma")
+        GalaxyGates.View(GalaxyGates_id:="3",
+                         GalaxyGates_Name:="Gamma")
     End Sub
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
-        GalaxyGates.View(GalaxyGates_id:="4", GalaxyGates_Name:="Delta")
+        GalaxyGates.View(GalaxyGates_id:="4",
+                         GalaxyGates_Name:="Delta")
     End Sub
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-        GalaxyGates.View(GalaxyGates_id:="5", GalaxyGates_Name:="Epsilon")
+        GalaxyGates.View(GalaxyGates_id:="5",
+                         GalaxyGates_Name:="Epsilon")
     End Sub
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-        GalaxyGates.View(GalaxyGates_id:="6", GalaxyGates_Name:="Zeta")
+        GalaxyGates.View(GalaxyGates_id:="6",
+                         GalaxyGates_Name:="Zeta")
     End Sub
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-        GalaxyGates.View(GalaxyGates_id:="7", GalaxyGates_Name:="Kappa")
+        GalaxyGates.View(GalaxyGates_id:="7",
+                         GalaxyGates_Name:="Kappa")
     End Sub
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-        GalaxyGates.View(GalaxyGates_id:="8", GalaxyGates_Name:="Lambda")
+        GalaxyGates.View(GalaxyGates_id:="8",
+                         GalaxyGates_Name:="Lambda")
     End Sub
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-        GalaxyGates.View(GalaxyGates_id:="13", GalaxyGates_Name:="Hades")
+        GalaxyGates.View(GalaxyGates_id:="13",
+                         GalaxyGates_Name:="Hades")
     End Sub
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates.View("19", "Kuiper")
+        GalaxyGates.View(GalaxyGates_id:="19",
+                         GalaxyGates_Name:="Kuiper")
     End Sub
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates.View("12", "Chronos")
+        GalaxyGates.View(GalaxyGates_id:="12",
+                         GalaxyGates_Name:="Chronos")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour voir la GG Uniquement
@@ -598,114 +607,70 @@ Public Class Form_Tools
 #Region "Button Click GGS"
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-
-        WebBrowser_GGspinner.Navigate("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=1&alpha=1&sample=1&multiplier=1")
-
+        GalaxyGates.Spin(GalaxyGates_id:="1",
+                         GalaxyGates_Name:="alpha",
+                         Autorize_ABG:="1")
     End Sub
     Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
-        GalaxyGates.Spin("1", "alpha")
+        GalaxyGates.Spin(GalaxyGates_id:="1",
+                         GalaxyGates_Name:="alpha",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="2", GalaxyGates_Name:="Beta")
+        GalaxyGates.Spin(GalaxyGates_id:="2",
+                         GalaxyGates_Name:="beta",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_Gamma_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="3", GalaxyGates_Name:="Gamma")
+        GalaxyGates.Spin(GalaxyGates_id:="3",
+                         GalaxyGates_Name:="gamma",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="4", GalaxyGates_Name:="Delta")
+        GalaxyGates.Spin(GalaxyGates_id:="4",
+                         GalaxyGates_Name:="delta",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="5", GalaxyGates_Name:="Epsilon")
+        GalaxyGates.Spin(GalaxyGates_id:="5",
+                         GalaxyGates_Name:="epsilon",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="6", GalaxyGates_Name:="Zeta")
+        GalaxyGates.Spin(GalaxyGates_id:="6",
+                         GalaxyGates_Name:="zeta",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="7", GalaxyGates_Name:="Kappa")
+        GalaxyGates.Spin(GalaxyGates_id:="7",
+                         GalaxyGates_Name:="kappa",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="8", GalaxyGates_Name:="Lambda")
+        GalaxyGates.Spin(GalaxyGates_id:="8",
+                         GalaxyGates_Name:="lambda",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="19", GalaxyGates_Name:="Kuiper")
+        GalaxyGates.Spin(GalaxyGates_id:="19",
+                         GalaxyGates_Name:="kuiper",
+                         Autorize_ABG:="0")
     End Sub
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="13", GalaxyGates_Name:="Hades")
+        GalaxyGates.Spin(GalaxyGates_id:="13",
+                         GalaxyGates_Name:="hades",
+                         Autorize_ABG:="0")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
 
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
 
-        'Button_StartSpin.Enabled = False
-        'Button_stopSpin.Enabled = True
+        Button_StartSpin.Enabled = False
+        Button_stopSpin.Enabled = True
+        ComboBox_autospin.Enabled = False
 
-        'If TextBox_spintimes_GGS.Text.Contains(".") Then
-
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-        'ElseIf TextBox_spintimes_GGS.Text.Contains(" ") Then
-
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"You can't put a dot in the spin time." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-        'ElseIf Val(TextBox_spintimes_GGS.Text) < 200 Then
-
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Starting with 300ms by Default, we don't recommand to go lower." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Error :" + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-        '    TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-        '    TextBox_spintimes_GGS.Text = 300
-        'End If
-
-        'Data = ComboBox_autospin.Text
-        'exitGGS = 0
-        'Select Case Data
-        '    Case "ABG"
-        '        WebBrowser_galaxyGates.Navigate("about:blank")
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Delta"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Epsilon"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Zeta"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Kappa"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Lambda"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Kuiper"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case "Hades"
-        '        ClickGG(Data, TextBox_spintimes_GGS.Text)
-
-        '    Case Else
-
-        '        Button_alpha_GGS.Visible = True
-        '        Button_beta_GGS.Visible = True
-        '        Button_Gamma_GGS.Visible = True
-        '        Button_stopSpin.PerformClick()
-        '        ComboBox_autospin.Text = "ABG"
-        '        ComboBox_autospin.Refresh()
-
-        'End Select
-
+        ClickGG()
 
     End Sub ' Start Galaxy Gates Spinner 
 
@@ -725,148 +690,67 @@ Public Class Form_Tools
 
     End Sub ' Stop Galaxy Gates Spinner 
 
-    Private Async Sub ClickGG(portail As String, temps As Integer)
-
-Label_ClickGalaxyGates:
-
-        infoinMapGG = INFO_ON_MAP_GG_LABEL.Text.Replace("On map : ", "")
-        infoPartGG = INFO_PART_GG_LABEL.Text.Replace("Part : ", "")
-
+    Private Async Sub ClickGG()
 
         If exitGGS = 1 Then
             Console.WriteLine($"exitGGS = 1")
             Exit Sub
         End If
 
+HOME_BASIC_RETURN_IF_VALID:
 
-        If CheckBox_UseOnlyEE_GGS.Checked = True And TextBox_ExtraEnergy_GGS.Text = "0" Then
-
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-            Button_StartSpin.Enabled = True
-            Button_stopSpin.Enabled = False
-            ComboBox_autospin.Enabled = True
-            Exit Sub
-
-        ElseIf Val(TextBox_uridiumGGS.Text.Replace(".", "")) < Val(TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And CheckBox_UseOnlyEE_GGS.Checked = False Then
-
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-            TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-            Button_StartSpin.Enabled = True
-            Button_stopSpin.Enabled = False
-            ComboBox_autospin.Enabled = True
+        If exitGGS = 1 Then
+            Console.WriteLine($"exitGGS = 1")
             Exit Sub
         End If
 
+        GalaxyGates.GalaxyGates_Name = ComboBox_autospin.Text
+        If GalaxyGates.GalaxyGates_Name = Nothing Then
 
+        ElseIf GalaxyGates.GalaxyGates_Name = "abg" Then
+            GalaxyGates.Autorize_ABG = "1"
+            GalaxyGates.GalaxyGates_id = "1"
 
-        If infoinMapGG.Split(" / ").First = infoinMapGG.Split(" / ").Last Then
-            GalaxyGatesNumber = 2
-        Else
-            GalaxyGatesNumber = 1
+        ElseIf GalaxyGates.GalaxyGates_Name = "delta" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "4"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "epsilon" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "5"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "zeta" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "6"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "kappa" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "7"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "lambda" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "8"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "hades" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "13"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "kuiper" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "19"
+
+        ElseIf GalaxyGates.GalaxyGates_Name = "chronos" Then
+            GalaxyGates.Autorize_ABG = "0"
+            GalaxyGates.GalaxyGates_id = "12"
         End If
 
+        GalaxyGates.Spin(GalaxyGates_id:=GalaxyGates.GalaxyGates_id,
+                         GalaxyGates_Name:=GalaxyGates.GalaxyGates_Name,
+                         Autorize_ABG:=GalaxyGates.Autorize_ABG)
 
+        Await Task.Delay(125)
 
-        If infoPartGG.Split(" / ").First = infoPartGG.Split(" / ").Last Then
-            If GalaxyGatesNumber = 1 Then
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 1 {ComboBox_autospin.Text} Gates completed" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Getting infos for ""Build One and Stop"" checkbox..." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Wait..." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                GalaxyGatesChecker = 1
-
-                Button_PrepareGates.PerformClick()
-                Await Task.Delay(5000)
-
-            Else
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"You Have 2 {ComboBox_autospin.Text} Gates completed" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-                Button_StartSpin.Enabled = True
-                Button_stopSpin.Enabled = False
-                ComboBox_autospin.Enabled = True
-                Exit Sub
-            End If
-
-            If CheckBox_BuildOneAndStop.Checked = True Then
-
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is true.{vbNewLine}" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped.{vbNewLine}" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-                Button_StartSpin.Enabled = True
-                Button_stopSpin.Enabled = False
-                ComboBox_autospin.Enabled = True
-
-                Exit Sub
-
-            Else
-
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"CheckBox Build One & Stop is false." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Wait..." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-                Await Task.Delay(1000)
-
-                WebBrowser_galaxyGates.Refresh()
-                Await Task.Delay(1000)
-
-            End If
-        End If
-
-        uridiumToKeep = Replace(TextBox_uridiumtokeepGGS.Text, ".", "")
-
-        Select Case portail
-            Case "ABG"
-                Button_ABG_GGS.PerformClick()
-
-            Case "Delta"
-                Button_Delta_GGS.PerformClick()
-
-            Case "Epsilon"
-                Button_Epsilon_GGS.PerformClick()
-
-            Case "Zeta"
-                Button_Zeta_GGS.PerformClick()
-
-            Case "Kappa"
-                Button_Kappa_GGS.PerformClick()
-
-            Case "Lambda"
-                Button_Lambda_GGS.PerformClick()
-
-            Case "Kuiper"
-                Button_Kuiper_GGS.PerformClick()
-
-            Case "Hades"
-                Button_Hades_GGS.PerformClick()
-
-            Case Else
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Select a valid Gate first." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
-                TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-        End Select
-
-        Await Task.Delay(temps)
-
-        GoTo Label_ClickGalaxyGates
+        GoTo HOME_BASIC_RETURN_IF_VALID
 
     End Sub ' boucle click GG
 
@@ -876,67 +760,51 @@ Label_ClickGalaxyGates:
 
     Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
-        If GalaxyGatesChecker = 1 Then
-            If ComboBox_autospin.Text = "ABG" Then
+        Dim GalaxyGates_id As Object = 0
+        Dim PART_GG As Object = INFO_PART_GG_LABEL.Text
 
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
-                Await Task.Delay("4000")
+        Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
+        If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = 1 Then
+            GalaxyGates_id = 1
 
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = 2 Then
+            GalaxyGates_id = 2
 
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = 3 Then
+            GalaxyGates_id = 3
 
-            ElseIf ComboBox_autospin.Text = "Alpha" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 1))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = 4 Then
+            GalaxyGates_id = 4
 
-            ElseIf ComboBox_autospin.Text = "Beta" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 2))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = 5 Then
+            GalaxyGates_id = 5
 
-            ElseIf ComboBox_autospin.Text = "Gamma" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 3))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = 6 Then
+            GalaxyGates_id = 6
 
-            ElseIf ComboBox_autospin.Text = "Delta" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 4))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = 7 Then
+            GalaxyGates_id = 7
 
-            ElseIf ComboBox_autospin.Text = "Epsilon" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 5))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 8 Then
+            GalaxyGates_id = 8
 
-            ElseIf ComboBox_autospin.Text = "Zeta" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 6))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 13 Then
+            GalaxyGates_id = 13
 
-            ElseIf ComboBox_autospin.Text = "Kappa" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 7))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = 19 Then
+            GalaxyGates_id = 19
 
-            ElseIf ComboBox_autospin.Text = "Lambda" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 8))
-                Await Task.Delay("4000")
+        ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = 12 Then
+            GalaxyGates_id = 12
 
-            ElseIf ComboBox_autospin.Text = "Hades" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 13))
-                Await Task.Delay("4000")
-
-            ElseIf ComboBox_autospin.Text = "Kuiper" Then
-                WebBrowser_GGspinner.Navigate(Utils.PrepareGatesFunction(Utils.server, Utils.userid, Utils.dosid, 19))
-                Await Task.Delay("4000")
-            End If
-
-            GalaxyGatesChecker = 0
-            WebBrowser_galaxyGates.Refresh()
-
-            Button_stopSpin.PerformClick()
-            Await Task.Delay("100")
-            Button_StartSpin.PerformClick()
+        Else
+            GalaxyGates_id = GalaxyGates_id
 
         End If
+
+        Dim Prepare_Gates_POST As New System.Net.WebClient
+        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
 
 
     End Sub ' button prepare Gates

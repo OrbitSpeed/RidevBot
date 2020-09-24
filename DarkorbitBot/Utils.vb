@@ -84,13 +84,6 @@ Public Class Utils
         End If
     End Function
 
-    Public Shared Function PrepareGatesFunction(server As String, userid As String, dosid As String, gateid As Integer)
-        If server.Length = 0 Or userid.Length = 0 Or dosid.Length = 0 Or gateid = 0 Then
-            Return MsgBox("Erreur dans le code, tu as oublié de mettre une valeur dans PrepareGatesFunction")
-        End If
-        Return "https://" + server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + userid + "&sid=" + dosid + "&action=setupGate&gateID=" & gateid
-    End Function
-
     Public Shared Function GetRandom(ByVal Min As Integer, ByVal Max As Integer) As Integer
         Dim Generator As Random = New Random()
         Return Generator.Next(Min, Max)
