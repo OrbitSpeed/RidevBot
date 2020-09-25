@@ -865,13 +865,16 @@ HOME_BASIC_RETURN_IF_VALID:
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
-        Reader = 1
-        Utils_module.checkStats = True
-        BackPage_Form.ShowIcon = False
-        BackPage_Form.ShowInTaskbar = False
-        BackPage_Form.Show()
-        BackPage_Form.WindowState = FormWindowState.Minimized
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+
+        Stats_module.Load()
+
+        'Reader = 1
+        'Utils_module.checkStats = True
+        'BackPage_Form.ShowIcon = False
+        'BackPage_Form.ShowInTaskbar = False
+        'BackPage_Form.Show()
+        'BackPage_Form.WindowState = FormWindowState.Minimized
+        'BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
     End Sub ' ici on refresh les stats du panel STATS !
 
