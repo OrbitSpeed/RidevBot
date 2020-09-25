@@ -91,6 +91,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property auto_loot_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("auto_loot_pet_module", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property auto_loot_resources_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("auto_loot_resources_pet_module", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Byte[].
         '''</summary>
         Friend ReadOnly Property AxInterop_WMPLib() As Byte()
@@ -173,9 +193,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property box_collector_module_pet() As System.Drawing.Bitmap
+        Friend ReadOnly Property breaking_news_bonusgg() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("box_collector_module_pet", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("breaking_news_bonusgg", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -183,9 +203,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property breaking_news_bonusgg() As System.Drawing.Bitmap
+        Friend ReadOnly Property Buy_fuel_1000_pet() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("breaking_news_bonusgg", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Buy_fuel_1000_pet", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -233,9 +253,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Combo_material_module_pet() As System.Drawing.Bitmap
+        Friend ReadOnly Property combo_ship_Defense_pet_module() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Combo_material_module_pet", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("combo_ship_Defense_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -402,6 +422,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property guard_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("guard_pet_module", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property heal() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("heal", resourceCulture)
@@ -512,9 +542,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Kamikaze_active_module_pet() As System.Drawing.Bitmap
+        Friend ReadOnly Property Kamikaze_pet_module() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Kamikaze_active_module_pet", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Kamikaze_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -545,6 +575,16 @@ Namespace My.Resources
         Friend ReadOnly Property label() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("label", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Link_pv_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Link_pv_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1102,9 +1142,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property npc_locator_module_pet() As System.Drawing.Bitmap
+        Friend ReadOnly Property Npc_detector_pet_module() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("npc_locator_module_pet", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Npc_detector_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1112,19 +1152,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property ore_collector_module_pet() As System.Drawing.Bitmap
+        Friend ReadOnly Property passive_pet_module() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("ore_collector_module_pet", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Passive_module_pet() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Passive_module_pet", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("passive_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1195,16 +1225,6 @@ Namespace My.Resources
         Friend ReadOnly Property prometium() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("prometium", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property protect_module_pet() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("protect_module_pet", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1502,9 +1522,29 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Sacrifice_flam_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Sacrifice_flam_pet_module", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Saimon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Saimon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Ship_repairer_pet_module() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Ship_repairer_pet_module", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

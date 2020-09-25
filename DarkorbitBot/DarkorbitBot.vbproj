@@ -701,6 +701,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\Stop_pet.png" />
+    <None Include="Resources\Ship_repairer_pet_module.png" />
+    <None Include="Resources\Sacrifice_flam_pet_module.png" />
+    <None Include="Resources\Play_pet.png" />
+    <None Include="Resources\passive_pet_module.png" />
+    <None Include="Resources\Npc_detector_pet_module.png" />
+    <None Include="Resources\Link_pv_pet_module.png" />
+    <None Include="Resources\Kamikaze_pet_module.png" />
+    <None Include="Resources\guard_pet_module.png" />
+    <None Include="Resources\combo_ship_repairer_pet_module.png" />
+    <None Include="Resources\combo_ship_Defense_pet_module.png" />
+    <None Include="Resources\Buy_fuel_1000_pet.png" />
+    <None Include="Resources\auto_loot_resources_pet_module.png" />
+    <None Include="Resources\auto_loot_pet_module.png" />
     <None Include="Resources\doodlejump.swf" />
     <None Include="Resources\gg-bonus_reward.png" />
     <None Include="Resources\gg_double-reward-day_s_201802.jpg" />
@@ -796,8 +810,6 @@
     <None Include="Resources\reparator_ship_module_pet.png" />
     <None Include="Resources\protect_module_pet.png" />
     <None Include="Resources\Passive_module_pet.png" />
-    <None Include="Resources\Stop_pet.png" />
-    <None Include="Resources\Play_pet.png" />
     <None Include="Resources\Defile_menu_pet.png" />
     <None Include="Resources\Activate_pet.png" />
     <None Include="Resources\Disconnected.png" />
