@@ -708,6 +708,7 @@ HOME_BASIC_RETURN_IF_VALID:
         If GalaxyGates_module.GalaxyGates_Name = Nothing Then
 
         ElseIf GalaxyGates_module.GalaxyGates_Name = "abg" Then
+            GalaxyGates_module.GalaxyGates_Name = "alpha"
             GalaxyGates_module.Autorize_ABG = "1"
             GalaxyGates_module.GalaxyGates_id = "1"
 
