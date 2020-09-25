@@ -1,7 +1,7 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
 
-Public Class GalaxyGates
+Public Class GalaxyGates_module
 
     Public Shared GalaxyGates_Name As String
     Public Shared Spins_reward As String
@@ -30,8 +30,8 @@ Public Class GalaxyGates
 
     Public Shared Function Load()
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&action=init&sid=" + Utils_module.dosid)
 
         Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
         Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
@@ -143,8 +143,8 @@ Public Class GalaxyGates
 
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&action=init&sid=" + Utils_module.dosid)
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate (.*id=""" + GalaxyGates_id + Table_Load).Groups.Item(1).ToString
         If WebClient_GET_All_elements <> Nothing Then
@@ -200,7 +200,7 @@ Public Class GalaxyGates
 
         If Form_Tools.Button_game_doodle.Text = "Game" Then
 
-            Form_Tools.WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=" + GalaxyGates_id + "&type=full")
+            Form_Tools.WebBrowser_galaxyGates.Navigate("https://" + Utils_module.server + ".darkorbit.com/jumpgate.php?userID=" + Utils_module.userid + "&gateID=" + GalaxyGates_id + "&type=full")
 
         Else
 
@@ -320,8 +320,8 @@ Public Class GalaxyGates
             End If
 
             Dim Prepare_Gates_POST As New System.Net.WebClient
-            Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-            Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+            Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
+            Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils_module.userid + "&sid=" + Utils_module.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
 
@@ -346,8 +346,8 @@ Public Class GalaxyGates
             End If
         End If
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&action=multiEnergy&sid=" + Utils_module.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
         Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium Left
         Dim Webclient_GET_Gates_name = Regex.Match(WebClient_Data, "<mode>(.*)<\/mode>").Groups.Item(1).ToString ' Gates name
         Dim Webclient_GET_Items = Regex.Match(WebClient_Data, "<item (.*)>").Groups.Item(1).ToString ' Items Rewared

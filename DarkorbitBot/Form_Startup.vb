@@ -17,7 +17,7 @@ Public Class Form_Startup
     Public fcon As New FirebaseConfig() With
         {
         .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
-        .AuthSecret = Utils.Firebase_Secret
+        .AuthSecret = Utils_module.Firebase_Secret
         }
 
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
@@ -34,7 +34,7 @@ Public Class Form_Startup
         Button_Load.Enabled = False
         Button_SID_Load.Enabled = False
         Try
-            Await Utils.GetNistTime()
+            Await Utils_module.GetNistTime()
         Catch ex As Exception
             Console.WriteLine($"Erreur:{ex.ToString}")
         End Try
@@ -263,11 +263,11 @@ Public Class Form_Startup
     Private Sub Button_SID_Load_Click(sender As Object, e As EventArgs) Handles Button_SID_Load.Click
 
         Label_point_de_chute.Select()
-        Utils.server = TextBox_server.Text
-        Utils.dosid = TextBox_sid.Text
+        Utils_module.server = TextBox_server.Text
+        Utils_module.dosid = TextBox_sid.Text
 
-        Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        Utils_module.InternetSetCookie("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils_module.dosid & ";")
+        Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         Form_Game.Show()
 
         Me.Close()
@@ -516,18 +516,18 @@ Public Class Form_Startup
             Exit Sub
         End If
 
-        Dim resUser = res.ResultAs(Of Utilisateur)
+        Dim resUser = res.ResultAs(Of User_module)
 
-        Dim CurUser As New Utilisateur With
+        Dim CurUser As New User_module With
             {
             .NomUtilisateur = TextBox_license_username.Text,
             .PasswordUtilisateur = TextBox_license_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
+            .LicenseEndTime = Utils_module.DateDistant,
             .LicenseActivated = False,
             .LicenseKey = user_key
             }
 
-        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+        If resUser.LicenseEndTime.CompareTo(Utils_module.DateDistant) = -1 Then
             MessageBox.Show("t'as pas payé enculé")
             PictureBox_license_check.Image = My.Resources.error_icon
             PictureBox_license_check.Tag = False
@@ -536,7 +536,7 @@ Public Class Form_Startup
             Exit Sub
         End If
 
-        Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
+        Dim licenseJours = Utils_module.calculateDiffDates(Utils_module.DateDistant, resUser.LicenseEndTime)
 
         If Not resUser.NomUtilisateur = Textbox_Username.Text Then
             PictureBox_license_check.Image = My.Resources.error_icon
@@ -582,7 +582,7 @@ Public Class Form_Startup
         End If
 
 
-        Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
+        Dim user_key = Utils_module.getSHA1Hash(TextBox_license_username.Text)
 
         Dim res = client.Get("Users/" + user_key)
         If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
@@ -590,11 +590,11 @@ Public Class Form_Startup
             Exit Sub
         End If
 
-        Dim CurUser As New Utilisateur With
+        Dim CurUser As New User_module With
             {
             .NomUtilisateur = TextBox_license_username.Text,
             .PasswordUtilisateur = TextBox_license_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
+            .LicenseEndTime = Utils_module.DateDistant,
             .LicenseActivated = False,
             .LicenseKey = user_key,
             .UserMail = TextBox_UserMail.Text

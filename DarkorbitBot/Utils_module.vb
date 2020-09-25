@@ -7,7 +7,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
 
-Public Class Utils
+Public Class Utils_module
 #Region "Cookie Manager"
     <DllImport("wininet.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
     Public Shared Function InternetSetCookie(lpszUrl As String,

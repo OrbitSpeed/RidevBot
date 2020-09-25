@@ -236,7 +236,7 @@ Public Class AutoUpdater
     Private Sub WC_Firebase_Secret_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try
-            Utils.Firebase_Secret = e.Result
+            Utils_module.Firebase_Secret = e.Result
 
         Catch ex As Exception
             MessageBox.Show($"Can't retrieve, error-69.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -316,7 +316,7 @@ Public Class Form_Tools
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
 
-        If Utils.server = "" Then
+        If Utils_module.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Panel_general.Visible = True
@@ -358,9 +358,9 @@ Public Class Form_Tools
 
             Panel_suppresor_controler.Size = New Size(125, 24)
             Button_suppresor_controler.Text = "﹀"
-            TextBox_uridiumGGS.Text = Utils.currentUridium
+            TextBox_uridiumGGS.Text = Utils_module.currentUridium
 
-            GalaxyGates.Load()
+            GalaxyGates_module.Load()
 
         End If
 
@@ -388,7 +388,7 @@ Public Class Form_Tools
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
 
-        If Utils.server = "" Then
+        If Utils_module.server = "" Then
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -537,7 +537,7 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             Reload()
             Form_Game.Show()
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
 
@@ -545,8 +545,8 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             Reloader = 0
             Reload()
-            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Utils_module.InternetSetCookie("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils_module.dosid & ";")
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
         End If
@@ -558,47 +558,47 @@ Public Class Form_Tools
 #Region "GG Click Portail"
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
-        GalaxyGates.View(GalaxyGates_id:="1",
+        GalaxyGates_module.View(GalaxyGates_id:="1",
                          GalaxyGates_Name:="alpha")
     End Sub
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
-        GalaxyGates.View(GalaxyGates_id:="2",
+        GalaxyGates_module.View(GalaxyGates_id:="2",
                          GalaxyGates_Name:="Beta")
     End Sub
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
-        GalaxyGates.View(GalaxyGates_id:="3",
+        GalaxyGates_module.View(GalaxyGates_id:="3",
                          GalaxyGates_Name:="Gamma")
     End Sub
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
-        GalaxyGates.View(GalaxyGates_id:="4",
+        GalaxyGates_module.View(GalaxyGates_id:="4",
                          GalaxyGates_Name:="Delta")
     End Sub
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-        GalaxyGates.View(GalaxyGates_id:="5",
+        GalaxyGates_module.View(GalaxyGates_id:="5",
                          GalaxyGates_Name:="Epsilon")
     End Sub
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-        GalaxyGates.View(GalaxyGates_id:="6",
+        GalaxyGates_module.View(GalaxyGates_id:="6",
                          GalaxyGates_Name:="Zeta")
     End Sub
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-        GalaxyGates.View(GalaxyGates_id:="7",
+        GalaxyGates_module.View(GalaxyGates_id:="7",
                          GalaxyGates_Name:="Kappa")
     End Sub
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-        GalaxyGates.View(GalaxyGates_id:="8",
+        GalaxyGates_module.View(GalaxyGates_id:="8",
                          GalaxyGates_Name:="Lambda")
     End Sub
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-        GalaxyGates.View(GalaxyGates_id:="13",
+        GalaxyGates_module.View(GalaxyGates_id:="13",
                          GalaxyGates_Name:="Hades")
     End Sub
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates.View(GalaxyGates_id:="19",
+        GalaxyGates_module.View(GalaxyGates_id:="19",
                          GalaxyGates_Name:="Kuiper")
     End Sub
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates.View(GalaxyGates_id:="12",
+        GalaxyGates_module.View(GalaxyGates_id:="12",
                          GalaxyGates_Name:="Chronos")
     End Sub
 
@@ -607,57 +607,57 @@ Public Class Form_Tools
 #Region "Button Click GGS"
 
     Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="1",
+        GalaxyGates_module.Spin(GalaxyGates_id:="1",
                          GalaxyGates_Name:="alpha",
                          Autorize_ABG:="1")
     End Sub
     Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="1",
+        GalaxyGates_module.Spin(GalaxyGates_id:="1",
                          GalaxyGates_Name:="alpha",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="2",
+        GalaxyGates_module.Spin(GalaxyGates_id:="2",
                          GalaxyGates_Name:="beta",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_Gamma_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="3",
+        GalaxyGates_module.Spin(GalaxyGates_id:="3",
                          GalaxyGates_Name:="gamma",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="4",
+        GalaxyGates_module.Spin(GalaxyGates_id:="4",
                          GalaxyGates_Name:="delta",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="5",
+        GalaxyGates_module.Spin(GalaxyGates_id:="5",
                          GalaxyGates_Name:="epsilon",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="6",
+        GalaxyGates_module.Spin(GalaxyGates_id:="6",
                          GalaxyGates_Name:="zeta",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="7",
+        GalaxyGates_module.Spin(GalaxyGates_id:="7",
                          GalaxyGates_Name:="kappa",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="8",
+        GalaxyGates_module.Spin(GalaxyGates_id:="8",
                          GalaxyGates_Name:="lambda",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="19",
+        GalaxyGates_module.Spin(GalaxyGates_id:="19",
                          GalaxyGates_Name:="kuiper",
                          Autorize_ABG:="0")
     End Sub
     Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
-        GalaxyGates.Spin(GalaxyGates_id:="13",
+        GalaxyGates_module.Spin(GalaxyGates_id:="13",
                          GalaxyGates_Name:="hades",
                          Autorize_ABG:="0")
     End Sub
@@ -704,49 +704,49 @@ HOME_BASIC_RETURN_IF_VALID:
             Exit Sub
         End If
 
-        GalaxyGates.GalaxyGates_Name = ComboBox_autospin.Text
-        If GalaxyGates.GalaxyGates_Name = Nothing Then
+        GalaxyGates_module.GalaxyGates_Name = ComboBox_autospin.Text
+        If GalaxyGates_module.GalaxyGates_Name = Nothing Then
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "abg" Then
-            GalaxyGates.Autorize_ABG = "1"
-            GalaxyGates.GalaxyGates_id = "1"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "abg" Then
+            GalaxyGates_module.Autorize_ABG = "1"
+            GalaxyGates_module.GalaxyGates_id = "1"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "delta" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "4"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "delta" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "4"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "epsilon" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "5"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "epsilon" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "5"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "zeta" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "6"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "zeta" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "6"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "kappa" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "7"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "kappa" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "7"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "lambda" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "8"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "lambda" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "8"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "hades" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "13"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "hades" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "13"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "kuiper" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "19"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "kuiper" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "19"
 
-        ElseIf GalaxyGates.GalaxyGates_Name = "chronos" Then
-            GalaxyGates.Autorize_ABG = "0"
-            GalaxyGates.GalaxyGates_id = "12"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "chronos" Then
+            GalaxyGates_module.Autorize_ABG = "0"
+            GalaxyGates_module.GalaxyGates_id = "12"
         End If
 
-        GalaxyGates.Spin(GalaxyGates_id:=GalaxyGates.GalaxyGates_id,
-                         GalaxyGates_Name:=GalaxyGates.GalaxyGates_Name,
-                         Autorize_ABG:=GalaxyGates.Autorize_ABG)
+        GalaxyGates_module.Spin(GalaxyGates_id:=GalaxyGates_module.GalaxyGates_id,
+                         GalaxyGates_Name:=GalaxyGates_module.GalaxyGates_Name,
+                         Autorize_ABG:=GalaxyGates_module.Autorize_ABG)
 
         Await Task.Delay(125)
 
@@ -755,7 +755,7 @@ HOME_BASIC_RETURN_IF_VALID:
     End Sub ' boucle click GG
 
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
-        TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
+        TextBox_uridiumtokeepGGS.Text = Utils_module.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
     End Sub ' pour afficher les energie lors de l'ouverture de GG Spinner
 
     Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
@@ -804,11 +804,11 @@ HOME_BASIC_RETURN_IF_VALID:
         Console.WriteLine(Result_PART_GG)
         Console.WriteLine(GalaxyGates_id)
         Console.WriteLine(ComboBox_autospin.Text.ToLower)
-        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+        Console.WriteLine("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&sid=" + Utils_module.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
 
         Dim Prepare_Gates_POST As New System.Net.WebClient
-        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
+        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&sid=" + Utils_module.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
 
     End Sub ' button prepare Gates
 
@@ -855,9 +855,9 @@ HOME_BASIC_RETURN_IF_VALID:
         BackPage_Form.ShowIcon = False
         BackPage_Form.ShowInTaskbar = False
 
-        Utils.checkStats = True
+        Utils_module.checkStats = True
         BackPage_Form.Show()
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         BackPage_Form.WindowState = FormWindowState.Minimized
 
 
@@ -866,12 +866,12 @@ HOME_BASIC_RETURN_IF_VALID:
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
         Reader = 1
-        Utils.checkStats = True
+        Utils_module.checkStats = True
         BackPage_Form.ShowIcon = False
         BackPage_Form.ShowInTaskbar = False
         BackPage_Form.Show()
         BackPage_Form.WindowState = FormWindowState.Minimized
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
     End Sub ' ici on refresh les stats du panel STATS !
 
@@ -899,7 +899,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
     Private Sub PictureBox_BackgroundBot_Click(sender As Object, e As EventArgs) Handles PictureBox_BackgroundBot.Click
 
-        If Utils.userid = "" Then
+        If Utils_module.userid = "" Then
 
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -908,7 +908,7 @@ HOME_BASIC_RETURN_IF_VALID:
             BackPage_Form.ShowIcon = True
             BackPage_Form.ShowInTaskbar = True
             BackPage_Form.Show()
-            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
         End If
 
@@ -955,20 +955,20 @@ HOME_BASIC_RETURN_IF_VALID:
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-            Utils.server = CheckRegex.Groups.Item(1).ToString
+            Utils_module.server = CheckRegex.Groups.Item(1).ToString
 
             Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
             If dosid_regex.Success Then
 
-                Utils.dosid = dosid_regex.Value.Split("=")(1)
-                Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
-                Utils.server = Replace(Utils.server, " ", "")
-                Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
-                Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
-                Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
-                Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
-                Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+                Utils_module.dosid = dosid_regex.Value.Split("=")(1)
+                Utils_module.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                TextBox_Get_Dosid.Text = Replace(Utils_module.dosid, " ", "")
+                Utils_module.server = Replace(Utils_module.server, " ", "")
+                Utils_module.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
+                Utils_module.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
+                Utils_module.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
+                Utils_module.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
+                Utils_module.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
 
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
                 Dim username As String
@@ -994,7 +994,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
                 Console.WriteLine("---------------------------------------")
 
-                TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
+                TextBox_username.Text = Utils_module.userid + " -   " + username + "   - " + Utils_module.server
                 TextBox_clan.Text = clan
 
                 Select Case grade
@@ -1071,7 +1071,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
                 End Select
 
-                Utils.UpdateStats()
+                Utils_module.UpdateStats()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -1079,8 +1079,8 @@ HOME_BASIC_RETURN_IF_VALID:
                 WebBrowser_Synchronisation.Navigate("about:blank")
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
-                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Utils_module.InternetSetCookie("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils_module.dosid & ";")
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
                     Form_Game.Show()
 
                 End If
@@ -1270,7 +1270,7 @@ HOME_BASIC_RETURN_IF_VALID:
     Private Sub Button_skylab_Click(sender As Object, e As EventArgs) Handles Button_skylab.Click
 
         Panel_Skylab.Visible = True
-        Skylab.Load()
+        Skylab_module.Load()
 
     End Sub
 End Class

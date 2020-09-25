@@ -1,14 +1,14 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
 
-Public Class Skylab
+Public Class Skylab_module
 
     Public Shared WebClient_POST As New System.Net.WebClient
 
     Public Shared Function Load()
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data_Skylab = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalSkylab")
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data_Skylab = WebClient_POST.DownloadString("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalSkylab")
 
         Dim WebClient_Data_Skylab_All_Items = Regex.Match(WebClient_Data_Skylab, "<div id=""(?s)((?:[^\n][\n]?)+)view_seprom_maximal_number"">(?s)((?:[^\n][\n]?)+)<\/div>").Groups.Item(1).ToString
         Dim WebClient_Data_Skylab_All_Items_2 = Regex.Match(WebClient_Data_Skylab, "<div id=""(?s)((?:[^\n][\n]?)+)view_seprom_maximal_number"">(?s)((?:[^\n][\n]?)+)<\/div>").Groups.Item(2).ToString
