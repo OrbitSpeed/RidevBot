@@ -96,7 +96,6 @@ Partial Class Form_Tools
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.ComboBox_colormod = New System.Windows.Forms.ComboBox()
         Me.CheckBox_colormod = New System.Windows.Forms.CheckBox()
         Me.Panel_stats = New System.Windows.Forms.Panel()
@@ -137,10 +136,28 @@ Partial Class Form_Tools
         Me.Label8rex_A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.CheckBox_repair_pet_auto = New System.Windows.Forms.CheckBox()
         Me.Panel_divers = New System.Windows.Forms.Panel()
+        Me.Panel_Skylab = New System.Windows.Forms.Panel()
+        Me.Label_counter_seprom = New System.Windows.Forms.Label()
+        Me.Label_counter_promerium = New System.Windows.Forms.Label()
+        Me.Label_counter_duranium = New System.Windows.Forms.Label()
+        Me.Label_counter_prometium = New System.Windows.Forms.Label()
+        Me.Label_counter_terbium = New System.Windows.Forms.Label()
+        Me.Label_counter_endurium = New System.Windows.Forms.Label()
+        Me.Label_counter_prometid = New System.Windows.Forms.Label()
+        Me.Label_duranium = New System.Windows.Forms.Label()
+        Me.Label_seprom = New System.Windows.Forms.Label()
+        Me.Label_promerium = New System.Windows.Forms.Label()
+        Me.Label_prometid = New System.Windows.Forms.Label()
+        Me.Label_terbium = New System.Windows.Forms.Label()
+        Me.Label_endurium = New System.Windows.Forms.Label()
+        Me.Label_prometium = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button_skylab = New System.Windows.Forms.Button()
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -278,9 +295,7 @@ Partial Class Form_Tools
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ToolTip_menu = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip_GalaxyGates = New System.Windows.Forms.ToolTip(Me.components)
-        Me.WebBrowser_GGspinner = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -295,6 +310,7 @@ Partial Class Form_Tools
         Me.Panel6.SuspendLayout()
         Me.Panel_PET_selection.SuspendLayout()
         Me.Panel_divers.SuspendLayout()
+        Me.Panel_Skylab.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -768,7 +784,7 @@ Partial Class Form_Tools
         Me.Label_Minutes_Avant_Refresh.AutoSize = True
         Me.Label_Minutes_Avant_Refresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label_Minutes_Avant_Refresh.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(418, 309)
+        Me.Label_Minutes_Avant_Refresh.Location = New System.Drawing.Point(101, 308)
         Me.Label_Minutes_Avant_Refresh.Name = "Label_Minutes_Avant_Refresh"
         Me.Label_Minutes_Avant_Refresh.Size = New System.Drawing.Size(67, 19)
         Me.Label_Minutes_Avant_Refresh.TabIndex = 31
@@ -781,7 +797,7 @@ Partial Class Form_Tools
         Me.TextBox_Refresh_Game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_Refresh_Game.ForeColor = System.Drawing.Color.White
-        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(363, 223)
+        Me.TextBox_Refresh_Game.Location = New System.Drawing.Point(171, 252)
         Me.TextBox_Refresh_Game.MaxLength = 3
         Me.TextBox_Refresh_Game.Name = "TextBox_Refresh_Game"
         Me.TextBox_Refresh_Game.Size = New System.Drawing.Size(34, 22)
@@ -795,7 +811,7 @@ Partial Class Form_Tools
         Me.CheckBox_Refresh_Game.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox_Refresh_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_Refresh_Game.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(196, 219)
+        Me.CheckBox_Refresh_Game.Location = New System.Drawing.Point(4, 248)
         Me.CheckBox_Refresh_Game.Name = "CheckBox_Refresh_Game"
         Me.CheckBox_Refresh_Game.Size = New System.Drawing.Size(164, 23)
         Me.CheckBox_Refresh_Game.TabIndex = 29
@@ -1332,7 +1348,7 @@ Partial Class Form_Tools
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(304, 254)
+        Me.TextBox1.Location = New System.Drawing.Point(112, 283)
         Me.TextBox1.MaxLength = 3
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(34, 22)
@@ -1346,7 +1362,7 @@ Partial Class Form_Tools
         Me.CheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox2.Location = New System.Drawing.Point(196, 250)
+        Me.CheckBox2.Location = New System.Drawing.Point(4, 279)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(102, 23)
         Me.CheckBox2.TabIndex = 33
@@ -1362,25 +1378,11 @@ Partial Class Form_Tools
         Me.ComboBox1.ForeColor = System.Drawing.Color.White
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Promerium", "Seprom"})
-        Me.ComboBox1.Location = New System.Drawing.Point(344, 253)
+        Me.ComboBox1.Location = New System.Drawing.Point(152, 282)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(65, 21)
         Me.ComboBox1.TabIndex = 35
         Me.ComboBox1.Visible = False
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CheckBox1.Location = New System.Drawing.Point(196, 287)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(200, 23)
-        Me.CheckBox1.TabIndex = 32
-        Me.CheckBox1.Text = "Update Skylab Automatically"
-        Me.CheckBox1.UseVisualStyleBackColor = False
-        Me.CheckBox1.Visible = False
         '
         'ComboBox_colormod
         '
@@ -1395,6 +1397,7 @@ Partial Class Form_Tools
         Me.ComboBox_colormod.Size = New System.Drawing.Size(137, 21)
         Me.ComboBox_colormod.TabIndex = 38
         Me.ComboBox_colormod.Text = "EXPERIMENTAL"
+        Me.ComboBox_colormod.Visible = False
         '
         'CheckBox_colormod
         '
@@ -1408,6 +1411,7 @@ Partial Class Form_Tools
         Me.CheckBox_colormod.TabIndex = 37
         Me.CheckBox_colormod.Text = "Active Color mod"
         Me.CheckBox_colormod.UseVisualStyleBackColor = False
+        Me.CheckBox_colormod.Visible = False
         '
         'Panel_stats
         '
@@ -1953,6 +1957,9 @@ Partial Class Form_Tools
         'Panel_divers
         '
         Me.Panel_divers.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_divers.Controls.Add(Me.Panel_Skylab)
+        Me.Panel_divers.Controls.Add(Me.Button2)
+        Me.Panel_divers.Controls.Add(Me.Button_skylab)
         Me.Panel_divers.Controls.Add(Me.CheckBox_Refresh_Game)
         Me.Panel_divers.Controls.Add(Me.TextBox_Refresh_Game)
         Me.Panel_divers.Controls.Add(Me.TextBox1)
@@ -1962,14 +1969,261 @@ Partial Class Form_Tools
         Me.Panel_divers.Controls.Add(Me.ComboBox1)
         Me.Panel_divers.Controls.Add(Me.CheckBox_colormod)
         Me.Panel_divers.Controls.Add(Me.ComboBox_colormod)
-        Me.Panel_divers.Controls.Add(Me.CheckBox1)
         Me.Panel_divers.Controls.Add(Me.CheckBox_AutoUpdate)
         Me.Panel_divers.ForeColor = System.Drawing.Color.White
-        Me.Panel_divers.Location = New System.Drawing.Point(1208, 390)
+        Me.Panel_divers.Location = New System.Drawing.Point(1342, 398)
         Me.Panel_divers.Name = "Panel_divers"
         Me.Panel_divers.Size = New System.Drawing.Size(496, 345)
         Me.Panel_divers.TabIndex = 48
         Me.Panel_divers.Visible = False
+        '
+        'Panel_Skylab
+        '
+        Me.Panel_Skylab.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_seprom)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_promerium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_duranium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_prometium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_terbium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_endurium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_counter_prometid)
+        Me.Panel_Skylab.Controls.Add(Me.Label_duranium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_seprom)
+        Me.Panel_Skylab.Controls.Add(Me.Label_promerium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_prometid)
+        Me.Panel_Skylab.Controls.Add(Me.Label_terbium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_endurium)
+        Me.Panel_Skylab.Controls.Add(Me.Label_prometium)
+        Me.Panel_Skylab.ForeColor = System.Drawing.Color.White
+        Me.Panel_Skylab.Location = New System.Drawing.Point(177, 0)
+        Me.Panel_Skylab.Name = "Panel_Skylab"
+        Me.Panel_Skylab.Size = New System.Drawing.Size(319, 345)
+        Me.Panel_Skylab.TabIndex = 53
+        Me.Panel_Skylab.Visible = False
+        '
+        'Label_counter_seprom
+        '
+        Me.Label_counter_seprom.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_seprom.AutoSize = True
+        Me.Label_counter_seprom.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_seprom.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_seprom.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_seprom.Location = New System.Drawing.Point(79, 146)
+        Me.Label_counter_seprom.Name = "Label_counter_seprom"
+        Me.Label_counter_seprom.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_seprom.TabIndex = 51
+        Me.Label_counter_seprom.Text = "0"
+        Me.Label_counter_seprom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_promerium
+        '
+        Me.Label_counter_promerium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_promerium.AutoSize = True
+        Me.Label_counter_promerium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_promerium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_promerium.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_promerium.Location = New System.Drawing.Point(79, 123)
+        Me.Label_counter_promerium.Name = "Label_counter_promerium"
+        Me.Label_counter_promerium.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_promerium.TabIndex = 50
+        Me.Label_counter_promerium.Text = "0"
+        Me.Label_counter_promerium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_duranium
+        '
+        Me.Label_counter_duranium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_duranium.AutoSize = True
+        Me.Label_counter_duranium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_duranium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_duranium.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_duranium.Location = New System.Drawing.Point(79, 100)
+        Me.Label_counter_duranium.Name = "Label_counter_duranium"
+        Me.Label_counter_duranium.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_duranium.TabIndex = 49
+        Me.Label_counter_duranium.Text = "0"
+        Me.Label_counter_duranium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_prometium
+        '
+        Me.Label_counter_prometium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_prometium.AutoSize = True
+        Me.Label_counter_prometium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_prometium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_prometium.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_prometium.Location = New System.Drawing.Point(79, 8)
+        Me.Label_counter_prometium.Name = "Label_counter_prometium"
+        Me.Label_counter_prometium.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_prometium.TabIndex = 48
+        Me.Label_counter_prometium.Text = "0"
+        Me.Label_counter_prometium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_terbium
+        '
+        Me.Label_counter_terbium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_terbium.AutoSize = True
+        Me.Label_counter_terbium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_terbium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_terbium.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_terbium.Location = New System.Drawing.Point(79, 54)
+        Me.Label_counter_terbium.Name = "Label_counter_terbium"
+        Me.Label_counter_terbium.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_terbium.TabIndex = 47
+        Me.Label_counter_terbium.Text = "0"
+        Me.Label_counter_terbium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_endurium
+        '
+        Me.Label_counter_endurium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_endurium.AutoSize = True
+        Me.Label_counter_endurium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_endurium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_endurium.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_endurium.Location = New System.Drawing.Point(79, 31)
+        Me.Label_counter_endurium.Name = "Label_counter_endurium"
+        Me.Label_counter_endurium.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_endurium.TabIndex = 46
+        Me.Label_counter_endurium.Text = "0"
+        Me.Label_counter_endurium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_counter_prometid
+        '
+        Me.Label_counter_prometid.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_counter_prometid.AutoSize = True
+        Me.Label_counter_prometid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_counter_prometid.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_counter_prometid.ForeColor = System.Drawing.Color.White
+        Me.Label_counter_prometid.Location = New System.Drawing.Point(79, 77)
+        Me.Label_counter_prometid.Name = "Label_counter_prometid"
+        Me.Label_counter_prometid.Size = New System.Drawing.Size(13, 13)
+        Me.Label_counter_prometid.TabIndex = 45
+        Me.Label_counter_prometid.Text = "0"
+        Me.Label_counter_prometid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_duranium
+        '
+        Me.Label_duranium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_duranium.AutoSize = True
+        Me.Label_duranium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_duranium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_duranium.ForeColor = System.Drawing.Color.White
+        Me.Label_duranium.Location = New System.Drawing.Point(8, 100)
+        Me.Label_duranium.Name = "Label_duranium"
+        Me.Label_duranium.Size = New System.Drawing.Size(59, 13)
+        Me.Label_duranium.TabIndex = 44
+        Me.Label_duranium.Text = "Duranium"
+        Me.Label_duranium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_seprom
+        '
+        Me.Label_seprom.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_seprom.AutoSize = True
+        Me.Label_seprom.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_seprom.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_seprom.ForeColor = System.Drawing.Color.White
+        Me.Label_seprom.Location = New System.Drawing.Point(8, 146)
+        Me.Label_seprom.Name = "Label_seprom"
+        Me.Label_seprom.Size = New System.Drawing.Size(47, 13)
+        Me.Label_seprom.TabIndex = 43
+        Me.Label_seprom.Text = "Seprom"
+        Me.Label_seprom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_promerium
+        '
+        Me.Label_promerium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_promerium.AutoSize = True
+        Me.Label_promerium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_promerium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_promerium.ForeColor = System.Drawing.Color.White
+        Me.Label_promerium.Location = New System.Drawing.Point(8, 123)
+        Me.Label_promerium.Name = "Label_promerium"
+        Me.Label_promerium.Size = New System.Drawing.Size(65, 13)
+        Me.Label_promerium.TabIndex = 42
+        Me.Label_promerium.Text = "Promerium"
+        Me.Label_promerium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_prometid
+        '
+        Me.Label_prometid.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_prometid.AutoSize = True
+        Me.Label_prometid.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_prometid.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_prometid.ForeColor = System.Drawing.Color.White
+        Me.Label_prometid.Location = New System.Drawing.Point(8, 77)
+        Me.Label_prometid.Name = "Label_prometid"
+        Me.Label_prometid.Size = New System.Drawing.Size(55, 13)
+        Me.Label_prometid.TabIndex = 41
+        Me.Label_prometid.Text = "Prometid"
+        Me.Label_prometid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_terbium
+        '
+        Me.Label_terbium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_terbium.AutoSize = True
+        Me.Label_terbium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_terbium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_terbium.ForeColor = System.Drawing.Color.White
+        Me.Label_terbium.Location = New System.Drawing.Point(8, 54)
+        Me.Label_terbium.Name = "Label_terbium"
+        Me.Label_terbium.Size = New System.Drawing.Size(49, 13)
+        Me.Label_terbium.TabIndex = 40
+        Me.Label_terbium.Text = "Terbium"
+        Me.Label_terbium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_endurium
+        '
+        Me.Label_endurium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_endurium.AutoSize = True
+        Me.Label_endurium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_endurium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_endurium.ForeColor = System.Drawing.Color.White
+        Me.Label_endurium.Location = New System.Drawing.Point(8, 31)
+        Me.Label_endurium.Name = "Label_endurium"
+        Me.Label_endurium.Size = New System.Drawing.Size(58, 13)
+        Me.Label_endurium.TabIndex = 39
+        Me.Label_endurium.Text = "Endurium"
+        Me.Label_endurium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label_prometium
+        '
+        Me.Label_prometium.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_prometium.AutoSize = True
+        Me.Label_prometium.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Label_prometium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_prometium.ForeColor = System.Drawing.Color.White
+        Me.Label_prometium.Location = New System.Drawing.Point(8, 8)
+        Me.Label_prometium.Name = "Label_prometium"
+        Me.Label_prometium.Size = New System.Drawing.Size(65, 13)
+        Me.Label_prometium.TabIndex = 38
+        Me.Label_prometium.Text = "Prometium"
+        Me.Label_prometium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(19, 58)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(155, 35)
+        Me.Button2.TabIndex = 52
+        Me.Button2.Text = "Color mod"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button_skylab
+        '
+        Me.Button_skylab.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_skylab.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_skylab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_skylab.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_skylab.ForeColor = System.Drawing.Color.White
+        Me.Button_skylab.Location = New System.Drawing.Point(19, 12)
+        Me.Button_skylab.Name = "Button_skylab"
+        Me.Button_skylab.Size = New System.Drawing.Size(155, 35)
+        Me.Button_skylab.TabIndex = 51
+        Me.Button_skylab.Text = "Skylab"
+        Me.Button_skylab.UseVisualStyleBackColor = False
         '
         'Labe_DIVERS__A_SUPPRIMER
         '
@@ -1990,7 +2244,7 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.DarkorbitBot.My.MySettings.Default, "AutoUpdate", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.CheckBox_AutoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_AutoUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(55, 118)
+        Me.CheckBox_AutoUpdate.Location = New System.Drawing.Point(34, 102)
         Me.CheckBox_AutoUpdate.Name = "CheckBox_AutoUpdate"
         Me.CheckBox_AutoUpdate.Size = New System.Drawing.Size(138, 17)
         Me.CheckBox_AutoUpdate.TabIndex = 36
@@ -2025,6 +2279,18 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_Pause
         '
@@ -2304,7 +2570,7 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_autospin.Location = New System.Drawing.Point(573, 382)
+        Me.Panel_autospin.Location = New System.Drawing.Point(515, 1011)
         Me.Panel_autospin.Name = "Panel_autospin"
         Me.Panel_autospin.Size = New System.Drawing.Size(192, 670)
         Me.Panel_autospin.TabIndex = 78
@@ -2599,7 +2865,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
-        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(48, 382)
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(288, 741)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
         Me.Panel_GalaxyGates.Size = New System.Drawing.Size(497, 670)
         Me.Panel_GalaxyGates.TabIndex = 44
@@ -3587,7 +3853,7 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.ForeColor = System.Drawing.Color.White
         Me.Panel_suppresor_controler.Location = New System.Drawing.Point(219, 0)
         Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
-        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 402)
+        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 24)
         Me.Panel_suppresor_controler.TabIndex = 46
         '
         'Button_suppresor_controler
@@ -4045,16 +4311,6 @@ Partial Class Form_Tools
         Me.ToolTip_GalaxyGates.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTip_GalaxyGates.ToolTipTitle = "RidevBot Help"
         '
-        'WebBrowser_GGspinner
-        '
-        Me.WebBrowser_GGspinner.Location = New System.Drawing.Point(62, 1035)
-        Me.WebBrowser_GGspinner.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGspinner.Name = "WebBrowser_GGspinner"
-        Me.WebBrowser_GGspinner.ScriptErrorsSuppressed = True
-        Me.WebBrowser_GGspinner.ScrollBarsEnabled = False
-        Me.WebBrowser_GGspinner.Size = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_GGspinner.TabIndex = 40
-        '
         'WebBrowser_Synchronisation
         '
         Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(37, 1035)
@@ -4064,18 +4320,6 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'Form_Tools
         '
@@ -4088,7 +4332,6 @@ Partial Class Form_Tools
         Me.Controls.Add(Me.Panel_autospin)
         Me.Controls.Add(Me.Panel_general)
         Me.Controls.Add(Me.Panel_GalaxyGates)
-        Me.Controls.Add(Me.WebBrowser_GGspinner)
         Me.Controls.Add(Me.TextBox_DebugGGS)
         Me.Controls.Add(Me.TextBox_GGinfoGGS)
         Me.Controls.Add(Me.WebBrowser_Synchronisation)
@@ -4131,6 +4374,8 @@ Partial Class Form_Tools
         Me.Panel_PET_selection.PerformLayout()
         Me.Panel_divers.ResumeLayout(False)
         Me.Panel_divers.PerformLayout()
+        Me.Panel_Skylab.ResumeLayout(False)
+        Me.Panel_Skylab.PerformLayout()
         Me.Panel_MoveTitle.ResumeLayout(False)
         Me.Panel_MoveTitle.PerformLayout()
         CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4209,7 +4454,6 @@ Partial Class Form_Tools
     Friend WithEvents TextBox_Refresh_Game As TextBox
     Friend WithEvents CheckBox_Refresh_Game As CheckBox
     Friend WithEvents Button_OpenLoginPanel As Button
-    Friend WithEvents WebBrowser_GGspinner As WebBrowser
     Friend WithEvents Label_Stats_Earned As Label
     Friend WithEvents Label_Total_Current As Label
     Friend WithEvents Label_RPCurrent As Label
@@ -4242,7 +4486,6 @@ Partial Class Form_Tools
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ComboBox_colormod As ComboBox
     Friend WithEvents CheckBox_colormod As CheckBox
     Friend WithEvents Button_ABG_GGS As Button
@@ -4436,4 +4679,21 @@ Partial Class Form_Tools
     Friend WithEvents ToolTip_GalaxyGates As ToolTip
     Friend WithEvents Button_game_doodle As Button
     Friend WithEvents DATE_REMAINING As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button_skylab As Button
+    Friend WithEvents Panel_Skylab As Panel
+    Friend WithEvents Label_counter_seprom As Label
+    Friend WithEvents Label_counter_promerium As Label
+    Friend WithEvents Label_counter_duranium As Label
+    Friend WithEvents Label_counter_prometium As Label
+    Friend WithEvents Label_counter_terbium As Label
+    Friend WithEvents Label_counter_endurium As Label
+    Friend WithEvents Label_counter_prometid As Label
+    Friend WithEvents Label_duranium As Label
+    Friend WithEvents Label_seprom As Label
+    Friend WithEvents Label_promerium As Label
+    Friend WithEvents Label_prometid As Label
+    Friend WithEvents Label_terbium As Label
+    Friend WithEvents Label_endurium As Label
+    Friend WithEvents Label_prometium As Label
 End Class

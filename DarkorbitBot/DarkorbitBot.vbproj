@@ -556,6 +556,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Skylab.vb" />
     <Compile Include="Startup_Checker.Designer.vb">
       <DependentUpon>Startup_Checker.vb</DependentUpon>
     </Compile>

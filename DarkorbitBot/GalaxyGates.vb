@@ -21,7 +21,7 @@ Public Class GalaxyGates
     Public Shared Webclient_GET_Items_amount_counter As Double
     Public Shared Webclient_GET_Items_part_multiplier_amount_counter As Double
     Public Shared Webclient_GET_Items_amount_counter_TTT_Webclient_GET_Items_part_multiplier_amount_counter_counterStrike As String = 0
-    Public Shared D As String = 0
+    Public Shared RisedSky As String = 0
 
     Public Shared Module_control_control_lang As Object = 0
 
@@ -30,117 +30,112 @@ Public Class GalaxyGates
 
     Public Shared Function Load()
 
-        Try
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
-            WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-            Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
+        Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
+        Form_Tools.Leaderprice.Text = Regex.Match(WebClient_Data, "<energy_cost mode=""standard"">(.*)<\/energy_cost>").Groups.Item(1).ToString + " U." 'Spin Price
 
-            Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
-            Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
-            Form_Tools.Leaderprice.Text = Regex.Match(WebClient_Data, "<energy_cost mode=""standard"">(.*)<\/energy_cost>").Groups.Item(1).ToString + " U." 'Spin Price
+        Dim WebClient_GET_All_elements_Alpha = Regex.Match(WebClient_Data, "<gate (.*id=""1" + Table_Load).Groups.Item(1).ToString 'A
+        Dim WebClient_GET_current_part_Alpha = Regex.Match(WebClient_GET_All_elements_Alpha, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Alpha = Regex.Match(WebClient_GET_All_elements_Alpha, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_alpha.Text = "Alpha [ " + WebClient_GET_current_part_Alpha + " / " + WebClient_GET_total_part_Alpha + " ]"
 
-            Dim WebClient_GET_All_elements_Alpha = Regex.Match(WebClient_Data, "<gate (.*id=""1" + Table_Load).Groups.Item(1).ToString 'A
-            Dim WebClient_GET_current_part_Alpha = Regex.Match(WebClient_GET_All_elements_Alpha, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Alpha = Regex.Match(WebClient_GET_All_elements_Alpha, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_alpha.Text = "Alpha [ " + WebClient_GET_current_part_Alpha + " / " + WebClient_GET_total_part_Alpha + " ]"
+        Dim WebClient_GET_All_elements_Beta = Regex.Match(WebClient_Data, "<gate (.*id=""2" + Table_Load).Groups.Item(1).ToString 'B 
+        Dim WebClient_GET_current_part_Beta = Regex.Match(WebClient_GET_All_elements_Beta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Beta = Regex.Match(WebClient_GET_All_elements_Beta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_beta.Text = "Beta [ " + WebClient_GET_current_part_Beta + " / " + WebClient_GET_total_part_Beta + " ]"
 
-            Dim WebClient_GET_All_elements_Beta = Regex.Match(WebClient_Data, "<gate (.*id=""2" + Table_Load).Groups.Item(1).ToString 'B 
-            Dim WebClient_GET_current_part_Beta = Regex.Match(WebClient_GET_All_elements_Beta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Beta = Regex.Match(WebClient_GET_All_elements_Beta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_beta.Text = "Beta [ " + WebClient_GET_current_part_Beta + " / " + WebClient_GET_total_part_Beta + " ]"
+        Dim WebClient_GET_All_elements_Gamma = Regex.Match(WebClient_Data, "<gate (.*id=""3" + Table_Load).Groups.Item(1).ToString 'G
+        Dim WebClient_GET_current_part_Gamma = Regex.Match(WebClient_GET_All_elements_Gamma, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Gamma = Regex.Match(WebClient_GET_All_elements_Gamma, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_gamma.Text = "Gamma [ " + WebClient_GET_current_part_Gamma + " / " + WebClient_GET_total_part_Gamma + " ]"
 
-            Dim WebClient_GET_All_elements_Gamma = Regex.Match(WebClient_Data, "<gate (.*id=""3" + Table_Load).Groups.Item(1).ToString 'G
-            Dim WebClient_GET_current_part_Gamma = Regex.Match(WebClient_GET_All_elements_Gamma, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Gamma = Regex.Match(WebClient_GET_All_elements_Gamma, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_gamma.Text = "Gamma [ " + WebClient_GET_current_part_Gamma + " / " + WebClient_GET_total_part_Gamma + " ]"
+        Dim WebClient_GET_All_elements_Delta = Regex.Match(WebClient_Data, "<gate (.*id=""4" + Table_Load).Groups.Item(1).ToString 'D
+        If WebClient_GET_All_elements_Delta <> Nothing Then
 
-            Dim WebClient_GET_All_elements_Delta = Regex.Match(WebClient_Data, "<gate (.*id=""4" + Table_Load).Groups.Item(1).ToString 'D
-            If WebClient_GET_All_elements_Delta <> Nothing Then
+            Dim WebClient_GET_current_part_Delta = Regex.Match(WebClient_GET_All_elements_Delta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Delta = Regex.Match(WebClient_GET_All_elements_Delta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_delta.Text = "Delta [ " + WebClient_GET_current_part_Delta + " / " + WebClient_GET_total_part_Delta + " ]"
 
-                Dim WebClient_GET_current_part_Delta = Regex.Match(WebClient_GET_All_elements_Delta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Delta = Regex.Match(WebClient_GET_All_elements_Delta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_delta.Text = "Delta [ " + WebClient_GET_current_part_Delta + " / " + WebClient_GET_total_part_Delta + " ]"
+        Else Dim WebClient_GET_All_elements_Delta_remained = Regex.Match(WebClient_Data, "<gate (.*id=""4" + Table_Chronos).Groups.Item(1).ToString 'D
 
-            Else Dim WebClient_GET_All_elements_Delta_remained = Regex.Match(WebClient_Data, "<gate (.*id=""4" + Table_Chronos).Groups.Item(1).ToString 'D
+            Form_Tools.PictureBox_delta_reward_day.Visible = True
+            Dim WebClient_GET_current_part_Delta_remained = Regex.Match(WebClient_GET_All_elements_Delta_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Delta_remained = Regex.Match(WebClient_GET_All_elements_Delta_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_delta.Text = "Delta [ " + WebClient_GET_current_part_Delta_remained + " / " + WebClient_GET_total_part_Delta_remained + " ]"
 
-                Form_Tools.PictureBox_delta_reward_day.Visible = True
-                Dim WebClient_GET_current_part_Delta_remained = Regex.Match(WebClient_GET_All_elements_Delta_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Delta_remained = Regex.Match(WebClient_GET_All_elements_Delta_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_delta.Text = "Delta [ " + WebClient_GET_current_part_Delta_remained + " / " + WebClient_GET_total_part_Delta_remained + " ]"
+        End If
 
-            End If
+        Dim WebClient_GET_All_elements_Epsilon = Regex.Match(WebClient_Data, "<gate (.*id=""5" + Table_Load).Groups.Item(1).ToString 'E
+        If WebClient_GET_All_elements_Epsilon <> Nothing Then
 
-            Dim WebClient_GET_All_elements_Epsilon = Regex.Match(WebClient_Data, "<gate (.*id=""5" + Table_Load).Groups.Item(1).ToString 'E
-            If WebClient_GET_All_elements_Epsilon <> Nothing Then
+            Dim WebClient_GET_current_part_Epsilon = Regex.Match(WebClient_GET_All_elements_Epsilon, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Epsilon = Regex.Match(WebClient_GET_All_elements_Epsilon, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_epsilon.Text = "Epsilon [ " + WebClient_GET_current_part_Epsilon + " / " + WebClient_GET_total_part_Epsilon + " ]"
 
-                Dim WebClient_GET_current_part_Epsilon = Regex.Match(WebClient_GET_All_elements_Epsilon, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Epsilon = Regex.Match(WebClient_GET_All_elements_Epsilon, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_epsilon.Text = "Epsilon [ " + WebClient_GET_current_part_Epsilon + " / " + WebClient_GET_total_part_Epsilon + " ]"
+        Else Dim WebClient_GET_All_elements_Epsilon_remained = Regex.Match(WebClient_Data, "<gate (.*id=""5" + Table_Chronos).Groups.Item(1).ToString 'E
 
-            Else Dim WebClient_GET_All_elements_Epsilon_remained = Regex.Match(WebClient_Data, "<gate (.*id=""5" + Table_Chronos).Groups.Item(1).ToString 'E
-
-                Form_Tools.PictureBox_epsilon_reward_day.Visible = True
-                Dim WebClient_GET_current_part_Epsilon_remained = Regex.Match(WebClient_GET_All_elements_Epsilon_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Epsilon_remained = Regex.Match(WebClient_GET_All_elements_Epsilon_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_epsilon.Text = "Epsilon [ " + WebClient_GET_current_part_Epsilon_remained + " / " + WebClient_GET_total_part_Epsilon_remained + " ]"
+            Form_Tools.PictureBox_epsilon_reward_day.Visible = True
+            Dim WebClient_GET_current_part_Epsilon_remained = Regex.Match(WebClient_GET_All_elements_Epsilon_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Epsilon_remained = Regex.Match(WebClient_GET_All_elements_Epsilon_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_epsilon.Text = "Epsilon [ " + WebClient_GET_current_part_Epsilon_remained + " / " + WebClient_GET_total_part_Epsilon_remained + " ]"
 
 
-            End If
+        End If
 
-            Dim WebClient_GET_All_elements_Zeta = Regex.Match(WebClient_Data, "<gate (.*id=""6" + Table_Load).Groups.Item(1).ToString 'Z
-            If WebClient_GET_All_elements_Zeta <> Nothing Then
+        Dim WebClient_GET_All_elements_Zeta = Regex.Match(WebClient_Data, "<gate (.*id=""6" + Table_Load).Groups.Item(1).ToString 'Z
+        If WebClient_GET_All_elements_Zeta <> Nothing Then
 
-                Dim WebClient_GET_current_part_Zeta = Regex.Match(WebClient_GET_All_elements_Zeta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Zeta = Regex.Match(WebClient_GET_All_elements_Zeta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_zeta.Text = "Zeta [ " + WebClient_GET_current_part_Zeta + " / " + WebClient_GET_total_part_Zeta + " ]"
+            Dim WebClient_GET_current_part_Zeta = Regex.Match(WebClient_GET_All_elements_Zeta, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Zeta = Regex.Match(WebClient_GET_All_elements_Zeta, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_zeta.Text = "Zeta [ " + WebClient_GET_current_part_Zeta + " / " + WebClient_GET_total_part_Zeta + " ]"
 
-            Else Dim WebClient_GET_All_elements_Zeta_remained = Regex.Match(WebClient_Data, "<gate (.*id=""6" + Table_Chronos).Groups.Item(1).ToString 'Z
+        Else Dim WebClient_GET_All_elements_Zeta_remained = Regex.Match(WebClient_Data, "<gate (.*id=""6" + Table_Chronos).Groups.Item(1).ToString 'Z
 
-                Form_Tools.PictureBox_zeta_reward_day.Visible = True
-                Dim WebClient_GET_current_part_Zeta_remained = Regex.Match(WebClient_GET_All_elements_Zeta_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Zeta_remained = Regex.Match(WebClient_GET_All_elements_Zeta_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_zeta.Text = "Zeta [ " + WebClient_GET_current_part_Zeta_remained + " / " + WebClient_GET_total_part_Zeta_remained + " ]"
+            Form_Tools.PictureBox_zeta_reward_day.Visible = True
+            Dim WebClient_GET_current_part_Zeta_remained = Regex.Match(WebClient_GET_All_elements_Zeta_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Zeta_remained = Regex.Match(WebClient_GET_All_elements_Zeta_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_zeta.Text = "Zeta [ " + WebClient_GET_current_part_Zeta_remained + " / " + WebClient_GET_total_part_Zeta_remained + " ]"
 
-            End If
+        End If
 
-            Dim WebClient_GET_All_elements_Kappa = Regex.Match(WebClient_Data, "<gate (.*id=""7" + Table_Load).Groups.Item(1).ToString 'K
-            If WebClient_GET_All_elements_Kappa <> Nothing Then
+        Dim WebClient_GET_All_elements_Kappa = Regex.Match(WebClient_Data, "<gate (.*id=""7" + Table_Load).Groups.Item(1).ToString 'K
+        If WebClient_GET_All_elements_Kappa <> Nothing Then
 
-                Dim WebClient_GET_current_part_Kappa = Regex.Match(WebClient_GET_All_elements_Kappa, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Kappa = Regex.Match(WebClient_GET_All_elements_Kappa, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_kappa.Text = "Kappa [ " + WebClient_GET_current_part_Kappa + " / " + WebClient_GET_total_part_Kappa + " ]"
+            Dim WebClient_GET_current_part_Kappa = Regex.Match(WebClient_GET_All_elements_Kappa, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Kappa = Regex.Match(WebClient_GET_All_elements_Kappa, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_kappa.Text = "Kappa [ " + WebClient_GET_current_part_Kappa + " / " + WebClient_GET_total_part_Kappa + " ]"
 
-            Else Dim WebClient_GET_All_elements_Kappa_remained = Regex.Match(WebClient_Data, "<gate (.*id=""7" + Table_Chronos).Groups.Item(1).ToString 'K
+        Else Dim WebClient_GET_All_elements_Kappa_remained = Regex.Match(WebClient_Data, "<gate (.*id=""7" + Table_Chronos).Groups.Item(1).ToString 'K
 
-                Form_Tools.PictureBox_kappa_reward_day.Visible = True
-                Dim WebClient_GET_current_part_Kappa_remained = Regex.Match(WebClient_GET_All_elements_Kappa_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Dim WebClient_GET_total_part_Kappa_remained = Regex.Match(WebClient_GET_All_elements_Kappa_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-                Form_Tools.Label_kappa.Text = "Kappa [ " + WebClient_GET_current_part_Kappa_remained + " / " + WebClient_GET_total_part_Kappa_remained + " ]"
+            Form_Tools.PictureBox_kappa_reward_day.Visible = True
+            Dim WebClient_GET_current_part_Kappa_remained = Regex.Match(WebClient_GET_All_elements_Kappa_remained, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Dim WebClient_GET_total_part_Kappa_remained = Regex.Match(WebClient_GET_All_elements_Kappa_remained, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+            Form_Tools.Label_kappa.Text = "Kappa [ " + WebClient_GET_current_part_Kappa_remained + " / " + WebClient_GET_total_part_Kappa_remained + " ]"
 
-            End If
+        End If
 
-            Dim WebClient_GET_All_elements_Lambda = Regex.Match(WebClient_Data, "<gate (.*id=""8" + Table_Load).Groups.Item(1).ToString 'L
-            Dim WebClient_GET_current_part_Lambda = Regex.Match(WebClient_GET_All_elements_Lambda, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Lambda = Regex.Match(WebClient_GET_All_elements_Lambda, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_lambda.Text = "Lambda [ " + WebClient_GET_current_part_Lambda + " / " + WebClient_GET_total_part_Lambda + " ]"
+        Dim WebClient_GET_All_elements_Lambda = Regex.Match(WebClient_Data, "<gate (.*id=""8" + Table_Load).Groups.Item(1).ToString 'L
+        Dim WebClient_GET_current_part_Lambda = Regex.Match(WebClient_GET_All_elements_Lambda, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Lambda = Regex.Match(WebClient_GET_All_elements_Lambda, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_lambda.Text = "Lambda [ " + WebClient_GET_current_part_Lambda + " / " + WebClient_GET_total_part_Lambda + " ]"
 
-            Dim WebClient_GET_All_elements_Hades = Regex.Match(WebClient_Data, "<gate (.*id=""13" + Table_Load).Groups.Item(1).ToString 'H
-            Dim WebClient_GET_current_part_Hades = Regex.Match(WebClient_GET_All_elements_Hades, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Hades = Regex.Match(WebClient_GET_All_elements_Hades, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_hades.Text = "Hades [ " + WebClient_GET_current_part_Hades + " / " + WebClient_GET_total_part_Hades + " ]"
+        Dim WebClient_GET_All_elements_Hades = Regex.Match(WebClient_Data, "<gate (.*id=""13" + Table_Load).Groups.Item(1).ToString 'H
+        Dim WebClient_GET_current_part_Hades = Regex.Match(WebClient_GET_All_elements_Hades, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Hades = Regex.Match(WebClient_GET_All_elements_Hades, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_hades.Text = "Hades [ " + WebClient_GET_current_part_Hades + " / " + WebClient_GET_total_part_Hades + " ]"
 
-            Dim WebClient_GET_All_elements_Kuiper = Regex.Match(WebClient_Data, "<gate (.*id=""19" + Table_Load).Groups.Item(1).ToString 'K
-            Dim WebClient_GET_current_part_Kuiper = Regex.Match(WebClient_GET_All_elements_Kuiper, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Kuiper = Regex.Match(WebClient_GET_All_elements_Kuiper, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_kuiper.Text = "Kuiper [ " + WebClient_GET_current_part_Kuiper + " / " + WebClient_GET_total_part_Kuiper + " ]"
+        Dim WebClient_GET_All_elements_Kuiper = Regex.Match(WebClient_Data, "<gate (.*id=""19" + Table_Load).Groups.Item(1).ToString 'K
+        Dim WebClient_GET_current_part_Kuiper = Regex.Match(WebClient_GET_All_elements_Kuiper, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Kuiper = Regex.Match(WebClient_GET_All_elements_Kuiper, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_kuiper.Text = "Kuiper [ " + WebClient_GET_current_part_Kuiper + " / " + WebClient_GET_total_part_Kuiper + " ]"
 
-            Dim WebClient_GET_All_elements_Chronos = Regex.Match(WebClient_Data, "<gate (.*id=""12" + Table_Chronos).Groups.Item(1).ToString 'CHR
-            Dim WebClient_GET_current_part_Chronos = Regex.Match(WebClient_GET_All_elements_Chronos, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Dim WebClient_GET_total_part_Chronos = Regex.Match(WebClient_GET_All_elements_Chronos, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
-            Form_Tools.Label_chronos.Text = "Chronos [ " + WebClient_GET_current_part_Chronos + " / " + WebClient_GET_total_part_Chronos + " ]"
-
-        Catch ex As Exception
-        End Try
+        Dim WebClient_GET_All_elements_Chronos = Regex.Match(WebClient_Data, "<gate (.*id=""12" + Table_Chronos).Groups.Item(1).ToString 'CHR
+        Dim WebClient_GET_current_part_Chronos = Regex.Match(WebClient_GET_All_elements_Chronos, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Dim WebClient_GET_total_part_Chronos = Regex.Match(WebClient_GET_All_elements_Chronos, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
+        Form_Tools.Label_chronos.Text = "Chronos [ " + WebClient_GET_current_part_Chronos + " / " + WebClient_GET_total_part_Chronos + " ]"
 
     End Function
 
@@ -399,7 +394,7 @@ Public Class GalaxyGates
         Console.WriteLine(" -------------------- ")
 
         If Webclient_GET_Items_date = Nothing Then
-            Form_Tools.DATE_REMAINING.Text = "Reload account, your dosid is broken"
+            Form_Tools.DATE_REMAINING.Text = "Reload your account, your dosid is broken"
         Else Form_Tools.DATE_REMAINING.Text = Webclient_GET_Items_date + " Done."
         End If
 
@@ -434,7 +429,7 @@ Public Class GalaxyGates
 
         If Webclient_GET_Items_type = "image/x-icon" Then
             Form_Tools.TextBox_WinGGS.Text = ""
-            Form_Tools.DATE_REMAINING.Text = "Reload account, your dosid is broken"
+            Form_Tools.DATE_REMAINING.Text = "Reload your account, your dosid is broken"
             Exit Function
         End If
 
