@@ -3366,11 +3366,11 @@ Public Class Form_Game
 
     Private Sub Button_REX_Click(sender As Object, e As EventArgs) Handles Button_REX.Click
 
-        PET_Module()
+        Pet_module.Post_function()
 
     End Sub
 
-    Private Async Sub PET_Module()
+    Private Async Sub aT_Module()
 
         '  AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 0, 0)
 
@@ -3832,12 +3832,12 @@ Public Class Form_Game
 
                     Await Task.Delay(5000)
 
-                        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", "", npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
-                        'Await Task.Delay(1000)
+                    'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", "", npc_locator_module_pet1.X, npc_locator_module_pet1.Y)
+                    'Await Task.Delay(1000)
 
 
-                    Else
-                    End If
+                Else
+                End If
             Else Console.WriteLine("Not added")
 
                 Client_Screen = Update_Screen()

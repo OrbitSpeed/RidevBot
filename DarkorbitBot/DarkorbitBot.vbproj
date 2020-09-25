@@ -525,12 +525,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BitmapExtension.vb" />
+    <Compile Include="Collector_module.vb" />
     <Compile Include="ConnectionForm.Designer.vb">
       <DependentUpon>ConnectionForm.vb</DependentUpon>
     </Compile>
     <Compile Include="ConnectionForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dead_module.vb" />
+    <Compile Include="Dependency_module.vb" />
     <Compile Include="Form_Msgbox.Designer.vb">
       <DependentUpon>Form_Msgbox.vb</DependentUpon>
     </Compile>
@@ -550,6 +553,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GalaxyGates.vb" />
+    <Compile Include="Gates_name_alpha_id_1.vb" />
+    <Compile Include="Gates_name_beta_id_2.vb" />
+    <Compile Include="Gates_name_gamma_id_3.vb" />
+    <Compile Include="Npc_killer_module.vb" />
+    <Compile Include="Pet_module.vb" />
     <Compile Include="ReadWritingMemory.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -590,6 +598,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Traveling_module.vb" />
     <Compile Include="Utilisateur.vb" />
     <Compile Include="Utils.vb" />
   </ItemGroup>
