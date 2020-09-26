@@ -34,7 +34,8 @@ Public Class Form_Startup
         Button_Load.Enabled = False
         Button_SID_Load.Enabled = False
         Try
-            Await Utils_module.GetNistTime()
+            Utils_module.DateDistant = Utils_module.GetNISTTime("146.59.146.51")
+            Console.WriteLine(Utils_module.DateDistant)
         Catch ex As Exception
             Console.WriteLine($"Erreur:{ex.ToString}")
         End Try
@@ -528,7 +529,7 @@ Public Class Form_Startup
             }
 
         If resUser.LicenseEndTime.CompareTo(Utils_module.DateDistant) = -1 Then
-            MessageBox.Show("t'as pas payé enculé")
+            'MessageBox.Show("t'as pas payé enculé")
             PictureBox_license_check.Image = My.Resources.error_icon
             PictureBox_license_check.Tag = False
             Button_Load.Enabled = False

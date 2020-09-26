@@ -485,7 +485,8 @@ Public Class Utils_module
     Public Shared DateDistant As Date
 
     Public Shared Async Function GetNistTime() As Task
-        Dim client = New TcpClient("time.nist.gov", 13)
+        'Dim client = New TcpClient("time.nist.gov", 13)
+        Dim client = New TcpClient("146.59.146.51", 13)
 
         Using streamReader = New StreamReader(client.GetStream())
             Dim response = Await streamReader.ReadToEndAsync()
@@ -502,6 +503,29 @@ Public Class Utils_module
         Dim diff As Integer
         diff = (EndDate - StartDate).TotalDays
         Return diff
+    End Function
+
+
+    Public Shared Function GetNISTTime(ByVal host As String) As DateTime
+        Using sck = New TcpClient(host, 13)
+            'System.Threading.Thread.Sleep(100) 'give the server time to answer
+            Using strm = sck.GetStream
+                strm.ReadTimeout = 1000 '1s timeout
+                Dim buf(1023) As Byte
+                Dim read As Integer = 0
+                While read < 50 'loop until enough data is read
+                    read += strm.Read(buf, read, 1024)
+                    If read = 0 Then 'connection lost
+                        Return Nothing 'or throw exception
+                    End If
+                End While
+                Dim rawstring As String = System.Text.Encoding.ASCII.GetString(buf).Trim()
+                Dim rawdata As String() = rawstring.Split(" ")
+                Dim strdate As String() = rawdata(1).Split("-")
+                Dim strtime As String() = rawdata(2).Split(":")
+                Return New DateTime(2000 + strdate(0), strdate(1), strdate(2), strtime(0), strtime(1), strtime(2))
+            End Using
+        End Using
     End Function
 
 End Class
