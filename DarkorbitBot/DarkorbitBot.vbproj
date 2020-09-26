@@ -600,8 +600,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Traveling_module.vb" />
-    <Compile Include="User_module.vb" />
-    <Compile Include="Utils_module.vb" />
+    <Compile Include="User_Database.vb" />
+    <Compile Include="Utils.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AutoUpdater.resx">
@@ -702,6 +702,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="ridevbotuniverse.gif" />
+    <None Include="Resources\error_icon_orange.png" />
     <None Include="Resources\Stop_pet.png" />
     <None Include="Resources\Ship_repairer_pet_module.png" />
     <None Include="Resources\Sacrifice_flam_pet_module.png" />

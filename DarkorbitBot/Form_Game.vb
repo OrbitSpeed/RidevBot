@@ -578,7 +578,7 @@ Public Class Form_Game
 
                                          Dim Map_actuelle = Label_map_location.Text.Split(" : ")(2)
 
-                                         Utils_module.SetNPCAndCollectibleListBox(Map_actuelle)
+                                         Utils.SetNPCAndCollectibleListBox(Map_actuelle)
 
                                          Label_map_location.Update()
                                          CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
@@ -963,8 +963,8 @@ Public Class Form_Game
         'Dim randomX = Utils.GetRandom(685, 693)
         'Dim randomY = Utils.GetRandom(717, 725)
 
-        Dim randomX = Utils_module.GetPortalZone(685, "x")
-        Dim randomY = Utils_module.GetPortalZone(717, "y")
+        Dim randomX = Utils.GetPortalZone(685, "x")
+        Dim randomY = Utils.GetPortalZone(717, "y")
         'Milieu
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(10000)
@@ -1041,8 +1041,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'On envoit le milieu du portail
-        Dim randomX = Utils_module.GetPortalZone(683, "x")
-        Dim randomY = Utils_module.GetPortalZone(493, "y")
+        Dim randomX = Utils.GetPortalZone(683, "x")
+        Dim randomY = Utils.GetPortalZone(493, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(1500)
@@ -1198,8 +1198,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 623, 540
-        Dim randomX = Utils_module.GetPortalZone(623, "x")
-        Dim randomY = Utils_module.GetPortalZone(540, "y")
+        Dim randomX = Utils.GetPortalZone(623, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1261,8 +1261,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 719, 485
-        Dim randomX = Utils_module.GetPortalZone(719, "x")
-        Dim randomY = Utils_module.GetPortalZone(485, "y")
+        Dim randomX = Utils.GetPortalZone(719, "x")
+        Dim randomY = Utils.GetPortalZone(485, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1327,8 +1327,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 719, 593
-        Dim randomX = Utils_module.GetPortalZone(719, "x")
-        Dim randomY = Utils_module.GetPortalZone(593, "y")
+        Dim randomX = Utils.GetPortalZone(719, "x")
+        Dim randomY = Utils.GetPortalZone(593, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1362,8 +1362,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 679, 540
-        Dim randomX = Utils_module.GetPortalZone(679, "x")
-        Dim randomY = Utils_module.GetPortalZone(540, "y")
+        Dim randomX = Utils.GetPortalZone(679, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1394,8 +1394,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 691, 533
-        Dim randomX = Utils_module.GetPortalZone(691, "x")
-        Dim randomY = Utils_module.GetPortalZone(533, "y")
+        Dim randomX = Utils.GetPortalZone(691, "x")
+        Dim randomY = Utils.GetPortalZone(533, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1426,8 +1426,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 691, 545
-        Dim randomX = Utils_module.GetPortalZone(691, "x")
-        Dim randomY = Utils_module.GetPortalZone(545, "y")
+        Dim randomX = Utils.GetPortalZone(691, "x")
+        Dim randomY = Utils.GetPortalZone(545, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1462,8 +1462,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 623, 540
-        Dim randomX = Utils_module.GetPortalZone(623, "x")
-        Dim randomY = Utils_module.GetPortalZone(540, "y")
+        Dim randomX = Utils.GetPortalZone(623, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(1500)
@@ -1550,8 +1550,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 647, 540
-        Dim randomX = Utils_module.GetPortalZone(647, "x")
-        Dim randomY = Utils_module.GetPortalZone(540, "y")
+        Dim randomX = Utils.GetPortalZone(647, "x")
+        Dim randomY = Utils.GetPortalZone(540, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(1500)
@@ -1581,8 +1581,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 705, 508
-        Dim randomX = Utils_module.GetPortalZone(705, "x")
-        Dim randomY = Utils_module.GetPortalZone(508, "y")
+        Dim randomX = Utils.GetPortalZone(705, "x")
+        Dim randomY = Utils.GetPortalZone(508, "y")
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
         Await Task.Delay(1500)
@@ -1646,8 +1646,8 @@ Public Class Form_Game
         End If
         'Centre : 610, 584
         'Vrai centre : 764, 534
-        Dim randomX = Utils_module.GetPortalZone(764, "x")
-        Dim randomY = Utils_module.GetPortalZone(534, "y")
+        Dim randomX = Utils.GetPortalZone(764, "x")
+        Dim randomY = Utils.GetPortalZone(534, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1677,8 +1677,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 760, 584
-        Dim randomX = Utils_module.GetPortalZone(760, "x")
-        Dim randomY = Utils_module.GetPortalZone(584, "y")
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(584, "y")
 
         ' BAS DROITE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1709,8 +1709,8 @@ Public Class Form_Game
             Exit Sub
         End If
         'Centre : 745, 493
-        Dim randomX = Utils_module.GetPortalZone(745, "x")
-        Dim randomY = Utils_module.GetPortalZone(493, "y")
+        Dim randomX = Utils.GetPortalZone(745, "x")
+        Dim randomY = Utils.GetPortalZone(493, "y")
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1744,8 +1744,8 @@ Public Class Form_Game
             Stop_Bot()
             Exit Sub
         End If
-        Dim randomX = Utils_module.GetPortalZone(760, "x")
-        Dim randomY = Utils_module.GetPortalZone(497, "y")
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(497, "y")
 
         'HAUT DROITE 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1780,8 +1780,8 @@ Public Class Form_Game
         'Dim randomX = Utils.GetRandom(608, 616)
         'Dim randomY = Utils.GetRandom(474, 482)
 
-        Dim randomX = Utils_module.GetPortalZone(610, "x")
-        Dim randomY = Utils_module.GetPortalZone(497, "y")
+        Dim randomX = Utils.GetPortalZone(610, "x")
+        Dim randomY = Utils.GetPortalZone(497, "y")
 
         ' HAUT GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
@@ -1814,8 +1814,8 @@ Public Class Form_Game
 
         ' BAS DROITE
         'Centre : 758, 579
-        Dim randomX = Utils_module.GetPortalZone(760, "x")
-        Dim randomY = Utils_module.GetPortalZone(585, "y")
+        Dim randomX = Utils.GetPortalZone(760, "x")
+        Dim randomY = Utils.GetPortalZone(585, "y")
 
         'Dim randomX = Utils.GetRandom(756, 765)
         'Dim randomY = Utils.GetRandom(562, 569)
@@ -1850,8 +1850,8 @@ Public Class Form_Game
         End If
         '610, 584
         'Centre : 608, 579
-        Dim randomX = Utils_module.GetPortalZone(610, "x")
-        Dim randomY = Utils_module.GetPortalZone(584, "y")
+        Dim randomX = Utils.GetPortalZone(610, "x")
+        Dim randomY = Utils.GetPortalZone(584, "y")
 
         'Dim randomX = Utils.GetRandom(610, 618)
         'Dim randomY = Utils.GetRandom(566, 574)
@@ -4153,9 +4153,9 @@ Label_GotoHome:
 
 
 
-        Dim CLICK_X As Integer = Utils_module.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
+        Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
 
-        Dim CLICK_Y As Integer = Utils_module.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
+        Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
 
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
 

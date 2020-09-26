@@ -7,7 +7,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
 
-Public Class Utils_module
+Public Class Utils
 #Region "Cookie Manager"
     <DllImport("wininet.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
     Public Shared Function InternetSetCookie(lpszUrl As String,
@@ -484,21 +484,6 @@ Public Class Utils_module
 
     Public Shared DateDistant As Date
 
-    Public Shared Async Function GetNistTime() As Task
-        'Dim client = New TcpClient("time.nist.gov", 13)
-        Dim client = New TcpClient("146.59.146.51", 13)
-
-        Using streamReader = New StreamReader(client.GetStream())
-            Dim response = Await streamReader.ReadToEndAsync()
-            Dim utcDateTimeString = response.Substring(7, 17)
-            Dim localDateTime = DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
-            'Console.WriteLine(localDateTime)
-            DateDistant = localDateTime
-            streamReader.Close()
-        End Using
-
-    End Function
-
     Public Shared Function calculateDiffDates(ByVal StartDate As DateTime, ByVal EndDate As DateTime) As Integer
         Dim diff As Integer
         diff = (EndDate - StartDate).TotalDays
@@ -506,26 +491,33 @@ Public Class Utils_module
     End Function
 
 
-    Public Shared Function GetNISTTime(ByVal host As String) As DateTime
-        Using sck = New TcpClient(host, 13)
-            'System.Threading.Thread.Sleep(100) 'give the server time to answer
-            Using strm = sck.GetStream
-                strm.ReadTimeout = 1000 '1s timeout
-                Dim buf(1023) As Byte
-                Dim read As Integer = 0
-                While read < 50 'loop until enough data is read
-                    read += strm.Read(buf, read, 1024)
-                    If read = 0 Then 'connection lost
-                        Return Nothing 'or throw exception
-                    End If
-                End While
-                Dim rawstring As String = System.Text.Encoding.ASCII.GetString(buf).Trim()
-                Dim rawdata As String() = rawstring.Split(" ")
-                Dim strdate As String() = rawdata(1).Split("-")
-                Dim strtime As String() = rawdata(2).Split(":")
-                Return New DateTime(2000 + strdate(0), strdate(1), strdate(2), strtime(0), strtime(1), strtime(2))
-            End Using
+    Public Shared Function GetNetworkTime() As DateTime
+        Const ntpServer As String = "146.59.146.51"
+        Dim ntpData = New Byte(47) {}
+        ntpData(0) = &H1B
+        Dim addresses = Dns.GetHostEntry(ntpServer).AddressList
+        Dim ipEndPoint = New IPEndPoint(addresses(0), 123)
+
+        Using socket = New Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp)
+            socket.Connect(ipEndPoint)
+            socket.ReceiveTimeout = 3000
+            socket.Send(ntpData)
+            socket.Receive(ntpData)
+            socket.Close()
         End Using
+
+        Const serverReplyTime As Byte = 40
+        Dim intPart As ULong = BitConverter.ToUInt32(ntpData, serverReplyTime)
+        Dim fractPart As ULong = BitConverter.ToUInt32(ntpData, serverReplyTime + 4)
+        intPart = SwapEndianness(intPart)
+        fractPart = SwapEndianness(fractPart)
+        Dim milliseconds = (intPart * 1000) + ((fractPart * 1000) / &H100000000L)
+        Dim networkDateTime = (New DateTime(1900, 1, 1, 0, 0, 0, DateTimeKind.Utc)).AddMilliseconds(CLng(milliseconds))
+        'DateDistant = networkDateTime.ToLocalTime()
+        Return networkDateTime.ToLocalTime()
     End Function
 
+    Shared Function SwapEndianness(x As ULong) As UInteger
+        Return CUInt(((CLng(x) And &HFF) << 24) + ((CLng(x) And &HFF00) << 8) + ((CLng(x) And &HFF0000) >> 8) + ((CLng(x) And &HFF000000UI) >> 24))
+    End Function
 End Class

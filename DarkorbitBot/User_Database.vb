@@ -1,12 +1,13 @@
-﻿Public Class User_module
+﻿Public Class User_Database
     Public Property NomUtilisateur As String
     Public Property PasswordUtilisateur As String
     Public Property LicenseEndTime As Date
     Public Property LicenseKey As String
     Public Property LicenseActivated As Boolean
     Public Property UserMail As String
+    Public Property Profil_Available As Integer = 1
 
-    Public Shared Function IsEqual(user1 As User_module, user2 As User_module)
+    Public Shared Function IsEqual(user1 As User_Database, user2 As User_Database)
         If user1 Is Nothing Or user2 Is Nothing Then
             'MessageBox.Show("Can't find your account")
             Return False

@@ -372,6 +372,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property error_icon_orange() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("error_icon_orange", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property exit_to_app() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("exit_to_app", resourceCulture)
@@ -1506,6 +1516,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("ridevbotuniverse", resourceCulture)
                 Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ridevbotuniverse_gif() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ridevbotuniverse_gif", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

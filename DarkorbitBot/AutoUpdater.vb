@@ -20,7 +20,7 @@ Public Class AutoUpdater
     Public LastChangeLog As String
     Public Check_Maintenance As Boolean
 
-    Private Async Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Size = New Size(363, 264)
 
         For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
@@ -34,7 +34,6 @@ Public Class AutoUpdater
                 End Try
             End If
         Next
-
 
         Timer_bar_cancel_auto_login.Start()
 
@@ -69,13 +68,13 @@ Public Class AutoUpdater
             AddHandler WC_Firebase_Secret.DownloadStringCompleted, AddressOf WC_Firebase_Secret_DownloadStringCompleted
             WC_Firebase_Secret.DownloadStringAsync(New Uri("https://www.dropbox.com/s/9yhkt6o33my54d0/Firebase_secret.txt?dl=1"))
 
-            Video_ridevbot_MediaPlayerAx.URL = FilePath
-            Video_ridevbot_MediaPlayerAx.Ctlcontrols.play()
-            Await Task.Delay(265)
-            Video_ridevbot_MediaPlayerAx.Visible = True
+            'Video_ridevbot_MediaPlayerAx.URL = FilePath
+            'Video_ridevbot_MediaPlayerAx.Ctlcontrols.play()
+            'Await Task.Delay(265)
+            'Video_ridevbot_MediaPlayerAx.Visible = True
 
-            Await Task.Delay(2200)
-            Video_ridevbot_MediaPlayerAx.Ctlcontrols.pause()
+            'Await Task.Delay(2200)
+            'Video_ridevbot_MediaPlayerAx.Ctlcontrols.pause()
             'key is valid, display actual name
             'MsgBox(Everest_Registry.Name)
             'Console.WriteLine(Everest_Registry.Name)
@@ -236,7 +235,7 @@ Public Class AutoUpdater
     Private Sub WC_Firebase_Secret_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try
-            Utils_module.Firebase_Secret = e.Result
+            Utils.Firebase_Secret = e.Result
 
         Catch ex As Exception
             MessageBox.Show($"Can't retrieve, error-69.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)

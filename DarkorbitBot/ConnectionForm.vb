@@ -9,7 +9,7 @@ Public Class ConnectionForm
     Public fcon As New FirebaseConfig() With
         {
         .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
-        .AuthSecret = Utils_module.Firebase_Secret
+        .AuthSecret = Utils.Firebase_Secret
         }
 
 
@@ -29,7 +29,7 @@ Public Class ConnectionForm
             MsgBox("null")
             Return
         End If
-        Dim user_key = Utils_module.getSHA1Hash(TextBox_username.Text)
+        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
 
 
         Dim res = client.Get("Users/" + user_key)
@@ -39,11 +39,11 @@ Public Class ConnectionForm
             Exit Sub
         End If
 
-        Dim CurUser As New User_module() With
+        Dim CurUser As New User_Database() With
             {
             .NomUtilisateur = TextBox_username.Text,
             .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils_module.DateDistant.AddDays(30),
+            .LicenseEndTime = Utils.DateDistant.AddDays(30),
             .LicenseKey = user_key,
             .LicenseActivated = False
             }
@@ -63,7 +63,7 @@ Public Class ConnectionForm
             MsgBox("null")
             Return
         End If
-        Dim user_key = Utils_module.getSHA1Hash(TextBox_username.Text)
+        Dim user_key = Utils.getSHA1Hash(TextBox_username.Text)
 
         Dim res = client.Get("Users/" + user_key)
         If res.Body = "null" Then
@@ -71,19 +71,19 @@ Public Class ConnectionForm
             Exit Sub
         End If
 
-        Dim resUser = res.ResultAs(Of User_module)
+        Dim resUser = res.ResultAs(Of User_Database)
 
-        Dim CurUser As New User_module With
+        Dim CurUser As New User_Database With
             {
             .NomUtilisateur = TextBox_username.Text,
             .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils_module.DateDistant,
+            .LicenseEndTime = Utils.DateDistant,
             .LicenseActivated = False,
             .LicenseKey = user_key
             }
 
-        If User_module.IsEqual(resUser, CurUser) Then
-            If resUser.LicenseEndTime.CompareTo(Utils_module.DateDistant) = -1 Then
+        If User_Database.IsEqual(resUser, CurUser) Then
+            If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
                 MsgBox("t'as pas payé enculé")
                 Exit Sub
             End If
@@ -108,19 +108,19 @@ Public Class ConnectionForm
             Exit Sub
         End If
 
-        Dim resUser = res.ResultAs(Of User_module)
+        Dim resUser = res.ResultAs(Of User_Database)
 
-        Dim CurUser As New User_module With
+        Dim CurUser As New User_Database With
             {
             .NomUtilisateur = TextBox_username.Text,
             .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils_module.DateDistant,
+            .LicenseEndTime = Utils.DateDistant,
             .LicenseActivated = False,
             .LicenseKey = user_key
             }
 
         'If Utilisateur.IsEqual(resUser, CurUser) Then
-        If resUser.LicenseEndTime.CompareTo(Utils_module.DateDistant) = -1 Then
+        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
             MsgBox("t'as pas payé enculé")
             Exit Sub
         End If

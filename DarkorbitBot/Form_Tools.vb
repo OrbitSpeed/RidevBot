@@ -316,7 +316,7 @@ Public Class Form_Tools
 
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
 
-        If Utils_module.server = "" Then
+        If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Panel_general.Visible = True
@@ -358,7 +358,7 @@ Public Class Form_Tools
 
             Panel_suppresor_controler.Size = New Size(125, 24)
             Button_suppresor_controler.Text = "﹀"
-            TextBox_uridiumGGS.Text = Utils_module.currentUridium
+            TextBox_uridiumGGS.Text = Utils.currentUridium
 
             GalaxyGates_module.Load()
 
@@ -388,7 +388,7 @@ Public Class Form_Tools
 
     Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
 
-        If Utils_module.server = "" Then
+        If Utils.server = "" Then
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -537,7 +537,7 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             Reload()
             Form_Game.Show()
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
 
@@ -545,8 +545,8 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             Reloader = 0
             Reload()
-            Utils_module.InternetSetCookie("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils_module.dosid & ";")
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
         End If
@@ -688,12 +688,14 @@ Public Class Form_Tools
         Button_stopSpin.Enabled = False
         ComboBox_autospin.Enabled = True
 
+
     End Sub ' Stop Galaxy Gates Spinner 
 
     Private Async Sub ClickGG()
 
         If exitGGS = 1 Then
             Console.WriteLine($"exitGGS = 1")
+            exitGGS = 0
             Exit Sub
         End If
 
@@ -701,6 +703,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
         If exitGGS = 1 Then
             Console.WriteLine($"exitGGS = 1")
+            exitGGS = 0
             Exit Sub
         End If
 
@@ -756,7 +759,7 @@ HOME_BASIC_RETURN_IF_VALID:
     End Sub ' boucle click GG
 
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
-        TextBox_uridiumtokeepGGS.Text = Utils_module.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
+        TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
     End Sub ' pour afficher les energie lors de l'ouverture de GG Spinner
 
     Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
@@ -805,11 +808,11 @@ HOME_BASIC_RETURN_IF_VALID:
         Console.WriteLine(Result_PART_GG)
         Console.WriteLine(GalaxyGates_id)
         Console.WriteLine(ComboBox_autospin.Text.ToLower)
-        Console.WriteLine("https://" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&sid=" + Utils_module.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
 
         Dim Prepare_Gates_POST As New System.Net.WebClient
-        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
-        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils_module.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils_module.userid + "&sid=" + Utils_module.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
 
     End Sub ' button prepare Gates
 
@@ -856,9 +859,9 @@ HOME_BASIC_RETURN_IF_VALID:
         BackPage_Form.ShowIcon = False
         BackPage_Form.ShowInTaskbar = False
 
-        Utils_module.checkStats = True
+        Utils.checkStats = True
         BackPage_Form.Show()
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         BackPage_Form.WindowState = FormWindowState.Minimized
 
 
@@ -903,7 +906,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
     Private Sub PictureBox_BackgroundBot_Click(sender As Object, e As EventArgs) Handles PictureBox_BackgroundBot.Click
 
-        If Utils_module.userid = "" Then
+        If Utils.userid = "" Then
 
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -912,7 +915,7 @@ HOME_BASIC_RETURN_IF_VALID:
             BackPage_Form.ShowIcon = True
             BackPage_Form.ShowInTaskbar = True
             BackPage_Form.Show()
-            BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+            BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
         End If
 
@@ -959,20 +962,20 @@ HOME_BASIC_RETURN_IF_VALID:
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
-            Utils_module.server = CheckRegex.Groups.Item(1).ToString
+            Utils.server = CheckRegex.Groups.Item(1).ToString
 
             Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
             If dosid_regex.Success Then
 
-                Utils_module.dosid = dosid_regex.Value.Split("=")(1)
-                Utils_module.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
-                TextBox_Get_Dosid.Text = Replace(Utils_module.dosid, " ", "")
-                Utils_module.server = Replace(Utils_module.server, " ", "")
-                Utils_module.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
-                Utils_module.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
-                Utils_module.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
-                Utils_module.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
-                Utils_module.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
+                Utils.dosid = dosid_regex.Value.Split("=")(1)
+                Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
+                Utils.server = Replace(Utils.server, " ", "")
+                Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
+                Utils.currentUridium = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_uri")).InnerText
+                Utils.currentCredits = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_credits")).InnerText
+                Utils.currentXP = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_exp")).InnerText
+                Utils.currentLevel = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_level")).InnerText
 
                 Dim Compagny = (WebBrowser_Synchronisation.Document.GetElementById("homeUserContent")).InnerText
                 Dim username As String
@@ -998,7 +1001,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
                 Console.WriteLine("---------------------------------------")
 
-                TextBox_username.Text = Utils_module.userid + " -   " + username + "   - " + Utils_module.server
+                TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
                 TextBox_clan.Text = clan
 
                 Select Case grade
@@ -1075,7 +1078,7 @@ HOME_BASIC_RETURN_IF_VALID:
 
                 End Select
 
-                Utils_module.UpdateStats()
+                Utils.UpdateStats()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -1083,8 +1086,8 @@ HOME_BASIC_RETURN_IF_VALID:
                 WebBrowser_Synchronisation.Navigate("about:blank")
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
-                    Utils_module.InternetSetCookie("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils_module.dosid & ";")
-                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+                    Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                    Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
                     Form_Game.Show()
 
                 End If
