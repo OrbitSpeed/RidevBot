@@ -208,8 +208,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -228,8 +229,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -248,8 +250,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -268,9 +271,11 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
-        Size = New Size(400, 371)
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
+        'Size = New Size(400, 371)
+        Size = New Size(497, 412)
 
     End Sub
 
@@ -288,8 +293,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 600)
 
     End Sub
@@ -308,8 +314,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -331,11 +338,11 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_suppresor_controler.Text = "﹀"
+
+            'Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_menu.PerformClick()
             Size = New Size(497, 412)
         Else
-
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
@@ -348,17 +355,14 @@ Public Class Form_Tools
             Panel_divers.Visible = False
             Panel_GalaxyGates.Visible = True
 
-            If Button_suppresor_controler_GGS.Text = "⬇" Then
-                Size = New Size(497, 705)
+            Size = New Size(689, 705)
+            Button_suppresor_controler_GGS.Text = Button_suppresor_controler_GGS.Text.Replace("Open", "Close")
 
-            ElseIf Button_suppresor_controler_GGS.Text = "⬆" Then
-                Size = New Size(689, 705)
-            End If
-
-
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_suppresor_controler.Text = "﹀"
+            'Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_menu.PerformClick()
             TextBox_uridiumGGS.Text = Utils.currentUridium
+
+            CenterToScreen()
 
             GalaxyGates_module.Load()
 
@@ -380,8 +384,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -404,8 +409,9 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_suppresor_controler.Text = "﹀"
+
+            'Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_menu.PerformClick()
             Size = New Size(497, 412)
 
         Else
@@ -422,8 +428,9 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_suppresor_controler.Text = "﹀"
+
+            'Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_menu.PerformClick()
             Size = New Size(497, 412)
 
         End If
@@ -444,8 +451,9 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -464,8 +472,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -484,8 +493,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Form_Startup.CheckedStats = 1
         Form_Startup.Show()
 
@@ -504,8 +514,8 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -523,8 +533,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        Panel_suppresor_controler.Size = New Size(125, 24)
-        Button_suppresor_controler.Text = "﹀"
+
+        'Panel_suppresor_controler.Size = New Size(125, 24)
+        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -558,16 +569,15 @@ Public Class Form_Tools
 #Region "GG Click Portail"
 
     Private Sub Button_Alpha_Click(sender As Object, e As EventArgs) Handles Button_Alpha.Click
-        GalaxyGates_module.View(GalaxyGates_id:="1",
-                         GalaxyGates_Name:="alpha")
+        GalaxyGates_module.View("1", "alpha")
     End Sub
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
         GalaxyGates_module.View(GalaxyGates_id:="2",
-                         GalaxyGates_Name:="Beta")
+                         GalaxyGates_Name:="beta")
     End Sub
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
         GalaxyGates_module.View(GalaxyGates_id:="3",
-                         GalaxyGates_Name:="Gamma")
+                         GalaxyGates_Name:="gamma")
     End Sub
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
         GalaxyGates_module.View(GalaxyGates_id:="4",
@@ -714,6 +724,18 @@ HOME_BASIC_RETURN_IF_VALID:
             GalaxyGates_module.GalaxyGates_Name = "alpha"
             GalaxyGates_module.Autorize_ABG = "1"
             GalaxyGates_module.GalaxyGates_id = "1"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "alpha" Then
+            GalaxyGates_module.GalaxyGates_Name = "alpha"
+            GalaxyGates_module.Autorize_ABG = "1"
+            GalaxyGates_module.GalaxyGates_id = "1"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "beta" Then
+            GalaxyGates_module.GalaxyGates_Name = "beta"
+            GalaxyGates_module.Autorize_ABG = "1"
+            GalaxyGates_module.GalaxyGates_id = "2"
+        ElseIf GalaxyGates_module.GalaxyGates_Name = "gamma" Then
+            GalaxyGates_module.GalaxyGates_Name = "gamma"
+            GalaxyGates_module.Autorize_ABG = "1"
+            GalaxyGates_module.GalaxyGates_id = "3"
 
         ElseIf GalaxyGates_module.GalaxyGates_Name = "delta" Then
             GalaxyGates_module.Autorize_ABG = "0"
@@ -762,58 +784,116 @@ HOME_BASIC_RETURN_IF_VALID:
         TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
     End Sub ' pour afficher les energie lors de l'ouverture de GG Spinner
 
-    Private Async Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
+    Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
 
-        Dim GalaxyGates_id As Object = 0
-        Dim PART_GG As Object = INFO_PART_GG_LABEL.Text
+#Region "Test"
+        'Dim GalaxyGates_id As String = ComboBox_autospin.Text
+        'Dim PART_GG As String = INFO_PART_GG_LABEL.Text
 
 
-        Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
-        Result_PART_GG = Result_PART_GG.Substring(1)
-        If Result_PART_GG = "34 / 34" AndAlso ComboBox_autospin.Text.ToLower = "alpha" Then
-            GalaxyGates_id = 1
+        'Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
+        'Result_PART_GG = Result_PART_GG.Substring(1)
+        'If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = "alpha" Then
+        '    GalaxyGates_id = 1
+        'ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = "beta" Then
+        '    GalaxyGates_id = 2
+        'ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = "gamma" Then
+        '    GalaxyGates_id = 3
+        'ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = "delta" Then
+        '    GalaxyGates_id = 4
+        'ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = "epsilon" Then
+        '    GalaxyGates_id = 5
+        'ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = "zeta" Then
+        '    GalaxyGates_id = 6
+        'ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = "kappa" Then
+        '    GalaxyGates_id = 7
+        'ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "lambda" Then
+        '    GalaxyGates_id = 8
+        'ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "hades" Then
+        '    GalaxyGates_id = 13
+        'ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = "kuiper" Then
+        '    GalaxyGates_id = 19
+        'ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = "chronos" Then
+        '    GalaxyGates_id = 12
+        'Else
+        '    GalaxyGates_id = 0
+        'End If
 
-        ElseIf Result_PART_GG = "48 / 48" AndAlso ComboBox_autospin.Text.ToLower = "beta" Then
-            GalaxyGates_id = 2
+        'If GalaxyGates_id = 0 Then
+        '    'The GG is not full we go away 
+        '    Label1.Select()
+        '    Dim data_PG = Button_PrepareGates.BackColor
+        '    Button_PrepareGates.BackColor = Color.Red
+        '    Await Task.Delay(300)
+        '    Button_PrepareGates.BackColor = data_PG
+        '    '---
+        '    Dim data_T = INFO_PART_GG_LABEL.ForeColor
+        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = data_T
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = data_T
+        '    Exit Sub
+        'End If
 
-        ElseIf Result_PART_GG = "82 / 82" AndAlso ComboBox_autospin.Text.ToLower = "gamma" Then
-            GalaxyGates_id = 3
+        'Console.WriteLine(Result_PART_GG)
+        'Console.WriteLine(GalaxyGates_id)
+        'Console.WriteLine(ComboBox_autospin.Text.ToLower)
+        'Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
 
-        ElseIf Result_PART_GG = "128 / 128" AndAlso ComboBox_autospin.Text.ToLower = "delta" Then
-            GalaxyGates_id = 4
+        'Dim Prepare_Gates_POST As New System.Net.WebClient
+        'Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        'Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+        'Console.WriteLine(Prepare_Gates_Data)
+        'Dim Prepare_Gates_Data_Regex = Regex.Match(Prepare_Gates_Data, "error code="".*?([\s\S]*?)""")
+        'If Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "gate_already_setup" Then
+        '    'The gate is already on the map
+        '    Console.WriteLine("The gate is already on the map")
+        '    Label1.Select()
+        '    Dim data_PG = Button_PrepareGates.BackColor
+        '    Button_PrepareGates.BackColor = Color.Red
+        '    Await Task.Delay(300)
+        '    Button_PrepareGates.BackColor = data_PG
+        '    '---
+        '    Dim data_Label = INFO_ON_MAP_GG_LABEL.ForeColor
+        '    INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
+        '    Await Task.Delay(300)
+        '    INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
 
-        ElseIf Result_PART_GG = "99 / 99" AndAlso ComboBox_autospin.Text.ToLower = "epsilon" Then
-            GalaxyGates_id = 5
-
-        ElseIf Result_PART_GG = "111 / 111" AndAlso ComboBox_autospin.Text.ToLower = "zeta" Then
-            GalaxyGates_id = 6
-
-        ElseIf Result_PART_GG = "120 / 120" AndAlso ComboBox_autospin.Text.ToLower = "kappa" Then
-            GalaxyGates_id = 7
-
-        ElseIf Result_PART_GG = "45 / 45" AndAlso ComboBox_autospin.Text.ToLower = "lambda" Then
-            GalaxyGates_id = 8
-
-        ElseIf Result_PART_GG = "45 / 45" AndAlso ComboBox_autospin.Text.ToLower = "hades" Then
-            GalaxyGates_id = 13
-
-        ElseIf Result_PART_GG = "100 / 100" AndAlso ComboBox_autospin.Text.ToLower = "kuiper" Then
-            GalaxyGates_id = 19
-
-        ElseIf Result_PART_GG = "21 / 21" AndAlso ComboBox_autospin.Text.ToLower = "chronos" Then
-            GalaxyGates_id = 12
-
-        End If
-
-        Console.WriteLine(Result_PART_GG)
-        Console.WriteLine(GalaxyGates_id)
-        Console.WriteLine(ComboBox_autospin.Text.ToLower)
-        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
-
-        Dim Prepare_Gates_POST As New System.Net.WebClient
-        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https//" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
-
+        'ElseIf Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "not_enough_parts" Then
+        '    'The gate is not full
+        '    Console.WriteLine("The gate is not full")
+        '    Label1.Select()
+        '    Dim data_PG = Button_PrepareGates.BackColor
+        '    Button_PrepareGates.BackColor = Color.Red
+        '    Await Task.Delay(300)
+        '    Button_PrepareGates.BackColor = data_PG
+        '    '---
+        '    Dim data_T = INFO_PART_GG_LABEL.ForeColor
+        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = data_T
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
+        '    Await Task.Delay(300)
+        '    INFO_PART_GG_LABEL.ForeColor = data_T
+        'Else
+        '    'The gate is full and is placed
+        '    Console.WriteLine("The gate is full and is placed")
+        '    Label1.Select()
+        '    Dim data_PG = Button_PrepareGates.BackColor
+        '    Button_PrepareGates.BackColor = Color.LimeGreen
+        '    Await Task.Delay(300)
+        '    Button_PrepareGates.BackColor = data_PG
+        'End If
+#End Region
+        GalaxyGates_module.PrepareGates()
     End Sub ' button prepare Gates
 
     Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
@@ -965,10 +1045,15 @@ HOME_BASIC_RETURN_IF_VALID:
             Utils.server = CheckRegex.Groups.Item(1).ToString
 
             Dim dosid_regex = Regex.Match(WebBrowser_Synchronisation.DocumentText, "dosid=([^&^.']+)")
+            'Console.WriteLine(dosid_regex)
             If dosid_regex.Success Then
 
                 Utils.dosid = dosid_regex.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
+                Utils.userid = Utils.userid.Replace(vbCrLf, "")
+                Console.WriteLine("----")
+                Console.WriteLine(Utils.userid)
+                Console.WriteLine("----")
                 TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
                 Utils.server = Replace(Utils.server, " ", "")
                 Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
@@ -1122,21 +1207,6 @@ HOME_BASIC_RETURN_IF_VALID:
 
     End Sub ' Start Bot
 
-    Private Sub Button_suppresor_controler_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler.Click
-
-        If Button_suppresor_controler.Text = "﹀" Then
-            Panel_suppresor_controler.Size = New Size(125, 407)
-            Button_suppresor_controler.Text = "︿"
-
-        ElseIf Button_suppresor_controler.Text = "︿" Then
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_suppresor_controler.Text = "﹀"
-
-        End If
-
-
-    End Sub ' Supressor controler TOOLBAR General
-
     Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
         If Button_suppresor_controler_GGS.Text = "Open Gates Spinner" Then
@@ -1246,7 +1316,15 @@ HOME_BASIC_RETURN_IF_VALID:
 
     Private Sub Button_menu_Click(sender As Object, e As EventArgs) Handles Button_menu.Click
 
-        Button_suppresor_controler.PerformClick()
+        'Button_suppresor_controler.PerformClick()
+
+        If Button_menu.Tag = "true" Then
+            Panel_suppresor_controler.Size = New Size(125, 407)
+            Button_menu.Tag = "false"
+        Else
+            Panel_suppresor_controler.Size = New Size(125, 24)
+            Button_menu.Tag = "true"
+        End If
 
     End Sub
 

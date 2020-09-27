@@ -157,7 +157,6 @@ Partial Class Form_Tools
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -264,7 +263,6 @@ Partial Class Form_Tools
         Me.Rex_Button = New System.Windows.Forms.Button()
         Me.Divers_Button = New System.Windows.Forms.Button()
         Me.Panel_suppresor_controler = New System.Windows.Forms.Panel()
-        Me.Button_suppresor_controler = New System.Windows.Forms.Button()
         Me.Button_license = New System.Windows.Forms.Button()
         Me.Button_collectable_toolbar = New System.Windows.Forms.Button()
         Me.Button_palladium_toolbar = New System.Windows.Forms.Button()
@@ -296,6 +294,7 @@ Partial Class Form_Tools
         Me.ToolTip_menu = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip_GalaxyGates = New System.Windows.Forms.ToolTip(Me.components)
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -2280,18 +2279,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'PictureBox_Pause
         '
         Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2675,7 +2662,7 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_autospin.ForeColor = System.Drawing.Color.White
         Me.ComboBox_autospin.FormattingEnabled = True
-        Me.ComboBox_autospin.Items.AddRange(New Object() {"abg", "delta", "epsilon", "zeta", "kappa", "lambda", "kuiper", "hades"})
+        Me.ComboBox_autospin.Items.AddRange(New Object() {"alpha", "beta", "gamma", "delta", "epsilon", "zeta", "kappa", "lambda", "kuiper", "hades"})
         Me.ComboBox_autospin.Location = New System.Drawing.Point(78, 43)
         Me.ComboBox_autospin.Name = "ComboBox_autospin"
         Me.ComboBox_autospin.Size = New System.Drawing.Size(75, 21)
@@ -3834,7 +3821,6 @@ Partial Class Form_Tools
         'Panel_suppresor_controler
         '
         Me.Panel_suppresor_controler.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_suppresor_controler.Controls.Add(Me.Button_suppresor_controler)
         Me.Panel_suppresor_controler.Controls.Add(Me.GalaxyGates_Button)
         Me.Panel_suppresor_controler.Controls.Add(Me.NPC_Button)
         Me.Panel_suppresor_controler.Controls.Add(Me.Rex_Button)
@@ -3855,22 +3841,6 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
         Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 24)
         Me.Panel_suppresor_controler.TabIndex = 46
-        '
-        'Button_suppresor_controler
-        '
-        Me.Button_suppresor_controler.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_suppresor_controler.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_suppresor_controler.FlatAppearance.BorderSize = 0
-        Me.Button_suppresor_controler.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_suppresor_controler.Font = New System.Drawing.Font("Segoe UI Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_suppresor_controler.ForeColor = System.Drawing.Color.White
-        Me.Button_suppresor_controler.Location = New System.Drawing.Point(115, 14)
-        Me.Button_suppresor_controler.Name = "Button_suppresor_controler"
-        Me.Button_suppresor_controler.Size = New System.Drawing.Size(10, 10)
-        Me.Button_suppresor_controler.TabIndex = 27
-        Me.Button_suppresor_controler.Text = "﹀"
-        Me.Button_suppresor_controler.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button_suppresor_controler.UseVisualStyleBackColor = False
         '
         'Button_license
         '
@@ -3959,6 +3929,7 @@ Partial Class Form_Tools
         Me.Button_menu.Name = "Button_menu"
         Me.Button_menu.Size = New System.Drawing.Size(104, 27)
         Me.Button_menu.TabIndex = 79
+        Me.Button_menu.Tag = "false"
         Me.Button_menu.Text = "-- Menu --"
         Me.Button_menu.UseVisualStyleBackColor = False
         '
@@ -4321,6 +4292,18 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
         '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
         'Form_Tools
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4610,7 +4593,6 @@ Partial Class Form_Tools
     Friend WithEvents CheckedListBox_listbox As CheckedListBox
     Friend WithEvents Label_repair As Label
     Friend WithEvents ComboBox_repair As ComboBox
-    Friend WithEvents Button_suppresor_controler As Button
     Friend WithEvents Button_palladium_toolbar As Button
     Friend WithEvents Button_npc_toolbar As Button
     Friend WithEvents Button_collectable_toolbar As Button

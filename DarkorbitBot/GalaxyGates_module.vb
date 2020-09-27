@@ -28,7 +28,7 @@ Public Class GalaxyGates_module
     Public Shared WebClient_POST As New System.Net.WebClient
 
 
-    Public Shared Function Load()
+    Public Shared Sub Load()
 
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
@@ -137,7 +137,7 @@ Public Class GalaxyGates_module
         Dim WebClient_GET_total_part_Chronos = Regex.Match(WebClient_GET_All_elements_Chronos, "total="".*?([\s\S]*?)""").Groups.Item(1).ToString
         Form_Tools.Label_chronos.Text = "Chronos [ " + WebClient_GET_current_part_Chronos + " / " + WebClient_GET_total_part_Chronos + " ]"
 
-    End Function
+    End Sub
 
     Public Shared Function View(ByVal GalaxyGates_id As String, ByVal GalaxyGates_Name As String)
 
@@ -213,10 +213,16 @@ Public Class GalaxyGates_module
 
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
 
+        If Not Form_Tools.ComboBox_autospin.Items.Contains(Form_Tools.ComboBox_autospin.Text) Then
+            Form_Tools.ComboBox_autospin.Text = "alpha"
+            Form_Tools.Button_stopSpin.PerformClick()
+            Exit Function
+        End If
+
         If Form_Tools.CheckBox_UseOnlyEE_GGS.Checked = True And Form_Tools.TextBox_ExtraEnergy_GGS.Text = "0" Then
 
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Extra Energy." + Form_Tools.TextBox_WinGGS.Text
+            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"No more Extra Energy left." + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
@@ -229,7 +235,7 @@ Public Class GalaxyGates_module
         ElseIf Val(Form_Tools.TextBox_uridiumGGS.Text.Replace(".", "")) < Val(Form_Tools.TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And Form_Tools.CheckBox_UseOnlyEE_GGS.Checked = False Then
 
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"You no longer have / no Uridium." + Form_Tools.TextBox_WinGGS.Text
+            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"No more Uridium left." + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
@@ -241,47 +247,48 @@ Public Class GalaxyGates_module
         End If
 
         Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
-        If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = 1 Then
+        Result_PART_GG = Result_PART_GG.Substring(1)
+        If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_Name = "alpha" Then
             GalaxyGates_id = 1
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = 2 Then
+        ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_Name = "beta" Then
             GalaxyGates_id = 2
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = 3 Then
+        ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_Name = "gamma" Then
             GalaxyGates_id = 3
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = 4 Then
+        ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_Name = "delta" Then
             GalaxyGates_id = 4
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = 5 Then
+        ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_Name = "epsilon" Then
             GalaxyGates_id = 5
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = 6 Then
+        ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_Name = "zeta" Then
             GalaxyGates_id = 6
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = 7 Then
+        ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_Name = "kappa" Then
             GalaxyGates_id = 7
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 8 Then
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "lambda" Then
             GalaxyGates_id = 8
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = 13 Then
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "hades" Then
             GalaxyGates_id = 13
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = 19 Then
+        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_Name = "kuiper" Then
             GalaxyGates_id = 19
             PART_CHECKER = 1
 
-        ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = 12 Then
+        ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_Name = "chronos" Then
             GalaxyGates_id = 12
             PART_CHECKER = 1
 
@@ -298,7 +305,7 @@ Public Class GalaxyGates_module
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " Completed." + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
-            If Form_Tools.INFO_ON_MAP_GG_LABEL.Text = "1" Then
+            If Form_Tools.INFO_ON_MAP_GG_LABEL.Text.Contains("1") Then
 
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 2 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
@@ -317,11 +324,13 @@ Public Class GalaxyGates_module
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 1 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
+                PrepareGates()
+
             End If
 
-            Dim Prepare_Gates_POST As New System.Net.WebClient
-            Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-            Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+            'Dim Prepare_Gates_POST As New System.Net.WebClient
+            'Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+            'Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
 
@@ -344,12 +353,6 @@ Public Class GalaxyGates_module
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
             End If
-        End If
-
-        If Not Form_Tools.ComboBox_autospin.Items.Contains(Form_Tools.ComboBox_autospin.Text) Then
-            Form_Tools.ComboBox_autospin.Text = "abg"
-            Form_Tools.Button_stopSpin.PerformClick()
-            Exit Function
         End If
 
         'WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
@@ -403,30 +406,30 @@ Public Class GalaxyGates_module
             Form_Tools.DATE_REMAINING.Text = "Reload your account, your dosid is broken"
         Else Form_Tools.DATE_REMAINING.Text = Webclient_GET_Items_date + " Done."
         End If
-
+        Dim GalaxyGates_Name_Get_Items As String
         If Webclient_GET_Items_item_id_Gates = Nothing Then
         ElseIf Webclient_GET_Items_item_id_Gates = "1" Then
-            GalaxyGates_Name = "alpha"
+            GalaxyGates_Name_Get_Items = "alpha"
         ElseIf Webclient_GET_Items_item_id_Gates = "2" Then
-            GalaxyGates_Name = "beta"
+            GalaxyGates_Name_Get_Items = "beta"
         ElseIf Webclient_GET_Items_item_id_Gates = "3" Then
-            GalaxyGates_Name = "gamma"
+            GalaxyGates_Name_Get_Items = "gamma"
         ElseIf Webclient_GET_Items_item_id_Gates = "4" Then
-            GalaxyGates_Name = "delta"
+            GalaxyGates_Name_Get_Items = "delta"
         ElseIf Webclient_GET_Items_item_id_Gates = "5" Then
-            GalaxyGates_Name = "epsilon"
+            GalaxyGates_Name_Get_Items = "epsilon"
         ElseIf Webclient_GET_Items_item_id_Gates = "6" Then
-            GalaxyGates_Name = "zeta"
+            GalaxyGates_Name_Get_Items = "zeta"
         ElseIf Webclient_GET_Items_item_id_Gates = "7" Then
-            GalaxyGates_Name = "kappa"
+            GalaxyGates_Name_Get_Items = "kappa"
         ElseIf Webclient_GET_Items_item_id_Gates = "8" Then
-            GalaxyGates_Name = "lambda"
+            GalaxyGates_Name_Get_Items = "lambda"
         ElseIf Webclient_GET_Items_item_id_Gates = "13" Then
-            GalaxyGates_Name = "hades"
+            GalaxyGates_Name_Get_Items = "hades"
         ElseIf Webclient_GET_Items_item_id_Gates = "19" Then
-            GalaxyGates_Name = "kuiper"
+            GalaxyGates_Name_Get_Items = "kuiper"
         ElseIf Webclient_GET_Items_item_id_Gates = "12" Then
-            GalaxyGates_Name = "chronos"
+            GalaxyGates_Name_Get_Items = "chronos"
         End If
 
         If Webclient_GET_Items_part_multiplier_amount <> Nothing Then
@@ -531,18 +534,20 @@ Public Class GalaxyGates_module
                 If Webclient_GET_Items_part_id_duplicate <> Nothing Then
                     If Autorize_ABG = 1 Then
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + "[ABG] :   " + Webclient_GET_Items_amount + " Multiplier   ◆" + Form_Tools.TextBox_WinGGS.Text
-                    Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + Webclient_GET_Gates_name + " :   " + Webclient_GET_Items_amount + " Multiplier   ◆" + Form_Tools.TextBox_WinGGS.Text
+                    Else
+                        Form_Tools.TextBox_WinGGS.Text = vbNewLine + Webclient_GET_Gates_name + " :   " + Webclient_GET_Items_amount + " Multiplier   ◆" + Form_Tools.TextBox_WinGGS.Text
                     End If
+
                     Exit Function
 
                 Else
 
-                    View(GalaxyGates_id:=Webclient_GET_Items_item_id_Gates, GalaxyGates_Name:=GalaxyGates_Name)
+                    View(Webclient_GET_Items_item_id_Gates, GalaxyGates_Name)
 
                     If Webclient_GET_Items_part_multiplier_used = Nothing Then
-                        Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name + " :   Part N° : " + Webclient_GET_Items_part_id + " Added" + Form_Tools.TextBox_WinGGS.Text
-
-                    Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name + " :   Multiple Part Added" + Form_Tools.TextBox_WinGGS.Text
+                        Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Part N° : " + Webclient_GET_Items_part_id + " Added" + Form_Tools.TextBox_WinGGS.Text
+                    Else
+                        Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Multiple Part Added" + Form_Tools.TextBox_WinGGS.Text
                     End If
 
                     Load()
@@ -555,12 +560,12 @@ Public Class GalaxyGates_module
         If Webclient_GET_Items_part_multiplier_amount <> Nothing Then
             If Autorize_ABG = 1 Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + "    [ABG] :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
-            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + "   " + GalaxyGates_Name + " :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + "   " + GalaxyGates_Name_Get_Items + " :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
             End If
         Else
             If Autorize_ABG = 1 Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + " [ABG] :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
-            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name + " :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
             End If
 
         End If
@@ -569,5 +574,115 @@ Public Class GalaxyGates_module
 
 
     End Function
+
+
+    Public Shared Async Sub PrepareGates()
+
+        Dim GalaxyGates_id As String = Form_Tools.ComboBox_autospin.Text
+        Dim PART_GG As String = Form_Tools.INFO_PART_GG_LABEL.Text
+
+
+        Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
+        Result_PART_GG = Result_PART_GG.Substring(1)
+        If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = "alpha" Then
+            GalaxyGates_id = 1
+        ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = "beta" Then
+            GalaxyGates_id = 2
+        ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = "gamma" Then
+            GalaxyGates_id = 3
+        ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = "delta" Then
+            GalaxyGates_id = 4
+        ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = "epsilon" Then
+            GalaxyGates_id = 5
+        ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = "zeta" Then
+            GalaxyGates_id = 6
+        ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = "kappa" Then
+            GalaxyGates_id = 7
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "lambda" Then
+            GalaxyGates_id = 8
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "hades" Then
+            GalaxyGates_id = 13
+        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = "kuiper" Then
+            GalaxyGates_id = 19
+        ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = "chronos" Then
+            GalaxyGates_id = 12
+        Else
+            GalaxyGates_id = 0
+        End If
+
+        If GalaxyGates_id = 0 Then
+            'The GG is not full we go away 
+            Form_Tools.Label1.Select()
+            Dim data_PG = Color.FromArgb(20, 75, 158)
+            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            '---
+            Dim data_T = Color.Black
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = data_T
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = data_T
+            Exit Sub
+        End If
+
+        Console.WriteLine(Result_PART_GG)
+        Console.WriteLine(GalaxyGates_id)
+        Console.WriteLine(Form_Tools.ComboBox_autospin.Text.ToLower)
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+
+        Dim Prepare_Gates_POST As New System.Net.WebClient
+        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+        Console.WriteLine(Prepare_Gates_Data)
+        Dim Prepare_Gates_Data_Regex = Regex.Match(Prepare_Gates_Data, "error code="".*?([\s\S]*?)""")
+        If Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "gate_already_setup" Then
+            'The gate is already on the map
+            Console.WriteLine("The gate is already on the map")
+            Form_Tools.Label1.Select()
+            Dim data_PG = Color.FromArgb(20, 75, 158)
+            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            '---
+            Dim data_Label = Color.Black
+            Form_Tools.INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
+            Await Task.Delay(300)
+            Form_Tools.INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
+
+        ElseIf Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "not_enough_parts" Then
+            'The gate is not full
+            Console.WriteLine("The gate is not full")
+            Form_Tools.Label1.Select()
+            Dim data_PG = Color.FromArgb(20, 75, 158)
+            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            '---
+            Dim data_T = Color.Black
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = data_T
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools.INFO_PART_GG_LABEL.ForeColor = data_T
+        Else
+            'The gate is full and is placed
+            Console.WriteLine("The gate is full and is placed")
+            Form_Tools.Label1.Select()
+            Dim data_PG = Color.FromArgb(20, 75, 158)
+            Form_Tools.Button_PrepareGates.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools.Button_PrepareGates.BackColor = data_PG
+        End If
+    End Sub
 
 End Class

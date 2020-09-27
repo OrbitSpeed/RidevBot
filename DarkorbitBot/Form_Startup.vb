@@ -118,8 +118,6 @@ Public Class Form_Startup
 
                 Else CheckedStats = 1
                     MessageBox.Show("If you active the ""Auto Login"" option, please select Profil")
-
-
                 End If
             End If
         End If
@@ -520,7 +518,7 @@ Public Class Form_Startup
 
     Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
         If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
-            MessageBox.Show("You didn't put a license")
+            MessageBox.Show("You didn't put a license", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             'Picturebox image
             PictureBox_license_check.Image = My.Resources.error_icon
             PictureBox_license_check.Tag = False
@@ -539,7 +537,7 @@ Public Class Form_Startup
         Try
             res = client.Get("Users/" + user_key)
         Catch ex As Exception
-            MessageBox.Show("Can't get your license, check it correctly.")
+            MessageBox.Show("Can't get your license, check it correctly.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             'Picturebox image
             PictureBox_license_check.Image = My.Resources.error_icon
             PictureBox_license_check.Tag = False
@@ -554,7 +552,7 @@ Public Class Form_Startup
             Exit Sub
         End Try
         If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account doesn't exist")
+            MessageBox.Show("Your account doesn't exist", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             TextBox_license_check.Text = "Your license here"
             'Picturebox image
             PictureBox_license_check.Image = My.Resources.error_icon
@@ -582,7 +580,6 @@ Public Class Form_Startup
             }
 
         If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
-            'MessageBox.Show("t'as pas payé enculé")
             'Picturebox image
             PictureBox_license_check.Image = My.Resources.error_icon
             PictureBox_license_check.Tag = False
@@ -594,6 +591,8 @@ Public Class Form_Startup
             Button_Profil1_Load.Enabled = False
             Button_Profil2_Load.Enabled = False
             Button_Profil3_Load.Enabled = False
+
+            MessageBox.Show("You didn't pay the license, DM a dev if you think it's an error.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -661,26 +660,26 @@ Public Class Form_Startup
 
     Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
         If PictureBox_license_check.Tag = True Then
-            '    MessageBox.Show("Your license is valid, you don't need to register")
+            MessageBox.Show("Your license is valid, you don't need to register", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
-            '      MessageBox.Show("You didn't put a correct username")
+            MessageBox.Show("You didn't put a correct username", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Then
-            '     MessageBox.Show("You didn't put a correct password")
+            MessageBox.Show("You didn't put a correct password", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         If String.IsNullOrWhiteSpace(TextBox_UserMail.Text) Then
-            '       MessageBox.Show("You didn't put a correct mail")
+            MessageBox.Show("You didn't put a correct mail", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         If TextBox_UserMail.Text = "Your_Mail" Or
             Not TextBox_UserMail.Text.Contains("@") Or
             Not TextBox_UserMail.Text.Contains(".") Then
 
-            '    MessageBox.Show("You didn't put a correct mail")
+            MessageBox.Show("You didn't put a correct mail", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -689,7 +688,7 @@ Public Class Form_Startup
 
         Dim res = client.Get("Users/" + user_key)
         If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
-            '   MessageBox.Show("Your account already exist")
+            MessageBox.Show("Your account already exist")
             Exit Sub
         End If
 
@@ -703,7 +702,7 @@ Public Class Form_Startup
             .UserMail = TextBox_UserMail.Text
             }
         Dim setter = client.Set("Users/" + user_key, CurUser)
-        '    MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
+        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Async Sub Timer_Flashing_Tick(sender As Object, e As EventArgs) Handles Timer_Flashing.Tick
