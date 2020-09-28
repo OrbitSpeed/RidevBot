@@ -208,8 +208,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -229,8 +227,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -250,8 +246,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -271,10 +265,7 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
-        'Size = New Size(400, 371)
         Size = New Size(497, 412)
 
     End Sub
@@ -293,8 +284,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 600)
 
@@ -314,8 +303,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -338,8 +325,6 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-
-            'Panel_suppresor_controler.Size = New Size(125, 24)
             Button_menu.PerformClick()
             Size = New Size(497, 412)
         Else
@@ -358,7 +343,6 @@ Public Class Form_Tools
             Size = New Size(689, 705)
             Button_suppresor_controler_GGS.Text = Button_suppresor_controler_GGS.Text.Replace("Open", "Close")
 
-            'Panel_suppresor_controler.Size = New Size(125, 24)
             Button_menu.PerformClick()
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
@@ -384,8 +368,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -409,8 +391,6 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-
-            'Panel_suppresor_controler.Size = New Size(125, 24)
             Button_menu.PerformClick()
             Size = New Size(497, 412)
 
@@ -428,8 +408,6 @@ Public Class Form_Tools
             Panel_rex.Visible = False
             Panel_divers.Visible = False
 
-
-            'Panel_suppresor_controler.Size = New Size(125, 24)
             Button_menu.PerformClick()
             Size = New Size(497, 412)
 
@@ -451,8 +429,6 @@ Public Class Form_Tools
         Panel_rex.Visible = True
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -472,8 +448,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = True
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -493,10 +467,9 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Form_Startup.CheckedStats = 1
+        Me.Visible = False
         Form_Startup.Show()
 
     End Sub
@@ -514,7 +487,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -533,8 +505,6 @@ Public Class Form_Tools
         Panel_rex.Visible = False
         Panel_divers.Visible = False
 
-
-        'Panel_suppresor_controler.Size = New Size(125, 24)
         Button_menu.PerformClick()
         Size = New Size(497, 412)
 
@@ -572,329 +542,122 @@ Public Class Form_Tools
         GalaxyGates_module.View("1", "alpha")
     End Sub
     Private Sub Button_beta_Click(sender As Object, e As EventArgs) Handles Button_beta.Click
-        GalaxyGates_module.View(GalaxyGates_id:="2",
-                         GalaxyGates_Name:="beta")
+        GalaxyGates_module.View("2", "beta")
     End Sub
     Private Sub Button_gamma_Click(sender As Object, e As EventArgs) Handles Button_gamma.Click
-        GalaxyGates_module.View(GalaxyGates_id:="3",
-                         GalaxyGates_Name:="gamma")
+        GalaxyGates_module.View("3", "gamma")
     End Sub
     Private Sub Button_delta_Click(sender As Object, e As EventArgs) Handles Button_delta.Click
-        GalaxyGates_module.View(GalaxyGates_id:="4",
-                         GalaxyGates_Name:="Delta")
+        GalaxyGates_module.View("4", "Delta")
     End Sub
     Private Sub Button_epsilon_Click(sender As Object, e As EventArgs) Handles Button_epsilon.Click
-        GalaxyGates_module.View(GalaxyGates_id:="5",
-                         GalaxyGates_Name:="Epsilon")
+        GalaxyGates_module.View("5", "Epsilon")
     End Sub
     Private Sub Button_zeta_Click(sender As Object, e As EventArgs) Handles Button_zeta.Click
-        GalaxyGates_module.View(GalaxyGates_id:="6",
-                         GalaxyGates_Name:="Zeta")
+        GalaxyGates_module.View("6", "Zeta")
     End Sub
     Private Sub Button_Kappa_Click(sender As Object, e As EventArgs) Handles Button_Kappa.Click
-        GalaxyGates_module.View(GalaxyGates_id:="7",
-                         GalaxyGates_Name:="Kappa")
+        GalaxyGates_module.View("7", "Kappa")
     End Sub
     Private Sub Button_lambda_Click(sender As Object, e As EventArgs) Handles Button_lambda.Click
-        GalaxyGates_module.View(GalaxyGates_id:="8",
-                         GalaxyGates_Name:="Lambda")
+        GalaxyGates_module.View("8", "Lambda")
     End Sub
     Private Sub Button_hades_Click(sender As Object, e As EventArgs) Handles Button_hades.Click
-        GalaxyGates_module.View(GalaxyGates_id:="13",
-                         GalaxyGates_Name:="Hades")
+        GalaxyGates_module.View("13", "Hades")
     End Sub
     Private Sub Button_kuiper_Click(sender As Object, e As EventArgs) Handles Button_kuiper.Click
-        GalaxyGates_module.View(GalaxyGates_id:="19",
-                         GalaxyGates_Name:="Kuiper")
+        GalaxyGates_module.View("19", "Kuiper")
     End Sub
     Private Sub Button_kronos_Click(sender As Object, e As EventArgs) Handles Button_kronos.Click
-        GalaxyGates_module.View(GalaxyGates_id:="12",
-                         GalaxyGates_Name:="Chronos")
+        GalaxyGates_module.View("12", "Chronos")
     End Sub
 
 #End Region ' ici se trouve tout les Bouttons pour voir la GG Uniquement
 
 #Region "Button Click GGS"
 
-    Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_ABG_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="1",
-                         GalaxyGates_Name:="alpha",
-                         Autorize_ABG:="1")
+    Private Sub Button_ABG_GGS_Click(sender As Object, e As EventArgs) Handles Button_abg_GGS.Click
+        GalaxyGates_module.View("1", "alpha")
+        ComboBox_autospin.Text = "abg"
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+
     End Sub
     Private Sub Button_alpha_GGS_Click(sender As Object, e As EventArgs) Handles Button_alpha_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="1",
-                         GalaxyGates_Name:="alpha",
-                         Autorize_ABG:="0")
+        GalaxyGates_module.View("1", "alpha")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+
     End Sub
     Private Sub Button_beta_GGS_Click(sender As Object, e As EventArgs) Handles Button_beta_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="2",
-                         GalaxyGates_Name:="beta",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_Gamma_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="3",
-                         GalaxyGates_Name:="gamma",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Delta_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="4",
-                         GalaxyGates_Name:="delta",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_Epsilon_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="5",
-                         GalaxyGates_Name:="epsilon",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_Zeta_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="6",
-                         GalaxyGates_Name:="zeta",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kappa_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="7",
-                         GalaxyGates_Name:="kappa",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_Lambda_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="8",
-                         GalaxyGates_Name:="lambda",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_Kuiper_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="19",
-                         GalaxyGates_Name:="kuiper",
-                         Autorize_ABG:="0")
-    End Sub
-    Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_Hades_GGS.Click
-        GalaxyGates_module.Spin(GalaxyGates_id:="13",
-                         GalaxyGates_Name:="hades",
-                         Autorize_ABG:="0")
-    End Sub
+        GalaxyGates_module.View("2", "beta")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
 
-#End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
+    End Sub
+    Private Sub Button_Gamma_GGS_Click(sender As Object, e As EventArgs) Handles Button_gamma_GGS.Click
+        GalaxyGates_module.View("3", "gamma")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
 
+    End Sub
+    Private Sub Button_Delta_GGS_Click(sender As Object, e As EventArgs) Handles Button_delta_GGS.Click
+        GalaxyGates_module.View("4", "Delta")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_Epsilon_GGS_Click(sender As Object, e As EventArgs) Handles Button_epsilon_GGS.Click
+        GalaxyGates_module.View("5", "Epsilon")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_Zeta_GGS_Click(sender As Object, e As EventArgs) Handles Button_zeta_GGS.Click
+        GalaxyGates_module.View("6", "Zeta")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_Kappa_GGS_Click(sender As Object, e As EventArgs) Handles Button_kappa_GGS.Click
+        GalaxyGates_module.View("7", "Kappa")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_Lambda_GGS_Click(sender As Object, e As EventArgs) Handles Button_lambda_GGS.Click
+        GalaxyGates_module.View("8", "Lambda")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Async Sub Button_Kuiper_GGS_Click(sender As Object, e As EventArgs) Handles Button_kuiper_GGS.Click
+
+        GalaxyGates_module.View("19", "Kuiper")
+        ComboBox_autospin.Text = "Streuner"
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_Hades_GGS_Click(sender As Object, e As EventArgs) Handles Button_hades_GGS.Click
+        GalaxyGates_module.View("13", "Hades")
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(0)
+    End Sub
+    Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
+        GalaxyGates_module.PrepareGates()
+
+    End Sub ' button prepare Gates
     Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
-
-        Button_StartSpin.Enabled = False
-        Button_stopSpin.Enabled = True
-        ComboBox_autospin.Enabled = False
-
-        ClickGG()
+        GalaxyGates_module.Exit_Spin = 0
+        GalaxyGates_module.Spin(1)
 
     End Sub ' Start Galaxy Gates Spinner 
-
     Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
-
-        Console.WriteLine("Autospinner deactivated.")
-
-        TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-        TextBox_WinGGS.Text = vbNewLine + $"Autospinner deactivated." + TextBox_WinGGS.Text
-        TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + TextBox_WinGGS.Text
-        TextBox_WinGGS.Text = vbNewLine + $"" + TextBox_WinGGS.Text
-
-        exitGGS = 1
-        Button_StartSpin.Enabled = True
-        Button_stopSpin.Enabled = False
-        ComboBox_autospin.Enabled = True
-
+        GalaxyGates_module.Exit_Spin = 1
 
     End Sub ' Stop Galaxy Gates Spinner 
 
-    Private Async Sub ClickGG()
-
-        If exitGGS = 1 Then
-            Console.WriteLine($"exitGGS = 1")
-            exitGGS = 0
-            Exit Sub
-        End If
-
-HOME_BASIC_RETURN_IF_VALID:
-
-        If exitGGS = 1 Then
-            Console.WriteLine($"exitGGS = 1")
-            exitGGS = 0
-            Exit Sub
-        End If
-
-        GalaxyGates_module.GalaxyGates_Name = ComboBox_autospin.Text
-        If GalaxyGates_module.GalaxyGates_Name = Nothing Then
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "abg" Then
-            GalaxyGates_module.GalaxyGates_Name = "alpha"
-            GalaxyGates_module.Autorize_ABG = "1"
-            GalaxyGates_module.GalaxyGates_id = "1"
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "alpha" Then
-            GalaxyGates_module.GalaxyGates_Name = "alpha"
-            GalaxyGates_module.Autorize_ABG = "1"
-            GalaxyGates_module.GalaxyGates_id = "1"
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "beta" Then
-            GalaxyGates_module.GalaxyGates_Name = "beta"
-            GalaxyGates_module.Autorize_ABG = "1"
-            GalaxyGates_module.GalaxyGates_id = "2"
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "gamma" Then
-            GalaxyGates_module.GalaxyGates_Name = "gamma"
-            GalaxyGates_module.Autorize_ABG = "1"
-            GalaxyGates_module.GalaxyGates_id = "3"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "delta" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "4"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "epsilon" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "5"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "zeta" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "6"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "kappa" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "7"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "lambda" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "8"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "hades" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "13"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "kuiper" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "19"
-
-        ElseIf GalaxyGates_module.GalaxyGates_Name = "chronos" Then
-            GalaxyGates_module.Autorize_ABG = "0"
-            GalaxyGates_module.GalaxyGates_id = "12"
-        End If
-
-        GalaxyGates_module.Spin(GalaxyGates_id:=GalaxyGates_module.GalaxyGates_id,
-                         GalaxyGates_Name:=GalaxyGates_module.GalaxyGates_Name,
-                         Autorize_ABG:=GalaxyGates_module.Autorize_ABG)
-
-        Await Task.Delay(125)
-
-        GoTo HOME_BASIC_RETURN_IF_VALID
-
-    End Sub ' boucle click GG
+#End Region ' ici se trouve tout les Bouttons pour executer un spin que sa soit manuellement ou automatiquement sa ce passe ici 
 
     Private Sub TextBox_uridiumtokeepGGS_LostFocus(sender As Object, e As EventArgs) Handles TextBox_uridiumtokeepGGS.LostFocus
         TextBox_uridiumtokeepGGS.Text = Utils.NumberToHumanReadable(TextBox_uridiumtokeepGGS.Text, ".")
+
     End Sub ' pour afficher les energie lors de l'ouverture de GG Spinner
-
-    Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
-
-#Region "Test"
-        'Dim GalaxyGates_id As String = ComboBox_autospin.Text
-        'Dim PART_GG As String = INFO_PART_GG_LABEL.Text
-
-
-        'Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
-        'Result_PART_GG = Result_PART_GG.Substring(1)
-        'If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_id = "alpha" Then
-        '    GalaxyGates_id = 1
-        'ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_id = "beta" Then
-        '    GalaxyGates_id = 2
-        'ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_id = "gamma" Then
-        '    GalaxyGates_id = 3
-        'ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_id = "delta" Then
-        '    GalaxyGates_id = 4
-        'ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_id = "epsilon" Then
-        '    GalaxyGates_id = 5
-        'ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_id = "zeta" Then
-        '    GalaxyGates_id = 6
-        'ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_id = "kappa" Then
-        '    GalaxyGates_id = 7
-        'ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "lambda" Then
-        '    GalaxyGates_id = 8
-        'ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_id = "hades" Then
-        '    GalaxyGates_id = 13
-        'ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_id = "kuiper" Then
-        '    GalaxyGates_id = 19
-        'ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_id = "chronos" Then
-        '    GalaxyGates_id = 12
-        'Else
-        '    GalaxyGates_id = 0
-        'End If
-
-        'If GalaxyGates_id = 0 Then
-        '    'The GG is not full we go away 
-        '    Label1.Select()
-        '    Dim data_PG = Button_PrepareGates.BackColor
-        '    Button_PrepareGates.BackColor = Color.Red
-        '    Await Task.Delay(300)
-        '    Button_PrepareGates.BackColor = data_PG
-        '    '---
-        '    Dim data_T = INFO_PART_GG_LABEL.ForeColor
-        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = data_T
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = data_T
-        '    Exit Sub
-        'End If
-
-        'Console.WriteLine(Result_PART_GG)
-        'Console.WriteLine(GalaxyGates_id)
-        'Console.WriteLine(ComboBox_autospin.Text.ToLower)
-        'Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
-
-        'Dim Prepare_Gates_POST As New System.Net.WebClient
-        'Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        'Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
-        'Console.WriteLine(Prepare_Gates_Data)
-        'Dim Prepare_Gates_Data_Regex = Regex.Match(Prepare_Gates_Data, "error code="".*?([\s\S]*?)""")
-        'If Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "gate_already_setup" Then
-        '    'The gate is already on the map
-        '    Console.WriteLine("The gate is already on the map")
-        '    Label1.Select()
-        '    Dim data_PG = Button_PrepareGates.BackColor
-        '    Button_PrepareGates.BackColor = Color.Red
-        '    Await Task.Delay(300)
-        '    Button_PrepareGates.BackColor = data_PG
-        '    '---
-        '    Dim data_Label = INFO_ON_MAP_GG_LABEL.ForeColor
-        '    INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
-        '    Await Task.Delay(300)
-        '    INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_ON_MAP_GG_LABEL.ForeColor = data_Label
-
-        'ElseIf Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "not_enough_parts" Then
-        '    'The gate is not full
-        '    Console.WriteLine("The gate is not full")
-        '    Label1.Select()
-        '    Dim data_PG = Button_PrepareGates.BackColor
-        '    Button_PrepareGates.BackColor = Color.Red
-        '    Await Task.Delay(300)
-        '    Button_PrepareGates.BackColor = data_PG
-        '    '---
-        '    Dim data_T = INFO_PART_GG_LABEL.ForeColor
-        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = data_T
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = Color.Red
-        '    Await Task.Delay(300)
-        '    INFO_PART_GG_LABEL.ForeColor = data_T
-        'Else
-        '    'The gate is full and is placed
-        '    Console.WriteLine("The gate is full and is placed")
-        '    Label1.Select()
-        '    Dim data_PG = Button_PrepareGates.BackColor
-        '    Button_PrepareGates.BackColor = Color.LimeGreen
-        '    Await Task.Delay(300)
-        '    Button_PrepareGates.BackColor = data_PG
-        'End If
-#End Region
-        GalaxyGates_module.PrepareGates()
-    End Sub ' button prepare Gates
 
     Private Sub Button_resetlog_Click(sender As Object, e As EventArgs) Handles Button_resetlog.Click
 
@@ -909,7 +672,7 @@ HOME_BASIC_RETURN_IF_VALID:
         Label_UCB100_Earned.Text = 0
         Label_SAB50_Earned.Text = 0
         Label_PLT2021_Earned.Text = 0
-        Label_Part_Earned.Text = 0
+        Label_RepairCR_Earned.Text = 0
         Label_Xenomit_Earned.Text = 0
         Label_Nanohull_Earned.Text = 0
         Label_Mine_Earned.Text = 0
@@ -1168,7 +931,7 @@ HOME_BASIC_RETURN_IF_VALID:
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                WebBrowser_Synchronisation.Navigate("about:blank")
+                '  WebBrowser_Synchronisation.Navigate("about:blank")
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
                     Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
@@ -1184,10 +947,11 @@ HOME_BASIC_RETURN_IF_VALID:
 
     Private Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
-        TextBox_Get_Dosid.Text = ""
-        TextBox_username.Text = ""
-        TextBox_clan.Text = ""
-        TextBox_Get_Dosid.Text = ""
+        TextBox_Get_Dosid.Text = 0
+        TextBox_username.Text = 0
+        TextBox_clan.Text = 0
+        TextBox_Get_Dosid.Text = 0
+
         PictureBox_grade.Image = My.Resources.rank_99
         WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
 
@@ -1356,6 +1120,14 @@ HOME_BASIC_RETURN_IF_VALID:
 
         Panel_Skylab.Visible = True
         Skylab_module.Load()
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub CheckBox_UseOnlyEE_GGS_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_UseOnlyEE_GGS.CheckedChanged
 
     End Sub
 End Class

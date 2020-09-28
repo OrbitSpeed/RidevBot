@@ -695,7 +695,7 @@ Public Class Form_Startup
         Dim CurUser As New User_Database With
             {
             .NomUtilisateur = TextBox_license_username.Text,
-            .PasswordUtilisateur = TextBox_license_password.Text,
+            .PasswordUtilisateur = Utils.getSHA1Hash(TextBox_license_password.Text),
             .LicenseEndTime = Utils.DateDistant,
             .LicenseActivated = False,
             .LicenseKey = user_key,

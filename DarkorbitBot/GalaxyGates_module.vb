@@ -8,6 +8,9 @@ Public Class GalaxyGates_module
     Public Shared GalaxyGates_id As String
     Public Shared GalaxyGates_id_spin As String
 
+    Public Shared Spin_Sample As Object
+    Public Shared Exit_Spin As Object
+
     Public Shared PART_GG_GG_Completed As Object
     Public Shared PART_CHECKER As Object
     Public Shared PART_GG As Object = Form_Tools.INFO_PART_GG_LABEL.Text
@@ -23,7 +26,7 @@ Public Class GalaxyGates_module
     Public Shared Webclient_GET_Items_amount_counter_TTT_Webclient_GET_Items_part_multiplier_amount_counter_counterStrike As String = 0
     Public Shared RisedSky As String = 0
 
-    Public Shared Module_control_control_lang As Object = 0
+    Public Shared Multiplicateur_activated As Object = 0
 
     Public Shared WebClient_POST As New System.Net.WebClient
 
@@ -32,6 +35,7 @@ Public Class GalaxyGates_module
 
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
+        Console.WriteLine(WebClient_Data)
 
         Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
         Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
@@ -139,6 +143,7 @@ Public Class GalaxyGates_module
 
     End Sub
 
+
     Public Shared Function View(ByVal GalaxyGates_id As String, ByVal GalaxyGates_Name As String)
 
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
@@ -209,153 +214,139 @@ Public Class GalaxyGates_module
 
     End Function
 
-    Public Shared Function Spin(ByVal GalaxyGates_id As String, ByVal GalaxyGates_Name As String, ByVal Autorize_ABG As Object)
+    Public Shared Async Sub Spin(ByVal Spin_Sample)
 
+        GalaxyGates_Name = Form_Tools.ComboBox_autospin.Text
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
 
         If Not Form_Tools.ComboBox_autospin.Items.Contains(Form_Tools.ComboBox_autospin.Text) Then
             Form_Tools.ComboBox_autospin.Text = "alpha"
             Form_Tools.Button_stopSpin.PerformClick()
-            Exit Function
+            Closing_Spinner()
+            Exit Sub
+
+        Else
+            Form_Tools.Button_StartSpin.Enabled = False
+            Form_Tools.Button_stopSpin.Enabled = True
+            Form_Tools.ComboBox_autospin.Enabled = False
+
+        End If
+
+LABEL_BOUCLE:
+
+        If Exit_Spin = 1 Then
+            Closing_Spinner()
+            Exit Sub
+
+        Else Await Task.Delay(101)
         End If
 
         If Form_Tools.CheckBox_UseOnlyEE_GGS.Checked = True And Form_Tools.TextBox_ExtraEnergy_GGS.Text = "0" Then
-
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"No more Extra Energy left." + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-
-            Form_Tools.Button_StartSpin.Enabled = True
-            Form_Tools.Button_stopSpin.Enabled = False
-            Form_Tools.ComboBox_autospin.Enabled = True
-            Form_Tools.exitGGS = 1
-            Exit Function
+            Closing_Spinner()
+            Exit Sub
 
         ElseIf Val(Form_Tools.TextBox_uridiumGGS.Text.Replace(".", "")) < Val(Form_Tools.TextBox_uridiumtokeepGGS.Text.Replace(".", "")) And Form_Tools.CheckBox_UseOnlyEE_GGS.Checked = False Then
-
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"No more Uridium left." + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-
-            Form_Tools.Button_StartSpin.Enabled = True
-            Form_Tools.Button_stopSpin.Enabled = False
-            Form_Tools.ComboBox_autospin.Enabled = True
-            Form_Tools.exitGGS = 1
-            Exit Function
+            Closing_Spinner()
+            Exit Sub
         End If
 
+        If GalaxyGates_Name = Nothing Then
+        ElseIf GalaxyGates_Name = "abg" Then
+            GalaxyGates_Name = "alpha"
+            Autorize_ABG = "1"
+            GalaxyGates_id = "1"
+        ElseIf GalaxyGates_Name = "alpha" Then
+            Autorize_ABG = "1"
+            GalaxyGates_id = "1"
+        ElseIf GalaxyGates_Name = "beta" Then
+            Autorize_ABG = "1"
+            GalaxyGates_id = "2"
+        ElseIf GalaxyGates_Name = "gamma" Then
+            Autorize_ABG = "1"
+            GalaxyGates_id = "3"
+        ElseIf GalaxyGates_Name = "delta" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "4"
+        ElseIf GalaxyGates_Name = "epsilon" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "5"
+        ElseIf GalaxyGates_Name = "zeta" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "6"
+        ElseIf GalaxyGates_Name = "kappa" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "7"
+        ElseIf GalaxyGates_Name = "lambda" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "8"
+        ElseIf GalaxyGates_Name = "hades" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "13"
+        ElseIf GalaxyGates_Name = "streuner" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "19"
+        ElseIf GalaxyGates_Name = "chronos" Then
+            Autorize_ABG = "0"
+            GalaxyGates_id = "12"
+        End If
+
+        Dim PART_GG As String = Form_Tools.INFO_PART_GG_LABEL.Text
         Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
         Result_PART_GG = Result_PART_GG.Substring(1)
         If Result_PART_GG = "34 / 34" AndAlso GalaxyGates_Name = "alpha" Then
-            GalaxyGates_id = 1
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "48 / 48" AndAlso GalaxyGates_Name = "beta" Then
-            GalaxyGates_id = 2
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "82 / 82" AndAlso GalaxyGates_Name = "gamma" Then
-            GalaxyGates_id = 3
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "128 / 128" AndAlso GalaxyGates_Name = "delta" Then
-            GalaxyGates_id = 4
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "99 / 99" AndAlso GalaxyGates_Name = "epsilon" Then
-            GalaxyGates_id = 5
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "111 / 111" AndAlso GalaxyGates_Name = "zeta" Then
-            GalaxyGates_id = 6
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "120 / 120" AndAlso GalaxyGates_Name = "kappa" Then
-            GalaxyGates_id = 7
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "lambda" Then
-            GalaxyGates_id = 8
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "hades" Then
-            GalaxyGates_id = 13
             PART_CHECKER = 1
-
-        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_Name = "kuiper" Then
-            GalaxyGates_id = 19
+        ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_Name = "Streuner" Then
             PART_CHECKER = 1
-
         ElseIf Result_PART_GG = "21 / 21" AndAlso GalaxyGates_Name = "chronos" Then
-            GalaxyGates_id = 12
             PART_CHECKER = 1
-
         Else
-            'GalaxyGates_id = GalaxyGates_id
             PART_CHECKER = 0
-
         End If
 
         If PART_CHECKER = 1 Then
-            PART_CHECKER = 0
-
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " Completed." + Form_Tools.TextBox_WinGGS.Text
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
 
             If Form_Tools.INFO_ON_MAP_GG_LABEL.Text.Contains("1") Then
-
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 2 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
+                Closing_Spinner()
+                Exit Sub
 
-                Form_Tools.Button_StartSpin.Enabled = True
-                Form_Tools.Button_stopSpin.Enabled = False
-                Form_Tools.ComboBox_autospin.Enabled = True
-                Form_Tools.exitGGS = 1
-                Exit Function
-
-            Else
-
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 1 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-
-                PrepareGates()
-
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 1 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
             End If
 
-            'Dim Prepare_Gates_POST As New System.Net.WebClient
-            'Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-            'Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" & GalaxyGates_id)
+            Dim Prepare_Gates_POST As New System.Net.WebClient
+            Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
+            Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
-
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"CheckBox_BuildOneAndStop are checked. " + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped." + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
+                Closing_Spinner()
+                Exit Sub
 
-                Form_Tools.Button_StartSpin.Enabled = True
-                Form_Tools.Button_stopSpin.Enabled = False
-                Form_Tools.ComboBox_autospin.Enabled = True
-                Form_Tools.exitGGS = 1
-                Exit Function
-
-            Else
-
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"CheckBox_BuildOneAndStop are not checked. " + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner reactivated." + Form_Tools.TextBox_WinGGS.Text
-                Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"" + Form_Tools.TextBox_WinGGS.Text
-
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner reactivated." + Form_Tools.TextBox_WinGGS.Text
             End If
+
+            PART_CHECKER = 0
         End If
 
-        'WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
         Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium Left
         Dim Webclient_GET_Gates_name = Regex.Match(WebClient_Data, "<mode>(.*)<\/mode>").Groups.Item(1).ToString ' Gates name
@@ -372,14 +363,6 @@ Public Class GalaxyGates_module
         Dim Webclient_GET_Items_part_id_duplicate = Regex.Match(WebClient_Data, "duplicate=\""([^\""]*)").Groups.Item(1).ToString ' Si on obtient un Multiplicateur a la place d'une part de GG 
         Dim Webclient_GET_Items_part_multiplier_used = Regex.Match(WebClient_Data, "multiplier_used=\""([^\""]*)").Groups.Item(1).ToString ' Le nombre de Multiplicateur utilisé 
         Dim Webclient_GET_Items_part_multiplier_amount = Regex.Match(WebClient_Data, "multiplier_amount=\""([^\""]*)").Groups.Item(1).ToString ' la quantité de ressources Obtenu via le mutliplicateur
-
-        'If Webclient_GET_Items_amount_counter = Nothing Then
-        'Else Webclient_GET_Items_amount_counter = CStr(Webclient_GET_Items_amount)
-        'End If
-
-        'If Webclient_GET_Items_part_multiplier_amount_counter = Nothing Then
-        'Else Webclient_GET_Items_part_multiplier_amount_counter = CStr(Webclient_GET_Items_part_multiplier_amount)
-        'End If
 
         If Not Webclient_GET_Items_amount_counter = Nothing AndAlso Not Webclient_GET_Items_part_multiplier_amount_counter = Nothing Then
             Webclient_GET_Items_amount_counter_TTT_Webclient_GET_Items_part_multiplier_amount_counter_counterStrike = Webclient_GET_Items_amount_counter + Webclient_GET_Items_part_multiplier_amount_counter
@@ -403,9 +386,12 @@ Public Class GalaxyGates_module
         Console.WriteLine(" -------------------- ")
 
         If Webclient_GET_Items_date = Nothing Then
-            Form_Tools.DATE_REMAINING.Text = "Reload your account, your dosid is broken"
+            Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
+            Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
+            Exit Sub
         Else Form_Tools.DATE_REMAINING.Text = Webclient_GET_Items_date + " Done."
         End If
+
         Dim GalaxyGates_Name_Get_Items As String
         If Webclient_GET_Items_item_id_Gates = Nothing Then
         ElseIf Webclient_GET_Items_item_id_Gates = "1" Then
@@ -427,110 +413,115 @@ Public Class GalaxyGates_module
         ElseIf Webclient_GET_Items_item_id_Gates = "13" Then
             GalaxyGates_Name_Get_Items = "hades"
         ElseIf Webclient_GET_Items_item_id_Gates = "19" Then
-            GalaxyGates_Name_Get_Items = "kuiper"
+            GalaxyGates_Name_Get_Items = "Streuner"
         ElseIf Webclient_GET_Items_item_id_Gates = "12" Then
             GalaxyGates_Name_Get_Items = "chronos"
         End If
 
         If Webclient_GET_Items_part_multiplier_amount <> Nothing Then
-            Module_control_control_lang = 1
+            Multiplicateur_activated = 1
+        Else Multiplicateur_activated = 0
         End If
 
         If Webclient_GET_Items_type = "image/x-icon" Then
-            Form_Tools.TextBox_WinGGS.Text = ""
-            Form_Tools.DATE_REMAINING.Text = "Reload your account, your dosid is broken"
-            Exit Function
+            Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
+            Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
+            Exit Sub
+
         End If
 
-        If Module_control_control_lang = 1 Then
+        If Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "2" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "MCB-25"
 
-            If Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "2" Then
-                Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "MCB-25"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "3" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "MCB-50"
 
-            ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "3" Then
-                Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "MCB-50"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "4" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "UCB-100"
 
-            ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "4" Then
-                Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "UCB-100"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "5" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "SAB-50"
 
-            ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "5" Then
-                Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "SAB-50"
+        ElseIf Webclient_GET_Items_type = "ore" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Xenomit"
 
-            ElseIf Webclient_GET_Items_type = "ore" Then
-                Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "Xenomit"
+        ElseIf Webclient_GET_Items_type = "nanohull" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Nanohull"
 
-            ElseIf Webclient_GET_Items_type = "nanohull" Then
-                Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "Nanohull"
+        ElseIf Webclient_GET_Items_type = "logfile" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Logfile"
 
-            ElseIf Webclient_GET_Items_type = "logfile" Then
-                Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "Logfile"
+        ElseIf Webclient_GET_Items_type = "rocket" AndAlso Webclient_GET_Items_item_id = "3" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "PLT-2021"
 
-            ElseIf Webclient_GET_Items_type = "rocket" Then
-                Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "PLT-2021"
+        ElseIf Webclient_GET_Items_type = "rocket" AndAlso Webclient_GET_Items_item_id = "11" AndAlso Multiplicateur_activated = "1" Then
+            Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "ACM-1"
 
-            ElseIf Webclient_GET_Items_type = "voucher" Then
-                Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
-                Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
-                Spins_reward = "Mine"
+        ElseIf Webclient_GET_Items_type = "voucher" AndAlso Multiplicateur_activated = "1" Then '
+            Form_Tools.Label_RepairCR_Earned.Text = Val(Form_Tools.Label_RepairCR_Earned.Text) + Webclient_GET_Items_amount
+            Form_Tools.Label_RepairCR_Earned.Text = Val(Form_Tools.Label_RepairCR_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Repair CR"
 
-            Else
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "2" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "MCB-25"
 
-                If Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "2" Then
-                    Form_Tools.Label_MCB25_Earned.Text = Val(Form_Tools.Label_MCB25_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "MCB-25"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "3" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "MCB-50"
 
-                ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "3" Then
-                    Form_Tools.Label_MCB50_Earned.Text = Val(Form_Tools.Label_MCB50_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "MCB-50"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "4" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "UCB-100"
 
-                ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "4" Then
-                    Form_Tools.Label_UCB100_Earned.Text = Val(Form_Tools.Label_UCB100_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "UCB-100"
+        ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "5" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "SAB-50"
 
-                ElseIf Webclient_GET_Items_type = "battery" AndAlso Webclient_GET_Items_item_id = "5" Then
-                    Form_Tools.Label_SAB50_Earned.Text = Val(Form_Tools.Label_SAB50_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "SAB-50"
+        ElseIf Webclient_GET_Items_type = "ore" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Xenomit"
 
-                ElseIf Webclient_GET_Items_type = "ore" Then
-                    Form_Tools.Label_Xenomit_Earned.Text = Val(Form_Tools.Label_Xenomit_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "Xenomit"
+        ElseIf Webclient_GET_Items_type = "nanohull" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Nanohull"
 
-                ElseIf Webclient_GET_Items_type = "nanohull" Then
-                    Form_Tools.Label_Nanohull_Earned.Text = Val(Form_Tools.Label_Nanohull_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "Nanohull"
+        ElseIf Webclient_GET_Items_type = "logfile" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "Logfile"
 
-                ElseIf Webclient_GET_Items_type = "logfile" Then
-                    Form_Tools.Label_Logfile_Earned.Text = Val(Form_Tools.Label_Logfile_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "Logfile"
+        ElseIf Webclient_GET_Items_type = "rocket" AndAlso Webclient_GET_Items_item_id = "3" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "PLT-2021"
 
-                ElseIf Webclient_GET_Items_type = "rocket" Then
-                    Form_Tools.Label_PLT2021_Earned.Text = Val(Form_Tools.Label_PLT2021_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "PLT-2021"
+        ElseIf Webclient_GET_Items_type = "rocket" AndAlso Webclient_GET_Items_item_id = "11" AndAlso Multiplicateur_activated = "0" Then
+            Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
+            Spins_reward = "ACM-1"
 
-                ElseIf Webclient_GET_Items_type = "voucher" Then
-                    Form_Tools.Label_Mine_Earned.Text = Val(Form_Tools.Label_Mine_Earned.Text) + Webclient_GET_Items_amount
-                    Spins_reward = "Mine"
+        ElseIf Webclient_GET_Items_type = "voucher" AndAlso Multiplicateur_activated = "0" Then '
+            Form_Tools.Label_RepairCR_Earned.Text = Val(Form_Tools.Label_RepairCR_Earned.Text) + Webclient_GET_Items_amount
+                    Spins_reward = "Repair crédit"
                 End If
-            End If
 
-
-            If Webclient_GET_Items_type = "part" Then
+        If Webclient_GET_Items_type = "part" Then
                 If Webclient_GET_Items_part_id_duplicate <> Nothing Then
                     If Autorize_ABG = 1 Then
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + "[ABG] :   " + Webclient_GET_Items_amount + " Multiplier   ◆" + Form_Tools.TextBox_WinGGS.Text
@@ -538,7 +529,14 @@ Public Class GalaxyGates_module
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + Webclient_GET_Gates_name + " :   " + Webclient_GET_Items_amount + " Multiplier   ◆" + Form_Tools.TextBox_WinGGS.Text
                     End If
 
-                    Exit Function
+                    If Spin_Sample = 1 Then
+                        GoTo LABEL_BOUCLE
+                    Else
+                        Form_Tools.Button_StartSpin.Enabled = True
+                        Form_Tools.Button_stopSpin.Enabled = False
+                        Form_Tools.ComboBox_autospin.Enabled = True
+                        Exit Sub
+                    End If
 
                 Else
 
@@ -547,31 +545,61 @@ Public Class GalaxyGates_module
                     If Webclient_GET_Items_part_multiplier_used = Nothing Then
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Part N° : " + Webclient_GET_Items_part_id + " Added" + Form_Tools.TextBox_WinGGS.Text
                     Else
-                        Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Multiple Part Added" + Form_Tools.TextBox_WinGGS.Text
-                    End If
+                    Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Multiple Part Added" + Form_Tools.TextBox_WinGGS.Text
+                End If
 
                     Load()
 
-                    Exit Function
+                    If Spin_Sample = 1 Then
+                        GoTo LABEL_BOUCLE
+                    Else
+                        Form_Tools.Button_StartSpin.Enabled = True
+                        Form_Tools.Button_stopSpin.Enabled = False
+                        Form_Tools.ComboBox_autospin.Enabled = True
+                        Exit Sub
+                    End If
+
                 End If
             End If
-        End If
 
         If Webclient_GET_Items_part_multiplier_amount <> Nothing Then
             If Autorize_ABG = 1 Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + "    [ABG] :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
-            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + "   " + GalaxyGates_Name_Get_Items + " :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + "   " + Webclient_GET_Gates_name + " :   " + Webclient_GET_Items_amount + " + " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
             End If
         Else
             If Autorize_ABG = 1 Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + " [ABG] :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
-            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
+            Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + Webclient_GET_Gates_name + " :   " + Webclient_GET_Items_amount + " " + Spins_reward + Form_Tools.TextBox_WinGGS.Text
             End If
 
         End If
 
         Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
 
+        If Spin_Sample = 1 Then
+            GoTo LABEL_BOUCLE
+
+        Else
+            Form_Tools.Button_StartSpin.Enabled = True
+            Form_Tools.Button_stopSpin.Enabled = False
+            Form_Tools.ComboBox_autospin.Enabled = True
+
+            Exit Sub
+        End If
+
+
+    End Sub
+
+    Public Shared Function Closing_Spinner()
+
+        Console.WriteLine("Autospinner deactivated.")
+
+        Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner stopped. by stop" + Form_Tools.TextBox_WinGGS.Text
+
+        Form_Tools.Button_StartSpin.Enabled = True
+        Form_Tools.Button_stopSpin.Enabled = False
+        Form_Tools.ComboBox_autospin.Enabled = True
 
     End Function
 
@@ -580,7 +608,6 @@ Public Class GalaxyGates_module
 
         Dim GalaxyGates_id As String = Form_Tools.ComboBox_autospin.Text
         Dim PART_GG As String = Form_Tools.INFO_PART_GG_LABEL.Text
-
 
         Dim Result_PART_GG = Regex.Match(PART_GG, "Part :(.*)").Groups.Item(1).ToString
         Result_PART_GG = Result_PART_GG.Substring(1)

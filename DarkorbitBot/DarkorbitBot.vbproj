@@ -702,6 +702,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="Resources\sale.png" />
     <None Include="ridevbotuniverse.gif" />
     <None Include="Resources\error_icon_orange.png" />
     <None Include="Resources\Stop_pet.png" />

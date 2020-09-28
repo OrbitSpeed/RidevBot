@@ -44,7 +44,6 @@ Partial Class Form_Tools
         Me.Label_ProfilSelected = New System.Windows.Forms.Label()
         Me.Label_Dosid = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.PictureBox_grade = New System.Windows.Forms.PictureBox()
         Me.TextBox_Get_Dosid = New System.Windows.Forms.TextBox()
         Me.TextBox_clan = New System.Windows.Forms.TextBox()
         Me.Label_BotText = New System.Windows.Forms.Label()
@@ -156,25 +155,16 @@ Partial Class Form_Tools
         Me.Labe_DIVERS__A_SUPPRIMER = New System.Windows.Forms.Label()
         Me.CheckBox_AutoUpdate = New System.Windows.Forms.CheckBox()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
-        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.PictureBox_visibility = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
         Me.Title_form = New System.Windows.Forms.Label()
-        Me.Button_ABG_GGS = New System.Windows.Forms.Button()
-        Me.Button_Delta_GGS = New System.Windows.Forms.Button()
-        Me.Button_Epsilon_GGS = New System.Windows.Forms.Button()
-        Me.Button_Kappa_GGS = New System.Windows.Forms.Button()
-        Me.Button_Lambda_GGS = New System.Windows.Forms.Button()
-        Me.Button_Kuiper_GGS = New System.Windows.Forms.Button()
-        Me.Button_Zeta_GGS = New System.Windows.Forms.Button()
-        Me.Button_Hades_GGS = New System.Windows.Forms.Button()
+        Me.Button_abg_GGS = New System.Windows.Forms.Button()
+        Me.Button_delta_GGS = New System.Windows.Forms.Button()
+        Me.Button_epsilon_GGS = New System.Windows.Forms.Button()
+        Me.Button_kappa_GGS = New System.Windows.Forms.Button()
+        Me.Button_lambda_GGS = New System.Windows.Forms.Button()
+        Me.Button_kuiper_GGS = New System.Windows.Forms.Button()
+        Me.Button_zeta_GGS = New System.Windows.Forms.Button()
+        Me.Button_hades_GGS = New System.Windows.Forms.Button()
         Me.Button_StartSpin = New System.Windows.Forms.Button()
         Me.Panel_autospin = New System.Windows.Forms.Panel()
         Me.Button_stopSpin = New System.Windows.Forms.Button()
@@ -185,7 +175,7 @@ Partial Class Form_Tools
         Me.CheckBox_BuildOneAndStop = New System.Windows.Forms.CheckBox()
         Me.CheckBox_UseOnlyEE_GGS = New System.Windows.Forms.CheckBox()
         Me.ComboBox_autospin = New System.Windows.Forms.ComboBox()
-        Me.Button_Gamma_GGS = New System.Windows.Forms.Button()
+        Me.Button_gamma_GGS = New System.Windows.Forms.Button()
         Me.Button_beta_GGS = New System.Windows.Forms.Button()
         Me.Button_alpha_GGS = New System.Windows.Forms.Button()
         Me.Button_resetlog = New System.Windows.Forms.Button()
@@ -201,34 +191,18 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates = New System.Windows.Forms.Panel()
         Me.DATE_REMAINING = New System.Windows.Forms.Label()
         Me.Button_game_doodle = New System.Windows.Forms.Button()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_kappa_reward_day = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_zeta_reward_day = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_delta_reward_day = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_epsilon_reward_day = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label_alpha = New System.Windows.Forms.Label()
         Me.Label_beta = New System.Windows.Forms.Label()
         Me.Label_gamma = New System.Windows.Forms.Label()
         Me.Label_delta = New System.Windows.Forms.Label()
-        Me.Button_Alpha = New System.Windows.Forms.Button()
         Me.Label_epsilon = New System.Windows.Forms.Label()
-        Me.Button_lambda = New System.Windows.Forms.Button()
         Me.Label_zeta = New System.Windows.Forms.Label()
         Me.Label_kappa = New System.Windows.Forms.Label()
-        Me.Button_kronos = New System.Windows.Forms.Button()
-        Me.Button_Kappa = New System.Windows.Forms.Button()
         Me.Label_lambda = New System.Windows.Forms.Label()
         Me.Label_hades = New System.Windows.Forms.Label()
-        Me.Button_delta = New System.Windows.Forms.Button()
         Me.Label_kuiper = New System.Windows.Forms.Label()
         Me.Label_chronos = New System.Windows.Forms.Label()
-        Me.Button_hades = New System.Windows.Forms.Button()
-        Me.Button_kuiper = New System.Windows.Forms.Button()
-        Me.Button_beta = New System.Windows.Forms.Button()
-        Me.Button_gamma = New System.Windows.Forms.Button()
-        Me.Button_epsilon = New System.Windows.Forms.Button()
-        Me.Button_zeta = New System.Windows.Forms.Button()
         Me.Button_suppresor_controler_GGS = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Leaderprice_explain = New System.Windows.Forms.Label()
@@ -256,9 +230,8 @@ Partial Class Form_Tools
         Me.Label_ExtraEnergyGGS = New System.Windows.Forms.Label()
         Me.Label_repairCR_explain = New System.Windows.Forms.Label()
         Me.Leaderprice = New System.Windows.Forms.Label()
-        Me.Label_Part_Earned = New System.Windows.Forms.Label()
+        Me.Label_RepairCR_Earned = New System.Windows.Forms.Label()
         Me.TextBox_WinGGS = New System.Windows.Forms.TextBox()
-        Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.Stats_Button = New System.Windows.Forms.Button()
         Me.Rex_Button = New System.Windows.Forms.Button()
         Me.Divers_Button = New System.Windows.Forms.Button()
@@ -274,7 +247,6 @@ Partial Class Form_Tools
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.panel_npc_npc = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -288,17 +260,46 @@ Partial Class Form_Tools
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel_palladium_palladium = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ToolTip_menu = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip_GalaxyGates = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_grade = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_DoubleWinGGS = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_kappa_reward_day = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_zeta_reward_day = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_delta_reward_day = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_epsilon_reward_day = New System.Windows.Forms.PictureBox()
+        Me.Button_Alpha = New System.Windows.Forms.Button()
+        Me.Button_lambda = New System.Windows.Forms.Button()
+        Me.Button_kronos = New System.Windows.Forms.Button()
+        Me.Button_Kappa = New System.Windows.Forms.Button()
+        Me.Button_delta = New System.Windows.Forms.Button()
+        Me.Button_hades = New System.Windows.Forms.Button()
+        Me.Button_kuiper = New System.Windows.Forms.Button()
+        Me.Button_beta = New System.Windows.Forms.Button()
+        Me.Button_gamma = New System.Windows.Forms.Button()
+        Me.Button_epsilon = New System.Windows.Forms.Button()
+        Me.Button_zeta = New System.Windows.Forms.Button()
+        Me.WebBrowser_galaxyGates = New System.Windows.Forms.WebBrowser()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.PictureBox_visibility = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_epinglerBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_BackgroundBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_LaunchBot = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_close1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
+        Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Npc.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel_collector.SuspendLayout()
@@ -311,35 +312,38 @@ Partial Class Form_Tools
         Me.Panel_divers.SuspendLayout()
         Me.Panel_Skylab.SuspendLayout()
         Me.Panel_MoveTitle.SuspendLayout()
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
-        CType(Me.PictureBox_visibility, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_autospin.SuspendLayout()
         Me.Panel_infoPartGG.SuspendLayout()
         Me.Panel_infoPartGG_GG.SuspendLayout()
         Me.Panel_GalaxyGates.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_kappa_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_zeta_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_delta_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_epsilon_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel_suppresor_controler.SuspendLayout()
         Me.Panel_collectable.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_npc_npc.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_palladium_palladium.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_DoubleWinGGS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_kappa_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_zeta_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_delta_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_epsilon_reward_day, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_visibility, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -641,18 +645,6 @@ Partial Class Form_Tools
         Me.Label15.Size = New System.Drawing.Size(36, 15)
         Me.Label15.TabIndex = 64
         Me.Label15.Text = "Army"
-        '
-        'PictureBox_grade
-        '
-        Me.PictureBox_grade.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox_grade.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox_grade.Image = Global.DarkorbitBot.My.Resources.Resources.rank_1
-        Me.PictureBox_grade.Location = New System.Drawing.Point(186, 107)
-        Me.PictureBox_grade.Name = "PictureBox_grade"
-        Me.PictureBox_grade.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox_grade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_grade.TabIndex = 58
-        Me.PictureBox_grade.TabStop = False
         '
         'TextBox_Get_Dosid
         '
@@ -2268,51 +2260,6 @@ Partial Class Form_Tools
         Me.Panel_MoveTitle.Size = New System.Drawing.Size(1688, 18)
         Me.Panel_MoveTitle.TabIndex = 24
         '
-        'PictureBox_Backpage
-        '
-        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
-        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
-        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Backpage.TabIndex = 34
-        Me.PictureBox_Backpage.TabStop = False
-        '
-        'PictureBox_Pause
-        '
-        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
-        Me.PictureBox_Pause.Name = "PictureBox_Pause"
-        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Pause.TabIndex = 33
-        Me.PictureBox_Pause.TabStop = False
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 26
-        Me.PictureBox_Close.TabStop = False
-        '
-        'PictureBox_Start
-        '
-        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
-        Me.PictureBox_Start.Name = "PictureBox_Start"
-        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Start.TabIndex = 27
-        Me.PictureBox_Start.TabStop = False
-        '
         'Panel_Title
         '
         Me.Panel_Title.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2329,72 +2276,6 @@ Partial Class Form_Tools
         Me.Panel_Title.Size = New System.Drawing.Size(1940, 24)
         Me.Panel_Title.TabIndex = 24
         '
-        'PictureBox_visibility
-        '
-        Me.PictureBox_visibility.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_visibility.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_visibility.Image = Global.DarkorbitBot.My.Resources.Resources.visibility_off
-        Me.PictureBox_visibility.Location = New System.Drawing.Point(193, 0)
-        Me.PictureBox_visibility.Name = "PictureBox_visibility"
-        Me.PictureBox_visibility.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox_visibility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_visibility.TabIndex = 33
-        Me.PictureBox_visibility.TabStop = False
-        '
-        'PictureBox_epinglerBot
-        '
-        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.lock_open
-        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(169, 0)
-        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
-        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_epinglerBot.TabIndex = 10
-        Me.PictureBox_epinglerBot.TabStop = False
-        Me.PictureBox_epinglerBot.Tag = "0"
-        Me.ToolTip_menu.SetToolTip(Me.PictureBox_epinglerBot, "TopMost of the bot")
-        '
-        'PictureBox_BackgroundBot
-        '
-        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.person_pin
-        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(145, 0)
-        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
-        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_BackgroundBot.TabIndex = 9
-        Me.PictureBox_BackgroundBot.TabStop = False
-        Me.ToolTip_menu.SetToolTip(Me.PictureBox_BackgroundBot, "Backpage of the game")
-        '
-        'PictureBox_LaunchBot
-        '
-        Me.PictureBox_LaunchBot.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_LaunchBot.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_LaunchBot.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox_LaunchBot.Image = Global.DarkorbitBot.My.Resources.Resources.play_circle_filled_white
-        Me.PictureBox_LaunchBot.Location = New System.Drawing.Point(119, 0)
-        Me.PictureBox_LaunchBot.Name = "PictureBox_LaunchBot"
-        Me.PictureBox_LaunchBot.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox_LaunchBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_LaunchBot.TabIndex = 7
-        Me.PictureBox_LaunchBot.TabStop = False
-        Me.ToolTip_menu.SetToolTip(Me.PictureBox_LaunchBot, "Start/Stop the bot")
-        '
-        'PictureBox_close1
-        '
-        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.exit_to_app
-        Me.PictureBox_close1.Location = New System.Drawing.Point(1916, 0)
-        Me.PictureBox_close1.Name = "PictureBox_close1"
-        Me.PictureBox_close1.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox_close1.TabIndex = 32
-        Me.PictureBox_close1.TabStop = False
-        '
         'Title_form
         '
         Me.Title_form.AutoSize = True
@@ -2407,117 +2288,117 @@ Partial Class Form_Tools
         Me.Title_form.TabIndex = 23
         Me.Title_form.Text = "RidevBot Tools"
         '
-        'Button_ABG_GGS
+        'Button_abg_GGS
         '
-        Me.Button_ABG_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_ABG_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_ABG_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_ABG_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_ABG_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_ABG_GGS.Location = New System.Drawing.Point(8, 546)
-        Me.Button_ABG_GGS.Name = "Button_ABG_GGS"
-        Me.Button_ABG_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_ABG_GGS.TabIndex = 43
-        Me.Button_ABG_GGS.Text = "Manually Spin ABG"
-        Me.Button_ABG_GGS.UseVisualStyleBackColor = False
+        Me.Button_abg_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_abg_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_abg_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_abg_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_abg_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_abg_GGS.Location = New System.Drawing.Point(8, 546)
+        Me.Button_abg_GGS.Name = "Button_abg_GGS"
+        Me.Button_abg_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_abg_GGS.TabIndex = 43
+        Me.Button_abg_GGS.Text = "Manually Spin ABG"
+        Me.Button_abg_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Delta_GGS
+        'Button_delta_GGS
         '
-        Me.Button_Delta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Delta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Delta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Delta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Delta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Delta_GGS.Location = New System.Drawing.Point(8, 379)
-        Me.Button_Delta_GGS.Name = "Button_Delta_GGS"
-        Me.Button_Delta_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Delta_GGS.TabIndex = 44
-        Me.Button_Delta_GGS.Text = "Manually Spin DELTA"
-        Me.Button_Delta_GGS.UseVisualStyleBackColor = False
+        Me.Button_delta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_delta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_delta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_delta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_delta_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_delta_GGS.Location = New System.Drawing.Point(8, 379)
+        Me.Button_delta_GGS.Name = "Button_delta_GGS"
+        Me.Button_delta_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_delta_GGS.TabIndex = 44
+        Me.Button_delta_GGS.Text = "Manually Spin DELTA"
+        Me.Button_delta_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Epsilon_GGS
+        'Button_epsilon_GGS
         '
-        Me.Button_Epsilon_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Epsilon_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Epsilon_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Epsilon_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Epsilon_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Epsilon_GGS.Location = New System.Drawing.Point(8, 406)
-        Me.Button_Epsilon_GGS.Name = "Button_Epsilon_GGS"
-        Me.Button_Epsilon_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Epsilon_GGS.TabIndex = 45
-        Me.Button_Epsilon_GGS.Text = "Manually Spin EPSILON"
-        Me.Button_Epsilon_GGS.UseVisualStyleBackColor = False
+        Me.Button_epsilon_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_epsilon_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_epsilon_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_epsilon_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_epsilon_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_epsilon_GGS.Location = New System.Drawing.Point(8, 406)
+        Me.Button_epsilon_GGS.Name = "Button_epsilon_GGS"
+        Me.Button_epsilon_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_epsilon_GGS.TabIndex = 45
+        Me.Button_epsilon_GGS.Text = "Manually Spin EPSILON"
+        Me.Button_epsilon_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Kappa_GGS
+        'Button_kappa_GGS
         '
-        Me.Button_Kappa_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Kappa_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kappa_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Kappa_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Kappa_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Kappa_GGS.Location = New System.Drawing.Point(8, 460)
-        Me.Button_Kappa_GGS.Name = "Button_Kappa_GGS"
-        Me.Button_Kappa_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Kappa_GGS.TabIndex = 47
-        Me.Button_Kappa_GGS.Text = "Manually Spin KAPPA"
-        Me.Button_Kappa_GGS.UseVisualStyleBackColor = False
+        Me.Button_kappa_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_kappa_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kappa_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kappa_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kappa_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_kappa_GGS.Location = New System.Drawing.Point(8, 460)
+        Me.Button_kappa_GGS.Name = "Button_kappa_GGS"
+        Me.Button_kappa_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_kappa_GGS.TabIndex = 47
+        Me.Button_kappa_GGS.Text = "Manually Spin KAPPA"
+        Me.Button_kappa_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Lambda_GGS
+        'Button_lambda_GGS
         '
-        Me.Button_Lambda_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Lambda_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Lambda_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Lambda_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Lambda_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Lambda_GGS.Location = New System.Drawing.Point(8, 487)
-        Me.Button_Lambda_GGS.Name = "Button_Lambda_GGS"
-        Me.Button_Lambda_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Lambda_GGS.TabIndex = 48
-        Me.Button_Lambda_GGS.Text = "Manually Spin LAMBDA"
-        Me.Button_Lambda_GGS.UseVisualStyleBackColor = False
+        Me.Button_lambda_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_lambda_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_lambda_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_lambda_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_lambda_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_lambda_GGS.Location = New System.Drawing.Point(8, 487)
+        Me.Button_lambda_GGS.Name = "Button_lambda_GGS"
+        Me.Button_lambda_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_lambda_GGS.TabIndex = 48
+        Me.Button_lambda_GGS.Text = "Manually Spin LAMBDA"
+        Me.Button_lambda_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Kuiper_GGS
+        'Button_kuiper_GGS
         '
-        Me.Button_Kuiper_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Kuiper_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kuiper_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Kuiper_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Kuiper_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Kuiper_GGS.Location = New System.Drawing.Point(8, 514)
-        Me.Button_Kuiper_GGS.Name = "Button_Kuiper_GGS"
-        Me.Button_Kuiper_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Kuiper_GGS.TabIndex = 49
-        Me.Button_Kuiper_GGS.Text = "Manually Spin KUIPER"
-        Me.Button_Kuiper_GGS.UseVisualStyleBackColor = False
+        Me.Button_kuiper_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_kuiper_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kuiper_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kuiper_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kuiper_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_kuiper_GGS.Location = New System.Drawing.Point(8, 514)
+        Me.Button_kuiper_GGS.Name = "Button_kuiper_GGS"
+        Me.Button_kuiper_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_kuiper_GGS.TabIndex = 49
+        Me.Button_kuiper_GGS.Text = "Manually Spin KUIPER"
+        Me.Button_kuiper_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Zeta_GGS
+        'Button_zeta_GGS
         '
-        Me.Button_Zeta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Zeta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Zeta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Zeta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Zeta_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Zeta_GGS.Location = New System.Drawing.Point(8, 433)
-        Me.Button_Zeta_GGS.Name = "Button_Zeta_GGS"
-        Me.Button_Zeta_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Zeta_GGS.TabIndex = 46
-        Me.Button_Zeta_GGS.Text = "Manually Spin ZETA"
-        Me.Button_Zeta_GGS.UseVisualStyleBackColor = False
+        Me.Button_zeta_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_zeta_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_zeta_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_zeta_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_zeta_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_zeta_GGS.Location = New System.Drawing.Point(8, 433)
+        Me.Button_zeta_GGS.Name = "Button_zeta_GGS"
+        Me.Button_zeta_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_zeta_GGS.TabIndex = 46
+        Me.Button_zeta_GGS.Text = "Manually Spin ZETA"
+        Me.Button_zeta_GGS.UseVisualStyleBackColor = False
         '
-        'Button_Hades_GGS
+        'Button_hades_GGS
         '
-        Me.Button_Hades_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Hades_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Hades_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Hades_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Hades_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Hades_GGS.Location = New System.Drawing.Point(8, 573)
-        Me.Button_Hades_GGS.Name = "Button_Hades_GGS"
-        Me.Button_Hades_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Hades_GGS.TabIndex = 50
-        Me.Button_Hades_GGS.Text = "Manually Spin Hades"
-        Me.Button_Hades_GGS.UseVisualStyleBackColor = False
+        Me.Button_hades_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_hades_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_hades_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_hades_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_hades_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_hades_GGS.Location = New System.Drawing.Point(8, 573)
+        Me.Button_hades_GGS.Name = "Button_hades_GGS"
+        Me.Button_hades_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_hades_GGS.TabIndex = 50
+        Me.Button_hades_GGS.Text = "Manually Spin Hades"
+        Me.Button_hades_GGS.UseVisualStyleBackColor = False
         '
         'Button_StartSpin
         '
@@ -2526,7 +2407,7 @@ Partial Class Form_Tools
         Me.Button_StartSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_StartSpin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_StartSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_StartSpin.Location = New System.Drawing.Point(8, 130)
+        Me.Button_StartSpin.Location = New System.Drawing.Point(8, 146)
         Me.Button_StartSpin.Name = "Button_StartSpin"
         Me.Button_StartSpin.Size = New System.Drawing.Size(170, 47)
         Me.Button_StartSpin.TabIndex = 59
@@ -2540,24 +2421,24 @@ Partial Class Form_Tools
         Me.Panel_autospin.Controls.Add(Me.Label16)
         Me.Panel_autospin.Controls.Add(Me.Button_StartSpin)
         Me.Panel_autospin.Controls.Add(Me.Label_UridiumtoKeepGGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Epsilon_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_epsilon_GGS)
         Me.Panel_autospin.Controls.Add(Me.TextBox_uridiumtokeepGGS)
         Me.Panel_autospin.Controls.Add(Me.Button_PrepareGates)
-        Me.Panel_autospin.Controls.Add(Me.Button_Delta_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_delta_GGS)
         Me.Panel_autospin.Controls.Add(Me.CheckBox_BuildOneAndStop)
-        Me.Panel_autospin.Controls.Add(Me.Button_Kappa_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Kuiper_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Lambda_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Zeta_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Hades_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_kappa_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_kuiper_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_lambda_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_zeta_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_hades_GGS)
         Me.Panel_autospin.Controls.Add(Me.CheckBox_UseOnlyEE_GGS)
         Me.Panel_autospin.Controls.Add(Me.ComboBox_autospin)
-        Me.Panel_autospin.Controls.Add(Me.Button_ABG_GGS)
-        Me.Panel_autospin.Controls.Add(Me.Button_Gamma_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_abg_GGS)
+        Me.Panel_autospin.Controls.Add(Me.Button_gamma_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_beta_GGS)
         Me.Panel_autospin.Controls.Add(Me.Button_alpha_GGS)
         Me.Panel_autospin.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel_autospin.Location = New System.Drawing.Point(4, 741)
+        Me.Panel_autospin.Location = New System.Drawing.Point(4, 498)
         Me.Panel_autospin.Name = "Panel_autospin"
         Me.Panel_autospin.Size = New System.Drawing.Size(192, 670)
         Me.Panel_autospin.TabIndex = 78
@@ -2570,7 +2451,7 @@ Partial Class Form_Tools
         Me.Button_stopSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_stopSpin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_stopSpin.ForeColor = System.Drawing.Color.White
-        Me.Button_stopSpin.Location = New System.Drawing.Point(8, 186)
+        Me.Button_stopSpin.Location = New System.Drawing.Point(8, 202)
         Me.Button_stopSpin.Name = "Button_stopSpin"
         Me.Button_stopSpin.Size = New System.Drawing.Size(170, 47)
         Me.Button_stopSpin.TabIndex = 60
@@ -2582,7 +2463,7 @@ Partial Class Form_Tools
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(28, 46)
+        Me.Label16.Location = New System.Drawing.Point(28, 52)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(42, 13)
         Me.Label16.TabIndex = 78
@@ -2633,7 +2514,7 @@ Partial Class Form_Tools
         Me.CheckBox_BuildOneAndStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_BuildOneAndStop.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_BuildOneAndStop.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_BuildOneAndStop.Location = New System.Drawing.Point(33, 95)
+        Me.CheckBox_BuildOneAndStop.Location = New System.Drawing.Point(33, 108)
         Me.CheckBox_BuildOneAndStop.Name = "CheckBox_BuildOneAndStop"
         Me.CheckBox_BuildOneAndStop.Size = New System.Drawing.Size(110, 17)
         Me.CheckBox_BuildOneAndStop.TabIndex = 93
@@ -2648,7 +2529,7 @@ Partial Class Form_Tools
         Me.CheckBox_UseOnlyEE_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox_UseOnlyEE_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox_UseOnlyEE_GGS.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(33, 74)
+        Me.CheckBox_UseOnlyEE_GGS.Location = New System.Drawing.Point(33, 86)
         Me.CheckBox_UseOnlyEE_GGS.Name = "CheckBox_UseOnlyEE_GGS"
         Me.CheckBox_UseOnlyEE_GGS.Size = New System.Drawing.Size(119, 17)
         Me.CheckBox_UseOnlyEE_GGS.TabIndex = 35
@@ -2662,26 +2543,26 @@ Partial Class Form_Tools
         Me.ComboBox_autospin.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_autospin.ForeColor = System.Drawing.Color.White
         Me.ComboBox_autospin.FormattingEnabled = True
-        Me.ComboBox_autospin.Items.AddRange(New Object() {"alpha", "beta", "gamma", "delta", "epsilon", "zeta", "kappa", "lambda", "kuiper", "hades"})
-        Me.ComboBox_autospin.Location = New System.Drawing.Point(78, 43)
+        Me.ComboBox_autospin.Items.AddRange(New Object() {"alpha", "beta", "gamma", "delta", "epsilon", "zeta", "kappa", "lambda", "streuner", "hades"})
+        Me.ComboBox_autospin.Location = New System.Drawing.Point(78, 49)
         Me.ComboBox_autospin.Name = "ComboBox_autospin"
         Me.ComboBox_autospin.Size = New System.Drawing.Size(75, 21)
         Me.ComboBox_autospin.TabIndex = 63
         Me.ComboBox_autospin.Text = "ABG"
         '
-        'Button_Gamma_GGS
+        'Button_gamma_GGS
         '
-        Me.Button_Gamma_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Gamma_GGS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Gamma_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Gamma_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Gamma_GGS.ForeColor = System.Drawing.Color.Black
-        Me.Button_Gamma_GGS.Location = New System.Drawing.Point(8, 347)
-        Me.Button_Gamma_GGS.Name = "Button_Gamma_GGS"
-        Me.Button_Gamma_GGS.Size = New System.Drawing.Size(170, 25)
-        Me.Button_Gamma_GGS.TabIndex = 104
-        Me.Button_Gamma_GGS.Text = "Manually Spin GAMMA"
-        Me.Button_Gamma_GGS.UseVisualStyleBackColor = False
+        Me.Button_gamma_GGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_gamma_GGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_gamma_GGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_gamma_GGS.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_gamma_GGS.ForeColor = System.Drawing.Color.Black
+        Me.Button_gamma_GGS.Location = New System.Drawing.Point(8, 347)
+        Me.Button_gamma_GGS.Name = "Button_gamma_GGS"
+        Me.Button_gamma_GGS.Size = New System.Drawing.Size(170, 25)
+        Me.Button_gamma_GGS.TabIndex = 104
+        Me.Button_gamma_GGS.Text = "Manually Spin GAMMA"
+        Me.Button_gamma_GGS.UseVisualStyleBackColor = False
         '
         'Button_beta_GGS
         '
@@ -2835,6 +2716,7 @@ Partial Class Form_Tools
         'Panel_GalaxyGates
         '
         Me.Panel_GalaxyGates.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_GalaxyGates.Controls.Add(Me.PictureBox_DoubleWinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.DATE_REMAINING)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG_GG)
         Me.Panel_GalaxyGates.Controls.Add(Me.Panel_infoPartGG)
@@ -2851,8 +2733,9 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
+        Me.Panel_GalaxyGates.Controls.Add(Me.PictureBox4)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
-        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(202, 741)
+        Me.Panel_GalaxyGates.Location = New System.Drawing.Point(202, 436)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
         Me.Panel_GalaxyGates.Size = New System.Drawing.Size(497, 670)
         Me.Panel_GalaxyGates.TabIndex = 44
@@ -2885,66 +2768,6 @@ Partial Class Form_Tools
         Me.Button_game_doodle.TabIndex = 108
         Me.Button_game_doodle.Text = "Game"
         Me.Button_game_doodle.UseVisualStyleBackColor = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.DarkorbitBot.My.Resources.Resources.info
-        Me.PictureBox3.Location = New System.Drawing.Point(5, 263)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 107
-        Me.PictureBox3.TabStop = False
-        Me.ToolTip_menu.SetToolTip(Me.PictureBox3, "Alpha 0 / 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Beta 0 / 3" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamma 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Delta 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Epsilon 0 / 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Zeta 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Kap" &
-        "pa 0 / 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lambda 0 / 5")
-        '
-        'PictureBox_kappa_reward_day
-        '
-        Me.PictureBox_kappa_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
-        Me.PictureBox_kappa_reward_day.Location = New System.Drawing.Point(5, 158)
-        Me.PictureBox_kappa_reward_day.Name = "PictureBox_kappa_reward_day"
-        Me.PictureBox_kappa_reward_day.Size = New System.Drawing.Size(26, 26)
-        Me.PictureBox_kappa_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kappa_reward_day.TabIndex = 106
-        Me.PictureBox_kappa_reward_day.TabStop = False
-        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_kappa_reward_day, "Bonus Reward Day")
-        Me.PictureBox_kappa_reward_day.Visible = False
-        '
-        'PictureBox_zeta_reward_day
-        '
-        Me.PictureBox_zeta_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
-        Me.PictureBox_zeta_reward_day.Location = New System.Drawing.Point(5, 133)
-        Me.PictureBox_zeta_reward_day.Name = "PictureBox_zeta_reward_day"
-        Me.PictureBox_zeta_reward_day.Size = New System.Drawing.Size(26, 26)
-        Me.PictureBox_zeta_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_zeta_reward_day.TabIndex = 105
-        Me.PictureBox_zeta_reward_day.TabStop = False
-        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_zeta_reward_day, "Bonus Reward Day")
-        Me.PictureBox_zeta_reward_day.Visible = False
-        '
-        'PictureBox_delta_reward_day
-        '
-        Me.PictureBox_delta_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
-        Me.PictureBox_delta_reward_day.Location = New System.Drawing.Point(5, 83)
-        Me.PictureBox_delta_reward_day.Name = "PictureBox_delta_reward_day"
-        Me.PictureBox_delta_reward_day.Size = New System.Drawing.Size(26, 26)
-        Me.PictureBox_delta_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_delta_reward_day.TabIndex = 104
-        Me.PictureBox_delta_reward_day.TabStop = False
-        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_delta_reward_day, "Bonus Reward Day")
-        Me.PictureBox_delta_reward_day.Visible = False
-        '
-        'PictureBox_epsilon_reward_day
-        '
-        Me.PictureBox_epsilon_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
-        Me.PictureBox_epsilon_reward_day.Location = New System.Drawing.Point(5, 108)
-        Me.PictureBox_epsilon_reward_day.Name = "PictureBox_epsilon_reward_day"
-        Me.PictureBox_epsilon_reward_day.Size = New System.Drawing.Size(26, 26)
-        Me.PictureBox_epsilon_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_epsilon_reward_day.TabIndex = 79
-        Me.PictureBox_epsilon_reward_day.TabStop = False
-        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_epsilon_reward_day, "Bonus Reward Day")
-        Me.PictureBox_epsilon_reward_day.Visible = False
         '
         'TableLayoutPanel7
         '
@@ -3050,25 +2873,6 @@ Partial Class Form_Tools
         Me.Label_delta.TabIndex = 93
         Me.Label_delta.Text = "Delta  [ 000 / 000 ]"
         '
-        'Button_Alpha
-        '
-        Me.Button_Alpha.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Alpha.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Alpha.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Alpha.FlatAppearance.BorderSize = 0
-        Me.Button_Alpha.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Alpha.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Alpha.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Alpha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Alpha.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Alpha.ForeColor = System.Drawing.Color.White
-        Me.Button_Alpha.Image = CType(resources.GetObject("Button_Alpha.Image"), System.Drawing.Image)
-        Me.Button_Alpha.Location = New System.Drawing.Point(169, 3)
-        Me.Button_Alpha.Name = "Button_Alpha"
-        Me.Button_Alpha.Size = New System.Drawing.Size(23, 19)
-        Me.Button_Alpha.TabIndex = 27
-        Me.Button_Alpha.UseVisualStyleBackColor = False
-        '
         'Label_epsilon
         '
         Me.Label_epsilon.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -3082,25 +2886,6 @@ Partial Class Form_Tools
         Me.Label_epsilon.Size = New System.Drawing.Size(116, 17)
         Me.Label_epsilon.TabIndex = 94
         Me.Label_epsilon.Text = "Epsilon  [ 00 / 00 ]"
-        '
-        'Button_lambda
-        '
-        Me.Button_lambda.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_lambda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_lambda.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_lambda.FlatAppearance.BorderSize = 0
-        Me.Button_lambda.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_lambda.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_lambda.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_lambda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_lambda.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_lambda.ForeColor = System.Drawing.Color.White
-        Me.Button_lambda.Image = CType(resources.GetObject("Button_lambda.Image"), System.Drawing.Image)
-        Me.Button_lambda.Location = New System.Drawing.Point(169, 178)
-        Me.Button_lambda.Name = "Button_lambda"
-        Me.Button_lambda.Size = New System.Drawing.Size(23, 19)
-        Me.Button_lambda.TabIndex = 34
-        Me.Button_lambda.UseVisualStyleBackColor = False
         '
         'Label_zeta
         '
@@ -3130,44 +2915,6 @@ Partial Class Form_Tools
         Me.Label_kappa.TabIndex = 96
         Me.Label_kappa.Text = "Kappa  [ 000 / 000 ]"
         '
-        'Button_kronos
-        '
-        Me.Button_kronos.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kronos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_kronos.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kronos.FlatAppearance.BorderSize = 0
-        Me.Button_kronos.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kronos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kronos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kronos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_kronos.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_kronos.ForeColor = System.Drawing.Color.Gold
-        Me.Button_kronos.Image = CType(resources.GetObject("Button_kronos.Image"), System.Drawing.Image)
-        Me.Button_kronos.Location = New System.Drawing.Point(169, 253)
-        Me.Button_kronos.Name = "Button_kronos"
-        Me.Button_kronos.Size = New System.Drawing.Size(23, 28)
-        Me.Button_kronos.TabIndex = 36
-        Me.Button_kronos.UseVisualStyleBackColor = False
-        '
-        'Button_Kappa
-        '
-        Me.Button_Kappa.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Kappa.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Kappa.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Kappa.FlatAppearance.BorderSize = 0
-        Me.Button_Kappa.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Kappa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Kappa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_Kappa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Kappa.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Kappa.ForeColor = System.Drawing.Color.White
-        Me.Button_Kappa.Image = CType(resources.GetObject("Button_Kappa.Image"), System.Drawing.Image)
-        Me.Button_Kappa.Location = New System.Drawing.Point(169, 153)
-        Me.Button_Kappa.Name = "Button_Kappa"
-        Me.Button_Kappa.Size = New System.Drawing.Size(23, 19)
-        Me.Button_Kappa.TabIndex = 33
-        Me.Button_Kappa.UseVisualStyleBackColor = False
-        '
         'Label_lambda
         '
         Me.Label_lambda.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -3196,25 +2943,6 @@ Partial Class Form_Tools
         Me.Label_hades.TabIndex = 98
         Me.Label_hades.Text = "Hades  [ 00 / 00 ]"
         '
-        'Button_delta
-        '
-        Me.Button_delta.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_delta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_delta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_delta.FlatAppearance.BorderSize = 0
-        Me.Button_delta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_delta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_delta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_delta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_delta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_delta.ForeColor = System.Drawing.Color.White
-        Me.Button_delta.Image = CType(resources.GetObject("Button_delta.Image"), System.Drawing.Image)
-        Me.Button_delta.Location = New System.Drawing.Point(169, 78)
-        Me.Button_delta.Name = "Button_delta"
-        Me.Button_delta.Size = New System.Drawing.Size(23, 19)
-        Me.Button_delta.TabIndex = 30
-        Me.Button_delta.UseVisualStyleBackColor = False
-        '
         'Label_kuiper
         '
         Me.Label_kuiper.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -3242,120 +2970,6 @@ Partial Class Form_Tools
         Me.Label_chronos.Size = New System.Drawing.Size(124, 17)
         Me.Label_chronos.TabIndex = 100
         Me.Label_chronos.Text = "Chronos  [ 00 / 00 ]"
-        '
-        'Button_hades
-        '
-        Me.Button_hades.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_hades.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_hades.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_hades.FlatAppearance.BorderSize = 0
-        Me.Button_hades.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_hades.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_hades.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_hades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_hades.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_hades.ForeColor = System.Drawing.Color.White
-        Me.Button_hades.Image = CType(resources.GetObject("Button_hades.Image"), System.Drawing.Image)
-        Me.Button_hades.Location = New System.Drawing.Point(169, 203)
-        Me.Button_hades.Name = "Button_hades"
-        Me.Button_hades.Size = New System.Drawing.Size(23, 19)
-        Me.Button_hades.TabIndex = 37
-        Me.Button_hades.UseVisualStyleBackColor = False
-        '
-        'Button_kuiper
-        '
-        Me.Button_kuiper.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_kuiper.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kuiper.FlatAppearance.BorderSize = 0
-        Me.Button_kuiper.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kuiper.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kuiper.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_kuiper.ForeColor = System.Drawing.Color.Black
-        Me.Button_kuiper.Image = CType(resources.GetObject("Button_kuiper.Image"), System.Drawing.Image)
-        Me.Button_kuiper.Location = New System.Drawing.Point(169, 228)
-        Me.Button_kuiper.Name = "Button_kuiper"
-        Me.Button_kuiper.Size = New System.Drawing.Size(23, 19)
-        Me.Button_kuiper.TabIndex = 35
-        Me.Button_kuiper.UseVisualStyleBackColor = False
-        '
-        'Button_beta
-        '
-        Me.Button_beta.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_beta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_beta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_beta.FlatAppearance.BorderSize = 0
-        Me.Button_beta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_beta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_beta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_beta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_beta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_beta.ForeColor = System.Drawing.Color.White
-        Me.Button_beta.Image = CType(resources.GetObject("Button_beta.Image"), System.Drawing.Image)
-        Me.Button_beta.Location = New System.Drawing.Point(169, 28)
-        Me.Button_beta.Name = "Button_beta"
-        Me.Button_beta.Size = New System.Drawing.Size(23, 19)
-        Me.Button_beta.TabIndex = 28
-        Me.Button_beta.UseVisualStyleBackColor = False
-        '
-        'Button_gamma
-        '
-        Me.Button_gamma.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_gamma.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_gamma.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_gamma.FlatAppearance.BorderSize = 0
-        Me.Button_gamma.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_gamma.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_gamma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_gamma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_gamma.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_gamma.ForeColor = System.Drawing.Color.White
-        Me.Button_gamma.Image = CType(resources.GetObject("Button_gamma.Image"), System.Drawing.Image)
-        Me.Button_gamma.Location = New System.Drawing.Point(169, 53)
-        Me.Button_gamma.Name = "Button_gamma"
-        Me.Button_gamma.Size = New System.Drawing.Size(23, 19)
-        Me.Button_gamma.TabIndex = 29
-        Me.Button_gamma.UseVisualStyleBackColor = False
-        '
-        'Button_epsilon
-        '
-        Me.Button_epsilon.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_epsilon.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_epsilon.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_epsilon.FlatAppearance.BorderSize = 0
-        Me.Button_epsilon.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_epsilon.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_epsilon.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_epsilon.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_epsilon.ForeColor = System.Drawing.Color.White
-        Me.Button_epsilon.Image = CType(resources.GetObject("Button_epsilon.Image"), System.Drawing.Image)
-        Me.Button_epsilon.Location = New System.Drawing.Point(169, 103)
-        Me.Button_epsilon.Name = "Button_epsilon"
-        Me.Button_epsilon.Size = New System.Drawing.Size(23, 19)
-        Me.Button_epsilon.TabIndex = 31
-        Me.Button_epsilon.UseVisualStyleBackColor = False
-        '
-        'Button_zeta
-        '
-        Me.Button_zeta.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_zeta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_zeta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_zeta.FlatAppearance.BorderSize = 0
-        Me.Button_zeta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_zeta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_zeta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button_zeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_zeta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_zeta.ForeColor = System.Drawing.Color.White
-        Me.Button_zeta.Image = CType(resources.GetObject("Button_zeta.Image"), System.Drawing.Image)
-        Me.Button_zeta.Location = New System.Drawing.Point(169, 128)
-        Me.Button_zeta.Name = "Button_zeta"
-        Me.Button_zeta.Size = New System.Drawing.Size(23, 19)
-        Me.Button_zeta.TabIndex = 32
-        Me.Button_zeta.UseVisualStyleBackColor = False
         '
         'Button_suppresor_controler_GGS
         '
@@ -3403,7 +3017,7 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox_total_spinned, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label_repairCR_explain, 0, 13)
         Me.TableLayoutPanel1.Controls.Add(Me.Leaderprice, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label_Part_Earned, 1, 13)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label_RepairCR_Earned, 1, 13)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(14, 338)
@@ -3737,18 +3351,18 @@ Partial Class Form_Tools
         Me.Leaderprice.TabIndex = 79
         Me.Leaderprice.Text = "0 U."
         '
-        'Label_Part_Earned
+        'Label_RepairCR_Earned
         '
-        Me.Label_Part_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_Part_Earned.AutoSize = True
-        Me.Label_Part_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.Label_Part_Earned.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Part_Earned.ForeColor = System.Drawing.Color.Black
-        Me.Label_Part_Earned.Location = New System.Drawing.Point(128, 264)
-        Me.Label_Part_Earned.Name = "Label_Part_Earned"
-        Me.Label_Part_Earned.Size = New System.Drawing.Size(14, 15)
-        Me.Label_Part_Earned.TabIndex = 98
-        Me.Label_Part_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
+        Me.Label_RepairCR_Earned.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_RepairCR_Earned.AutoSize = True
+        Me.Label_RepairCR_Earned.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Logfile", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.Label_RepairCR_Earned.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_RepairCR_Earned.ForeColor = System.Drawing.Color.Black
+        Me.Label_RepairCR_Earned.Location = New System.Drawing.Point(128, 264)
+        Me.Label_RepairCR_Earned.Name = "Label_RepairCR_Earned"
+        Me.Label_RepairCR_Earned.Size = New System.Drawing.Size(14, 15)
+        Me.Label_RepairCR_Earned.TabIndex = 98
+        Me.Label_RepairCR_Earned.Text = Global.DarkorbitBot.My.MySettings.Default.Logfile
         '
         'TextBox_WinGGS
         '
@@ -3761,17 +3375,6 @@ Partial Class Form_Tools
         Me.TextBox_WinGGS.Size = New System.Drawing.Size(272, 280)
         Me.TextBox_WinGGS.TabIndex = 93
         Me.TextBox_WinGGS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'WebBrowser_galaxyGates
-        '
-        Me.WebBrowser_galaxyGates.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser_galaxyGates.Location = New System.Drawing.Point(218, 8)
-        Me.WebBrowser_galaxyGates.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser_galaxyGates.Name = "WebBrowser_galaxyGates"
-        Me.WebBrowser_galaxyGates.ScriptErrorsSuppressed = True
-        Me.WebBrowser_galaxyGates.ScrollBarsEnabled = False
-        Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(272, 325)
-        Me.WebBrowser_galaxyGates.TabIndex = 39
         '
         'Stats_Button
         '
@@ -3839,7 +3442,7 @@ Partial Class Form_Tools
         Me.Panel_suppresor_controler.ForeColor = System.Drawing.Color.White
         Me.Panel_suppresor_controler.Location = New System.Drawing.Point(219, 0)
         Me.Panel_suppresor_controler.Name = "Panel_suppresor_controler"
-        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 24)
+        Me.Panel_suppresor_controler.Size = New System.Drawing.Size(125, 427)
         Me.Panel_suppresor_controler.TabIndex = 46
         '
         'Button_license
@@ -4015,17 +3618,6 @@ Partial Class Form_Tools
         Me.TextBox7.TabIndex = 90
         Me.TextBox7.Text = "0"
         Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 148)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(21, 21)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 91
-        Me.PictureBox1.TabStop = False
         '
         'Label13
         '
@@ -4230,17 +3822,6 @@ Partial Class Form_Tools
         Me.TextBox5.Text = "0"
         Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox2.Location = New System.Drawing.Point(4, 148)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(21, 21)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 93
-        Me.PictureBox2.TabStop = False
-        '
         'Panel_palladium_palladium
         '
         Me.Panel_palladium_palladium.AutoScroll = True
@@ -4282,6 +3863,322 @@ Partial Class Form_Tools
         Me.ToolTip_GalaxyGates.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTip_GalaxyGates.ToolTipTitle = "RidevBot Help"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox2.Location = New System.Drawing.Point(4, 148)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(21, 21)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox2.TabIndex = 93
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox_grade
+        '
+        Me.PictureBox_grade.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox_grade.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox_grade.Image = Global.DarkorbitBot.My.Resources.Resources.rank_1
+        Me.PictureBox_grade.Location = New System.Drawing.Point(186, 107)
+        Me.PictureBox_grade.Name = "PictureBox_grade"
+        Me.PictureBox_grade.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox_grade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_grade.TabIndex = 58
+        Me.PictureBox_grade.TabStop = False
+        '
+        'PictureBox_DoubleWinGGS
+        '
+        Me.PictureBox_DoubleWinGGS.BackColor = System.Drawing.Color.White
+        Me.PictureBox_DoubleWinGGS.Image = Global.DarkorbitBot.My.Resources.Resources.sale
+        Me.PictureBox_DoubleWinGGS.Location = New System.Drawing.Point(219, 26)
+        Me.PictureBox_DoubleWinGGS.Name = "PictureBox_DoubleWinGGS"
+        Me.PictureBox_DoubleWinGGS.Size = New System.Drawing.Size(38, 42)
+        Me.PictureBox_DoubleWinGGS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_DoubleWinGGS.TabIndex = 105
+        Me.PictureBox_DoubleWinGGS.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_DoubleWinGGS, "Double Reward Day :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.PictureBox_DoubleWinGGS.Visible = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.DarkorbitBot.My.Resources.Resources.info
+        Me.PictureBox3.Location = New System.Drawing.Point(5, 263)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 107
+        Me.PictureBox3.TabStop = False
+        Me.ToolTip_menu.SetToolTip(Me.PictureBox3, "Alpha 0 / 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Beta 0 / 3" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamma 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Delta 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Epsilon 0 / 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Zeta 0 / 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Kap" &
+        "pa 0 / 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lambda 0 / 5")
+        '
+        'PictureBox_kappa_reward_day
+        '
+        Me.PictureBox_kappa_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
+        Me.PictureBox_kappa_reward_day.Location = New System.Drawing.Point(5, 158)
+        Me.PictureBox_kappa_reward_day.Name = "PictureBox_kappa_reward_day"
+        Me.PictureBox_kappa_reward_day.Size = New System.Drawing.Size(26, 26)
+        Me.PictureBox_kappa_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox_kappa_reward_day.TabIndex = 106
+        Me.PictureBox_kappa_reward_day.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_kappa_reward_day, "Bonus Reward Day")
+        Me.PictureBox_kappa_reward_day.Visible = False
+        '
+        'PictureBox_zeta_reward_day
+        '
+        Me.PictureBox_zeta_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
+        Me.PictureBox_zeta_reward_day.Location = New System.Drawing.Point(5, 133)
+        Me.PictureBox_zeta_reward_day.Name = "PictureBox_zeta_reward_day"
+        Me.PictureBox_zeta_reward_day.Size = New System.Drawing.Size(26, 26)
+        Me.PictureBox_zeta_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox_zeta_reward_day.TabIndex = 105
+        Me.PictureBox_zeta_reward_day.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_zeta_reward_day, "Bonus Reward Day")
+        Me.PictureBox_zeta_reward_day.Visible = False
+        '
+        'PictureBox_delta_reward_day
+        '
+        Me.PictureBox_delta_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
+        Me.PictureBox_delta_reward_day.Location = New System.Drawing.Point(5, 83)
+        Me.PictureBox_delta_reward_day.Name = "PictureBox_delta_reward_day"
+        Me.PictureBox_delta_reward_day.Size = New System.Drawing.Size(26, 26)
+        Me.PictureBox_delta_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox_delta_reward_day.TabIndex = 104
+        Me.PictureBox_delta_reward_day.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_delta_reward_day, "Bonus Reward Day")
+        Me.PictureBox_delta_reward_day.Visible = False
+        '
+        'PictureBox_epsilon_reward_day
+        '
+        Me.PictureBox_epsilon_reward_day.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
+        Me.PictureBox_epsilon_reward_day.Location = New System.Drawing.Point(5, 108)
+        Me.PictureBox_epsilon_reward_day.Name = "PictureBox_epsilon_reward_day"
+        Me.PictureBox_epsilon_reward_day.Size = New System.Drawing.Size(26, 26)
+        Me.PictureBox_epsilon_reward_day.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox_epsilon_reward_day.TabIndex = 79
+        Me.PictureBox_epsilon_reward_day.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_epsilon_reward_day, "Bonus Reward Day")
+        Me.PictureBox_epsilon_reward_day.Visible = False
+        '
+        'Button_Alpha
+        '
+        Me.Button_Alpha.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Alpha.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Alpha.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Alpha.FlatAppearance.BorderSize = 0
+        Me.Button_Alpha.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Alpha.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Alpha.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Alpha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Alpha.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Alpha.ForeColor = System.Drawing.Color.White
+        Me.Button_Alpha.Image = CType(resources.GetObject("Button_Alpha.Image"), System.Drawing.Image)
+        Me.Button_Alpha.Location = New System.Drawing.Point(169, 3)
+        Me.Button_Alpha.Name = "Button_Alpha"
+        Me.Button_Alpha.Size = New System.Drawing.Size(23, 19)
+        Me.Button_Alpha.TabIndex = 27
+        Me.Button_Alpha.UseVisualStyleBackColor = False
+        '
+        'Button_lambda
+        '
+        Me.Button_lambda.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_lambda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_lambda.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_lambda.FlatAppearance.BorderSize = 0
+        Me.Button_lambda.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_lambda.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_lambda.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_lambda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_lambda.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_lambda.ForeColor = System.Drawing.Color.White
+        Me.Button_lambda.Image = CType(resources.GetObject("Button_lambda.Image"), System.Drawing.Image)
+        Me.Button_lambda.Location = New System.Drawing.Point(169, 178)
+        Me.Button_lambda.Name = "Button_lambda"
+        Me.Button_lambda.Size = New System.Drawing.Size(23, 19)
+        Me.Button_lambda.TabIndex = 34
+        Me.Button_lambda.UseVisualStyleBackColor = False
+        '
+        'Button_kronos
+        '
+        Me.Button_kronos.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kronos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kronos.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kronos.FlatAppearance.BorderSize = 0
+        Me.Button_kronos.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kronos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kronos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kronos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kronos.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kronos.ForeColor = System.Drawing.Color.Gold
+        Me.Button_kronos.Image = CType(resources.GetObject("Button_kronos.Image"), System.Drawing.Image)
+        Me.Button_kronos.Location = New System.Drawing.Point(169, 253)
+        Me.Button_kronos.Name = "Button_kronos"
+        Me.Button_kronos.Size = New System.Drawing.Size(23, 28)
+        Me.Button_kronos.TabIndex = 36
+        Me.Button_kronos.UseVisualStyleBackColor = False
+        '
+        'Button_Kappa
+        '
+        Me.Button_Kappa.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Kappa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_Kappa.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Kappa.FlatAppearance.BorderSize = 0
+        Me.Button_Kappa.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Kappa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Kappa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_Kappa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Kappa.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Kappa.ForeColor = System.Drawing.Color.White
+        Me.Button_Kappa.Image = CType(resources.GetObject("Button_Kappa.Image"), System.Drawing.Image)
+        Me.Button_Kappa.Location = New System.Drawing.Point(169, 153)
+        Me.Button_Kappa.Name = "Button_Kappa"
+        Me.Button_Kappa.Size = New System.Drawing.Size(23, 19)
+        Me.Button_Kappa.TabIndex = 33
+        Me.Button_Kappa.UseVisualStyleBackColor = False
+        '
+        'Button_delta
+        '
+        Me.Button_delta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_delta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_delta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_delta.FlatAppearance.BorderSize = 0
+        Me.Button_delta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_delta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_delta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_delta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_delta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_delta.ForeColor = System.Drawing.Color.White
+        Me.Button_delta.Image = CType(resources.GetObject("Button_delta.Image"), System.Drawing.Image)
+        Me.Button_delta.Location = New System.Drawing.Point(169, 78)
+        Me.Button_delta.Name = "Button_delta"
+        Me.Button_delta.Size = New System.Drawing.Size(23, 19)
+        Me.Button_delta.TabIndex = 30
+        Me.Button_delta.UseVisualStyleBackColor = False
+        '
+        'Button_hades
+        '
+        Me.Button_hades.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_hades.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_hades.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_hades.FlatAppearance.BorderSize = 0
+        Me.Button_hades.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_hades.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_hades.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_hades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_hades.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_hades.ForeColor = System.Drawing.Color.White
+        Me.Button_hades.Image = CType(resources.GetObject("Button_hades.Image"), System.Drawing.Image)
+        Me.Button_hades.Location = New System.Drawing.Point(169, 203)
+        Me.Button_hades.Name = "Button_hades"
+        Me.Button_hades.Size = New System.Drawing.Size(23, 19)
+        Me.Button_hades.TabIndex = 37
+        Me.Button_hades.UseVisualStyleBackColor = False
+        '
+        'Button_kuiper
+        '
+        Me.Button_kuiper.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kuiper.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_kuiper.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kuiper.FlatAppearance.BorderSize = 0
+        Me.Button_kuiper.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kuiper.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kuiper.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_kuiper.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_kuiper.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_kuiper.ForeColor = System.Drawing.Color.Black
+        Me.Button_kuiper.Image = CType(resources.GetObject("Button_kuiper.Image"), System.Drawing.Image)
+        Me.Button_kuiper.Location = New System.Drawing.Point(169, 228)
+        Me.Button_kuiper.Name = "Button_kuiper"
+        Me.Button_kuiper.Size = New System.Drawing.Size(23, 19)
+        Me.Button_kuiper.TabIndex = 35
+        Me.Button_kuiper.UseVisualStyleBackColor = False
+        '
+        'Button_beta
+        '
+        Me.Button_beta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_beta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_beta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_beta.FlatAppearance.BorderSize = 0
+        Me.Button_beta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_beta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_beta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_beta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_beta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_beta.ForeColor = System.Drawing.Color.White
+        Me.Button_beta.Image = CType(resources.GetObject("Button_beta.Image"), System.Drawing.Image)
+        Me.Button_beta.Location = New System.Drawing.Point(169, 28)
+        Me.Button_beta.Name = "Button_beta"
+        Me.Button_beta.Size = New System.Drawing.Size(23, 19)
+        Me.Button_beta.TabIndex = 28
+        Me.Button_beta.UseVisualStyleBackColor = False
+        '
+        'Button_gamma
+        '
+        Me.Button_gamma.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_gamma.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_gamma.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_gamma.FlatAppearance.BorderSize = 0
+        Me.Button_gamma.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_gamma.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_gamma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_gamma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_gamma.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_gamma.ForeColor = System.Drawing.Color.White
+        Me.Button_gamma.Image = CType(resources.GetObject("Button_gamma.Image"), System.Drawing.Image)
+        Me.Button_gamma.Location = New System.Drawing.Point(169, 53)
+        Me.Button_gamma.Name = "Button_gamma"
+        Me.Button_gamma.Size = New System.Drawing.Size(23, 19)
+        Me.Button_gamma.TabIndex = 29
+        Me.Button_gamma.UseVisualStyleBackColor = False
+        '
+        'Button_epsilon
+        '
+        Me.Button_epsilon.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_epsilon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_epsilon.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_epsilon.FlatAppearance.BorderSize = 0
+        Me.Button_epsilon.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_epsilon.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_epsilon.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_epsilon.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_epsilon.ForeColor = System.Drawing.Color.White
+        Me.Button_epsilon.Image = CType(resources.GetObject("Button_epsilon.Image"), System.Drawing.Image)
+        Me.Button_epsilon.Location = New System.Drawing.Point(169, 103)
+        Me.Button_epsilon.Name = "Button_epsilon"
+        Me.Button_epsilon.Size = New System.Drawing.Size(23, 19)
+        Me.Button_epsilon.TabIndex = 31
+        Me.Button_epsilon.UseVisualStyleBackColor = False
+        '
+        'Button_zeta
+        '
+        Me.Button_zeta.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_zeta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_zeta.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_zeta.FlatAppearance.BorderSize = 0
+        Me.Button_zeta.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_zeta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_zeta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button_zeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_zeta.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_zeta.ForeColor = System.Drawing.Color.White
+        Me.Button_zeta.Image = CType(resources.GetObject("Button_zeta.Image"), System.Drawing.Image)
+        Me.Button_zeta.Location = New System.Drawing.Point(169, 128)
+        Me.Button_zeta.Name = "Button_zeta"
+        Me.Button_zeta.Size = New System.Drawing.Size(23, 19)
+        Me.Button_zeta.TabIndex = 32
+        Me.Button_zeta.UseVisualStyleBackColor = False
+        '
+        'WebBrowser_galaxyGates
+        '
+        Me.WebBrowser_galaxyGates.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser_galaxyGates.Location = New System.Drawing.Point(218, 8)
+        Me.WebBrowser_galaxyGates.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser_galaxyGates.Name = "WebBrowser_galaxyGates"
+        Me.WebBrowser_galaxyGates.ScriptErrorsSuppressed = True
+        Me.WebBrowser_galaxyGates.ScrollBarsEnabled = False
+        Me.WebBrowser_galaxyGates.Size = New System.Drawing.Size(272, 325)
+        Me.WebBrowser_galaxyGates.TabIndex = 39
+        '
         'WebBrowser_Synchronisation
         '
         Me.WebBrowser_Synchronisation.Location = New System.Drawing.Point(37, 1035)
@@ -4291,6 +4188,128 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
+        '
+        'PictureBox_visibility
+        '
+        Me.PictureBox_visibility.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_visibility.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_visibility.Image = Global.DarkorbitBot.My.Resources.Resources.visibility_off
+        Me.PictureBox_visibility.Location = New System.Drawing.Point(193, 0)
+        Me.PictureBox_visibility.Name = "PictureBox_visibility"
+        Me.PictureBox_visibility.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox_visibility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_visibility.TabIndex = 33
+        Me.PictureBox_visibility.TabStop = False
+        '
+        'PictureBox_epinglerBot
+        '
+        Me.PictureBox_epinglerBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_epinglerBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_epinglerBot.Image = Global.DarkorbitBot.My.Resources.Resources.lock_open
+        Me.PictureBox_epinglerBot.Location = New System.Drawing.Point(169, 0)
+        Me.PictureBox_epinglerBot.Name = "PictureBox_epinglerBot"
+        Me.PictureBox_epinglerBot.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox_epinglerBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_epinglerBot.TabIndex = 10
+        Me.PictureBox_epinglerBot.TabStop = False
+        Me.PictureBox_epinglerBot.Tag = "0"
+        Me.ToolTip_menu.SetToolTip(Me.PictureBox_epinglerBot, "TopMost of the bot")
+        '
+        'PictureBox_BackgroundBot
+        '
+        Me.PictureBox_BackgroundBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_BackgroundBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_BackgroundBot.Image = Global.DarkorbitBot.My.Resources.Resources.person_pin
+        Me.PictureBox_BackgroundBot.Location = New System.Drawing.Point(145, 0)
+        Me.PictureBox_BackgroundBot.Name = "PictureBox_BackgroundBot"
+        Me.PictureBox_BackgroundBot.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox_BackgroundBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_BackgroundBot.TabIndex = 9
+        Me.PictureBox_BackgroundBot.TabStop = False
+        Me.ToolTip_menu.SetToolTip(Me.PictureBox_BackgroundBot, "Backpage of the game")
+        '
+        'PictureBox_LaunchBot
+        '
+        Me.PictureBox_LaunchBot.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_LaunchBot.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_LaunchBot.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox_LaunchBot.Image = Global.DarkorbitBot.My.Resources.Resources.play_circle_filled_white
+        Me.PictureBox_LaunchBot.Location = New System.Drawing.Point(119, 0)
+        Me.PictureBox_LaunchBot.Name = "PictureBox_LaunchBot"
+        Me.PictureBox_LaunchBot.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox_LaunchBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_LaunchBot.TabIndex = 7
+        Me.PictureBox_LaunchBot.TabStop = False
+        Me.ToolTip_menu.SetToolTip(Me.PictureBox_LaunchBot, "Start/Stop the bot")
+        '
+        'PictureBox_close1
+        '
+        Me.PictureBox_close1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_close1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_close1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_close1.Image = Global.DarkorbitBot.My.Resources.Resources.exit_to_app
+        Me.PictureBox_close1.Location = New System.Drawing.Point(1916, 0)
+        Me.PictureBox_close1.Name = "PictureBox_close1"
+        Me.PictureBox_close1.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox_close1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox_close1.TabIndex = 32
+        Me.PictureBox_close1.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 148)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(21, 21)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 91
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox_Backpage
+        '
+        Me.PictureBox_Backpage.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Backpage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Backpage.Location = New System.Drawing.Point(183, 0)
+        Me.PictureBox_Backpage.Name = "PictureBox_Backpage"
+        Me.PictureBox_Backpage.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Backpage.TabIndex = 34
+        Me.PictureBox_Backpage.TabStop = False
+        '
+        'PictureBox_Pause
+        '
+        Me.PictureBox_Pause.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Pause.Location = New System.Drawing.Point(166, 0)
+        Me.PictureBox_Pause.Name = "PictureBox_Pause"
+        Me.PictureBox_Pause.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Pause.TabIndex = 33
+        Me.PictureBox_Pause.TabStop = False
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Location = New System.Drawing.Point(1670, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 26
+        Me.PictureBox_Close.TabStop = False
+        '
+        'PictureBox_Start
+        '
+        Me.PictureBox_Start.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Start.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Start.Location = New System.Drawing.Point(149, 0)
+        Me.PictureBox_Start.Name = "PictureBox_Start"
+        Me.PictureBox_Start.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Start.TabIndex = 27
+        Me.PictureBox_Start.TabStop = False
         '
         'FlatMini1
         '
@@ -4303,6 +4322,19 @@ Partial Class Form_Tools
         Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
         Me.FlatMini1.TabIndex = 35
         Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.White
+        Me.PictureBox4.Image = Global.DarkorbitBot.My.Resources.Resources.gg_bonus_reward
+        Me.PictureBox4.Location = New System.Drawing.Point(451, 26)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(38, 42)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 111
+        Me.PictureBox4.TabStop = False
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox4, "Bonus Reward Day :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- 1x ( 5000 ) Seprom")
+        Me.PictureBox4.Visible = False
         '
         'Form_Tools
         '
@@ -4338,7 +4370,6 @@ Partial Class Form_Tools
         Me.Panel7.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
-        CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Npc.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
@@ -4361,17 +4392,8 @@ Partial Class Form_Tools
         Me.Panel_Skylab.PerformLayout()
         Me.Panel_MoveTitle.ResumeLayout(False)
         Me.Panel_MoveTitle.PerformLayout()
-        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Title.PerformLayout()
-        CType(Me.PictureBox_visibility, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_autospin.ResumeLayout(False)
         Me.Panel_autospin.PerformLayout()
         Me.Panel_infoPartGG.ResumeLayout(False)
@@ -4380,11 +4402,6 @@ Partial Class Form_Tools
         Me.Panel_infoPartGG_GG.PerformLayout()
         Me.Panel_GalaxyGates.ResumeLayout(False)
         Me.Panel_GalaxyGates.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_kappa_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_zeta_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_delta_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_epsilon_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -4394,14 +4411,31 @@ Partial Class Form_Tools
         Me.Panel_collectable.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel6.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_npc_npc.ResumeLayout(False)
         Me.panel_npc_npc.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_palladium_palladium.ResumeLayout(False)
         Me.Panel_palladium_palladium.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_grade, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_DoubleWinGGS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_kappa_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_zeta_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_delta_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_epsilon_reward_day, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_visibility, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_epinglerBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_BackgroundBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_LaunchBot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_close1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Backpage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Pause, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox_Start, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4471,14 +4505,14 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents ComboBox_colormod As ComboBox
     Friend WithEvents CheckBox_colormod As CheckBox
-    Friend WithEvents Button_ABG_GGS As Button
-    Friend WithEvents Button_Delta_GGS As Button
-    Friend WithEvents Button_Epsilon_GGS As Button
-    Friend WithEvents Button_Kappa_GGS As Button
-    Friend WithEvents Button_Lambda_GGS As Button
-    Friend WithEvents Button_Kuiper_GGS As Button
-    Friend WithEvents Button_Zeta_GGS As Button
-    Friend WithEvents Button_Hades_GGS As Button
+    Friend WithEvents Button_abg_GGS As Button
+    Friend WithEvents Button_delta_GGS As Button
+    Friend WithEvents Button_epsilon_GGS As Button
+    Friend WithEvents Button_kappa_GGS As Button
+    Friend WithEvents Button_lambda_GGS As Button
+    Friend WithEvents Button_kuiper_GGS As Button
+    Friend WithEvents Button_zeta_GGS As Button
+    Friend WithEvents Button_hades_GGS As Button
     Friend WithEvents Button_StartSpin As Button
     Friend WithEvents WebBrowser_galaxyGates As WebBrowser
     Friend WithEvents Button_stopSpin As Button
@@ -4571,7 +4605,7 @@ Partial Class Form_Tools
     Friend WithEvents Label_Mine_Earned As Label
     Friend WithEvents Label_Nanohull_Earned As Label
     Friend WithEvents Label_Xenomit_Earned As Label
-    Friend WithEvents Label_Part_Earned As Label
+    Friend WithEvents Label_RepairCR_Earned As Label
     Friend WithEvents TextBox_WinGGS As TextBox
     Friend WithEvents Button_Alpha As Button
     Friend WithEvents Button_PrepareGates As Button
@@ -4611,7 +4645,7 @@ Partial Class Form_Tools
     Friend WithEvents Panel_palladium_palladium As Panel
     Friend WithEvents Label19 As Label
     Friend WithEvents Button_suppresor_controler_GGS As Button
-    Friend WithEvents Button_Gamma_GGS As Button
+    Friend WithEvents Button_gamma_GGS As Button
     Friend WithEvents Button_beta_GGS As Button
     Friend WithEvents Button_alpha_GGS As Button
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
@@ -4678,4 +4712,6 @@ Partial Class Form_Tools
     Friend WithEvents Label_terbium As Label
     Friend WithEvents Label_endurium As Label
     Friend WithEvents Label_prometium As Label
+    Friend WithEvents PictureBox_DoubleWinGGS As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
