@@ -927,6 +927,8 @@ Public Class Form_Tools
                 End Select
 
                 Utils.UpdateStats()
+                GalaxyGates_module.WebClient_POST.Headers.Clear()
+                GalaxyGates_module.WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand

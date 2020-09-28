@@ -33,7 +33,6 @@ Public Class GalaxyGates_module
 
     Public Shared Sub Load()
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         Console.WriteLine(WebClient_Data)
 
@@ -148,7 +147,6 @@ Public Class GalaxyGates_module
 
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
 
-        'WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils_module.dosid};")
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate (.*id=""" + GalaxyGates_id + Table_Load).Groups.Item(1).ToString
@@ -332,9 +330,9 @@ LABEL_BOUCLE:
             Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 1 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
             End If
 
-            Dim Prepare_Gates_POST As New System.Net.WebClient
-            Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-            Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+            Dim Prepare_Gates_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+            View(GalaxyGates_id, GalaxyGates_Name)
+            Load()
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"CheckBox_BuildOneAndStop are checked. " + Form_Tools.TextBox_WinGGS.Text
@@ -348,10 +346,10 @@ LABEL_BOUCLE:
         End If
 
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
-        Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium Left
+        Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
+        Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
         Dim Webclient_GET_Gates_name = Regex.Match(WebClient_Data, "<mode>(.*)<\/mode>").Groups.Item(1).ToString ' Gates name
         Dim Webclient_GET_Items = Regex.Match(WebClient_Data, "<item (.*)>").Groups.Item(1).ToString ' Items Rewared
-        Console.WriteLine(Webclient_GET_Items)
 
         Dim Webclient_GET_Items_type = Regex.Match(WebClient_Data, "type=\""([^\""]*)").Groups.Item(1).ToString ' type de recompense
         Dim Webclient_GET_Items_item_id = Regex.Match(WebClient_Data, "item_id=\""([^\""]*)").Groups.Item(1).ToString ' id de recompense
@@ -376,18 +374,17 @@ LABEL_BOUCLE:
         Console.WriteLine("Items_part_id : " + Webclient_GET_Items_part_id)
         Console.WriteLine("Items_duplicate : " + Webclient_GET_Items_part_id_duplicate)
         Console.WriteLine("Items_multiplier_used : " + Webclient_GET_Items_part_multiplier_used)
-        Try
-            Console.WriteLine("Items_amount : " + Webclient_GET_Items_amount)
-            Console.WriteLine("Items_multiplier_amount : " + CStr(Webclient_GET_Items_part_multiplier_amount))
-            Console.WriteLine("Items_amount_duplicate : " + (Webclient_GET_Items_amount_counter + Webclient_GET_Items_part_multiplier_amount_counter))
-        Catch
-            Console.WriteLine("Aucun Multiplicateur Assignée a ce spin")
-        End Try
-        Console.WriteLine(" -------------------- ")
+        Console.WriteLine("Items_amount : " + Webclient_GET_Items_amount)
+        Console.WriteLine("Items_multiplier_amount : " + CStr(Webclient_GET_Items_part_multiplier_amount))
+        Console.WriteLine("Items_amount_duplicate : " + (Webclient_GET_Items_amount_counter_TTT_Webclient_GET_Items_part_multiplier_amount_counter_counterStrike))
 
         If Webclient_GET_Items_date = Nothing Then
             Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
             Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
+
+            Form_Tools.Button_StartSpin.Enabled = True
+            Form_Tools.Button_stopSpin.Enabled = False
+            Form_Tools.ComboBox_autospin.Enabled = True
             Exit Sub
         Else Form_Tools.DATE_REMAINING.Text = Webclient_GET_Items_date + " Done."
         End If
@@ -426,6 +423,10 @@ LABEL_BOUCLE:
         If Webclient_GET_Items_type = "image/x-icon" Then
             Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
             Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
+
+            Form_Tools.Button_StartSpin.Enabled = True
+            Form_Tools.Button_stopSpin.Enabled = False
+            Form_Tools.ComboBox_autospin.Enabled = True
             Exit Sub
 
         End If
@@ -656,14 +657,7 @@ LABEL_BOUCLE:
             Exit Sub
         End If
 
-        Console.WriteLine(Result_PART_GG)
-        Console.WriteLine(GalaxyGates_id)
-        Console.WriteLine(Form_Tools.ComboBox_autospin.Text.ToLower)
-        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
-
-        Dim Prepare_Gates_POST As New System.Net.WebClient
-        Prepare_Gates_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};")
-        Dim Prepare_Gates_Data = Prepare_Gates_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
+        Dim Prepare_Gates_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
         Console.WriteLine(Prepare_Gates_Data)
         Dim Prepare_Gates_Data_Regex = Regex.Match(Prepare_Gates_Data, "error code="".*?([\s\S]*?)""")
         If Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "gate_already_setup" Then
