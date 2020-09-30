@@ -844,6 +844,54 @@ Namespace My
                 Me("License_check") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+        Public Property PalladiumBASE() As String
+            Get
+                Return CType(Me("PalladiumBASE"),String)
+            End Get
+            Set
+                Me("PalladiumBASE") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+        Public Property palladiumCOLLECT() As String
+            Get
+                Return CType(Me("palladiumCOLLECT"),String)
+            End Get
+            Set
+                Me("palladiumCOLLECT") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property useHANGAR_changer() As Boolean
+            Get
+                Return CType(Me("useHANGAR_changer"),Boolean)
+            End Get
+            Set
+                Me("useHANGAR_changer") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Use_Changer() As Boolean
+            Get
+                Return CType(Me("Use_Changer"),Boolean)
+            End Get
+            Set
+                Me("Use_Changer") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

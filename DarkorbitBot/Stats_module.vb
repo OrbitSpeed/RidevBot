@@ -1,6 +1,5 @@
-﻿
-
-Imports System.Net
+﻿Imports System.Net
+Imports System.Text.RegularExpressions
 
 Public Class Stats_module
 
@@ -12,6 +11,8 @@ Public Class Stats_module
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         Console.WriteLine(WebClient_Data)
         '  User[.]Parameters(?s)((?:[^\n][\n]?)+)
+        Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "User[.]Parameters(?s)((?:[^\n][\n]?)+)").Groups.Item(1).ToString
+        Console.WriteLine(WebClient_GET_All_elements)
 
     End Function
 

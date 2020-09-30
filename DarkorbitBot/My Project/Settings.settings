@@ -200,5 +200,17 @@
     <Setting Name="License_check" Type="System.String" Scope="User">
       <Value Profile="(Default)">Your license here</Value>
     </Setting>
+    <Setting Name="PalladiumBASE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hangar 1</Value>
+    </Setting>
+    <Setting Name="palladiumCOLLECT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hangar 1</Value>
+    </Setting>
+    <Setting Name="useHANGAR_changer" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Use_Changer" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
