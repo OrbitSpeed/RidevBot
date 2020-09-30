@@ -309,7 +309,7 @@ LABEL_BOUCLE:
             PART_CHECKER = 1
         ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "lambda" Then
             PART_CHECKER = 1
-        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "hades" Then
+        ElseIf Result_PART_GG = "45 / 46" AndAlso GalaxyGates_Name = "hades" Then
             PART_CHECKER = 1
         ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_Name = "Streuner" Then
             PART_CHECKER = 1
@@ -350,6 +350,7 @@ LABEL_BOUCLE:
         Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
         Dim Webclient_GET_Gates_name = Regex.Match(WebClient_Data, "<mode>(.*)<\/mode>").Groups.Item(1).ToString ' Gates name
         Dim Webclient_GET_Items = Regex.Match(WebClient_Data, "<item (.*)>").Groups.Item(1).ToString ' Items Rewared
+        Console.WriteLine(Webclient_GET_Items)
 
         Dim Webclient_GET_Items_type = Regex.Match(WebClient_Data, "type=\""([^\""]*)").Groups.Item(1).ToString ' type de recompense
         Dim Webclient_GET_Items_item_id = Regex.Match(WebClient_Data, "item_id=\""([^\""]*)").Groups.Item(1).ToString ' id de recompense
