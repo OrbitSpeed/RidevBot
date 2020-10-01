@@ -1126,11 +1126,10 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
-    End Sub
+        Palladium_module.Load()
 
-    Private Sub CheckBox_UseOnlyEE_GGS_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_UseOnlyEE_GGS.CheckedChanged
 
     End Sub
 End Class

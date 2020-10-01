@@ -267,7 +267,6 @@ Partial Class Form_Tools
         Me.ToolTip_menu = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip_GalaxyGates = New System.Windows.Forms.ToolTip(Me.components)
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -307,6 +306,8 @@ Partial Class Form_Tools
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Button_update_hangar = New System.Windows.Forms.Button()
         Me.Panel_general.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -3862,6 +3863,7 @@ Partial Class Form_Tools
         '
         Me.Panel_palladium_palladium.AutoScroll = True
         Me.Panel_palladium_palladium.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel_palladium_palladium.Controls.Add(Me.Button_update_hangar)
         Me.Panel_palladium_palladium.Controls.Add(Me.Button5)
         Me.Panel_palladium_palladium.Controls.Add(Me.Button4)
         Me.Panel_palladium_palladium.Controls.Add(Me.Button3)
@@ -3921,18 +3923,6 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
         '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -3940,7 +3930,7 @@ Partial Class Form_Tools
         Me.Label2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(51, 84)
+        Me.Label2.Location = New System.Drawing.Point(55, 140)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 47
@@ -3953,7 +3943,7 @@ Partial Class Form_Tools
         Me.Label3.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(51, 138)
+        Me.Label3.Location = New System.Drawing.Point(55, 194)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 48
@@ -3966,7 +3956,7 @@ Partial Class Form_Tools
         Me.Label5.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(51, 192)
+        Me.Label5.Location = New System.Drawing.Point(55, 248)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(117, 13)
         Me.Label5.TabIndex = 50
@@ -4396,7 +4386,7 @@ Partial Class Form_Tools
         Me.ComboBox_5_3_Hangar.ForeColor = System.Drawing.Color.White
         Me.ComboBox_5_3_Hangar.FormattingEnabled = True
         Me.ComboBox_5_3_Hangar.Items.AddRange(New Object() {"Hangar 1", "Hangar 2", "Hangar 3", "Hangar 4", "Hangar 5", "Hangar 6", "Hangar 7", "Hangar 8", "Hangar 9", "Hangar 10"})
-        Me.ComboBox_5_3_Hangar.Location = New System.Drawing.Point(54, 212)
+        Me.ComboBox_5_3_Hangar.Location = New System.Drawing.Point(58, 268)
         Me.ComboBox_5_3_Hangar.Name = "ComboBox_5_3_Hangar"
         Me.ComboBox_5_3_Hangar.Size = New System.Drawing.Size(134, 21)
         Me.ComboBox_5_3_Hangar.TabIndex = 49
@@ -4427,7 +4417,7 @@ Partial Class Form_Tools
         Me.ComboBox_collectable_Hangar.ForeColor = System.Drawing.Color.White
         Me.ComboBox_collectable_Hangar.FormattingEnabled = True
         Me.ComboBox_collectable_Hangar.Items.AddRange(New Object() {"Hangar 1", "Hangar 2", "Hangar 3", "Hangar 4", "Hangar 5", "Hangar 6", "Hangar 7", "Hangar 8", "Hangar 9", "Hangar 10"})
-        Me.ComboBox_collectable_Hangar.Location = New System.Drawing.Point(54, 158)
+        Me.ComboBox_collectable_Hangar.Location = New System.Drawing.Point(58, 214)
         Me.ComboBox_collectable_Hangar.Name = "ComboBox_collectable_Hangar"
         Me.ComboBox_collectable_Hangar.Size = New System.Drawing.Size(134, 21)
         Me.ComboBox_collectable_Hangar.TabIndex = 45
@@ -4442,7 +4432,7 @@ Partial Class Form_Tools
         Me.ComboBox_Base_Hangar.ForeColor = System.Drawing.Color.White
         Me.ComboBox_Base_Hangar.FormattingEnabled = True
         Me.ComboBox_Base_Hangar.Items.AddRange(New Object() {"Hangar 1", "Hangar 2", "Hangar 3", "Hangar 4", "Hangar 5", "Hangar 6", "Hangar 7", "Hangar 8", "Hangar 9", "Hangar 10"})
-        Me.ComboBox_Base_Hangar.Location = New System.Drawing.Point(54, 104)
+        Me.ComboBox_Base_Hangar.Location = New System.Drawing.Point(58, 160)
         Me.ComboBox_Base_Hangar.Name = "ComboBox_Base_Hangar"
         Me.ComboBox_Base_Hangar.Size = New System.Drawing.Size(134, 21)
         Me.ComboBox_Base_Hangar.TabIndex = 44
@@ -4455,7 +4445,7 @@ Partial Class Form_Tools
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(243, 148)
+        Me.Button1.Location = New System.Drawing.Point(247, 204)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(87, 41)
         Me.Button1.TabIndex = 55
@@ -4469,7 +4459,7 @@ Partial Class Form_Tools
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(243, 202)
+        Me.Button3.Location = New System.Drawing.Point(247, 258)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(87, 41)
         Me.Button3.TabIndex = 56
@@ -4483,7 +4473,7 @@ Partial Class Form_Tools
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(243, 96)
+        Me.Button4.Location = New System.Drawing.Point(247, 152)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(87, 39)
         Me.Button4.TabIndex = 57
@@ -4497,12 +4487,38 @@ Partial Class Form_Tools
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(243, 34)
+        Me.Button5.Location = New System.Drawing.Point(40, 111)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(87, 39)
+        Me.Button5.Size = New System.Drawing.Size(149, 24)
         Me.Button5.TabIndex = 58
-        Me.Button5.Text = "Enable Ore_8"
+        Me.Button5.Text = "Collect Palladium"
         Me.Button5.UseVisualStyleBackColor = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'Button_update_hangar
+        '
+        Me.Button_update_hangar.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button_update_hangar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button_update_hangar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_update_hangar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_update_hangar.ForeColor = System.Drawing.Color.White
+        Me.Button_update_hangar.Location = New System.Drawing.Point(40, 81)
+        Me.Button_update_hangar.Name = "Button_update_hangar"
+        Me.Button_update_hangar.Size = New System.Drawing.Size(149, 24)
+        Me.Button_update_hangar.TabIndex = 59
+        Me.Button_update_hangar.Text = "Update Hangar"
+        Me.Button_update_hangar.UseVisualStyleBackColor = False
         '
         'Form_Tools
         '
@@ -4889,4 +4905,5 @@ Partial Class Form_Tools
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button_update_hangar As Button
 End Class
