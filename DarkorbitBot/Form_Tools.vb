@@ -228,7 +228,7 @@ Public Class Form_Tools
         Panel_divers.Visible = False
 
         Button_menu.PerformClick()
-        Size = New Size(497, 412)
+        Size = New Size(550, 412)
 
     End Sub
 
@@ -977,11 +977,13 @@ Public Class Form_Tools
     Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
 
         If Button_suppresor_controler_GGS.Text = "Open Gates Spinner" Then
+            Panel_autospin.Visible = True
             Button_suppresor_controler_GGS.Text = "Close Gates Spinner"
             Size = New Size(689, 705)
 
 
         ElseIf Button_suppresor_controler_GGS.Text = "Close Gates Spinner" Then
+            Panel_autospin.Visible = False
             Button_suppresor_controler_GGS.Text = "Open Gates Spinner"
             Size = New Size(497, 705)
 
@@ -1130,6 +1132,18 @@ Public Class Form_Tools
 
         Palladium_module.Load()
 
+
+    End Sub
+
+    Private Sub CheckBox_Gates_mode_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_Gates_mode.CheckedChanged
+
+        Gates_Redistribution_module_TableLayout_Gates.Load()
+
+    End Sub
+
+    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_Gates.SelectedIndexChanged
+
+        Gates_Redistribution_module_TableLayout_Gates.Load()
 
     End Sub
 End Class

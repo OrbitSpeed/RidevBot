@@ -556,6 +556,7 @@
     <Compile Include="GalaxyGates_module_Gates_name_alpha_id_1.vb" />
     <Compile Include="GalaxyGates_module_Gates_name_beta_id_2.vb" />
     <Compile Include="GalaxyGates_module_Gates_name_gamma_id_3.vb" />
+    <Compile Include="Gates_Redistribution_module_TableLayout_Gates.vb" />
     <Compile Include="Npc_killer_module.vb" />
     <Compile Include="Palladium_module.vb" />
     <Compile Include="Pet_module.vb" />
