@@ -309,7 +309,7 @@ LABEL_BOUCLE:
             PART_CHECKER = 1
         ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "lambda" Then
             PART_CHECKER = 1
-        ElseIf Result_PART_GG = "45 / 46" AndAlso GalaxyGates_Name = "hades" Then
+        ElseIf Result_PART_GG = "45 / 45" AndAlso GalaxyGates_Name = "hades" Then
             PART_CHECKER = 1
         ElseIf Result_PART_GG = "100 / 100" AndAlso GalaxyGates_Name = "Streuner" Then
             PART_CHECKER = 1

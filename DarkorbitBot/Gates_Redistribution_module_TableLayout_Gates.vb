@@ -25,6 +25,7 @@
             Form_Tools.CheckedListBox_Gates.Items.Clear()
             Form_Tools.TableLayoutPanel_Gates.Visible = False
             Form_Tools.TableLayoutPanel_Npc.Visible = True
+            Exit Function
         End If
 
         If Form_Tools.CheckedListBox_Gates.GetItemChecked(1) Then
