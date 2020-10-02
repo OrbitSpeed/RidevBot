@@ -3,6 +3,8 @@ Imports System.Text.RegularExpressions
 
 Public Class Palladium_module
     Public Shared WebClient_POST As New System.Net.WebClient
+    Private Shared txtPattern As Object
+    Private Shared lblResult As Object
 
     Public Shared Function Load()
 
@@ -11,23 +13,38 @@ Public Class Palladium_module
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
-        Dim match As Match = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>")
-        match = match.NextMatch()
+        Dim data = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""")
 
-        '  Dim WebClient_GET_All_elements_Hangar = Regex.Match(WebClient_GET_All_elements, "href="".*?([\s\S]*?)<\/a>").Groups(1)
-        '  Console.WriteLine(WebClient_GET_All_elements_Hangar)
+        Dim data_list = New ArrayList
+        For Each x As Match In data
+            For Each c As Capture In x.Captures
+                Dim SD = ("Index={0}, Value={1}", c.Index, c.Value)
+                Console.WriteLine(SD)
+            Next
+            data_list.Add(x)
 
-        Dim value As String = "href="".*?([\s\S]*?)<\/a>"
-        Dim WebClient_GET_All_elements_Hangar As Match = Regex.Match(WebClient_GET_All_elements, value)
 
-        If (WebClient_GET_All_elements_Hangar.Success) Then
-            Dim key As String = WebClient_GET_All_elements_Hangar.Groups(2).Value
-            Console.WriteLine(key)
-        End If
+
+            Dim Hangar_counter As String = 1
+            Form_Tools.ComboBox_Base_Hangar.Items.Clear()
+            Form_Tools.ComboBox_collectable_Hangar.Items.Clear()
+            Form_Tools.ComboBox_5_3_Hangar.Items.Clear()
+Label_Base:
+            If data_list.Count = Hangar_counter Then
+                Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
+
+            Else
+                Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Hangar_counter = Val(Hangar_counter) + 1
+                GoTo Label_Base
+
+            End If
+
+        Next
 
     End Function
-
-
-
-
 End Class

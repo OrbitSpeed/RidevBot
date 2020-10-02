@@ -212,5 +212,8 @@
     <Setting Name="Use_Changer" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="palladium53" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hangar 1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

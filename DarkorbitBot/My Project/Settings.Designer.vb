@@ -892,6 +892,18 @@ Namespace My
                 Me("Use_Changer") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+        Public Property palladium53() As String
+            Get
+                Return CType(Me("palladium53"),String)
+            End Get
+            Set
+                Me("palladium53") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
