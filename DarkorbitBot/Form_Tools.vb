@@ -59,6 +59,7 @@ Public Class Form_Tools
     Public Shared exitGGS As String = 0
     Public Shared Spintimes As String
     Public Shared GalaxyGatesChecker As String = 0
+    Public Shared WebClient_POST As New WebClient
 
 
     'Private client As FirebaseClient
@@ -1144,6 +1145,19 @@ Public Class Form_Tools
     Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_Gates.SelectedIndexChanged
 
         Gates_Redistribution_module_TableLayout_Gates.Load()
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+        Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
+        Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
+
+        WebClient_POST.Headers.Clear()
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Palladium_module.ID.Value.Replace("href=", "").Replace("""", ""))
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Palladium_module.ID.Value.Replace("href=", "").Replace("""", ""))
+
 
     End Sub
 End Class

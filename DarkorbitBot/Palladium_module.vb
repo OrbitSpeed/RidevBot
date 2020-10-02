@@ -2,9 +2,10 @@
 Imports System.Text.RegularExpressions
 
 Public Class Palladium_module
+    Public Shared ID As Capture
+    Public Shared SD As String
+    Public Shared Contains_Hangar
     Public Shared WebClient_POST As New System.Net.WebClient
-    Private Shared txtPattern As Object
-    Private Shared lblResult As Object
 
     Public Shared Function Load()
 
@@ -16,14 +17,21 @@ Public Class Palladium_module
         Dim data = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""")
 
         Dim data_list = New ArrayList
-        For Each x As Match In data
-            For Each c As Capture In x.Captures
-                Dim SD = ("Index={0}, Value={1}", c.Index, c.Value)
+        For Each Contains_Hangar As Match In data
+            For Each ID In Contains_Hangar.Captures
+                Dim SD = (("ID : ") + (ID.Index.ToString) + " = " + ((ID.Value).Replace("href=", "").Replace("""", "")))
+
+                'ID: 716 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=833067&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+                'ID: 1260 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=852031&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+                'ID: 1720 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=852784&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+                'ID: 2292 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=853823&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+                'ID: 2793 = indexInternal.es?action=internalDock
+                'ID: 3313 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=871545&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+                'ID: 4109 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=2846227&reloadToken=23ccb9b865346d3b628382f0eeb24e81
+
                 Console.WriteLine(SD)
             Next
-            data_list.Add(x)
-
-
+            data_list.Add(Contains_Hangar)
 
             Dim Hangar_counter As String = 1
             Form_Tools.ComboBox_Base_Hangar.Items.Clear()
