@@ -58,6 +58,7 @@ Public Class Form_Tools
     Public Shared GalaxyGatesNumber As String
     Public Shared exitGGS As String = 0
     Public Shared Spintimes As String
+    Public Shared WebClient_GET_All_elements As String
     Public Shared GalaxyGatesChecker As String = 0
     Public Shared WebClient_POST As New WebClient
 
@@ -1152,12 +1153,110 @@ Public Class Form_Tools
 
         Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
         Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
+        Dim Execute_yes As String = 0
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Palladium_module.ID.Value.Replace("href=", "").Replace("""", ""))
-        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Palladium_module.ID.Value.Replace("href=", "").Replace("""", ""))
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
+        Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""").ToString
+        Dim _datatodo_reg = Regex.Matches(_datatodo, " = (.*)").Cast(Of Match)
 
+        'For Each Contains_Hangar As Match In _datatodo_reg.Cast(Of Match)
+        '    For Each ID_ In Contains_Hangar.Captures
+
+        'Console.WriteLine(_datatodo_reg.OfType(Of ValueTuple(Of IndexOutOfRangeException)), _datatodo_reg.Index())
+        'Console.WriteLine(_datatodo_reg.Value(2), _datatodo_reg.Index())
+
+        '    Next
+        'Next
+
+
+
+        'If Get_Type_Hangar = "1" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+
+        'ElseIf Get_Type_Hangar = "2" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 1260 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "3" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 1720 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "4" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 2292 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "5" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 2780 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "6" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 3380 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "7" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 4189 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "8" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "9" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'ElseIf Get_Type_Hangar = "10" Then
+        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
+        '    If WebClient_GET_All_elements.Contains("hangarId") Then
+        '        Execute_yes = 1
+        '    Else
+        '        Execute_yes = 0
+        '    End If
+        'Else
+        '    Console.WriteLine("Out Limit")
+        '    Exit Sub
+        'End If
+
+        'If Execute_yes = 1 Then
+
+        '    Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + WebClient_GET_All_elements)
+        '    Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + WebClient_GET_All_elements)
+
+        'Else Console.WriteLine("Your current Ship is on Hangar : " + Get_Type_Hangar)
+
+        'End If
 
     End Sub
 End Class

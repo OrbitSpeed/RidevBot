@@ -5,6 +5,7 @@ Public Class Palladium_module
     Public Shared ID As Capture
     Public Shared SD As String
     Public Shared Contains_Hangar
+    Public Shared _datatodo
     Public Shared WebClient_POST As New System.Net.WebClient
 
     Public Shared Function Load()
@@ -14,12 +15,12 @@ Public Class Palladium_module
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
-        Dim data = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""")
+        _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""")
 
         Dim data_list = New ArrayList
-        For Each Contains_Hangar As Match In data
+        For Each Contains_Hangar As Match In _datatodo
             For Each ID In Contains_Hangar.Captures
-                Dim SD = (("ID : ") + (ID.Index.ToString) + " = " + ((ID.Value).Replace("href=", "").Replace("""", "")))
+                SD = (("ID : ") + (ID.Index.ToString) + " = " + ((ID.Value).Replace("href=", "").Replace("""", "")))
 
                 'ID: 716 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=833067&reloadToken=23ccb9b865346d3b628382f0eeb24e81
                 'ID: 1260 = indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=852031&reloadToken=23ccb9b865346d3b628382f0eeb24e81
