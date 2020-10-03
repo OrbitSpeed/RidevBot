@@ -1143,7 +1143,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox_Gates.SelectedIndexChanged
+    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs) 
 
         Gates_Redistribution_module_TableLayout_Gates.Load()
 
@@ -1159,8 +1159,12 @@ Public Class Form_Tools
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
-        Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""").ToString
-        Dim _datatodo_reg = Regex.Matches(_datatodo, " = (.*)").Cast(Of Match)
+        Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""".Replace("""", "").Replace("href=", ""))
+        Dim reg As String = ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+        Console.WriteLine(_datatodo.Item(reg))
+        Dim Posting As String = _datatodo.Item(reg).ToString
+        Dim WebClient_Data_posting = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Posting)
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Posting)
 
         'For Each Contains_Hangar As Match In _datatodo_reg.Cast(Of Match)
         '    For Each ID_ In Contains_Hangar.Captures
@@ -1251,8 +1255,6 @@ Public Class Form_Tools
 
         'If Execute_yes = 1 Then
 
-        '    Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + WebClient_GET_All_elements)
-        '    Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + WebClient_GET_All_elements)
 
         'Else Console.WriteLine("Your current Ship is on Hangar : " + Get_Type_Hangar)
 

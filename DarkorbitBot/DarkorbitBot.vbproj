@@ -539,6 +539,7 @@
     </Compile>
     <Compile Include="Dead_module.vb" />
     <Compile Include="Dependency_module.vb" />
+    <Compile Include="Enchere_module.vb" />
     <Compile Include="Form_Msgbox.Designer.vb">
       <DependentUpon>Form_Msgbox.vb</DependentUpon>
     </Compile>
