@@ -1139,13 +1139,13 @@ Public Class Form_Tools
 
     Private Sub CheckBox_Gates_mode_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_Gates_mode.CheckedChanged
 
-        Gates_Redistribution_module_TableLayout_Gates.Load()
+        ' Gates_Redistribution_module_TableLayout_Gates.Load()
 
     End Sub
 
-    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs) 
+    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-        Gates_Redistribution_module_TableLayout_Gates.Load()
+        '  Gates_Redistribution_module_TableLayout_Gates.Load()
 
     End Sub
 

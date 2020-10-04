@@ -641,7 +641,7 @@ LABEL_BOUCLE:
 
         If GalaxyGates_id = 0 Then
             'The GG is not full we go away 
-            Form_Tools.Label1.Select()
+
             Dim data_PG = Color.FromArgb(20, 75, 158)
             Form_Tools.Button_PrepareGates.BackColor = Color.Red
             Await Task.Delay(300)
@@ -664,7 +664,7 @@ LABEL_BOUCLE:
         If Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "gate_already_setup" Then
             'The gate is already on the map
             Console.WriteLine("The gate is already on the map")
-            Form_Tools.Label1.Select()
+
             Dim data_PG = Color.FromArgb(20, 75, 158)
             Form_Tools.Button_PrepareGates.BackColor = Color.Red
             Await Task.Delay(300)
@@ -682,7 +682,7 @@ LABEL_BOUCLE:
         ElseIf Prepare_Gates_Data_Regex.Groups.Item(1).ToString = "not_enough_parts" Then
             'The gate is not full
             Console.WriteLine("The gate is not full")
-            Form_Tools.Label1.Select()
+
             Dim data_PG = Color.FromArgb(20, 75, 158)
             Form_Tools.Button_PrepareGates.BackColor = Color.Red
             Await Task.Delay(300)
@@ -699,7 +699,7 @@ LABEL_BOUCLE:
         Else
             'The gate is full and is placed
             Console.WriteLine("The gate is full and is placed")
-            Form_Tools.Label1.Select()
+
             Dim data_PG = Color.FromArgb(20, 75, 158)
             Form_Tools.Button_PrepareGates.BackColor = Color.LimeGreen
             Await Task.Delay(300)

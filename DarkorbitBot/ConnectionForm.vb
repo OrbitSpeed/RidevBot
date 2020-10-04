@@ -41,13 +41,10 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database() With
             {
-            .NomUtilisateur = TextBox_username.Text,
-            .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils.DateDistant.AddDays(30),
-            .LicenseKey = user_key,
-            .LicenseActivated = False
-            }
-
+            .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
+                 }
 
         Dim setter = client.Set("Users/" + user_key, CurUser)
         Console.WriteLine(setter.Body)
@@ -75,23 +72,21 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-            .NomUtilisateur = TextBox_username.Text,
-            .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
-            .LicenseActivated = False,
-            .LicenseKey = user_key
+                 .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
             }
 
-        If User_Database.IsEqual(resUser, CurUser) Then
-            If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
-                MsgBox("t'as pas payé enculé")
-                Exit Sub
-            End If
+        'If User_Database.IsEqual(resUser, CurUser) Then
+        '    If resUser.ATDS_K4H_TRT2MM2455784BB_TK2.CompareTo(Utils.DateDistant) = -1 Then
+        '        MsgBox("t'as pas payé enculé")
+        '        Exit Sub
+        '    End If
 
-            MsgBox($"Welcome {resUser.NomUtilisateur}")
-        Else
-            MsgBox("Can't find your account, check your credentials")
-        End If
+        'MsgBox($"Welcome {resUser.ATDS_K4H_TRT2MM2455784BB_TK1}")
+        'Else
+        '    MsgBox("Can't find your account, check your credentials")
+        'End If
 
     End Sub
 
@@ -112,20 +107,18 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-            .NomUtilisateur = TextBox_username.Text,
-            .PasswordUtilisateur = TextBox_password.Text,
-            .LicenseEndTime = Utils.DateDistant,
-            .LicenseActivated = False,
-            .LicenseKey = user_key
+                  .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
             }
 
         'If Utilisateur.IsEqual(resUser, CurUser) Then
-        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+        If resUser.ATDS_K4H_TRT2MM2455784BB_TK2.CompareTo(Utils.DateDistant) = -1 Then
             MsgBox("t'as pas payé enculé")
             Exit Sub
         End If
 
-        MsgBox($"Welcome {resUser.NomUtilisateur}")
+        MsgBox($"Welcome {resUser.ATDS_K4H_TRT2MM2455784BB_TK1}")
         'Else
         'MsgBox("Can't find your account, check your credentials")
         'End If
