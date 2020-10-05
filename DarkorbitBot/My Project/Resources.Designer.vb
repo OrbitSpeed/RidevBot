@@ -1510,6 +1510,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à .
+        '''</summary>
+        Friend ReadOnly Property Ridevbot() As String
+            Get
+                Return ResourceManager.GetString("Ridevbot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Byte[].
         '''</summary>
         Friend ReadOnly Property ridevbotuniverse() As Byte()

@@ -41,10 +41,11 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database() With
             {
-            .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
-            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
+            .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(TextBox_username.Text) + AutoUpdater.B
                  }
+        AutoUpdater.Hashing()
+        '.ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+        '.ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
 
         Dim setter = client.Set("Users/" + user_key, CurUser)
         Console.WriteLine(setter.Body)
@@ -72,11 +73,12 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-                 .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
-            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
+                 .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(TextBox_username.Text) + AutoUpdater.B
             }
-
+        AutoUpdater.Hashing()
+        ',
+        '            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+        '            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
         'If User_Database.IsEqual(resUser, CurUser) Then
         '    If resUser.ATDS_K4H_TRT2MM2455784BB_TK2.CompareTo(Utils.DateDistant) = -1 Then
         '        MsgBox("t'as pas payé enculé")
@@ -107,11 +109,12 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-                  .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
-            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
+                  .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(TextBox_username.Text) + AutoUpdater.B
             }
-
+        AutoUpdater.Hashing()
+        ',
+        '            .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
+        '            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
         'If Utilisateur.IsEqual(resUser, CurUser) Then
         If resUser.ATDS_K4H_TRT2MM2455784BB_TK2.CompareTo(Utils.DateDistant) = -1 Then
             MsgBox("t'as pas payé enculé")

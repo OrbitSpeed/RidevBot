@@ -20,7 +20,14 @@ Public Class AutoUpdater
     Public LastChangeLog As String
     Public Check_Maintenance As Boolean
 
+    Public Shared A
+    Public Shared B
+
+
     Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Hashing()
+
         Me.Size = New Size(363, 264)
 
         For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
@@ -83,7 +90,53 @@ Public Class AutoUpdater
         End If
 
     End Sub
+    Public Shared Function Hashing()
 
+        Dim Number_Hash As New Integer
+        Dim Number_Past As New Integer
+        Dim Number_secure As New Integer
+        Dim Number_clone As New Integer
+        Dim Number_front_end As New Integer
+        Dim Number_Key_front As New Integer
+
+        Dim N1 As Integer
+        Dim randomN1 As New Random
+        Dim N2 As Integer
+        Dim randomN2 As New Random
+        Dim N3 As Integer
+        Dim randomN3 As New Random
+        Dim N4 As Integer
+        Dim randomN4 As New Random
+        Dim N5 As Integer
+        Dim randomN5 As New Random
+        Dim N6 As Integer
+        Dim randomN6 As New Random
+
+        Dim alphabet As String = "abcdefghijklmnopqrstuvwxyz"
+
+        Number_Hash = CInt(Int((98 * Rnd()) + 41))
+        Number_Past = CInt(Int((41 * Rnd()) + 11))
+        Number_secure = CInt(Int((98 * Rnd()) + 39))
+        Number_clone = CInt(Int((39 * Rnd()) + 11))
+        Number_front_end = CInt(Int((75 * Rnd()) + 56))
+        Number_Key_front = CInt(Int((56 * Rnd()) + 11))
+
+
+        N1 = randomN1.Next(0, 11)
+        N2 = randomN2.Next(11, 25)
+        N3 = randomN3.Next(0, 20)
+        N4 = randomN4.Next(20, 25)
+        N5 = randomN5.Next(0, 7)
+        N6 = randomN6.Next(7, 25)
+
+        A = (Number_Hash.ToString + alphabet.Substring(N1, 1).ToString + Number_Past.ToString + alphabet.Substring(N2, 1).ToString + Number_secure.ToString + alphabet.Substring(N3, 1).ToString)
+        Console.WriteLine(A)
+        B = (alphabet.Substring(N3, 1).ToString + Number_Hash.ToString + alphabet.Substring(N4, 1).ToString)
+        Console.WriteLine(B)
+
+        'past key
+
+    End Function
     Private Async Sub WC_Download_AutoIt_DownloadFileAsyncCompleted(sender As Object, e As AsyncCompletedEventArgs)
 
         Try
