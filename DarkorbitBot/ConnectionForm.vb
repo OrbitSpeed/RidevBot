@@ -41,9 +41,9 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database() With
             {
-            .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+            .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
             .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
+            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
                  }
 
         Dim setter = client.Set("Users/" + user_key, CurUser)
@@ -72,9 +72,9 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-                 .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+                 .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
             .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
+            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
             }
 
         'If User_Database.IsEqual(resUser, CurUser) Then
@@ -107,9 +107,9 @@ Public Class ConnectionForm
 
         Dim CurUser As New User_Database With
             {
-                  .ATDS_K4H_TRT2MM2455784BB_TK1 = Utils.getSHA1Hash(TextBox_username.Text),
+                  .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_username.Text),
             .ATDS_K4H_TRT2MM2455784BB_TK2 = Utils.getSHA1Hash(Utils.DateDistant.AddDays(30)),
-            .ATDS_K4H_TRT2MM2455784BB_TK3 = Utils.getSHA1Hash(user_key)
+            .ATDGS_TK_PASSWORD185424175724557HSDJ1 = Utils.getSHA1Hash(user_key)
             }
 
         'If Utilisateur.IsEqual(resUser, CurUser) Then
@@ -118,7 +118,7 @@ Public Class ConnectionForm
             Exit Sub
         End If
 
-        MsgBox($"Welcome {resUser.ATDS_K4H_TRT2MM2455784BB_TK1}")
+        MsgBox($"Welcome {resUser.GFH51DFGTK_1855577GH7_54SDQAVV}")
         'Else
         'MsgBox("Can't find your account, check your credentials")
         'End If

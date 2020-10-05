@@ -98,6 +98,7 @@ Partial Class Form_Startup
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Timer_Flashing = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox_License_Flashing = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PanelConnection.SuspendLayout()
         CType(Me.PictureBox_PasswordHider, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,6 +193,7 @@ Partial Class Form_Startup
         'PanelConnection
         '
         Me.PanelConnection.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.PanelConnection.Controls.Add(Me.Button1)
         Me.PanelConnection.Controls.Add(Me.SID_Login_Button)
         Me.PanelConnection.Controls.Add(Me.PictureBox_PasswordHider)
         Me.PanelConnection.Controls.Add(Me.Button_Load)
@@ -1138,6 +1140,20 @@ Partial Class Form_Startup
         Me.PictureBox_License_Flashing.TabStop = False
         Me.PictureBox_License_Flashing.Tag = "false"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(0, 110)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 31)
+        Me.Button1.TabIndex = 59
+        Me.Button1.Text = "SID login"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Form_Startup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1284,4 +1300,5 @@ Partial Class Form_Startup
     Friend WithEvents Button_Profil2_Load As Button
     Friend WithEvents PictureBox_License_Flashing As PictureBox
     Friend WithEvents Timer_Flashing As Timer
+    Friend WithEvents Button1 As Button
 End Class
