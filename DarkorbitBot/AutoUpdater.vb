@@ -26,7 +26,6 @@ Public Class AutoUpdater
 
     Private Sub AutoUpdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Hashing()
 
         Me.Size = New Size(363, 264)
 
@@ -92,12 +91,12 @@ Public Class AutoUpdater
     End Sub
     Public Shared Function Hashing()
 
-        Dim Number_Hash As New Integer
-        Dim Number_Past As New Integer
-        Dim Number_secure As New Integer
-        Dim Number_clone As New Integer
-        Dim Number_front_end As New Integer
-        Dim Number_Key_front As New Integer
+        Dim Number_Hash As Integer
+        Dim Number_Past As Integer
+        Dim Number_secure As Integer
+        Dim Number_clone As Integer
+        Dim Number_front_end As Integer
+        Dim Number_Key_front As Integer
 
         Dim N1 As Integer
         Dim randomN1 As New Random
@@ -114,12 +113,12 @@ Public Class AutoUpdater
 
         Dim alphabet As String = "abcdefghijklmnopqrstuvwxyz"
 
-        Number_Hash = CInt(Int((98 * Rnd()) + 41))
-        Number_Past = CInt(Int((41 * Rnd()) + 11))
-        Number_secure = CInt(Int((98 * Rnd()) + 39))
-        Number_clone = CInt(Int((39 * Rnd()) + 11))
-        Number_front_end = CInt(Int((75 * Rnd()) + 56))
-        Number_Key_front = CInt(Int((56 * Rnd()) + 11))
+        Number_Hash = CInt(Int((0 * Rnd()) + 3))
+        Number_Past = CInt(Int((3 * Rnd()) + 6))
+        Number_secure = CInt(Int((6 * Rnd()) + 9))
+        Number_clone = CInt(Int((0 * Rnd()) + 9))
+        Number_front_end = CInt(Int((3 * Rnd()) + 6))
+        Number_Key_front = CInt(Int((0 * Rnd()) + 3))
 
 
         N1 = randomN1.Next(0, 11)

@@ -2531,7 +2531,7 @@ Public Class Form_Game
 #End Region ' VALIDER
 #Region "MAP = 4-5 ---------- "
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "MMO" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
                         (Map_roaming = "1-1" Or
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
@@ -2547,7 +2547,7 @@ Public Class Form_Game
                          Map_roaming = "1-BL") Then
                     PORTAIL_45_to_15()
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "EIC" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
                         (Map_roaming = "2-1" Or
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
@@ -2563,7 +2563,7 @@ Public Class Form_Game
                          Map_roaming = "2-BL") Then
                     PORTAIL_45_to_25()
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "VRU" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
                         (Map_roaming = "1-1" Or
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
@@ -2579,15 +2579,15 @@ Public Class Form_Game
                         Map_roaming = "3-BL") Then
                     PORTAIL_45_to_35()
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "MMO" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
                         (Map_roaming = "5-1") Then
                     PORTAIL_45_to_51_MMO()
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "EIC" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
                         (Map_roaming = "5-1") Then
                     PORTAIL_45_to_51_EIC()
 
-                ElseIf Map_actuelle = "4-5" And Form_Tools.ComboBox_firme.Text = "VRU" And
+                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
                         (Map_roaming = "5-1") Then
                     PORTAIL_45_to_51_VRU()
 
@@ -2620,21 +2620,21 @@ Public Class Form_Game
 
                     ' If mmo pour savoir par quel portail allez pour la 4-5
 
-                ElseIf Map_actuelle = "4-4" And Form_Tools.ComboBox_firme.Text = "MMO" And
+                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
                         (Map_roaming = "4-5" Or
                         Map_roaming = "5-1" Or
                         Map_roaming = "5-2" Or
                         Map_roaming = "5-3") Then
                     PORTAIL_44_to_15()
 
-                ElseIf Map_actuelle = "4-4" And Form_Tools.ComboBox_firme.Text = "EIC" And
+                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
                         (Map_roaming = "4-5" Or
                         Map_roaming = "5-1" Or
                         Map_roaming = "5-2" Or
                         Map_roaming = "5-3") Then
                     PORTAIL_44_to_25()
 
-                ElseIf Map_actuelle = "4-4" And Form_Tools.ComboBox_firme.Text = "VRU" And
+                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
                         (Map_roaming = "4-5" Or
                         Map_roaming = "5-1" Or
                         Map_roaming = "5-2" Or

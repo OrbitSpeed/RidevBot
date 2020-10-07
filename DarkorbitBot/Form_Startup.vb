@@ -23,6 +23,11 @@ Public Class Form_Startup
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        Form_Tools.Button_revive_sid.Enabled = False
+        '   User_Database.Load()
+
         Label_Title.Text = "RidevBot v" + Application.ProductVersion
         client = New FirebaseClient(fcon)
 
@@ -571,29 +576,30 @@ Public Class Form_Startup
 
         Dim CurUser As New User_Database With
             {
-            .GFH51DFGTK_1855577GH7_54SDQAVV = Utils.getSHA1Hash(TextBox_license_username.Text + 10)
+            .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(Textbox_Username.Text) + AutoUpdater.B
                     }
         '
-        If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            '--
+        'If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
+        '    'Picturebox image
+        '    PictureBox_license_check.Image = My.Resources.error_icon
+        '    PictureBox_license_check.Tag = False
+        '    '--
 
-            'Les bouttons
-            Button_Load.Enabled = False
-            Button_SID_Load.Enabled = False
-            Button_Profil1_Load.Enabled = False
-            Button_Profil2_Load.Enabled = False
-            Button_Profil3_Load.Enabled = False
+        '    'Les bouttons
+        '    Button_Load.Enabled = False
+        '    Button_SID_Load.Enabled = False
+        '    Button_Profil1_Load.Enabled = False
+        '    Button_Profil2_Load.Enabled = False
+        '    Button_Profil3_Load.Enabled = False
 
-            MessageBox.Show("You didn't pay the license, DM a dev if you think it's an error.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
+        '    MessageBox.Show("You didn't pay the license, DM a dev if you think it's an error.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
+        'End If
 
-        Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
+        'Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
 
-        If Not resUser.NomUtilisateur = Textbox_Username.Text Then
+
+        If Not Utils.getSHA1Hash(Textbox_Username.Text) = Textbox_Username.Text Then
             'Pas le bon compte, on bloque tout
 
             'Picturebox image
@@ -645,15 +651,18 @@ Public Class Form_Startup
             Exit Sub
         End If
 
+        AutoUpdater.Hashing()
+        Dim test2 = Utils.getSHA1Hash(AutoUpdater.A) + Utils.getSHA1Hash(Textbox_Username.Text) + Utils.getSHA1Hash(AutoUpdater.B)
+        Console.WriteLine(test2)
 
         Dim CurUser As New User_Database With
             {
-            .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(Textbox_Username.Text) + AutoUpdater.B
+            .GFH51DFGTK_1855577GH7_54SDQAVV = test2
                     }
-        AutoUpdater.Hashing()
 
-        Dim setter = client.Set("Users/" + user_key, CurUser)
+        Dim setter = client.Set("Users/" + AutoUpdater.A + Utils.getSHA1Hash(Textbox_Username.Text) + AutoUpdater.B, CurUser)
         MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
     End Sub
 
 
@@ -679,6 +688,48 @@ Public Class Form_Startup
     Private Sub Button1_Click(sender As Object, e As EventArgs)
 
         User_Database.Load()
+
+    End Sub
+
+    Private Sub Button_provisoire_Click(sender As Object, e As EventArgs) Handles Button_provisoire.Click
+
+        ' PROVISOIRE 
+
+        If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
+            ProfilSelected = 1
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text Then
+            ProfilSelected = 2
+
+        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
+            ProfilSelected = 3
+
+        End If
+
+        If ProfilSelected = 1 Then
+            Form_Tools.ComboBox_autologin.Text = "Profil 1"
+            Launcher()
+
+        ElseIf ProfilSelected = 2 Then
+            Form_Tools.ComboBox_autologin.Text = "Profil 2"
+            Launcher()
+
+        ElseIf ProfilSelected = 3 Then
+            Form_Tools.ComboBox_autologin.Text = "Profil 3"
+            Launcher()
+
+        Else Form_Tools.ComboBox_autologin.Text = "Current"
+            Launcher()
+
+        End If
+
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+
+    End Sub
+
+    Private Sub Form_Startup_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        Form_Tools.Button_revive_sid.Enabled = True
 
     End Sub
 

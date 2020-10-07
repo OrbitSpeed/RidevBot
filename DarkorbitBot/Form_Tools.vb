@@ -154,22 +154,25 @@ Public Class Form_Tools
 
 
         Calculator = 1
-        Panel_autospin.Location = New Point(495, 24)
-        Panel_palladium_palladium.Location = New Point(0, 24)
-        panel_npc_npc.Location = New Point(0, 24)
-        Panel_collectable.Location = New Point(0, 24)
-        Panel_general.Location = New Point(0, 24)
-        Panel_Npc.Location = New Point(0, 24)
-        Panel_collector.Location = New Point(0, 24)
-        Panel_GalaxyGates.Location = New Point(0, 24)
-        Panel_Palladium.Location = New Point(0, 24)
-        Panel_stats.Location = New Point(0, 24)
-        Panel_rex.Location = New Point(0, 24)
-        Panel_divers.Location = New Point(0, 24)
+        Panel_autospin.Location = New Point(495, 28)
+        Panel_palladium_palladium.Location = New Point(0, 28)
+        panel_npc_npc.Location = New Point(0, 28)
+        Panel_collectable.Location = New Point(0, 28)
+        General_General_BOX.Location = New Point(0, 28)
+        Configuration_General_BOX.Location = New Point(0, 28)
+        Log_General_BOX.Location = New Point(0, 28)
+        Panel_GalaxyGates.Location = New Point(0, 28)
+        Panel_Palladium.Location = New Point(0, 28)
+        Panel_stats.Location = New Point(0, 28)
+        Panel_rex.Location = New Point(0, 28)
+        Divers_General_BOX.Location = New Point(0, 28)
+        Bot_Settings_BOX.Location = New Point(0, 52)
+        General_BOX.Location = New Point(0, 52)
+        Stats_BOX.Location = New Point(0, 52)
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
-        Size = New Size(497, 412)
+        Size = New Size(691, 436)
         CenterToScreen()
         'Try
         '    client = New FirebaseClient(fcon)
@@ -201,16 +204,15 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = True
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -220,16 +222,15 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = True
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(550, 412)
 
     End Sub
@@ -239,74 +240,49 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = True
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
 
-    Private Sub General_button_Click(sender As Object, e As EventArgs) Handles General_button.Click
+    Private Sub button_general_Click(sender As Object, e As EventArgs) Handles button_menu.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_general.Visible = True
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        General_General_BOX.Visible = True
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
-        Size = New Size(497, 412)
+        Size = New Size(691, 436)
 
     End Sub
 
-    Private Sub NPC_Button_Click(sender As Object, e As EventArgs) Handles NPC_Button.Click
+    Private Sub button_configuration_Click(sender As Object, e As EventArgs) Handles button_configuration.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = True
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = True
+        Log_General_BOX.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
-        Size = New Size(497, 600)
+        Size = New Size(691, 436)
 
     End Sub
 
-    Private Sub Collector_Button_Click(sender As Object, e As EventArgs) Handles LogUpdate_button.Click
+    Private Sub button_log_Click(sender As Object, e As EventArgs) Handles button_log.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = True
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = True
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
-        Size = New Size(497, 412)
+        Size = New Size(691, 436)
 
     End Sub
 
@@ -315,37 +291,35 @@ Public Class Form_Tools
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Panel_general.Visible = True
+            General_General_BOX.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
-            Panel_Npc.Visible = False
-            Panel_collector.Visible = False
+            Configuration_General_BOX.Visible = False
+            Log_General_BOX.Visible = False
             Panel_GalaxyGates.Visible = False
             Panel_Palladium.Visible = False
             Panel_stats.Visible = False
             Panel_rex.Visible = False
-            Panel_divers.Visible = False
+            Divers_General_BOX.Visible = False
 
-            Button_menu.PerformClick()
             Size = New Size(497, 412)
         Else
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
-            Panel_general.Visible = False
-            Panel_Npc.Visible = False
-            Panel_collector.Visible = False
+            General_General_BOX.Visible = False
+            Configuration_General_BOX.Visible = False
+            Log_General_BOX.Visible = False
             Panel_Palladium.Visible = False
             Panel_stats.Visible = False
             Panel_rex.Visible = False
-            Panel_divers.Visible = False
+            Divers_General_BOX.Visible = False
             Panel_GalaxyGates.Visible = True
 
             Size = New Size(689, 705)
             Button_suppresor_controler_GGS.Text = Button_suppresor_controler_GGS.Text.Replace("Open", "Close")
 
-            Button_menu.PerformClick()
             TextBox_uridiumGGS.Text = Utils.currentUridium
 
             CenterToScreen()
@@ -361,16 +335,15 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = True
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -381,19 +354,18 @@ Public Class Form_Tools
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Panel_general.Visible = True
+            General_General_BOX.Visible = True
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
-            Panel_Npc.Visible = False
-            Panel_collector.Visible = False
+            Configuration_General_BOX.Visible = False
+            Log_General_BOX.Visible = False
             Panel_GalaxyGates.Visible = False
             Panel_Palladium.Visible = False
             Panel_stats.Visible = False
             Panel_rex.Visible = False
-            Panel_divers.Visible = False
+            Divers_General_BOX.Visible = False
 
-            Button_menu.PerformClick()
             Size = New Size(497, 412)
 
         Else
@@ -401,16 +373,15 @@ Public Class Form_Tools
             Panel_palladium_palladium.Visible = False
             panel_npc_npc.Visible = False
             Panel_collectable.Visible = False
-            Panel_general.Visible = False
-            Panel_Npc.Visible = False
-            Panel_collector.Visible = False
+            General_General_BOX.Visible = False
+            Configuration_General_BOX.Visible = False
+            Log_General_BOX.Visible = False
             Panel_GalaxyGates.Visible = False
             Panel_Palladium.Visible = False
             Panel_stats.Visible = True
             Panel_rex.Visible = False
-            Panel_divers.Visible = False
+            Divers_General_BOX.Visible = False
 
-            Button_menu.PerformClick()
             Size = New Size(497, 412)
 
         End If
@@ -422,56 +393,47 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = True
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
 
-    Private Sub Divers_Button_Click(sender As Object, e As EventArgs) Handles Divers_Button.Click
+    Private Sub button_divers_Click(sender As Object, e As EventArgs) Handles button_divers.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Panel_divers.Visible = True
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
+        Divers_General_BOX.Visible = True
 
-        Button_menu.PerformClick()
-        Size = New Size(497, 412)
+        Size = New Size(691, 436)
 
     End Sub
 
-    Private Sub Button_OpenLoginPanel_Click(sender As Object, e As EventArgs) Handles Button_OpenLoginPanel.Click
+    Private Sub button_changeAcc_Click(sender As Object, e As EventArgs) Handles button_changeAcc.Click
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Form_Startup.CheckedStats = 1
-        Me.Visible = False
+
+        button_menu.PerformClick()
         Form_Startup.Show()
 
     End Sub
@@ -480,34 +442,32 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
-    Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles Button_How_use.Click
+    Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles button_How_use.Click
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        Panel_general.Visible = False
-        Panel_Npc.Visible = False
-        Panel_collector.Visible = False
+        General_General_BOX.Visible = False
+        Configuration_General_BOX.Visible = False
+        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
         Panel_Palladium.Visible = False
         Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Panel_divers.Visible = False
+        Divers_General_BOX.Visible = False
 
-        Button_menu.PerformClick()
         Size = New Size(497, 412)
 
     End Sub
@@ -929,14 +889,11 @@ Public Class Form_Tools
                 End Select
 
                 Utils.UpdateStats()
-                GalaxyGates_module.WebClient_POST.Headers.Clear()
-                GalaxyGates_module.WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-                ' changeFirm_myFirm_name
+                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-                '  WebBrowser_Synchronisation.Navigate("about:blank")
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
                     Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
@@ -947,6 +904,8 @@ Public Class Form_Tools
             End If
 
         End If
+
+
 
     End Sub ' !!!!! A VERIFIER ET A OPTIMISER !!!
 
@@ -1085,20 +1044,6 @@ Public Class Form_Tools
         'MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
     End Sub
 
-    Private Sub Button_menu_Click(sender As Object, e As EventArgs) Handles Button_menu.Click
-
-        'Button_suppresor_controler.PerformClick()
-
-        If Button_menu.Tag = "true" Then
-            Panel_suppresor_controler.Size = New Size(125, 407)
-            Button_menu.Tag = "false"
-        Else
-            Panel_suppresor_controler.Size = New Size(125, 24)
-            Button_menu.Tag = "true"
-        End If
-
-    End Sub
-
     Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs)
 
     End Sub
@@ -1137,7 +1082,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox_Gates_mode_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_Gates_mode.CheckedChanged
+    Private Sub CheckBox_Gates_mode_CheckedChanged(sender As Object, e As EventArgs)
 
         ' Gates_Redistribution_module_TableLayout_Gates.Load()
 
@@ -1259,6 +1204,16 @@ Public Class Form_Tools
         'Else Console.WriteLine("Your current Ship is on Hangar : " + Get_Type_Hangar)
 
         'End If
+
+    End Sub
+
+    Private Sub Button_BOX_general_Click(sender As Object, e As EventArgs) Handles Button_BOX_general.Click
+
+        General_BOX.Visible = True
+        Stats_BOX.Visible = False
+        Bot_Settings_BOX.Visible = False
+        button_menu.PerformClick()
+
 
     End Sub
 End Class
