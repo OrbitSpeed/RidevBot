@@ -20,6 +20,10 @@ Public Class Stats_module
 
     Public Shared WebClient_POST As New System.Net.WebClient
 
+    Public Shared Function Nothing_debug()
+    End Function
+
+
     Public Shared Function Load()
 
         WebClient_POST.Headers.Clear()

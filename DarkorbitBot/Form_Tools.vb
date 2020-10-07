@@ -154,7 +154,7 @@ Public Class Form_Tools
 
 
         Calculator = 1
-        Panel_autospin.Location = New Point(495, 28)
+        Panel_autospin.Location = New Point(499, 28)
         Panel_palladium_palladium.Location = New Point(0, 28)
         panel_npc_npc.Location = New Point(0, 28)
         Panel_collectable.Location = New Point(0, 28)
@@ -162,7 +162,7 @@ Public Class Form_Tools
         Configuration_General_BOX.Location = New Point(0, 28)
         Log_General_BOX.Location = New Point(0, 28)
         Panel_GalaxyGates.Location = New Point(0, 28)
-        Panel_Palladium.Location = New Point(0, 28)
+        panel_enchere.Location = New Point(0, 28)
         Panel_stats.Location = New Point(0, 28)
         Panel_rex.Location = New Point(0, 28)
         Divers_General_BOX.Location = New Point(0, 28)
@@ -199,57 +199,44 @@ Public Class Form_Tools
     End Sub ' fermeture de la form par appel ( form )
 
 #Region "Button toolbar"
-    Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles Button_palladium_toolbar.Click
+    Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles button_palladium.Click
 
         Panel_palladium_palladium.Visible = True
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
-
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+        Panel_autospin.Visible = False
     End Sub
 
-    Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles Button_npc_toolbar.Click
+    Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles button_npc.Click
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = True
         Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(550, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+        Panel_autospin.Visible = False
 
     End Sub
 
-    Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles Button_collectable_toolbar.Click
+    Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles button_box.Click
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = True
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+        Panel_autospin.Visible = False
 
     End Sub
 
@@ -260,7 +247,8 @@ Public Class Form_Tools
         Log_General_BOX.Visible = False
         Divers_General_BOX.Visible = False
 
-        Size = New Size(691, 436)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 
@@ -271,7 +259,8 @@ Public Class Form_Tools
         Log_General_BOX.Visible = False
         Divers_General_BOX.Visible = False
 
-        Size = New Size(691, 436)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 
@@ -282,47 +271,19 @@ Public Class Form_Tools
         Log_General_BOX.Visible = True
         Divers_General_BOX.Visible = False
 
-        Size = New Size(691, 436)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 
-    Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles GalaxyGates_Button.Click
+    Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles button_gates_spinner.Click
 
         If Utils.server = "" Then
             MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            General_General_BOX.Visible = True
-            Panel_palladium_palladium.Visible = False
-            panel_npc_npc.Visible = False
-            Panel_collectable.Visible = False
-            Configuration_General_BOX.Visible = False
-            Log_General_BOX.Visible = False
-            Panel_GalaxyGates.Visible = False
-            Panel_Palladium.Visible = False
-            Panel_stats.Visible = False
-            Panel_rex.Visible = False
-            Divers_General_BOX.Visible = False
+            Button_BOX_general.PerformClick()
 
-            Size = New Size(497, 412)
         Else
-            Panel_palladium_palladium.Visible = False
-            panel_npc_npc.Visible = False
-            Panel_collectable.Visible = False
-            General_General_BOX.Visible = False
-            Configuration_General_BOX.Visible = False
-            Log_General_BOX.Visible = False
-            Panel_Palladium.Visible = False
-            Panel_stats.Visible = False
-            Panel_rex.Visible = False
-            Divers_General_BOX.Visible = False
-            Panel_GalaxyGates.Visible = True
-
-            Size = New Size(689, 705)
-            Button_suppresor_controler_GGS.Text = Button_suppresor_controler_GGS.Text.Replace("Open", "Close")
-
-            TextBox_uridiumGGS.Text = Utils.currentUridium
-
-            CenterToScreen()
 
             GalaxyGates_module.Load()
 
@@ -330,79 +291,47 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles Pirates_Button.Click
+    Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles button_bid.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = True
+        panel_enchere.Visible = True
         Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 
-    Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles Stats_Button.Click
+    Private Sub Stats_Button_Click(sender As Object, e As EventArgs) Handles button_stats.Click
 
         If Utils.server = "" Then
 
             MessageBox.Show("You must first login To the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            General_General_BOX.Visible = True
-            Panel_palladium_palladium.Visible = False
-            panel_npc_npc.Visible = False
-            Panel_collectable.Visible = False
-            Configuration_General_BOX.Visible = False
-            Log_General_BOX.Visible = False
-            Panel_GalaxyGates.Visible = False
-            Panel_Palladium.Visible = False
-            Panel_stats.Visible = False
-            Panel_rex.Visible = False
-            Divers_General_BOX.Visible = False
-
-            Size = New Size(497, 412)
+            Button_BOX_general.PerformClick()
 
         Else
 
-            Panel_palladium_palladium.Visible = False
-            panel_npc_npc.Visible = False
-            Panel_collectable.Visible = False
-            General_General_BOX.Visible = False
-            Configuration_General_BOX.Visible = False
-            Log_General_BOX.Visible = False
-            Panel_GalaxyGates.Visible = False
-            Panel_Palladium.Visible = False
+            panel_enchere.Visible = False
             Panel_stats.Visible = True
-            Panel_rex.Visible = False
-            Divers_General_BOX.Visible = False
 
-            Size = New Size(497, 412)
+            Size = New Size(687, 436)
+            Bot_Settings_BOX.Size = New Size(687, 384)
 
         End If
 
     End Sub
 
-    Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles Rex_Button.Click
+    Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles button_pet.Click
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = True
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+        Panel_autospin.Visible = False
 
     End Sub
 
@@ -413,45 +342,28 @@ Public Class Form_Tools
         Log_General_BOX.Visible = False
         Divers_General_BOX.Visible = True
 
-        Size = New Size(691, 436)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 
     Private Sub button_changeAcc_Click(sender As Object, e As EventArgs) Handles button_changeAcc.Click
 
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
-        Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
-
         Form_Startup.CheckedStats = 1
-
-        button_menu.PerformClick()
         Form_Startup.Show()
+        button_menu.PerformClick()
 
     End Sub
-    Private Sub Button_license_Click(sender As Object, e As EventArgs) Handles Button_license.Click
+    Private Sub Button_license_Click(sender As Object, e As EventArgs)
 
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
     Private Sub Button_How_use_Click(sender As Object, e As EventArgs) Handles button_How_use.Click
@@ -459,16 +371,11 @@ Public Class Form_Tools
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
-        General_General_BOX.Visible = False
-        Configuration_General_BOX.Visible = False
-        Log_General_BOX.Visible = False
         Panel_GalaxyGates.Visible = False
-        Panel_Palladium.Visible = False
-        Panel_stats.Visible = False
         Panel_rex.Visible = False
-        Divers_General_BOX.Visible = False
 
-        Size = New Size(497, 412)
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
 
     End Sub
 #End Region ' Ici se trouve tout les bouttons de la toolbar
@@ -492,6 +399,10 @@ Public Class Form_Tools
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
         Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
+        End If
+
+        If Stats_module.WebClient_GET_Ship_compagny_reg = Nothing Then
+            Stats_module.Load()
         End If
 
 
@@ -674,16 +585,7 @@ Public Class Form_Tools
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
-
         Stats_module.Load()
-
-        'Reader = 1
-        'Utils_module.checkStats = True
-        'BackPage_Form.ShowIcon = False
-        'BackPage_Form.ShowInTaskbar = False
-        'BackPage_Form.Show()
-        'BackPage_Form.WindowState = FormWindowState.Minimized
-        'BackPage_Form.WebBrowser1.Navigate("https://" + Utils_module.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
     End Sub ' ici on refresh les stats du panel STATS !
 
@@ -889,10 +791,11 @@ Public Class Form_Tools
                 End Select
 
                 Utils.UpdateStats()
-                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+
+                WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
@@ -934,23 +837,6 @@ Public Class Form_Tools
 
 
     End Sub ' Start Bot
-
-    Private Sub Button_suppresor_controler_GGS_Click(sender As Object, e As EventArgs) Handles Button_suppresor_controler_GGS.Click
-
-        If Button_suppresor_controler_GGS.Text = "Open Gates Spinner" Then
-            Panel_autospin.Visible = True
-            Button_suppresor_controler_GGS.Text = "Close Gates Spinner"
-            Size = New Size(689, 705)
-
-
-        ElseIf Button_suppresor_controler_GGS.Text = "Close Gates Spinner" Then
-            Panel_autospin.Visible = False
-            Button_suppresor_controler_GGS.Text = "Open Gates Spinner"
-            Size = New Size(497, 705)
-
-        End If
-
-    End Sub  ' Supressor controler INBAR GGS
 
     Private Sub Button_license_verify_Click(sender As Object, e As EventArgs)
         'If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
@@ -1111,100 +997,6 @@ Public Class Form_Tools
         Dim WebClient_Data_posting = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Posting)
         Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Posting)
 
-        'For Each Contains_Hangar As Match In _datatodo_reg.Cast(Of Match)
-        '    For Each ID_ In Contains_Hangar.Captures
-
-        'Console.WriteLine(_datatodo_reg.OfType(Of ValueTuple(Of IndexOutOfRangeException)), _datatodo_reg.Index())
-        'Console.WriteLine(_datatodo_reg.Value(2), _datatodo_reg.Index())
-
-        '    Next
-        'Next
-
-
-
-        'If Get_Type_Hangar = "1" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-
-        'ElseIf Get_Type_Hangar = "2" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 1260 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "3" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 1720 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "4" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 2292 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "5" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 2780 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "6" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 3380 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "7" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 4189 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "8" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "9" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'ElseIf Get_Type_Hangar = "10" Then
-        '    WebClient_GET_All_elements = Regex.Match(Palladium_module.SD, "ID : 716 = (.*)").Groups.Item(1).ToString
-        '    If WebClient_GET_All_elements.Contains("hangarId") Then
-        '        Execute_yes = 1
-        '    Else
-        '        Execute_yes = 0
-        '    End If
-        'Else
-        '    Console.WriteLine("Out Limit")
-        '    Exit Sub
-        'End If
-
-        'If Execute_yes = 1 Then
-
-
-        'Else Console.WriteLine("Your current Ship is on Hangar : " + Get_Type_Hangar)
-
-        'End If
-
     End Sub
 
     Private Sub Button_BOX_general_Click(sender As Object, e As EventArgs) Handles Button_BOX_general.Click
@@ -1214,6 +1006,28 @@ Public Class Form_Tools
         Bot_Settings_BOX.Visible = False
         button_menu.PerformClick()
 
+    End Sub
+
+    Private Sub Button_BOX_stats_Click(sender As Object, e As EventArgs) Handles Button_BOX_stats.Click
+
+
+        General_BOX.Visible = False
+        Stats_BOX.Visible = True
+        Bot_Settings_BOX.Visible = False
+        button_stats.PerformClick()
+
+    End Sub
+
+    Private Sub Button_BOX_botsettings_Click(sender As Object, e As EventArgs) Handles Button_BOX_botsettings.Click
+
+        General_BOX.Visible = False
+        Stats_BOX.Visible = False
+        Bot_Settings_BOX.Visible = True
+        button_pet.PerformClick()
+
+    End Sub
+
+    Private Sub button_gates_task_Click(sender As Object, e As EventArgs) Handles button_gates_task.Click
 
     End Sub
 End Class

@@ -33,6 +33,17 @@ Public Class GalaxyGates_module
 
     Public Shared Sub Load()
 
+        Form_Tools.Panel_palladium_palladium.Visible = False
+        Form_Tools.panel_npc_npc.Visible = False
+        Form_Tools.Panel_collectable.Visible = False
+        Form_Tools.Panel_rex.Visible = False
+        Form_Tools.Panel_GalaxyGates.Visible = True
+        Form_Tools.Size = New Size(687, 730)
+        Form_Tools.Bot_Settings_BOX.Size = New Size(687, 730)
+        Form_Tools.Panel_autospin.Visible = True
+        Form_Tools.TextBox_uridiumGGS.Text = Utils.currentUridium
+
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         Console.WriteLine(WebClient_Data)
 
@@ -146,7 +157,7 @@ Public Class GalaxyGates_module
     Public Shared Function View(ByVal GalaxyGates_id As String, ByVal GalaxyGates_Name As String)
 
         GalaxyGates_Name = GalaxyGates_Name.ToLower()
-
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate (.*id=""" + GalaxyGates_id + Table_Load).Groups.Item(1).ToString
@@ -345,6 +356,7 @@ LABEL_BOUCLE:
             PART_CHECKER = 0
         End If
 
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
         Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
         Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
