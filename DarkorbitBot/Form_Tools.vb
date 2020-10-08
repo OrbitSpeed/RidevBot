@@ -970,15 +970,14 @@ Public Class Form_Tools
 
         If Button_game_doodle.Text = "Game" Then
             Button_game_doodle.Text = "Gates"
+            WebBrowser_galaxyGates.Navigate("http://doodlejumppc.net/doodlejump.swf")
 
         Else Button_game_doodle.Text = "Gates"
             Button_game_doodle.Text = "Game"
-
             Button_Alpha.PerformClick()
 
         End If
 
-        WebBrowser_galaxyGates.Navigate("http://doodlejumppc.net/doodlejump.swf")
 
     End Sub
 
