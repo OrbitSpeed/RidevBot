@@ -817,6 +817,7 @@ Public Class Form_Tools
                 End Select
 
                 Utils.UpdateStats()
+                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand

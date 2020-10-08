@@ -3,12 +3,12 @@ Imports System.Text.RegularExpressions
 
 Public Class Skylab_module
 
-    Public Shared WebClient_POST As New System.Net.WebClient
+    Public Shared Socket As New System.Net.WebClient
 
     Public Shared Function Load()
 
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data_Skylab = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalSkylab")
+        Socket.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data_Skylab = Socket.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalSkylab")
         'Console.WriteLine(WebClient_Data_Skylab)
 
         For Each Data As Match In Regex.Matches(WebClient_Data_Skylab, "<br \/>([^""]*)<\/div>")
