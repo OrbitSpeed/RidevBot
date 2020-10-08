@@ -33,6 +33,7 @@ Public Class GalaxyGates_module
 
     Public Shared Sub Load()
 
+        Form_Tools.Panel_Gates_task.Visible = False
         Form_Tools.Panel_palladium_palladium.Visible = False
         Form_Tools.panel_npc_npc.Visible = False
         Form_Tools.Panel_collectable.Visible = False

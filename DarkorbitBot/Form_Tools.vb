@@ -201,6 +201,8 @@ Public Class Form_Tools
 #Region "Button toolbar"
     Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles button_palladium.Click
 
+
+        Panel_Gates_task.Visible = False
         Panel_palladium_palladium.Visible = True
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -220,6 +222,7 @@ Public Class Form_Tools
 
     Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles button_npc.Click
 
+        Panel_Gates_task.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = True
         Panel_collectable.Visible = False
@@ -239,6 +242,7 @@ Public Class Form_Tools
 
     Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles button_box.Click
 
+        Panel_Gates_task.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = True
@@ -339,6 +343,7 @@ Public Class Form_Tools
 
     Private Sub Rex_Button_Click(sender As Object, e As EventArgs) Handles button_pet.Click
 
+        Panel_Gates_task.Visible = False
         Panel_palladium_palladium.Visible = False
         panel_npc_npc.Visible = False
         Panel_collectable.Visible = False
@@ -1062,6 +1067,21 @@ Public Class Form_Tools
 
     Private Sub button_gates_task_Click(sender As Object, e As EventArgs) Handles button_gates_task.Click
 
+        Panel_Gates_task.Visible = True
+        Panel_palladium_palladium.Visible = False
+        panel_npc_npc.Visible = False
+        Panel_collectable.Visible = False
+        Panel_GalaxyGates.Visible = False
+        Panel_rex.Visible = False
+
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+        Panel_autospin.Visible = False
+
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
 
 
     End Sub
