@@ -38,8 +38,8 @@ Public Class GalaxyGates_module
         Form_Tools.Panel_collectable.Visible = False
         Form_Tools.Panel_rex.Visible = False
         Form_Tools.Panel_GalaxyGates.Visible = True
-        Form_Tools.Size = New Size(687, 730)
-        Form_Tools.Bot_Settings_BOX.Size = New Size(687, 730)
+        Form_Tools.Size = New Size(687, 745)
+        Form_Tools.Bot_Settings_BOX.Size = New Size(687, 745)
         Form_Tools.Panel_autospin.Visible = True
         Form_Tools.TextBox_uridiumGGS.Text = Utils.currentUridium
 
@@ -335,6 +335,34 @@ LABEL_BOUCLE:
 
             If Form_Tools.INFO_ON_MAP_GG_LABEL.Text.Contains("1") Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates " + PART_GG_GG_Completed + " 2 / 2 Completed." + Form_Tools.TextBox_WinGGS.Text
+
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Dim data_PG = Color.FromArgb(20, 75, 158)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+
                 Closing_Spinner()
                 Exit Sub
 
@@ -347,10 +375,62 @@ LABEL_BOUCLE:
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"CheckBox_BuildOneAndStop are checked. " + Form_Tools.TextBox_WinGGS.Text
+
+                Dim data_PG = Color.FromArgb(20, 75, 158)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+
                 Closing_Spinner()
                 Exit Sub
 
             Else Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Galaxy Gates Spinner reactivated." + Form_Tools.TextBox_WinGGS.Text
+
+                Dim data_PG = Color.FromArgb(20, 75, 158)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+                Await Task.Delay(300)
+                Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+
             End If
 
             PART_CHECKER = 0
@@ -655,9 +735,30 @@ LABEL_BOUCLE:
             'The GG is not full we go away 
 
             Dim data_PG = Color.FromArgb(20, 75, 158)
-            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
             Await Task.Delay(300)
-            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+
             '---
             Dim data_T = Color.Black
             Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
@@ -677,10 +778,32 @@ LABEL_BOUCLE:
             'The gate is already on the map
             Console.WriteLine("The gate is already on the map")
 
-            Dim data_PG = Color.FromArgb(20, 75, 158)
-            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
             Await Task.Delay(300)
-            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Dim data_PG = Color.FromArgb(20, 75, 158)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
             '---
             Dim data_Label = Color.Black
             Form_Tools.INFO_ON_MAP_GG_LABEL.ForeColor = Color.Red
@@ -696,9 +819,30 @@ LABEL_BOUCLE:
             Console.WriteLine("The gate is not full")
 
             Dim data_PG = Color.FromArgb(20, 75, 158)
-            Form_Tools.Button_PrepareGates.BackColor = Color.Red
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
             Await Task.Delay(300)
-            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.Red
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+
             '---
             Dim data_T = Color.Black
             Form_Tools.INFO_PART_GG_LABEL.ForeColor = Color.Red
@@ -713,9 +857,29 @@ LABEL_BOUCLE:
             Console.WriteLine("The gate is full and is placed")
 
             Dim data_PG = Color.FromArgb(20, 75, 158)
-            Form_Tools.Button_PrepareGates.BackColor = Color.LimeGreen
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
             Await Task.Delay(300)
-            Form_Tools.Button_PrepareGates.BackColor = data_PG
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = Color.LimeGreen
+            Await Task.Delay(300)
+            Form_Tools._NO_GG_FLASHIES.BackColor = data_PG
         End If
     End Sub
 

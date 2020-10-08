@@ -290,6 +290,7 @@ Partial Class Form_Tools
         Me.Bot_Settings_BOX = New System.Windows.Forms.Panel()
         Me.button_gates_task = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me._NO_GG_FLASHIES = New System.Windows.Forms.PictureBox()
         Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.General_General_BOX.SuspendLayout()
         Me.Panel_stats_load.SuspendLayout()
@@ -338,6 +339,7 @@ Partial Class Form_Tools
         Me.General_BOX.SuspendLayout()
         Me.Stats_BOX.SuspendLayout()
         Me.Bot_Settings_BOX.SuspendLayout()
+        CType(Me._NO_GG_FLASHIES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -2676,6 +2678,7 @@ Partial Class Form_Tools
         Me.Panel_GalaxyGates.Controls.Add(Me.TextBox_WinGGS)
         Me.Panel_GalaxyGates.Controls.Add(Me.WebBrowser_galaxyGates)
         Me.Panel_GalaxyGates.Controls.Add(Me.PictureBox4)
+        Me.Panel_GalaxyGates.Controls.Add(Me._NO_GG_FLASHIES)
         Me.Panel_GalaxyGates.ForeColor = System.Drawing.Color.White
         Me.Panel_GalaxyGates.Location = New System.Drawing.Point(0, 28)
         Me.Panel_GalaxyGates.Name = "Panel_GalaxyGates"
@@ -3964,7 +3967,7 @@ Partial Class Form_Tools
         Me.Label5.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(69, 444)
+        Me.Label5.Location = New System.Drawing.Point(11, 369)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(117, 13)
         Me.Label5.TabIndex = 50
@@ -3992,7 +3995,7 @@ Partial Class Form_Tools
         Me.Label3.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(69, 390)
+        Me.Label3.Location = New System.Drawing.Point(11, 315)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 48
@@ -4005,7 +4008,7 @@ Partial Class Form_Tools
         Me.Label2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(69, 336)
+        Me.Label2.Location = New System.Drawing.Point(11, 261)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 47
@@ -4064,7 +4067,7 @@ Partial Class Form_Tools
         Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(560, 206)
+        Me.Label19.Location = New System.Drawing.Point(502, 131)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(59, 13)
         Me.Label19.TabIndex = 43
@@ -4244,6 +4247,15 @@ Partial Class Form_Tools
         Me.Panel1.Size = New System.Drawing.Size(1090, 30)
         Me.Panel1.TabIndex = 85
         '
+        '_NO_GG_FLASHIES
+        '
+        Me._NO_GG_FLASHIES.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me._NO_GG_FLASHIES.Location = New System.Drawing.Point(214, 5)
+        Me._NO_GG_FLASHIES.Name = "_NO_GG_FLASHIES"
+        Me._NO_GG_FLASHIES.Size = New System.Drawing.Size(280, 332)
+        Me._NO_GG_FLASHIES.TabIndex = 112
+        Me._NO_GG_FLASHIES.TabStop = False
+        '
         'FlatMini1
         '
         Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -4347,6 +4359,7 @@ Partial Class Form_Tools
         Me.General_BOX.ResumeLayout(False)
         Me.Stats_BOX.ResumeLayout(False)
         Me.Bot_Settings_BOX.ResumeLayout(False)
+        CType(Me._NO_GG_FLASHIES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4618,4 +4631,5 @@ Partial Class Form_Tools
     Friend WithEvents button_gates_task As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents _NO_GG_FLASHIES As PictureBox
 End Class

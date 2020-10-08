@@ -172,7 +172,7 @@ Public Class Form_Tools
 
         TextBox_ProfilSelected.Text = Form_Startup.Textbox_Username.Text
 
-        Size = New Size(691, 436)
+        Size = New Size(687, 436)
         CenterToScreen()
         'Try
         '    client = New FirebaseClient(fcon)
@@ -210,6 +210,12 @@ Public Class Form_Tools
         Size = New Size(687, 436)
         Bot_Settings_BOX.Size = New Size(687, 384)
         Panel_autospin.Visible = False
+
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
+
     End Sub
 
     Private Sub Button_npc_toolbar_Click(sender As Object, e As EventArgs) Handles button_npc.Click
@@ -224,6 +230,11 @@ Public Class Form_Tools
         Bot_Settings_BOX.Size = New Size(687, 384)
         Panel_autospin.Visible = False
 
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
+
     End Sub
 
     Private Sub Button_collectable_toolbar_Click(sender As Object, e As EventArgs) Handles button_box.Click
@@ -237,6 +248,11 @@ Public Class Form_Tools
         Size = New Size(687, 436)
         Bot_Settings_BOX.Size = New Size(687, 384)
         Panel_autospin.Visible = False
+
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
 
     End Sub
 
@@ -332,6 +348,11 @@ Public Class Form_Tools
         Size = New Size(687, 436)
         Bot_Settings_BOX.Size = New Size(687, 384)
         Panel_autospin.Visible = False
+
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
 
     End Sub
 
@@ -948,6 +969,8 @@ Public Class Form_Tools
         Else Button_game_doodle.Text = "Gates"
             Button_game_doodle.Text = "Game"
 
+            Button_Alpha.PerformClick()
+
         End If
 
         WebBrowser_galaxyGates.Navigate("http://doodlejumppc.net/doodlejump.swf")
@@ -1016,6 +1039,11 @@ Public Class Form_Tools
         Bot_Settings_BOX.Visible = False
         button_stats.PerformClick()
 
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
+
     End Sub
 
     Private Sub Button_BOX_botsettings_Click(sender As Object, e As EventArgs) Handles Button_BOX_botsettings.Click
@@ -1025,9 +1053,16 @@ Public Class Form_Tools
         Bot_Settings_BOX.Visible = True
         button_pet.PerformClick()
 
+        PictureBox_delta_reward_day.Visible = False
+        PictureBox_epsilon_reward_day.Visible = False
+        PictureBox_zeta_reward_day.Visible = False
+        PictureBox_kappa_reward_day.Visible = False
+
     End Sub
 
     Private Sub button_gates_task_Click(sender As Object, e As EventArgs) Handles button_gates_task.Click
+
+
 
     End Sub
 End Class
