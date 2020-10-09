@@ -4117,6 +4117,8 @@ Label_GotoHome:
     ' AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "LEFT", 1, 628, 488)
 
     Public Traveling_return As Integer = 0
+    Public Property Main As Object
+    Public Property HeroManager As Object
 
     Private Async Sub Red_dots_function_Click(sender As Object, e As EventArgs) Handles Red_dots_function.Click
 
@@ -4138,26 +4140,61 @@ Label_GotoHome:
 
         End Try
 
-
-
-
-
     End Sub
+
+    '{Me.add(1, "1-1", New Portal(150000159, 2))
+    'Me.add(2, "1-2", New Portal(150000160, 1), New Portal(150000161, 3), New Portal(150000163, 4))
+    '    Me.add(3, "1-3", New Portal(150000162, 2), New Portal(150000185, 4), New Portal(150000165, 7))
+    '    Me.add(4, "1-4", New Portal(150000164, 2), New Portal(150000186, 3), New Portal(150000189, 13), New Portal(150000169, 12))
+    '    Me.add(17, "1-5", New Portal(150000299, 16), New Portal(150000328, 29), New Portal(150000300, 18), New Portal(150000302, 19))
+    '    Me.add(18, "1-6", New Portal(150000301, 17), New Portal(150000304, 20))
+    '    Me.add(19, "1-7", New Portal(150000306, 20), New Portal(150000303, 17))
+    '    Me.add(20, "1-8", New Portal(150000305, 18), New Portal(150000307, 19))
+    '    Me.add(5, "2-1", New Portal(150000174, 6))
+    '    Me.add(6, "2-2", New Portal(150000168, 7), New Portal(150000175, 8), New Portal(150000173, 5))
+    '    Me.add(7, "2-3", New Portal(150000166, 3), New Portal(150000183, 8), New Portal(150000167, 6))
+    '    Me.add(8, "2-4", New Portal(150000184, 7), New Portal(150000191, 14), New Portal(150000176, 6), New Portal(150000177, 11))
+    '    Me.add(21, "2-5", New Portal(150000330, 16), New Portal(150000309, 29), New Portal(150000310, 22), New Portal(150000312, 23))
+    '    Me.add(22, "2-6", New Portal(150000311, 21), New Portal(150000314, 24))
+    '    Me.add(23, "2-7", New Portal(150000313, 21), New Portal(150000316, 24))
+    '    Me.add(24, "2-8", New Portal(150000315, 22), New Portal(150000317, 23))
+    '    Me.add(9, "3-1", New Portal(150000182, 10))
+    '    Me.add(10, "3-2", New Portal(150000180, 11), New Portal(150000172, 12), New Portal(150000181, 9))
+    '    Me.add(11, "3-3", New Portal(150000178, 8), New Portal(150000188, 12), New Portal(150000179, 10))
+    '    Me.add(12, "3-4", New Portal(150000170, 4), New Portal(150000193, 15), New Portal(150000187, 11), New Portal(150000171, 10))
+    '    Me.add(25, "3-5", New Portal(150000319, 16), New Portal(150000332, 29), New Portal(150000320, 26), New Portal(150000322, 27))
+    '    Me.add(26, "3-6", New Portal(150000321, 25), New Portal(150000324, 28))
+    '    Me.add(27, "3-7", New Portal(150000323, 25), New Portal(150000326, 28))
+    '    Me.add(28, "3-8", New Portal(150000327, 27), New Portal(150000325, 26))
+    '    Me.add(13, "4-1", New Portal(150000190, 4), New Portal(150000195, 14), New Portal(150000200, 15), New Portal(150000289, 16))
+    '    Me.add(14, "4-2", New Portal(150000192, 8), New Portal(150000196, 13), New Portal(150000197, 15), New Portal(150000291, 16))
+    '    Me.add(15, "4-3", New Portal(150000194, 12), New Portal(150000198, 14), New Portal(150000199, 13), New Portal(150000293, 16))
+    '    Me.add(16, "4-4", New Portal(150000318, 25), New Portal(150000294, 15), New Portal(150000292, 14), New Portal(150000308, 21), New Portal(150000298, 17), New Portal(150000290, 13))
+    '    Me.add(29, "4-5", New Portal(150000329, 17), New Portal(150000331, 21), New Portal(150000333, 15))
+    '    Me.add(223, "Devolarium Attack")
+    '    Me.fill
+    'Unknown
 
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
 
-        Dim HAUT_GAUCHE_X As Integer = "599"
-        Dim HAUT_DROITE_Y As Integer = "774"
-        Dim BAS_GAUCHE_X As Integer = "466"
-        Dim BAS_DROITE_Y As Integer = "575"
+
+        Dim myProcess = System.Diagnostics.Process.GetProcessesByName("RidevBot")
+        Dim MyAddress As IntPtr = myProcess.Length
+
+        Console.WriteLine(MyAddress)
+
+        'Dim HAUT_GAUCHE_X As Integer = "599"
+        'Dim HAUT_DROITE_Y As Integer = "774"
+        'Dim BAS_GAUCHE_X As Integer = "466"
+        'Dim BAS_DROITE_Y As Integer = "575"
 
 
 
-        Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
+        'Dim CLICK_X As Integer = Utils.GetRandom(HAUT_GAUCHE_X, HAUT_DROITE_Y)
 
-        Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
+        'Dim CLICK_Y As Integer = Utils.GetRandom(HAUT_GAUCHE_X, BAS_GAUCHE_X)
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
+        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, CLICK_X, CLICK_Y)
 
     End Sub
 
