@@ -28,7 +28,7 @@ Public Class Stats_module
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        Dim WebClient_Data = WebClient_POST.DownloadStringAsync("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "User[.]Parameters(.*)}").Groups.Item(1).ToString
         WebClient_GET_Uridium = Regex.Match(WebClient_Data, """uridium"":.*?([\s\S]*?),").Groups.Item(1).ToString
@@ -45,7 +45,6 @@ Public Class Stats_module
         WebClient_GET_Ship_model_reg = Regex.Match(WebClient_GET_Ship_model, "model(.*)[.]").Groups.Item(1).ToString
         WebClient_GET_Ship_compagny = Regex.Match(WebClient_Data, "companyLogo.*?([\s\S]*?)<\/div>").Groups.Item(1).ToString
         WebClient_GET_Ship_compagny_reg = Regex.Match(WebClient_GET_Ship_compagny, "companyLogoSmall_(.*)"">").Groups.Item(1).ToString
-
 
         Console.WriteLine("Uridium : " + WebClient_GET_Uridium)
         Console.WriteLine("Credit : " + WebClient_GET_Credit)

@@ -1085,4 +1085,16 @@ Public Class Form_Tools
 
 
     End Sub
+
+    Private Sub Panel_Skylab_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Skylab.Paint
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data = WebClient_POST.DownloadString("http://" + Utils.server + ".darkorbit.bigpoint.com/spacemap/preloader.swf")
+        Console.WriteLine(WebClient_Data) 'http://test2.darkorbit.bigpoint.com/spacemap/main.swf
+
+    End Sub
 End Class
