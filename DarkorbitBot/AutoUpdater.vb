@@ -251,8 +251,6 @@ Public Class AutoUpdater
         'Throw New NotImplementedException()
     End Sub
 
-    Public FilePath As String = Path.Combine(Application.StartupPath, "ridevbotuniverse.mp4")
-
     Private Async Sub WC_Update_ChangeLog_DownloadStringCompleted(sender As Object, e As DownloadStringCompletedEventArgs)
         'MsgBox(e.Result)
         Try

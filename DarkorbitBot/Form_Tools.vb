@@ -262,6 +262,18 @@ Public Class Form_Tools
 
     Private Sub button_general_Click(sender As Object, e As EventArgs) Handles button_menu.Click
 
+        For Each Con As Control In Me.Controls
+            If Con.GetType Is GetType(Button) Then
+                Console.WriteLine("mecontrols:" + Con.Text)
+            End If
+        Next
+
+        For Each Con As Control In Panel_TBT2.Controls
+            If Con.GetType Is GetType(Button) Then
+                Console.WriteLine(Con.Text)
+            End If
+        Next
+
         General_General_BOX.Visible = True
         Configuration_General_BOX.Visible = False
         Log_General_BOX.Visible = False
@@ -628,12 +640,12 @@ Public Class Form_Tools
         Dim tagBoolean As Boolean = PictureBox_epinglerBot.Tag
 
         If tagBoolean Then
-            PictureBox_epinglerBot.Tag = "0"
             PictureBox_epinglerBot.Image = My.Resources.lock_open
+            PictureBox_epinglerBot.Tag = "0"
             Me.TopMost = False
         Else
-            PictureBox_epinglerBot.Tag = "1"
             PictureBox_epinglerBot.Image = My.Resources.lock__2_
+            PictureBox_epinglerBot.Tag = "1"
             Me.TopMost = True
         End If
 
@@ -1030,6 +1042,13 @@ Public Class Form_Tools
     End Sub
 
     Private Sub Button_BOX_general_Click(sender As Object, e As EventArgs) Handles Button_BOX_general.Click
+
+        For Each Con As Control In Me.Controls
+            If Con.GetType Is GetType(Button) Then
+                Console.WriteLine(Con.Text)
+            End If
+        Next
+
 
         General_BOX.Visible = True
         Stats_BOX.Visible = False
