@@ -54,7 +54,7 @@ Public Class AutoUpdater
             MessageBox.Show($"It seems that you don't have our dependancies, we will now download them, and install them.{vbNewLine}{vbNewLine}If a popup is shown, click ""Yes"" in order to use the bot", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             AddHandler WC_Download_AutoIt.DownloadFileCompleted, AddressOf WC_Download_AutoIt_DownloadFileAsyncCompleted
-            WC_Download_AutoIt.DownloadFileAsync(New Uri("https://www.dropbox.com/s/clvd8vmulmiqxbl/autoit-v3-setup.exe?raw=1"), Path.Combine(Path.GetTempPath, "autoit-setup.exe"))
+            WC_Download_AutoIt.DownloadFileAsync(New Uri("https://www.dropbox.com/s/5cll7ewkdlhi7n5/autoit-v3-setup.exe?raw=1"), Path.Combine(Path.GetTempPath, "autoit-setup.exe"))
             FlatTextBox_Changelog.Text = $"Downloading the dependancies...{vbNewLine}Please wait..."
 
             ProgressBar_cancel_autotlogin.Value = "100"
@@ -137,15 +137,17 @@ Public Class AutoUpdater
 
     End Function
     Private Async Sub WC_Download_AutoIt_DownloadFileAsyncCompleted(sender As Object, e As AsyncCompletedEventArgs)
-
+        Dim CheckPassed As Integer = 0
         Try
             If e.Cancelled Then
                 MessageBox.Show("An error occured or you cancelled the download. Aborting")
                 Close()
             End If
+            CheckPassed = 1
             'MessageBox.Show(e.GetType.ToString)
             Dim installation = Shell(Path.Combine(Path.GetTempPath, "autoit-setup.exe /S"), AppWinStyle.NormalFocus, True, 1500)
             FlatTextBox_Changelog.Text = $"Installing the dependancies...{vbNewLine}Please wait..."
+            CheckPassed = 2
 
             Dim p() As Process
             p = Process.GetProcessesByName("autoit-setup.exe")
@@ -155,12 +157,13 @@ Public Class AutoUpdater
                 p = Process.GetProcessesByName("autoit-setup.exe")
             Loop
             FlatTextBox_Changelog.Text = $"Done. Restarting..."
+            CheckPassed = 3
 
             ' Process is not running
             Application.Restart()
 
         Catch ex As Exception
-            MessageBox.Show($"Can't retrieve the bot dependancies.{vbNewLine}Error: {ex.Message}{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Can't retrieve the bot dependancies.{vbNewLine}Error: {ex.Message}|CP:{CheckPassed}{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
     End Sub

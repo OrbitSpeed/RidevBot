@@ -596,15 +596,17 @@ Public Class Form_Tools
         TextBox_experienceEarned.Text = 0
         TextBox_RPEarned.Text = 0
 
+        Stats_module.Load()
 
-        Reader = 1
-        BackPage_Form.ShowIcon = False
-        BackPage_Form.ShowInTaskbar = False
 
-        Utils.checkStats = True
-        BackPage_Form.Show()
-        BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        BackPage_Form.WindowState = FormWindowState.Minimized
+        'Reader = 1
+        'BackPage_Form.ShowIcon = False
+        'BackPage_Form.ShowInTaskbar = False
+
+        'Utils.checkStats = True
+        'BackPage_Form.Show()
+        'BackPage_Form.WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        'BackPage_Form.WindowState = FormWindowState.Minimized
 
 
     End Sub ' ici on reset les stats du panel STATS !
@@ -1083,18 +1085,6 @@ Public Class Form_Tools
         PictureBox_zeta_reward_day.Visible = False
         PictureBox_kappa_reward_day.Visible = False
 
-
-    End Sub
-
-    Private Sub Panel_Skylab_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Skylab.Paint
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadString("http://" + Utils.server + ".darkorbit.bigpoint.com/spacemap/preloader.swf")
-        Console.WriteLine(WebClient_Data) 'http://test2.darkorbit.bigpoint.com/spacemap/main.swf
 
     End Sub
 End Class

@@ -18,17 +18,27 @@ Public Class Stats_module
     Public Shared WebClient_GET_Ship_model_reg
     Public Shared WebClient_GET_Ship_compagny
 
-    Public Shared WebClient_POST As New System.Net.WebClient
+    Public Shared WebClient_POST As New WebClient
 
-    Public Shared Function Nothing_debug()
-    End Function
+    Public Shared Sub Nothing_debug()
+    End Sub
 
 
-    Public Shared Function Load()
+    Public Shared Sub Load()
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadStringAsync("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        AddHandler WebClient_POST.DownloadStringCompleted, AddressOf WebClient_POST_DownloadFinished
+        WebClient_POST.DownloadStringAsync(New Uri("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"))
+
+
+    End Sub
+
+    Private Shared Sub WebClient_POST_DownloadFinished(sender As Object, e As DownloadStringCompletedEventArgs)
+        Dim WebClient_Data = e.Result
+
+        'Debug only
+        'Clipboard.SetText(WebClient_Data)
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "User[.]Parameters(.*)}").Groups.Item(1).ToString
         WebClient_GET_Uridium = Regex.Match(WebClient_Data, """uridium"":.*?([\s\S]*?),").Groups.Item(1).ToString
@@ -46,6 +56,15 @@ Public Class Stats_module
         WebClient_GET_Ship_compagny = Regex.Match(WebClient_Data, "companyLogo.*?([\s\S]*?)<\/div>").Groups.Item(1).ToString
         WebClient_GET_Ship_compagny_reg = Regex.Match(WebClient_GET_Ship_compagny, "companyLogoSmall_(.*)"">").Groups.Item(1).ToString
 
+        Form_Tools.TextBox_uridiumCurrent.Text = WebClient_GET_Uridium
+        Form_Tools.TextBox_creditCurrent.Text = WebClient_GET_Credit
+        Form_Tools.TextBox_honorCurrent.Text = WebClient_GET_Honneur_reg
+        Form_Tools.TextBox_experienceCurrent.Text = WebClient_GET_Exp_reg
+        Form_Tools.TextBox_LevelCurrent.Text = WebClient_GET_Level_reg
+        'Form_Tools.TextBox_RPCurrent.Text = WebClient_GET_Level
+
+        'WebBrowser1.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalHallofFame&view=dailyRank")
+
         Console.WriteLine("Uridium : " + WebClient_GET_Uridium)
         Console.WriteLine("Credit : " + WebClient_GET_Credit)
         Console.WriteLine("Honnor : " + WebClient_GET_Honneur_reg)
@@ -55,9 +74,6 @@ Public Class Stats_module
         Console.WriteLine("Ship_model : " + WebClient_GET_Ship_model_reg)
         Console.WriteLine("Compagny : " + WebClient_GET_Ship_compagny_reg)
 
-        Form_Tools.PictureBox16.ImageLocation = ("https://darkorbit-22.bpsecure.com/do_img/global/header/ships/model" + WebClient_GET_Ship_model_reg + ".png?")
-
-    End Function
-
-
+        Form_Tools.PictureBox16.ImageLocation = ("https://darkorbit-22.bpsecure.com/do_img/global/header/ships/model" + WebClient_GET_Ship_model_reg + ".png")
+    End Sub
 End Class
