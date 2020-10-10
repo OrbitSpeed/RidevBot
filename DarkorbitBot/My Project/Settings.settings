@@ -192,7 +192,7 @@
       <Value Profile="(Default)">NONE</Value>
     </Setting>
     <Setting Name="Rex_dead" Type="System.String" Scope="User">
-      <Value Profile="(Default)">30</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Repair" Type="System.String" Scope="User">
       <Value Profile="(Default)">NONE</Value>

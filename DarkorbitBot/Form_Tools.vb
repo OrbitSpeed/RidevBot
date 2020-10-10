@@ -594,6 +594,8 @@ Public Class Form_Tools
 
     Private Sub Button_ResetStats_Click(sender As Object, e As EventArgs) Handles Button_ResetStats.Click
 
+        Button_Refresh_Stats.Enabled = False
+        Button_ResetStats.Enabled = False
         Calculator = 1
         TextBox_uridiumCurrent.Text = 0
         TextBox_creditCurrent.Text = 0
@@ -625,6 +627,8 @@ Public Class Form_Tools
 
     Private Sub Button_Refresh_Stats_Click(sender As Object, e As EventArgs) Handles Button_Refresh_Stats.Click
 
+        Button_ResetStats.Enabled = False
+        Button_Refresh_Stats.Enabled = False
         Stats_module.Load()
 
     End Sub ' ici on refresh les stats du panel STATS !
@@ -1104,6 +1108,10 @@ Public Class Form_Tools
         PictureBox_zeta_reward_day.Visible = False
         PictureBox_kappa_reward_day.Visible = False
 
+
+    End Sub
+
+    Private Sub Button_license_verify_Click_1(sender As Object, e As EventArgs)
 
     End Sub
 End Class

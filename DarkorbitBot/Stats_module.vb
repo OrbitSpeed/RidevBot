@@ -75,5 +75,8 @@ Public Class Stats_module
         Console.WriteLine("Compagny : " + WebClient_GET_Ship_compagny_reg)
 
         Form_Tools.PictureBox16.ImageLocation = ("https://darkorbit-22.bpsecure.com/do_img/global/header/ships/model" + WebClient_GET_Ship_model_reg + ".png")
+
+        Form_Tools.Button_ResetStats.Enabled = True
+        Form_Tools.Button_Refresh_Stats.Enabled = True
     End Sub
 End Class
