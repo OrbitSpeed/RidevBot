@@ -289,22 +289,6 @@
         9Vr2cHUjwhnW/hc0zU8ALI7DhumsawAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="ToolTip_menu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="ToolTip_GalaxyGates.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>134, 19</value>
-  </metadata>
-  <data name="Label70.Text" xml:space="preserve">
-    <value>You do not have an account ?
-
-Don't panic, you can create it 
-by pressing the "Create Account" button
-
-in discord send a Ticket in the support section with 
-your username then wait for your answer (20 minutes) 
-to receive your key</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>63</value>
   </metadata>
