@@ -10,9 +10,9 @@ Public Class Form_Startup
     Public ProfilSelected As String = 0
     Public CheckedStats As String = 0
 
-    Private fconfig As New FirebaseConfig("AIzaSyARdVr3iWd4B_dob9H_dU3dg7tlfm5U5vE")
+    Private lespates As New FirebaseConfig("AIzaSyARdVr3iWd4B_dob9H_dU3dg7tlfm5U5vE")
 
-    Public connection As New FirebaseAuthProvider(fconfig)
+    Public lefromage As New FirebaseAuthProvider(lespates)
 
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
@@ -512,7 +512,7 @@ Public Class Form_Startup
         End If
 
         Try
-            Dim utilisateur = Await connection.SignInWithEmailAndPasswordAsync(TextBox_license_email.Text, TextBox_license_password.Text)
+            Dim utilisateur = Await lefromage.SignInWithEmailAndPasswordAsync(TextBox_license_email.Text, TextBox_license_password.Text)
             If utilisateur.User.Email <> "" Then
 
             End If
