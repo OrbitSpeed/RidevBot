@@ -49,6 +49,9 @@ Global
 		v1.7|Any CPU = v1.7|Any CPU
 		v1.7|x64 = v1.7|x64
 		v1.7|x86 = v1.7|x86
+		v1.9|Any CPU = v1.9|Any CPU
+		v1.9|x64 = v1.9|x64
+		v1.9|x86 = v1.9|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.1.7 x64|Any CPU.ActiveCfg = 1.7 x64|Any CPU
@@ -135,6 +138,12 @@ Global
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.7|x64.Build.0 = v1.7|x64
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.7|x86.ActiveCfg = v1.7|x86
 		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.7|x86.Build.0 = v1.7|x86
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|Any CPU.ActiveCfg = v1.9|Any CPU
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|Any CPU.Build.0 = v1.9|Any CPU
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|x64.ActiveCfg = v1.9|x64
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|x64.Build.0 = v1.9|x64
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|x86.ActiveCfg = v1.9|x86
+		{ADD34C12-8E64-4E94-B443-6AB1459ED49A}.v1.9|x86.Build.0 = v1.9|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
