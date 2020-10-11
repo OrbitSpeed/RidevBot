@@ -553,12 +553,12 @@ Public Class Form_Tools
         GalaxyGates_module.PrepareGates()
 
     End Sub ' button prepare Gates
-    Private Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
+    Public Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
         GalaxyGates_module.Exit_Spin = 0
         GalaxyGates_module.Spin(1)
 
     End Sub ' Start Galaxy Gates Spinner 
-    Private Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
+    Public Sub Button_stopSpin_Click(sender As Object, e As EventArgs) Handles Button_stopSpin.Click
         GalaxyGates_module.Exit_Spin = 1
 
     End Sub ' Stop Galaxy Gates Spinner 
@@ -857,7 +857,7 @@ Public Class Form_Tools
 
     End Sub ' !!!!! A VERIFIER ET A OPTIMISER !!!
 
-    Private Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
+    Public Sub Button_revive_sid_Click(sender As Object, e As EventArgs) Handles Button_revive_sid.Click
 
         TextBox_Get_Dosid.Text = 0
         TextBox_username.Text = 0

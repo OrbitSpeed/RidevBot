@@ -2890,6 +2890,12 @@
         c/sLGSXJB5EdndYU0yx1AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="FirebaseAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\FirebaseAdmin.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Firebase_Auth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Firebase.Auth.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="FireSharp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\dll\FireSharp.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3966,6 +3972,27 @@
         Hvu7cf8A8mjnCxV+BESuGumCEuNZxHHChyBFVk01lHAdVb9pm6gon9kSoid9Oql5FyjHXcltcLdW7FL+
         1eglQkBZ42JNG8AAST4AAk6trN5PgqcSfEWeXxckkl3YBgt1ATsGQtWkagcnaiBnc+CorMaAEj//2Q==
 </value>
+  </data>
+  <data name="Google_Apis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Apis.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Apis_Auth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Apis.Auth.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Apis_Auth_PlatformServices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Apis.Auth.PlatformServices.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Apis_Core" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Apis.Core.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Apis_PlatformServices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Apis.PlatformServices.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Api_Gax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Api.Gax.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google_Api_Gax_Rest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\Google.Api.Gax.Rest.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="greenBooty" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5494,12 +5521,6 @@
         BTQ9ZvJuoE1A+yCCKIWBbVhmVO9mYOmDVvQATQSaCzQdLc+ilyRAACx6gKEILFKUVdSApgCzOjBcgOZC
         pZEAFs1AACxMPHLagI4EmgI0CzOrg4CSEgBoiETlzkSRWQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="Ridevbot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ridevbot.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="ridevbotuniverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ridevbotuniverse.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ridevbotuniverse_gif" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7630,6 +7651,15 @@
         NvowG6ZSyKhL57KZaRzPzO29eWbwVcjujr3WvlHuXIJceJdAJCwaNQWTXE/X+it7E7c51Eut/9KMoGlA
         IooEAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="System_Collections_Immutable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\System.Collections.Immutable.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Diagnostics_DiagnosticSource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\System.Diagnostics.DiagnosticSource.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Interactive_Async" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\dll\System.Interactive.Async.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="System_Net_Http_Extensions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\dll\System.Net.Http.Extensions.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

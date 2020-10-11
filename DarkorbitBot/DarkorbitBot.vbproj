@@ -838,6 +838,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administration-ConvertImage.ico" />
+    <None Include="dll\System.Interactive.Async.dll" />
+    <None Include="dll\System.Diagnostics.DiagnosticSource.dll" />
+    <None Include="dll\System.Collections.Immutable.dll" />
+    <None Include="dll\Google.Apis.PlatformServices.dll" />
+    <None Include="dll\Google.Apis.dll" />
+    <None Include="dll\Google.Apis.Core.dll" />
+    <None Include="dll\Google.Apis.Auth.PlatformServices.dll" />
+    <None Include="dll\Google.Apis.Auth.dll" />
+    <None Include="dll\Google.Api.Gax.Rest.dll" />
+    <None Include="dll\Google.Api.Gax.dll" />
+    <None Include="dll\FirebaseAdmin.dll" />
+    <None Include="dll\Firebase.Auth.dll" />
     <None Include="Resources\Ridevbot.htm" />
     <None Include="Resources\sale.png" />
     <None Include="ridevbotuniverse.gif" />

@@ -10,9 +10,11 @@ Public Class Form_Startup
     Public ProfilSelected As String = 0
     Public CheckedStats As String = 0
 
+#Region "Caché"
     Private lespates As New FirebaseConfig("AIzaSyARdVr3iWd4B_dob9H_dU3dg7tlfm5U5vE")
 
     Public lefromage As New FirebaseAuthProvider(lespates)
+#End Region
 
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
@@ -41,7 +43,7 @@ Public Class Form_Startup
 
         Panel_License.Visible = False
 
-        If My.Settings.License_check <> "Your license here" Then
+        If My.Settings.email_license <> "Email" And My.Settings.password_license <> "Your Password" Then
             Button_license_verify_Click(Nothing, Nothing)
         End If
 
@@ -201,6 +203,10 @@ Public Class Form_Startup
 
     Private Sub Load_Button_Click(sender As Object, e As EventArgs) Handles Button_Load.Click
 
+        If Textbox_Username.Text = "Username" And Textbox_Password.Text = "Password" Then
+            MessageBox.Show("You should define your username and your password first", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
         If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
             ProfilSelected = 1
@@ -231,6 +237,10 @@ Public Class Form_Startup
         End If
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
+        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
+        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
+        GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
+        Form_Tools.WebClient_POST.Headers.Clear()
 
     End Sub
 
@@ -401,6 +411,11 @@ Public Class Form_Startup
     End Sub
     Private Sub Button_Profil1_Load_Click(sender As Object, e As EventArgs) Handles Button_Profil1_Load.Click
         '
+        If TextBox_UsernamePasswordProfil1username.Text = "Username" And TextBoxUsernamePasswordProfil1password.Text = "Password" Then
+            MessageBox.Show("You should define your username and your password first", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         ProfilSelected = 1
         PictureBoxUsernamePasswordProfil1view.Image = My.Resources.greenBooty
         PictureBoxUsernamePasswordProfil2view.Image = My.Resources.prometium
@@ -413,6 +428,12 @@ Public Class Form_Startup
 
         UserAndPass_Button.PerformClick()
         Button_Load.PerformClick()
+
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
+        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
+        GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
+        Form_Tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub PictureBoxUsernamePasswordProfil2view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2view.Click
@@ -442,6 +463,11 @@ Public Class Form_Startup
 
         UserAndPass_Button.PerformClick()
         Button_Load.PerformClick()
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
+        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
+        GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
+        Form_Tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub PictureBoxUsernamePasswordProfil3view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3view.Click
@@ -470,6 +496,12 @@ Public Class Form_Startup
 
         UserAndPass_Button.PerformClick()
         Button_Load.PerformClick()
+
+        Form_Tools.TextBox_Get_Dosid.Text = ""
+        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
+        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
+        GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
+        Form_Tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub Textbox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles Textbox_Password.KeyDown
@@ -493,21 +525,29 @@ Public Class Form_Startup
     End Sub
 
     Private Async Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
-        'Picturebox image
-        PictureBox_license_check.Image = My.Resources.error_icon
-        PictureBox_license_check.Tag = False
-        '--
+        Button_Load.Enabled = False
+        Button_Profil1_Load.Enabled = False
+
         If String.IsNullOrWhiteSpace(TextBox_license_email.Text) Or
             Not TextBox_license_email.Text.Contains("@") Or
             Not TextBox_license_email.Text.Contains(".") Or
+            TextBox_license_email.Text.Contains(" ") Or
             TextBox_license_email.Text = "Email " Then
             MessageBox.Show("You didn't put a correct mail", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Picturebox image
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            '--
             Exit Sub
         End If
 
         If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Or
             TextBox_license_password.Text = "Your Password" Then
             MessageBox.Show("You can't send an empty password", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Picturebox image
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            '--
             Exit Sub
         End If
 
@@ -526,14 +566,20 @@ Public Class Form_Startup
 
         Catch ex As Exception
             Console.WriteLine("Message")
-            Console.WriteLine(ex.Message)
+            'Console.WriteLine(ex.Message)
             If ex.Message.Contains("INVALID_PASSWORD") Then
+                MessageBox.Show("Your account doesn't match our database.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf ex.Message.Contains("EMAIL_NOT_FOUND") Then
                 MessageBox.Show("Your account doesn't match our database.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf ex.Message.Contains("USER_DISABLED") Then
                 MessageBox.Show($"Your account is disabled.{vbNewLine}{vbNewLine}" +
                                 $"It means that you didn't pay the license !{vbNewLine}{vbNewLine}" +
                                 $"Start a new ticket to be able to re-enable it", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+            'Picturebox image
+            PictureBox_license_check.Image = My.Resources.error_icon
+            PictureBox_license_check.Tag = False
+            '--
             Exit Sub
         End Try
 
@@ -541,6 +587,8 @@ Public Class Form_Startup
         PictureBox_license_check.Image = My.Resources.success_icon
         PictureBox_license_check.Tag = True
         '--
+        Button_Load.Enabled = True
+        Button_Profil1_Load.Enabled = True
     End Sub
 
     Private Async Sub Timer_Flashing_Tick(sender As Object, e As EventArgs) Handles Timer_Flashing.Tick
@@ -562,45 +610,7 @@ Public Class Form_Startup
         PictureBox_License_Flashing.BackColor = Color.FromArgb(20, 75, 158)
     End Sub
 
-    Private Sub Button_provisoire_Click(sender As Object, e As EventArgs) Handles Button_provisoire.Click
 
-        ' PROVISOIRE 
-
-        If Textbox_Username.Text = TextBox_UsernamePasswordProfil1username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil1password.Text Then
-            ProfilSelected = 1
-
-        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil2username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil2password.Text Then
-            ProfilSelected = 2
-
-        ElseIf Textbox_Username.Text = TextBox_UsernamePasswordProfil3username.Text And Textbox_Password.Text = TextBoxUsernamePasswordProfil3password.Text Then
-            ProfilSelected = 3
-
-        End If
-
-        If ProfilSelected = 1 Then
-            Form_Tools.ComboBox_autologin.Text = "Profil 1"
-            Launcher()
-
-        ElseIf ProfilSelected = 2 Then
-            Form_Tools.ComboBox_autologin.Text = "Profil 2"
-            Launcher()
-
-        ElseIf ProfilSelected = 3 Then
-            Form_Tools.ComboBox_autologin.Text = "Profil 3"
-            Launcher()
-
-        Else Form_Tools.ComboBox_autologin.Text = "Current"
-            Launcher()
-
-        End If
-
-        Form_Tools.TextBox_Get_Dosid.Text = ""
-        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
-        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
-        GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
-        Form_Tools.WebClient_POST.Headers.Clear()
-
-    End Sub
 
     Private Sub Form_Startup_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 

@@ -392,6 +392,26 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Byte[].
         '''</summary>
+        Friend ReadOnly Property Firebase_Auth() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Firebase_Auth", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property FirebaseAdmin() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("FirebaseAdmin", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
         Friend ReadOnly Property FireSharp() As Byte()
             Get
                 Dim obj As Object = ResourceManager.GetObject("FireSharp", resourceCulture)
@@ -416,6 +436,76 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("gg_double_reward_day_s_201802", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Api_Gax() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Api_Gax", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Api_Gax_Rest() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Api_Gax_Rest", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Apis() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Apis", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Apis_Auth() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Apis_Auth", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Apis_Auth_PlatformServices() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Apis_Auth_PlatformServices", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Apis_Core() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Apis_Core", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Google_Apis_PlatformServices() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Google_Apis_PlatformServices", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
@@ -1510,25 +1600,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à .
-        '''</summary>
-        Friend ReadOnly Property Ridevbot() As String
-            Get
-                Return ResourceManager.GetString("Ridevbot", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property ridevbotuniverse() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ridevbotuniverse", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property ridevbotuniverse_gif() As System.Drawing.Bitmap
@@ -1625,6 +1696,36 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("success_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Collections_Immutable() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Collections_Immutable", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Diagnostics_DiagnosticSource() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Diagnostics_DiagnosticSource", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Interactive_Async() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Interactive_Async", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
