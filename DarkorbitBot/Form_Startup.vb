@@ -1,6 +1,5 @@
-﻿Imports System.Text
-Imports FireSharp
-Imports FireSharp.Config
+﻿Imports Firebase.Auth
+Imports FirebaseAdmin
 
 Public Class Form_Startup
 
@@ -11,25 +10,19 @@ Public Class Form_Startup
     Public ProfilSelected As String = 0
     Public CheckedStats As String = 0
 
-    Private client As FirebaseClient
+    Private fconfig As New FirebaseConfig("AIzaSyARdVr3iWd4B_dob9H_dU3dg7tlfm5U5vE")
 
-    Public fcon As New FirebaseConfig() With
-        {
-        .BasePath = "https://ridevbot-2cd86.firebaseio.com/",
-        .AuthSecret = Utils.Firebase_Secret
-        }
+    Public connection As New FirebaseAuthProvider(fconfig)
 
     Private Sub Form_Startup_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label_Title.Text = "RidevBot v" + Application.ProductVersion
 
         Form_Tools.Button_revive_sid.Enabled = False
         '   User_Database.Load()
 
-        Label_Title.Text = "RidevBot v" + Application.ProductVersion
-        client = New FirebaseClient(fcon)
 
         Me.Size = New Size(303, 200)
         CenterToScreen()
@@ -149,7 +142,7 @@ Public Class Form_Startup
         ' License
 
         Label_point_de_chute.Select()
-        Me.Size = New Size(303, 399)
+        Me.Size = New Size(303, 244)
 
         PanelConnection.Visible = False
         Panel_SidConnexion.Visible = False
@@ -479,21 +472,6 @@ Public Class Form_Startup
         Button_Load.PerformClick()
     End Sub
 
-    Private Sub Button_resetAll_accounts_Click(sender As Object, e As EventArgs)
-
-        TextBox_UsernamePasswordProfil1username.Text = ""
-        TextBoxUsernamePasswordProfil1password.Text = ""
-        TextBox_UsernamePasswordProfil2username.Text = ""
-        TextBoxUsernamePasswordProfil2password.Text = ""
-        TextBox_UsernamePasswordProfil3username.Text = ""
-        TextBoxUsernamePasswordProfil3password.Text = ""
-
-        'PictureBoxUsernamePasswordProfil3view.Image = My.Resources.icons8_carré_arrondi_100
-        'PictureBoxUsernamePasswordProfil2view.Image = My.Resources.icons8_carré_arrondi_100
-        'PictureBoxUsernamePasswordProfil1view.Image = My.Resources.icons8_carré_arrondi_100
-
-    End Sub
-
     Private Sub Textbox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles Textbox_Password.KeyDown
         If e.KeyCode = Keys.Enter Then
             Button_Load.PerformClick()
@@ -514,157 +492,56 @@ Public Class Form_Startup
         End If
     End Sub
 
-    Private Sub PictureBox10_Click(sender As Object, e As EventArgs)
-
-        Me.MinimizeBox = True
-
-    End Sub
-
-    Private Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
-        If String.IsNullOrWhiteSpace(TextBox_license_check.Text) Then
-            MessageBox.Show("You didn't put a license", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            '--
-
-            'Les bouttons
-            Button_Load.Enabled = False
-            Button_SID_Load.Enabled = False
-            Button_Profil1_Load.Enabled = False
-            Button_Profil2_Load.Enabled = False
-            Button_Profil3_Load.Enabled = False
+    Private Async Sub Button_license_verify_Click(sender As Object, e As EventArgs) Handles Button_license_verify.Click
+        'Picturebox image
+        PictureBox_license_check.Image = My.Resources.error_icon
+        PictureBox_license_check.Tag = False
+        '--
+        If String.IsNullOrWhiteSpace(TextBox_license_email.Text) Or
+            Not TextBox_license_email.Text.Contains("@") Or
+            Not TextBox_license_email.Text.Contains(".") Or
+            TextBox_license_email.Text = "Email " Then
+            MessageBox.Show("You didn't put a correct mail", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-        Dim user_key = TextBox_license_check.Text
-        Dim res
-        Try
-            res = client.Get("Users/" + user_key)
-        Catch ex As Exception
-            MessageBox.Show("Can't get your license, check it correctly.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            '--
 
-            'Les bouttons
-            Button_Load.Enabled = False
-            Button_SID_Load.Enabled = False
-            Button_Profil1_Load.Enabled = False
-            Button_Profil2_Load.Enabled = False
-            Button_Profil3_Load.Enabled = False
+        If String.IsNullOrWhiteSpace(TextBox_license_password.Text) Or
+            TextBox_license_password.Text = "Your Password" Then
+            MessageBox.Show("You can't send an empty password", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        Try
+            Dim utilisateur = Await connection.SignInWithEmailAndPasswordAsync(TextBox_license_email.Text, TextBox_license_password.Text)
+            If utilisateur.User.Email <> "" Then
+
+            End If
+
+            'Console.WriteLine(utilisateur.User.IsEmailVerified)
+            'If Not utilisateur.User.IsEmailVerified Then
+            '    MessageBox.Show($"Your account is not verified.{vbNewLine}{vbNewLine}" +
+            '                    $"Please open a ticket on the discord to send a verification mail.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '    Exit Sub
+            'End If
+
+        Catch ex As Exception
+            Console.WriteLine("Message")
+            Console.WriteLine(ex.Message)
+            If ex.Message.Contains("INVALID_PASSWORD") Then
+                MessageBox.Show("Your account doesn't match our database.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf ex.Message.Contains("USER_DISABLED") Then
+                MessageBox.Show($"Your account is disabled.{vbNewLine}{vbNewLine}" +
+                                $"It means that you didn't pay the license !{vbNewLine}{vbNewLine}" +
+                                $"Start a new ticket to be able to re-enable it", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
             Exit Sub
         End Try
-        If res.Body = "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account doesn't exist", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            TextBox_license_check.Text = "Your license here"
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            '--
 
-            'Les bouttons
-            Button_Load.Enabled = False
-            Button_SID_Load.Enabled = False
-            Button_Profil1_Load.Enabled = False
-            Button_Profil2_Load.Enabled = False
-            Button_Profil3_Load.Enabled = False
-            Exit Sub
-        End If
-
-        Dim resUser = res.ResultAs(Of User_Database)
-
-        Dim CurUser As New User_Database With
-            {
-            .GFH51DFGTK_1855577GH7_54SDQAVV = AutoUpdater.A + Utils.getSHA1Hash(Textbox_Username.Text) + AutoUpdater.B
-                    }
-        '
-        'If resUser.LicenseEndTime.CompareTo(Utils.DateDistant) = -1 Then
-        '    'Picturebox image
-        '    PictureBox_license_check.Image = My.Resources.error_icon
-        '    PictureBox_license_check.Tag = False
-        '    '--
-
-        '    'Les bouttons
-        '    Button_Load.Enabled = False
-        '    Button_SID_Load.Enabled = False
-        '    Button_Profil1_Load.Enabled = False
-        '    Button_Profil2_Load.Enabled = False
-        '    Button_Profil3_Load.Enabled = False
-
-        '    MessageBox.Show("You didn't pay the license, DM a dev if you think it's an error.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    Exit Sub
-        'End If
-
-        'Dim licenseJours = Utils.calculateDiffDates(Utils.DateDistant, resUser.LicenseEndTime)
-
-
-        If Not Utils.getSHA1Hash(Textbox_Username.Text) = Textbox_Username.Text Then
-            'Pas le bon compte, on bloque tout
-
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.error_icon
-            PictureBox_license_check.Tag = False
-            '--
-
-            'Les bouttons
-            Button_Load.Enabled = False
-            Button_SID_Load.Enabled = False
-            Button_Profil1_Load.Enabled = False
-            Button_Profil2_Load.Enabled = False
-            Button_Profil3_Load.Enabled = False
-
-            '    MessageBox.Show($"Your license is not for this account.{vbNewLine}Please buy an another one that is linked with this one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Form_Startup.Show()
-            'Close()
-        Else
-            'Quand la license est bonne, alors
-
-            'Picturebox image
-            PictureBox_license_check.Image = My.Resources.success_icon
-            PictureBox_license_check.Tag = True
-            '--
-
-            'Les bouttons
-            Button_Load.Enabled = True
-            Button_SID_Load.Enabled = True
-
-            '   MessageBox.Show($"Welcome {resUser.NomUtilisateur}, your license will end in {licenseJours} days", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        'Picturebox image
+        PictureBox_license_check.Image = My.Resources.success_icon
+        PictureBox_license_check.Tag = True
+        '--
     End Sub
-
-    Private Sub Button_reg_Click(sender As Object, e As EventArgs) Handles Button_reg.Click
-        If PictureBox_license_check.Tag = True Then
-            MessageBox.Show("Your license is valid, you don't need to register", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-        If String.IsNullOrWhiteSpace(TextBox_license_username.Text) Then
-            MessageBox.Show("You didn't put a correct username", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        Dim user_key = Utils.getSHA1Hash(TextBox_license_username.Text)
-
-        Dim res = client.Get("Users/" + user_key)
-        If res.Body <> "null" Then 'vérifie si le compte est null (introuvable)
-            MessageBox.Show("Your account already exist")
-            Exit Sub
-        End If
-
-        AutoUpdater.Hashing()
-        Dim test2 = Utils.getSHA1Hash(AutoUpdater.A) + Utils.getSHA1Hash(Textbox_Username.Text) + Utils.getSHA1Hash(AutoUpdater.B)
-        Console.WriteLine(test2)
-
-        Dim CurUser As New User_Database With
-            {
-            .GFH51DFGTK_1855577GH7_54SDQAVV = test2
-                    }
-
-        Dim setter = client.Set("Users/" + AutoUpdater.A + Utils.getSHA1Hash(Textbox_Username.Text) + AutoUpdater.B, CurUser)
-        MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)", Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-    End Sub
-
 
     Private Async Sub Timer_Flashing_Tick(sender As Object, e As EventArgs) Handles Timer_Flashing.Tick
         If PictureBox_license_check.Tag = False Then
@@ -683,12 +560,6 @@ Public Class Form_Startup
 
     Private Sub Button_License_MouseLeave(sender As Object, e As EventArgs) Handles Button_License.MouseLeave
         PictureBox_License_Flashing.BackColor = Color.FromArgb(20, 75, 158)
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-        User_Database.Load()
-
     End Sub
 
     Private Sub Button_provisoire_Click(sender As Object, e As EventArgs) Handles Button_provisoire.Click

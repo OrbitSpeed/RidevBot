@@ -215,5 +215,11 @@
     <Setting Name="palladium53" Type="System.String" Scope="User">
       <Value Profile="(Default)">Hangar 1</Value>
     </Setting>
+    <Setting Name="email_license" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Email</Value>
+    </Setting>
+    <Setting Name="password_license" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Your Password</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
