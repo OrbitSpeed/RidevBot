@@ -6,32 +6,16 @@ Public Class Startup_Checker
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "AxInterop.WMPLib.dll"), My.Resources.AxInterop_WMPLib)
         End If
 
-        If Not File.Exists(Path.Combine(Application.StartupPath, "Interop.WMPLib.dll")) Then
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Interop.WMPLib.dll"), My.Resources.Interop_WMPLib)
-        End If
-
-        If Not File.Exists(Path.Combine(Application.StartupPath, "FireSharp.dll")) Then
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, "FireSharp.dll"), My.Resources.FireSharp)
-        End If
-
-        If Not File.Exists(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.dll")) Then
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.dll"), My.Resources.Microsoft_Threading_Tasks)
-        End If
-
-        If Not File.Exists(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.Extensions.Desktop.dll")) Then
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.Extensions.Desktop.dll"), My.Resources.Microsoft_Threading_Tasks_Extensions_Desktop)
-        End If
-
-        If Not File.Exists(Path.Combine(Application.StartupPath, "Newtonsoft.Json.dll")) Then
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Newtonsoft.Json.dll"), My.Resources.Newtonsoft_Json)
-        End If
-
         If Not File.Exists(Path.Combine(Application.StartupPath, "Firebase.Auth.dll")) Then
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "Firebase.Auth.dll"), My.Resources.Firebase_Auth)
         End If
 
         If Not File.Exists(Path.Combine(Application.StartupPath, "FirebaseAdmin.dll")) Then
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "FirebaseAdmin.dll"), My.Resources.FirebaseAdmin)
+        End If
+
+        If Not File.Exists(Path.Combine(Application.StartupPath, "FireSharp.dll")) Then
+            File.WriteAllBytes(Path.Combine(Application.StartupPath, "FireSharp.dll"), My.Resources.FireSharp)
         End If
 
         If Not File.Exists(Path.Combine(Application.StartupPath, "Google.Api.Gax.dll")) Then
@@ -49,7 +33,6 @@ Public Class Startup_Checker
         If Not File.Exists(Path.Combine(Application.StartupPath, "Google.Apis.Auth.PlatformServices.dll")) Then
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "Google.Apis.Auth.PlatformServices.dll"), My.Resources.Google_Apis_Auth_PlatformServices)
         End If
-
         If Not File.Exists(Path.Combine(Application.StartupPath, "Google.Apis.Core.dll")) Then
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "Google.Apis.Core.dll"), My.Resources.Google_Apis_Core)
         End If
@@ -60,6 +43,22 @@ Public Class Startup_Checker
 
         If Not File.Exists(Path.Combine(Application.StartupPath, "Google.Apis.PlatformServices.dll")) Then
             File.WriteAllBytes(Path.Combine(Application.StartupPath, "Google.Apis.PlatformServices.dll"), My.Resources.Google_Apis_PlatformServices)
+        End If
+
+        If Not File.Exists(Path.Combine(Application.StartupPath, "Interop.WMPLib.dll")) Then
+            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Interop.WMPLib.dll"), My.Resources.Interop_WMPLib)
+        End If
+
+        If Not File.Exists(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.dll")) Then
+            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.dll"), My.Resources.Microsoft_Threading_Tasks)
+        End If
+
+        If Not File.Exists(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.Extensions.Desktop.dll")) Then
+            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Microsoft.Threading.Tasks.Extensions.Desktop.dll"), My.Resources.Microsoft_Threading_Tasks_Extensions_Desktop)
+        End If
+
+        If Not File.Exists(Path.Combine(Application.StartupPath, "Newtonsoft.Json.dll")) Then
+            File.WriteAllBytes(Path.Combine(Application.StartupPath, "Newtonsoft.Json.dll"), My.Resources.Newtonsoft_Json)
         End If
 
         If Not File.Exists(Path.Combine(Application.StartupPath, "System.Collections.Immutable.dll")) Then

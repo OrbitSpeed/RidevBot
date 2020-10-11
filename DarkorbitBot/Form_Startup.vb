@@ -1,5 +1,4 @@
 ﻿Imports Firebase.Auth
-Imports FirebaseAdmin
 
 Public Class Form_Startup
 
@@ -532,7 +531,7 @@ Public Class Form_Startup
             Not TextBox_license_email.Text.Contains("@") Or
             Not TextBox_license_email.Text.Contains(".") Or
             TextBox_license_email.Text.Contains(" ") Or
-            TextBox_license_email.Text = "Email " Then
+            TextBox_license_email.Text = "Email" Then
             MessageBox.Show("You didn't put a correct mail", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             'Picturebox image
             PictureBox_license_check.Image = My.Resources.error_icon
