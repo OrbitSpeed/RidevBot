@@ -729,7 +729,9 @@
     <Compile Include="GalaxyGates_module_Gates_name_alpha_id_1.vb" />
     <Compile Include="GalaxyGates_module_Gates_name_beta_id_2.vb" />
     <Compile Include="GalaxyGates_module_Gates_name_gamma_id_3.vb" />
-    <Compile Include="Npc_checkbox_module.vb" />
+    <Compile Include="Form_Tools_extension.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Npc_killer_module.vb" />
     <Compile Include="Palladium_module.vb" />
     <Compile Include="Pet_module.vb" />
