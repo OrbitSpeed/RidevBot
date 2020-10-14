@@ -1111,7 +1111,5 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_license_verify_Click_1(sender As Object, e As EventArgs)
 
-    End Sub
 End Class

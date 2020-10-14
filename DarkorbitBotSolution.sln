@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DarkorbitBot", "DarkorbitBot\DarkorbitBot.vbproj", "{ADD34C12-8E64-4E94-B443-6AB1459ED49A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E25F4425-2FF6-42DC-9C17-510DB7F5C9EA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		1.7 x64|Any CPU = 1.7 x64|Any CPU

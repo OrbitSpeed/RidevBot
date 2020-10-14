@@ -578,8 +578,6 @@ Public Class Form_Game
 
                                          Dim Map_actuelle = Label_map_location.Text.Split(" : ")(2)
 
-                                         Utils.SetNPCAndCollectibleListBox(Map_actuelle)
-
                                          Label_map_location.Update()
                                          CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
                                          Console.WriteLine("On a récupéré la map")
