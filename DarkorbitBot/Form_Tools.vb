@@ -1110,4 +1110,18 @@ Public Class Form_Tools
 
 
     End Sub
+
+    Private Sub CheckBox25_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox25.CheckedChanged
+
+        If CheckBox25.BackColor = Color.DarkRed Then
+            CheckBox25.BackColor = Color.LimeGreen
+        Else
+            CheckBox25.BackColor = Color.DarkRed
+        End If
+
+    End Sub
+
+    Private Sub Panel_skylb_Paint(sender As Object, e As PaintEventArgs) Handles Panel_skylb.Paint
+
+    End Sub
 End Class

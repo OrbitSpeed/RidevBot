@@ -289,6 +289,23 @@
         9Vr2cHUjwhnW/hc0zU8ALI7DhumsawAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="Button31.Text" xml:space="preserve">
+    <value>Pack Booster  :
+
+1 Booster DMG 01
+1 Booster DMG 02
+1 Booster SHD 01
+1 Booster SHD 02
+1 Booster HON 01
+1 Booster HON 02
+1 Booster EXP 01
+1 Booster EXP 02
+1 Booster HP 01
+1 Booster HP 02
+
+100.000 U.
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
