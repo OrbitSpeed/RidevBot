@@ -325,6 +325,8 @@ Public Class Form_Tools
 
     Private Sub Pirates_Button_Click(sender As Object, e As EventArgs) Handles button_bid.Click
 
+        Panel_skylb.Visible = False
+        Panel_store.Visible = False
         panel_enchere.Visible = True
         Panel_stats.Visible = False
 
@@ -343,6 +345,8 @@ Public Class Form_Tools
 
         Else
 
+            Panel_skylb.Visible = False
+            Panel_store.Visible = False
             panel_enchere.Visible = False
             Panel_stats.Visible = True
 
@@ -1121,7 +1125,31 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_skylb_Paint(sender As Object, e As PaintEventArgs) Handles Panel_skylb.Paint
+    Private Sub Button_skyskylab_Click(sender As Object, e As EventArgs) Handles Button_skyskylab.Click
+
+        Panel_skylb.Visible = True
+        Panel_store.Visible = False
+        panel_enchere.Visible = False
+        Panel_stats.Visible = False
+
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+
+    End Sub
+
+    Private Sub Button_store_Click(sender As Object, e As EventArgs) Handles Button_store.Click
+
+        Panel_skylb.Visible = False
+        Panel_store.Visible = True
+        panel_enchere.Visible = False
+        Panel_stats.Visible = False
+
+        Size = New Size(687, 436)
+        Bot_Settings_BOX.Size = New Size(687, 384)
+
+    End Sub
+
+    Private Sub Panel_store_Paint(sender As Object, e As PaintEventArgs) Handles Panel_store.Paint
 
     End Sub
 End Class
