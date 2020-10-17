@@ -878,7 +878,9 @@ Public Class Form_Tools
         If Form_Game.User_Stop_Bot = True Then
             PictureBox_LaunchBot.Image = My.Resources.cancel_presentation
             Form_Game.User_Stop_Bot = False
-            Form_Game.Button_Bot.PerformClick()
+
+            RUNNING.running()
+
         Else
             PictureBox_LaunchBot.Image = My.Resources.play_circle_filled_white
             Form_Game.User_Stop_Bot = True

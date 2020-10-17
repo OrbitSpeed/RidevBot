@@ -4,7 +4,6 @@ Imports AutoItX3Lib
 Public Class Form_Game
     Declare Function BlockInput Lib "user32" (ByVal fBlockIt As Boolean) As Boolean
 
-
     Dim AutoIt As New AutoItX3
     Dim X_TOP As Integer = 0
     Dim Y_TOP As Integer = 64
@@ -41,53 +40,8 @@ Public Class Form_Game
         'Traveling_module()
     End Sub
 
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    ' █                                                                                                                                █
-    ' █                                                          RidevBot BOT                                                          █
-    ' █                                                                                                                                █
-    ' █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-
-    ' ici se trouve toute les déclaration et les variables utiles pour le bot
-#Region "Declarations -- fonction Update screen -- Var.Multiple"
-
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-    Function Update_Screen()
-        Dim Client_primary = New Bitmap(WebBrowser_Game_Ridevbot.ClientSize.Width, WebBrowser_Game_Ridevbot.ClientSize.Height)
-        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
-        Invoke(New MethodInvoker(Sub()
-                                     Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(0, 0), WebBrowser_Game_Ridevbot.ClientSize)
-                                 End Sub))
-        Return Client_primary
-        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
-    End Function
-    Function Update_Screen_At_Zone(x As Integer, y As Integer)
-        Dim Client_primary = New Bitmap(x, y)
-        Dim Client_second As Graphics = Graphics.FromImage(Client_primary)
-        Invoke(New MethodInvoker(Sub()
-                                     Client_second.CopyFromScreen(PointToScreen(WebBrowser_Game_Ridevbot.Location), New Point(x, y), Client_primary.Size)
-                                 End Sub))
-        Return Client_primary
-        'Client_primary.Save($"screenshot.jpg", ImageFormat.Jpeg)
-    End Function
-
-    Public User_Stop_Bot As Boolean = True
-    Public CurrentMapUser = "0-0"
-    Dim Client_Screen As Bitmap
-    Dim save_point_x As String = 0
-    Dim save_point_Y As String = 0
-    Dim passage As String = 0
-
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-#End Region
-
-    ' Pour utiliser ce referer a " CHECKING MINIMAP "
 #Region "Var.disconedcted -- Var.map location -- Fonction Minimap -- fonction deconnecté et reconnexion --- Resize/Reduce and place"
 
-
-    ' ⚡ VARIABLES ⚡ 
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
 #Region "⚡ VARIABLES DISCONECTED ⚡"
 
     Dim Disconnected = My.Resources.Disconnected

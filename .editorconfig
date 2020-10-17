@@ -2,3 +2,6 @@
 
 # IDE0002: Simplifier l'accès au membre
 dotnet_diagnostic.IDE0002.severity = warning
+
+# BC42358: Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
+dotnet_diagnostic.BC42358.severity = silent

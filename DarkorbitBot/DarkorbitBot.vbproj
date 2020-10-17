@@ -742,6 +742,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Red_dots.vb" />
+    <Compile Include="RUNNING.vb" />
     <Compile Include="Skylab_module.vb" />
     <Compile Include="Startup_Checker.Designer.vb">
       <DependentUpon>Startup_Checker.vb</DependentUpon>
@@ -779,6 +780,7 @@
     </Compile>
     <Compile Include="Traveling_module.vb" />
     <Compile Include="Utils.vb" />
+    <Compile Include="Var.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AutoUpdater.resx">
