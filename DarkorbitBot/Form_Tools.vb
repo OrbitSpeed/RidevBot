@@ -875,15 +875,15 @@ Public Class Form_Tools
 
     Public Sub PictureBox_LaunchBot_Click(sender As Object, e As EventArgs) Handles PictureBox_LaunchBot.Click
 
-        If Form_Game.User_Stop_Bot = True Then
+        If Var.User_Stop_Bot = True Then
             PictureBox_LaunchBot.Image = My.Resources.cancel_presentation
-            Form_Game.User_Stop_Bot = False
+            Var.User_Stop_Bot = False
 
-            RUNNING.running()
+            RUNNING.Start()
 
         Else
             PictureBox_LaunchBot.Image = My.Resources.play_circle_filled_white
-            Form_Game.User_Stop_Bot = True
+            Var.User_Stop_Bot = True
         End If
 
 

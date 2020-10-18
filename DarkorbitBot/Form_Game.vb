@@ -12,3256 +12,24 @@ Public Class Form_Game
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
 
         CloseForm.ShowDialog(Me)
-        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
-        Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+        Form_tools.Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
+        Form_tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
-        Form_Tools.Reloader = 0
-        Form_Tools.Reload()
+        Form_tools.Reloader = 0
+        Form_tools.Reload()
 
     End Sub
-
     Private Sub WebBrowser_Game_Ridevbot_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Game_Ridevbot.DocumentCompleted
 
-
-
-        Form_Tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
-        Form_Tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
+        Form_tools.Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser"
+        Form_tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
     End Sub
-
-
     Private Sub Form_Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.TopMost = True
         If BackgroundWorker_Performance.IsBusy = False Then
             BackgroundWorker_Performance.RunWorkerAsync()
         End If
-
-
-        'Traveling_module()
-    End Sub
-
-#Region "Var.disconedcted -- Var.map location -- Fonction Minimap -- fonction deconnecté et reconnexion --- Resize/Reduce and place"
-
-#Region "⚡ VARIABLES DISCONECTED ⚡"
-
-    Dim Disconnected = My.Resources.Disconnected
-#End Region
-
-#Region "⚡ VARIABLES MAP LOCATION ⚡"
-
-    Dim System_box_move As Boolean = False
-
-    Dim Minimap_closed_ref = My.Resources.Minimap_closed
-    Dim Minimap_size_ref = My.Resources.Minimap_reduce
-    Dim Move_minimap_box_ref = My.Resources.Move_box
-    Dim systeme_stellaire_ref = My.Resources.systeme_stellaire
-    Dim map_detect_ref = My.Resources.map_detect
-    Dim deconnection_popup_visible = My.Resources.Deconnection_popup_encore_visible
-
-    Dim Map1_1 = My.Resources.map1_1
-    Dim Map1_2 = My.Resources.map1_2
-    Dim Map1_3 = My.Resources.map1_3
-    Dim Map1_4 = My.Resources.map1_4
-    Dim Map1_5 = My.Resources.map1_5
-    Dim Map1_6 = My.Resources.map1_6
-    Dim Map1_7 = My.Resources.map1_7
-    Dim Map1_8 = My.Resources.map1_8
-
-    Dim Map2_1 = My.Resources.map2_1
-    Dim Map2_2 = My.Resources.map2_2
-    Dim Map2_3 = My.Resources.map2_3
-    Dim Map2_4 = My.Resources.map2_4
-    Dim Map2_5 = My.Resources.map2_5
-    Dim Map2_6 = My.Resources.map2_6
-    Dim Map2_7 = My.Resources.map2_7
-    Dim Map2_8 = My.Resources.map2_8
-
-    Dim Map3_1 = My.Resources.map3_1
-    Dim Map3_2 = My.Resources.map3_2
-    Dim Map3_3 = My.Resources.map3_3
-    Dim Map3_4 = My.Resources.map3_4
-    Dim Map3_5 = My.Resources.map3_5
-    Dim Map3_6 = My.Resources.map3_6
-    Dim Map3_7 = My.Resources.map3_7
-    Dim Map3_8 = My.Resources.map3_8
-
-    Dim Map4_1 = My.Resources.map4_1
-    Dim Map4_2 = My.Resources.map4_2
-    Dim Map4_3 = My.Resources.map4_3
-    Dim Map4_4 = My.Resources.map4_4
-    Dim Map4_5 = My.Resources.map4_5
-
-    Dim Map5_1 = My.Resources.map5_1
-    Dim Map5_2 = My.Resources.map5_2
-    Dim Map5_3 = My.Resources.map5_3
-
-    Dim Map1_BL = My.Resources.map1_BL
-    Dim Map2_BL = My.Resources.map2_BL
-    Dim Map3_BL = My.Resources.map3_BL
-#End Region
-    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    ' ⚡ VARIABLES ⚡
-
-
-
-
-
-
-
-
-
-    ' ⚡ MODULE MINIMAP ⚡ 
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-#Region "Checking/reducing/moving and saving minimap"
-
-    Private BackgroundWorker_Startup_Bot_Rework As Boolean
-    Private Async Sub BackgroundWorker_Startup_Bot_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Startup_Bot.DoWork
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        'Try
-        Invoke(New MethodInvoker(Sub()
-                                     WebBrowser_Game_Ridevbot.Select()
-                                 End Sub))
-        'Catch ex As Exception
-        '    Console.WriteLine($"[ERROR - STR0] Connection_lost_error error! {ex.Message}")
-        '    BackgroundWorker_Startup_Bot_Rework = True
-        'End Try
-
-        Client_Screen = Update_Screen()
-
-        ' if machin
-        'alors tu fais ça
-        'exit sub
-        'end if
-
-        'Try
-        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-        If Connection_Lost <> Nothing Then
-
-            Reconnexion()
-            Exit Sub
-
-        End If
-
-        'Catch Connection_lost_error As Exception
-        '    Console.WriteLine($"[ERROR - STR1] Connection_lost_error error! {Connection_lost_error.Message}")
-        '    BackgroundWorker_Startup_Bot_Rework = True
-        '    'Startup_bot()
-        'End Try
-
-        'Try
-        Client_Screen = Update_Screen()
-        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
-
-
-        If Save_point_original.X = "762" Then
-            BackgroundWorker_Checking_minimap.RunWorkerAsync()
-            Exit Sub
-        End If
-
-        'Catch map_error As Exception
-        '    Console.WriteLine($"[ERROR - STR2] map_error error! {map_error.Message}")
-        '    BackgroundWorker_Startup_Bot_Rework = True
-        '    'Startup_bot()
-        'End Try
-
-        'Try
-        Invoke(New MethodInvoker(Sub()
-                                     AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-                                     Form_Tools.TextBox_desactive_allkey.Refresh()
-                                     Form_Tools.TextBox_desactive_allkey.Update()
-                                     AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_desactive_allkey.Text))
-                                 End Sub))
-        Await Task.Delay(800)
-        BackgroundWorker_Detection_minimap.RunWorkerAsync()
-        'Catch ex As Exception
-        '    Console.WriteLine($"[ERROR - STR3] Startup_Bot error! {ex.Message}")
-        '    BackgroundWorker_Startup_Bot_Rework = True
-        '    'Startup_bot()
-        'End Try
-    End Sub
-    Private Sub BackgroundWorker_Startup_Bot_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Startup_Bot.RunWorkerCompleted
-        If BackgroundWorker_Startup_Bot_Rework = True Then
-            BackgroundWorker_Startup_Bot_Rework = False
-            BackgroundWorker_Startup_Bot.RunWorkerAsync()
-        End If
-    End Sub
-
-
-    Private BackgroundWorker_Detection_minimap_Rework As Boolean
-    Private Sub BackgroundWorker_Detection_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Detection_minimap.DoWork
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-
-        'Try
-        Client_Screen = Update_Screen()
-        System_box_move = False
-
-        Dim Minimap_closed As Point = Client_Screen.Contains(Minimap_closed_ref)
-        If Minimap_closed <> Nothing Then
-            Invoke(New MethodInvoker(Async Sub()
-                                         WebBrowser_Game_Ridevbot.Select()
-                                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-                                         Await Task.Delay(800)
-                                         Console.WriteLine("Detection minimap ok")
-                                         BackgroundWorker_Reduce_minimap.RunWorkerAsync()
-                                     End Sub))
-        Else
-            BackgroundWorker_Startup_Bot.RunWorkerAsync()
-        End If
-
-        'Catch Minimap_opened_error As Exception
-        '    Console.WriteLine($"[MNMAP_0] Minimap_opened error! {Minimap_opened_error.Message}")
-        'End Try
-    End Sub
-    Private Sub BackgroundWorker_Detection_minimap_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker_Detection_minimap.RunWorkerCompleted
-        If BackgroundWorker_Detection_minimap_Rework = True Then
-            BackgroundWorker_Detection_minimap_Rework = False
-            BackgroundWorker_Detection_minimap.RunWorkerAsync()
-        End If
-    End Sub
-
-
-    'Private BackgroundWorker_reduce_minimap_Rework As Boolean
-    Private Async Sub BackgroundWorker_Reduce_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Reduce_minimap.DoWork
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-
-        'Try
-        Client_Screen = Update_Screen()
-        Dim Minimap_size As Point = Client_Screen.Contains(Minimap_size_ref)
-        Dim compare As Point
-
-        If Minimap_size <> Nothing Then
-
-            For i = 0 To 15
-                Await Task.Delay(60)
-                'Dim cursor_Pos = Cursor.Position
-                Client_Screen = Update_Screen()
-                Minimap_size = Client_Screen.Contains(Minimap_size_ref)
-                If Minimap_size <> Nothing Then
-                    If compare = Minimap_size Then
-                        i = 15
-                        Console.WriteLine("Réduction faite")
-                        Invoke(New MethodInvoker(Sub()
-                                                     'Await Task.Delay(1000)
-                                                     BackgroundWorker_Deplacement_minimap_bas_droite.RunWorkerAsync()
-                                                 End Sub))
-                        BackgroundWorker_Reduce_minimap.CancelAsync()
-                    Else
-                        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
-
-                        compare = Minimap_size
-                    End If
-                End If
-                'Cursor.Position = cursor_Pos
-            Next
-            'BackgroundWorker_Reduce_minimap.CancelAsync()
-            'Invoke(New MethodInvoker(Async Sub()
-            '                             Console.WriteLine("Passé par la trappe")
-            '                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_size.X, Minimap_size.Y)
-            '                             Await Task.Delay(1000)
-            '                             BackgroundWorker_Deplacement_minimap_bas_droite.RunWorkerAsync()
-            '                         End Sub))
-        Else
-            If System_box_move = True Then
-                BackgroundWorker_Startup_Bot.RunWorkerAsync()
-            Else
-                BackgroundWorker_Detection_minimap.RunWorkerAsync()
-            End If
-        End If
-
-        'Catch Reduction_minimap_error As Exception
-        '    Console.WriteLine($"Reduction_minimap_error error! {vbNewLine}{Reduction_minimap_error.Message}{vbNewLine}------")
-        'End Try
-    End Sub
-
-    Private Sub BackgroundWorker_Deplacement_minimap_bas_droite_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Deplacement_minimap_bas_droite.DoWork
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        Client_Screen = Update_Screen()
-
-        'Try
-        Dim Minimap_move As Point = Client_Screen.Contains(Move_minimap_box_ref)
-
-        If Minimap_move <> Nothing Then
-
-            Invoke(New MethodInvoker(Async Sub()
-                                         BlockInput(True)
-
-                                         '     Dim cursor_Pos = Cursor.Position
-                                         'AutoIt.MouseClickDrag(Minimap_move.X - 40, Minimap_move.Y + 20, 759, 599, 10)
-                                         'Await Task.Delay(200)
-                                         '  Cursor.Position = cursor_Pos
-
-
-                                         Dim cursor_Pos = Cursor.Position
-                                         Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
-                                         AutoIt.MouseDown("LEFT")
-                                         Await Task.Delay(10)
-                                         Cursor.Position = New Point(759, 599)
-                                         AutoIt.MouseUp("LEFT")
-                                         Cursor.Position = cursor_Pos
-                                         Await Task.Delay(1200)
-
-
-
-
-                                         Console.WriteLine("déplacement minimap ok")
-                                         BlockInput(False)
-
-                                         Checking_map_actuel(True)
-                                         User_Stop_Bot = False
-                                         Stop_Bot()
-                                     End Sub))
-        Else
-            System_box_move = True
-            BackgroundWorker_Reduce_minimap.RunWorkerAsync()
-        End If
-
-        'Catch Deplacement_minimap_bas_droite_error As Exception
-        '    Console.WriteLine($"Deplacement_minimap_bas_droite_error error! {Deplacement_minimap_bas_droite_error.Message}")
-
-        'End Try
-    End Sub
-
-#End Region
-    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    ' ⚡ MODULE MINIMAP ⚡
-
-
-
-
-
-
-
-
-
-
-
-    ' ⚡ CHECKING MINIMAP / CHECK DANS QUEL MAP IL SE TROUVE / CHECK SI ON EST DECONNECTER ⚡ 
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    '  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ 
-    ' CHECKING MINIMAP
-    Private Sub BackgroundWorker_Checking_minimap_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Checking_minimap.DoWork
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        Client_Screen = Update_Screen()
-        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
-
-        If Save_point_original.X = "762" Then
-            'Await Task.Delay(1000)
-            Console.WriteLine("relance")
-
-            Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-            If Connection_Lost <> Nothing Then
-
-                Reconnexion()
-                Exit Sub
-
-            End If
-
-            Checking_map_actuel(True)
-
-            Console.WriteLine("On boucle sur checking_minimap")
-            'User_Stop_Bot = False
-            'BackgroundWorker_Checking_minimap.CancelAsync()
-            Stop_Bot()
-        Else
-            BackgroundWorker_Startup_Bot.RunWorkerAsync()
-        End If
-
-        'Try
-        'Catch Aucune_map_trouve_error As Exception
-        '    Console.WriteLine($"Aucune_map_trouve_error! {Aucune_map_trouve_error.Message}")
-        '    Dim st As New StackTrace(True)
-        '    st = New StackTrace(Aucune_map_trouve_error, True)
-        '    Console.WriteLine("Line: " & st.GetFrame(0).GetFileLineNumber().ToString)
-        '    Console.WriteLine("-------")
-
-        'End Try
-
-
-
-    End Sub
-
-    Private Sub Checking_map_actuel(Optional UpdateOnly As Boolean = False)
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        Client_Screen = Update_Screen()
-
-        Dim Map_Location1_1 As Point = Client_Screen.Contains(Map1_1)
-        Dim Map_Location1_2 As Point = Client_Screen.Contains(Map1_2)
-        Dim Map_Location1_3 As Point = Client_Screen.Contains(Map1_3)
-        Dim Map_Location1_4 As Point = Client_Screen.Contains(Map1_4)
-        Dim Map_Location1_5 As Point = Client_Screen.Contains(Map1_5)
-        Dim Map_Location1_6 As Point = Client_Screen.Contains(Map1_6)
-        Dim Map_Location1_7 As Point = Client_Screen.Contains(Map1_7)
-        Dim Map_Location1_8 As Point = Client_Screen.Contains(Map1_8)
-
-        Dim Map_Location2_1 As Point = Client_Screen.Contains(Map2_1)
-        Dim Map_Location2_2 As Point = Client_Screen.Contains(Map2_2)
-        Dim Map_Location2_3 As Point = Client_Screen.Contains(Map2_3)
-        Dim Map_Location2_4 As Point = Client_Screen.Contains(Map2_4)
-        Dim Map_Location2_5 As Point = Client_Screen.Contains(Map2_5)
-        Dim Map_Location2_6 As Point = Client_Screen.Contains(Map2_6)
-        Dim Map_Location2_7 As Point = Client_Screen.Contains(Map2_7)
-        Dim Map_Location2_8 As Point = Client_Screen.Contains(Map2_8)
-
-        Dim Map_Location3_1 As Point = Client_Screen.Contains(Map3_1)
-        Dim Map_Location3_2 As Point = Client_Screen.Contains(Map3_2)
-        Dim Map_Location3_3 As Point = Client_Screen.Contains(Map3_3)
-        Dim Map_Location3_4 As Point = Client_Screen.Contains(Map3_4)
-        Dim Map_Location3_5 As Point = Client_Screen.Contains(Map3_5)
-        Dim Map_Location3_6 As Point = Client_Screen.Contains(Map3_6)
-        Dim Map_Location3_7 As Point = Client_Screen.Contains(Map3_7)
-        Dim Map_Location3_8 As Point = Client_Screen.Contains(Map3_8)
-
-        Dim Map_Location4_1 As Point = Client_Screen.Contains(Map4_1)
-        Dim Map_Location4_2 As Point = Client_Screen.Contains(Map4_2)
-        Dim Map_Location4_3 As Point = Client_Screen.Contains(Map4_3)
-        Dim Map_Location4_4 As Point = Client_Screen.Contains(Map4_4)
-        Dim Map_Location4_5 As Point = Client_Screen.Contains(Map4_5)
-
-        Dim Map_Location5_1 As Point = Client_Screen.Contains(Map5_1)
-        Dim Map_Location5_2 As Point = Client_Screen.Contains(Map5_2)
-        Dim Map_Location5_3 As Point = Client_Screen.Contains(Map5_3)
-
-        Dim Map_Location1_BL As Point = Client_Screen.Contains(Map1_BL)
-        Dim Map_Location2_BL As Point = Client_Screen.Contains(Map2_BL)
-        Dim Map_Location3_BL As Point = Client_Screen.Contains(Map3_BL)
-
-
-        Try
-            Invoke(New MethodInvoker(Sub()
-                                         If Map_Location1_1 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-1"
-                                         ElseIf Map_Location1_2 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-2"
-                                         ElseIf Map_Location1_3 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-3"
-                                         ElseIf Map_Location1_4 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-4"
-                                         ElseIf Map_Location1_5 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-5"
-                                         ElseIf Map_Location1_6 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-6"
-                                         ElseIf Map_Location1_7 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-7"
-                                         ElseIf Map_Location1_8 <> Nothing Then
-                                             Label_map_location.Text = "Map : 1-8"
-                                         ElseIf Map_Location2_1 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-1"
-                                         ElseIf Map_Location2_2 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-2"
-                                         ElseIf Map_Location2_3 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-3"
-                                         ElseIf Map_Location2_4 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-4"
-                                         ElseIf Map_Location2_5 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-5"
-                                         ElseIf Map_Location2_6 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-6"
-                                         ElseIf Map_Location2_7 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-7"
-                                         ElseIf Map_Location2_8 <> Nothing Then
-                                             Label_map_location.Text = "Map : 2-8"
-                                         ElseIf Map_Location3_1 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-1"
-                                         ElseIf Map_Location3_2 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-2"
-                                         ElseIf Map_Location3_3 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-3"
-                                         ElseIf Map_Location3_4 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-4"
-                                         ElseIf Map_Location3_5 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-5"
-                                         ElseIf Map_Location3_6 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-6"
-                                         ElseIf Map_Location3_7 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-7"
-                                         ElseIf Map_Location3_8 <> Nothing Then
-                                             Label_map_location.Text = "Map : 3-8"
-                                         ElseIf Map_Location4_1 <> Nothing Then
-                                             Label_map_location.Text = "Map : 4-1"
-                                         ElseIf Map_Location4_2 <> Nothing Then
-                                             Label_map_location.Text = "Map : 4-2"
-                                         ElseIf Map_Location4_3 <> Nothing Then
-                                             Label_map_location.Text = "Map : 4-3"
-                                         ElseIf Map_Location4_4 <> Nothing Then
-                                             Label_map_location.Text = "Map : 4-4"
-                                         ElseIf Map_Location4_5 <> Nothing Then
-                                             Label_map_location.Text = "Map : 4-5"
-                                         ElseIf Map_Location5_1 <> Nothing Then
-                                             Label_map_location.Text = "Map : 5-1"
-                                         ElseIf Map_Location5_2 <> Nothing Then
-                                             Label_map_location.Text = "Map : 5-2"
-                                         ElseIf Map_Location5_3 <> Nothing Then
-                                             Label_map_location.Text = "Map : 5-3"
-                                         ElseIf Map_Location1_BL <> Nothing Then
-                                             Label_map_location.Text = "Map : 1BL"
-                                         ElseIf Map_Location2_BL <> Nothing Then
-                                             Label_map_location.Text = "Map : 2BL"
-                                         ElseIf Map_Location3_BL <> Nothing Then
-                                             Label_map_location.Text = "Map : 3BL"
-                                         End If
-
-                                         Dim Map_actuelle = Label_map_location.Text.Split(" : ")(2)
-
-                                         Label_map_location.Update()
-                                         CurrentMapUser = Label_map_location.Text.Split(" : ")(1)
-                                         Console.WriteLine("On a récupéré la map")
-                                         If UpdateOnly = False Then
-                                             BackgroundWorker_Checking_minimap.RunWorkerAsync()
-                                         End If
-                                     End Sub))
-
-        Catch detect_map_error As Exception
-            Console.WriteLine($"Error on the map detector: {detect_map_error.Message}")
-        End Try
-
-    End Sub
-
-    Private Async Sub Reconnexion()
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        'Try
-        Client_Screen = Update_Screen()
-        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-
-        If Connection_Lost <> Nothing Then
-            'Cursor.Position = New Point(300, 354 + 18)
-            'Await Task.Delay(1000)
-
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, 354)
-            Console.WriteLine("Reconnexion")
-            Await Task.Delay(7000)
-            'Try
-            Client_Screen = Update_Screen()
-            Dim deconnection_popup As Point = Client_Screen.Contains(deconnection_popup_visible)
-
-            If deconnection_popup <> Nothing Then
-                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 409, 348)
-                Await Task.Delay(1000)
-                BackgroundWorker_Checking_minimap.RunWorkerAsync()
-            Else
-                BackgroundWorker_Checking_minimap.RunWorkerAsync()
-            End If
-            'Catch detection_popup_error As Exception
-
-            '    Console.WriteLine($"detection_popup_error {detection_popup_error.Message}")
-            '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
-            'End Try
-            'BackgroundWorker_Checking_minimap.CancelAsync()
-            'Await Task.Delay(750)
-            'BackgroundWorker_Checking_minimap.RunWorkerAsync() '--
-        Else
-            Console.WriteLine("Reconnexion introuvable")
-            BackgroundWorker_Checking_minimap.RunWorkerAsync()
-        End If
-
-        'Catch Reconnection_errror As Exception
-
-        '    Console.WriteLine($"Reconnection error {Reconnection_errror.Message}")
-        '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
-
-        'End Try
-
-
-
-    End Sub
-
-    '  ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲                          
-    ' ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    ' ⚡ MODULE MINIMAP ⚡
-
-#End Region
-
-#Region "Click Zone"
-
-#Region "4-1"
-    Private Async Sub PORTAIL_41_to_14()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 606, 516)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_41_to_43()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 566)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_41_to_42()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 479)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_41_to_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-#Region "4-2"
-    Private Async Sub PORTAIL_42_to_24()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 475)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_42_to_41()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_42_to_43()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 759, 567)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_42_to_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 687, 522)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-
-#Region "4-3"
-    Private Async Sub PORTAIL_43_to_34()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 516)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_43_to_41()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_43_to_42()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 479)
-        Await Task.Delay(10000)
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_43_to_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        'Dim randomX = Utils.GetRandom(685, 693)
-        'Dim randomY = Utils.GetRandom(717, 725)
-
-        Dim randomX = Utils.GetPortalZone(685, "x")
-        Dim randomY = Utils.GetPortalZone(717, "y")
-        'Milieu
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-#Region "1-4"
-    Private Async Sub PORTAIL_14_to_41()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-#Region "2-4"
-    Private Async Sub PORTAIL_24_to_42()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 570)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-#Region "3-4"
-    Private Async Sub PORTAIL_34_to_43()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'On envoit le milieu du portail
-        Dim randomX = Utils.GetPortalZone(683, "x")
-        Dim randomY = Utils.GetPortalZone(493, "y")
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-
-
-
-
-
-
-
-
-#Region "BL"
-    Private Async Sub PORTAIL_1BL_MMO()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 691, 556)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_2BL_EIC()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 692, 563)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_3BL_VRU()
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 692, 562)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-#End Region
-
-
-    Private Async Sub PORTAIL_15_TO_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_44_to_15()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 623, 540
-        Dim randomX = Utils.GetPortalZone(623, "x")
-        Dim randomY = Utils.GetPortalZone(540, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-
-
-    Private Async Sub PORTAIL_25_TO_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 569)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_44_to_25()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 719, 485
-        Dim randomX = Utils.GetPortalZone(719, "x")
-        Dim randomY = Utils.GetPortalZone(485, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-
-
-    Private Async Sub PORTAIL_35_TO_44()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' HAUT GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 478)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-
-
-#Region "4-4"
-    Private Async Sub PORTAIL_44_to_35()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 719, 593
-        Dim randomX = Utils.GetPortalZone(719, "x")
-        Dim randomY = Utils.GetPortalZone(593, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-
-
-
-    Private Async Sub PORTAIL_44_to_41()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 679, 540
-        Dim randomX = Utils.GetPortalZone(679, "x")
-        Dim randomY = Utils.GetPortalZone(540, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_44_to_42()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 691, 533
-        Dim randomX = Utils.GetPortalZone(691, "x")
-        Dim randomY = Utils.GetPortalZone(533, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_44_to_43()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 691, 545
-        Dim randomX = Utils.GetPortalZone(691, "x")
-        Dim randomY = Utils.GetPortalZone(545, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-#End Region
-
-
-#Region "4-5"
-    Private Async Sub PORTAIL_45_to_15()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 623, 540
-        Dim randomX = Utils.GetPortalZone(623, "x")
-        Dim randomY = Utils.GetPortalZone(540, "y")
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_to_25()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 717, 463)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_to_35()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Ne pas faire le centre : 719, 596
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 719, 596)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_to_51_MMO()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 647, 540
-        Dim randomX = Utils.GetPortalZone(647, "x")
-        Dim randomY = Utils.GetPortalZone(540, "y")
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_to_51_EIC()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 705, 508
-        Dim randomX = Utils.GetPortalZone(705, "x")
-        Dim randomY = Utils.GetPortalZone(508, "y")
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_to_51_VRU()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 703, 550)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-#End Region
-
-
-
-#Region "4-5 Indépendant"
-    Private Async Sub PORTAIL_45_MMO()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 610, 584
-        'Vrai centre : 764, 534
-        Dim randomX = Utils.GetPortalZone(764, "x")
-        Dim randomY = Utils.GetPortalZone(534, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-    Private Async Sub PORTAIL_45_EIC()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 760, 584
-        Dim randomX = Utils.GetPortalZone(760, "x")
-        Dim randomY = Utils.GetPortalZone(584, "y")
-
-        ' BAS DROITE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_45_VRU()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        'Centre : 745, 493
-        Dim randomX = Utils.GetPortalZone(745, "x")
-        Dim randomY = Utils.GetPortalZone(493, "y")
-
-        ' BAS GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-    End Sub
-#End Region
-
-
-
-#Region "Portails généraux"
-    Private Async Sub PORTAIL_HAUT_DROITE()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        Dim randomX = Utils.GetPortalZone(760, "x")
-        Dim randomY = Utils.GetPortalZone(497, "y")
-
-        'HAUT DROITE 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_HAUT_GAUCHE()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        '608
-        '492+18
-        'Dim randomX = Utils.GetRandom(608, 616)
-        'Dim randomY = Utils.GetRandom(474, 482)
-
-        Dim randomX = Utils.GetPortalZone(610, "x")
-        Dim randomY = Utils.GetPortalZone(497, "y")
-
-        ' HAUT GAUCHE
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_BAS_DROITE()
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        ' BAS DROITE
-        'Centre : 758, 579
-        Dim randomX = Utils.GetPortalZone(760, "x")
-        Dim randomY = Utils.GetPortalZone(585, "y")
-
-        'Dim randomX = Utils.GetRandom(756, 765)
-        'Dim randomY = Utils.GetRandom(562, 569)
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 760, 567)
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-    Private Async Sub PORTAIL_BAS_GAUCHE()
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-        '610, 584
-        'Centre : 608, 579
-        Dim randomX = Utils.GetPortalZone(610, "x")
-        Dim randomY = Utils.GetPortalZone(584, "y")
-
-        'Dim randomX = Utils.GetRandom(610, 618)
-        'Dim randomY = Utils.GetRandom(566, 574)
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(1500)
-        Client_Screen = Update_Screen()
-        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
-        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
-        If traveling_indication_point <> Nothing Then
-            Console.WriteLine("traveling indication trouvée")
-            Do Until traveling_indication_point = Nothing
-                Client_Screen = Update_Screen()
-                traveling_indication_point = Client_Screen.Contains(traveling_indication)
-                If traveling_indication_point <> Nothing Then
-                    Await Task.Delay(1200)
-                    Console.WriteLine("on reboucle pour revérifier")
-                Else
-                    Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
-                    Exit Do
-                End If
-            Loop
-        End If
-        ' BAS GAUCHE
-        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 566)
-        POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-    End Sub
-#End Region
-
-    Private Async Sub POINT_DE_CHUTE_DU_CLICK_TRAVELING()
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        Client_Screen = Update_Screen()
-        Checking_map_actuel(True)
-        Await Task.Delay(1000)
-
-        Dim Map_actuelle_reconize = Label_map_location.Text.Replace("Map : ", "")
-        Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
-        Console.WriteLine(Map_actuelle_reconize)
-        Console.WriteLine(Map_roaming_reconize)
-
-        If Map_actuelle_reconize <> Map_roaming_reconize Then
-
-            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
-            Await Task.Delay(10000)
-            Checking_map_actuel(True)
-            Traveling_module()
-
-        Else
-
-            Await Task.Delay(10000)
-            Console.WriteLine("On relance Traveling par Point de chute")
-            Traveling_module()
-
-        End If
-
-    End Sub
-
-
-#End Region
-
-    'TRAVELING MODULE
-    Public Async Sub Traveling_module()
-
-        If User_Stop_Bot Then
-            Stop_Bot()
-            Exit Sub
-        End If
-
-        Client_Screen = Update_Screen()
-
-        Dim Connection_Lost As Point = Client_Screen.Contains(Disconnected)
-        If Connection_Lost <> Nothing Then
-
-            If BackgroundWorker_Startup_Bot.IsBusy = False Then
-                BackgroundWorker_Startup_Bot.RunWorkerAsync()
-                Exit Sub
-            End If
-
-        End If
-
-
-        Dim Save_point_original As Point = Client_Screen.Contains(Minimap_size_ref)
-        If Save_point_original.X = "762" Then
-            'Await Task.Delay(1000)
-            Console.WriteLine("Minimap au bon endroit")
-
-        Else
-            If BackgroundWorker_Startup_Bot.IsBusy = False Then
-                BackgroundWorker_Startup_Bot.RunWorkerAsync()
-                Exit Sub
-            End If
-        End If
-
-        If BackgroundWorker_Startup_Bot.IsBusy Or
-            BackgroundWorker_Checking_minimap.IsBusy Or
-            BackgroundWorker_Deplacement_minimap_bas_droite.IsBusy Or
-            BackgroundWorker_Detection_minimap.IsBusy Or
-            BackgroundWorker_Reduce_minimap.IsBusy Then
-
-            'Await Task.Delay(350)
-            Console.WriteLine($"Les backgrounds sont en cours, on coupe tout")
-            User_Stop_Bot = True
-            BackgroundWorker_Startup_Bot.CancelAsync()
-            BackgroundWorker_Checking_minimap.CancelAsync()
-            BackgroundWorker_Deplacement_minimap_bas_droite.CancelAsync()
-            BackgroundWorker_Detection_minimap.CancelAsync()
-            BackgroundWorker_Reduce_minimap.CancelAsync()
-            Await Task.Delay(3200)
-            User_Stop_Bot = False
-        Else
-
-
-            Dim Map_actuelle = Label_map_location.Text.Split(" : ")(2)
-            Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
-
-            Console.WriteLine(Map_actuelle)
-            Console.WriteLine(Map_roaming)
-            Console.WriteLine("Calcul de l'itinéraire")
-
-            '  Or
-            ' Map_roaming = ""
-
-            If Map_actuelle <> Map_roaming Then
-
-
-
-
-#Region "MAP = 1-8 ---------- "
-                If Map_actuelle = "1-8" And
-                    Map_roaming = "1-6" Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "1-8" And
-                    (Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
-                    PORTAIL_1BL_MMO()
-
-                ElseIf Map_actuelle = "1-8" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 1-7 ---------- "
-                ElseIf Map_actuelle = "1-7" And
-                    (Map_roaming = "1-6" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
-
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "1-7" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-
-                    PORTAIL_HAUT_DROITE()
-#End Region ' VALIDER
-#Region "MAP = 1-6 ---------- "
-                ElseIf Map_actuelle = "1-6" And
-                    (Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
-
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "1-6" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-
-                    PORTAIL_BAS_DROITE()
-#End Region ' VALIDER
-#Region "MAP = 1-5 ---------- "
-                ElseIf Map_actuelle = "1-5" And
-                    (Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
-
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "1-5" And Map_roaming = "1-6" Then
-
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "1-5" And
-                   (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "3-5") Then
-
-                    PORTAIL_45_MMO()
-
-                ElseIf Map_actuelle = "1-5" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4") Then
-
-                    PORTAIL_15_TO_44()
-#End Region ' VALIDER
-#Region "MAP = 2-8 ---------- "
-
-                ElseIf Map_actuelle = "2-8" And Map_roaming = "2-6" Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "2-8" And
-                            (Map_roaming = "2-BL" Or
-                            Map_roaming = "3-BL" Or
-                            Map_roaming = "1-BL") Then
-                    PORTAIL_2BL_EIC()
-
-                ElseIf Map_actuelle = "2-8" And
-                            (Map_roaming = "1-1" Or
-                            Map_roaming = "1-2" Or
-                            Map_roaming = "1-3" Or
-                            Map_roaming = "1-4" Or
-                            Map_roaming = "1-5" Or
-                            Map_roaming = "1-6" Or
-                            Map_roaming = "1-7" Or
-                            Map_roaming = "1-8" Or
-                            Map_roaming = "2-1" Or
-                            Map_roaming = "2-2" Or
-                            Map_roaming = "2-3" Or
-                            Map_roaming = "2-4" Or
-                            Map_roaming = "2-5" Or
-                            Map_roaming = "2-7" Or
-                            Map_roaming = "3-1" Or
-                            Map_roaming = "3-2" Or
-                            Map_roaming = "3-3" Or
-                            Map_roaming = "3-4" Or
-                            Map_roaming = "3-5" Or
-                            Map_roaming = "3-6" Or
-                            Map_roaming = "3-7" Or
-                            Map_roaming = "3-8" Or
-                            Map_roaming = "5-1" Or
-                            Map_roaming = "5-2" Or
-                            Map_roaming = "5-3" Or
-                            Map_roaming = "4-1" Or
-                            Map_roaming = "4-2" Or
-                            Map_roaming = "4-3" Or
-                            Map_roaming = "4-4" Or
-                            Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-7 ---------- "
-
-                ElseIf Map_actuelle = "2-7" And
-                (Map_roaming = "2-6" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "2-BL" Or
-                Map_roaming = "3-BL" Or
-                Map_roaming = "1-BL") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "2-7" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-                    PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-6 ---------- "
-
-                ElseIf Map_actuelle = "2-6" And
-                        (Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "1-BL") Then
-
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "2-6" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-
-                    PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-5 ---------- "
-
-                ElseIf Map_actuelle = "2-5" And
-                   (Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "1-BL") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "2-5" And Map_roaming = "2-6" Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "2-5" And
-                   (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "1-5") Then
-                    PORTAIL_45_EIC()
-
-                ElseIf Map_actuelle = "2-5" And
-                       (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4") Then
-                    PORTAIL_25_TO_44()
-
-#End Region ' VALIDER
-#Region "MAP = 3-8 ---------- "
-                ElseIf Map_actuelle = "3-8" And Map_roaming = "3-6" Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "3-8" And
-                        (Map_roaming = "3-BL" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL") Then
-                    PORTAIL_3BL_VRU()
-
-                ElseIf Map_actuelle = "3-8" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-
-                    PORTAIL_HAUT_GAUCHE()
-#End Region ' VALIDER
-#Region "MAP = 3-7 ---------- "
-
-                ElseIf Map_actuelle = "3-7" And
-                (Map_roaming = "3-6" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "3-BL" Or
-                Map_roaming = "1-BL" Or
-                Map_roaming = "2-BL") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-7" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-                    PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 3-6 ---------- "
-
-                ElseIf Map_actuelle = "3-6" And
-             (Map_roaming = "3-7" Or
-             Map_roaming = "3-8" Or
-             Map_roaming = "3-BL" Or
-             Map_roaming = "1-BL" Or
-             Map_roaming = "2-BL") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-6" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 3-5 ---------- "
-
-                ElseIf Map_actuelle = "3-5" And
-                   (Map_roaming = "3-7" Or
-                   Map_roaming = "3-8" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-5" And Map_roaming = "3-6" Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "3-5" And
-                   (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "2-5") Then
-                    PORTAIL_45_VRU()
-
-                ElseIf Map_actuelle = "3-5" And
-                       (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4") Then
-                    PORTAIL_35_TO_44()
-
-#End Region ' VALIDER
-#Region "MAP = 4-5 ---------- "
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                         Map_roaming = "4-1" Or
-                         Map_roaming = "4-2" Or
-                         Map_roaming = "4-3" Or
-                         Map_roaming = "4-4" Or
-                         Map_roaming = "1-BL") Then
-                    PORTAIL_45_to_15()
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                         Map_roaming = "4-2" Or
-                         Map_roaming = "4-3" Or
-                         Map_roaming = "4-1" Or
-                         Map_roaming = "4-4" Or
-                         Map_roaming = "2-BL") Then
-                    PORTAIL_45_to_25()
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "3-BL") Then
-                    PORTAIL_45_to_35()
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                        (Map_roaming = "5-1") Then
-                    PORTAIL_45_to_51_MMO()
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                        (Map_roaming = "5-1") Then
-                    PORTAIL_45_to_51_EIC()
-
-                ElseIf Map_actuelle = "4-5" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                        (Map_roaming = "5-1") Then
-                    PORTAIL_45_to_51_VRU()
-
-#End Region ' VALIDER
-#Region "MAP = 4-4 ---------- "
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "1-BL") Then
-                    PORTAIL_44_to_15()
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "2-BL") Then
-                    PORTAIL_44_to_25()
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "3-BL") Then
-                    PORTAIL_44_to_35()
-
-                    ' If mmo pour savoir par quel portail allez pour la 4-5
-
-                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                        (Map_roaming = "4-5" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3") Then
-                    PORTAIL_44_to_15()
-
-                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                        (Map_roaming = "4-5" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3") Then
-                    PORTAIL_44_to_25()
-
-                ElseIf Map_actuelle = "4-4" And stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                        (Map_roaming = "4-5" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3") Then
-                    PORTAIL_44_to_35()
-
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "4-1" Or
-                        Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4") Then
-                    PORTAIL_44_to_41()
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "4-1" Or
-                        Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
-                    PORTAIL_44_to_42()
-
-                ElseIf Map_actuelle = "4-4" And
-                        (Map_roaming = "4-3" Or
-                        Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4") Then
-                    PORTAIL_44_to_43()
-
-
-#End Region ' VALIDER
-#Region "MAP = 4-3 ---------- "
-
-                ElseIf Map_actuelle = "4-3" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4") Then
-                    PORTAIL_43_to_34()
-
-                ElseIf Map_actuelle = "4-3" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "4-1") Then
-                    PORTAIL_43_to_41()
-
-                ElseIf Map_actuelle = "4-3" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "4-2") Then
-                    PORTAIL_43_to_42()
-
-                ElseIf Map_actuelle = "4-3" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-5" Or
-                    Map_roaming = "4-4") Then
-                    PORTAIL_43_to_44()
-
-#End Region ' VALIDER
-#Region "MAP = 4-2 ---------- "
-
-                ElseIf Map_actuelle = "4-2" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
-                    PORTAIL_42_to_24()
-
-                ElseIf Map_actuelle = "4-2" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "4-3") Then
-                    PORTAIL_42_to_43()
-
-                ElseIf Map_actuelle = "4-2" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "4-1") Then
-                    PORTAIL_42_to_41()
-
-                ElseIf Map_actuelle = "4-2" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-5" Or
-                        Map_roaming = "4-4") Then
-                    PORTAIL_42_to_44()
-
-#End Region ' VALIDER
-#Region "MAP = 4-1 ---------- "
-
-                ElseIf Map_actuelle = "4-1" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4") Then
-                    PORTAIL_41_to_14()
-
-                ElseIf Map_actuelle = "4-1" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "4-2") Then
-                    PORTAIL_41_to_42()
-
-                ElseIf Map_actuelle = "4-1" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4") Then
-                    PORTAIL_41_to_43()
-
-                ElseIf Map_actuelle = "4-1" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-5" Or
-                        Map_roaming = "4-4") Then
-
-                    PORTAIL_41_to_44()
-
-#End Region ' VALIDER
-#Region "MAP = 1-4 ---------- "
-
-                ElseIf Map_actuelle = "1-4" And
-                        (Map_roaming = "1-2" Or
-                        Map_roaming = "1-1") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "1-4" And
-                    (Map_roaming = "1-3" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "1-4" And
-                             (Map_roaming = "3-1" Or
-                             Map_roaming = "3-2" Or
-                             Map_roaming = "3-3" Or
-                             Map_roaming = "3-4") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "1-4" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_14_to_41()
-#End Region ' VALIDER
-#Region "MAP = 1-3 ---------- "
-
-                ElseIf Map_actuelle = "1-3" And
-                    (Map_roaming = "1-2" Or
-                    Map_roaming = "1-1") Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "1-3" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "1-3" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 1-2 ---------- "
-
-                ElseIf Map_actuelle = "1-2" And
-                    (Map_roaming = "1-3" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "1-2" And
-                    (Map_roaming = "1-1") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "1-2" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-
-#End Region ' VALIDER
-#Region "MAP = 1-1 ---------- "
-
-                ElseIf Map_actuelle = "1-1" Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-4 ---------- "
-
-                ElseIf Map_actuelle = "2-4" And
-                        (Map_roaming = "2-2" Or
-                        Map_roaming = "2-1") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "2-4" And
-                (Map_roaming = "2-3" Or
-                Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "2-4" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4") Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "2-4" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_24_to_42()
-#End Region ' VALIDER
-#Region "MAP = 2-3 ---------- "
-
-                ElseIf Map_actuelle = "2-3" And
-                                  (Map_roaming = "2-2" Or
-                                  Map_roaming = "2-1") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "2-3" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4") Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "2-3" And
-                        (Map_roaming = "3-1" Or
-                        Map_roaming = "3-2" Or
-                        Map_roaming = "3-3" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "2-4" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-2 ---------- "
-
-                ElseIf Map_actuelle = "2-2" And
-                    (Map_roaming = "2-3" Or
-                    Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4") Then
-                    PORTAIL_BAS_GAUCHE()
-
-                ElseIf Map_actuelle = "2-2" And
-                    (Map_roaming = "2-1") Then
-                    PORTAIL_HAUT_DROITE()
-
-
-                ElseIf Map_actuelle = "2-2" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
-                    PORTAIL_BAS_DROITE()
-
-#End Region ' VALIDER
-#Region "MAP = 2-1 ---------- "
-
-                ElseIf Map_actuelle = "2-1" Then
-                    PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 3-4 ---------- "
-
-                ElseIf Map_actuelle = "3-4" And
-                                    (Map_roaming = "3-2" Or
-                                    Map_roaming = "3-1") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-4" And
-                              (Map_roaming = "3-3" Or
-                                Map_roaming = "2-1" Or
-                                Map_roaming = "2-2" Or
-                                Map_roaming = "2-3" Or
-                                Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "3-4" And
-                         (Map_roaming = "1-1" Or
-                         Map_roaming = "1-2" Or
-                         Map_roaming = "1-3" Or
-                         Map_roaming = "1-4") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "3-4" And
-                        (Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_34_to_43()
-#End Region ' VALIDER
-#Region "MAP = 3-3 ---------- "
-
-                ElseIf Map_actuelle = "3-3" And
-                      (Map_roaming = "3-2" Or
-                      Map_roaming = "3-1") Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-3" And
-                        (Map_roaming = "2-1" Or
-                        Map_roaming = "2-2" Or
-                        Map_roaming = "2-3" Or
-                        Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-                ElseIf Map_actuelle = "3-3" And
-                        (Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 3-2 ---------- "
-
-                ElseIf Map_actuelle = "3-2" And
-                    (Map_roaming = "3-3" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
-                    PORTAIL_HAUT_DROITE()
-
-                ElseIf Map_actuelle = "3-2" And
-                    Map_roaming = "3-1" Then
-                    PORTAIL_BAS_DROITE()
-
-                ElseIf Map_actuelle = "3-2" And
-                        (Map_roaming = "1-1" Or
-                        Map_roaming = "1-2" Or
-                        Map_roaming = "1-3" Or
-                        Map_roaming = "1-4" Or
-                        Map_roaming = "3-5" Or
-                        Map_roaming = "3-6" Or
-                        Map_roaming = "3-7" Or
-                        Map_roaming = "3-8" Or
-                        Map_roaming = "2-5" Or
-                        Map_roaming = "2-6" Or
-                        Map_roaming = "2-7" Or
-                        Map_roaming = "2-8" Or
-                        Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
-                        Map_roaming = "5-1" Or
-                        Map_roaming = "5-2" Or
-                        Map_roaming = "5-3" Or
-                        Map_roaming = "1-BL" Or
-                        Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "3-4" Or
-                        Map_roaming = "4-1" Or
-                        Map_roaming = "4-2" Or
-                        Map_roaming = "4-3" Or
-                        Map_roaming = "4-4" Or
-                        Map_roaming = "4-5") Then
-                    PORTAIL_HAUT_GAUCHE()
-
-#End Region ' VALIDER
-#Region "MAP = 3-1 ---------- "
-
-                ElseIf Map_actuelle = "3-1" Then
-                    PORTAIL_HAUT_GAUCHE()
-
-#End Region ' VALIDER
-
-                Else
-                    'On ne trouve pas la map à aller ?
-                    Await Task.Delay(10000)
-                    Console.WriteLine("On relance Traveling Module")
-                    Traveling_module()
-                End If
-
-            Else
-
-                If BackgroundWorker_Startup_Bot.IsBusy = False Then
-                    BackgroundWorker_Startup_Bot.RunWorkerAsync()
-                    Console.WriteLine("On relance le startup (Traveling_module)")
-
-                End If
-
-
-            End If
-
-
-        End If
-
-
-    End Sub
-
-    Public Sub Stop_Bot()
-        If User_Stop_Bot Then
-            Console.WriteLine("Stopped")
-            User_Stop_Bot = False
-
-        Else
-            Console.WriteLine("User_Stop_Bot en true")
-            If BackgroundWorker_Checking_minimap.IsBusy = False Then
-                Console.WriteLine("Checking minimap n'est pas busy")
-                BackgroundWorker_Checking_minimap.RunWorkerAsync()
-                Console.WriteLine("On relance tous les background worker")
-
-            Else
-                Console.WriteLine("Checking minimap est busy")
-                'Await Task.Delay(600)
-
-                'If BackgroundWorker_Checking_minimap.IsBusy = False Then
-                '    Console.WriteLine("Checking minimap est OFF (2nd check)")
-                '    BackgroundWorker_Checking_minimap.RunWorkerAsync()
-                '    Console.WriteLine("On relance tous les background worker (2nd check)")
-
-                'End If
-            End If
-        End If
-
-    End Sub
-
-    Private Sub Button_Traveling_Module_Click(sender As Object, e As EventArgs) Handles Button_Traveling_Module.Click
-
-        Traveling_module()
-
-        'Dim Bonus_Box = AutoIt.PixelSearch(X_TOP, Y_TOP, X_BOTTOM, Y_BOTTOM, 1321834, 5, 1)
-
-        'Try
-        '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Bonus_Box(0) - 0, Bonus_Box(1) - 0)
-        '    '  Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_cargobox_ms.Text)))
-
-        'Catch Bonus_Box_not_found As Exception
-        'End Try
 
     End Sub
 
@@ -3277,11 +45,6 @@ Public Class Form_Game
         End Try
 
     End Sub
-
-    Private Sub Button_Bot_Click(sender As Object, e As EventArgs) Handles Button_Bot.Click
-        BackgroundWorker_Startup_Bot.RunWorkerAsync()
-    End Sub
-
     Private Sub BackgroundWorker_Performance_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker_Performance.DoWork
         Dim myProcess = Process.GetCurrentProcess()
         'Console.WriteLine($"{myProcess} -")
@@ -3342,11 +105,11 @@ Label_GotoHome:
 
         ' ----------------------------------------
 
-        Client_Screen = Update_Screen()
-        Dim Locked_Droite As Point = Client_Screen.Contains(DROITE)
-        Dim Locked_Gauche As Point = Client_Screen.Contains(GAUCHE)
-        Dim Locked_Haut As Point = Client_Screen.Contains(HAUT)
-        Dim Locked_Bas As Point = Client_Screen.Contains(BAS)
+        Var.Client_Screen = Var.Update_Screen()
+        Dim Locked_Droite As Point = Var.Client_Screen.Contains(DROITE)
+        Dim Locked_Gauche As Point = Var.Client_Screen.Contains(GAUCHE)
+        Dim Locked_Haut As Point = Var.Client_Screen.Contains(HAUT)
+        Dim Locked_Bas As Point = Var.Client_Screen.Contains(BAS)
 
         Dim Locked As String = 0
 
@@ -3360,8 +123,8 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked")
 
-                    Client_Screen = Update_Screen_At_Zone(Locked_True, 300)
-                    Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                    Var.Client_Screen = Var.Update_Screen(Locked_True, 300)
+                    Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                     Console.WriteLine("---DEBUG---")
                     Console.WriteLine(Click_Zone_possible.X)
                     Console.WriteLine(Locked_True)
@@ -3386,7 +149,7 @@ Label_GotoHome:
 
                         Console.WriteLine("Locked_else")
 
-                        Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                        Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                         If Click_Zone_possible.X = Locked_True2 Then
 
                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Droite.X - 370, Locked_Droite.Y)
@@ -3415,7 +178,7 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked2")
 
-                    Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                    Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                     If Click_Zone_possible.X = Locked_True Then
 
                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X - 370, Locked_Gauche.Y)
@@ -3437,7 +200,7 @@ Label_GotoHome:
 
                         Console.WriteLine("Locked2_else")
 
-                        Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                        Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                         If Click_Zone_possible.X = Locked_True2 Then
 
                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Gauche.X + 370, Locked_Gauche.Y)
@@ -3465,7 +228,7 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked3")
 
-                    Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                    Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                     If Click_Zone_possible.X = Locked_True Then
 
                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y - 310)
@@ -3488,7 +251,7 @@ Label_GotoHome:
                         Console.WriteLine("Locked3_else")
 
 
-                        Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                        Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                         If Click_Zone_possible.X = Locked_True2 Then
 
                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Haut.X, Locked_Haut.Y + 310)
@@ -3516,7 +279,7 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked4")
 
-                    Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                    Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                     If Click_Zone_possible.X = Locked_True Then
 
                         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y - 310)
@@ -3537,7 +300,7 @@ Label_GotoHome:
 
                         Console.WriteLine("Locked4_else")
 
-                        Dim Click_Zone_possible As Point = Client_Screen.Contains(Click_Zone)
+                        Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                         If Click_Zone_possible.X = Locked_True2 Then
 
                             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked_Bas.X, Locked_Bas.Y + 310)
@@ -3601,11 +364,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked1_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked4_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked1_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked2_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked3_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked4_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked1_point <> Nothing Or Locked2_point <> Nothing Or Locked3_point <> Nothing Or Locked4_point <> Nothing Then
         '            Console.WriteLine("Locked")
@@ -3614,11 +377,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked12_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked22_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked32_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked42_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked12_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked22_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked32_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked42_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '            If Locked12_point <> Nothing Or Locked22_point <> Nothing Or Locked32_point <> Nothing Or Locked42_point <> Nothing Then
         '                Console.WriteLine("Locked_else")
@@ -3633,11 +396,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked11_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked21_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked31_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked41_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked11_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked21_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked31_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked41_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked11_point <> Nothing Or Locked21_point <> Nothing Or Locked31_point <> Nothing Or Locked41_point <> Nothing Then
         '            Console.WriteLine("Locked2")
@@ -3646,11 +409,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked122_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked222_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked322_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked422_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
         '                Console.WriteLine("Locked2_else")
@@ -3664,11 +427,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked111_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked211_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked311_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked411_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked111_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked211_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked311_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked411_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked111_point <> Nothing Or Locked211_point <> Nothing Or Locked311_point <> Nothing Or Locked411_point <> Nothing Then
 
@@ -3679,11 +442,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked122_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked222_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked322_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked422_point As Point =Var.Client_Screen.Contains(Locked4)
         '            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
 
         '                Console.WriteLine("Locked3_else")
@@ -3697,11 +460,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked1111_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked2111_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked3111_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked4111_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked1111_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked2111_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked3111_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked4111_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked1111_point <> Nothing Or Locked2111_point <> Nothing Or Locked3111_point <> Nothing Or Locked4111_point <> Nothing Then
 
@@ -3711,11 +474,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked122_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked222_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked322_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked422_point As Point =Var.Client_Screen.Contains(Locked4)
         '            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
 
         '                Console.WriteLine("Locked4_else")
@@ -3730,11 +493,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked11111_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked21111_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked31111_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked41111_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked11111_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked21111_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked31111_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked41111_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked11111_point <> Nothing Or Locked21111_point <> Nothing Or Locked31111_point <> Nothing Or Locked41111_point <> Nothing Then
 
@@ -3744,11 +507,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked122_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked222_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked322_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked422_point As Point =Var.Client_Screen.Contains(Locked4)
         '            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
 
         '                Console.WriteLine("Locked5_else")
@@ -3762,11 +525,11 @@ Label_GotoHome:
 
         '        ' ----------------------------------------
 
-        '        Client_Screen = Update_Screen()
-        '        Dim Locked111111_point As Point = Client_Screen.Contains(Locked1)
-        '        Dim Locked211111_point As Point = Client_Screen.Contains(Locked2)
-        '        Dim Locked311111_point As Point = Client_Screen.Contains(Locked3)
-        '        Dim Locked411111_point As Point = Client_Screen.Contains(Locked4)
+        '       Var.Client_Screen =Var.Update_Screen()
+        '        Dim Locked111111_point As Point =Var.Client_Screen.Contains(Locked1)
+        '        Dim Locked211111_point As Point =Var.Client_Screen.Contains(Locked2)
+        '        Dim Locked311111_point As Point =Var.Client_Screen.Contains(Locked3)
+        '        Dim Locked411111_point As Point =Var.Client_Screen.Contains(Locked4)
 
         '        If Locked111111_point <> Nothing Or Locked211111_point <> Nothing Or Locked311111_point <> Nothing Or Locked411111_point <> Nothing Then
 
@@ -3776,11 +539,11 @@ Label_GotoHome:
         '        Else
         '            Await Task.Delay(1000)
 
-        '            Client_Screen = Update_Screen()
-        '            Dim Locked122_point As Point = Client_Screen.Contains(Locked1)
-        '            Dim Locked222_point As Point = Client_Screen.Contains(Locked2)
-        '            Dim Locked322_point As Point = Client_Screen.Contains(Locked3)
-        '            Dim Locked422_point As Point = Client_Screen.Contains(Locked4)
+        '           Var.Client_Screen =Var.Update_Screen()
+        '            Dim Locked122_point As Point =Var.Client_Screen.Contains(Locked1)
+        '            Dim Locked222_point As Point =Var.Client_Screen.Contains(Locked2)
+        '            Dim Locked322_point As Point =Var.Client_Screen.Contains(Locked3)
+        '            Dim Locked422_point As Point =Var.Client_Screen.Contains(Locked4)
         '            If Locked122_point <> Nothing Or Locked222_point <> Nothing Or Locked322_point <> Nothing Or Locked422_point <> Nothing Then
 
         '                Console.WriteLine("Locked6_else")
@@ -3843,12 +606,12 @@ Label_GotoHome:
         '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 450, Locked1_point.Y)
         'Else
         '    AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
-        '    'Client_Screen = Update_Screen()
-        '    'Locked1_1 = Client_Screen.Contains(Locked1)
+        '    'Client_Screen =Var.Update_Screen()
+        '    'Locked1_1 =Var.Client_Screen.Contains(Locked1)
         '    'Await Task.Delay(350)
         '    'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 300, Locked1_point.Y)
-        '    'Client_Screen = Update_Screen()
-        '    'Locked1_1 = Client_Screen.Contains(Locked1)
+        '    'Client_Screen =Var.Update_Screen()
+        '    'Locked1_1 =Var.Client_Screen.Contains(Locked1)
         '    'Await Task.Delay(350)
         '    'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1_point.X + 400, Locked1_point.Y)
         'End If
@@ -3857,7 +620,7 @@ Label_GotoHome:
         'GoTo Label_General
 
         'Dim Locked2 = My.Resources.Locked_Two
-        'Dim Locked2_point As Point = Client_Screen.Contains(Locked2)
+        'Dim Locked2_point As Point =Var.Client_Screen.Contains(Locked2)
 
         'If Locked2_point <> Nothing Then
 
@@ -3869,7 +632,7 @@ Label_GotoHome:
         'End If
 
         'Dim Locked3 = My.Resources.Locked_Three
-        'Dim Locked3_point As Point = Client_Screen.Contains(Locked3)
+        'Dim Locked3_point As Point =Var.Client_Screen.Contains(Locked3)
 
         'If Locked3_point <> Nothing Then
 
@@ -3881,7 +644,7 @@ Label_GotoHome:
         'End If
 
         'Dim Locked4 = My.Resources.Locked_Four
-        'Dim Locked4_point As Point = Client_Screen.Contains(Locked4)
+        'Dim Locked4_point As Point =Var.Client_Screen.Contains(Locked4)
 
         'If Locked4_point <> Nothing Then
 
@@ -3913,9 +676,9 @@ Label_GotoHome:
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Aider_Streuner = My.Resources.Aider_streuner
-        Dim Aider_Streuner1 As Point = Client_Screen.Contains(Aider_Streuner)
+        Dim Aider_Streuner1 As Point = Var.Client_Screen.Contains(Aider_Streuner)
         If Aider_Streuner1 <> Nothing Then
 
             Console.WriteLine("Un Aider_Streuner trouver")
@@ -3929,9 +692,9 @@ Label_GotoHome:
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Recruit_streuner = My.Resources.recruit_streuner
-        Dim Recruit_streuner1 As Point = Client_Screen.Contains(Recruit_streuner)
+        Dim Recruit_streuner1 As Point = Var.Client_Screen.Contains(Recruit_streuner)
         If Recruit_streuner1 <> Nothing Then
 
             Console.WriteLine("Un Recruit_streuner trouver")
@@ -3944,9 +707,9 @@ Label_GotoHome:
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim streuner = My.Resources.streuner
-        Dim streuner1 As Point = Client_Screen.Contains(streuner)
+        Dim streuner1 As Point = Var.Client_Screen.Contains(streuner)
         If streuner1 <> Nothing Then
 
             Console.WriteLine("Un streuner trouver")
@@ -3959,9 +722,9 @@ Label_GotoHome:
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Lordakia = My.Resources.lordakia
-        Dim Lordakia1 As Point = Client_Screen.Contains(Lordakia)
+        Dim Lordakia1 As Point = Var.Client_Screen.Contains(Lordakia)
         If Lordakia1 <> Nothing Then
 
             Console.WriteLine("Un Lordakia trouver")
@@ -3974,9 +737,9 @@ Label_GotoHome:
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Boss_streuner = My.Resources.boss_streuner
-        Dim Boss_streuner1 As Point = Client_Screen.Contains(Boss_streuner)
+        Dim Boss_streuner1 As Point = Var.Client_Screen.Contains(Boss_streuner)
         If Boss_streuner1 <> Nothing Then
 
             Console.WriteLine("Un Boss_streuner trouver")
@@ -3989,9 +752,9 @@ Label_GotoHome:
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Boss_Lordakia = My.Resources.boss_Lordakia
-        Dim Boss_Lordakia1 As Point = Client_Screen.Contains(Boss_Lordakia)
+        Dim Boss_Lordakia1 As Point = Var.Client_Screen.Contains(Boss_Lordakia)
         If Boss_Lordakia1 <> Nothing Then
 
             Console.WriteLine("Un Boss_Lordakia trouver")
@@ -4004,9 +767,9 @@ Label_GotoHome:
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Saimon = My.Resources.Saimon
-        Dim Saimon1 As Point = Client_Screen.Contains(Saimon)
+        Dim Saimon1 As Point = Var.Client_Screen.Contains(Saimon)
         If Saimon1 <> Nothing Then
 
             Console.WriteLine("Un Boss_Lordakia trouver")
@@ -4019,9 +782,9 @@ Label_GotoHome:
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Boss_Saimon = My.Resources.Boss_Saimon
-        Dim Boss_Saimon1 As Point = Client_Screen.Contains(Boss_Saimon)
+        Dim Boss_Saimon1 As Point = Var.Client_Screen.Contains(Boss_Saimon)
         If Boss_Saimon1 <> Nothing Then
 
             Console.WriteLine("Un Boss_Lordakia trouver")
@@ -4034,9 +797,9 @@ Label_GotoHome:
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Mordon = My.Resources.Mordon
-        Dim Mordon1 As Point = Client_Screen.Contains(Mordon)
+        Dim Mordon1 As Point = Var.Client_Screen.Contains(Mordon)
         If Mordon1 <> Nothing Then
 
             Console.WriteLine("Un Boss_Lordakia trouver")
@@ -4049,9 +812,9 @@ Label_GotoHome:
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim boss_mordon = My.Resources.boss_mordon
-        Dim boss_mordon1 As Point = Client_Screen.Contains(boss_mordon)
+        Dim boss_mordon1 As Point = Var.Client_Screen.Contains(boss_mordon)
         If boss_mordon1 <> Nothing Then
 
             Console.WriteLine("Un Boss_Lordakia trouver")
@@ -4158,9 +921,9 @@ Label_GotoHome:
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
 
-        Client_Screen = Update_Screen()
+        Var.Client_Screen = Var.Update_Screen()
         Dim Sibelonit = My.Resources.sibelonit
-        Dim Sibelonit1 As Point = Client_Screen.Contains(Sibelonit)
+        Dim Sibelonit1 As Point = Var.Client_Screen.Contains(Sibelonit)
         If Sibelonit1 <> Nothing Then
 
             Console.WriteLine("Un Sibelonit trouver")

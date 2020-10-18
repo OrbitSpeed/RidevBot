@@ -25,6 +25,7 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button28 = New System.Windows.Forms.Button()
         Me.Button_dead = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.Red_dots_function = New System.Windows.Forms.Button()
@@ -34,6 +35,7 @@ Partial Class Form_Game
         Me.Button_Traveling_Module = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
         Me.Button_Bot = New System.Windows.Forms.Button()
+        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker_Startup_Bot = New System.ComponentModel.BackgroundWorker()
@@ -66,14 +68,12 @@ Partial Class Form_Game
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.Button28 = New System.Windows.Forms.Button()
-        Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
-        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Button27 = New System.Windows.Forms.Button()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
         Me.Panel7.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Title
@@ -105,6 +105,15 @@ Partial Class Form_Game
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
+        '
+        'Button28
+        '
+        Me.Button28.Location = New System.Drawing.Point(686, -1)
+        Me.Button28.Name = "Button28"
+        Me.Button28.Size = New System.Drawing.Size(47, 19)
+        Me.Button28.TabIndex = 60
+        Me.Button28.Text = "Alpha"
+        Me.Button28.UseVisualStyleBackColor = True
         '
         'Button_dead
         '
@@ -189,6 +198,19 @@ Partial Class Form_Game
         Me.Button_Bot.TabIndex = 29
         Me.Button_Bot.Text = "bot"
         Me.Button_Bot.UseVisualStyleBackColor = True
+        '
+        'PictureBox_Close
+        '
+        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox_Close.Image = Global.DarkorbitBot.My.Resources.Resources.exit_to_app
+        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
+        Me.PictureBox_Close.Name = "PictureBox_Close"
+        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_Close.TabIndex = 30
+        Me.PictureBox_Close.TabStop = False
         '
         'TextBox_getserver
         '
@@ -482,6 +504,16 @@ Partial Class Form_Game
         Me.Panel1.Size = New System.Drawing.Size(99, 43)
         Me.Panel1.TabIndex = 59
         '
+        'Button27
+        '
+        Me.Button27.ForeColor = System.Drawing.Color.Green
+        Me.Button27.Location = New System.Drawing.Point(41, 3)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(37, 19)
+        Me.Button27.TabIndex = 59
+        Me.Button27.Text = "If locked"
+        Me.Button27.UseVisualStyleBackColor = True
+        '
         'Button26
         '
         Me.Button26.Location = New System.Drawing.Point(2, 339)
@@ -490,27 +522,6 @@ Partial Class Form_Game
         Me.Button26.TabIndex = 58
         Me.Button26.Text = "*Lordakium spore*"
         Me.Button26.UseVisualStyleBackColor = True
-        '
-        'Button28
-        '
-        Me.Button28.Location = New System.Drawing.Point(686, -1)
-        Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(47, 19)
-        Me.Button28.TabIndex = 60
-        Me.Button28.Text = "Alpha"
-        Me.Button28.UseVisualStyleBackColor = True
-        '
-        'PictureBox_Close
-        '
-        Me.PictureBox_Close.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox_Close.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox_Close.Location = New System.Drawing.Point(782, 0)
-        Me.PictureBox_Close.Name = "PictureBox_Close"
-        Me.PictureBox_Close.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox_Close.TabIndex = 30
-        Me.PictureBox_Close.TabStop = False
         '
         'WebBrowser_Game_Ridevbot
         '
@@ -522,16 +533,6 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
-        '
-        'Button27
-        '
-        Me.Button27.ForeColor = System.Drawing.Color.Green
-        Me.Button27.Location = New System.Drawing.Point(41, 3)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(37, 19)
-        Me.Button27.TabIndex = 59
-        Me.Button27.Text = "If locked"
-        Me.Button27.UseVisualStyleBackColor = True
         '
         'Form_Game
         '
@@ -553,8 +554,8 @@ Partial Class Form_Game
         Me.Text = "RidevBot"
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

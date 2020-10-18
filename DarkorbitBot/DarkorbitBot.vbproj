@@ -778,7 +778,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Traveling_module.vb" />
     <Compile Include="Utils.vb" />
     <Compile Include="Var.vb" />
   </ItemGroup>
