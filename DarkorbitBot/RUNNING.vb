@@ -199,7 +199,7 @@ Public Class RUNNING
 
         Var.UpdateMapLocations()
         Console.WriteLine("Updated map locations")
-        Var.Client_Screen = Var.Update_Screen()
+        Var.Update_Screen()
         Console.WriteLine("Updated Client Screen")
 
         If Var.Map_Location1_1 <> Nothing Then
@@ -286,7 +286,9 @@ Public Class RUNNING
         Else
             Console.WriteLine("contient PAS")
         End If
+
         Return Task.CompletedTask
+
     End Function ' checking map actuel ( ne produit pas de valeur juste un refresh du stats )
     Public Shared Async Function Traveling_module() As Task
 

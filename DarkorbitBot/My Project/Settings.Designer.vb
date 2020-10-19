@@ -787,7 +787,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("NONE")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property map_to_travel() As String
             Get
                 Return CType(Me("map_to_travel"),String)

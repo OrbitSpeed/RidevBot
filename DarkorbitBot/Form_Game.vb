@@ -32,6 +32,9 @@ Public Class Form_Game
         End If
 
     End Sub
+    Private Sub Form_Game_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+        BackgroundWorker_Performance.CancelAsync()
+    End Sub
 
     Private Sub Button_cargobox_Click(sender As Object, e As EventArgs) Handles Button_cargobox.Click
 
@@ -68,6 +71,7 @@ Public Class Form_Game
                                          Label_PerformanceMemoire.Update()
                                      End Sub))
         Catch ex As Exception
+            'BackgroundWorker_Performance.CancelAsync()
         End Try
 
     End Sub

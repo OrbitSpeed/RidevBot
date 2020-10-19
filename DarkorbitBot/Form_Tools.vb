@@ -761,80 +761,8 @@ Public Class Form_Tools
 
                 TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
                 TextBox_clan.Text = clan
+                PictureBox_grade.Image = My.Resources.loading
 
-                Select Case grade
-                    Case "Pilote 1ère classe"
-                        PictureBox_grade.Image = My.Resources.rank_1
-
-                    Case "Caporal"
-                        PictureBox_grade.Image = My.Resources.rank_2
-
-                    Case "Caporal-chef"
-                        PictureBox_grade.Image = My.Resources.rank_3
-
-                    Case "Sergent"
-                        PictureBox_grade.Image = My.Resources.rank_4
-
-                    Case "Sergent-chef"
-                        PictureBox_grade.Image = My.Resources.rank_5
-
-                    Case "Adjudant"
-                        PictureBox_grade.Image = My.Resources.rank_6
-
-                    Case "Adjudant-chef"
-                        PictureBox_grade.Image = My.Resources.rank_7
-
-                    Case "Major"
-                        PictureBox_grade.Image = My.Resources.rank_8
-
-                    Case "Sous-lieutenant"
-                        PictureBox_grade.Image = My.Resources.rank_9
-
-                    Case "Lieutenant"
-                        PictureBox_grade.Image = My.Resources.rank_10
-
-                    Case "Capitaine"
-                        PictureBox_grade.Image = My.Resources.rank_11
-
-                    Case "Capitaine d'escadron"
-                        PictureBox_grade.Image = My.Resources.rank_12
-
-                    Case "Commandant"
-                        PictureBox_grade.Image = My.Resources.rank_13
-
-                    Case "Commandant d'escadron"
-                        PictureBox_grade.Image = My.Resources.rank_14
-
-                    Case "Lieutenant-colonel"
-                        PictureBox_grade.Image = My.Resources.rank_15
-
-                    Case "Colonel"
-                        PictureBox_grade.Image = My.Resources.rank_16
-
-                    Case "Général de brigade"
-                        PictureBox_grade.Image = My.Resources.rank_17
-
-                    Case "Général de division"
-                        PictureBox_grade.Image = My.Resources.rank_18
-
-                    Case "Général de corps d'armée"
-                        PictureBox_grade.Image = My.Resources.rank_19
-
-                    Case "Général d'Armée"
-                        PictureBox_grade.Image = My.Resources.rank_20
-
-                    Case "Grade de Hors la loi"
-                        PictureBox_grade.Image = My.Resources.rank_22
-
-                    Case Else
-                        If grade.Contains("Pilote") Then
-                            PictureBox_grade.Image = My.Resources.rank_1
-                        Else
-                            PictureBox_grade.Image = My.Resources.rank_99
-                        End If
-
-
-                End Select
 
                 Utils.UpdateStats()
                 Stats_module.Load()
@@ -843,6 +771,9 @@ Public Class Form_Tools
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
                 WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+
+                Configuration_General_BOX.Visible = True
+                Configuration_General_BOX.Visible = False
 
                 If CheckBox_LaunchGameAuto.Checked = True Then
 
@@ -1029,7 +960,6 @@ Public Class Form_Tools
 
         Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
         Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
-        Dim Execute_yes As String = 0
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information

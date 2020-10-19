@@ -1494,7 +1494,7 @@ Public Class Var
 #End Region
 
 
-    Public Shared Function UpdateMapLocations()
+    Public Shared Sub UpdateMapLocations()
         Update_Screen()
 
         Map_Location1_1 = Client_Screen.Contains(Map1_1)
@@ -1537,7 +1537,7 @@ Public Class Var
         Map_Location1_BL = Client_Screen.Contains(Map1_BL)
         Map_Location2_BL = Client_Screen.Contains(Map2_BL)
         Map_Location3_BL = Client_Screen.Contains(Map3_BL)
-    End Function
+    End Sub
 
     Public Shared Function Update_Screen()
 

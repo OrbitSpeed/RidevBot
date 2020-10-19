@@ -3,20 +3,22 @@ Imports System.Text.RegularExpressions
 
 Public Class Stats_module
 
-    Public Shared WebClient_GET_Ship_compagny_reg
-    Public Shared WebClient_GET_Uridium
-    Public Shared WebClient_GET_Credit
-    Public Shared WebClient_GET_Honneur
-    Public Shared WebClient_GET_Honneur_reg
-    Public Shared WebClient_GET_Exp
-    Public Shared WebClient_GET_Exp_reg
-    Public Shared WebClient_GET_Level
-    Public Shared WebClient_GET_Level_reg
-    Public Shared WebClient_GET_ID
-    Public Shared WebClient_GET_ID_reg
-    Public Shared WebClient_GET_Ship_model
-    Public Shared WebClient_GET_Ship_model_reg
-    Public Shared WebClient_GET_Ship_compagny
+    Public Shared WebClient_GET_Ship_compagny_reg As String
+    Public Shared WebClient_GET_Uridium As String
+    Public Shared WebClient_GET_Credit As String
+    Public Shared WebClient_GET_Honneur As String
+    Public Shared WebClient_GET_Honneur_reg As String
+    Public Shared WebClient_GET_Exp As String
+    Public Shared WebClient_GET_Exp_reg As String
+    Public Shared WebClient_GET_Level As String
+    Public Shared WebClient_GET_Level_reg As String
+    Public Shared WebClient_GET_ID As String
+    Public Shared WebClient_GET_ID_reg As String
+    Public Shared WebClient_GET_Ship_model As String
+    Public Shared WebClient_GET_Ship_model_reg As String
+    Public Shared WebClient_GET_Ship_compagny As String
+    Public Shared WebClient_GET_Rank As String
+    Public Shared WebClient_GET_Rank_reg As String
 
     Public Shared WebClient_POST As New WebClient
 
@@ -41,6 +43,11 @@ Public Class Stats_module
         'Clipboard.SetText(WebClient_Data)
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "User[.]Parameters(.*)}").Groups.Item(1).ToString
+
+        Console.WriteLine("--")
+        Console.WriteLine(WebClient_Data)
+        Console.WriteLine("--")
+
         WebClient_GET_Uridium = Regex.Match(WebClient_Data, """uridium"":.*?([\s\S]*?),").Groups.Item(1).ToString
         WebClient_GET_Credit = Regex.Match(WebClient_Data, """credits"":.*?([\s\S]*?)}").Groups.Item(1).ToString
         WebClient_GET_Honneur = Regex.Match(WebClient_Data, "header_top_hnr.*?([\s\S]*?)<\/span>").Groups.Item(1).ToString
@@ -55,6 +62,8 @@ Public Class Stats_module
         WebClient_GET_Ship_model_reg = Regex.Match(WebClient_GET_Ship_model, "model(.*)[.]").Groups.Item(1).ToString
         WebClient_GET_Ship_compagny = Regex.Match(WebClient_Data, "companyLogo.*?([\s\S]*?)<\/div>").Groups.Item(1).ToString
         WebClient_GET_Ship_compagny_reg = Regex.Match(WebClient_GET_Ship_compagny, "companyLogoSmall_(.*)"">").Groups.Item(1).ToString
+        WebClient_GET_Rank = Regex.Match(WebClient_Data, "userRankIcon.*?([\s\S]*?)>").Groups.Item(1).ToString
+        WebClient_GET_Rank_reg = Regex.Match(WebClient_GET_Rank, "rank_(.*)[.]").Groups.Item(1).ToString
 
         Form_Tools.TextBox_uridiumCurrent.Text = WebClient_GET_Uridium
         Form_Tools.TextBox_creditCurrent.Text = WebClient_GET_Credit
@@ -73,8 +82,10 @@ Public Class Stats_module
         Console.WriteLine("ID : " + WebClient_GET_ID_reg)
         Console.WriteLine("Ship_model : " + WebClient_GET_Ship_model_reg)
         Console.WriteLine("Compagny : " + WebClient_GET_Ship_compagny_reg)
+        Console.WriteLine("Rank : " + WebClient_GET_Rank_reg)
 
         Form_Tools.PictureBox16.ImageLocation = ("https://darkorbit-22.bpsecure.com/do_img/global/header/ships/model" + WebClient_GET_Ship_model_reg + ".png")
+        Form_Tools.PictureBox_grade.ImageLocation = ("https://darkorbit-22.bpsecure.com/do_img/global/ranks/rank_" + WebClient_GET_Rank_reg + ".png")
 
         Form_Tools.Button_ResetStats.Enabled = True
         Form_Tools.Button_Refresh_Stats.Enabled = True
