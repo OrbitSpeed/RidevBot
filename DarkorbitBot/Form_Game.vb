@@ -113,7 +113,10 @@ Label_GotoHome:
 
         Dim Locked As String = 0
 
-        If Locked_Droite <> Nothing Or Locked_Gauche <> Nothing Or Locked_Haut <> Nothing Or Locked_Bas <> Nothing Then
+        If Locked_Droite <> Nothing Or
+            Locked_Gauche <> Nothing Or
+            Locked_Haut <> Nothing Or
+            Locked_Bas <> Nothing Then
 
             ' ___________________________________________________________________________________________________________________________________________________________________________
 
@@ -123,7 +126,7 @@ Label_GotoHome:
 
                     Console.WriteLine("Locked")
 
-                    Var.Client_Screen = Var.Update_Screen(Locked_True, 300)
+                    Var.Update_Screen()
                     Dim Click_Zone_possible As Point = Var.Client_Screen.Contains(Click_Zone)
                     Console.WriteLine("---DEBUG---")
                     Console.WriteLine(Click_Zone_possible.X)

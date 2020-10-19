@@ -1,8 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Net
 Imports System.Text.RegularExpressions
-Imports FireSharp
-Imports FireSharp.Config
 
 Public Class Form_Tools
 
@@ -884,6 +882,8 @@ Public Class Form_Tools
         Else
             PictureBox_LaunchBot.Image = My.Resources.play_circle_filled_white
             Var.User_Stop_Bot = True
+            'RUNNING.Traveling_module.Status = TaskStatus.Running
+
         End If
 
 
@@ -981,13 +981,9 @@ Public Class Form_Tools
         'MessageBox.Show("Your account is now created, in order to use your license, go to our discord or our website :)")
     End Sub
 
-    Private Sub WebBrowser_GGInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs)
-
-    End Sub
-
     Private Sub WebBrowser_galaxyGates_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_galaxyGates.DocumentCompleted
 
-        WebBrowser_galaxyGates.Document.BackColor = System.Drawing.Color.Transparent
+        WebBrowser_galaxyGates.Document.BackColor = Color.Transparent
 
     End Sub
 
@@ -1002,8 +998,6 @@ Public Class Form_Tools
             Button_Alpha.PerformClick()
 
         End If
-
-
     End Sub
 
     Private Sub Button_skylab_Click(sender As Object, e As EventArgs) Handles Button_skylab.Click
@@ -1016,7 +1010,6 @@ Public Class Form_Tools
     Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
         Palladium_module.Load()
-
 
     End Sub
 
@@ -1151,7 +1144,13 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_store_Paint(sender As Object, e As PaintEventArgs) Handles Panel_store.Paint
-
+    Private Async Sub ComboBox_map_to_travel_TextChanged(sender As Object, e As EventArgs) Handles ComboBox_map_to_travel.TextChanged
+        If Var.User_Stop_Bot = False Then
+            Var.User_Stop_Bot = True
+            Await Task.Delay(1500)
+            'PictureBox_LaunchBot_Click(Nothing, Nothing)
+            Var.User_Stop_Bot = False
+            RUNNING.Start()
+        End If
     End Sub
 End Class

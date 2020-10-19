@@ -124,6 +124,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -152,6 +156,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -180,6 +188,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -208,6 +220,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -239,6 +255,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -267,6 +287,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -295,6 +319,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -323,6 +351,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -355,6 +387,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -383,6 +419,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -441,6 +481,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -472,6 +516,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -505,6 +553,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -539,6 +591,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -566,6 +622,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -595,6 +655,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -626,6 +690,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -657,6 +725,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -686,6 +758,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -718,6 +794,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -746,6 +826,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -781,6 +865,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -815,6 +903,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -846,6 +938,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -877,6 +973,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -911,6 +1011,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -939,6 +1043,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -967,6 +1075,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -997,6 +1109,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1028,6 +1144,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1056,6 +1176,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1094,6 +1218,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1125,6 +1253,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1157,6 +1289,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1193,6 +1329,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1226,6 +1366,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1259,6 +1403,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1292,6 +1440,10 @@ Public Class Var
                 Client_Screen = Update_Screen()
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
+                    If User_Stop_Bot Then
+                        RUNNING.Stopped()
+                        Exit Function
+                    End If
                     Await Task.Delay(1200)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
@@ -1315,15 +1467,15 @@ Public Class Var
         End If
 
         Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
-        Dim Map_roaming_reconize = Form_tools.ComboBox_map_to_travel.Text
+        Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
         Console.WriteLine(Map_actuelle_reconize)
         Console.WriteLine(Map_roaming_reconize)
 
         If Map_actuelle_reconize <> Map_roaming_reconize Then
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_jump_key.Text))
-            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_tools.TextBox_jump_key.Text}")
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
+            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
             Await Task.Delay(10000)
             Await RUNNING.Checking_map_actuel()
             RUNNING.Traveling_module()
@@ -1394,6 +1546,7 @@ Public Class Var
         Form_Game.Invoke(New MethodInvoker(Sub()
                                                Client_second.CopyFromScreen(Form_Game.PointToScreen(Form_Game.WebBrowser_Game_Ridevbot.Location), New Point(0, 0), Form_Game.WebBrowser_Game_Ridevbot.ClientSize)
                                            End Sub))
+        Client_Screen = Client_primary
         Return Client_primary
 
     End Function ' Update Screen >> [Ok] 

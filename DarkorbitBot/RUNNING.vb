@@ -21,7 +21,7 @@ Public Class RUNNING
         Console.WriteLine("Continue Start Not stopped ")
 
         Form_Game.WebBrowser_Game_Ridevbot.Select()
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
 
         Var.Client_Screen = Var.Update_Screen()
 
@@ -97,18 +97,18 @@ Public Class RUNNING
             Exit Function
         End If
 
-        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-        Form_tools.TextBox_desactive_allkey.Refresh()
+        'AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+        Form_Tools.TextBox_desactive_allkey.Refresh()
         Form_tools.TextBox_desactive_allkey.Update()
         AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_desactive_allkey.Text))
-        Await Task.Delay(800)
+        Await Task.Delay(1000)
         Var.Client_Screen = Var.Update_Screen()
         Dim Minimap_closed As Point = Var.Client_Screen.Contains(Var.Minimap_closed_ref)
         If Minimap_closed <> Nothing Then
 
             Form_Game.WebBrowser_Game_Ridevbot.Select()
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Minimap_closed.X, Minimap_closed.Y + 18)
-            Await Task.Delay(800)
+            Await Task.Delay(1000)
             Console.WriteLine("Minimap Ouverte")
             Minimap_resize()
 
@@ -278,7 +278,7 @@ Public Class RUNNING
         ' ERREUR ICI 
         Var.CurrentMapUser = Form_Game.Label_map_location.Text.Split(" : ")(2)
         Form_Game.Label_map_location.Update()
-        Var.Client_Screen = Var.Update_Screen()
+        Var.Update_Screen()
         'Console.WriteLine("On a récupéré la map : " + Val(Var.CurrentMapUser))
         Dim Save_point_original_point As Point = Var.Client_Screen.Contains(Var.Minimap_size_ref)
         If Save_point_original_point <> Nothing Then
@@ -295,14 +295,15 @@ Public Class RUNNING
             Exit Function
         End If
 
-        Console.WriteLine("Continue Traveling_module Not stopped ")
+        Console.WriteLine("Traveling_module Started ")
 
-        Var.Client_Screen = Var.Update_Screen()
+        Var.Update_Screen()
 
         Dim Connection_Lost As Point = Var.Client_Screen.Contains(Var.Disconnected)
         If Connection_Lost <> Nothing Then
             reconnect()
-
+            Console.WriteLine("Reconnexion en cours")
+            Exit Function
         End If
 
 
@@ -311,224 +312,90 @@ Public Class RUNNING
             Console.WriteLine("Minimap au bon endroit")
         Else
             Start()
+            Console.WriteLine("Minimap pas placé correctement, on relance")
+            Exit Function
         End If
 
         Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
-        Dim Map_roaming = Form_tools.ComboBox_map_to_travel.Text
+        Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
 
         Console.WriteLine(Map_actuelle)
         Console.WriteLine(Map_roaming)
         Console.WriteLine("Calcul de l'itinéraire")
 
+        Var.Update_Screen()
+
         If Map_actuelle <> Map_roaming Then
 
 #Region "MAP = 1-8 ---------- "
             If Map_actuelle = "1-8" And
-                    Map_roaming = "1-6" Then
+                            Map_roaming = "1-6" Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "1-8" And
-                    (Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
+                            (Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL") Then
                 Var.PORTAIL_1BL_MMO()
 
             ElseIf Map_actuelle = "1-8" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 #End Region ' VALIDER
 #Region "MAP = 1-7 ---------- "
             ElseIf Map_actuelle = "1-7" And
-                    (Map_roaming = "1-6" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL") Then
+                            (Map_roaming = "1-6" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL") Then
 
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "1-7" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
-
-                Var.PORTAIL_HAUT_DROITE()
-#End Region ' VALIDER
-#Region "MAP = 1-6 ---------- "
-            ElseIf Map_actuelle = "1-6" And
-                (Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "1-BL" Or
-                Map_roaming = "2-BL" Or
-                Map_roaming = "3-BL") Then
-
-                Var.PORTAIL_BAS_GAUCHE()
-
-            ElseIf Map_actuelle = "1-6" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
-
-                Var.PORTAIL_BAS_DROITE()
-#End Region ' VALIDER
-#Region "MAP = 1-5 ---------- "
-            ElseIf Map_actuelle = "1-5" And
-                (Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "1-BL" Or
-                Map_roaming = "2-BL" Or
-                Map_roaming = "3-BL") Then
-
-                Var.PORTAIL_BAS_GAUCHE()
-
-            ElseIf Map_actuelle = "1-5" And Map_roaming = "1-6" Then
-
-                Var.PORTAIL_HAUT_GAUCHE()
-
-            ElseIf Map_actuelle = "1-5" And
-               (Map_roaming = "4-5" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "3-5") Then
-
-                Var.PORTAIL_45_MMO()
-
-            ElseIf Map_actuelle = "1-5" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4") Then
-
-                Var.PORTAIL_15_TO_44()
-#End Region ' VALIDER
-#Region "MAP = 2-8 ---------- "
-
-            ElseIf Map_actuelle = "2-8" And Map_roaming = "2-6" Then
-                Var.PORTAIL_BAS_GAUCHE()
-
-            ElseIf Map_actuelle = "2-8" And
-                        (Map_roaming = "2-BL" Or
-                        Map_roaming = "3-BL" Or
-                        Map_roaming = "1-BL") Then
-                Var.PORTAIL_2BL_EIC()
-
-            ElseIf Map_actuelle = "2-8" And
                         (Map_roaming = "1-1" Or
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
                         Map_roaming = "1-4" Or
                         Map_roaming = "1-5" Or
-                        Map_roaming = "1-6" Or
-                        Map_roaming = "1-7" Or
-                        Map_roaming = "1-8" Or
                         Map_roaming = "2-1" Or
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
                         Map_roaming = "2-4" Or
                         Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
                         Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
                         Map_roaming = "3-1" Or
                         Map_roaming = "3-2" Or
                         Map_roaming = "3-3" Or
@@ -545,93 +412,231 @@ Public Class RUNNING
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
+
+                Var.PORTAIL_HAUT_DROITE()
+#End Region ' VALIDER
+#Region "MAP = 1-6 ---------- "
+            ElseIf Map_actuelle = "1-6" And
+                        (Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "1-BL" Or
+                        Map_roaming = "2-BL" Or
+                        Map_roaming = "3-BL") Then
+
+                Var.PORTAIL_BAS_GAUCHE()
+
+            ElseIf Map_actuelle = "1-6" And
+                        (Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
+                        Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "3-6" Or
+                        Map_roaming = "3-7" Or
+                        Map_roaming = "3-8" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
+
+                Var.PORTAIL_BAS_DROITE()
+#End Region ' VALIDER
+#Region "MAP = 1-5 ---------- "
+            ElseIf Map_actuelle = "1-5" And
+                        (Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "1-BL" Or
+                        Map_roaming = "2-BL" Or
+                        Map_roaming = "3-BL") Then
+
+                Var.PORTAIL_BAS_GAUCHE()
+
+            ElseIf Map_actuelle = "1-5" And Map_roaming = "1-6" Then
+
+                Var.PORTAIL_HAUT_GAUCHE()
+
+            ElseIf Map_actuelle = "1-5" And
+                       (Map_roaming = "4-5" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "3-5") Then
+
+                Var.PORTAIL_45_MMO()
+
+            ElseIf Map_actuelle = "1-5" And
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4") Then
+
+                Var.PORTAIL_15_TO_44()
+#End Region ' VALIDER
+#Region "MAP = 2-8 ---------- "
+
+            ElseIf Map_actuelle = "2-8" And Map_roaming = "2-6" Then
+                Var.PORTAIL_BAS_GAUCHE()
+
+            ElseIf Map_actuelle = "2-8" And
+                                (Map_roaming = "2-BL" Or
+                                Map_roaming = "3-BL" Or
+                                Map_roaming = "1-BL") Then
+                Var.PORTAIL_2BL_EIC()
+
+            ElseIf Map_actuelle = "2-8" And
+                                (Map_roaming = "1-1" Or
+                                Map_roaming = "1-2" Or
+                                Map_roaming = "1-3" Or
+                                Map_roaming = "1-4" Or
+                                Map_roaming = "1-5" Or
+                                Map_roaming = "1-6" Or
+                                Map_roaming = "1-7" Or
+                                Map_roaming = "1-8" Or
+                                Map_roaming = "2-1" Or
+                                Map_roaming = "2-2" Or
+                                Map_roaming = "2-3" Or
+                                Map_roaming = "2-4" Or
+                                Map_roaming = "2-5" Or
+                                Map_roaming = "2-7" Or
+                                Map_roaming = "3-1" Or
+                                Map_roaming = "3-2" Or
+                                Map_roaming = "3-3" Or
+                                Map_roaming = "3-4" Or
+                                Map_roaming = "3-5" Or
+                                Map_roaming = "3-6" Or
+                                Map_roaming = "3-7" Or
+                                Map_roaming = "3-8" Or
+                                Map_roaming = "5-1" Or
+                                Map_roaming = "5-2" Or
+                                Map_roaming = "5-3" Or
+                                Map_roaming = "4-1" Or
+                                Map_roaming = "4-2" Or
+                                Map_roaming = "4-3" Or
+                                Map_roaming = "4-4" Or
+                                Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 #End Region ' VALIDER
 #Region "MAP = 2-7 ---------- "
 
             ElseIf Map_actuelle = "2-7" And
-            (Map_roaming = "2-6" Or
-            Map_roaming = "2-8" Or
-            Map_roaming = "2-BL" Or
-            Map_roaming = "3-BL" Or
-            Map_roaming = "1-BL") Then
+                    (Map_roaming = "2-6" Or
+                    Map_roaming = "2-8" Or
+                    Map_roaming = "2-BL" Or
+                    Map_roaming = "3-BL" Or
+                    Map_roaming = "1-BL") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "2-7" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
+                        (Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "3-6" Or
+                        Map_roaming = "3-7" Or
+                        Map_roaming = "3-8" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
 #End Region ' VALIDER
 #Region "MAP = 2-6 ---------- "
 
             ElseIf Map_actuelle = "2-6" And
-                    (Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "1-BL") Then
+                            (Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "1-BL") Then
 
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "2-6" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
+                        (Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "3-6" Or
+                        Map_roaming = "3-7" Or
+                        Map_roaming = "3-8" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
 
                 Var.PORTAIL_BAS_GAUCHE()
 
@@ -639,48 +644,48 @@ Public Class RUNNING
 #Region "MAP = 2-5 ---------- "
 
             ElseIf Map_actuelle = "2-5" And
-               (Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "2-BL" Or
-                Map_roaming = "3-BL" Or
-                Map_roaming = "1-BL") Then
+                       (Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "2-BL" Or
+                        Map_roaming = "3-BL" Or
+                        Map_roaming = "1-BL") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "2-5" And Map_roaming = "2-6" Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "2-5" And
-               (Map_roaming = "4-5" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "1-5") Then
+                       (Map_roaming = "4-5" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "1-5") Then
                 Var.PORTAIL_45_EIC()
 
             ElseIf Map_actuelle = "2-5" And
-                   (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4") Then
+                           (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4") Then
                 Var.PORTAIL_25_TO_44()
 
 #End Region ' VALIDER
@@ -689,317 +694,317 @@ Public Class RUNNING
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "3-8" And
-                    (Map_roaming = "3-BL" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL") Then
+                            (Map_roaming = "3-BL" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL") Then
                 Var.PORTAIL_3BL_VRU()
 
             ElseIf Map_actuelle = "3-8" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
 
                 Var.PORTAIL_HAUT_GAUCHE()
 #End Region ' VALIDER
 #Region "MAP = 3-7 ---------- "
 
             ElseIf Map_actuelle = "3-7" And
-            (Map_roaming = "3-6" Or
-            Map_roaming = "3-8" Or
-            Map_roaming = "3-BL" Or
-            Map_roaming = "1-BL" Or
-            Map_roaming = "2-BL") Then
+                    (Map_roaming = "3-6" Or
+                    Map_roaming = "3-8" Or
+                    Map_roaming = "3-BL" Or
+                    Map_roaming = "1-BL" Or
+                    Map_roaming = "2-BL") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-7" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
+                        (Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
+                        Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
 #End Region ' VALIDER
 #Region "MAP = 3-6 ---------- "
 
             ElseIf Map_actuelle = "3-6" And
-         (Map_roaming = "3-7" Or
-         Map_roaming = "3-8" Or
-         Map_roaming = "3-BL" Or
-         Map_roaming = "1-BL" Or
-         Map_roaming = "2-BL") Then
+                 (Map_roaming = "3-7" Or
+                 Map_roaming = "3-8" Or
+                 Map_roaming = "3-BL" Or
+                 Map_roaming = "1-BL" Or
+                 Map_roaming = "2-BL") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-6" And
-                (Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
+                        (Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
+                        Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
 #End Region ' VALIDER
 #Region "MAP = 3-5 ---------- "
 
             ElseIf Map_actuelle = "3-5" And
-               (Map_roaming = "3-7" Or
-               Map_roaming = "3-8" Or
-                Map_roaming = "3-BL" Or
-                Map_roaming = "1-BL" Or
-                Map_roaming = "2-BL") Then
+                       (Map_roaming = "3-7" Or
+                       Map_roaming = "3-8" Or
+                        Map_roaming = "3-BL" Or
+                        Map_roaming = "1-BL" Or
+                        Map_roaming = "2-BL") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-5" And Map_roaming = "3-6" Then
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "3-5" And
-               (Map_roaming = "4-5" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "2-5") Then
+                       (Map_roaming = "4-5" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "2-5") Then
                 Var.PORTAIL_45_VRU()
 
             ElseIf Map_actuelle = "3-5" And
-                   (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4") Then
+                           (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4") Then
                 Var.PORTAIL_35_TO_44()
 
 #End Region ' VALIDER
 #Region "MAP = 4-5 ---------- "
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                     Map_roaming = "4-1" Or
-                     Map_roaming = "4-2" Or
-                     Map_roaming = "4-3" Or
-                     Map_roaming = "4-4" Or
-                     Map_roaming = "1-BL") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                             Map_roaming = "4-1" Or
+                             Map_roaming = "4-2" Or
+                             Map_roaming = "4-3" Or
+                             Map_roaming = "4-4" Or
+                             Map_roaming = "1-BL") Then
                 Var.PORTAIL_45_to_15()
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                     Map_roaming = "4-2" Or
-                     Map_roaming = "4-3" Or
-                     Map_roaming = "4-1" Or
-                     Map_roaming = "4-4" Or
-                     Map_roaming = "2-BL") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                             Map_roaming = "4-2" Or
+                             Map_roaming = "4-3" Or
+                             Map_roaming = "4-1" Or
+                             Map_roaming = "4-4" Or
+                             Map_roaming = "2-BL") Then
                 Var.PORTAIL_45_to_25()
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "3-BL") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "3-BL") Then
                 Var.PORTAIL_45_to_35()
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                    (Map_roaming = "5-1") Then
+                            (Map_roaming = "5-1") Then
                 Var.PORTAIL_45_to_51_MMO()
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                    (Map_roaming = "5-1") Then
+                            (Map_roaming = "5-1") Then
                 Var.PORTAIL_45_to_51_EIC()
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                    (Map_roaming = "5-1") Then
+                            (Map_roaming = "5-1") Then
                 Var.PORTAIL_45_to_51_VRU()
 
 #End Region ' VALIDER
 #Region "MAP = 4-4 ---------- "
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "1-BL") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "1-BL") Then
                 Var.PORTAIL_44_to_15()
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "2-BL") Then
+                            (Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "2-BL") Then
                 Var.PORTAIL_44_to_25()
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "3-BL") Then
+                            (Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "3-BL") Then
                 Var.PORTAIL_44_to_35()
 
                 ' If mmo pour savoir par quel portail allez pour la 4-5
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                    (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3") Then
+                            (Map_roaming = "4-5" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3") Then
                 Var.PORTAIL_44_to_15()
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                    (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3") Then
+                            (Map_roaming = "4-5" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3") Then
                 Var.PORTAIL_44_to_25()
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                    (Map_roaming = "4-5" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3") Then
+                            (Map_roaming = "4-5" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3") Then
                 Var.PORTAIL_44_to_35()
 
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "4-1" Or
-                    Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4") Then
+                            (Map_roaming = "4-1" Or
+                            Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4") Then
                 Var.PORTAIL_44_to_41()
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "4-1" Or
-                    Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
+                            (Map_roaming = "4-1" Or
+                            Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4") Then
                 Var.PORTAIL_44_to_42()
 
             ElseIf Map_actuelle = "4-4" And
-                    (Map_roaming = "4-3" Or
-                    Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4") Then
+                            (Map_roaming = "4-3" Or
+                            Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4") Then
                 Var.PORTAIL_44_to_43()
 
 
@@ -1007,137 +1012,137 @@ Public Class RUNNING
 #Region "MAP = 4-3 ---------- "
 
             ElseIf Map_actuelle = "4-3" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4") Then
                 Var.PORTAIL_43_to_34()
 
             ElseIf Map_actuelle = "4-3" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "4-1") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "4-1") Then
                 Var.PORTAIL_43_to_41()
 
             ElseIf Map_actuelle = "4-3" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "4-2") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "4-2") Then
                 Var.PORTAIL_43_to_42()
 
             ElseIf Map_actuelle = "4-3" And
-                (Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "4-5" Or
-                Map_roaming = "4-4") Then
+                        (Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
+                        Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "3-6" Or
+                        Map_roaming = "3-7" Or
+                        Map_roaming = "3-8" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "4-5" Or
+                        Map_roaming = "4-4") Then
                 Var.PORTAIL_43_to_44()
 
 #End Region ' VALIDER
 #Region "MAP = 4-2 ---------- "
 
             ElseIf Map_actuelle = "4-2" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4") Then
                 Var.PORTAIL_42_to_24()
 
             ElseIf Map_actuelle = "4-2" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "4-3") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "4-3") Then
                 Var.PORTAIL_42_to_43()
 
             ElseIf Map_actuelle = "4-2" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "4-1") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "4-1") Then
                 Var.PORTAIL_42_to_41()
 
             ElseIf Map_actuelle = "4-2" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-5" Or
-                    Map_roaming = "4-4") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-5" Or
+                            Map_roaming = "4-4") Then
                 Var.PORTAIL_42_to_44()
 
 #End Region ' VALIDER
 #Region "MAP = 4-1 ---------- "
 
             ElseIf Map_actuelle = "4-1" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4") Then
                 Var.PORTAIL_41_to_14()
 
             ElseIf Map_actuelle = "4-1" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "4-2") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "4-2") Then
                 Var.PORTAIL_41_to_42()
 
             ElseIf Map_actuelle = "4-1" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4") Then
                 Var.PORTAIL_41_to_43()
 
             ElseIf Map_actuelle = "4-1" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-5" Or
-                    Map_roaming = "4-4") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-5" Or
+                            Map_roaming = "4-4") Then
 
                 Var.PORTAIL_41_to_44()
 
@@ -1145,140 +1150,140 @@ Public Class RUNNING
 #Region "MAP = 1-4 ---------- "
 
             ElseIf Map_actuelle = "1-4" And
-                    (Map_roaming = "1-2" Or
-                    Map_roaming = "1-1") Then
+                            (Map_roaming = "1-2" Or
+                            Map_roaming = "1-1") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "1-4" And
-                (Map_roaming = "1-3" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4") Then
+                        (Map_roaming = "1-3" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "1-4" And
-                         (Map_roaming = "3-1" Or
-                         Map_roaming = "3-2" Or
-                         Map_roaming = "3-3" Or
-                         Map_roaming = "3-4") Then
+                                 (Map_roaming = "3-1" Or
+                                 Map_roaming = "3-2" Or
+                                 Map_roaming = "3-3" Or
+                                 Map_roaming = "3-4") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "1-4" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_14_to_41()
 #End Region ' VALIDER
 #Region "MAP = 1-3 ---------- "
 
             ElseIf Map_actuelle = "1-3" And
-                (Map_roaming = "1-2" Or
-                Map_roaming = "1-1") Then
+                        (Map_roaming = "1-2" Or
+                        Map_roaming = "1-1") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "1-3" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "1-3" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 #End Region ' VALIDER
 #Region "MAP = 1-2 ---------- "
 
             ElseIf Map_actuelle = "1-2" And
-                (Map_roaming = "1-3" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4") Then
+                        (Map_roaming = "1-3" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "1-2" And
-                (Map_roaming = "1-1") Then
+                        (Map_roaming = "1-1") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "1-2" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 
@@ -1292,141 +1297,141 @@ Public Class RUNNING
 #Region "MAP = 2-4 ---------- "
 
             ElseIf Map_actuelle = "2-4" And
-                    (Map_roaming = "2-2" Or
-                    Map_roaming = "2-1") Then
+                            (Map_roaming = "2-2" Or
+                            Map_roaming = "2-1") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "2-4" And
-            (Map_roaming = "2-3" Or
-            Map_roaming = "1-1" Or
-            Map_roaming = "1-2" Or
-            Map_roaming = "1-3" Or
-            Map_roaming = "1-4") Then
+                    (Map_roaming = "2-3" Or
+                    Map_roaming = "1-1" Or
+                    Map_roaming = "1-2" Or
+                    Map_roaming = "1-3" Or
+                    Map_roaming = "1-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "2-4" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "2-4" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_24_to_42()
 #End Region ' VALIDER
 #Region "MAP = 2-3 ---------- "
 
             ElseIf Map_actuelle = "2-3" And
-                              (Map_roaming = "2-2" Or
-                              Map_roaming = "2-1") Then
+                                      (Map_roaming = "2-2" Or
+                                      Map_roaming = "2-1") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "2-3" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "2-3" And
-                    (Map_roaming = "3-1" Or
-                    Map_roaming = "3-2" Or
-                    Map_roaming = "3-3" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "2-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "3-1" Or
+                            Map_roaming = "3-2" Or
+                            Map_roaming = "3-3" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "2-4" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 #End Region ' VALIDER
 #Region "MAP = 2-2 ---------- "
 
             ElseIf Map_actuelle = "2-2" And
-                (Map_roaming = "2-3" Or
-                Map_roaming = "1-1" Or
-                Map_roaming = "1-2" Or
-                Map_roaming = "1-3" Or
-                Map_roaming = "1-4") Then
+                        (Map_roaming = "2-3" Or
+                        Map_roaming = "1-1" Or
+                        Map_roaming = "1-2" Or
+                        Map_roaming = "1-3" Or
+                        Map_roaming = "1-4") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
             ElseIf Map_actuelle = "2-2" And
-                (Map_roaming = "2-1") Then
+                        (Map_roaming = "2-1") Then
                 Var.PORTAIL_HAUT_DROITE()
 
 
             ElseIf Map_actuelle = "2-2" And
-                (Map_roaming = "3-1" Or
-                Map_roaming = "3-2" Or
-                Map_roaming = "3-3" Or
-                Map_roaming = "3-4" Or
-                Map_roaming = "3-5" Or
-                Map_roaming = "3-6" Or
-                Map_roaming = "3-7" Or
-                Map_roaming = "3-8" Or
-                Map_roaming = "2-5" Or
-                Map_roaming = "2-6" Or
-                Map_roaming = "2-7" Or
-                Map_roaming = "2-8" Or
-                Map_roaming = "1-5" Or
-                Map_roaming = "1-6" Or
-                Map_roaming = "1-7" Or
-                Map_roaming = "1-8" Or
-                Map_roaming = "5-1" Or
-                Map_roaming = "5-2" Or
-                Map_roaming = "5-3" Or
-                Map_roaming = "1-BL" Or
-                Map_roaming = "2-BL" Or
-                Map_roaming = "3-BL" Or
-                Map_roaming = "2-4" Or
-                Map_roaming = "4-1" Or
-                Map_roaming = "4-2" Or
-                Map_roaming = "4-3" Or
-                Map_roaming = "4-4" Or
-                Map_roaming = "4-5") Then
+                        (Map_roaming = "3-1" Or
+                        Map_roaming = "3-2" Or
+                        Map_roaming = "3-3" Or
+                        Map_roaming = "3-4" Or
+                        Map_roaming = "3-5" Or
+                        Map_roaming = "3-6" Or
+                        Map_roaming = "3-7" Or
+                        Map_roaming = "3-8" Or
+                        Map_roaming = "2-5" Or
+                        Map_roaming = "2-6" Or
+                        Map_roaming = "2-7" Or
+                        Map_roaming = "2-8" Or
+                        Map_roaming = "1-5" Or
+                        Map_roaming = "1-6" Or
+                        Map_roaming = "1-7" Or
+                        Map_roaming = "1-8" Or
+                        Map_roaming = "5-1" Or
+                        Map_roaming = "5-2" Or
+                        Map_roaming = "5-3" Or
+                        Map_roaming = "1-BL" Or
+                        Map_roaming = "2-BL" Or
+                        Map_roaming = "3-BL" Or
+                        Map_roaming = "2-4" Or
+                        Map_roaming = "4-1" Or
+                        Map_roaming = "4-2" Or
+                        Map_roaming = "4-3" Or
+                        Map_roaming = "4-4" Or
+                        Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_DROITE()
 
 #End Region ' VALIDER
@@ -1439,140 +1444,140 @@ Public Class RUNNING
 #Region "MAP = 3-4 ---------- "
 
             ElseIf Map_actuelle = "3-4" And
-                                (Map_roaming = "3-2" Or
-                                Map_roaming = "3-1") Then
+                                        (Map_roaming = "3-2" Or
+                                        Map_roaming = "3-1") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-4" And
-                          (Map_roaming = "3-3" Or
-                            Map_roaming = "2-1" Or
-                            Map_roaming = "2-2" Or
-                            Map_roaming = "2-3" Or
-                            Map_roaming = "2-4") Then
+                                  (Map_roaming = "3-3" Or
+                                    Map_roaming = "2-1" Or
+                                    Map_roaming = "2-2" Or
+                                    Map_roaming = "2-3" Or
+                                    Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "3-4" And
-                     (Map_roaming = "1-1" Or
-                     Map_roaming = "1-2" Or
-                     Map_roaming = "1-3" Or
-                     Map_roaming = "1-4") Then
+                             (Map_roaming = "1-1" Or
+                             Map_roaming = "1-2" Or
+                             Map_roaming = "1-3" Or
+                             Map_roaming = "1-4") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "3-4" And
-                    (Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_34_to_43()
 #End Region ' VALIDER
 #Region "MAP = 3-3 ---------- "
 
             ElseIf Map_actuelle = "3-3" And
-                  (Map_roaming = "3-2" Or
-                  Map_roaming = "3-1") Then
+                          (Map_roaming = "3-2" Or
+                          Map_roaming = "3-1") Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-3" And
-                    (Map_roaming = "2-1" Or
-                    Map_roaming = "2-2" Or
-                    Map_roaming = "2-3" Or
-                    Map_roaming = "2-4") Then
+                            (Map_roaming = "2-1" Or
+                            Map_roaming = "2-2" Or
+                            Map_roaming = "2-3" Or
+                            Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
             ElseIf Map_actuelle = "3-3" And
-                    (Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_BAS_GAUCHE()
 
 #End Region ' VALIDER
 #Region "MAP = 3-2 ---------- "
 
             ElseIf Map_actuelle = "3-2" And
-                (Map_roaming = "3-3" Or
-                Map_roaming = "2-1" Or
-                Map_roaming = "2-2" Or
-                Map_roaming = "2-3" Or
-                Map_roaming = "2-4") Then
+                        (Map_roaming = "3-3" Or
+                        Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4") Then
                 Var.PORTAIL_HAUT_DROITE()
 
             ElseIf Map_actuelle = "3-2" And
-                Map_roaming = "3-1" Then
+                        Map_roaming = "3-1" Then
                 Var.PORTAIL_BAS_DROITE()
 
             ElseIf Map_actuelle = "3-2" And
-                    (Map_roaming = "1-1" Or
-                    Map_roaming = "1-2" Or
-                    Map_roaming = "1-3" Or
-                    Map_roaming = "1-4" Or
-                    Map_roaming = "3-5" Or
-                    Map_roaming = "3-6" Or
-                    Map_roaming = "3-7" Or
-                    Map_roaming = "3-8" Or
-                    Map_roaming = "2-5" Or
-                    Map_roaming = "2-6" Or
-                    Map_roaming = "2-7" Or
-                    Map_roaming = "2-8" Or
-                    Map_roaming = "1-5" Or
-                    Map_roaming = "1-6" Or
-                    Map_roaming = "1-7" Or
-                    Map_roaming = "1-8" Or
-                    Map_roaming = "5-1" Or
-                    Map_roaming = "5-2" Or
-                    Map_roaming = "5-3" Or
-                    Map_roaming = "1-BL" Or
-                    Map_roaming = "2-BL" Or
-                    Map_roaming = "3-BL" Or
-                    Map_roaming = "3-4" Or
-                    Map_roaming = "4-1" Or
-                    Map_roaming = "4-2" Or
-                    Map_roaming = "4-3" Or
-                    Map_roaming = "4-4" Or
-                    Map_roaming = "4-5") Then
+                            (Map_roaming = "1-1" Or
+                            Map_roaming = "1-2" Or
+                            Map_roaming = "1-3" Or
+                            Map_roaming = "1-4" Or
+                            Map_roaming = "3-5" Or
+                            Map_roaming = "3-6" Or
+                            Map_roaming = "3-7" Or
+                            Map_roaming = "3-8" Or
+                            Map_roaming = "2-5" Or
+                            Map_roaming = "2-6" Or
+                            Map_roaming = "2-7" Or
+                            Map_roaming = "2-8" Or
+                            Map_roaming = "1-5" Or
+                            Map_roaming = "1-6" Or
+                            Map_roaming = "1-7" Or
+                            Map_roaming = "1-8" Or
+                            Map_roaming = "5-1" Or
+                            Map_roaming = "5-2" Or
+                            Map_roaming = "5-3" Or
+                            Map_roaming = "1-BL" Or
+                            Map_roaming = "2-BL" Or
+                            Map_roaming = "3-BL" Or
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "4-1" Or
+                            Map_roaming = "4-2" Or
+                            Map_roaming = "4-3" Or
+                            Map_roaming = "4-4" Or
+                            Map_roaming = "4-5") Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
 #End Region ' VALIDER
@@ -1592,7 +1597,7 @@ Public Class RUNNING
 
         Else
 
-            Console.WriteLine("Vous etes arriver a destination")
+            Console.WriteLine("Vous etes arrive a destination")
             Traveling_succes()
         End If
 
@@ -1600,7 +1605,7 @@ Public Class RUNNING
     End Function ' effectue le traveling vers une map selectionner 
 
 
-    Public Shared Async Function Traveling_succes() As Task
+    Public Shared Function Traveling_succes() As Task
         Console.WriteLine("Success")
 
 
