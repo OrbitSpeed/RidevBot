@@ -63,7 +63,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>administration-ConvertImage.ico</ApplicationIcon>
+    <ApplicationIcon>Extension\administration-ConvertImage.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v1.0.0.1|AnyCPU'">
     <DefineTrace>true</DefineTrace>
@@ -689,7 +689,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Bot_functions\Checking_map.vb" />
+    <Compile Include="Bot_functions\Dead.vb" />
+    <Compile Include="Bot_functions\Dependency.vb" />
+    <Compile Include="Bot_functions\Reconnect.vb" />
+    <Compile Include="Bot_functions\Traveling_module.vb" />
+    <Compile Include="Extension\ApplicationEvents.vb" />
     <Compile Include="AutoUpdater.Designer.vb">
       <DependentUpon>AutoUpdater.vb</DependentUpon>
     </Compile>
@@ -702,11 +707,8 @@
     <Compile Include="BackPage_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BitmapExtension.vb" />
-    <Compile Include="Collector_module.vb" />
-    <Compile Include="Dead_module.vb" />
-    <Compile Include="Dependency_module.vb" />
-    <Compile Include="Enchere_module.vb" />
+    <Compile Include="Extension\BitmapExtension.vb" />
+    <Compile Include="Backpage_functions\Enchere_module.vb" />
     <Compile Include="Form_Msgbox.Designer.vb">
       <DependentUpon>Form_Msgbox.vb</DependentUpon>
     </Compile>
@@ -725,32 +727,28 @@
     <Compile Include="Form_Close.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GalaxyGates_module.vb" />
-    <Compile Include="GalaxyGates_module_Gates_name_alpha_id_1.vb" />
-    <Compile Include="GalaxyGates_module_Gates_name_beta_id_2.vb" />
-    <Compile Include="GalaxyGates_module_Gates_name_gamma_id_3.vb" />
+    <Compile Include="GalaxyGates\GalaxyGates_module.vb" />
+    <Compile Include="GalaxyGates\GalaxyGates_module_Gates_name_gamma_id_3.vb" />
     <Compile Include="Form_Tools_extension.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Npc_killer_module.vb" />
-    <Compile Include="Palladium_module.vb" />
-    <Compile Include="Pet_module.vb" />
-    <Compile Include="ReadWritingMemory.vb" />
+    <Compile Include="Bot_functions\Palladium_module.vb" />
+    <Compile Include="Bot_functions\Pet_module.vb" />
+    <Compile Include="Extension\ReadWritingMemory.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Red_dots.vb" />
-    <Compile Include="RUNNING.vb" />
-    <Compile Include="Skylab_module.vb" />
+    <Compile Include="Bot_functions\Running.vb" />
+    <Compile Include="Backpage_functions\Skylab_module.vb" />
     <Compile Include="Startup_Checker.Designer.vb">
       <DependentUpon>Startup_Checker.vb</DependentUpon>
     </Compile>
     <Compile Include="Startup_Checker.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stats_module.vb" />
+    <Compile Include="Backpage_functions\Stats_module.vb" />
     <Compile Include="Themes\Flat UI Theme.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -778,8 +776,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Utils.vb" />
-    <Compile Include="Var.vb" />
+    <Compile Include="Backpage_functions\Utils.vb" />
+    <Compile Include="Bot_functions\Var.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AutoUpdater.resx">
@@ -815,8 +813,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
+      <Link>Extension\.editorconfig</Link>
     </None>
+    <None Include="app.config" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -827,7 +826,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="Extension\App.config" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AutoItX3Lib">
@@ -867,7 +866,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Extension\packages.config" />
     <None Include="Resources\prometium.png" />
   </ItemGroup>
   <ItemGroup>
@@ -877,7 +876,14 @@
     <None Include="Resources\greenBooty.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="administration-ConvertImage.ico" />
+    <Content Include="Extension\administration-ConvertImage.ico" />
+    <None Include="Resources\Close_popup_payment.png" />
+    <None Include="Resources\Cancel_disconnect.png" />
+    <None Include="Resources\Portal_repair.png" />
+    <None Include="Resources\Instant_repair.png" />
+    <None Include="Resources\Detect_if_dead.png" />
+    <None Include="Resources\Button_repair.png" />
+    <None Include="Resources\Base_repair.png" />
     <None Include="dll\System.Interactive.Async.dll" />
     <None Include="dll\System.Diagnostics.DiagnosticSource.dll" />
     <None Include="dll\System.Collections.Immutable.dll" />
@@ -892,7 +898,7 @@
     <None Include="dll\Firebase.Auth.dll" />
     <None Include="Resources\Ridevbot.htm" />
     <None Include="Resources\sale.png" />
-    <None Include="ridevbotuniverse.gif" />
+    <None Include="Extension\ridevbotuniverse.gif" />
     <None Include="Resources\error_icon_orange.png" />
     <None Include="Resources\Stop_pet.png" />
     <None Include="Resources\Ship_repairer_pet_module.png" />
@@ -1105,7 +1111,7 @@
     <None Include="dll\AxInterop.WMPLib.dll" />
     <None Include="bin\v1.5\Interop.WMPLib.dll" />
     <None Include="bin\v1.5\AxInterop.WMPLib.dll" />
-    <None Include="ridevbotuniverse.mp4" />
+    <None Include="Extension\ridevbotuniverse.mp4" />
     <None Include="Resources\connected_moins_fort.wav" />
     <None Include="Resources\RidevBotUpdater.exe" />
   </ItemGroup>

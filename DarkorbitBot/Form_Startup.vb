@@ -236,10 +236,8 @@ Public Class Form_Startup
         End If
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
-        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
-        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
         GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
-        Form_Tools.WebClient_POST.Headers.Clear()
+        Form_tools.WebClient_POST.Headers.Clear()
 
     End Sub
 
@@ -429,10 +427,8 @@ Public Class Form_Startup
         Button_Load.PerformClick()
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
-        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
-        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
         GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
-        Form_Tools.WebClient_POST.Headers.Clear()
+        Form_tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub PictureBoxUsernamePasswordProfil2view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil2view.Click
@@ -463,10 +459,8 @@ Public Class Form_Startup
         UserAndPass_Button.PerformClick()
         Button_Load.PerformClick()
         Form_Tools.TextBox_Get_Dosid.Text = ""
-        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
-        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
         GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
-        Form_Tools.WebClient_POST.Headers.Clear()
+        Form_tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub PictureBoxUsernamePasswordProfil3view_Click(sender As Object, e As EventArgs) Handles PictureBoxUsernamePasswordProfil3view.Click
@@ -497,10 +491,8 @@ Public Class Form_Startup
         Button_Load.PerformClick()
 
         Form_Tools.TextBox_Get_Dosid.Text = ""
-        GalaxyGates_module_Gates_name_alpha_id_1.WebClient_POST_1.Headers.Clear()
-        GalaxyGates_module_Gates_name_beta_id_2.WebClient_POST_2.Headers.Clear()
         GalaxyGates_module_Gates_name_gamma_id_3.WebClient_POST_3.Headers.Clear()
-        Form_Tools.WebClient_POST.Headers.Clear()
+        Form_tools.WebClient_POST.Headers.Clear()
     End Sub
 
     Private Sub Textbox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles Textbox_Password.KeyDown

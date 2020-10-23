@@ -123,6 +123,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Base_repair() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Base_repair", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Blighted_Kristallon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Blighted_Kristallon", resourceCulture)
@@ -203,9 +213,29 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Button_repair() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Button_repair", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Buy_fuel_1000_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Buy_fuel_1000_pet", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Cancel_disconnect() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Cancel_disconnect", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -246,6 +276,16 @@ Namespace My.Resources
         Friend ReadOnly Property Click_Zone_Possible2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Click_Zone_Possible2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Close_popup_payment() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Close_popup_payment", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -335,6 +375,16 @@ Namespace My.Resources
         Friend ReadOnly Property delete() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delete", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Detect_if_dead() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Detect_if_dead", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -625,6 +675,16 @@ Namespace My.Resources
         Friend ReadOnly Property info() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("info", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Instant_repair() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Instant_repair", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1315,6 +1375,16 @@ Namespace My.Resources
         Friend ReadOnly Property Play_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Play_pet", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Portal_repair() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Portal_repair", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

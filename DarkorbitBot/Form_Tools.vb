@@ -1083,4 +1083,52 @@ Public Class Form_Tools
             RUNNING.Start()
         End If
     End Sub
+
+    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
+
+        '  .TextAlign = ContentAlignment.MiddleRight, ' ne fonctionne pas je sais pas pourquoi ! ( pour text box )
+
+        Dim textbox1178444545275 = New TextBox With {
+            .BorderStyle = BorderStyle.FixedSingle,
+            .ForeColor = Color.Black,
+            .Dock = DockStyle.Fill,
+            .Font = New Font("Segoe UI", 10, FontStyle.Bold),
+            .Anchor = AnchorStyles.None
+} ' ------------------------------------------------------
+
+        Dim Label1178444545275 = New Label With {
+             .BorderStyle = BorderStyle.None,
+            .ForeColor = Color.White,
+            .Dock = DockStyle.Fill,
+            .Font = New Font("Segoe UI", 10, FontStyle.Bold),
+            .Text = "Bonus Box",
+            .Anchor = AnchorStyles.None
+} ' ------------------------------------------------------
+
+        Dim Checkbox1178444545275 = New CheckBox With {
+            .FlatStyle = FlatStyle.Flat,
+            .Dock = DockStyle.Fill,
+            .Font = New Font("Segoe UI", 10, FontStyle.Bold),
+            .Anchor = AnchorStyles.None
+} ' ------------------------------------------------------
+
+        For Each i As Control In TableLayoutPanel6.Controls
+            Console.WriteLine(i)
+            Console.WriteLine(i.Name)
+            Console.WriteLine(i.Text)
+        Next
+
+        If TableLayoutPanel6.Contains(Label1178444545275) Then ' ne fonctionne pas je sais pas pourquoi !
+            Console.WriteLine("item deja present")
+        Else
+
+            TableLayoutPanel6.Controls.Add(Checkbox1178444545275, 0, 0)
+            TableLayoutPanel6.Controls.Add(Label1178444545275, 1, 0)
+            TableLayoutPanel6.Controls.Add(textbox1178444545275, 2, 0)
+            Console.WriteLine("item ajouter")
+
+        End If
+
+
+    End Sub
 End Class
