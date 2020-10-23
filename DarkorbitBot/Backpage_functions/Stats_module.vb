@@ -31,7 +31,11 @@ Public Class Stats_module
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         AddHandler WebClient_POST.DownloadStringCompleted, AddressOf WebClient_POST_DownloadFinished
-        WebClient_POST.DownloadStringAsync(New Uri("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"))
+        Try
+            WebClient_POST.DownloadStringAsync(New Uri("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"))
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
 
 
     End Sub

@@ -228,6 +228,8 @@ Public Class GalaxyGates_module
             End If
         Catch ex As Exception
             Console.WriteLine(ex.Message)
+            MessageBox.Show($"An error occured while trying to spin.{vbNewLine}{ex.Message}", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Form_Tools.Button_stopSpin.PerformClick()
         End Try
     End Sub
 
@@ -716,12 +718,23 @@ LABEL_BOUCLE:
             'MessageBox.Show($"Something strange limit your spin (╯°□°）╯︵ ┻━┻{vbNewLine}" +
             '$"Please create a ticket and send this error with the number of spin done. Thanks !{vbNewLine}{vbNewLine}" +
             '$"Error: {ex.Message}{vbNewLine}{vbNewLine}", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Form_Tools.Button_stopSpin.PerformClick()
+            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Getting an error, waiting 15 sec to prevent the Limit Rate of DarkOrbit..." + vbNewLine + Form_Tools.TextBox_WinGGS.Text
+            'WebClient_POST.Headers.Clear()
+            Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
+            Closing_Spinner()
+            Form_Tools.Button_stopSpin.PerformClick()
+            Task.Delay(2000)
+            Form_Tools.Button_revive_sid_Click(Nothing, Nothing)
+            Task.Delay(13000)
+            Form_Tools.Button_StartSpin.PerformClick()
+            Exit Sub
 
             'Form_Tools.Button_stopSpin_Click(Nothing, Nothing)
             'Form_Tools.Button_StartSpin_Click(Nothing, Nothing)
         End Try
 
-    End Sub
+    End Sub 'TODO
 
     Public Shared Sub Closing_Spinner()
 
