@@ -692,6 +692,7 @@
     <Compile Include="Bot_functions\Checking_map.vb" />
     <Compile Include="Bot_functions\Dead.vb" />
     <Compile Include="Bot_functions\Dependency.vb" />
+    <Compile Include="Bot_functions\Minimap_configuration.vb" />
     <Compile Include="Bot_functions\Reconnect.vb" />
     <Compile Include="Bot_functions\Traveling_module.vb" />
     <Compile Include="Extension\ApplicationEvents.vb" />

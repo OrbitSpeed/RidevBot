@@ -38,6 +38,10 @@ Public Class Var
     Public Shared Map2_BL = My.Resources.map2_BL
     Public Shared Map3_BL = My.Resources.map3_BL
 
+    Public Shared security As String = 0
+    Public Shared security_traveling As String = 0
+    Public Shared security_T_backup As String = 0
+
     Public Shared X_TOP As Integer = 0
     Public Shared Y_TOP As Integer = 64
     Public Shared X_BOTTOM As Integer = 800
@@ -117,7 +121,6 @@ Public Class Var
 
 
 #Region "Click Zone"
-
 #Region "4-1"
     Public Shared Async Function PORTAIL_41_to_14() As Task
         If User_Stop_Bot Then Exit Function
@@ -224,7 +227,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
 #Region "4-2"
     Public Shared Async Function PORTAIL_42_to_24() As Task
         If User_Stop_Bot Then Exit Function
@@ -331,8 +333,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
-
 #Region "4-3"
     Public Shared Async Function PORTAIL_43_to_34() As Task
         If User_Stop_Bot Then Exit Function
@@ -408,7 +408,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
 #Region "1-4"
     Public Shared Async Function PORTAIL_14_to_41() As Task
         If User_Stop_Bot Then Exit Function
@@ -437,7 +436,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
 #Region "2-4"
     Public Shared Async Function PORTAIL_24_to_42() As Task
         If User_Stop_Bot Then Exit Function
@@ -466,7 +464,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
 #Region "3-4"
     Public Shared Async Function PORTAIL_34_to_43() As Task
         If User_Stop_Bot Then Exit Function
@@ -497,10 +494,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
-
-
-
-
 #Region "BL"
     Public Shared Async Function PORTAIL_1BL_MMO() As Task
         If User_Stop_Bot Then Exit Function
@@ -582,7 +575,6 @@ Public Class Var
 
     End Function
 #End Region
-
     Public Shared Async Function PORTAIL_15_TO_44() As Task
         If User_Stop_Bot Then Exit Function
 
@@ -722,8 +714,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Function
-
-
 #Region "4-4"
     Public Shared Async Function PORTAIL_44_to_35() As Task
         If User_Stop_Bot Then Exit Function
@@ -755,9 +745,6 @@ Public Class Var
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
 
     End Function
-
-
-
     Public Shared Async Function PORTAIL_44_to_41() As Task
         If User_Stop_Bot Then Exit Function
         Dim randomX = Utils.GetPortalZone(679, "x")
@@ -846,8 +833,6 @@ Public Class Var
 
     End Function
 #End Region
-
-
 #Region "4-5"
     Public Shared Async Function PORTAIL_45_to_15() As Task
         If User_Stop_Bot Then Exit Function
@@ -1013,9 +998,6 @@ Public Class Var
 
     End Function
 #End Region
-
-
-
 #Region "4-5 Indépendant"
     Public Shared Async Function PORTAIL_45_MMO() As Task
         If User_Stop_Bot Then Exit Function
@@ -1236,37 +1218,63 @@ Public Class Var
     End Function
 
 #End Region
+#End Region
 
     Public Shared Async Function POINT_DE_CHUTE_DU_CLICK_TRAVELING() As Task
 
         If User_Stop_Bot Then Exit Function
 
         Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
-        Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
+        Dim Map_roaming_reconize = Form_tools.ComboBox_map_to_travel.Text
         Console.WriteLine(Map_actuelle_reconize)
         Console.WriteLine(Map_roaming_reconize)
 
         If Map_actuelle_reconize <> Map_roaming_reconize Then
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
-            Await Task.Delay(10000)
-            Await Checking_map.Func_Checking_map()
-            Running.Traveling_module()
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_jump_key.Text))
+            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_tools.TextBox_jump_key.Text}")
+
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Dead.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Reconnect.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Dependency.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Checking_map.Load()
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Traveling_module.Load()
 
         Else
 
             Console.WriteLine("On relance Traveling par Point de chute")
-            Await Task.Delay(10000)
-            Await Checking_map.Func_Checking_map()
-            Running.Traveling_module()
+
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Dead.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Reconnect.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Dependency.Load
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Await Checking_map.Load()
+            Await Task.Delay(1000)
+            If User_Stop_Bot Then Exit Function
+            Traveling_module.Load()
 
         End If
 
     End Function
 
-#End Region
 
 
     Public Shared Sub UpdateMapLocations()

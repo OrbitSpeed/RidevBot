@@ -1,6 +1,6 @@
 ﻿Public Class Checking_map
 
-    Public Shared Function Func_Checking_map() As Task
+    Public Shared Function Load() As Task
 
         Var.UpdateMapLocations()
         Var.Update_Screen()

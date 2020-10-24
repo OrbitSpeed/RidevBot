@@ -45,6 +45,23 @@ Public Class Utils
             Form_Tools.TextBox_RPCurrent.Text = currentRankPoints
         End If
     End Sub
+
+    ''' <summary>
+    ''' Attends le temps donné par le code
+    ''' </summary>    
+    '''<param name="time">Le temps en secondes</param>
+    ''' <remarks></remarks>
+    Friend Shared Async Sub WaitingAsync(ByVal time As Integer)
+        For i As Integer = 0 To (time / 1000)
+
+
+
+
+
+
+            Await Task.Delay(i * 1000)
+        Next
+    End Sub
 #End Region
 
 

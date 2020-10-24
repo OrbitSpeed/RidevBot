@@ -3,7 +3,7 @@ Imports System.Threading.Tasks
 Imports System.Threading
 
 Public Class Dependency
-    Public Shared Async Function Func_Dpendency() As Task
+    Public Shared Async Function Load() As Task
 
         Var.Update_Screen()
         Console.WriteLine("Verifying Dependency, wait...")
