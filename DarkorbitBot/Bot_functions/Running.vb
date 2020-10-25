@@ -1,6 +1,6 @@
 ﻿Public Class Running
 
-    Public Shared Async Function Start() As Task
+    Public Shared Async Sub Start()
 
         If Var.security = 1 Then
             Var.security = 0 ' minimap configuration
@@ -30,36 +30,37 @@
 
 Recharge_functions:
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Await Dead.Load
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Await Reconnect.Load
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Await Dependency.Load
 
 Retour_error_map_traveling:
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Minimap_configuration.Load()
+        Exit Sub
 Minimap_backup:
         Console.WriteLine("redirection effectué get/set")
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Await Checking_map.Load
+        Console.WriteLine("Map Loaded")
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Traveling_module.Load()
+        Exit Sub
 Backup_traveling_success:
 
-        If Var.User_Stop_Bot Then Exit Function
+        If Var.User_Stop_Bot Then Exit Sub
         Await Pet_module.Post_function
-
-
 
         GoTo Recharge_functions
 
 
-    End Function
+    End Sub
 
 End Class

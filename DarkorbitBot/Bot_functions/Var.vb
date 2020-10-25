@@ -1275,53 +1275,6 @@ Public Class Var
 
     End Function
 
-
-
-    Public Shared Sub UpdateMapLocations()
-        Update_Screen()
-
-        Map_Location1_1 = Client_Screen.Contains(Map1_1)
-        Map_Location1_2 = Client_Screen.Contains(Map1_2)
-        Map_Location1_3 = Client_Screen.Contains(Map1_3)
-        Map_Location1_4 = Client_Screen.Contains(Map1_4)
-        Map_Location1_5 = Client_Screen.Contains(Map1_5)
-        Map_Location1_6 = Client_Screen.Contains(Map1_6)
-        Map_Location1_7 = Client_Screen.Contains(Map1_7)
-        Map_Location1_8 = Client_Screen.Contains(Map1_8)
-
-        Map_Location2_1 = Client_Screen.Contains(Map2_1)
-        Map_Location2_2 = Client_Screen.Contains(Map2_2)
-        Map_Location2_3 = Client_Screen.Contains(Map2_3)
-        Map_Location2_4 = Client_Screen.Contains(Map2_4)
-        Map_Location2_5 = Client_Screen.Contains(Map2_5)
-        Map_Location2_6 = Client_Screen.Contains(Map2_6)
-        Map_Location2_7 = Client_Screen.Contains(Map2_7)
-        Map_Location2_8 = Client_Screen.Contains(Map2_8)
-
-        Map_Location3_1 = Client_Screen.Contains(Map3_1)
-        Map_Location3_2 = Client_Screen.Contains(Map3_2)
-        Map_Location3_3 = Client_Screen.Contains(Map3_3)
-        Map_Location3_4 = Client_Screen.Contains(Map3_4)
-        Map_Location3_5 = Client_Screen.Contains(Map3_5)
-        Map_Location3_6 = Client_Screen.Contains(Map3_6)
-        Map_Location3_7 = Client_Screen.Contains(Map3_7)
-        Map_Location3_8 = Client_Screen.Contains(Map3_8)
-
-        Map_Location4_1 = Client_Screen.Contains(Map4_1)
-        Map_Location4_2 = Client_Screen.Contains(Map4_2)
-        Map_Location4_3 = Client_Screen.Contains(Map4_3)
-        Map_Location4_4 = Client_Screen.Contains(Map4_4)
-        Map_Location4_5 = Client_Screen.Contains(Map4_5)
-
-        Map_Location5_1 = Client_Screen.Contains(Map5_1)
-        Map_Location5_2 = Client_Screen.Contains(Map5_2)
-        Map_Location5_3 = Client_Screen.Contains(Map5_3)
-
-        Map_Location1_BL = Client_Screen.Contains(Map1_BL)
-        Map_Location2_BL = Client_Screen.Contains(Map2_BL)
-        Map_Location3_BL = Client_Screen.Contains(Map3_BL)
-    End Sub
-
     Public Shared Function Update_Screen()
 
         Dim Client_primary = New Bitmap(Form_Game.WebBrowser_Game_Ridevbot.ClientSize.Width, Form_Game.WebBrowser_Game_Ridevbot.ClientSize.Height)

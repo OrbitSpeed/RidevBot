@@ -1,23 +1,11 @@
 ﻿Public Class Traveling_module
 
-    Public Shared Async Function Load() As Task
+    Public Shared Function Load() As Task
 
         If Var.User_Stop_Bot Then Exit Function
 
         Console.WriteLine("Traveling_module Started ")
         Var.Update_Screen()
-
-        Dim Save_point_original As Point = Var.Client_Screen.Contains(Var.Minimap_size_ref)
-        If Save_point_original.X = "762" Then
-            Console.WriteLine("Minimap get/set .762.")
-
-        Else
-
-            Console.WriteLine("Minimap Get/ Restarting")
-            Var.security_traveling = 1
-            Running.Start()
-            Exit Function
-        End If
 
         Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
         Dim Map_roaming = Form_tools.ComboBox_map_to_travel.Text

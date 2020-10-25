@@ -37,7 +37,7 @@ Public Class GalaxyGates_module_Gates_name_gamma_id_3
                 Exit Function
             End If
 
-            RUNNING.Traveling_module()
+            Traveling_module.Load()
             Exit Function
 
         Else
