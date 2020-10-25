@@ -138,7 +138,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -164,7 +166,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -190,7 +194,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -216,7 +222,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -244,7 +252,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -270,7 +280,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -296,7 +308,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -322,7 +336,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -350,7 +366,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -376,7 +394,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -391,20 +411,21 @@ Public Class Var
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 610, 479)
-        Await Task.Delay(10000)
+        Await Dead.Load
+        Await Reconnect.Load
+        Await Dependency.Load
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
     Public Shared Async Function PORTAIL_43_to_44() As Task
         If User_Stop_Bot Then Exit Function
 
-        'Dim randomX = Utils.GetRandom(685, 693)
-        'Dim randomY = Utils.GetRandom(717, 725)
-
         Dim randomX = Utils.GetPortalZone(685, "x")
         Dim randomY = Utils.GetPortalZone(717, "y")
         'Milieu
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, randomX, randomY)
-        Await Task.Delay(10000)
+        Await Dead.Load
+        Await Reconnect.Load
+        Await Dependency.Load
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
@@ -425,7 +446,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -453,7 +476,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -483,7 +508,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -511,7 +538,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -536,7 +565,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -563,7 +594,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -580,7 +613,9 @@ Public Class Var
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Task.Delay(1500)
+        Await Dead.Load
+        Await Reconnect.Load
+        Await Dependency.Load
         Client_Screen = Update_Screen()
         Dim traveling_indication As Bitmap = My.Resources.traveling_indication
         Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
@@ -591,7 +626,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -620,7 +657,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -647,7 +686,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -677,7 +718,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -703,7 +746,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -734,7 +779,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -763,7 +810,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -792,7 +841,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -821,7 +872,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -851,7 +904,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -877,7 +932,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -903,7 +960,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -931,7 +990,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -960,7 +1021,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -986,7 +1049,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1019,7 +1084,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1048,7 +1115,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1078,7 +1147,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1112,7 +1183,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1143,7 +1216,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1174,7 +1249,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1204,7 +1281,9 @@ Public Class Var
                 traveling_indication_point = Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     If User_Stop_Bot Then Exit Function
-                    Await Task.Delay(1200)
+                    Await Dead.Load
+                    Await Reconnect.Load
+                    Await Dependency.Load
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1244,10 +1323,9 @@ Public Class Var
             Await Task.Delay(1000)
             If User_Stop_Bot Then Exit Function
             Await Dependency.Load
-            Await Task.Delay(1000)
+            Await Task.Delay(7000)
             If User_Stop_Bot Then Exit Function
             Await Checking_map.Load()
-            Await Task.Delay(1000)
             If User_Stop_Bot Then Exit Function
             Traveling_module.Load()
 
@@ -1264,12 +1342,12 @@ Public Class Var
             Await Task.Delay(1000)
             If User_Stop_Bot Then Exit Function
             Await Dependency.Load
-            Await Task.Delay(1000)
+            Await Task.Delay(7000)
             If User_Stop_Bot Then Exit Function
             Await Checking_map.Load()
-            Await Task.Delay(1000)
             If User_Stop_Bot Then Exit Function
             Traveling_module.Load()
+
 
         End If
 

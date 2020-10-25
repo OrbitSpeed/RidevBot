@@ -4,8 +4,11 @@
 
         If Form_Game.Visible = False Then
             Var.User_Stop_Bot = False 'TODO: FIX
-            Form_Tools.PictureBox_LaunchBot.Image = My.Resources.cancel_presentation 'TOOD: FIX
-            MessageBox.Show($"It seems that you don't opened the Browser{vbNewLine}{ vbNewLine}Open it first and then click the Start button.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Form_tools.PictureBox_LaunchBot.Image = My.Resources.cancel_presentation 'TOOD: FIX
+            Form_tools.PictureBox_LaunchBot.Refresh()
+
+            MessageBox.Show($"It seems that you don't opened the Browser{vbNewLine}
+{ vbNewLine}Open it first and then click the Start button.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Exit Sub
         End If
@@ -41,6 +44,7 @@ Recharge_functions:
         If Var.User_Stop_Bot Then Exit Sub
         Await Dead.Load
 
+
         If Var.User_Stop_Bot Then Exit Sub
         Await Reconnect.Load
 
@@ -51,6 +55,7 @@ Retour_error_map_traveling:
         If Var.User_Stop_Bot Then Exit Sub
         Minimap_configuration.Load()
         Exit Sub
+
 Minimap_backup:
         Console.WriteLine("redirection effectué get/set")
 
@@ -65,6 +70,7 @@ Backup_traveling_success:
 
         If Var.User_Stop_Bot Then Exit Sub
         Await Pet_module.Post_function
+
         Await Task.Delay(1000)
         GoTo Recharge_functions
 

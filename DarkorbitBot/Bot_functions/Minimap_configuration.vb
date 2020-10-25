@@ -8,8 +8,9 @@
         If Save_point_original.X = "762" Then
 
             Console.WriteLine("Minimap get/set correct")
-            'If Var.User_Stop_Bot Then Exit Function
-            'Running.Start() ' ------------------------------------------------
+            If Var.User_Stop_Bot Then Exit Function
+            Var.security = 1
+            Running.Start()
             Exit Function
         Else
             Console.WriteLine("Configuration ( minimap ) in times...")
