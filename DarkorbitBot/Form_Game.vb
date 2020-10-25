@@ -5,10 +5,10 @@ Public Class Form_Game
     Declare Function BlockInput Lib "user32" (ByVal fBlockIt As Boolean) As Boolean
 
     Dim AutoIt As New AutoItX3
-    Dim X_TOP As Integer = 0
-    Dim Y_TOP As Integer = 64
-    Dim X_BOTTOM As Integer = 800
-    Dim Y_BOTTOM As Integer = 618
+    Public Shared X_TOP As Integer = 0
+    Public Shared Y_TOP As Integer = 64
+    Public Shared X_BOTTOM As Integer = 800
+    Public Shared Y_BOTTOM As Integer = 618
     Private Sub PictureBox_Close_Click(sender As Object, e As EventArgs) Handles PictureBox_Close.Click
 
         CloseForm.ShowDialog(Me)

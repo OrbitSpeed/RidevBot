@@ -958,19 +958,19 @@ Public Class Form_Tools
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-        Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
-        Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
+        'Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
+        'Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
 
-        WebClient_POST.Headers.Clear()
-        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
-        Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""".Replace("""", "").Replace("href=", ""))
-        Dim reg As String = ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
-        Console.WriteLine(_datatodo.Item(reg))
-        Dim Posting As String = _datatodo.Item(reg).ToString
-        Dim WebClient_Data_posting = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Posting)
-        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Posting)
+        'WebClient_POST.Headers.Clear()
+        'WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        'Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
+        'Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
+        'Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""".Replace("""", "").Replace("href=", ""))
+        'Dim reg As String = ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+        'Console.WriteLine(_datatodo.Item(reg))
+        'Dim Posting As String = _datatodo.Item(reg).ToString
+        'Dim WebClient_Data_posting = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Posting)
+        'Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Posting)
 
     End Sub
 
@@ -1080,7 +1080,7 @@ Public Class Form_Tools
             Await Task.Delay(1500)
             'PictureBox_LaunchBot_Click(Nothing, Nothing)
             Var.User_Stop_Bot = False
-            RUNNING.Start()
+            Running.Start()
         End If
     End Sub
 
@@ -1112,22 +1112,77 @@ Public Class Form_Tools
             .Anchor = AnchorStyles.None
 } ' ------------------------------------------------------
 
-        For Each i As Control In TableLayoutPanel6.Controls
-            Console.WriteLine(i)
-            Console.WriteLine(i.Name)
-            Console.WriteLine(i.Text)
-        Next
+    End Sub
 
-        If TableLayoutPanel6.Contains(Label1178444545275) Then ' ne fonctionne pas je sais pas pourquoi !
-            Console.WriteLine("item deja present")
-        Else
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonBOX.Click
 
-            TableLayoutPanel6.Controls.Add(Checkbox1178444545275, 0, 0)
-            TableLayoutPanel6.Controls.Add(Label1178444545275, 1, 0)
-            TableLayoutPanel6.Controls.Add(textbox1178444545275, 2, 0)
-            Console.WriteLine("item ajouter")
+        Panel_collectable_in.Visible = True
+        Panel_npcs_in.Visible = True
 
-        End If
+    End Sub
+
+    Private Sub Panel_collectable_in_Paint(sender As Object, e As PaintEventArgs) Handles Panel_collectable_in.Paint
+
+    End Sub
+
+    Private Async Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+        'retour:
+        Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+        Console.WriteLine(Locked(0))
+        Console.WriteLine(Locked(1))
+
+
+
+        'If Locked <> Nothing Then
+
+        '    Console.WriteLine("Locked")
+        '    Await Task.Delay(1000)
+        '    GoTo retour
+        'Else
+
+
+        'End If
+
+        'Try
+        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked(0), Locked(1))
+        '    '   Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_bonusbox_ms.Text)))
+
+        'Catch Cargo_Box_not_found As Exception
+        'End Try
+
+
+
+
+
+
+
+        'Dim Pumpkin1 = My.Resources.Pumpkin1
+        'Dim Pumpkin2 = My.Resources.Pumpkin2
+        'Dim Pumpkin3_cargo = My.Resources.Pumpkin3_cargo
+
+        'Var.Update_Screen()
+
+        'Dim Pumpkinx As Point = Var.Client_Screen.Contains(Pumpkin1)
+        'Dim Pumpkinxx As Point = Var.Client_Screen.Contains(Pumpkin2)
+        'Dim Pumpkinxxx As Point = Var.Client_Screen.Contains(Pumpkin3_cargo)
+        'Try
+        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinx.X, Pumpkinx.Y)
+        '    Console.WriteLine($"Box localisée 1")
+        '    Await Task.Delay(100)
+
+        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinxx.X, Pumpkinxx.Y)
+        '    Console.WriteLine($"Box localisée 2")
+        '    Await Task.Delay(100)
+
+        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinxxx.X, Pumpkinxxx.Y)
+        '    Console.WriteLine($"Box localisée 3")
+        '    Await Task.Delay(100)
+
+        'Catch ex As Exception
+
+        'End Try
 
 
     End Sub

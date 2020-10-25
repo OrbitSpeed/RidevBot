@@ -878,6 +878,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Extension\administration-ConvertImage.ico" />
+    <None Include="Resources\Red_booty.png" />
+    <None Include="Resources\Pumpkin3_cargo.png" />
+    <None Include="Resources\Pumpkin2.png" />
+    <None Include="Resources\Pumpkin1.png" />
+    <None Include="Resources\Green_booty.png" />
+    <None Include="Resources\Blue_booty.png" />
     <None Include="Resources\Close_popup_payment.png" />
     <None Include="Resources\Cancel_disconnect.png" />
     <None Include="Resources\Portal_repair.png" />
