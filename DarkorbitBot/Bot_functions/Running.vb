@@ -2,29 +2,37 @@
 
     Public Shared Async Sub Start()
 
-        If Var.security = 1 Then
-            Var.security = 0 ' minimap configuration
-            Console.WriteLine("redirection effectué /set")
+        If Form_Game.Visible = False Then
+            Var.User_Stop_Bot = False 'TODO: FIX
+            Form_Tools.PictureBox_LaunchBot.Image = My.Resources.cancel_presentation 'TOOD: FIX
+            MessageBox.Show($"It seems that you don't opened the Browser{vbNewLine}{ vbNewLine}Open it first and then click the Start button.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Exit Sub
+        End If
+
+        If Var.security = True Then
+            Var.security = False ' minimap configuration
+            Console.WriteLine("redirection Minimap effectué /set")
             GoTo Minimap_backup
         End If
 
-        If Var.security_traveling = 1 Then
-            Var.security_traveling = 0
+        If Var.security_traveling = True Then
+            Var.security_traveling = False
             Console.WriteLine("redirection Traveling effectué /set")
             GoTo Retour_error_map_traveling
         End If
 
-        If Var.security_T_backup = 1 Then
-            Var.security_T_backup = 1 = 0
+        If Var.security_T_backup = True Then
+            Var.security_T_backup = False
             Console.WriteLine("redirection Traveling success effectué /set")
             GoTo Backup_traveling_success
         End If
 
 
         If Var.User_Stop_Bot Then
-            Console.WriteLine("Stooped")
-
-        Else Console.WriteLine("Started")
+            Console.WriteLine("Stopped")
+        Else
+            Console.WriteLine("Started")
             Form_Game.WebBrowser_Game_Ridevbot.Select()
         End If
 
@@ -57,10 +65,18 @@ Backup_traveling_success:
 
         If Var.User_Stop_Bot Then Exit Sub
         Await Pet_module.Post_function
-
+        Await Task.Delay(1000)
         GoTo Recharge_functions
 
 
+    End Sub
+
+    Private Async Sub Backup_Traveling_Sucess(Optional reboot As Boolean = False)
+
+        If Var.User_Stop_Bot Then Exit Sub
+        Await Pet_module.Post_function
+        Await Task.Delay(1000)
+        If reboot = True Then Start()
     End Sub
 
 End Class

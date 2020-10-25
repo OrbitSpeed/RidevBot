@@ -134,7 +134,7 @@
             Console.WriteLine("Get/ -- No contains")
         End If
 
-        Return Nothing
+        Return Task.CompletedTask
     End Function
 
 End Class

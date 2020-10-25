@@ -38,9 +38,9 @@ Public Class Var
     Public Shared Map2_BL = My.Resources.map2_BL
     Public Shared Map3_BL = My.Resources.map3_BL
 
-    Public Shared security As String = 0
-    Public Shared security_traveling As String = 0
-    Public Shared security_T_backup As String = 0
+    Public Shared security As Boolean = False
+    Public Shared security_traveling As Boolean = False
+    Public Shared security_T_backup As Boolean = False
 
     Public Shared X_TOP As Integer = 0
     Public Shared Y_TOP As Integer = 64
