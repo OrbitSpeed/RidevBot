@@ -83,7 +83,7 @@ Public Class Form_Game
         End If
     End Sub
 
-    Private Sub Button_REX_Click(sender As Object, e As EventArgs) Handles Button_REX.Click
+    Private Sub Button_REX_Click(sender As Object, e As EventArgs)
 
         Pet_module.Post_function()
 
@@ -842,7 +842,7 @@ Label_GotoHome:
     Public Property Main As Object
     Public Property HeroManager As Object
 
-    Private Async Sub Red_dots_function_Click(sender As Object, e As EventArgs) Handles Red_dots_function.Click
+    Private Async Sub Red_dots_function_Click(sender As Object, e As EventArgs)
 
         Dim HAUT_GAUCHE_X As Integer = "599"
         Dim HAUT_DROITE_Y As Integer = "774"
@@ -920,7 +920,7 @@ Label_GotoHome:
 
     End Sub
 
-    Private Sub Button_dead_Click(sender As Object, e As EventArgs) Handles Button_dead.Click
+    Private Sub Button_dead_Click(sender As Object, e As EventArgs)
 
 
 

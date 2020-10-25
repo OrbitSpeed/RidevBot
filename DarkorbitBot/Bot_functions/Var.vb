@@ -141,6 +141,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -169,6 +170,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -197,6 +199,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -225,6 +228,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -255,6 +259,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -283,6 +288,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -311,6 +317,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -339,6 +346,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -369,6 +377,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -397,6 +406,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -414,6 +424,7 @@ Public Class Var
         Await Dead.Load
         Await Reconnect.Load
         Await Dependency.Load
+        Await Task.Delay(1000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
     Public Shared Async Function PORTAIL_43_to_44() As Task
@@ -426,6 +437,7 @@ Public Class Var
         Await Dead.Load
         Await Reconnect.Load
         Await Dependency.Load
+        Await Task.Delay(1000)
         POINT_DE_CHUTE_DU_CLICK_TRAVELING()
     End Function
 #End Region
@@ -449,6 +461,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -479,6 +492,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -511,6 +525,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -541,6 +556,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -568,6 +584,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -597,6 +614,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -613,9 +631,6 @@ Public Class Var
 
         ' BAS GAUCHE
         AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 764, 517)
-        Await Dead.Load
-        Await Reconnect.Load
-        Await Dependency.Load
         Client_Screen = Update_Screen()
         Dim traveling_indication As Bitmap = My.Resources.traveling_indication
         Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
@@ -629,6 +644,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -660,6 +676,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -689,6 +706,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -721,6 +739,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -749,6 +768,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -782,6 +802,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -813,6 +834,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -844,6 +866,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -875,6 +898,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -907,6 +931,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -935,6 +960,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -963,6 +989,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -993,6 +1020,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1024,6 +1052,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1052,6 +1081,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1087,6 +1117,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1118,6 +1149,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1150,6 +1182,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1186,6 +1219,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1219,6 +1253,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1252,6 +1287,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")
@@ -1284,6 +1320,7 @@ Public Class Var
                     Await Dead.Load
                     Await Reconnect.Load
                     Await Dependency.Load
+                    Await Task.Delay(1000)
                     Console.WriteLine("on reboucle pour revérifier")
                 Else
                     Console.WriteLine("on exit le until do car pas trouvé donc point d'arrivé")

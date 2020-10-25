@@ -25,16 +25,10 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button28 = New System.Windows.Forms.Button()
-        Me.Button_dead = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
-        Me.Red_dots_function = New System.Windows.Forms.Button()
-        Me.Button_REX = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
-        Me.Button_Traveling_Module = New System.Windows.Forms.Button()
         Me.Label_map_location = New System.Windows.Forms.Label()
-        Me.Button_Bot = New System.Windows.Forms.Button()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.TextBox_getserver = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker_Performance = New System.ComponentModel.BackgroundWorker()
@@ -89,40 +83,16 @@ Partial Class Form_Game
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel7.Controls.Add(Me.Button28)
-        Me.Panel7.Controls.Add(Me.Button_dead)
         Me.Panel7.Controls.Add(Me.Button25)
-        Me.Panel7.Controls.Add(Me.Red_dots_function)
-        Me.Panel7.Controls.Add(Me.Button_REX)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
-        Me.Panel7.Controls.Add(Me.Button_Traveling_Module)
         Me.Panel7.Controls.Add(Me.Label_map_location)
-        Me.Panel7.Controls.Add(Me.Button_Bot)
         Me.Panel7.Controls.Add(Me.PictureBox_Close)
         Me.Panel7.Controls.Add(Me.Label_Title)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
-        '
-        'Button28
-        '
-        Me.Button28.Location = New System.Drawing.Point(686, -1)
-        Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(47, 19)
-        Me.Button28.TabIndex = 60
-        Me.Button28.Text = "Alpha"
-        Me.Button28.UseVisualStyleBackColor = True
-        '
-        'Button_dead
-        '
-        Me.Button_dead.Location = New System.Drawing.Point(622, -1)
-        Me.Button_dead.Name = "Button_dead"
-        Me.Button_dead.Size = New System.Drawing.Size(58, 19)
-        Me.Button_dead.TabIndex = 37
-        Me.Button_dead.Text = "Dead"
-        Me.Button_dead.UseVisualStyleBackColor = True
         '
         'Button25
         '
@@ -132,24 +102,7 @@ Partial Class Form_Game
         Me.Button25.TabIndex = 36
         Me.Button25.Text = "random move"
         Me.Button25.UseVisualStyleBackColor = True
-        '
-        'Red_dots_function
-        '
-        Me.Red_dots_function.Location = New System.Drawing.Point(565, -1)
-        Me.Red_dots_function.Name = "Red_dots_function"
-        Me.Red_dots_function.Size = New System.Drawing.Size(58, 19)
-        Me.Red_dots_function.TabIndex = 35
-        Me.Red_dots_function.Text = "red dots"
-        Me.Red_dots_function.UseVisualStyleBackColor = True
-        '
-        'Button_REX
-        '
-        Me.Button_REX.Location = New System.Drawing.Point(526, -1)
-        Me.Button_REX.Name = "Button_REX"
-        Me.Button_REX.Size = New System.Drawing.Size(40, 19)
-        Me.Button_REX.TabIndex = 33
-        Me.Button_REX.Text = "REX"
-        Me.Button_REX.UseVisualStyleBackColor = True
+        Me.Button25.Visible = False
         '
         'Button_cargobox
         '
@@ -159,6 +112,7 @@ Partial Class Form_Game
         Me.Button_cargobox.TabIndex = 31
         Me.Button_cargobox.Text = "Cargobox"
         Me.Button_cargobox.UseVisualStyleBackColor = True
+        Me.Button_cargobox.Visible = False
         '
         'Label_PerformanceMemoire
         '
@@ -171,33 +125,15 @@ Partial Class Form_Game
         Me.Label_PerformanceMemoire.TabIndex = 32
         Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
         '
-        'Button_Traveling_Module
-        '
-        Me.Button_Traveling_Module.Location = New System.Drawing.Point(407, -2)
-        Me.Button_Traveling_Module.Name = "Button_Traveling_Module"
-        Me.Button_Traveling_Module.Size = New System.Drawing.Size(57, 20)
-        Me.Button_Traveling_Module.TabIndex = 30
-        Me.Button_Traveling_Module.Text = "Traveling"
-        Me.Button_Traveling_Module.UseVisualStyleBackColor = True
-        '
         'Label_map_location
         '
         Me.Label_map_location.AutoSize = True
         Me.Label_map_location.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_map_location.Location = New System.Drawing.Point(708, -1)
+        Me.Label_map_location.Location = New System.Drawing.Point(697, -1)
         Me.Label_map_location.Name = "Label_map_location"
         Me.Label_map_location.Size = New System.Drawing.Size(74, 20)
         Me.Label_map_location.TabIndex = 31
         Me.Label_map_location.Text = "Map : 0-0"
-        '
-        'Button_Bot
-        '
-        Me.Button_Bot.Location = New System.Drawing.Point(373, -1)
-        Me.Button_Bot.Name = "Button_Bot"
-        Me.Button_Bot.Size = New System.Drawing.Size(35, 19)
-        Me.Button_Bot.TabIndex = 29
-        Me.Button_Bot.Text = "bot"
-        Me.Button_Bot.UseVisualStyleBackColor = True
         '
         'PictureBox_Close
         '
@@ -503,6 +439,7 @@ Partial Class Form_Game
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(99, 43)
         Me.Panel1.TabIndex = 59
+        Me.Panel1.Visible = False
         '
         'Button27
         '
@@ -568,8 +505,6 @@ Partial Class Form_Game
     Friend WithEvents Panel7 As Panel
     Friend WithEvents PictureBox_Close As PictureBox
     Friend WithEvents TextBox_getserver As TextBox
-    Friend WithEvents Button_Bot As Button
-    Friend WithEvents Button_Traveling_Module As Button
     Friend WithEvents Button_cargobox As Button
     Friend WithEvents Label_map_location As Label
     Friend WithEvents BackgroundWorker_Performance As System.ComponentModel.BackgroundWorker
@@ -579,7 +514,6 @@ Partial Class Form_Game
     Friend WithEvents BackgroundWorker_Reduce_minimap As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker_Deplacement_minimap_bas_droite As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker_Checking_minimap As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Button_REX As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
@@ -606,9 +540,6 @@ Partial Class Form_Game
     Friend WithEvents Button24 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button26 As Button
-    Friend WithEvents Red_dots_function As Button
     Friend WithEvents Button25 As Button
-    Friend WithEvents Button_dead As Button
-    Friend WithEvents Button28 As Button
     Friend WithEvents Button27 As Button
 End Class

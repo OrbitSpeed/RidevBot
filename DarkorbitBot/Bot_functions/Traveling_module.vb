@@ -16,6 +16,8 @@
 
         If Map_actuelle <> Map_roaming Then
 
+            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_fleeing.Text))
+
 #Region "MAP = 1-8 ---------- "
             If Map_actuelle = "1-8" And
                             Map_roaming = "1-6" Then
@@ -1282,6 +1284,7 @@
         Else
 
             Console.WriteLine("Traveling success get/set")
+            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_Attack.Text))
             Var.security_T_backup = 1
             Running.Start()
         End If
