@@ -33,12 +33,12 @@ Public Class Form_Startup
         Button_SID_Load.Enabled = False
         Panel_License.Visible = True
 
-        Try
-            Utils.DateDistant = Utils.GetNetworkTime()
-            Console.WriteLine(Utils.DateDistant)
-        Catch ex As Exception
-            Console.WriteLine($"Erreur:{ex.ToString}")
-        End Try
+        'Try
+        '    Utils.DateDistant = Utils.GetNetworkTime()
+        '    Console.WriteLine(Utils.DateDistant)
+        'Catch ex As Exception
+        '    Console.WriteLine($"Erreur:{ex.ToString}")
+        'End Try
 
         Panel_License.Visible = False
 

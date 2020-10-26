@@ -1128,10 +1128,23 @@ Public Class Form_Tools
     Private Async Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
 
 
-        'retour:
-        Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-        Console.WriteLine(Locked(0))
-        Console.WriteLine(Locked(1))
+retour:
+        Try
+            Dim dt As New Stopwatch
+            dt.Start()
+            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+            dt.Stop()
+            Console.WriteLine($"temps:{dt.ElapsedMilliseconds}")
+            Console.WriteLine("Trouvé")
+
+            Console.WriteLine(Locked(0))
+            Console.WriteLine(Locked(1))
+            'Cursor.Position = New Point(Locked(0), Locked(1))
+            Await Task.Delay(250)
+            GoTo retour
+        Catch ex As Exception
+            Console.WriteLine("Can't find any locked shit")
+        End Try
 
 
 

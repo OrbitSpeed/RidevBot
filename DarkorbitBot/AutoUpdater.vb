@@ -29,17 +29,17 @@ Public Class AutoUpdater
 
         Me.Size = New Size(363, 264)
 
-        For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
-            'Console.WriteLine(f)
-            If Not f.Contains("RidevBot.exe") Then
-                'Console.WriteLine($"Deleted-{f}")
-                Try
-                    File.Delete(f)
-                Catch ex As Exception
-                    Console.WriteLine($"Seems that i can't delete the file {f}")
-                End Try
-            End If
-        Next
+        'For Each f In Directory.GetFiles(Application.StartupPath, "*.exe")
+        '    'Console.WriteLine(f)
+        '    If Not f.Contains("RidevBot.exe") Then
+        '        'Console.WriteLine($"Deleted-{f}")
+        '        Try
+        '            File.Delete(f)
+        '        Catch ex As Exception
+        '            Console.WriteLine($"Seems that i can't delete the file {f}")
+        '        End Try
+        '    End If
+        'Next
 
         Timer_bar_cancel_auto_login.Start()
 
@@ -71,8 +71,8 @@ Public Class AutoUpdater
             AddHandler WC_Update_ChangeLog.DownloadStringCompleted, AddressOf WC_Update_ChangeLog_DownloadStringCompleted
             WC_Update_ChangeLog.DownloadStringAsync(New Uri("https://www.dropbox.com/s/q8wlkhxshwbnajo/Changelog.txt?dl=1"))
             '---
-            AddHandler WC_Firebase_Secret.DownloadStringCompleted, AddressOf WC_Firebase_Secret_DownloadStringCompleted
-            WC_Firebase_Secret.DownloadStringAsync(New Uri("https://www.dropbox.com/s/9yhkt6o33my54d0/Firebase_secret.txt?dl=1"))
+            'AddHandler WC_Firebase_Secret.DownloadStringCompleted, AddressOf WC_Firebase_Secret_DownloadStringCompleted
+            'WC_Firebase_Secret.DownloadStringAsync(New Uri("https://www.dropbox.com/s/9yhkt6o33my54d0/Firebase_secret.txt?dl=1"))
 
             'Video_ridevbot_MediaPlayerAx.URL = FilePath
             'Video_ridevbot_MediaPlayerAx.Ctlcontrols.play()

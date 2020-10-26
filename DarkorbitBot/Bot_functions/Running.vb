@@ -7,8 +7,8 @@
             Form_tools.PictureBox_LaunchBot.Image = My.Resources.cancel_presentation 'TOOD: FIX
             Form_tools.PictureBox_LaunchBot.Refresh()
 
-            MessageBox.Show($"It seems that you don't opened the Browser{vbNewLine}
-{ vbNewLine}Open it first and then click the Start button.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show($"It seems that you don't opened the Browser{vbNewLine}" +
+                            $"{vbNewLine}Open it first and then click the Start button.", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Exit Sub
         End If
