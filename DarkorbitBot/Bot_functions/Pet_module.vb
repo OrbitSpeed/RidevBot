@@ -12,7 +12,7 @@ Public Class Pet_module
     Public Shared Activate_pet = My.Resources.Activate_pet
     Public Shared Play_Pet = My.Resources.Play_pet
     Public Shared Stop_pet = My.Resources.Stop_pet
-    Public Shared repair_pet = My.Resources.repair_pet
+    Public Shared repair_pet = My.Resources.Repair_rex
     Public Shared defile_menu = My.Resources.Defile_menu_pet
 
     Public Shared Module_Passive = My.Resources.passive_pet_module

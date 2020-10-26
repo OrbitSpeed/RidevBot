@@ -155,6 +155,12 @@
         YAAAcUEQScoAi/wAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="All_npc" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABlJREFUGFdjWMPAcAaG5BkYoHwEIInPwAAAx6QJECs8WB4AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="auto_loot_pet_module" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAIAAADAoMD9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -6098,6 +6104,13 @@
         JRRVAP0YWZmC7Vkj4XiFW1vJf4Lkth3NcFUFP6jhZtuvKe6OfafK8rxcKeZGhYWQFUD7nYK8XJfF9GNj
         inAaiWW939GDr/ThrmF8e5zwYH5XH3SqvDa5RSdW3eZEh4WA6NN4Yxy0T49tzY/v2E3OmaG3Rr20vnbZ
         bCLcJv9aL1xSeBcez+tL1WLuT1qq7KY1GSt8AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Repair_rex" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACVJREFUGFdjuDKn4MK0TIZptZm/9nQz5MYF/9zVwdDTWPFw9zwAyooOhTJSOrQA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="reparator_ship_module_pet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

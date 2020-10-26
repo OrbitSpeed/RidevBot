@@ -693,6 +693,7 @@
     <Compile Include="Bot_functions\Dead.vb" />
     <Compile Include="Bot_functions\Dependency.vb" />
     <Compile Include="Bot_functions\Minimap_configuration.vb" />
+    <Compile Include="Bot_functions\Npc.vb" />
     <Compile Include="Bot_functions\Reconnect.vb" />
     <Compile Include="Bot_functions\Traveling_module.vb" />
     <Compile Include="Extension\ApplicationEvents.vb" />
@@ -878,6 +879,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Extension\administration-ConvertImage.ico" />
+    <None Include="Resources\Repair_rex.png" />
+    <None Include="Resources\All_npc.png" />
     <None Include="Resources\Red_booty.png" />
     <None Include="Resources\Pumpkin3_cargo.png" />
     <None Include="Resources\Pumpkin2.png" />

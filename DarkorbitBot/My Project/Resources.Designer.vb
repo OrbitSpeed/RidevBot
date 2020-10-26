@@ -93,6 +93,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property All_npc() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("All_npc", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property auto_loot_pet_module() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("auto_loot_pet_module", resourceCulture)
@@ -1715,6 +1725,16 @@ Namespace My.Resources
         Friend ReadOnly Property repair_pet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("repair_pet", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Repair_rex() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Repair_rex", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

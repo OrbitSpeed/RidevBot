@@ -1128,24 +1128,45 @@ Public Class Form_Tools
     Private Async Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
 
 
-retour:
-        Try
-            Dim dt As New Stopwatch
-            dt.Start()
-            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-            dt.Stop()
-            Console.WriteLine($"temps:{dt.ElapsedMilliseconds}")
-            Console.WriteLine("Trouvé")
+        Npc.Load()
 
-            Console.WriteLine(Locked(0))
-            Console.WriteLine(Locked(1))
-            'Cursor.Position = New Point(Locked(0), Locked(1))
-            Await Task.Delay(250)
-            GoTo retour
-        Catch ex As Exception
-            Console.WriteLine("Can't find any locked shit")
-        End Try
+        'retour2:
+        '        Var.Update_Screen()
+        '        Dim All_Npc = My.Resources.All_npc
 
+        '        Dim Npc As Point = Var.Client_Screen.Contains(All_Npc)
+        '        If Npc <> Nothing Then
+
+        '            Console.WriteLine("Npc Locked")
+        '            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc.X + 30, Npc.Y - 30)
+        '            Await Task.Delay(100)
+        '            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+        '            Await Task.Delay(100)
+
+        '        Else
+        '            Console.WriteLine("No Npc arround")
+
+        '        End If
+
+        'retour:
+        '        Try
+        '            Dim dt As New Stopwatch
+        '            dt.Start()
+        '            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+        '            dt.Stop()
+
+        '            Console.WriteLine($"temps:{dt.ElapsedMilliseconds}")
+        '            Console.WriteLine("Npc Locked and Finded at >" + (Locked(0)) + (Locked(1)))
+
+        '            Await Task.Delay(1000)
+        '            GoTo retour
+        '            Exit Sub
+        '        Catch ex As Exception
+        '            Console.WriteLine("Can't find any locked shit")
+        '        End Try
+
+        '        Await Task.Delay(1000)
+        '        GoTo retour2
 
 
         'If Locked <> Nothing Then
@@ -1197,6 +1218,10 @@ retour:
 
         'End Try
 
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
     End Sub
 End Class
