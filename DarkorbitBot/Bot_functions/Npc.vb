@@ -1,10 +1,17 @@
-﻿Public Class Npc
+﻿Imports Microsoft
+
+Public Class Npc
+
+    Public Shared Student As Object = "System.Object[]"
+
 
     Public Shared Async Function Load() As Task
 
+
 retour2:
+
         Var.Update_Screen()
-        Dim All_Npc = My.Resources.All_npc
+            Dim All_Npc = My.Resources.All_npc
 
         Dim Npc As Point = Var.Client_Screen.Contains(All_Npc)
         If Npc <> Nothing Then
@@ -26,33 +33,61 @@ retour2:
 
     Public Shared Async Function func_all() As Task
 
+        Try
+            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+            If Locked.contains(Student) Then
 
-        Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-        Console.WriteLine(Locked(1))
-        If IsError(Locked(1)) Then
+                Console.WriteLine("Npc Locked")
+                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+                Wait_npc_is_killed()
+            End If
+
+
+        Catch Locked As MissingMemberException
+
+
+            Console.WriteLine(" ")
+            Console.WriteLine(" ")
+            Console.WriteLine("ERROR")
+            Console.WriteLine(" ")
+            Console.WriteLine(" ")
+
             Load()
             Exit Function
-        Else
-            Console.WriteLine("Npc Locked")
-            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-            Await Task.Delay(1000)
 
-        End If
+        End Try
+
+    End Function
+
+
+    Public Shared Async Function Wait_npc_is_killed() As Task
+
 retour:
-        Dim Locked1 = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-        Console.WriteLine(Locked1(1))
-        If IsError(Locked1(1)) Then
+
+        Try
+            Dim Locked1 = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+            If Locked1.contains(Student) Then
+
+                Console.WriteLine("on fire, wait...")
+                Console.WriteLine(Locked1)
+                Locked1 = Nothing
+                Await Task.Delay(1000)
+                GoTo retour
+
+            End If
+
+        Catch Locked1 As MissingMemberException
+
+            Console.WriteLine(" ")
+            Console.WriteLine(" ")
+            Console.WriteLine("ERROR")
+            Console.WriteLine(" ")
+            Console.WriteLine(" ")
             Load()
             Exit Function
 
-        Else
-            Console.WriteLine("on fire, wait...")
-            Await Task.Delay(1000)
-            GoTo retour
+        End Try
 
-        End If
-
-        'Console.WriteLine($"temps:{dt.ElapsedMilliseconds}")
 
     End Function
 
