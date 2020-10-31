@@ -2,18 +2,16 @@
 
 Public Class Npc
 
-    Public Shared Student As Object = "System.Object[]"
-    Public Shared Locked As Object
-    Public Shared Locked1 As Object
-
-
+    Public Shared Student As String = "System.Object[]"
+    Private Shared Locked As Object
+    Private Shared Locked1 As Object
 
     Public Shared Async Function Load() As Task
 
-retour2:
+RetourLoad:
 
         Var.Update_Screen()
-            Dim All_Npc = My.Resources.All_npc
+        Dim All_Npc = My.Resources.All_npc
 
         Dim Npc As Point = Var.Client_Screen.Contains(All_Npc)
         If Npc <> Nothing Then
@@ -21,77 +19,55 @@ retour2:
             Console.WriteLine("Npc Arround")
             Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc.X + 30, Npc.Y - 30)
             Await Task.Delay(500)
-            func_all()
+            Func_all()
             Exit Function
 
         Else
             Console.WriteLine("No Npc arround")
             Await Task.Delay(1000)
-            GoTo retour2
+            GoTo RetourLoad
 
         End If
 
     End Function
 
-    Public Shared Async Function func_all() As Task
+    Public Shared Function Func_all() As Task
 
+        Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+        'Console.WriteLine(Locked)
+        If Locked.ToString.Contains(Student) Then
 
-        Try
-            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-            Console.WriteLine(Locked1)
-            If Locked.contains(Student) Then
-
-                Console.WriteLine("Npc Locked")
-                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-                Wait_npc_is_killed()
-
-            End If
-
-        Catch ex As MissingMemberException
-
-            Console.WriteLine(" ")
-            Console.WriteLine(" ")
-            Console.WriteLine("ERROR")
-            Console.WriteLine(" ")
-            Console.WriteLine(" ")
-
+            Console.WriteLine("Npc Locked")
+            'Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
+            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "{LCTRL}")
+            Wait_npc_is_killed()
+        Else
             Load()
             Exit Function
 
+        End If
 
-        End Try
 
     End Function
 
 
     Public Shared Async Function Wait_npc_is_killed() As Task
 
-retour:
+RetourNPC_Is_Killed:
+        'If Var.User_Stop_Bot = True Then Exit Function
 
+        Locked1 = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+        'Console.WriteLine(Locked1)
+        If Locked1.ToString.Contains(Student) Then
 
-        Try
-            Dim Locked1 = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-            Console.WriteLine(Locked1)
-            If Locked1.contains(Student) Then
-
-                Console.WriteLine("on fire, wait...")
-                Locked1 = Nothing
-                Await Task.Delay(1000)
-                GoTo retour
-
-            End If
-
-        Catch ex As MissingMemberException
-
-            Console.WriteLine(" ")
-            Console.WriteLine(" ")
-            Console.WriteLine("ERROR")
-            Console.WriteLine(" ")
-            Console.WriteLine(" ")
+            Console.WriteLine("on fire, wait...")
+            Await Task.Delay(1000)
+            GoTo RetourNPC_Is_Killed
+        Else
             Load()
             Exit Function
+        End If
 
-        End Try
 
 
     End Function
