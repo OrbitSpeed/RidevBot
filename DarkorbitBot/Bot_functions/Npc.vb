@@ -19,7 +19,7 @@ RetourLoad:
             Console.WriteLine("Npc Arround")
             Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc.X + 30, Npc.Y - 30)
             Await Task.Delay(500)
-            Func_all()
+            Control_Npc_attack()
             Exit Function
 
         Else
@@ -31,7 +31,7 @@ RetourLoad:
 
     End Function
 
-    Public Shared Function Func_all() As Task
+    Public Shared Function Control_Npc_attack() As Task
 
         Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
         'Console.WriteLine(Locked)
@@ -40,7 +40,7 @@ RetourLoad:
             Console.WriteLine("Npc Locked")
             'Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
             Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "{LCTRL}")
-            Wait_npc_is_killed()
+            Control_Npc_dead()
         Else
             Load()
             Exit Function
@@ -51,7 +51,7 @@ RetourLoad:
     End Function
 
 
-    Public Shared Async Function Wait_npc_is_killed() As Task
+    Public Shared Async Function Control_Npc_dead() As Task
 
 RetourNPC_Is_Killed:
         'If Var.User_Stop_Bot = True Then Exit Function

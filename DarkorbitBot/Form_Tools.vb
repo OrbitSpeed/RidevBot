@@ -1224,4 +1224,8 @@ Public Class Form_Tools
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
     End Sub
+
+    Private Sub Panel_Gates_task_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Gates_task.Paint
+
+    End Sub
 End Class

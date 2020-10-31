@@ -168,7 +168,6 @@ Partial Class Form_Tools
         Me.Button_skylab = New System.Windows.Forms.Button()
         Me.Panel_MoveTitle = New System.Windows.Forms.Panel()
         Me.PictureBox_Backpage = New System.Windows.Forms.PictureBox()
-        Me.FlatMini1 = New DarkorbitBot.FlatMini()
         Me.PictureBox_Pause = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Close = New System.Windows.Forms.PictureBox()
         Me.PictureBox_Start = New System.Windows.Forms.PictureBox()
@@ -281,7 +280,6 @@ Partial Class Form_Tools
         Me.button_How_use = New System.Windows.Forms.Button()
         Me.button_npc = New System.Windows.Forms.Button()
         Me.Panel_collectable = New System.Windows.Forms.Panel()
-        Me.Label82 = New System.Windows.Forms.Label()
         Me.panel_npc_npc = New System.Windows.Forms.Panel()
         Me.Panel_collectable_in = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -348,7 +346,6 @@ Partial Class Form_Tools
         Me.button_gates_task = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel_Gates_task = New System.Windows.Forms.Panel()
-        Me.Panel_dependency_func = New System.Windows.Forms.Panel()
         Me.Panel_Alpha_configuration_func = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.CheckBox44 = New System.Windows.Forms.CheckBox()
@@ -405,10 +402,32 @@ Partial Class Form_Tools
         Me.CheckBox24 = New System.Windows.Forms.CheckBox()
         Me.CheckBox33 = New System.Windows.Forms.CheckBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Panel_Gates_func = New System.Windows.Forms.Panel()
-        Me.CheckBox_enable_gates_mode = New System.Windows.Forms.CheckBox()
-        Me.Button_Aplha_Gates_Func = New System.Windows.Forms.Button()
         Me.WebBrowser_Synchronisation = New System.Windows.Forms.WebBrowser()
+        Me.CheckBox34 = New System.Windows.Forms.CheckBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.CheckBox45 = New System.Windows.Forms.CheckBox()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.CheckBox46 = New System.Windows.Forms.CheckBox()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.CheckBox47 = New System.Windows.Forms.CheckBox()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.CheckBox48 = New System.Windows.Forms.CheckBox()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.CheckBox49 = New System.Windows.Forms.CheckBox()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.CheckBox50 = New System.Windows.Forms.CheckBox()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.CheckBox52 = New System.Windows.Forms.CheckBox()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.CheckBox53 = New System.Windows.Forms.CheckBox()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.CheckBox54 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox56 = New System.Windows.Forms.CheckBox()
+        Me.FlatMini1 = New DarkorbitBot.FlatMini()
+        Me.Button18 = New System.Windows.Forms.Button()
         Me.General_General_BOX.SuspendLayout()
         CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_stats_load.SuspendLayout()
@@ -463,7 +482,6 @@ Partial Class Form_Tools
         Me.Panel_Gates_task.SuspendLayout()
         Me.Panel_Alpha_configuration_func.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel_Gates_func.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label_Tittle
@@ -1142,7 +1160,7 @@ Partial Class Form_Tools
         Me.ComboBox_map_to_travel.ForeColor = System.Drawing.Color.White
         Me.ComboBox_map_to_travel.FormattingEnabled = True
         Me.ComboBox_map_to_travel.IntegralHeight = False
-        Me.ComboBox_map_to_travel.Items.AddRange(New Object() {"1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-BL", "2-1", "2-2", "2-3", "2-4", "2-5", "2-6", "2-7", "2-8", "2-BL", "3-1", "3-2", "3-3", "3-4", "3-5", "3-6", "3-7", "3-8", "3-BL", "4-1", "4-2", "4-3", "4-4", "4-5", "5-1", "5-2", "5-3", "", "Alpha"})
+        Me.ComboBox_map_to_travel.Items.AddRange(New Object() {"Gates", "", "1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-BL", "", "2-1", "2-2", "2-3", "2-4", "2-5", "2-6", "2-7", "2-8", "2-BL", "", "3-1", "3-2", "3-3", "3-4", "3-5", "3-6", "3-7", "3-8", "3-BL", "", "4-1", "4-2", "4-3", "4-4", "4-5", "", "5-1", "5-2", "5-3"})
         Me.ComboBox_map_to_travel.Location = New System.Drawing.Point(192, 235)
         Me.ComboBox_map_to_travel.MaxDropDownItems = 35
         Me.ComboBox_map_to_travel.Name = "ComboBox_map_to_travel"
@@ -2002,7 +2020,7 @@ Partial Class Form_Tools
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.8!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54.0!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138.0!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157.0!))
         Me.TableLayoutPanel5.Controls.Add(Me.CheckBox32, 4, 6)
         Me.TableLayoutPanel5.Controls.Add(Me.CheckBox31, 4, 5)
         Me.TableLayoutPanel5.Controls.Add(Me.CheckBox30, 4, 4)
@@ -2068,7 +2086,7 @@ Partial Class Form_Tools
         Me.CheckBox32.Checked = True
         Me.CheckBox32.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox32.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox32.Location = New System.Drawing.Point(437, 241)
+        Me.CheckBox32.Location = New System.Drawing.Point(436, 241)
         Me.CheckBox32.Name = "CheckBox32"
         Me.CheckBox32.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox32.TabIndex = 72
@@ -2084,7 +2102,7 @@ Partial Class Form_Tools
         Me.CheckBox31.Checked = True
         Me.CheckBox31.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox31.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox31.Location = New System.Drawing.Point(437, 201)
+        Me.CheckBox31.Location = New System.Drawing.Point(436, 201)
         Me.CheckBox31.Name = "CheckBox31"
         Me.CheckBox31.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox31.TabIndex = 71
@@ -2100,7 +2118,7 @@ Partial Class Form_Tools
         Me.CheckBox30.Checked = True
         Me.CheckBox30.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox30.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox30.Location = New System.Drawing.Point(437, 162)
+        Me.CheckBox30.Location = New System.Drawing.Point(436, 162)
         Me.CheckBox30.Name = "CheckBox30"
         Me.CheckBox30.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox30.TabIndex = 70
@@ -2116,7 +2134,7 @@ Partial Class Form_Tools
         Me.CheckBox29.Checked = True
         Me.CheckBox29.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox29.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox29.Location = New System.Drawing.Point(437, 123)
+        Me.CheckBox29.Location = New System.Drawing.Point(436, 123)
         Me.CheckBox29.Name = "CheckBox29"
         Me.CheckBox29.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox29.TabIndex = 69
@@ -2132,7 +2150,7 @@ Partial Class Form_Tools
         Me.CheckBox28.Checked = True
         Me.CheckBox28.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox28.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox28.Location = New System.Drawing.Point(437, 84)
+        Me.CheckBox28.Location = New System.Drawing.Point(436, 84)
         Me.CheckBox28.Name = "CheckBox28"
         Me.CheckBox28.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox28.TabIndex = 68
@@ -2148,7 +2166,7 @@ Partial Class Form_Tools
         Me.CheckBox27.Checked = True
         Me.CheckBox27.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox27.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox27.Location = New System.Drawing.Point(437, 45)
+        Me.CheckBox27.Location = New System.Drawing.Point(436, 45)
         Me.CheckBox27.Name = "CheckBox27"
         Me.CheckBox27.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox27.TabIndex = 67
@@ -2164,7 +2182,7 @@ Partial Class Form_Tools
         Me.CheckBox26.Checked = True
         Me.CheckBox26.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox26.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox26.Location = New System.Drawing.Point(437, 6)
+        Me.CheckBox26.Location = New System.Drawing.Point(436, 6)
         Me.CheckBox26.Name = "CheckBox26"
         Me.CheckBox26.Size = New System.Drawing.Size(64, 27)
         Me.CheckBox26.TabIndex = 66
@@ -2178,7 +2196,7 @@ Partial Class Form_Tools
         Me.Label140.BackColor = System.Drawing.Color.Transparent
         Me.Label140.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label140.ForeColor = System.Drawing.Color.Black
-        Me.Label140.Location = New System.Drawing.Point(310, 248)
+        Me.Label140.Location = New System.Drawing.Point(308, 248)
         Me.Label140.Name = "Label140"
         Me.Label140.Size = New System.Drawing.Size(24, 13)
         Me.Label140.TabIndex = 65
@@ -2192,7 +2210,7 @@ Partial Class Form_Tools
         Me.Label139.BackColor = System.Drawing.Color.Transparent
         Me.Label139.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label139.ForeColor = System.Drawing.Color.Black
-        Me.Label139.Location = New System.Drawing.Point(310, 208)
+        Me.Label139.Location = New System.Drawing.Point(308, 208)
         Me.Label139.Name = "Label139"
         Me.Label139.Size = New System.Drawing.Size(24, 13)
         Me.Label139.TabIndex = 64
@@ -2206,7 +2224,7 @@ Partial Class Form_Tools
         Me.Label138.BackColor = System.Drawing.Color.Transparent
         Me.Label138.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label138.ForeColor = System.Drawing.Color.Black
-        Me.Label138.Location = New System.Drawing.Point(310, 169)
+        Me.Label138.Location = New System.Drawing.Point(308, 169)
         Me.Label138.Name = "Label138"
         Me.Label138.Size = New System.Drawing.Size(24, 13)
         Me.Label138.TabIndex = 63
@@ -2220,7 +2238,7 @@ Partial Class Form_Tools
         Me.Label137.BackColor = System.Drawing.Color.Transparent
         Me.Label137.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label137.ForeColor = System.Drawing.Color.Black
-        Me.Label137.Location = New System.Drawing.Point(310, 130)
+        Me.Label137.Location = New System.Drawing.Point(308, 130)
         Me.Label137.Name = "Label137"
         Me.Label137.Size = New System.Drawing.Size(24, 13)
         Me.Label137.TabIndex = 62
@@ -2234,7 +2252,7 @@ Partial Class Form_Tools
         Me.Label136.BackColor = System.Drawing.Color.Transparent
         Me.Label136.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label136.ForeColor = System.Drawing.Color.Black
-        Me.Label136.Location = New System.Drawing.Point(310, 91)
+        Me.Label136.Location = New System.Drawing.Point(308, 91)
         Me.Label136.Name = "Label136"
         Me.Label136.Size = New System.Drawing.Size(24, 13)
         Me.Label136.TabIndex = 61
@@ -2248,7 +2266,7 @@ Partial Class Form_Tools
         Me.Label135.BackColor = System.Drawing.Color.Transparent
         Me.Label135.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label135.ForeColor = System.Drawing.Color.Black
-        Me.Label135.Location = New System.Drawing.Point(310, 52)
+        Me.Label135.Location = New System.Drawing.Point(308, 52)
         Me.Label135.Name = "Label135"
         Me.Label135.Size = New System.Drawing.Size(24, 13)
         Me.Label135.TabIndex = 60
@@ -2262,7 +2280,7 @@ Partial Class Form_Tools
         Me.Label134.BackColor = System.Drawing.Color.Transparent
         Me.Label134.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label134.ForeColor = System.Drawing.Color.Black
-        Me.Label134.Location = New System.Drawing.Point(310, 13)
+        Me.Label134.Location = New System.Drawing.Point(308, 13)
         Me.Label134.Name = "Label134"
         Me.Label134.Size = New System.Drawing.Size(24, 13)
         Me.Label134.TabIndex = 59
@@ -2276,7 +2294,7 @@ Partial Class Form_Tools
         Me.Label133.BackColor = System.Drawing.Color.Transparent
         Me.Label133.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label133.ForeColor = System.Drawing.Color.White
-        Me.Label133.Location = New System.Drawing.Point(206, 248)
+        Me.Label133.Location = New System.Drawing.Point(204, 248)
         Me.Label133.Name = "Label133"
         Me.Label133.Size = New System.Drawing.Size(40, 13)
         Me.Label133.TabIndex = 58
@@ -2290,7 +2308,7 @@ Partial Class Form_Tools
         Me.Label131.BackColor = System.Drawing.Color.Transparent
         Me.Label131.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label131.ForeColor = System.Drawing.Color.White
-        Me.Label131.Location = New System.Drawing.Point(206, 208)
+        Me.Label131.Location = New System.Drawing.Point(204, 208)
         Me.Label131.Name = "Label131"
         Me.Label131.Size = New System.Drawing.Size(40, 13)
         Me.Label131.TabIndex = 57
@@ -2304,7 +2322,7 @@ Partial Class Form_Tools
         Me.Label130.BackColor = System.Drawing.Color.Transparent
         Me.Label130.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label130.ForeColor = System.Drawing.Color.White
-        Me.Label130.Location = New System.Drawing.Point(206, 169)
+        Me.Label130.Location = New System.Drawing.Point(204, 169)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(40, 13)
         Me.Label130.TabIndex = 56
@@ -2318,7 +2336,7 @@ Partial Class Form_Tools
         Me.Label129.BackColor = System.Drawing.Color.Transparent
         Me.Label129.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label129.ForeColor = System.Drawing.Color.White
-        Me.Label129.Location = New System.Drawing.Point(206, 130)
+        Me.Label129.Location = New System.Drawing.Point(204, 130)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(40, 13)
         Me.Label129.TabIndex = 55
@@ -2332,7 +2350,7 @@ Partial Class Form_Tools
         Me.Label128.BackColor = System.Drawing.Color.Transparent
         Me.Label128.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label128.ForeColor = System.Drawing.Color.White
-        Me.Label128.Location = New System.Drawing.Point(206, 91)
+        Me.Label128.Location = New System.Drawing.Point(204, 91)
         Me.Label128.Name = "Label128"
         Me.Label128.Size = New System.Drawing.Size(40, 13)
         Me.Label128.TabIndex = 54
@@ -2346,7 +2364,7 @@ Partial Class Form_Tools
         Me.Label127.BackColor = System.Drawing.Color.Transparent
         Me.Label127.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label127.ForeColor = System.Drawing.Color.White
-        Me.Label127.Location = New System.Drawing.Point(206, 52)
+        Me.Label127.Location = New System.Drawing.Point(204, 52)
         Me.Label127.Name = "Label127"
         Me.Label127.Size = New System.Drawing.Size(40, 13)
         Me.Label127.TabIndex = 53
@@ -2360,7 +2378,7 @@ Partial Class Form_Tools
         Me.Label126.BackColor = System.Drawing.Color.Transparent
         Me.Label126.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label126.ForeColor = System.Drawing.Color.White
-        Me.Label126.Location = New System.Drawing.Point(206, 13)
+        Me.Label126.Location = New System.Drawing.Point(204, 13)
         Me.Label126.Name = "Label126"
         Me.Label126.Size = New System.Drawing.Size(40, 13)
         Me.Label126.TabIndex = 52
@@ -2374,7 +2392,7 @@ Partial Class Form_Tools
         Me.Label_counter_seprom.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_seprom.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_seprom.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_seprom.Location = New System.Drawing.Point(115, 248)
+        Me.Label_counter_seprom.Location = New System.Drawing.Point(114, 248)
         Me.Label_counter_seprom.Name = "Label_counter_seprom"
         Me.Label_counter_seprom.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_seprom.TabIndex = 51
@@ -2388,7 +2406,7 @@ Partial Class Form_Tools
         Me.Label_counter_promerium.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_promerium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_promerium.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_promerium.Location = New System.Drawing.Point(115, 208)
+        Me.Label_counter_promerium.Location = New System.Drawing.Point(114, 208)
         Me.Label_counter_promerium.Name = "Label_counter_promerium"
         Me.Label_counter_promerium.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_promerium.TabIndex = 50
@@ -2402,7 +2420,7 @@ Partial Class Form_Tools
         Me.Label_counter_duranium.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_duranium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_duranium.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_duranium.Location = New System.Drawing.Point(115, 169)
+        Me.Label_counter_duranium.Location = New System.Drawing.Point(114, 169)
         Me.Label_counter_duranium.Name = "Label_counter_duranium"
         Me.Label_counter_duranium.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_duranium.TabIndex = 49
@@ -2416,7 +2434,7 @@ Partial Class Form_Tools
         Me.Label_counter_prometid.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_prometid.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_prometid.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_prometid.Location = New System.Drawing.Point(115, 130)
+        Me.Label_counter_prometid.Location = New System.Drawing.Point(114, 130)
         Me.Label_counter_prometid.Name = "Label_counter_prometid"
         Me.Label_counter_prometid.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_prometid.TabIndex = 45
@@ -2430,7 +2448,7 @@ Partial Class Form_Tools
         Me.Label_counter_terbium.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_terbium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_terbium.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_terbium.Location = New System.Drawing.Point(115, 91)
+        Me.Label_counter_terbium.Location = New System.Drawing.Point(114, 91)
         Me.Label_counter_terbium.Name = "Label_counter_terbium"
         Me.Label_counter_terbium.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_terbium.TabIndex = 47
@@ -2444,7 +2462,7 @@ Partial Class Form_Tools
         Me.Label_counter_prometium.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_prometium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_prometium.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_prometium.Location = New System.Drawing.Point(115, 13)
+        Me.Label_counter_prometium.Location = New System.Drawing.Point(114, 13)
         Me.Label_counter_prometium.Name = "Label_counter_prometium"
         Me.Label_counter_prometium.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_prometium.TabIndex = 48
@@ -2458,7 +2476,7 @@ Partial Class Form_Tools
         Me.Label_counter_endurium.BackColor = System.Drawing.Color.Transparent
         Me.Label_counter_endurium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_counter_endurium.ForeColor = System.Drawing.Color.Black
-        Me.Label_counter_endurium.Location = New System.Drawing.Point(115, 52)
+        Me.Label_counter_endurium.Location = New System.Drawing.Point(114, 52)
         Me.Label_counter_endurium.Name = "Label_counter_endurium"
         Me.Label_counter_endurium.Size = New System.Drawing.Size(30, 13)
         Me.Label_counter_endurium.TabIndex = 46
@@ -2542,7 +2560,7 @@ Partial Class Form_Tools
         Me.Label_endurium.BackColor = System.Drawing.Color.Transparent
         Me.Label_endurium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_endurium.ForeColor = System.Drawing.Color.White
-        Me.Label_endurium.Location = New System.Drawing.Point(7, 45)
+        Me.Label_endurium.Location = New System.Drawing.Point(6, 45)
         Me.Label_endurium.Name = "Label_endurium"
         Me.Label_endurium.Size = New System.Drawing.Size(48, 26)
         Me.Label_endurium.TabIndex = 39
@@ -2603,18 +2621,6 @@ Partial Class Form_Tools
         Me.PictureBox_Backpage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox_Backpage.TabIndex = 34
         Me.PictureBox_Backpage.TabStop = False
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 35
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'PictureBox_Pause
         '
@@ -4253,7 +4259,6 @@ Partial Class Form_Tools
         Me.Panel_collectable.AutoScroll = True
         Me.Panel_collectable.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Panel_collectable.Controls.Add(Me.TableLayoutPanel4)
-        Me.Panel_collectable.Controls.Add(Me.Label82)
         Me.Panel_collectable.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_collectable.ForeColor = System.Drawing.Color.White
         Me.Panel_collectable.Location = New System.Drawing.Point(0, 0)
@@ -4261,19 +4266,6 @@ Partial Class Form_Tools
         Me.Panel_collectable.Size = New System.Drawing.Size(687, 384)
         Me.Panel_collectable.TabIndex = 46
         Me.Panel_collectable.Visible = False
-        '
-        'Label82
-        '
-        Me.Label82.AutoSize = True
-        Me.Label82.BackColor = System.Drawing.Color.Transparent
-        Me.Label82.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label82.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label82.ForeColor = System.Drawing.Color.Red
-        Me.Label82.Location = New System.Drawing.Point(411, 64)
-        Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(180, 21)
-        Me.Label82.TabIndex = 116
-        Me.Label82.Text = "Cuurently working on it"
         '
         'panel_npc_npc
         '
@@ -5157,12 +5149,12 @@ Partial Class Form_Tools
         Me.Bot_Settings_BOX.Controls.Add(Me.button_npc)
         Me.Bot_Settings_BOX.Controls.Add(Me.Panel_autospin)
         Me.Bot_Settings_BOX.Controls.Add(Me.Panel1)
-        Me.Bot_Settings_BOX.Controls.Add(Me.panel_npc_npc)
-        Me.Bot_Settings_BOX.Controls.Add(Me.Panel_rex)
-        Me.Bot_Settings_BOX.Controls.Add(Me.Panel_collectable)
         Me.Bot_Settings_BOX.Controls.Add(Me.Panel_Gates_task)
         Me.Bot_Settings_BOX.Controls.Add(Me.Panel_GalaxyGates)
         Me.Bot_Settings_BOX.Controls.Add(Me.Panel_palladium_palladium)
+        Me.Bot_Settings_BOX.Controls.Add(Me.panel_npc_npc)
+        Me.Bot_Settings_BOX.Controls.Add(Me.Panel_rex)
+        Me.Bot_Settings_BOX.Controls.Add(Me.Panel_collectable)
         Me.Bot_Settings_BOX.ForeColor = System.Drawing.Color.White
         Me.Bot_Settings_BOX.Location = New System.Drawing.Point(12, 59)
         Me.Bot_Settings_BOX.Name = "Bot_Settings_BOX"
@@ -5199,9 +5191,31 @@ Partial Class Form_Tools
         '
         Me.Panel_Gates_task.AutoScroll = True
         Me.Panel_Gates_task.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Panel_Gates_task.Controls.Add(Me.Panel_dependency_func)
+        Me.Panel_Gates_task.Controls.Add(Me.Button18)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox56)
         Me.Panel_Gates_task.Controls.Add(Me.Panel_Alpha_configuration_func)
-        Me.Panel_Gates_task.Controls.Add(Me.Panel_Gates_func)
+        Me.Panel_Gates_task.Controls.Add(Me.Button17)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox34)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox47)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox54)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox51)
+        Me.Panel_Gates_task.Controls.Add(Me.Button9)
+        Me.Panel_Gates_task.Controls.Add(Me.Button13)
+        Me.Panel_Gates_task.Controls.Add(Me.Button10)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox50)
+        Me.Panel_Gates_task.Controls.Add(Me.Button16)
+        Me.Panel_Gates_task.Controls.Add(Me.Button14)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox46)
+        Me.Panel_Gates_task.Controls.Add(Me.Button12)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox48)
+        Me.Panel_Gates_task.Controls.Add(Me.Button7)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox53)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox52)
+        Me.Panel_Gates_task.Controls.Add(Me.Button8)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox49)
+        Me.Panel_Gates_task.Controls.Add(Me.Button11)
+        Me.Panel_Gates_task.Controls.Add(Me.CheckBox45)
+        Me.Panel_Gates_task.Controls.Add(Me.Button15)
         Me.Panel_Gates_task.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Gates_task.ForeColor = System.Drawing.Color.White
         Me.Panel_Gates_task.Location = New System.Drawing.Point(0, 0)
@@ -5210,25 +5224,15 @@ Partial Class Form_Tools
         Me.Panel_Gates_task.TabIndex = 86
         Me.Panel_Gates_task.Visible = False
         '
-        'Panel_dependency_func
-        '
-        Me.Panel_dependency_func.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_dependency_func.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_dependency_func.ForeColor = System.Drawing.Color.White
-        Me.Panel_dependency_func.Location = New System.Drawing.Point(519, 36)
-        Me.Panel_dependency_func.Name = "Panel_dependency_func"
-        Me.Panel_dependency_func.Size = New System.Drawing.Size(152, 338)
-        Me.Panel_dependency_func.TabIndex = 52
-        '
         'Panel_Alpha_configuration_func
         '
         Me.Panel_Alpha_configuration_func.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Panel_Alpha_configuration_func.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_Alpha_configuration_func.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel_Alpha_configuration_func.ForeColor = System.Drawing.Color.White
-        Me.Panel_Alpha_configuration_func.Location = New System.Drawing.Point(166, 36)
+        Me.Panel_Alpha_configuration_func.Location = New System.Drawing.Point(213, 73)
         Me.Panel_Alpha_configuration_func.Name = "Panel_Alpha_configuration_func"
-        Me.Panel_Alpha_configuration_func.Size = New System.Drawing.Size(347, 338)
+        Me.Panel_Alpha_configuration_func.Size = New System.Drawing.Size(451, 293)
         Me.Panel_Alpha_configuration_func.TabIndex = 51
         '
         'TableLayoutPanel1
@@ -5237,9 +5241,9 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.CheckBox44, 3, 10)
         Me.TableLayoutPanel1.Controls.Add(Me.CheckBox43, 3, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.CheckBox42, 3, 8)
@@ -5301,18 +5305,18 @@ Partial Class Form_Tools
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(345, 336)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(449, 291)
         Me.TableLayoutPanel1.TabIndex = 87
         '
         'CheckBox44
@@ -5323,7 +5327,7 @@ Partial Class Form_Tools
         Me.CheckBox44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox44.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox44.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox44.Location = New System.Drawing.Point(241, 317)
+        Me.CheckBox44.Location = New System.Drawing.Point(332, 270)
         Me.CheckBox44.Name = "CheckBox44"
         Me.CheckBox44.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox44.TabIndex = 150
@@ -5338,7 +5342,7 @@ Partial Class Form_Tools
         Me.CheckBox43.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox43.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox43.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox43.Location = New System.Drawing.Point(241, 289)
+        Me.CheckBox43.Location = New System.Drawing.Point(332, 241)
         Me.CheckBox43.Name = "CheckBox43"
         Me.CheckBox43.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox43.TabIndex = 149
@@ -5353,7 +5357,7 @@ Partial Class Form_Tools
         Me.CheckBox42.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox42.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox42.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox42.Location = New System.Drawing.Point(241, 258)
+        Me.CheckBox42.Location = New System.Drawing.Point(332, 215)
         Me.CheckBox42.Name = "CheckBox42"
         Me.CheckBox42.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox42.TabIndex = 148
@@ -5368,7 +5372,7 @@ Partial Class Form_Tools
         Me.CheckBox41.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox41.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox41.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox41.Location = New System.Drawing.Point(241, 227)
+        Me.CheckBox41.Location = New System.Drawing.Point(332, 189)
         Me.CheckBox41.Name = "CheckBox41"
         Me.CheckBox41.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox41.TabIndex = 147
@@ -5383,7 +5387,7 @@ Partial Class Form_Tools
         Me.CheckBox40.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox40.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox40.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox40.Location = New System.Drawing.Point(241, 196)
+        Me.CheckBox40.Location = New System.Drawing.Point(332, 163)
         Me.CheckBox40.Name = "CheckBox40"
         Me.CheckBox40.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox40.TabIndex = 146
@@ -5398,7 +5402,7 @@ Partial Class Form_Tools
         Me.CheckBox39.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox39.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox39.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox39.Location = New System.Drawing.Point(241, 165)
+        Me.CheckBox39.Location = New System.Drawing.Point(332, 137)
         Me.CheckBox39.Name = "CheckBox39"
         Me.CheckBox39.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox39.TabIndex = 145
@@ -5413,7 +5417,7 @@ Partial Class Form_Tools
         Me.CheckBox38.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox38.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox38.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox38.Location = New System.Drawing.Point(241, 134)
+        Me.CheckBox38.Location = New System.Drawing.Point(332, 111)
         Me.CheckBox38.Name = "CheckBox38"
         Me.CheckBox38.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox38.TabIndex = 144
@@ -5428,7 +5432,7 @@ Partial Class Form_Tools
         Me.CheckBox37.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox37.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox37.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox37.Location = New System.Drawing.Point(241, 103)
+        Me.CheckBox37.Location = New System.Drawing.Point(332, 85)
         Me.CheckBox37.Name = "CheckBox37"
         Me.CheckBox37.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox37.TabIndex = 143
@@ -5443,7 +5447,7 @@ Partial Class Form_Tools
         Me.CheckBox36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox36.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox36.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox36.Location = New System.Drawing.Point(241, 72)
+        Me.CheckBox36.Location = New System.Drawing.Point(332, 59)
         Me.CheckBox36.Name = "CheckBox36"
         Me.CheckBox36.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox36.TabIndex = 142
@@ -5458,7 +5462,7 @@ Partial Class Form_Tools
         Me.CheckBox35.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox35.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox35.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox35.Location = New System.Drawing.Point(241, 41)
+        Me.CheckBox35.Location = New System.Drawing.Point(332, 33)
         Me.CheckBox35.Name = "CheckBox35"
         Me.CheckBox35.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox35.TabIndex = 141
@@ -5472,7 +5476,7 @@ Partial Class Form_Tools
         Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(16, 315)
+        Me.Label14.Location = New System.Drawing.Point(49, 268)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(49, 15)
         Me.Label14.TabIndex = 91
@@ -5485,7 +5489,7 @@ Partial Class Form_Tools
         Me.Label13.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(13, 287)
+        Me.Label13.Location = New System.Drawing.Point(46, 239)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(56, 15)
         Me.Label13.TabIndex = 90
@@ -5498,7 +5502,7 @@ Partial Class Form_Tools
         Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(15, 256)
+        Me.Label12.Location = New System.Drawing.Point(48, 213)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(52, 15)
         Me.Label12.TabIndex = 89
@@ -5511,7 +5515,7 @@ Partial Class Form_Tools
         Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(17, 225)
+        Me.Label11.Location = New System.Drawing.Point(50, 187)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(47, 15)
         Me.Label11.TabIndex = 88
@@ -5524,7 +5528,7 @@ Partial Class Form_Tools
         Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(15, 194)
+        Me.Label10.Location = New System.Drawing.Point(48, 161)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 15)
         Me.Label10.TabIndex = 13
@@ -5537,7 +5541,7 @@ Partial Class Form_Tools
         Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 163)
+        Me.Label8.Location = New System.Drawing.Point(39, 135)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 15)
         Me.Label8.TabIndex = 12
@@ -5550,7 +5554,7 @@ Partial Class Form_Tools
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(17, 132)
+        Me.Label6.Location = New System.Drawing.Point(50, 109)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 15)
         Me.Label6.TabIndex = 11
@@ -5563,7 +5567,7 @@ Partial Class Form_Tools
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(16, 101)
+        Me.Label4.Location = New System.Drawing.Point(49, 83)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 15)
         Me.Label4.TabIndex = 10
@@ -5576,7 +5580,7 @@ Partial Class Form_Tools
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(15, 70)
+        Me.Label1.Location = New System.Drawing.Point(48, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 15)
         Me.Label1.TabIndex = 9
@@ -5589,7 +5593,7 @@ Partial Class Form_Tools
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(15, 39)
+        Me.Label7.Location = New System.Drawing.Point(48, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 15)
         Me.Label7.TabIndex = 8
@@ -5602,7 +5606,7 @@ Partial Class Form_Tools
         Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(91, 8)
+        Me.Label15.Location = New System.Drawing.Point(175, 5)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(26, 15)
         Me.Label15.TabIndex = 92
@@ -5615,7 +5619,7 @@ Partial Class Form_Tools
         Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(131, 8)
+        Me.Label20.Location = New System.Drawing.Point(232, 5)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(58, 15)
         Me.Label20.TabIndex = 94
@@ -5628,10 +5632,9 @@ Partial Class Form_Tools
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(91, 39)
+        Me.TextBox1.Location = New System.Drawing.Point(175, 31)
         Me.TextBox1.MaxLength = 20
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(27, 15)
         Me.TextBox1.TabIndex = 95
         Me.TextBox1.Text = "1"
@@ -5644,10 +5647,9 @@ Partial Class Form_Tools
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.TextBox2.Location = New System.Drawing.Point(91, 70)
+        Me.TextBox2.Location = New System.Drawing.Point(175, 57)
         Me.TextBox2.MaxLength = 20
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(27, 15)
         Me.TextBox2.TabIndex = 96
         Me.TextBox2.Text = "1"
@@ -5660,10 +5662,9 @@ Partial Class Form_Tools
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.Black
-        Me.TextBox3.Location = New System.Drawing.Point(91, 101)
+        Me.TextBox3.Location = New System.Drawing.Point(175, 83)
         Me.TextBox3.MaxLength = 20
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(27, 15)
         Me.TextBox3.TabIndex = 97
         Me.TextBox3.Text = "1"
@@ -5676,10 +5677,9 @@ Partial Class Form_Tools
         Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.Black
-        Me.TextBox4.Location = New System.Drawing.Point(91, 132)
+        Me.TextBox4.Location = New System.Drawing.Point(175, 109)
         Me.TextBox4.MaxLength = 20
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(27, 15)
         Me.TextBox4.TabIndex = 98
         Me.TextBox4.Text = "1"
@@ -5692,10 +5692,9 @@ Partial Class Form_Tools
         Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.Black
-        Me.TextBox5.Location = New System.Drawing.Point(91, 163)
+        Me.TextBox5.Location = New System.Drawing.Point(175, 135)
         Me.TextBox5.MaxLength = 20
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(27, 15)
         Me.TextBox5.TabIndex = 99
         Me.TextBox5.Text = "1"
@@ -5708,10 +5707,9 @@ Partial Class Form_Tools
         Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.ForeColor = System.Drawing.Color.Black
-        Me.TextBox6.Location = New System.Drawing.Point(91, 194)
+        Me.TextBox6.Location = New System.Drawing.Point(175, 161)
         Me.TextBox6.MaxLength = 20
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(27, 15)
         Me.TextBox6.TabIndex = 100
         Me.TextBox6.Text = "1"
@@ -5724,10 +5722,9 @@ Partial Class Form_Tools
         Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.Black
-        Me.TextBox7.Location = New System.Drawing.Point(91, 225)
+        Me.TextBox7.Location = New System.Drawing.Point(175, 187)
         Me.TextBox7.MaxLength = 20
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(27, 15)
         Me.TextBox7.TabIndex = 101
         Me.TextBox7.Text = "1"
@@ -5740,10 +5737,9 @@ Partial Class Form_Tools
         Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox8.ForeColor = System.Drawing.Color.Black
-        Me.TextBox8.Location = New System.Drawing.Point(91, 256)
+        Me.TextBox8.Location = New System.Drawing.Point(175, 213)
         Me.TextBox8.MaxLength = 20
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
         Me.TextBox8.Size = New System.Drawing.Size(27, 15)
         Me.TextBox8.TabIndex = 102
         Me.TextBox8.Text = "1"
@@ -5756,10 +5752,9 @@ Partial Class Form_Tools
         Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox9.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox9.ForeColor = System.Drawing.Color.Black
-        Me.TextBox9.Location = New System.Drawing.Point(91, 287)
+        Me.TextBox9.Location = New System.Drawing.Point(175, 239)
         Me.TextBox9.MaxLength = 20
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
         Me.TextBox9.Size = New System.Drawing.Size(27, 15)
         Me.TextBox9.TabIndex = 103
         Me.TextBox9.Text = "1"
@@ -5772,10 +5767,9 @@ Partial Class Form_Tools
         Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox10.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox10.ForeColor = System.Drawing.Color.Black
-        Me.TextBox10.Location = New System.Drawing.Point(91, 315)
+        Me.TextBox10.Location = New System.Drawing.Point(175, 268)
         Me.TextBox10.MaxLength = 20
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
         Me.TextBox10.Size = New System.Drawing.Size(27, 15)
         Me.TextBox10.TabIndex = 104
         Me.TextBox10.Text = "1"
@@ -5789,7 +5783,7 @@ Partial Class Form_Tools
         Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox6.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox6.Location = New System.Drawing.Point(154, 41)
+        Me.CheckBox6.Location = New System.Drawing.Point(255, 33)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox6.TabIndex = 118
@@ -5804,7 +5798,7 @@ Partial Class Form_Tools
         Me.CheckBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox7.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox7.Location = New System.Drawing.Point(154, 72)
+        Me.CheckBox7.Location = New System.Drawing.Point(255, 59)
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox7.TabIndex = 119
@@ -5819,7 +5813,7 @@ Partial Class Form_Tools
         Me.CheckBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox8.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox8.Location = New System.Drawing.Point(154, 103)
+        Me.CheckBox8.Location = New System.Drawing.Point(255, 85)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox8.TabIndex = 120
@@ -5834,7 +5828,7 @@ Partial Class Form_Tools
         Me.CheckBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox9.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox9.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox9.Location = New System.Drawing.Point(154, 134)
+        Me.CheckBox9.Location = New System.Drawing.Point(255, 111)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox9.TabIndex = 121
@@ -5849,7 +5843,7 @@ Partial Class Form_Tools
         Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox10.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox10.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox10.Location = New System.Drawing.Point(154, 165)
+        Me.CheckBox10.Location = New System.Drawing.Point(255, 137)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox10.TabIndex = 122
@@ -5864,7 +5858,7 @@ Partial Class Form_Tools
         Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox11.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox11.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox11.Location = New System.Drawing.Point(154, 196)
+        Me.CheckBox11.Location = New System.Drawing.Point(255, 163)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox11.TabIndex = 123
@@ -5879,7 +5873,7 @@ Partial Class Form_Tools
         Me.CheckBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox12.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox12.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox12.Location = New System.Drawing.Point(154, 227)
+        Me.CheckBox12.Location = New System.Drawing.Point(255, 189)
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox12.TabIndex = 124
@@ -5894,7 +5888,7 @@ Partial Class Form_Tools
         Me.CheckBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox13.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox13.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox13.Location = New System.Drawing.Point(154, 258)
+        Me.CheckBox13.Location = New System.Drawing.Point(255, 215)
         Me.CheckBox13.Name = "CheckBox13"
         Me.CheckBox13.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox13.TabIndex = 125
@@ -5909,7 +5903,7 @@ Partial Class Form_Tools
         Me.CheckBox14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox14.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox14.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox14.Location = New System.Drawing.Point(154, 289)
+        Me.CheckBox14.Location = New System.Drawing.Point(255, 241)
         Me.CheckBox14.Name = "CheckBox14"
         Me.CheckBox14.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox14.TabIndex = 126
@@ -5924,7 +5918,7 @@ Partial Class Form_Tools
         Me.CheckBox15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox15.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox15.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox15.Location = New System.Drawing.Point(154, 317)
+        Me.CheckBox15.Location = New System.Drawing.Point(255, 270)
         Me.CheckBox15.Name = "CheckBox15"
         Me.CheckBox15.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox15.TabIndex = 127
@@ -5938,7 +5932,7 @@ Partial Class Form_Tools
         Me.Label21.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label21.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(311, 8)
+        Me.Label21.Location = New System.Drawing.Point(404, 5)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(23, 15)
         Me.Label21.TabIndex = 128
@@ -5954,7 +5948,7 @@ Partial Class Form_Tools
         Me.CheckBox16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox16.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox16.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox16.Location = New System.Drawing.Point(316, 41)
+        Me.CheckBox16.Location = New System.Drawing.Point(410, 33)
         Me.CheckBox16.Name = "CheckBox16"
         Me.CheckBox16.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox16.TabIndex = 129
@@ -5971,7 +5965,7 @@ Partial Class Form_Tools
         Me.CheckBox17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox17.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox17.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox17.Location = New System.Drawing.Point(316, 72)
+        Me.CheckBox17.Location = New System.Drawing.Point(410, 59)
         Me.CheckBox17.Name = "CheckBox17"
         Me.CheckBox17.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox17.TabIndex = 130
@@ -5988,7 +5982,7 @@ Partial Class Form_Tools
         Me.CheckBox18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox18.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox18.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox18.Location = New System.Drawing.Point(316, 134)
+        Me.CheckBox18.Location = New System.Drawing.Point(410, 111)
         Me.CheckBox18.Name = "CheckBox18"
         Me.CheckBox18.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox18.TabIndex = 131
@@ -6005,7 +5999,7 @@ Partial Class Form_Tools
         Me.CheckBox19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox19.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox19.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox19.Location = New System.Drawing.Point(316, 103)
+        Me.CheckBox19.Location = New System.Drawing.Point(410, 85)
         Me.CheckBox19.Name = "CheckBox19"
         Me.CheckBox19.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox19.TabIndex = 132
@@ -6022,7 +6016,7 @@ Partial Class Form_Tools
         Me.CheckBox20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox20.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox20.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox20.Location = New System.Drawing.Point(316, 196)
+        Me.CheckBox20.Location = New System.Drawing.Point(410, 163)
         Me.CheckBox20.Name = "CheckBox20"
         Me.CheckBox20.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox20.TabIndex = 133
@@ -6039,7 +6033,7 @@ Partial Class Form_Tools
         Me.CheckBox21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox21.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox21.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox21.Location = New System.Drawing.Point(316, 165)
+        Me.CheckBox21.Location = New System.Drawing.Point(410, 137)
         Me.CheckBox21.Name = "CheckBox21"
         Me.CheckBox21.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox21.TabIndex = 134
@@ -6056,7 +6050,7 @@ Partial Class Form_Tools
         Me.CheckBox22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox22.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox22.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox22.Location = New System.Drawing.Point(316, 227)
+        Me.CheckBox22.Location = New System.Drawing.Point(410, 189)
         Me.CheckBox22.Name = "CheckBox22"
         Me.CheckBox22.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox22.TabIndex = 135
@@ -6073,7 +6067,7 @@ Partial Class Form_Tools
         Me.CheckBox23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox23.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox23.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox23.Location = New System.Drawing.Point(316, 258)
+        Me.CheckBox23.Location = New System.Drawing.Point(410, 215)
         Me.CheckBox23.Name = "CheckBox23"
         Me.CheckBox23.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox23.TabIndex = 136
@@ -6090,7 +6084,7 @@ Partial Class Form_Tools
         Me.CheckBox24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox24.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox24.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox24.Location = New System.Drawing.Point(316, 289)
+        Me.CheckBox24.Location = New System.Drawing.Point(410, 241)
         Me.CheckBox24.Name = "CheckBox24"
         Me.CheckBox24.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox24.TabIndex = 137
@@ -6107,7 +6101,7 @@ Partial Class Form_Tools
         Me.CheckBox33.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox33.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox33.ForeColor = System.Drawing.Color.Black
-        Me.CheckBox33.Location = New System.Drawing.Point(316, 317)
+        Me.CheckBox33.Location = New System.Drawing.Point(410, 270)
         Me.CheckBox33.Name = "CheckBox33"
         Me.CheckBox33.Size = New System.Drawing.Size(12, 11)
         Me.CheckBox33.TabIndex = 138
@@ -6121,51 +6115,11 @@ Partial Class Form_Tools
         Me.Label23.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label23.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(199, 8)
+        Me.Label23.Location = New System.Drawing.Point(300, 5)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(96, 15)
+        Me.Label23.Size = New System.Drawing.Size(76, 15)
         Me.Label23.TabIndex = 139
-        Me.Label23.Text = "Kamikaze Corner"
-        '
-        'Panel_Gates_func
-        '
-        Me.Panel_Gates_func.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel_Gates_func.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Gates_func.Controls.Add(Me.CheckBox_enable_gates_mode)
-        Me.Panel_Gates_func.Controls.Add(Me.Button_Aplha_Gates_Func)
-        Me.Panel_Gates_func.ForeColor = System.Drawing.Color.White
-        Me.Panel_Gates_func.Location = New System.Drawing.Point(15, 36)
-        Me.Panel_Gates_func.Name = "Panel_Gates_func"
-        Me.Panel_Gates_func.Size = New System.Drawing.Size(144, 338)
-        Me.Panel_Gates_func.TabIndex = 50
-        '
-        'CheckBox_enable_gates_mode
-        '
-        Me.CheckBox_enable_gates_mode.AutoSize = True
-        Me.CheckBox_enable_gates_mode.BackColor = System.Drawing.Color.Transparent
-        Me.CheckBox_enable_gates_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox_enable_gates_mode.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox_enable_gates_mode.Location = New System.Drawing.Point(10, 311)
-        Me.CheckBox_enable_gates_mode.Name = "CheckBox_enable_gates_mode"
-        Me.CheckBox_enable_gates_mode.Size = New System.Drawing.Size(122, 17)
-        Me.CheckBox_enable_gates_mode.TabIndex = 117
-        Me.CheckBox_enable_gates_mode.Text = "Enable Gates mode"
-        Me.CheckBox_enable_gates_mode.UseVisualStyleBackColor = False
-        '
-        'Button_Aplha_Gates_Func
-        '
-        Me.Button_Aplha_Gates_Func.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button_Aplha_Gates_Func.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button_Aplha_Gates_Func.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button_Aplha_Gates_Func.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button_Aplha_Gates_Func.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Aplha_Gates_Func.ForeColor = System.Drawing.Color.White
-        Me.Button_Aplha_Gates_Func.Location = New System.Drawing.Point(4, 5)
-        Me.Button_Aplha_Gates_Func.Name = "Button_Aplha_Gates_Func"
-        Me.Button_Aplha_Gates_Func.Size = New System.Drawing.Size(133, 32)
-        Me.Button_Aplha_Gates_Func.TabIndex = 27
-        Me.Button_Aplha_Gates_Func.Text = "Alpha"
-        Me.Button_Aplha_Gates_Func.UseVisualStyleBackColor = False
+        Me.Label23.Text = "At the corner"
         '
         'WebBrowser_Synchronisation
         '
@@ -6176,6 +6130,390 @@ Partial Class Form_Tools
         Me.WebBrowser_Synchronisation.ScrollBarsEnabled = False
         Me.WebBrowser_Synchronisation.Size = New System.Drawing.Size(20, 20)
         Me.WebBrowser_Synchronisation.TabIndex = 76
+        '
+        'CheckBox34
+        '
+        Me.CheckBox34.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox34.AutoSize = True
+        Me.CheckBox34.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox34.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox34.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox34.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox34.Location = New System.Drawing.Point(17, 41)
+        Me.CheckBox34.Name = "CheckBox34"
+        Me.CheckBox34.Size = New System.Drawing.Size(65, 24)
+        Me.CheckBox34.TabIndex = 119
+        Me.CheckBox34.Text = "Alpha"
+        Me.CheckBox34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox34.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.Color.White
+        Me.Button7.Location = New System.Drawing.Point(128, 43)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(74, 23)
+        Me.Button7.TabIndex = 120
+        Me.Button7.Text = "Edit"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.White
+        Me.Button8.Location = New System.Drawing.Point(128, 73)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(74, 23)
+        Me.Button8.TabIndex = 122
+        Me.Button8.Text = "Edit"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'CheckBox45
+        '
+        Me.CheckBox45.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox45.AutoSize = True
+        Me.CheckBox45.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox45.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox45.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox45.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox45.Location = New System.Drawing.Point(17, 71)
+        Me.CheckBox45.Name = "CheckBox45"
+        Me.CheckBox45.Size = New System.Drawing.Size(55, 24)
+        Me.CheckBox45.TabIndex = 121
+        Me.CheckBox45.Text = "Beta"
+        Me.CheckBox45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox45.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Location = New System.Drawing.Point(128, 103)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(74, 23)
+        Me.Button9.TabIndex = 124
+        Me.Button9.Text = "Edit"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'CheckBox46
+        '
+        Me.CheckBox46.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox46.AutoSize = True
+        Me.CheckBox46.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox46.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox46.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox46.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox46.Location = New System.Drawing.Point(17, 101)
+        Me.CheckBox46.Name = "CheckBox46"
+        Me.CheckBox46.Size = New System.Drawing.Size(77, 24)
+        Me.CheckBox46.TabIndex = 123
+        Me.CheckBox46.Text = "Gamma"
+        Me.CheckBox46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox46.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button10.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.ForeColor = System.Drawing.Color.White
+        Me.Button10.Location = New System.Drawing.Point(128, 133)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(74, 23)
+        Me.Button10.TabIndex = 126
+        Me.Button10.Text = "Edit"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'CheckBox47
+        '
+        Me.CheckBox47.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox47.AutoSize = True
+        Me.CheckBox47.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox47.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox47.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox47.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox47.Location = New System.Drawing.Point(17, 131)
+        Me.CheckBox47.Name = "CheckBox47"
+        Me.CheckBox47.Size = New System.Drawing.Size(61, 24)
+        Me.CheckBox47.TabIndex = 125
+        Me.CheckBox47.Text = "Delta"
+        Me.CheckBox47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox47.UseVisualStyleBackColor = False
+        '
+        'Button11
+        '
+        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button11.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.ForeColor = System.Drawing.Color.White
+        Me.Button11.Location = New System.Drawing.Point(128, 163)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(74, 23)
+        Me.Button11.TabIndex = 128
+        Me.Button11.Text = "Edit"
+        Me.Button11.UseVisualStyleBackColor = False
+        '
+        'CheckBox48
+        '
+        Me.CheckBox48.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox48.AutoSize = True
+        Me.CheckBox48.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox48.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox48.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox48.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox48.Location = New System.Drawing.Point(17, 161)
+        Me.CheckBox48.Name = "CheckBox48"
+        Me.CheckBox48.Size = New System.Drawing.Size(74, 24)
+        Me.CheckBox48.TabIndex = 127
+        Me.CheckBox48.Text = "Epsilon"
+        Me.CheckBox48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox48.UseVisualStyleBackColor = False
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button12.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.ForeColor = System.Drawing.Color.White
+        Me.Button12.Location = New System.Drawing.Point(128, 193)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(74, 23)
+        Me.Button12.TabIndex = 130
+        Me.Button12.Text = "Edit"
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'CheckBox49
+        '
+        Me.CheckBox49.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox49.AutoSize = True
+        Me.CheckBox49.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox49.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox49.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox49.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox49.Location = New System.Drawing.Point(17, 191)
+        Me.CheckBox49.Name = "CheckBox49"
+        Me.CheckBox49.Size = New System.Drawing.Size(55, 24)
+        Me.CheckBox49.TabIndex = 129
+        Me.CheckBox49.Text = "Zeta"
+        Me.CheckBox49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox49.UseVisualStyleBackColor = False
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button13.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button13.ForeColor = System.Drawing.Color.White
+        Me.Button13.Location = New System.Drawing.Point(128, 223)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(74, 23)
+        Me.Button13.TabIndex = 132
+        Me.Button13.Text = "Edit"
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'CheckBox50
+        '
+        Me.CheckBox50.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox50.AutoSize = True
+        Me.CheckBox50.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox50.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox50.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox50.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox50.Location = New System.Drawing.Point(17, 221)
+        Me.CheckBox50.Name = "CheckBox50"
+        Me.CheckBox50.Size = New System.Drawing.Size(68, 24)
+        Me.CheckBox50.TabIndex = 131
+        Me.CheckBox50.Text = "Kappa"
+        Me.CheckBox50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox50.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button14.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.ForeColor = System.Drawing.Color.White
+        Me.Button14.Location = New System.Drawing.Point(128, 253)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(74, 23)
+        Me.Button14.TabIndex = 134
+        Me.Button14.Text = "Edit"
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'CheckBox51
+        '
+        Me.CheckBox51.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox51.AutoSize = True
+        Me.CheckBox51.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox51.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox51.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox51.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox51.Location = New System.Drawing.Point(17, 251)
+        Me.CheckBox51.Name = "CheckBox51"
+        Me.CheckBox51.Size = New System.Drawing.Size(79, 24)
+        Me.CheckBox51.TabIndex = 133
+        Me.CheckBox51.Text = "Lambda"
+        Me.CheckBox51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox51.UseVisualStyleBackColor = False
+        '
+        'Button15
+        '
+        Me.Button15.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button15.ForeColor = System.Drawing.Color.White
+        Me.Button15.Location = New System.Drawing.Point(128, 283)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(74, 23)
+        Me.Button15.TabIndex = 136
+        Me.Button15.Text = "Edit"
+        Me.Button15.UseVisualStyleBackColor = False
+        '
+        'CheckBox52
+        '
+        Me.CheckBox52.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox52.AutoSize = True
+        Me.CheckBox52.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox52.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox52.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox52.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox52.Location = New System.Drawing.Point(17, 281)
+        Me.CheckBox52.Name = "CheckBox52"
+        Me.CheckBox52.Size = New System.Drawing.Size(67, 24)
+        Me.CheckBox52.TabIndex = 135
+        Me.CheckBox52.Text = "Hades"
+        Me.CheckBox52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox52.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.ForeColor = System.Drawing.Color.White
+        Me.Button16.Location = New System.Drawing.Point(128, 313)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(74, 23)
+        Me.Button16.TabIndex = 138
+        Me.Button16.Text = "Edit"
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'CheckBox53
+        '
+        Me.CheckBox53.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox53.AutoSize = True
+        Me.CheckBox53.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox53.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox53.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox53.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox53.Location = New System.Drawing.Point(17, 311)
+        Me.CheckBox53.Name = "CheckBox53"
+        Me.CheckBox53.Size = New System.Drawing.Size(70, 24)
+        Me.CheckBox53.TabIndex = 137
+        Me.CheckBox53.Text = "Kuiper"
+        Me.CheckBox53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox53.UseVisualStyleBackColor = False
+        '
+        'Button17
+        '
+        Me.Button17.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button17.ForeColor = System.Drawing.Color.White
+        Me.Button17.Location = New System.Drawing.Point(128, 343)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(74, 23)
+        Me.Button17.TabIndex = 140
+        Me.Button17.Text = "Edit"
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'CheckBox54
+        '
+        Me.CheckBox54.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox54.AutoSize = True
+        Me.CheckBox54.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox54.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox54.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox54.ForeColor = System.Drawing.Color.DarkRed
+        Me.CheckBox54.Location = New System.Drawing.Point(17, 341)
+        Me.CheckBox54.Name = "CheckBox54"
+        Me.CheckBox54.Size = New System.Drawing.Size(82, 24)
+        Me.CheckBox54.TabIndex = 139
+        Me.CheckBox54.Text = "Chronos"
+        Me.CheckBox54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox54.UseVisualStyleBackColor = False
+        '
+        'CheckBox56
+        '
+        Me.CheckBox56.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox56.AutoSize = True
+        Me.CheckBox56.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox56.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox56.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.CheckBox56.ForeColor = System.Drawing.Color.Black
+        Me.CheckBox56.Location = New System.Drawing.Point(228, 45)
+        Me.CheckBox56.Name = "CheckBox56"
+        Me.CheckBox56.Size = New System.Drawing.Size(226, 19)
+        Me.CheckBox56.TabIndex = 120
+        Me.CheckBox56.Text = "Continue botting if you not have gates"
+        Me.CheckBox56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox56.UseVisualStyleBackColor = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(0, 0)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 35
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button18.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button18.ForeColor = System.Drawing.Color.White
+        Me.Button18.Location = New System.Drawing.Point(473, 43)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(161, 23)
+        Me.Button18.TabIndex = 141
+        Me.Button18.Text = "Enable Gates mode"
+        Me.Button18.UseVisualStyleBackColor = False
         '
         'Form_Tools
         '
@@ -6257,7 +6595,6 @@ Partial Class Form_Tools
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._NO_GG_FLASHIES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_collectable.ResumeLayout(False)
-        Me.Panel_collectable.PerformLayout()
         Me.panel_npc_npc.ResumeLayout(False)
         Me.panel_npc_npc.PerformLayout()
         Me.Panel_collectable_in.ResumeLayout(False)
@@ -6275,11 +6612,10 @@ Partial Class Form_Tools
         Me.TableLayoutPanel3.PerformLayout()
         Me.Bot_Settings_BOX.ResumeLayout(False)
         Me.Panel_Gates_task.ResumeLayout(False)
+        Me.Panel_Gates_task.PerformLayout()
         Me.Panel_Alpha_configuration_func.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.Panel_Gates_func.ResumeLayout(False)
-        Me.Panel_Gates_func.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -6595,7 +6931,6 @@ Partial Class Form_Tools
     Friend WithEvents Label89 As Label
     Friend WithEvents Label90 As Label
     Friend WithEvents Label80 As Label
-    Friend WithEvents Label82 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label84 As Label
     Friend WithEvents Label91 As Label
@@ -6606,11 +6941,7 @@ Partial Class Form_Tools
     Friend WithEvents ButtonBOX As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents Panel_dependency_func As Panel
     Friend WithEvents Panel_Alpha_configuration_func As Panel
-    Friend WithEvents Panel_Gates_func As Panel
-    Friend WithEvents CheckBox_enable_gates_mode As CheckBox
-    Friend WithEvents Button_Aplha_Gates_Func As Button
     Friend WithEvents Label17 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label14 As Label
@@ -6669,4 +7000,28 @@ Partial Class Form_Tools
     Friend WithEvents CheckBox24 As CheckBox
     Friend WithEvents CheckBox33 As CheckBox
     Friend WithEvents Label23 As Label
+    Friend WithEvents CheckBox56 As CheckBox
+    Friend WithEvents Button17 As Button
+    Friend WithEvents CheckBox34 As CheckBox
+    Friend WithEvents CheckBox47 As CheckBox
+    Friend WithEvents CheckBox54 As CheckBox
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button16 As Button
+    Friend WithEvents CheckBox46 As CheckBox
+    Friend WithEvents CheckBox48 As CheckBox
+    Friend WithEvents CheckBox53 As CheckBox
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents CheckBox45 As CheckBox
+    Friend WithEvents CheckBox49 As CheckBox
+    Friend WithEvents CheckBox52 As CheckBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents CheckBox50 As CheckBox
+    Friend WithEvents Button13 As Button
+    Friend WithEvents CheckBox51 As CheckBox
+    Friend WithEvents Button18 As Button
 End Class
