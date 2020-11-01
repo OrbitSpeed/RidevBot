@@ -1281,12 +1281,30 @@
 #Region "MAP = Gates ----------"
 
             ElseIf Map_roaming = "Gates" Then
-
                 Console.WriteLine(Stats_module.WebClient_GET_Ship_compagny_reg)
+
+                If Form_Tools.CheckBox_alpha_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_beta_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_gamma_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_delta_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_epsilon_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_zeta_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_kappa_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_lambda_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_hades_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_chronos_gates_module.Checked = True Or
+                    Form_Tools.CheckBox_kuiper_gates_module.Checked = True Then
+                Else
+                    Console.WriteLine("aucune galaxy gates n'a ete selectionner")
+                    MessageBox.Show("aucune galaxy gates n'a ete selectionner")
+                    Var.User_Stop_Bot = True
+                    Exit Function
+                End If
+
                 If Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" Then
                     If Map_actuelle <> "1-1" Then
 
-                        Form_tools.ComboBox_map_to_travel.Text = "1-1"
+                        Form_Tools.ComboBox_map_to_travel.Text = "1-1"
                     Else
                         Await Extension.Load
                         Console.WriteLine("je suis sur la bonne carte <MMO> ")
@@ -1316,6 +1334,12 @@
                 Else
                     Console.WriteLine("Error : Reload your account , bug de connexion probable ??")
                 End If
+
+            Else
+                Console.WriteLine("error map selection")
+                MessageBox.Show("error map selection")
+                Var.User_Stop_Bot = True
+                Exit Function
 
             End If
 

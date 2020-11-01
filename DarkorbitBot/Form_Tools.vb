@@ -707,6 +707,8 @@ Public Class Form_Tools
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
 
+            Stats_module.Load()
+
             Label_ServerStatus.Text = "Online"
             Label_ServerStatus.ForeColor = Color.LimeGreen
 
@@ -724,9 +726,6 @@ Public Class Form_Tools
                 Utils.dosid = dosid_regex.Value.Split("=")(1)
                 Utils.userid = Replace(WebBrowser_Synchronisation.Document.GetElementById("header_top_id").InnerText, " ", "")
                 Utils.userid = Utils.userid.Replace(vbCrLf, "")
-                Console.WriteLine("----")
-                Console.WriteLine(Utils.userid)
-                Console.WriteLine("----")
                 TextBox_Get_Dosid.Text = Replace(Utils.dosid, " ", "")
                 Utils.server = Replace(Utils.server, " ", "")
                 Utils.currentHonnor = "" & (WebBrowser_Synchronisation.Document.GetElementById("header_top_hnr")).InnerText
@@ -757,15 +756,11 @@ Public Class Form_Tools
                     niveau = compagny_regex.Item(2).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                 End If
 
-                Console.WriteLine("---------------------------------------")
-
                 TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
                 TextBox_clan.Text = clan
                 PictureBox_grade.Image = My.Resources.loading
 
-
                 Utils.UpdateStats()
-                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -1100,7 +1095,7 @@ Public Class Form_Tools
             .Dock = DockStyle.Fill,
             .Font = New Font("Segoe UI", 10, FontStyle.Bold),
             .Anchor = AnchorStyles.None
-} ' ------------------------------------------------------
+} ' -------------------------------
 
         Dim Label1178444545275 = New Label With {
              .BorderStyle = BorderStyle.None,
@@ -1109,14 +1104,14 @@ Public Class Form_Tools
             .Font = New Font("Segoe UI", 10, FontStyle.Bold),
             .Text = "Bonus Box",
             .Anchor = AnchorStyles.None
-} ' ------------------------------------------------------
+} ' -----------------------------------
 
         Dim Checkbox1178444545275 = New CheckBox With {
             .FlatStyle = FlatStyle.Flat,
             .Dock = DockStyle.Fill,
             .Font = New Font("Segoe UI", 10, FontStyle.Bold),
             .Anchor = AnchorStyles.None
-} ' ------------------------------------------------------
+} ' ------------------------------------
 
     End Sub
 
