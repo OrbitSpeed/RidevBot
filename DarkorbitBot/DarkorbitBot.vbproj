@@ -695,6 +695,7 @@
     <Compile Include="Bot_functions\Minimap_configuration.vb" />
     <Compile Include="Bot_functions\Npc.vb" />
     <Compile Include="Bot_functions\Reconnect.vb" />
+    <Compile Include="Bot_functions\Extension.vb" />
     <Compile Include="Bot_functions\Traveling_module.vb" />
     <Compile Include="Extension\ApplicationEvents.vb" />
     <Compile Include="AutoUpdater.Designer.vb">
@@ -731,9 +732,6 @@
     </Compile>
     <Compile Include="GalaxyGates\GalaxyGates_module.vb" />
     <Compile Include="GalaxyGates\GalaxyGates_module_Gates_name_gamma_id_3.vb" />
-    <Compile Include="Form_Tools_extension.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Bot_functions\Palladium_module.vb" />
     <Compile Include="Bot_functions\Pet_module.vb" />
     <Compile Include="Extension\ReadWritingMemory.vb" />

@@ -1037,6 +1037,12 @@ Public Class Form_Tools
         PictureBox_zeta_reward_day.Visible = False
         PictureBox_kappa_reward_day.Visible = False
 
+        If ComboBox_map_to_travel.Text = "Gates" Then
+            Button_enable_gates_mode.Visible = False
+        Else
+            Button_enable_gates_mode.Visible = True
+        End If
+
 
     End Sub
 
@@ -1121,111 +1127,21 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_collectable_in_Paint(sender As Object, e As PaintEventArgs) Handles Panel_collectable_in.Paint
-
-    End Sub
-
     Private Async Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-
 
         Npc.Load()
 
-        'retour2:
-        '        Var.Update_Screen()
-        '        Dim All_Npc = My.Resources.All_npc
+    End Sub
 
-        '        Dim Npc As Point = Var.Client_Screen.Contains(All_Npc)
-        '        If Npc <> Nothing Then
+    Private Sub Button_enable_gates_mode_Click(sender As Object, e As EventArgs) Handles Button_enable_gates_mode.Click
 
-        '            Console.WriteLine("Npc Locked")
-        '            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc.X + 30, Npc.Y - 30)
-        '            Await Task.Delay(100)
-        '            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "1")
-        '            Await Task.Delay(100)
-
-        '        Else
-        '            Console.WriteLine("No Npc arround")
-
-        '        End If
-
-        'retour:
-        '        Try
-        '            Dim dt As New Stopwatch
-        '            dt.Start()
-        '            Dim Locked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
-        '            dt.Stop()
-
-        '            Console.WriteLine($"temps:{dt.ElapsedMilliseconds}")
-        '            Console.WriteLine("Npc Locked and Finded at >" + (Locked(0)) + (Locked(1)))
-
-        '            Await Task.Delay(1000)
-        '            GoTo retour
-        '            Exit Sub
-        '        Catch ex As Exception
-        '            Console.WriteLine("Can't find any locked shit")
-        '        End Try
-
-        '        Await Task.Delay(1000)
-        '        GoTo retour2
-
-
-        'If Locked <> Nothing Then
-
-        '    Console.WriteLine("Locked")
-        '    Await Task.Delay(1000)
-        '    GoTo retour
-        'Else
-
-
-        'End If
-
-        'Try
-        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked(0), Locked(1))
-        '    '   Me.Invoke(New MethodInvoker(Sub() System.Threading.Thread.Sleep(Form_Tools.TextBox_bonusbox_ms.Text)))
-
-        'Catch Cargo_Box_not_found As Exception
-        'End Try
-
-
-
-
-
-
-
-        'Dim Pumpkin1 = My.Resources.Pumpkin1
-        'Dim Pumpkin2 = My.Resources.Pumpkin2
-        'Dim Pumpkin3_cargo = My.Resources.Pumpkin3_cargo
-
-        'Var.Update_Screen()
-
-        'Dim Pumpkinx As Point = Var.Client_Screen.Contains(Pumpkin1)
-        'Dim Pumpkinxx As Point = Var.Client_Screen.Contains(Pumpkin2)
-        'Dim Pumpkinxxx As Point = Var.Client_Screen.Contains(Pumpkin3_cargo)
-        'Try
-        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinx.X, Pumpkinx.Y)
-        '    Console.WriteLine($"Box localisée 1")
-        '    Await Task.Delay(100)
-
-        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinxx.X, Pumpkinxx.Y)
-        '    Console.WriteLine($"Box localisée 2")
-        '    Await Task.Delay(100)
-
-        '    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Pumpkinxxx.X, Pumpkinxxx.Y)
-        '    Console.WriteLine($"Box localisée 3")
-        '    Await Task.Delay(100)
-
-        'Catch ex As Exception
-
-        'End Try
-
+        ComboBox_map_to_travel.Text = "Gates"
+        If ComboBox_map_to_travel.Text = "Gates" Then
+            Button_enable_gates_mode.Visible = False
+        Else
+            Button_enable_gates_mode.Visible = True
+        End If
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-
-    End Sub
-
-    Private Sub Panel_Gates_task_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Gates_task.Paint
-
-    End Sub
 End Class

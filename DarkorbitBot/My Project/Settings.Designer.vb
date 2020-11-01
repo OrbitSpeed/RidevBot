@@ -928,6 +928,126 @@ Namespace My
                 Me("password_license") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property streuneralpha() As String
+            Get
+                Return CType(Me("streuneralpha"),String)
+            End Get
+            Set
+                Me("streuneralpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property loardakiaalpha() As String
+            Get
+                Return CType(Me("loardakiaalpha"),String)
+            End Get
+            Set
+                Me("loardakiaalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property mordonalpha() As String
+            Get
+                Return CType(Me("mordonalpha"),String)
+            End Get
+            Set
+                Me("mordonalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property saimonalpha() As String
+            Get
+                Return CType(Me("saimonalpha"),String)
+            End Get
+            Set
+                Me("saimonalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property devolariumalpha() As String
+            Get
+                Return CType(Me("devolariumalpha"),String)
+            End Get
+            Set
+                Me("devolariumalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property kristallinalpha() As String
+            Get
+                Return CType(Me("kristallinalpha"),String)
+            End Get
+            Set
+                Me("kristallinalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property sibelonalpha() As String
+            Get
+                Return CType(Me("sibelonalpha"),String)
+            End Get
+            Set
+                Me("sibelonalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property sibelonitalpha() As String
+            Get
+                Return CType(Me("sibelonitalpha"),String)
+            End Get
+            Set
+                Me("sibelonitalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property kristallonalpha() As String
+            Get
+                Return CType(Me("kristallonalpha"),String)
+            End Get
+            Set
+                Me("kristallonalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property protegitalpha() As String
+            Get
+                Return CType(Me("protegitalpha"),String)
+            End Get
+            Set
+                Me("protegitalpha") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

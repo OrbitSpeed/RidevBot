@@ -48,10 +48,6 @@ Public Class Stats_module
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "User[.]Parameters(.*)}").Groups.Item(1).ToString
 
-        Console.WriteLine("--")
-        Console.WriteLine(WebClient_Data)
-        Console.WriteLine("--")
-
         WebClient_GET_Uridium = Regex.Match(WebClient_Data, """uridium"":.*?([\s\S]*?),").Groups.Item(1).ToString
         WebClient_GET_Credit = Regex.Match(WebClient_Data, """credits"":.*?([\s\S]*?)}").Groups.Item(1).ToString
         WebClient_GET_Honneur = Regex.Match(WebClient_Data, "header_top_hnr.*?([\s\S]*?)<\/span>").Groups.Item(1).ToString

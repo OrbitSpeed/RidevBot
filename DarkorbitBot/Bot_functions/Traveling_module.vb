@@ -1,6 +1,6 @@
 ﻿Public Class Traveling_module
 
-    Public Shared Function Load() As Task
+    Public Shared Async Function Load() As Task
 
         If Var.User_Stop_Bot Then Exit Function
 
@@ -1278,8 +1278,48 @@
                 Var.PORTAIL_HAUT_GAUCHE()
 
 #End Region ' VALIDER
+#Region "MAP = Gates ----------"
+
+            ElseIf Map_roaming = "Gates" Then
+
+                Console.WriteLine(Stats_module.WebClient_GET_Ship_compagny_reg)
+                If Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" Then
+                    If Map_actuelle <> "1-1" Then
+
+                        Form_tools.ComboBox_map_to_travel.Text = "1-1"
+                    Else
+                        Await Extension.Load
+                        Console.WriteLine("je suis sur la bonne carte <MMO> ")
+
+                    End If
+
+                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "eic" Then
+                    If Map_actuelle <> "2-1" Then
+
+                        Form_Tools.ComboBox_map_to_travel.Text = "2-1"
+                    Else
+                        Await Extension.Load
+                        Console.WriteLine("je suis sur la bonne carte <EIC> ")
+
+                    End If
+
+                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "vru" Then
+                    If Map_actuelle <> "3-1" Then
+
+                        Form_Tools.ComboBox_map_to_travel.Text = "3-1"
+                    Else
+                        Await Extension.Load
+                        Console.WriteLine("je suis sur la bonne carte <VRU> ")
+
+                    End If
+
+                Else
+                    Console.WriteLine("Error : Reload your account , bug de connexion probable ??")
+                End If
 
             End If
+
+#End Region
 
         Else
 
