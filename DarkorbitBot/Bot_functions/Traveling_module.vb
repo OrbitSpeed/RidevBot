@@ -1,5 +1,7 @@
 ﻿Public Class Traveling_module
 
+    Public Shared Gates_in_times As String
+    Public Shared Gates_process As String
     Public Shared Async Function Load() As Task
 
         If Var.User_Stop_Bot Then Exit Function
@@ -16,8 +18,28 @@
 
         If Map_actuelle <> Map_roaming Then
 
-            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_fleeing.Text))
+            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_fleeing.Text))
 
+#Region "MAP = GATES ---------- "
+
+            If Map_roaming = "Gates" Then
+                Gates_in_times = 1
+
+                If Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" Then
+                    Form_Tools.ComboBox_map_to_travel.Text = "1-1"
+
+                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "eic" Then
+                    Form_Tools.ComboBox_map_to_travel.Text = "2-1"
+
+                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "vru" Then
+                    Form_Tools.ComboBox_map_to_travel.Text = "3-1"
+
+                Else
+                    Console.WriteLine("Error : Le bot n'a pas pu lire la carte ou la firme get/reload ")
+                End If
+            End If
+
+#End Region ' VALIDER
 #Region "MAP = 1-8 ---------- "
             If Map_actuelle = "1-8" And
                             Map_roaming = "1-6" Then
@@ -745,14 +767,14 @@
                         Map_roaming = "4-4") Then
                 Var.PORTAIL_43_to_44()
 
-#End Region ' VALIDER
+#End Region ' VALIDATION EN COURS 
 #Region "MAP = 4-2 ---------- "
 
             ElseIf Map_actuelle = "4-2" And
-                            (Map_roaming = "2-1" Or
-                            Map_roaming = "2-2" Or
-                            Map_roaming = "2-3" Or
-                            Map_roaming = "2-4") Then
+                        (Map_roaming = "2-1" Or
+                        Map_roaming = "2-2" Or
+                        Map_roaming = "2-3" Or
+                        Map_roaming = "2-4") Then
                 Var.PORTAIL_42_to_24()
 
             ElseIf Map_actuelle = "4-2" And
@@ -982,9 +1004,19 @@
 #Region "MAP = 1-1 ---------- "
 
             ElseIf Map_actuelle = "1-1" Then
-                Var.PORTAIL_BAS_DROITE()
+                If Gates_in_times = 1 Then
+                    Gates_in_times = 0
 
-#End Region ' VALIDER
+                    If Form_Tools.CheckBox_alpha_gates_module.Checked = True Then
+
+                    End If
+
+                Else
+
+                    Var.PORTAIL_BAS_DROITE()
+                End If
+
+#End Region ' VALIDATION EN COURS
 #Region "MAP = 2-4 ---------- "
 
             ElseIf Map_actuelle = "2-4" And
@@ -1131,7 +1163,7 @@
             ElseIf Map_actuelle = "2-1" Then
                 Var.PORTAIL_BAS_GAUCHE()
 
-#End Region ' VALIDER
+#End Region ' VALIDATION EN COURS
 #Region "MAP = 3-4 ---------- "
 
             ElseIf Map_actuelle = "3-4" And
@@ -1277,63 +1309,7 @@
             ElseIf Map_actuelle = "3-1" Then
                 Var.PORTAIL_HAUT_GAUCHE()
 
-#End Region ' VALIDER
-#Region "MAP = Gates ----------"
-
-            ElseIf Map_roaming = "Gates" Then
-                Console.WriteLine(Stats_module.WebClient_GET_Ship_compagny_reg)
-
-                If Form_Tools.CheckBox_alpha_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_beta_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_gamma_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_delta_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_epsilon_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_zeta_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_kappa_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_lambda_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_hades_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_chronos_gates_module.Checked = True Or
-                    Form_Tools.CheckBox_kuiper_gates_module.Checked = True Then
-                Else
-                    Console.WriteLine("aucune galaxy gates n'a ete selectionner")
-                    MessageBox.Show("aucune galaxy gates n'a ete selectionner")
-                    Var.User_Stop_Bot = True
-                    Exit Function
-                End If
-
-                If Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" Then
-                    If Map_actuelle <> "1-1" Then
-
-                        Form_Tools.ComboBox_map_to_travel.Text = "1-1"
-                    Else
-                        Await Extension.Load
-                        Console.WriteLine("je suis sur la bonne carte <MMO> ")
-
-                    End If
-
-                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "eic" Then
-                    If Map_actuelle <> "2-1" Then
-
-                        Form_Tools.ComboBox_map_to_travel.Text = "2-1"
-                    Else
-                        Await Extension.Load
-                        Console.WriteLine("je suis sur la bonne carte <EIC> ")
-
-                    End If
-
-                ElseIf Stats_module.WebClient_GET_Ship_compagny_reg = "vru" Then
-                    If Map_actuelle <> "3-1" Then
-
-                        Form_Tools.ComboBox_map_to_travel.Text = "3-1"
-                    Else
-                        Await Extension.Load
-                        Console.WriteLine("je suis sur la bonne carte <VRU> ")
-
-                    End If
-
-                Else
-                    Console.WriteLine("Error : Reload your account , bug de connexion probable ??")
-                End If
+#End Region ' VALIDATION EN COURS
 
             Else
                 Console.WriteLine("error map selection")
@@ -1342,8 +1318,6 @@
                 Exit Function
 
             End If
-
-#End Region
 
         Else
 

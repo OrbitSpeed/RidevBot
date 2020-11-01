@@ -9,6 +9,10 @@ Public Class Palladium_module
     Public Shared WebClient_POST As New System.Net.WebClient
     Public Shared data_list = New ArrayList
 
+    Public Shared Hangartype_id As String
+    Public Shared MOUTON As String
+    Public Shared PLK As Integer
+
     Public Shared Function Load()
 
 
@@ -48,7 +52,56 @@ Label_Base:
 
         Next
 
+    End Function
 
+    Public Shared Async Function Hangar_resolver() As Task
+
+        If PLK.ToString.Contains("Wait to Update") Then
+
+            Console.WriteLine("Please Update Hangar in first")
+            MessageBox.Show("Please Update Hangar in first")
+
+        End If
+
+        If Hangartype_id = "1" Then
+            PLK = Form_Tools.ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            Console.WriteLine(PLK)
+            MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
+            Console.WriteLine(MOUTON)
+
+        ElseIf Hangartype_id = "2" Then
+            PLK = Form_Tools.ComboBox_collectable_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            Console.WriteLine(PLK)
+            MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
+            Console.WriteLine(MOUTON)
+
+        ElseIf Hangartype_id = "3" Then
+            PLK = Form_Tools.ComboBox_5_3_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            Console.WriteLine(PLK)
+            MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
+            Console.WriteLine(MOUTON)
+
+        End If
+
+        Hangartype_id = Nothing
+
+        If PLK <> Nothing Then
+
+            WebClient_POST.Headers.Clear()
+            WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+            Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+            Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+            Console.WriteLine("Hangar transfered successfully")
+            MessageBox.Show("Hangar transfered successfully")
+
+        Else
+            Console.WriteLine("No hangar selected")
+            MessageBox.Show("No hangar selected")
+        End If
 
     End Function
+
+
+
+
 End Class

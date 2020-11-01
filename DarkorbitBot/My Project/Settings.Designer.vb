@@ -847,7 +847,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property PalladiumBASE() As String
             Get
                 Return CType(Me("PalladiumBASE"),String)
@@ -859,7 +859,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property palladiumCOLLECT() As String
             Get
                 Return CType(Me("palladiumCOLLECT"),String)
@@ -895,7 +895,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Hangar 1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property palladium53() As String
             Get
                 Return CType(Me("palladium53"),String)
@@ -1046,6 +1046,18 @@ Namespace My
             End Get
             Set
                 Me("protegitalpha") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Auto_update() As Boolean
+            Get
+                Return CType(Me("Auto_update"),Boolean)
+            End Get
+            Set
+                Me("Auto_update") = value
             End Set
         End Property
     End Class

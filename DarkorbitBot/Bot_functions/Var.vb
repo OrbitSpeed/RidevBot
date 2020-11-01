@@ -1336,6 +1336,116 @@ Public Class Var
 #End Region
 #End Region
 
+#Region "Portail Galaxy Gates MMO"
+
+    Public Shared Async Function PORTAIL_ALPHA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_BETA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_GAMMA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_DELTA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_EPSILON_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_ZETA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KAPPA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_LAMBDA_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_HADES_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_CHRONOS_MMO() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KUIPER_MMO() As Task
+
+    End Function
+
+#End Region
+#Region "Portail Galaxy Gates EIC"
+
+    Public Shared Async Function PORTAIL_ALPHA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_BETA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_GAMMA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_DELTA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_EPSILON_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_ZETA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KAPPA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_LAMBDA_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_HADES_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_CHRONOS_EIC() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KUIPER_EIC() As Task
+
+    End Function
+#End Region
+#Region "Portail Galaxy Gates VRU"
+
+    Public Shared Async Function PORTAIL_ALPHA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_BETA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_GAMMA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_DELTA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_EPSILON_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_ZETA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KAPPA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_LAMBDA_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_HADES_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_CHRONOS_VRU() As Task
+
+    End Function
+    Public Shared Async Function PORTAIL_KUIPER_VRU() As Task
+
+    End Function
+#End Region
+
     Public Shared Async Function POINT_DE_CHUTE_DU_CLICK_TRAVELING() As Task
 
         If User_Stop_Bot Then Exit Function

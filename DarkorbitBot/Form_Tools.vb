@@ -935,37 +935,18 @@ Public Class Form_Tools
 
     Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
+        Palladium_module.data_list = ""
+        ComboBox_5_3_Hangar.Items.Clear()
+        ComboBox_Base_Hangar.Items.Clear()
+        ComboBox_collectable_Hangar.Items.Clear()
         Palladium_module.Load()
 
     End Sub
 
-    Private Sub CheckBox_Gates_mode_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_base.Click
 
-        ' Gates_Redistribution_module_TableLayout_Gates.Load()
-
-    End Sub
-
-    Private Sub CheckedListBox_Gates_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-        '  Gates_Redistribution_module_TableLayout_Gates.Load()
-
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-        'Dim Get_Type_Hangar = (ComboBox_Base_Hangar.SelectedIndex + 1)
-        'Console.WriteLine(ComboBox_Base_Hangar.SelectedIndex + 1)
-
-        'WebClient_POST.Headers.Clear()
-        'WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-        'Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100")
-        'Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
-        'Dim _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""".Replace("""", "").Replace("href=", ""))
-        'Dim reg As String = ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
-        'Console.WriteLine(_datatodo.Item(reg))
-        'Dim Posting As String = _datatodo.Item(reg).ToString
-        'Dim WebClient_Data_posting = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + Posting)
-        'Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + Posting)
+        Palladium_module.Hangartype_id = "1"
+        Palladium_module.Hangar_resolver()
 
     End Sub
 
@@ -1139,4 +1120,17 @@ Public Class Form_Tools
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_collect.Click
+
+        Palladium_module.Hangartype_id = "2"
+        Palladium_module.Hangar_resolver()
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_53.Click
+
+        Palladium_module.Hangartype_id = "3"
+        Palladium_module.Hangar_resolver()
+
+    End Sub
 End Class

@@ -201,10 +201,10 @@
       <Value Profile="(Default)">Your license here</Value>
     </Setting>
     <Setting Name="PalladiumBASE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Hangar 1</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="palladiumCOLLECT" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Hangar 1</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="useHANGAR_changer" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -213,7 +213,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="palladium53" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Hangar 1</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="email_license" Type="System.String" Scope="User">
       <Value Profile="(Default)">Email</Value>
@@ -250,6 +250,9 @@
     </Setting>
     <Setting Name="protegitalpha" Type="System.String" Scope="User">
       <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Auto_update" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
