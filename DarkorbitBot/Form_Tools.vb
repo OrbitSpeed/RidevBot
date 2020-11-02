@@ -69,7 +69,7 @@ Public Class Form_Tools
     '    .AuthSecret = Utils.Firebase_Secret
     '    }
 
-    Public Sub Reload()
+    Public Sub Clear_cookies()
 
         If Reloader = 0 Then
             Shell("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8", AppWinStyle.Hide)
@@ -425,7 +425,7 @@ Public Class Form_Tools
         If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
-            Reload()
+            Clear_cookies()
             Form_Game.Show()
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
@@ -434,7 +434,7 @@ Public Class Form_Tools
             Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
             Button_LaunchGameRidevBrowser.Text = "Connecting..."
             Reloader = 0
-            Reload()
+            Clear_cookies()
             Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
             Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
 
@@ -713,7 +713,7 @@ Public Class Form_Tools
             Label_ServerStatus.ForeColor = Color.LimeGreen
 
             Check_message = 0
-            Reload()
+            Clear_cookies()
 
             ' Lance le jeu'
             Dim CheckRegex = Regex.Match(WebBrowser_Synchronisation.Url.ToString, "^http[s]?:[\/][\/]([^.]+)[.]darkorbit[.]com") '.exec(window.location.href);
@@ -803,7 +803,7 @@ Public Class Form_Tools
             PictureBox_LaunchBot.Image = My.Resources.cancel_presentation
             Var.User_Stop_Bot = False
 
-            RUNNING.Start()
+            Running.Start()
 
         Else
             PictureBox_LaunchBot.Image = My.Resources.play_circle_filled_white
@@ -935,7 +935,6 @@ Public Class Form_Tools
 
     Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
-        Palladium_module.data_list = ""
         ComboBox_5_3_Hangar.Items.Clear()
         ComboBox_Base_Hangar.Items.Clear()
         ComboBox_collectable_Hangar.Items.Clear()

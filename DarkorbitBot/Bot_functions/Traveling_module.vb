@@ -1007,7 +1007,27 @@
                 If Gates_in_times = 1 Then
                     Gates_in_times = 0
 
-                    If Form_Tools.CheckBox_alpha_gates_module.Checked = True Then
+                    If Form_Tools.CheckBox_kappa_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_zeta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_gamma_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_delta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_beta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_epsilon_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_alpha_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_lambda_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_hades_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_kuiper_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_chronos_gates_module.Checked = True Then
 
                     End If
 
@@ -1161,7 +1181,37 @@
 #Region "MAP = 2-1 ---------- "
 
             ElseIf Map_actuelle = "2-1" Then
-                Var.PORTAIL_BAS_GAUCHE()
+                If Gates_in_times = 1 Then
+                    Gates_in_times = 0
+
+                    If Form_Tools.CheckBox_kappa_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_zeta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_gamma_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_delta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_beta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_epsilon_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_alpha_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_lambda_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_hades_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_kuiper_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_chronos_gates_module.Checked = True Then
+
+                    End If
+
+                Else
+
+                    Var.PORTAIL_BAS_GAUCHE()
+                End If
 
 #End Region ' VALIDATION EN COURS
 #Region "MAP = 3-4 ---------- "
@@ -1307,8 +1357,37 @@
 #Region "MAP = 3-1 ---------- "
 
             ElseIf Map_actuelle = "3-1" Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                If Gates_in_times = 1 Then
+                    Gates_in_times = 0
 
+                    If Form_Tools.CheckBox_kappa_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_zeta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_gamma_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_delta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_beta_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_epsilon_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_alpha_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_lambda_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_hades_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_kuiper_gates_module.Checked = True Then
+
+                    ElseIf Form_Tools.CheckBox_chronos_gates_module.Checked = True Then
+
+                    End If
+
+                Else
+
+                    Var.PORTAIL_HAUT_GAUCHE()
+                End If
 #End Region ' VALIDATION EN COURS
 
             Else

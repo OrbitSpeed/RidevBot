@@ -67,8 +67,6 @@ Public Class Var
     Public Shared Cancel_disconnect = My.Resources.Cancel_disconnect
     Public Shared Close_popup_payment = My.Resources.Close_popup_payment
 
-
-
     Public Shared Minimap_closed_ref = My.Resources.Minimap_closed
     Public Shared Minimap_size_ref = My.Resources.Minimap_reduce
     Public Shared Move_minimap_box_ref = My.Resources.Move_box

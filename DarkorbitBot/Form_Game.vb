@@ -16,7 +16,7 @@ Public Class Form_Game
         Form_tools.Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
 
         Form_tools.Reloader = 0
-        Form_tools.Reload()
+        Form_tools.Clear_cookies()
 
     End Sub
     Private Sub WebBrowser_Game_Ridevbot_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Game_Ridevbot.DocumentCompleted
