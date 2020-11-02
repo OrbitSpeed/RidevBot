@@ -2,6 +2,8 @@
 
 Public Class Var
 
+    Public Shared Student As String = "System.Object[]"
+
     Public Shared Map1_1 = My.Resources.map1_1
     Public Shared Map1_2 = My.Resources.map1_2
     Public Shared Map1_3 = My.Resources.map1_3

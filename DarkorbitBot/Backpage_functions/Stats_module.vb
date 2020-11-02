@@ -1,4 +1,6 @@
 ﻿Imports System.Net
+Imports System.Net.Http
+Imports System.Net.Sockets
 Imports System.Text.RegularExpressions
 
 Public Class Stats_module
@@ -21,12 +23,27 @@ Public Class Stats_module
     Public Shared WebClient_GET_Rank_reg As String
 
     Public Shared WebClient_POST As New WebClient
+    Private Shared client As New HttpClient
 
     Public Shared Sub Nothing_debug()
     End Sub
 
 
-    Public Shared Sub Load()
+    Public Shared Async Sub Load()
+
+        'Try
+        '    Dim response_body As String = Await client.GetStringAsync(New Uri("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"))
+        '    Console.WriteLine(response_body)
+
+        'Catch e As HttpRequestException
+        '    Console.WriteLine(vbLf & "Exception Caught!")
+        '    Console.WriteLine("Message :{0} ", e.Message)
+        'End Try
+
+        '    Dim myHttpWebRequest As HttpWebRequest = CType(WebRequest.Create("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"), HttpWebRequest)
+        '    myHttpWebRequest.MaximumAutomaticRedirections = 1
+        'myHttpWebRequest.AllowAutoRedirect = True
+        'Dim myHttpWebResponse As HttpWebResponse = CType(myHttpWebRequest.GetResponse(), HttpWebResponse)
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information

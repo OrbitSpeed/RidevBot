@@ -938,6 +938,9 @@ Public Class Form_Tools
         ComboBox_5_3_Hangar.Items.Clear()
         ComboBox_Base_Hangar.Items.Clear()
         ComboBox_collectable_Hangar.Items.Clear()
+        ComboBox_5_3_Hangar.Refresh()
+        ComboBox_Base_Hangar.Refresh()
+        ComboBox_collectable_Hangar.Refresh()
         Palladium_module.Load()
 
     End Sub
@@ -1119,17 +1122,23 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_collect.Click
+    Private Sub Button_change_hangar_collect_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_collect.Click
 
         Palladium_module.Hangartype_id = "2"
         Palladium_module.Hangar_resolver()
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_53.Click
+    Private Sub Button_change_hangar_53_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_53.Click
 
         Palladium_module.Hangartype_id = "3"
         Palladium_module.Hangar_resolver()
+
+    End Sub
+
+    Private Sub Button_alpha_test_Click(sender As Object, e As EventArgs) Handles Button_alpha_test.Click
+
+        Alpha_Gates.Search_current_waves()
 
     End Sub
 End Class

@@ -767,7 +767,7 @@
                         Map_roaming = "4-4") Then
                 Var.PORTAIL_43_to_44()
 
-#End Region ' VALIDATION EN COURS 
+#End Region ' BUG 
 #Region "MAP = 4-2 ---------- "
 
             ElseIf Map_actuelle = "4-2" And
@@ -1391,10 +1391,7 @@
 #End Region ' VALIDATION EN COURS
 
             Else
-                Console.WriteLine("error map selection")
-                MessageBox.Show("error map selection")
-                Var.User_Stop_Bot = True
-                Exit Function
+                Console.WriteLine("Traveling Terminated")
 
             End If
 

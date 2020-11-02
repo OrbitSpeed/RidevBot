@@ -5426,6 +5426,13 @@
         BBhMRAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="Portal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAQAAAAJCAIAAACaDRr3AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAE1JREFUGFdjmDNnjri4uIWFxc6dOxmkpaU9PDx27Nihp6fHAAQtLS2lpaUgFhBs
+        2bIFKAnlHDt2zMbGBspBkQHqKSkpAbFQTEPYs3MnAF/VIFCxzVY8AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="Portal_repair" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA5CAIAAADycU9fAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

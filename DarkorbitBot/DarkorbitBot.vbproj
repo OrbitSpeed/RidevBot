@@ -730,6 +730,7 @@
     <Compile Include="Form_Close.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GalaxyGates\Alpha_Gates.vb" />
     <Compile Include="GalaxyGates\GalaxyGates_module.vb" />
     <Compile Include="GalaxyGates\GalaxyGates_module_Gates_name_gamma_id_3.vb" />
     <Compile Include="Bot_functions\Palladium_module.vb" />
@@ -877,6 +878,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Extension\administration-ConvertImage.ico" />
+    <None Include="Resources\Portal.png" />
     <None Include="Resources\Repair_rex.png" />
     <None Include="Resources\All_npc.png" />
     <None Include="Resources\Red_booty.png" />
