@@ -9,10 +9,16 @@ Public Class Alpha_Gates
 
     Public Shared Function Search_current_waves()
 
+        If Npc.Shared_ = 1 Then
+            GoTo label_retour_test_anti_bug
+        End If
+
         Form_Tools.WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = Form_Tools.WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate (.*id=""2" + Table_Load).Groups.Item(1).ToString ' ALPHA
         Console.WriteLine(WebClient_GET_All_elements)
+
+label_retour_test_anti_bug:
 
         Dim WebClient_GET_All_elements_currentWave = Regex.Match(WebClient_GET_All_elements, "currentWave="".*?([\s\S]*?)""").Groups.Item(1).ToString
 
@@ -62,7 +68,7 @@ Public Class Alpha_Gates
             Kristallon_Alpha()
 
         ElseIf WebClient_GET_All_elements_currentWave = "37" Or "38" Or "39" Or "40" Then
-            Current_npc = "protegit"
+            Current_npc = "protegit" 'df
             Console.WriteLine(Current_npc)
             Protegit_Alpha()
 
@@ -120,11 +126,11 @@ Label_retour_kill_npc:
 
                 If Form_Tools.CheckBox_kill_alpha_lordakia.Checked = True Then ' CHANGER 
 
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 540) ' portail gauche
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 530) ' portail gauche
                     Console.WriteLine($"Goto next portal")
 
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 540) ' portail droite
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 530) ' portail droite
                     Console.WriteLine($"Goto base , Textbox Unchecked")
                 End If
                 Await Task.Delay(5000)

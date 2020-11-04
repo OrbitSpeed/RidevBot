@@ -4,6 +4,7 @@ Public Class Npc
 
     Public Shared Locked As Object
     Public Shared Locked1 As Object
+    Public Shared counter As Integer = 0
     Public Shared Shared_ As Object = 0
 
     Public Shared Async Function Load() As Task
@@ -18,7 +19,7 @@ RetourLoad:
 
             Console.WriteLine("Npc Arround")
             Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc.X + 30, Npc.Y - 30)
-            Await Task.Delay(500)
+            Await Task.Delay(800)
             Control_Npc_attack()
             Exit Function
 
@@ -73,33 +74,46 @@ RetourNPC_Is_Killed:
         If Locked1.ToString.Contains(Var.Student) Then
 
             Console.WriteLine("on fire, wait...")
+            counter = 0
 
             If Locked1(0) >= 400 Then
                 If Locked1(1) >= 300 Then
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, Locked1(1) - 50)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 400, Locked1(1) - 70)
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 300, Locked1(1) + 50)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 400, Locked1(1) + 70)
 
                 End If
             Else
                 If Locked1(1) >= 300 Then
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 500, Locked1(1) - 50)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 400, Locked1(1) + 70)
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 500, Locked1(1) + 50)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 400, Locked1(1) - 70)
                 End If
             End If
-            Await Task.Delay(100)
+            Await Task.Delay(500)
 
             GoTo RetourNPC_Is_Killed
         Else
-            If Shared_ = 1 Then
-                Alpha_Gates.Search_current_waves()
-                Exit Function
+
+            counter = counter + 1
+
+            If counter = 5 Then
+                Console.WriteLine("Npc killed")
+                counter = 0
+                If Shared_ = 1 Then
+                    Alpha_Gates.Search_current_waves()
+                    Exit Function
+
+                Else
+                    Load()
+                    Exit Function
+
+                End If
 
             Else
-                Load()
-                Exit Function
-
+                Await Task.Delay(100)
+                Console.WriteLine("controle Npc killed")
+                GoTo RetourNPC_Is_Killed
             End If
         End If
 
