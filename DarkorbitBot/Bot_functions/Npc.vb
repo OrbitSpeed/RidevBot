@@ -78,19 +78,19 @@ RetourNPC_Is_Killed:
 
             If Locked1(0) >= 400 Then
                 If Locked1(1) >= 300 Then
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 400, Locked1(1) - 70)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 350, Locked1(1))
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 400, Locked1(1) + 70)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 350, Locked1(1))
 
                 End If
             Else
                 If Locked1(1) >= 300 Then
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 400, Locked1(1) + 70)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) + 350, Locked1(1))
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 400, Locked1(1) - 70)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Locked1(0) - 350, Locked1(1))
                 End If
             End If
-            Await Task.Delay(500)
+            Await Task.Delay(150)
 
             GoTo RetourNPC_Is_Killed
         Else

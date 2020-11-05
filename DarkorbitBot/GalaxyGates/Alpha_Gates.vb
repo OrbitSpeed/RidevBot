@@ -9,16 +9,10 @@ Public Class Alpha_Gates
 
     Public Shared Function Search_current_waves()
 
-        If Npc.Shared_ = 1 Then
-            GoTo label_retour_test_anti_bug
-        End If
-
         Form_Tools.WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data = Form_Tools.WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=init&sid=" + Utils.dosid)
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<gate (.*id=""2" + Table_Load).Groups.Item(1).ToString ' ALPHA
         Console.WriteLine(WebClient_GET_All_elements)
-
-label_retour_test_anti_bug:
 
         Dim WebClient_GET_All_elements_currentWave = Regex.Match(WebClient_GET_All_elements, "currentWave="".*?([\s\S]*?)""").Groups.Item(1).ToString
 
@@ -78,11 +72,7 @@ label_retour_test_anti_bug:
 
     Public Shared Async Function Streuner_Alpha() As Task
 
-        If Npc.Shared_ = 1 Then
-            GoTo Label_retour_kill_npc
-        End If
-
-Label_retour:
+Base_macro:
 
         Dim Streuner = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1) ' CHANGER 
         'Console.WriteLine(Streuner)
@@ -90,8 +80,13 @@ Label_retour:
 
             Console.WriteLine("Npc found")
             Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Streuner(0), Streuner(1) - 18)
+            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+            Await Task.Delay(500)
 
-Label_retour_kill_npc:
+            ' AJOUTER TRAVELING INDICATION
+
+Return_Npc_not_on_lock:
+
             Var.Update_Screen()
             Dim All_Npc = My.Resources.All_npc
             Dim Npc_ref As Point = Var.Client_Screen.Contains(All_Npc)
@@ -100,15 +95,38 @@ Label_retour_kill_npc:
 
                 Console.WriteLine("Npc Arround")
                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc_ref.X + 30, Npc_ref.Y - 30)
-                Await Task.Delay(500)
-                Npc.Shared_ = 1
-                Npc.Control_Npc_attack()
+                Await Task.Delay(100)
+                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc_ref.X, Npc_ref.Y + 30)
+                Await Task.Delay(100)
+                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "{LCTRL}")
+                Await Task.Delay(300)
 
+Return_OnLock:
+
+                Dim InLocked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP + 110, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+                If InLocked.ToString.Contains(Var.Student) Then
+
+                    Console.WriteLine("Npc on Lock")
+
+                    If InLocked(0) >= 400 Then
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, InLocked(0) - 380, InLocked(1))
+                    Else
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, InLocked(0) + 380, InLocked(1))
+                    End If
+
+                    Await Task.Delay(500)
+                    GoTo Return_OnLock
+
+                Else
+
+                    Console.WriteLine("Npc Not on lock")
+                    GoTo Return_Npc_not_on_lock
+
+                End If
 
             Else
                 Console.WriteLine("No Npc arround, wait..")
-                Await Task.Delay(500)
-                GoTo Label_retour
+                GoTo Base_macro
 
             End If
 
@@ -126,21 +144,21 @@ Label_retour_kill_npc:
 
                 If Form_Tools.CheckBox_kill_alpha_lordakia.Checked = True Then ' CHANGER 
 
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 530) ' portail gauche
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' portail gauche
                     Console.WriteLine($"Goto next portal")
 
                 Else
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 530) ' portail droite
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' portail droite
                     Console.WriteLine($"Goto base , Textbox Unchecked")
                 End If
-                Await Task.Delay(5000)
+                Await Task.Delay(10000)
                 Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-                GoTo Label_retour
+                GoTo Base_macro
 
             Else
                 Console.WriteLine("Checking Waves in progress..")
                 Await Task.Delay(500)
-                GoTo Label_retour
+                GoTo Base_macro
             End If
 
         End if

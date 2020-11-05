@@ -29,7 +29,7 @@ Public Class Stats_module
     End Sub
 
 
-    Public Shared Async Sub Load()
+    Public Shared Async Function Load() As Task
 
         'Try
         '    Dim response_body As String = Await client.GetStringAsync(New Uri("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100"))
@@ -55,7 +55,7 @@ Public Class Stats_module
         End Try
 
 
-    End Sub
+    End Function
 
     Private Shared Sub WebClient_POST_DownloadFinished(sender As Object, e As DownloadStringCompletedEventArgs)
         Dim WebClient_Data = e.Result

@@ -675,7 +675,7 @@ Public Class Form_Tools
 
     End Sub ' button Home TopBar
 
-    Private Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
+    Private Async Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
 
         If WebBrowser_Synchronisation.Url.ToString.Contains("loginError=99") Then
 
@@ -707,7 +707,6 @@ Public Class Form_Tools
 
         ElseIf WebBrowser_Synchronisation.Url.ToString.Contains("Start&prc=100") Then
 
-            Stats_module.Load()
 
             Label_ServerStatus.Text = "Online"
             Label_ServerStatus.ForeColor = Color.LimeGreen
@@ -761,6 +760,7 @@ Public Class Form_Tools
                 PictureBox_grade.Image = My.Resources.loading
 
                 Utils.UpdateStats()
+                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
