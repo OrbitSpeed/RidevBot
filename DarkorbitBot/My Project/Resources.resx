@@ -1256,6 +1256,18 @@
         AJXB+WePLGM4eXDJjfMbajLDrp1dd2DHHAB/DTZf/X6zzQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="coin_bas_droite" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAQAAAAICAIAAABRUclSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABlJREFUGFdjOMOAQKgcdnZ2cjhwPhKHgQEAcnYTyY32sz4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="coin_haut_gauche" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAQAAAAICAIAAABRUclSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUGFdjOMMAQuxggI0D4ZPMASIkDgMDAL5DE8lDDAjqAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="combo_ship_Defense_pet_module" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

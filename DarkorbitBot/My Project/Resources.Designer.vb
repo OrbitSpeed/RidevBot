@@ -313,6 +313,26 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property coin_bas_droite() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("coin_bas_droite", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property coin_haut_gauche() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("coin_haut_gauche", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property combo_ship_Defense_pet_module() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("combo_ship_Defense_pet_module", resourceCulture)

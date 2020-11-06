@@ -878,6 +878,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Extension\administration-ConvertImage.ico" />
+    <None Include="Resources\coin_haut_gauche.png" />
+    <None Include="Resources\coin_bas_droite.png" />
     <None Include="Resources\Portal.png" />
     <None Include="Resources\Repair_rex.png" />
     <None Include="Resources\All_npc.png" />
