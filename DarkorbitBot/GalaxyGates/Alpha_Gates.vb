@@ -4,7 +4,8 @@ Imports System.Text.RegularExpressions
 Public Class Alpha_Gates
 
     Public Shared Table_Load As String = """.*) \/>"
-    Public Shared Verification_string As String = 0
+    Public Shared Control_killed_searching As Integer = 0
+    Public Shared control_killed_selection As Integer
     Public Shared Current_npc As String
 
     Public Shared streuner_alpha As Integer = "370"
@@ -33,65 +34,61 @@ Public Class Alpha_Gates
 
         Dim WebClient_GET_All_elements_currentWave = Regex.Match(WebClient_GET_All_elements, "currentWave="".*?([\s\S]*?)""").Groups.Item(1).ToString
 
-        If WebClient_GET_All_elements_currentWave = "0" Then
-            Current_npc = "No gates avaible"
-            Console.WriteLine(Current_npc)
-            MessageBox.Show(Current_npc)
-            Exit Function
-
-        ElseIf WebClient_GET_All_elements_currentWave = "1" Or "2" Or "3" Or "4" Then
+        If WebClient_GET_All_elements_currentWave = "0" Or "1" Or "2" Or "3" Or "4" Then
             Current_npc = "streuner"
             Distance_npc = streuner_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "3"
 
         ElseIf WebClient_GET_All_elements_currentWave = "5" Or "6" Or "7" Or "8" Then
             Current_npc = "lordakia" ' df
             Distance_npc = Lordakia_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "5"
 
         ElseIf WebClient_GET_All_elements_currentWave = "9" Or "10" Or "11" Or "12" Then
             Current_npc = "mordon"
             Distance_npc = mordon_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "8"
 
         ElseIf WebClient_GET_All_elements_currentWave = "13" Or "14" Or "15" Or "16" Then
             Current_npc = "saimon" ' df
             Distance_npc = saimon_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "10"
 
         ElseIf WebClient_GET_All_elements_currentWave = "17" Or "18" Or "19" Or "20" Then
             Current_npc = "devolarium"
             Distance_npc = devolarium_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "15"
 
         ElseIf WebClient_GET_All_elements_currentWave = "21" Or "22" Or "23" Or "24" Then
             Current_npc = "kristallin"
             Distance_npc = kristallin_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "9"
 
         ElseIf WebClient_GET_All_elements_currentWave = "25" Or "26" Or "27" Or "28" Then
             Current_npc = "sibelon"
             Distance_npc = sibelon_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "15"
 
         ElseIf WebClient_GET_All_elements_currentWave = "29" Or "30" Or "31" Or "32" Then
             Current_npc = "sibelonit"
             Distance_npc = sibelonit_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "9"
 
         ElseIf WebClient_GET_All_elements_currentWave = "33" Or "34" Or "35" Or "36" Then
             Current_npc = "kristallon"
             Distance_npc = kristallon_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "9"
 
         ElseIf WebClient_GET_All_elements_currentWave = "37" Or "38" Or "39" Or "40" Then
             Current_npc = "protegit" 'df
             Distance_npc = protegit_alpha
-            Console.WriteLine(Current_npc)
+            control_killed_selection = "15"
 
         End If
 
+        Console.WriteLine(Current_npc)
         Console.WriteLine(Distance_npc)
+        Console.WriteLine(control_killed_selection)
         Gates_task_task()
 
     End Function
@@ -101,7 +98,7 @@ Public Class Alpha_Gates
 
 Base_macro:
 
-        Dim Npc_in_map = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1) ' CHANGER 
+        Dim Npc_in_map = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1) ' detecter dans une plus petite zone pour savoir si il reste des npc avant d'attaquer les coins 
 
         If Npc_in_map.ToString.Contains(Var.Student) Then
 
@@ -154,7 +151,7 @@ Return_Npc_not_on_lock:
                         Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, Reference_npc.Y)
                     Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X + Distance_npc, Reference_npc.Y)
                     End If
-                End If
+                End If ' ajouter un changer de direction tout les 200x exemple
 
                 Await Task.Delay(100)
                 Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "{LCTRL}")
@@ -162,11 +159,11 @@ Return_Npc_not_on_lock:
 
 Return_OnLock:
 
-                Dim InLocked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP + 115, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
+                Dim InLocked = Var.AutoIt.PixelSearch(Form_Game.X_TOP, Form_Game.Y_TOP + 155, Form_Game.X_BOTTOM, Form_Game.Y_BOTTOM, 13377289, 0, 1)
                 If InLocked.ToString.Contains(Var.Student) Then
 
                     Console.WriteLine("Npc on Lock")
-                    Verification_string = 0
+                    Control_killed_searching = 0
 
                     If InLocked(0) >= pointer_scan Then
                         If InLocked(0) - Distance_npc <= pointer0 Then
@@ -177,7 +174,7 @@ Return_OnLock:
                         If InLocked(0) + Distance_npc >= pointer800 Then
                             Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, InLocked(1))
                         Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, InLocked(0) + Distance_npc, InLocked(1))
-                        End If
+                        End If ' ajouter un changer de direction tout les 200x exemple
 
                     End If
 
@@ -186,13 +183,13 @@ Return_OnLock:
 
                 Else
 
-                    If Verification_string = 21 Then
+                    If Control_killed_searching = control_killed_selection Then
                         Console.WriteLine("Npc Not on lock")
-                        Verification_string = 0
+                        Control_killed_searching = 0
                         GoTo Return_Npc_not_on_lock
 
                     Else
-                        Verification_string = Verification_string + 1
+                        Control_killed_searching = Control_killed_searching + 1
                         Console.WriteLine("Verification du lock")
                         Await Task.Delay(10)
                         GoTo Return_OnLock
@@ -222,6 +219,7 @@ Return_OnLock:
 
                 If Form_Tools.CheckBox_kill_alpha_lordakia.Checked = True Then ' CHANGER >>>    CheckBox_kill_alpha_lordakia > si npc alors plus haut alors un autre plus bas etc ! l'endroit du portail change selon la vague !
                     ' sert aussi a definir si on veut passer a la vague d'apres ou sarreter avec la checkbox kill >>>
+
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' portail gauche
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
                     Console.WriteLine($"Goto next portal")
@@ -240,8 +238,9 @@ Return_OnLock:
 
             Else
                 Console.WriteLine("Checking Waves in progress..")
-                Await Task.Delay(500)
-                GoTo Base_macro
+                Await Task.Delay(2000)
+                Search_current_waves()
+                Exit Function
             End If
 
         End if
