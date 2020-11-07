@@ -13,11 +13,11 @@ Public Class Alpha_Gates
     Public Shared mordon_alpha As Integer = "385"
     Public Shared saimon_alpha As Integer = "385"
     Public Shared devolarium_alpha As Integer = "385"
-    Public Shared kristallin_alpha As Integer = "395"
-    Public Shared sibelon_alpha As Integer = "385"
+    Public Shared kristallin_alpha As Integer = "410"
+    Public Shared sibelon_alpha As Integer = "395"
     Public Shared sibelonit_alpha As Integer = "395"
-    Public Shared kristallon_alpha As Integer = "395"
-    Public Shared protegit_alpha As Integer = "395"
+    Public Shared kristallon_alpha As Integer = "410"
+    Public Shared protegit_alpha As Integer = "410"
 
     Public Shared Distance_npc As Integer
     Public Shared pointer0 As Integer = "0"
@@ -112,13 +112,13 @@ Base_macro:
                 Console.WriteLine("coin droite")
                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 771, 58)
                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-                Await Task.Delay(2500)
+                Await Task.Delay(1000)
 
             ElseIf Coin_gauche <> Nothing Then
                 Console.WriteLine("Coin gauche")
                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 597, 463)
                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-                Await Task.Delay(2500)
+                Await Task.Delay(1000)
 
             Else
                 Console.WriteLine("Npc found")
@@ -127,7 +127,28 @@ Base_macro:
                 Await Task.Delay(500)
             End If
 
-            ' AJOUTER TRAVELING INDICATION
+Return_in_traveling:
+            Var.Update_Screen()
+            Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+            Dim traveling_indication_point As Point = Var.Client_Screen.Contains(traveling_indication)
+            If traveling_indication_point <> Nothing Then
+                Console.WriteLine("traveling indication trouvée")
+                Await Task.Delay(500)
+                GoTo Return_in_traveling
+
+            Else
+                Var.Update_Screen()
+                Dim traveling_indication_checking_true As Bitmap = My.Resources.traveling_indication
+                Dim traveling_indication_checking As Point = Var.Client_Screen.Contains(traveling_indication)
+                If traveling_indication_checking <> Nothing Then
+                    Console.WriteLine("traveling indication trouvée")
+                    Await Task.Delay(500)
+                    GoTo Return_in_traveling
+                Else
+                    Console.WriteLine("No moving")
+                End If
+            End If
+
 
 Return_Npc_not_on_lock:
 
@@ -230,10 +251,30 @@ Return_OnLock:
                     Console.WriteLine($"Goto base , Textbox Unchecked")
                 End If
 
-                ' Ajouter Traveling Indication
+Return_traveling_map:
+                Var.Update_Screen()
+                Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+                Dim traveling_indication_point As Point = Var.Client_Screen.Contains(traveling_indication)
+                If traveling_indication_point <> Nothing Then
+                    Console.WriteLine("traveling indication trouvée")
+                    Await Task.Delay(1000)
+                    GoTo Return_traveling_map
 
-                Await Task.Delay(10000)
+                Else
+                    Var.Update_Screen()
+                    Dim traveling_indication_checking_true As Bitmap = My.Resources.traveling_indication
+                    Dim traveling_indication_checking As Point = Var.Client_Screen.Contains(traveling_indication)
+                    If traveling_indication_checking <> Nothing Then
+                        Console.WriteLine("traveling indication trouvée")
+                        Await Task.Delay(1000)
+                        GoTo Return_traveling_map
+                    Else
+                        Console.WriteLine("No moving")
+                    End If
+                End If
+
                 Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
+                Await Task.Delay(10000)
                 GoTo Base_macro
 
             Else

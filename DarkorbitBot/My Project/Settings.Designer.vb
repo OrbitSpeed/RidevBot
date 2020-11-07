@@ -151,7 +151,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Profil 1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property AutoLoginCombobox() As String
             Get
                 Return CType(Me("AutoLoginCombobox"),String)
@@ -175,7 +175,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Auto login with :")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property AutoLogin1() As String
             Get
                 Return CType(Me("AutoLogin1"),String)

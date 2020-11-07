@@ -759,6 +759,126 @@
         lYaN/gzygwFFULCSd6KAunV/mv+ipqHxLwEOkgd/7bJEAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Button_beta_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_gamma_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_delta_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_epsilon_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_zeta_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_kappa_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_lambda_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_hades_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_kuiper_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button_chronos_gates_module.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvd1ckuBEEcx/GxxBaxHSwvwGtYEgmxRYLYrryBxFHiTQivII7iJl5A
+        rHGzE9uN71empFE9pnHySz7pSXd1/bu6umpy/zYlGWRKaf6YNZnuq0QjGlJ4LVxvQhVMwdGEJxjAPi5w
+        nj/qMsUVjjAMU5Y/RlMBG7/gHg9FsJ3tn9AO8+V1haE55Bt40xwmMI2pFDMYwyYssoVoQoF6XOMR4+hF
+        P/pSeM02tj2FRZZgyvPHtyQLOAIL+IR2MITBAkbQg0VYQJ0w7/MRKzAJnzLWaZIfhRPchTVYYA+1MG99
+        /7ZA8vcuLLIK8+sCSb7SHVhgHeZPRhBe0Qrs/AB1MKkFvpvkcD5M8gLsXN0w0Un+yWfqWjiBnS/DfFjR
+        oUByoc3D1+RicrHFzMLON2Dn2ygYN7lj2PgWd0Wy/TM6YKI7azjphB3i7BM3vjQ+1ChMwc0upBqtaP6k
+        JaINNTBF/ScU1SiSTPc56Vn92+Ryr4fQixCLJFGAAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>
