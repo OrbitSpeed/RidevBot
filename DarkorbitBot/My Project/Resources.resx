@@ -5347,6 +5347,12 @@
         IpKyHsh0D7RuOxEI5T4pUfQEauC1L3YzqtoAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="out_map" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAIAAAAPE8H1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABRJREFUGFdjYGdnd3NzA5LEsdjZAXs+BO1pnewXAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="passive_pet_module" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAIAAABiEdh4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -5440,9 +5446,9 @@
   </data>
   <data name="Portal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAQAAAAJCAIAAACaDRr3AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAE1JREFUGFdjmDNnjri4uIWFxc6dOxmkpaU9PDx27Nihp6fHAAQtLS2lpaUgFhBs
-        2bIFKAnlHDt2zMbGBspBkQHqKSkpAbFQTEPYs3MnAF/VIFCxzVY8AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAAIAAAAFCAIAAADg0arLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACRJREFUGFdjqKqqSklJYdi8ebOMjAzDsWPHWFlZYTygXHJyMgDjLQxt2RJWugAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="Portal_repair" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
