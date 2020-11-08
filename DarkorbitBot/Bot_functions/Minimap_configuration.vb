@@ -96,7 +96,7 @@
             Dim cursor_Pos = Cursor.Position
             Cursor.Position = New Point(Minimap_move.X - 40, Minimap_move.Y + 20)
             Var.AutoIt.MouseDown("LEFT")
-            Await Task.Delay(10)
+            Await Task.Delay(100)
             Cursor.Position = New Point(759, 599)
             Var.AutoIt.MouseUp("LEFT")
             Cursor.Position = cursor_Pos

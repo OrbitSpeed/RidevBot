@@ -261,7 +261,7 @@ Public Class Pet_module
 
                     Dim cursor_Pos = Cursor.Position
                     Cursor.Position = New Point(npc_locator_module_pet1.X + 2, npc_locator_module_pet1.Y + 19)
-                    Await Task.Delay(10)
+                    Await Task.Delay(100)
                     Cursor.Position = cursor_Pos
 
 
@@ -452,7 +452,7 @@ Public Class Pet_module
 
                     Dim cursor_Pos = Cursor.Position
                     Cursor.Position = New Point(npc_locator_module_pet1.X + 2, npc_locator_module_pet1.Y + 19)
-                    Await Task.Delay(10)
+                    Await Task.Delay(100)
                     Cursor.Position = cursor_Pos
 
                     If Form_Tools.ComboBoxLabel_pet_locator_list.Text = "" Then

@@ -5353,6 +5353,12 @@
         wwAADsMBx2+oZAAAABRJREFUGFdjYGdnd3NzA5LEsdjZAXs+BO1pnewXAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="out_map_second" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAYAAAADCAIAAAA/Y+msAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUGFdjYMcADG4YAEMVOzsAqI0F6X7lPY4AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="passive_pet_module" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAIAAABiEdh4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
