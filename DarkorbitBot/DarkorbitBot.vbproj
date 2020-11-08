@@ -689,6 +689,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backpage_functions\Reload_sid.vb" />
     <Compile Include="Bot_functions\Checking_map.vb" />
     <Compile Include="Bot_functions\Dead.vb" />
     <Compile Include="Bot_functions\Dependency.vb" />

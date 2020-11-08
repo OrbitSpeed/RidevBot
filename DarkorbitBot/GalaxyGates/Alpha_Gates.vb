@@ -391,7 +391,8 @@ Return_traveling_map:
                 Console.WriteLine("Checking Waves in progress..")
                 Dim Npc_in_map_Afterwork = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
                 If Npc_in_map_Afterwork.ToString.Contains(Var.Student) Then
-                    Await Task.Delay(100)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522)
+                    Await Task.Delay(1000)
                     GoTo Base_macro
 
                 Else
