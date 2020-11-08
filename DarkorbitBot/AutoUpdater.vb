@@ -184,7 +184,11 @@ Public Class AutoUpdater
             End If
             FlatLabel_isUpdated.Select()
         Catch ex As Exception
-            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If File.Exists(Path.Combine(Application.StartupPath, "debug.ridevbot")) = True Then
+                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}Aborting...{vbNewLine}Error:{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
             End
         End Try
 
@@ -244,7 +248,11 @@ Public Class AutoUpdater
             FlatLabel_isUpdated.Select()
             'Button_Update.Enabled = True
         Catch ex As Exception
-            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If File.Exists(Path.Combine(Application.StartupPath, "debug.ridevbot")) = True Then
+                MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...{vbNewLine}Error:{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
             End
         End Try
 
@@ -280,7 +288,11 @@ Public Class AutoUpdater
             End If
 
         Catch ex As Exception
-            MessageBox.Show($"Can't retrieve the program version.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If File.Exists(Path.Combine(Application.StartupPath, "debug.ridevbot")) = True Then
+                MessageBox.Show($"Can't retrieve the Changelog.{vbNewLine}Aborting...{vbNewLine}Error:{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show($"Can't retrieve the Changelog.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
             Close()
         End Try
     End Sub
