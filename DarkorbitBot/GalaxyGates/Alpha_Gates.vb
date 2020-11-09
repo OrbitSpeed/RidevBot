@@ -106,7 +106,11 @@ Search_load:
         Console.WriteLine("Current control selection killed : ")
         Console.WriteLine(control_killed_selection)
 
+        Await Task.Delay(12000)
+
 Base_macro:
+
+
 
         Dim Npc_in_map = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
         If Npc_in_map.ToString.Contains(Var.Student) Then
@@ -384,7 +388,6 @@ Return_traveling_map:
                 End If
 
                 Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-                Await Task.Delay(10000)
                 GoTo Base_macro
 
             Else
@@ -392,7 +395,6 @@ Return_traveling_map:
                 Dim Npc_in_map_Afterwork = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
                 If Npc_in_map_Afterwork.ToString.Contains(Var.Student) Then
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522)
-                    Await Task.Delay(1000)
                     GoTo Base_macro
 
                 Else
