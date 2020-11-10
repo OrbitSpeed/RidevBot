@@ -115,11 +115,26 @@ Search_load:
         Console.WriteLine(control_killed_selection)
         Console.WriteLine(" ")
 
+        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+
+        If WebClient_GET_All_elements_currentstate = "in_progress" Then
+        Else
+            If Form_Tools.TextBox_end_gates.Text = "" Or
+                Form_Tools.TextBox_end_gates.Text = " " Then
+            Else
+                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_end_gates.Text))
+                Await Task.Delay(1000)
+            End If
+        End If
+
         Await Task.Delay(5000)
 
 Base_macro:
 
+        ' controle de la vie 
+        ' controle du bouclier 
 
+        ' essayer de controler les positions X et Y et interagir en consequence selon certain type de npc 
 
         Dim Npc_in_map = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
         If Npc_in_map.ToString.Contains(Var.Student) Then
@@ -362,24 +377,26 @@ Return_OnLock:
                              WebClient_GET_All_elements_currentWave = "40" Then
 
                             Var.Update_Screen()
+
+                            Dim All_Npc_ref = My.Resources.All_npc
+                            Dim Reference_npc_ref As Point = Var.Client_Screen.Contains(All_Npc)
                             Dim control_bordure_ref = My.Resources.out_map
                             Dim Bordure_control_ref As Point = Var.Client_Screen.Contains(control_bordure)
-
                             Dim control_bordure_second_ref = My.Resources.out_map_second
                             Dim Bordure_control_second_ref As Point = Var.Client_Screen.Contains(control_bordure_second)
 
                             If Bordure_control_second <> Nothing Then
                                 If Bordure_control <> Nothing Then
 
-                                    If Reference_npc.X >= pointer_scan Then
-                                        If Reference_npc.X - Distance_npc <= pointer0 Then
-                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 1, Reference_npc.Y)
-                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X - Distance_npc, Reference_npc.Y)
+                                    If Reference_npc_ref.X >= pointer_scan Then
+                                        If Reference_npc_ref.X - Distance_npc <= pointer0 Then
+                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 1, Reference_npc_ref.Y)
+                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc_ref.X - Distance_npc, Reference_npc_ref.Y)
                                         End If
                                     Else
-                                        If Reference_npc.X + Distance_npc >= pointer800 Then
-                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, Reference_npc.Y)
-                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X + Distance_npc, Reference_npc.Y)
+                                        If Reference_npc_ref.X + Distance_npc >= pointer800 Then
+                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, Reference_npc_ref.Y)
+                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc_ref.X + Distance_npc, Reference_npc_ref.Y)
                                         End If
                                     End If
 
@@ -466,6 +483,7 @@ Return_traveling_map:
                 GoTo Base_macro
 
             Else
+
                 Console.WriteLine("Checking Waves in progress..")
                 Dim Npc_in_map_Afterwork = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
                 If Npc_in_map_Afterwork.ToString.Contains(Var.Student) Then
