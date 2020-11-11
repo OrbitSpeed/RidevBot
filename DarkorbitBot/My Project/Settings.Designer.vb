@@ -679,7 +679,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("H")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("h")>  _
         Public Property Desactive_all_formkey() As String
             Get
                 Return CType(Me("Desactive_all_formkey"),String)

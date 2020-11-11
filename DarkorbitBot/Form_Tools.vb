@@ -1159,4 +1159,12 @@ Public Class Form_Tools
         End If
 
     End Sub
+
+    Private Sub TextBox_desactive_allkey_TextChanged(sender As Object, e As EventArgs) Handles TextBox_desactive_allkey.TextChanged
+        TextBox_desactive_allkey.Text = TextBox_desactive_allkey.Text.ToLower()
+    End Sub
+
+    Private Sub TextBox_jump_key_TextChanged(sender As Object, e As EventArgs) Handles TextBox_jump_key.TextChanged
+        TextBox_jump_key.Text = TextBox_jump_key.Text.ToLower()
+    End Sub
 End Class

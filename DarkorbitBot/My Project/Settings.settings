@@ -159,7 +159,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Desactive_all_formkey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">H</Value>
+      <Value Profile="(Default)">h</Value>
     </Setting>
     <Setting Name="PET_Selection" Type="System.String" Scope="User">
       <Value Profile="(Default)">Passive</Value>
