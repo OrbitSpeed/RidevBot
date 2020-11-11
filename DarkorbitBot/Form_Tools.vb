@@ -152,7 +152,7 @@ Public Class Form_Tools
 
 
         Calculator = 1
-        Panel_autospin.Location = New Point(499, 28)
+        Panel_autospin.Location = New Point(500, 87)
         Panel_palladium_palladium.Location = New Point(0, 28)
         panel_npc_npc.Location = New Point(0, 28)
         Panel_collectable.Location = New Point(0, 28)
@@ -1126,6 +1126,16 @@ Public Class Form_Tools
     Private Sub Button_alpha_test_Click(sender As Object, e As EventArgs) Handles Button_alpha_test.Click
 
         Alpha_Gates.Search_current_waves()
+
+    End Sub
+
+    Private Sub Panel_autospin_Paint(sender As Object, e As PaintEventArgs) Handles Panel_autospin.Paint
+
+    End Sub
+
+    Private Sub Button_reload_sid_GGS_Click(sender As Object, e As EventArgs) Handles Button_reload_sid_GGS.Click
+
+        Reload_sid.Get_()
 
     End Sub
 End Class

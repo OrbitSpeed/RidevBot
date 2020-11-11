@@ -257,8 +257,19 @@ LABEL_BOUCLE:
             Closing_Spinner()
             Exit Sub
 
-        Else Await Task.Delay(101)
+        Else
+            If Form_Tools.CheckBox_ExtraMS.Checked = True Then
+                If Form_Tools.TextBox_extra_ms_GGS.Text.Contains(" ") Or
+                    Form_Tools.TextBox_extra_ms_GGS.Text = "" Then
+                    Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Extra spin time is not correctly entered" + Form_Tools.TextBox_WinGGS.Text
+                    Closing_Spinner()
+                    Exit Sub
+                Else Await Task.Delay(100 + Val(Form_Tools.TextBox_extra_ms_GGS.Text))
+                End If
+            Else Await Task.Delay(101)
+            End If
         End If
+
 
         If Form_Tools.CheckBox_UseOnlyEE_GGS.Checked = True And Form_Tools.TextBox_ExtraEnergy_GGS.Text = "0" Then
             Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"No more Extra Energy left." + Form_Tools.TextBox_WinGGS.Text
@@ -270,21 +281,16 @@ LABEL_BOUCLE:
             Closing_Spinner()
             Exit Sub
 
-        ElseIf Val(Form_Tools.TextBox_total_spinned.Text) = 200 Or
-                Val(Form_Tools.TextBox_total_spinned.Text) = 400 Or
-                Val(Form_Tools.TextBox_total_spinned.Text) = 600 Or
-                Val(Form_Tools.TextBox_total_spinned.Text) = 800 Or
-                Val(Form_Tools.TextBox_total_spinned.Text) = 1000 Or
-                Val(Form_Tools.TextBox_total_spinned.Text) = 1200 Then
+        ElseIf Val(Form_Tools.TextBox_total_spinned.Text.Contains("00")) Then
 
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Waiting 10 sec to prevent the Limit Rate of DarkOrbit..." + Form_Tools.TextBox_WinGGS.Text
+            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Waiting 5 sec to prevent the Limit Rate of DarkOrbit..." + Form_Tools.TextBox_WinGGS.Text
             'WebClient_POST.Headers.Clear()
             Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
             Closing_Spinner()
             Form_Tools.Button_stopSpin.PerformClick()
             Await Task.Delay(1000)
             Form_Tools.Button_revive_sid_Click(Nothing, Nothing)
-            Await Task.Delay(9000)
+            Await Task.Delay(4000)
             Form_Tools.Button_StartSpin.PerformClick()
             Exit Sub
         End If
@@ -402,6 +408,8 @@ LABEL_BOUCLE:
             Load()
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
+
+                Form_Tools.TextBox_built_GGS.Text += 1
                 Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"CheckBox_BuildOneAndStop are checked. " + Form_Tools.TextBox_WinGGS.Text
 
                 Dim data_PG = Color.FromArgb(20, 75, 158)
@@ -700,7 +708,8 @@ LABEL_BOUCLE:
 
             End If
 
-            Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
+            Form_Tools.TextBox_total_spinned.Text += 1
+            Form_Tools.TextBo_uridium_spent_GGS.Text += Val(Form_Tools.Leaderprice.Text.Replace("U.", "").Replace(" ", ""))
 
             If Spin_Sample = 1 Then
                 GoTo LABEL_BOUCLE
