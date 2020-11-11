@@ -145,7 +145,11 @@ Public Class AutoUpdater
             End If
             CheckPassed = 1
             'MessageBox.Show(e.GetType.ToString)
-            Dim installation = Shell(Path.Combine(Path.GetTempPath, "autoit-setup.exe /S"), AppWinStyle.NormalFocus, True, 1500)
+
+            'Dim installation = Shell(Path.Combine(Path.GetTempPath, "autoit-setup.exe /S"), AppWinStyle.NormalFocus, True, 1500)
+            MessageBox.Show($"An installation package will be opened{vbNewLine}{vbNewLine}" +
+                            $"Please press 'Yes' to install our dependancies", "RidevBot Installation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim installation = Process.Start(Path.Combine(Path.GetTempPath, "autoit-setup.exe"), "/S")
             FlatTextBox_Changelog.Text = $"Installing the dependancies...{vbNewLine}Please wait..."
             CheckPassed = 2
 
@@ -163,7 +167,9 @@ Public Class AutoUpdater
             Application.Restart()
 
         Catch ex As Exception
-            MessageBox.Show($"Can't retrieve the bot dependancies.{vbNewLine}Error: {ex.Message}|CP:{CheckPassed}{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Can't retrieve the bot dependancies.{vbNewLine}" +
+                            $"Error: {ex.Message}|CP:{CheckPassed}{vbNewLine}" +
+                            $"Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
     End Sub
@@ -172,7 +178,9 @@ Public Class AutoUpdater
         Try
             Check_Maintenance = e.Result
             If Check_Maintenance Then
-                MessageBox.Show($"A maintenance is actually underway...{vbNewLine}Please, try again later.{vbNewLine}If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show($"A maintenance Is actually underway...{vbNewLine}" +
+                            $"Please, try again later.{vbNewLine}" +
+                            $"If the problem persist, contact our support at : https://discord.gg/GFzfcGR", "Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Close()
             Else
                 Try
@@ -185,9 +193,12 @@ Public Class AutoUpdater
             FlatLabel_isUpdated.Select()
         Catch ex As Exception
             If File.Exists(Path.Combine(Application.StartupPath, "debug.ridevbot")) = True Then
-                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}Aborting...{vbNewLine}Error:{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}" +
+                            $"Aborting...{vbNewLine}" +
+                            $"Error:{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show($"Can't retrieve the Maintenance information.{vbNewLine}" +
+                            $"Aborting...", Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
             End
         End Try
