@@ -64,7 +64,12 @@ Public Class Utils
     End Sub
 #End Region
 
-
+    ''' <summary>
+    ''' Retourne le temps avec un espacement
+    ''' </summary>    
+    '''<param name="number">Le nombre en question genre 1000</param>
+    '''<param name="espacement">L'espace à mettre pour séparer les nombres</param>
+    ''' <remarks></remarks>
     Public Shared Function NumberToHumanReadable(number As String, espacement As String)
         If espacement.Length = 0 Then
             Debug.WriteLine("espacement est NUL !!!!")
@@ -97,7 +102,7 @@ Public Class Utils
                 End If
                 Return number
             End If
-
+            Return number
         End If
     End Function
 

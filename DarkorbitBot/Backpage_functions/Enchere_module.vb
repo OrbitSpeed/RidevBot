@@ -3,7 +3,7 @@
 Public Class Enchere_module
     Public Shared WebClient_POST As New WebClient
 
-    Public Shared Function Load()
+    Public Shared Sub Load()
 
 
         WebClient_POST.Headers.Clear()
@@ -11,10 +11,7 @@ Public Class Enchere_module
         Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalAuction")
         Console.WriteLine(WebClient_Data)
 
-
-
-
-    End Function
+    End Sub
 
 
 End Class

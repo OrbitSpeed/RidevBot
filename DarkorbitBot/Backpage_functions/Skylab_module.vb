@@ -5,7 +5,7 @@ Public Class Skylab_module
 
     Public Shared Socket As New System.Net.WebClient
 
-    Public Shared Function Load()
+    Public Shared Sub Load()
 
         Socket.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
         Dim WebClient_Data_Skylab = Socket.DownloadString("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalSkylab")
@@ -48,6 +48,6 @@ Public Class Skylab_module
         'Dim WebClient_Data_Skylab_promerium_max = Regex.Matches(WebClient_Data_Skylab, "<div class.*?<\/div>", 14).ToString
         'Dim WebClient_Data_Skylab_seprom_max = Regex.Matches(WebClient_Data_Skylab, "<div class.*?<\/div>", 16).ToString
 
-    End Function
+    End Sub
 
 End Class

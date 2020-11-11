@@ -13,7 +13,7 @@ Public Class Palladium_module
     Public Shared MOUTON As String
     Public Shared PLK As Integer
 
-    Public Shared Function Load()
+    Public Shared Sub Load()
 
 
         WebClient_POST.Headers.Clear()
@@ -32,19 +32,19 @@ Public Class Palladium_module
             data_list.Add(Contains_Hangar)
 
             Dim Hangar_counter As String = 1
-            Form_tools.ComboBox_Base_Hangar.Items.Clear()
-            Form_tools.ComboBox_collectable_Hangar.Items.Clear()
-            Form_tools.ComboBox_5_3_Hangar.Items.Clear()
+            Form_Tools.ComboBox_Base_Hangar.Items.Clear()
+            Form_Tools.ComboBox_collectable_Hangar.Items.Clear()
+            Form_Tools.ComboBox_5_3_Hangar.Items.Clear()
 Label_Base:
             If data_list.Count = Hangar_counter Then
-                Form_tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
 
             Else
-                Form_tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
+                Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
                 Hangar_counter = Val(Hangar_counter) + 1
                 GoTo Label_Base
 
@@ -52,9 +52,9 @@ Label_Base:
 
         Next
 
-    End Function
+    End Sub
 
-    Public Shared Async Function Hangar_resolver() As Task
+    Public Shared Sub Hangar_resolver()
 
         If PLK.ToString.Contains("Wait to Update") Then
 
@@ -99,7 +99,7 @@ Label_Base:
             MessageBox.Show("No hangar selected")
         End If
 
-    End Function
+    End Sub
 
 
 

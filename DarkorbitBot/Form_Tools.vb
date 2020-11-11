@@ -675,7 +675,7 @@ Public Class Form_Tools
 
     End Sub ' button Home TopBar
 
-    Private Async Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
+    Private Sub WebBrowser_Synchronisation_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser_Synchronisation.DocumentCompleted
 
         If WebBrowser_Synchronisation.Url.ToString.Contains("loginError=99") Then
 
@@ -755,12 +755,12 @@ Public Class Form_Tools
                     niveau = compagny_regex.Item(2).ToString.Replace(": ", "").Replace(" ", "").Replace(vbCr, "").Replace(vbLf, "")
                 End If
 
-                TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
+                'TextBox_username.Text = Utils.userid + " -   " + username + "   - " + Utils.server
+                TextBox_username.Text = " [" + " " + "] " + username
                 TextBox_clan.Text = clan
                 PictureBox_grade.Image = My.Resources.loading
 
                 Utils.UpdateStats()
-                Stats_module.Load()
 
                 Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser"
                 Button_LaunchGameRidevBrowser.Cursor = Cursors.Hand
@@ -777,10 +777,9 @@ Public Class Form_Tools
                     Form_Game.Show()
 
                 End If
+                Stats_module.Load()
             End If
-
         End If
-
 
 
     End Sub ' !!!!! A VERIFIER ET A OPTIMISER !!!
@@ -954,6 +953,7 @@ Public Class Form_Tools
 
     Private Sub Button_BOX_general_Click(sender As Object, e As EventArgs) Handles Button_BOX_general.Click
 
+        'Test en cours
         For Each Con As Control In Me.Controls
             If Con.GetType Is GetType(Button) Then
                 Console.WriteLine(Con.Text)
@@ -1136,6 +1136,27 @@ Public Class Form_Tools
     Private Sub Button_reload_sid_GGS_Click(sender As Object, e As EventArgs) Handles Button_reload_sid_GGS.Click
 
         Reload_sid.Get_()
+
+    End Sub
+
+    Private Sub PictureBox_visibility_Click(sender As Object, e As EventArgs) Handles PictureBox_visibility.Click
+
+        Dim tagBoolean As Boolean = PictureBox_visibility.Tag
+
+        If tagBoolean Then
+            PictureBox_visibility.Image = My.Resources.visibility_off
+            PictureBox_visibility.Tag = "0"
+            TextBox_username.Visible = False
+            TextBox_ProfilSelected.Visible = False
+            TextBox_Get_Dosid.Visible = False
+
+        Else
+            PictureBox_visibility.Image = My.Resources.visibility
+            PictureBox_visibility.Tag = "1"
+            TextBox_username.Visible = True
+            TextBox_ProfilSelected.Visible = True
+            TextBox_Get_Dosid.Visible = True
+        End If
 
     End Sub
 End Class
