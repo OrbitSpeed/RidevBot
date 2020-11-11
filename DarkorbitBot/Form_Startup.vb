@@ -192,9 +192,9 @@ Public Class Form_Startup
 
     Private Sub Launcher()
 
+        Form_Tools.Show()
         Form_Tools.WebBrowser_Synchronisation.Navigate("https://darkorbit-22.bpsecure.com/")
         Label_point_de_chute.Select()
-        Form_Tools.Show()
         Form_Tools.TextBox_ProfilSelected.Text = Textbox_Username.Text
         Close()
 

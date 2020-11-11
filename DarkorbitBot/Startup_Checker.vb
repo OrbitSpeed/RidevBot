@@ -1,12 +1,10 @@
 ﻿Imports System.IO
 
 Public Class Startup_Checker
-
-
-
     Private Async Sub Startup_Checker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '{"AxInterop.WMPLib.dll", My.Resources.AxInterop_WMPLib},
+        '{"Interop.WMPLib.dll", My.Resources.Interop_WMPLib},
         Dim DLL_List = New Dictionary(Of String, Byte()) From {
-            {"AxInterop.WMPLib.dll", My.Resources.AxInterop_WMPLib},
             {"Firebase.Auth.dll", My.Resources.Firebase_Auth},
             {"FirebaseAdmin.dll", My.Resources.FirebaseAdmin},
             {"FireSharp.dll", My.Resources.FireSharp},
@@ -17,7 +15,6 @@ Public Class Startup_Checker
             {"Google.Apis.Core.dll", My.Resources.Google_Apis_Core},
             {"Google.Apis.dll", My.Resources.Google_Apis},
             {"Google.Apis.PlatformServices.dll", My.Resources.Google_Apis_PlatformServices},
-            {"Interop.WMPLib.dll", My.Resources.Interop_WMPLib},
             {"Microsoft.Threading.Tasks.dll", My.Resources.Microsoft_Threading_Tasks},
             {"Microsoft.Threading.Tasks.Extensions.Desktop.dll", My.Resources.Microsoft_Threading_Tasks_Extensions_Desktop},
             {"Newtonsoft.Json.dll", My.Resources.Newtonsoft_Json},
@@ -39,8 +36,9 @@ Public Class Startup_Checker
             Dim Name As String = kvp.Key
             Dim Ressource As Byte() = kvp.Value
 
-            Console.WriteLine("Name: {0}, Ressource: {1}", Name, Ressource)
-            File.WriteAllBytes(Path.Combine(Application.StartupPath, Name), Ressource)
+            If Not File.Exists(Path.Combine(Application.StartupPath, Name)) Then
+                File.WriteAllBytes(Path.Combine(Application.StartupPath, Name), Ressource)
+            End If
             'Do whatever you want with v2:
             'If v2.ImageID = .... Then
         Next

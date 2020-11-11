@@ -48,6 +48,7 @@ Public Class AutoUpdater
 
         'Console.WriteLine(My.Computer.Registry.LocalMachine)
         Dim Everest_Registry As Microsoft.Win32.RegistryKey = My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\WOW6432Node\AutoIt v3\AutoIt")
+        'MessageBox.Show(Everest_Registry.GetValue("InstallDir"))
         If Everest_Registry Is Nothing Then
             'key does not exist
             'MsgBox("Key does Not exist")
@@ -148,8 +149,10 @@ Public Class AutoUpdater
 
             'Dim installation = Shell(Path.Combine(Path.GetTempPath, "autoit-setup.exe /S"), AppWinStyle.NormalFocus, True, 1500)
             MessageBox.Show($"An installation package will be opened{vbNewLine}{vbNewLine}" +
+                            $"PLEASE DO 'NEXT' EVERYWHERE, WE NEED THE DEFAULT PARAMETERS{vbNewLine}" +
+                            $"If you don't do that, the bot won't work correctly !{vbNewLine}" +
                             $"Please press 'Yes' to install our dependancies", "RidevBot Installation", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Dim installation = Process.Start(Path.Combine(Path.GetTempPath, "autoit-setup.exe"), "/S")
+            Process.Start(Path.Combine(Path.GetTempPath, "autoit-setup.exe"), "")
             FlatTextBox_Changelog.Text = $"Installing the dependancies...{vbNewLine}Please wait..."
             CheckPassed = 2
 
