@@ -60,57 +60,81 @@ Search_load:
         ElseIf WebClient_GET_All_elements_currentWave = "12" Then
             Current_npc = "saimon" ' df
             Distance_npc = saimon_alpha
-            control_killed_selection = "10"
+            control_killed_selection = "5"
 
         ElseIf WebClient_GET_All_elements_currentWave = "16" Then
             Current_npc = "devolarium"
             Distance_npc = devolarium_alpha
-            control_killed_selection = "15"
+            control_killed_selection = "11"
 
         ElseIf WebClient_GET_All_elements_currentWave = "20" Then
             Current_npc = "kristallin"
             Distance_npc = kristallin_alpha
-            control_killed_selection = "9"
+            control_killed_selection = "5"
 
         ElseIf WebClient_GET_All_elements_currentWave = "24" Then
             Current_npc = "sibelon"
             Distance_npc = sibelon_alpha
-            control_killed_selection = "15"
+            control_killed_selection = "11"
 
         ElseIf WebClient_GET_All_elements_currentWave = "28" Then
             Current_npc = "sibelonit"
             Distance_npc = sibelonit_alpha
-            control_killed_selection = "8"
+            control_killed_selection = "5"
 
         ElseIf WebClient_GET_All_elements_currentWave = "32" Then
             Current_npc = "kristallon"
             Distance_npc = kristallon_alpha
-            control_killed_selection = "20"
+            control_killed_selection = "16"
 
         ElseIf WebClient_GET_All_elements_currentWave = "36" Or
             WebClient_GET_All_elements_currentWave = "40" Then
             Current_npc = "protegit" 'df
             Distance_npc = protegit_alpha
-            control_killed_selection = "15"
+            control_killed_selection = "5"
 
         End If
 
+        Console.WriteLine(" ")
         Console.WriteLine("Current Gate :")
         Console.WriteLine(WebClient_GET_All_elements)
+        Console.WriteLine(" ")
+        Console.WriteLine("Current state :")
+        Console.WriteLine(WebClient_GET_All_elements_currentstate)
+        Console.WriteLine(" ")
         Console.WriteLine("Current Waves :")
         Console.WriteLine(WebClient_GET_All_elements_currentWave)
+        Console.WriteLine(" ")
         Console.WriteLine("Current Npc : ")
         Console.WriteLine(Current_npc)
+        Console.WriteLine(" ")
         Console.WriteLine("Current distance of : ")
         Console.WriteLine(Distance_npc)
+        Console.WriteLine(" ")
         Console.WriteLine("Current control selection killed : ")
         Console.WriteLine(control_killed_selection)
+        Console.WriteLine(" ")
 
-        Await Task.Delay(12000)
+        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+
+        If WebClient_GET_All_elements_currentstate = "in_progress" Then
+        Else
+            If Form_Tools.TextBox_end_gates.Text = "" Or
+                Form_Tools.TextBox_end_gates.Text = " " Then
+            Else
+                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_end_gates.Text))
+                Await Task.Delay(1000)
+            End If
+        End If
+
+        Await Task.Delay(5000)
 
 Base_macro:
 
+        ' controle de la vie 
+        ' controle du bouclier 
 
+        ' essayer de controler les positions X et Y et interagir en consequence selon certain type de npc 
 
         Dim Npc_in_map = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
         If Npc_in_map.ToString.Contains(Var.Student) Then
@@ -136,7 +160,7 @@ Base_macro:
                     Await Task.Delay(500)
                 Else
                     Console.WriteLine("coin droite")
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 771, 58)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Coin_droite.X, Coin_droite.Y)
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
                     Await Task.Delay(500)
                 End If
@@ -157,10 +181,19 @@ Base_macro:
 
             Else
 
-                Console.WriteLine("Npc found")
-                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc_in_map_ref(0), Npc_in_map_ref(1) - 17)
-                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-                Await Task.Delay(500)
+                If control_selection = 1 Then
+
+                    Console.WriteLine("Npc found")
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Npc_in_map_ref(0), Npc_in_map_ref(1) - 17)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                    Await Task.Delay(500)
+
+                Else
+                    Console.WriteLine("control_selection = 0     >>>      Debug")
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                    Await Task.Delay(500)
+
+                End If
 
             End If
 
@@ -177,7 +210,7 @@ Return_in_traveling:
 
                 If Reference_npc_control <> Nothing Then
 
-                    Await Task.Delay(100)
+                    Await Task.Delay(10)
                     Console.WriteLine("Npc Arround")
                     Console.WriteLine("traveling interrupted")
                 Else
@@ -241,12 +274,17 @@ Return_Npc_not_on_lock:
                         If Reference_npc.X >= pointer_scan Then
                             If Reference_npc.X - Distance_npc <= pointer0 Then
                                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 1, Reference_npc.Y)
-                            Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X - Distance_npc, Reference_npc.Y)
+                            Else
+                                ' if npc sibelonit exemple
+                                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X - Distance_npc, Reference_npc.Y)
                             End If
                         Else
                             If Reference_npc.X + Distance_npc >= pointer800 Then
                                 Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, Reference_npc.Y)
-                            Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X + Distance_npc, Reference_npc.Y)
+                            Else
+                                ' if npc sibelonit exemple
+
+                                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc.X + Distance_npc, Reference_npc.Y)
                             End If
                         End If
 
@@ -256,12 +294,16 @@ Return_Npc_not_on_lock:
 
                     Else
                         Console.WriteLine("out of map1")
-                        Await Task.Delay(500)
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                        Await Task.Delay(5000)
                         GoTo Return_Npc_not_on_lock
                     End If
                 Else
                     Console.WriteLine("out of map1_second")
-                    Await Task.Delay(500)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                    Await Task.Delay(5000)
                     GoTo Return_Npc_not_on_lock
                 End If
 
@@ -299,23 +341,27 @@ Return_OnLock:
                         Else
 
                             Console.WriteLine("out of map2")
-                            Await Task.Delay(500)
+                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                            Await Task.Delay(5000)
                             GoTo Return_OnLock
                         End If
                     Else
 
-                        Console.WriteLine("out of map2")
-                        Await Task.Delay(500)
+                        Console.WriteLine("out of map2_second")
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                        Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                        Await Task.Delay(5000)
                         GoTo Return_OnLock
                     End If
 
 
                     Await Task.Delay(100)
-                        GoTo Return_OnLock
+                    GoTo Return_OnLock
 
-                    Else
+                Else
 
-                        If Control_killed_searching = control_killed_selection Then
+                    If Control_killed_searching = control_killed_selection Then
                         Console.WriteLine("Npc Not on lock")
                         Control_killed_searching = 0
                         GoTo Return_Npc_not_on_lock
@@ -323,11 +369,58 @@ Return_OnLock:
                     Else
                         Control_killed_searching = Control_killed_searching + 1
                         Console.WriteLine("Verification du lock")
-                        Await Task.Delay(10)
+
+                        If WebClient_GET_All_elements_currentWave = "4" Or
+                             WebClient_GET_All_elements_currentWave = "12" Or
+                             WebClient_GET_All_elements_currentWave = "18" Or
+                            WebClient_GET_All_elements_currentWave = "36" Or
+                             WebClient_GET_All_elements_currentWave = "40" Then
+
+                            Var.Update_Screen()
+
+                            Dim All_Npc_ref = My.Resources.All_npc
+                            Dim Reference_npc_ref As Point = Var.Client_Screen.Contains(All_Npc)
+                            Dim control_bordure_ref = My.Resources.out_map
+                            Dim Bordure_control_ref As Point = Var.Client_Screen.Contains(control_bordure)
+                            Dim control_bordure_second_ref = My.Resources.out_map_second
+                            Dim Bordure_control_second_ref As Point = Var.Client_Screen.Contains(control_bordure_second)
+
+                            If Bordure_control_second <> Nothing Then
+                                If Bordure_control <> Nothing Then
+
+                                    If Reference_npc_ref.X >= pointer_scan Then
+                                        If Reference_npc_ref.X - Distance_npc <= pointer0 Then
+                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 1, Reference_npc_ref.Y)
+                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc_ref.X - Distance_npc, Reference_npc_ref.Y)
+                                        End If
+                                    Else
+                                        If Reference_npc_ref.X + Distance_npc >= pointer800 Then
+                                            Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 799, Reference_npc_ref.Y)
+                                        Else Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Reference_npc_ref.X + Distance_npc, Reference_npc_ref.Y)
+                                        End If
+                                    End If
+
+                                Else
+                                    Console.WriteLine("out of map1")
+                                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                                    Await Task.Delay(5000)
+                                    GoTo Return_Npc_not_on_lock
+                                End If
+                            Else
+                                Console.WriteLine("out of map1_second")
+                                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                                Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                                Await Task.Delay(5000)
+                                GoTo Return_Npc_not_on_lock
+                            End If
+                        End If
+
+                        Await Task.Delay(100)
                         GoTo Return_OnLock
 
-                    End If
 
+                    End If
 
                 End If
 
@@ -349,8 +442,7 @@ Return_OnLock:
 
                 Console.WriteLine("Wave terminated")
 
-                If Form_Tools.CheckBox_kill_alpha_lordakia.Checked = True Then ' CHANGER >>>    CheckBox_kill_alpha_lordakia > si npc alors plus haut alors un autre plus bas etc ! l'endroit du portail change selon la vague !
-                    ' sert aussi a definir si on veut passer a la vague d'apres ou sarreter avec la checkbox kill >>>
+                If Form_Tools.CheckBox_alpha_gates_module.Checked = True Then ' Check box alpha
 
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' portail gauche
                     Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
@@ -371,7 +463,7 @@ Return_traveling_map:
                 Dim traveling_indication_point As Point = Var.Client_Screen.Contains(traveling_indication)
                 If traveling_indication_point <> Nothing Then
                     Console.WriteLine("traveling indication trouvée")
-                    Await Task.Delay(1000)
+                    Await Task.Delay(2500)
                     GoTo Return_traveling_map
 
                 Else
@@ -380,7 +472,7 @@ Return_traveling_map:
                     Dim traveling_indication_checking As Point = Var.Client_Screen.Contains(traveling_indication)
                     If traveling_indication_checking <> Nothing Then
                         Console.WriteLine("traveling indication trouvée")
-                        Await Task.Delay(1000)
+                        Await Task.Delay(2500)
                         GoTo Return_traveling_map
                     Else
                         Console.WriteLine("No moving")
@@ -391,10 +483,13 @@ Return_traveling_map:
                 GoTo Base_macro
 
             Else
+
                 Console.WriteLine("Checking Waves in progress..")
                 Dim Npc_in_map_Afterwork = Var.AutoIt.PixelSearch(595, 465, 785, 595, 13369344, 0, 1)
                 If Npc_in_map_Afterwork.ToString.Contains(Var.Student) Then
-                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522)
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 683, 522) ' Debug
+                    Var.AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                    Await Task.Delay(2500)
                     GoTo Base_macro
 
                 Else
