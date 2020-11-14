@@ -912,19 +912,6 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_game_doodle_Click(sender As Object, e As EventArgs) Handles Button_game_doodle.Click
-
-        If Button_game_doodle.Text = "Game" Then
-            Button_game_doodle.Text = "Gates"
-            WebBrowser_galaxyGates.Navigate("http://doodlejumppc.net/doodlejump.swf")
-
-        Else Button_game_doodle.Text = "Gates"
-            Button_game_doodle.Text = "Game"
-            Button_Alpha.PerformClick()
-
-        End If
-    End Sub
-
     Private Sub Button_skylab_Click(sender As Object, e As EventArgs) Handles Button_skylab.Click
 
         Panel_Skylab.Visible = True
@@ -1123,7 +1110,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_reload_sid_GGS_Click(sender As Object, e As EventArgs) Handles Button_reload_sid_GGS.Click
+    Private Sub Button_reload_sid_GGS_Click(sender As Object, e As EventArgs)
 
         Reload_sid.Get_()
 
@@ -1156,20 +1143,6 @@ Public Class Form_Tools
 
     Private Sub TextBox_jump_key_TextChanged(sender As Object, e As EventArgs) Handles TextBox_jump_key.TextChanged
         TextBox_jump_key.Text = TextBox_jump_key.Text.ToLower()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-        Try
-
-            Dim down = (Form_Game.WebBrowser_Game_Ridevbot.Document.GetElementById(TextBox7.Text)).InnerText
-            Console.WriteLine(down)
-
-        Catch ex As Exception
-
-            Console.WriteLine(ex.Message)
-        End Try
-
     End Sub
 
     Private Sub Button_force_reload_hangar_list_Click(sender As Object, e As EventArgs) Handles Button_force_reload_hangar_list.Click

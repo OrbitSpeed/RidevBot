@@ -219,13 +219,10 @@ Public Class GalaxyGates_module
 
             Form_Tools.ComboBox_autospin.Text = GalaxyGates_Name
 
-            If Form_Tools.Button_game_doodle.Text = "Game" Then
-
+            If Form_Tools.CheckBox_refresh_img_GGS.Checked = True Then
                 Form_Tools.WebBrowser_galaxyGates.Navigate("https://" + Utils.server + ".darkorbit.com/jumpgate.php?userID=" + Utils.userid + "&gateID=" + GalaxyGates_id + "&type=full")
-
-            Else
-
             End If
+
         Catch ex As Exception
             Console.WriteLine(ex.Message)
             MessageBox.Show($"An error occured while trying to spin.{vbNewLine}{ex.Message}", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -404,7 +401,7 @@ LABEL_BOUCLE:
             End If
 
             Dim Prepare_Gates_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&sid=" + Utils.dosid + "&action=setupGate&gateID=" + GalaxyGates_id)
-            View(GalaxyGates_id, GalaxyGates_Name)
+            View(GalaxyGates_id, GalaxyGates_Name) '
             Load()
 
             If Form_Tools.CheckBox_BuildOneAndStop.Checked = True Then
@@ -472,8 +469,8 @@ LABEL_BOUCLE:
             PART_CHECKER = 0
         End If
 
-        Try
-            WebClient_POST.Headers.Clear()
+        'Try
+        WebClient_POST.Headers.Clear()
             WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
             Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/flashinput/galaxyGates.php?userID=" + Utils.userid + "&action=multiEnergy&sid=" + Utils.dosid + "&gateID=" + GalaxyGates_id + "&" + GalaxyGates_Name + "=1&sample=1&sample=1&multiplier=1")
             Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
@@ -673,15 +670,15 @@ LABEL_BOUCLE:
 
                 Else
 
-                    View(Webclient_GET_Items_item_id_Gates, GalaxyGates_Name)
+                View(Webclient_GET_Items_item_id_Gates, GalaxyGates_Name)
 
-                    If Webclient_GET_Items_part_multiplier_used = Nothing Then
+                If Webclient_GET_Items_part_multiplier_used = Nothing Then
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Part N° : " + Webclient_GET_Items_part_id + " Added" + Form_Tools.TextBox_WinGGS.Text
                     Else
                         Form_Tools.TextBox_WinGGS.Text = vbNewLine + GalaxyGates_Name_Get_Items + " :   Multiple Part Added" + Form_Tools.TextBox_WinGGS.Text
                     End If
 
-                    Load()
+                    Load() '
 
                     If Spin_Sample = 1 Then
                         GoTo LABEL_BOUCLE
@@ -722,26 +719,26 @@ LABEL_BOUCLE:
                 Exit Sub
             End If
 
-        Catch ex As Exception
-            Console.WriteLine(ex.Message)
-            'MessageBox.Show($"Something strange limit your spin (╯°□°）╯︵ ┻━┻{vbNewLine}" +
-            '$"Please create a ticket and send this error with the number of spin done. Thanks !{vbNewLine}{vbNewLine}" +
-            '$"Error: {ex.Message}{vbNewLine}{vbNewLine}", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Form_Tools.Button_stopSpin.PerformClick()
-            Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Getting an error, waiting 15 sec to prevent the Limit Rate of DarkOrbit..." + vbNewLine + Form_Tools.TextBox_WinGGS.Text
-            'WebClient_POST.Headers.Clear()
-            Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
-            Closing_Spinner()
-            Form_Tools.Button_stopSpin.PerformClick()
-            Task.Delay(2000)
-            Form_Tools.Button_revive_sid_Click(Nothing, Nothing)
-            Task.Delay(13000)
-            Form_Tools.Button_StartSpin.PerformClick()
-            Exit Sub
+        'Catch ex As Exception
+        '    Console.WriteLine(ex.Message)
+        '    'MessageBox.Show($"Something strange limit your spin (╯°□°）╯︵ ┻━┻{vbNewLine}" +
+        '    '$"Please create a ticket and send this error with the number of spin done. Thanks !{vbNewLine}{vbNewLine}" +
+        '    '$"Error: {ex.Message}{vbNewLine}{vbNewLine}", "RidevBot", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    'Form_Tools.Button_stopSpin.PerformClick()
+        '    Form_Tools.TextBox_WinGGS.Text = vbNewLine + $"Getting an error, waiting 15 sec to prevent the Limit Rate of DarkOrbit..." + vbNewLine + Form_Tools.TextBox_WinGGS.Text
+        '    'WebClient_POST.Headers.Clear()
+        '    Form_Tools.TextBox_total_spinned.Text = Val(Form_Tools.TextBox_total_spinned.Text) + 1
+        '    Closing_Spinner()
+        '    Form_Tools.Button_stopSpin.PerformClick()
+        '    Task.Delay(2000)
+        '    Form_Tools.Button_revive_sid_Click(Nothing, Nothing)
+        '    Task.Delay(13000)
+        '    Form_Tools.Button_StartSpin.PerformClick()
+        '    Exit Sub
 
-            'Form_Tools.Button_stopSpin_Click(Nothing, Nothing)
-            'Form_Tools.Button_StartSpin_Click(Nothing, Nothing)
-        End Try
+        '    'Form_Tools.Button_stopSpin_Click(Nothing, Nothing)
+        '    'Form_Tools.Button_StartSpin_Click(Nothing, Nothing)
+        'End Try
 
     End Sub 'TODO
 
