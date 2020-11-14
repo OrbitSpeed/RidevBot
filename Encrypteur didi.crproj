@@ -1,0 +1,7 @@
+<project outputDir="C:\Users\DilanTC\source\repos\RidevBot\DarkorbitBot\bin\Release\Confused" baseDir="C:\Users\DilanTC\source\repos\RidevBot\DarkorbitBot\bin\Release" xmlns="http://confuser.codeplex.com">
+  <module path="C:\Users\DilanTC\source\repos\RidevBot\DarkorbitBot\bin\Release\RidevBot.exe">
+    <rule pattern="true" preset="maximum">
+      <protection id="rename" action="remove" />
+    </rule>
+  </module>
+</project>

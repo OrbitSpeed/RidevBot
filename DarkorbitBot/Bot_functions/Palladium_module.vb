@@ -15,6 +15,14 @@ Public Class Palladium_module
 
     Public Shared Sub Load()
 
+        Contains_Hangar = ""
+        _datatodo = ""
+        Try
+
+            data_list.clear
+        Catch ex As Exception
+
+        End Try
 
         WebClient_POST.Headers.Clear()
         WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
@@ -22,6 +30,7 @@ Public Class Palladium_module
 
         Dim WebClient_GET_All_elements = Regex.Match(WebClient_Data, "<div id=""header_main"">.*?([\s\S]*?)<div id=""hangar_slot_arrow""><\/div>").Groups.Item(1).ToString
         _datatodo = Regex.Matches(WebClient_GET_All_elements, "href=""(.*)""")
+
 
         For Each Contains_Hangar As Match In _datatodo
             For Each ID In Contains_Hangar.Captures
@@ -31,15 +40,13 @@ Public Class Palladium_module
             Next
             data_list.Add(Contains_Hangar)
 
-            Dim Hangar_counter As String = 1
+            Dim Hangar_counter As String = 0
+
             Form_Tools.ComboBox_Base_Hangar.Items.Clear()
             Form_Tools.ComboBox_collectable_Hangar.Items.Clear()
             Form_Tools.ComboBox_5_3_Hangar.Items.Clear()
 Label_Base:
             If data_list.Count = Hangar_counter Then
-                Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
 
             Else
                 Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)

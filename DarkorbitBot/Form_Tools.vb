@@ -934,12 +934,6 @@ Public Class Form_Tools
 
     Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
-        ComboBox_5_3_Hangar.Items.Clear()
-        ComboBox_Base_Hangar.Items.Clear()
-        ComboBox_collectable_Hangar.Items.Clear()
-        ComboBox_5_3_Hangar.Refresh()
-        ComboBox_Base_Hangar.Refresh()
-        ComboBox_collectable_Hangar.Refresh()
         Palladium_module.Load()
 
     End Sub
@@ -1129,10 +1123,6 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Panel_autospin_Paint(sender As Object, e As PaintEventArgs) Handles Panel_autospin.Paint
-
-    End Sub
-
     Private Sub Button_reload_sid_GGS_Click(sender As Object, e As EventArgs) Handles Button_reload_sid_GGS.Click
 
         Reload_sid.Get_()
@@ -1166,5 +1156,25 @@ Public Class Form_Tools
 
     Private Sub TextBox_jump_key_TextChanged(sender As Object, e As EventArgs) Handles TextBox_jump_key.TextChanged
         TextBox_jump_key.Text = TextBox_jump_key.Text.ToLower()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Try
+
+            Dim down = (Form_Game.WebBrowser_Game_Ridevbot.Document.GetElementById(TextBox7.Text)).InnerText
+            Console.WriteLine(down)
+
+        Catch ex As Exception
+
+            Console.WriteLine(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub Button_force_reload_hangar_list_Click(sender As Object, e As EventArgs) Handles Button_force_reload_hangar_list.Click
+
+        Palladium_module.Load()
+
     End Sub
 End Class
