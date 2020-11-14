@@ -552,7 +552,12 @@ Public Class Form_Tools
         GalaxyGates_module.Spin(0)
     End Sub
     Private Sub Button_PrepareGates_Click(sender As Object, e As EventArgs) Handles Button_PrepareGates.Click
-        GalaxyGates_module.PrepareGates()
+
+        If Button_PrepareGates.Text = "Prepare _Gates" Then
+            MessageBox.Show("Select Gate in first")
+        Else GalaxyGates_module.PrepareGates()
+        End If
+
 
     End Sub ' button prepare Gates
     Public Sub Button_StartSpin_Click(sender As Object, e As EventArgs) Handles Button_StartSpin.Click
@@ -1148,6 +1153,10 @@ Public Class Form_Tools
     Private Sub Button_force_reload_hangar_list_Click(sender As Object, e As EventArgs) Handles Button_force_reload_hangar_list.Click
 
         Palladium_module.Load()
+
+    End Sub
+
+    Private Sub CheckBox_simultaneous_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_simultaneous.CheckedChanged
 
     End Sub
 End Class
