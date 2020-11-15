@@ -55,6 +55,13 @@ Public Class GalaxyGates_module
             Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
             Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
             Form_Tools.Leaderprice.Text = Regex.Match(WebClient_Data, "<energy_cost mode=""standard"">(.*)<\/energy_cost>").Groups.Item(1).ToString + " U." 'Spin Price
+            Dim pourcentage_de_reduction = Regex.Match(WebClient_Data, "<spinSalePercentage>(.*)<\/spinSalePercentage").Groups.Item(1).ToString + " %. Reducted for 1 spin today" 'Spin Price
+            Dim Double_Win_day = Regex.Match(WebClient_Data, "<galaxyGateDay>(.*)<\/galaxyGateDay").Groups.Item(1).ToString + " ( double win day )" 'Spin Price
+
+            If Double_Win_day.Contains("1") Then
+                Form_Tools.PictureBox_DoubleWinGGS.Visible = True
+            Else Form_Tools.PictureBox_DoubleWinGGS.Visible = False
+            End If
 
             Dim WebClient_GET_All_elements_Alpha = Regex.Match(WebClient_Data, "<gate (.*id=""1" + Table_Load).Groups.Item(1).ToString 'A
             Dim WebClient_GET_current_part_Alpha = Regex.Match(WebClient_GET_All_elements_Alpha, "current="".*?([\s\S]*?)""").Groups.Item(1).ToString
@@ -529,11 +536,9 @@ LABEL_BOUCLE:
         If Webclient_GET_Items_date = Nothing Then
             Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
             Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
-
-            Form_Tools.Button_StartSpin.Enabled = True
-            Form_Tools.Button_stopSpin.Enabled = False
-            Form_Tools.ComboBox_autospin.Enabled = True
+            Closing_Spinner()
             Exit Sub
+
         Else Form_Tools.DATE_REMAINING.Text = Webclient_GET_Items_date + " Done."
         End If
 
@@ -572,9 +577,7 @@ LABEL_BOUCLE:
             Form_Tools.TextBox_WinGGS.Text = "Your dosid is broken"
             Form_Tools.DATE_REMAINING.Text = "Your dosid is broken"
 
-            Form_Tools.Button_StartSpin.Enabled = True
-            Form_Tools.Button_stopSpin.Enabled = False
-            Form_Tools.ComboBox_autospin.Enabled = True
+            Closing_Spinner()
             Exit Sub
 
         End If
@@ -681,9 +684,7 @@ LABEL_BOUCLE:
                 If Spin_Sample = 1 Then
                     GoTo LABEL_BOUCLE
                 Else
-                    Form_Tools.Button_StartSpin.Enabled = True
-                    Form_Tools.Button_stopSpin.Enabled = False
-                    Form_Tools.ComboBox_autospin.Enabled = True
+                    Closing_Spinner()
                     Exit Sub
                 End If
 
@@ -702,9 +703,7 @@ LABEL_BOUCLE:
                 If Spin_Sample = 1 Then
                     GoTo LABEL_BOUCLE
                 Else
-                    Form_Tools.Button_StartSpin.Enabled = True
-                    Form_Tools.Button_stopSpin.Enabled = False
-                    Form_Tools.ComboBox_autospin.Enabled = True
+                    Closing_Spinner()
                     Exit Sub
                 End If
 
@@ -761,9 +760,7 @@ LABEL_BOUCLE:
         If Spin_Sample = 1 Then
             GoTo LABEL_BOUCLE
         Else
-            Form_Tools.Button_StartSpin.Enabled = True
-            Form_Tools.Button_stopSpin.Enabled = False
-            Form_Tools.ComboBox_autospin.Enabled = True
+            Closing_Spinner()
             Exit Sub
         End If
 

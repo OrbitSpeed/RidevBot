@@ -981,10 +981,10 @@ Partial Class Form_Tools
         Me.Label_working_map.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_working_map.AutoSize = True
         Me.Label_working_map.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_working_map.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_working_map.Location = New System.Drawing.Point(41, 247)
+        Me.Label_working_map.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_working_map.Location = New System.Drawing.Point(35, 246)
         Me.Label_working_map.Name = "Label_working_map"
-        Me.Label_working_map.Size = New System.Drawing.Size(80, 15)
+        Me.Label_working_map.Size = New System.Drawing.Size(91, 17)
         Me.Label_working_map.TabIndex = 46
         Me.Label_working_map.Text = "Working Map"
         '
@@ -1062,11 +1062,11 @@ Partial Class Form_Tools
         Me.TextBox_end_gates.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_end_gates.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_end_gates.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_end_gates.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_end_gates.Location = New System.Drawing.Point(223, 210)
+        Me.TextBox_end_gates.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_end_gates.Location = New System.Drawing.Point(223, 212)
         Me.TextBox_end_gates.MaxLength = 1
         Me.TextBox_end_gates.Name = "TextBox_end_gates"
-        Me.TextBox_end_gates.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_end_gates.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_end_gates.TabIndex = 97
         Me.TextBox_end_gates.Text = "0"
         Me.TextBox_end_gates.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1076,23 +1076,23 @@ Partial Class Form_Tools
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(35, 213)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(13, 212)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 15)
+        Me.Label2.Size = New System.Drawing.Size(136, 17)
         Me.Label2.TabIndex = 96
-        Me.Label2.Text = "[ GG ] End Gates"
+        Me.Label2.Text = "[ GG ] End Gates key "
         '
         'TextBox11
         '
         Me.TextBox11.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox11.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox11.Location = New System.Drawing.Point(223, 176)
+        Me.TextBox11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(223, 178)
         Me.TextBox11.MaxLength = 1
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox11.Size = New System.Drawing.Size(31, 18)
         Me.TextBox11.TabIndex = 95
         Me.TextBox11.Text = "0"
         Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1102,36 +1102,36 @@ Partial Class Form_Tools
         Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label22.AutoSize = True
         Me.Label22.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label22.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label22.Location = New System.Drawing.Point(52, 179)
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(34, 178)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(58, 15)
+        Me.Label22.Size = New System.Drawing.Size(94, 17)
         Me.Label22.TabIndex = 94
-        Me.Label22.Text = "Kamikaze"
+        Me.Label22.Text = "Kamikaze key "
         '
         'Label_desactive_all_elements
         '
         Me.Label_desactive_all_elements.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_desactive_all_elements.AutoSize = True
         Me.Label_desactive_all_elements.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_desactive_all_elements.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_desactive_all_elements.Location = New System.Drawing.Point(61, 9)
+        Me.Label_desactive_all_elements.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_desactive_all_elements.Location = New System.Drawing.Point(7, 8)
         Me.Label_desactive_all_elements.Name = "Label_desactive_all_elements"
-        Me.Label_desactive_all_elements.Size = New System.Drawing.Size(40, 15)
+        Me.Label_desactive_all_elements.Size = New System.Drawing.Size(147, 17)
         Me.Label_desactive_all_elements.TabIndex = 46
-        Me.Label_desactive_all_elements.Text = "Resize"
+        Me.Label_desactive_all_elements.Text = "Deactivate window key"
         '
         'Label_jump
         '
         Me.Label_jump.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_jump.AutoSize = True
         Me.Label_jump.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_jump.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_jump.Location = New System.Drawing.Point(62, 43)
+        Me.Label_jump.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_jump.Location = New System.Drawing.Point(46, 42)
         Me.Label_jump.Name = "Label_jump"
-        Me.Label_jump.Size = New System.Drawing.Size(37, 15)
+        Me.Label_jump.Size = New System.Drawing.Size(70, 17)
         Me.Label_jump.TabIndex = 48
-        Me.Label_jump.Text = "Jump"
+        Me.Label_jump.Text = "Jump key "
         '
         'TextBox_desactive_allkey
         '
@@ -1139,11 +1139,11 @@ Partial Class Form_Tools
         Me.TextBox_desactive_allkey.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_desactive_allkey.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox_desactive_allkey.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Desactive_all_formkey", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TextBox_desactive_allkey.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(223, 6)
+        Me.TextBox_desactive_allkey.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_desactive_allkey.Location = New System.Drawing.Point(223, 8)
         Me.TextBox_desactive_allkey.MaxLength = 1
         Me.TextBox_desactive_allkey.Name = "TextBox_desactive_allkey"
-        Me.TextBox_desactive_allkey.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_desactive_allkey.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_desactive_allkey.TabIndex = 47
         Me.TextBox_desactive_allkey.Text = Global.DarkorbitBot.My.MySettings.Default.Desactive_all_formkey
         Me.TextBox_desactive_allkey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1153,11 +1153,11 @@ Partial Class Form_Tools
         Me.TextBox_jump_key.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_jump_key.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_jump_key.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_jump_key.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_jump_key.Location = New System.Drawing.Point(223, 40)
+        Me.TextBox_jump_key.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_jump_key.Location = New System.Drawing.Point(223, 42)
         Me.TextBox_jump_key.MaxLength = 1
         Me.TextBox_jump_key.Name = "TextBox_jump_key"
-        Me.TextBox_jump_key.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_jump_key.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_jump_key.TabIndex = 49
         Me.TextBox_jump_key.Text = "j"
         Me.TextBox_jump_key.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1167,23 +1167,23 @@ Partial Class Form_Tools
         Me.Label_attack.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_attack.AutoSize = True
         Me.Label_attack.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_attack.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_attack.Location = New System.Drawing.Point(60, 77)
+        Me.Label_attack.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_attack.Location = New System.Drawing.Point(43, 76)
         Me.Label_attack.Name = "Label_attack"
-        Me.Label_attack.Size = New System.Drawing.Size(41, 15)
+        Me.Label_attack.Size = New System.Drawing.Size(76, 17)
         Me.Label_attack.TabIndex = 62
-        Me.Label_attack.Text = "Attack"
+        Me.Label_attack.Text = "Attack key "
         '
         'TextBox_Attack
         '
         Me.TextBox_Attack.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_Attack.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_Attack.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_Attack.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_Attack.Location = New System.Drawing.Point(223, 74)
+        Me.TextBox_Attack.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Attack.Location = New System.Drawing.Point(223, 76)
         Me.TextBox_Attack.MaxLength = 1
         Me.TextBox_Attack.Name = "TextBox_Attack"
-        Me.TextBox_Attack.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_Attack.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_Attack.TabIndex = 59
         Me.TextBox_Attack.Text = "7"
         Me.TextBox_Attack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1193,23 +1193,23 @@ Partial Class Form_Tools
         Me.Label_fleeing.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_fleeing.AutoSize = True
         Me.Label_fleeing.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_fleeing.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_fleeing.Location = New System.Drawing.Point(58, 111)
+        Me.Label_fleeing.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_fleeing.Location = New System.Drawing.Point(41, 110)
         Me.Label_fleeing.Name = "Label_fleeing"
-        Me.Label_fleeing.Size = New System.Drawing.Size(45, 15)
+        Me.Label_fleeing.Size = New System.Drawing.Size(80, 17)
         Me.Label_fleeing.TabIndex = 63
-        Me.Label_fleeing.Text = "Fleeing"
+        Me.Label_fleeing.Text = "Fleeing key "
         '
         'TextBox_fleeing
         '
         Me.TextBox_fleeing.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_fleeing.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_fleeing.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_fleeing.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_fleeing.Location = New System.Drawing.Point(223, 108)
+        Me.TextBox_fleeing.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_fleeing.Location = New System.Drawing.Point(223, 110)
         Me.TextBox_fleeing.MaxLength = 1
         Me.TextBox_fleeing.Name = "TextBox_fleeing"
-        Me.TextBox_fleeing.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_fleeing.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_fleeing.TabIndex = 60
         Me.TextBox_fleeing.Text = "8"
         Me.TextBox_fleeing.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1219,23 +1219,23 @@ Partial Class Form_Tools
         Me.Label_escaping.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_escaping.AutoSize = True
         Me.Label_escaping.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_escaping.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_escaping.Location = New System.Drawing.Point(54, 145)
+        Me.Label_escaping.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_escaping.Location = New System.Drawing.Point(36, 144)
         Me.Label_escaping.Name = "Label_escaping"
-        Me.Label_escaping.Size = New System.Drawing.Size(54, 15)
+        Me.Label_escaping.Size = New System.Drawing.Size(90, 17)
         Me.Label_escaping.TabIndex = 64
-        Me.Label_escaping.Text = "Escaping"
+        Me.Label_escaping.Text = "Escaping key "
         '
         'TextBox_escaping
         '
         Me.TextBox_escaping.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox_escaping.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox_escaping.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox_escaping.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox_escaping.Location = New System.Drawing.Point(223, 142)
+        Me.TextBox_escaping.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_escaping.Location = New System.Drawing.Point(223, 144)
         Me.TextBox_escaping.MaxLength = 1
         Me.TextBox_escaping.Name = "TextBox_escaping"
-        Me.TextBox_escaping.Size = New System.Drawing.Size(31, 22)
+        Me.TextBox_escaping.Size = New System.Drawing.Size(31, 18)
         Me.TextBox_escaping.TabIndex = 61
         Me.TextBox_escaping.Text = "9"
         Me.TextBox_escaping.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1245,12 +1245,12 @@ Partial Class Form_Tools
         Me.Label_repair.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_repair.AutoSize = True
         Me.Label_repair.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_repair.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_repair.Location = New System.Drawing.Point(61, 283)
+        Me.Label_repair.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_repair.Location = New System.Drawing.Point(30, 282)
         Me.Label_repair.Name = "Label_repair"
-        Me.Label_repair.Size = New System.Drawing.Size(40, 15)
+        Me.Label_repair.Size = New System.Drawing.Size(101, 17)
         Me.Label_repair.TabIndex = 92
-        Me.Label_repair.Text = "Repair"
+        Me.Label_repair.Text = "Repair Location"
         '
         'ComboBox_repair
         '
@@ -1259,13 +1259,13 @@ Partial Class Form_Tools
         Me.ComboBox_repair.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.DarkorbitBot.My.MySettings.Default, "Repair", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.ComboBox_repair.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_repair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox_repair.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ComboBox_repair.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_repair.ForeColor = System.Drawing.Color.White
         Me.ComboBox_repair.FormattingEnabled = True
         Me.ComboBox_repair.Items.AddRange(New Object() {"Base", "Portal", "Instant"})
-        Me.ComboBox_repair.Location = New System.Drawing.Point(192, 279)
+        Me.ComboBox_repair.Location = New System.Drawing.Point(192, 278)
         Me.ComboBox_repair.Name = "ComboBox_repair"
-        Me.ComboBox_repair.Size = New System.Drawing.Size(93, 23)
+        Me.ComboBox_repair.Size = New System.Drawing.Size(93, 25)
         Me.ComboBox_repair.TabIndex = 93
         Me.ComboBox_repair.Text = Global.DarkorbitBot.My.MySettings.Default.Repair
         '
@@ -1278,15 +1278,15 @@ Partial Class Form_Tools
         Me.ComboBox_map_to_travel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_map_to_travel.DropDownWidth = 30
         Me.ComboBox_map_to_travel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox_map_to_travel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ComboBox_map_to_travel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_map_to_travel.ForeColor = System.Drawing.Color.White
         Me.ComboBox_map_to_travel.FormattingEnabled = True
         Me.ComboBox_map_to_travel.IntegralHeight = False
         Me.ComboBox_map_to_travel.Items.AddRange(New Object() {"Gates", "Palladium", "", "1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-BL", "", "2-1", "2-2", "2-3", "2-4", "2-5", "2-6", "2-7", "2-8", "2-BL", "", "3-1", "3-2", "3-3", "3-4", "3-5", "3-6", "3-7", "3-8", "3-BL", "", "4-1", "4-2", "4-3", "4-4", "4-5", "", "5-1", "5-2", "5-3"})
-        Me.ComboBox_map_to_travel.Location = New System.Drawing.Point(192, 243)
+        Me.ComboBox_map_to_travel.Location = New System.Drawing.Point(192, 242)
         Me.ComboBox_map_to_travel.MaxDropDownItems = 35
         Me.ComboBox_map_to_travel.Name = "ComboBox_map_to_travel"
-        Me.ComboBox_map_to_travel.Size = New System.Drawing.Size(93, 23)
+        Me.ComboBox_map_to_travel.Size = New System.Drawing.Size(93, 25)
         Me.ComboBox_map_to_travel.TabIndex = 57
         Me.ComboBox_map_to_travel.Text = Global.DarkorbitBot.My.MySettings.Default.map_to_travel
         '
@@ -3548,13 +3548,13 @@ Partial Class Form_Tools
         '
         Me.PictureBox_DoubleWinGGS.BackColor = System.Drawing.Color.White
         Me.PictureBox_DoubleWinGGS.Image = CType(resources.GetObject("PictureBox_DoubleWinGGS.Image"), System.Drawing.Image)
-        Me.PictureBox_DoubleWinGGS.Location = New System.Drawing.Point(219, 26)
+        Me.PictureBox_DoubleWinGGS.Location = New System.Drawing.Point(220, 28)
         Me.PictureBox_DoubleWinGGS.Name = "PictureBox_DoubleWinGGS"
         Me.PictureBox_DoubleWinGGS.Size = New System.Drawing.Size(38, 42)
         Me.PictureBox_DoubleWinGGS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox_DoubleWinGGS.TabIndex = 105
         Me.PictureBox_DoubleWinGGS.TabStop = False
-        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_DoubleWinGGS, "Double Reward Day :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.ToolTip_GalaxyGates.SetToolTip(Me.PictureBox_DoubleWinGGS, "Double Reward Day")
         Me.PictureBox_DoubleWinGGS.Visible = False
         '
         'DATE_REMAINING
@@ -4676,11 +4676,11 @@ Partial Class Form_Tools
         Me.TextBox6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox6.Location = New System.Drawing.Point(223, 202)
+        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(223, 201)
         Me.TextBox6.MaxLength = 1
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox6.Size = New System.Drawing.Size(31, 18)
         Me.TextBox6.TabIndex = 99
         Me.TextBox6.Text = "1"
         Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4690,11 +4690,11 @@ Partial Class Form_Tools
         Me.TextBox5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox5.Location = New System.Drawing.Point(223, 163)
+        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(223, 162)
         Me.TextBox5.MaxLength = 1
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox5.Size = New System.Drawing.Size(31, 18)
         Me.TextBox5.TabIndex = 98
         Me.TextBox5.Text = "1"
         Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4704,11 +4704,11 @@ Partial Class Form_Tools
         Me.TextBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox4.Location = New System.Drawing.Point(223, 125)
+        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(223, 124)
         Me.TextBox4.MaxLength = 1
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox4.Size = New System.Drawing.Size(31, 18)
         Me.TextBox4.TabIndex = 97
         Me.TextBox4.Text = "1"
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4718,11 +4718,11 @@ Partial Class Form_Tools
         Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox3.Location = New System.Drawing.Point(223, 87)
+        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(223, 86)
         Me.TextBox3.MaxLength = 1
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox3.Size = New System.Drawing.Size(31, 18)
         Me.TextBox3.TabIndex = 96
         Me.TextBox3.Text = "1"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4732,11 +4732,11 @@ Partial Class Form_Tools
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox1.Location = New System.Drawing.Point(223, 49)
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(223, 48)
         Me.TextBox1.MaxLength = 1
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox1.Size = New System.Drawing.Size(31, 18)
         Me.TextBox1.TabIndex = 95
         Me.TextBox1.Text = "1"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4746,10 +4746,10 @@ Partial Class Form_Tools
         Me.Label_RSB.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_RSB.AutoSize = True
         Me.Label_RSB.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_RSB.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_RSB.Location = New System.Drawing.Point(67, 202)
+        Me.Label_RSB.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_RSB.Location = New System.Drawing.Point(65, 201)
         Me.Label_RSB.Name = "Label_RSB"
-        Me.Label_RSB.Size = New System.Drawing.Size(28, 15)
+        Me.Label_RSB.Size = New System.Drawing.Size(31, 17)
         Me.Label_RSB.TabIndex = 94
         Me.Label_RSB.Text = "RSB"
         '
@@ -4758,10 +4758,10 @@ Partial Class Form_Tools
         Me.Label_x1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_x1.AutoSize = True
         Me.Label_x1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_x1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_x1.Location = New System.Drawing.Point(71, 11)
+        Me.Label_x1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_x1.Location = New System.Drawing.Point(70, 10)
         Me.Label_x1.Name = "Label_x1"
-        Me.Label_x1.Size = New System.Drawing.Size(19, 15)
+        Me.Label_x1.Size = New System.Drawing.Size(21, 17)
         Me.Label_x1.TabIndex = 46
         Me.Label_x1.Text = "X1"
         '
@@ -4770,10 +4770,10 @@ Partial Class Form_Tools
         Me.Label_x2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_x2.AutoSize = True
         Me.Label_x2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_x2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_x2.Location = New System.Drawing.Point(70, 49)
+        Me.Label_x2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_x2.Location = New System.Drawing.Point(69, 48)
         Me.Label_x2.Name = "Label_x2"
-        Me.Label_x2.Size = New System.Drawing.Size(21, 15)
+        Me.Label_x2.Size = New System.Drawing.Size(23, 17)
         Me.Label_x2.TabIndex = 48
         Me.Label_x2.Text = "X2"
         '
@@ -4782,11 +4782,11 @@ Partial Class Form_Tools
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox2.Location = New System.Drawing.Point(223, 11)
+        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(223, 10)
         Me.TextBox2.MaxLength = 1
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(31, 16)
+        Me.TextBox2.Size = New System.Drawing.Size(31, 18)
         Me.TextBox2.TabIndex = 47
         Me.TextBox2.Text = "1"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -4796,10 +4796,10 @@ Partial Class Form_Tools
         Me.Label_x3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_x3.AutoSize = True
         Me.Label_x3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_x3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_x3.Location = New System.Drawing.Point(70, 87)
+        Me.Label_x3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_x3.Location = New System.Drawing.Point(69, 86)
         Me.Label_x3.Name = "Label_x3"
-        Me.Label_x3.Size = New System.Drawing.Size(21, 15)
+        Me.Label_x3.Size = New System.Drawing.Size(23, 17)
         Me.Label_x3.TabIndex = 62
         Me.Label_x3.Text = "X3"
         '
@@ -4808,10 +4808,10 @@ Partial Class Form_Tools
         Me.Label_x4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_x4.AutoSize = True
         Me.Label_x4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_x4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_x4.Location = New System.Drawing.Point(70, 125)
+        Me.Label_x4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_x4.Location = New System.Drawing.Point(69, 124)
         Me.Label_x4.Name = "Label_x4"
-        Me.Label_x4.Size = New System.Drawing.Size(21, 15)
+        Me.Label_x4.Size = New System.Drawing.Size(23, 17)
         Me.Label_x4.TabIndex = 63
         Me.Label_x4.Text = "X4"
         '
@@ -4820,10 +4820,10 @@ Partial Class Form_Tools
         Me.Label_SAB.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_SAB.AutoSize = True
         Me.Label_SAB.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label_SAB.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_SAB.Location = New System.Drawing.Point(66, 163)
+        Me.Label_SAB.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_SAB.Location = New System.Drawing.Point(65, 162)
         Me.Label_SAB.Name = "Label_SAB"
-        Me.Label_SAB.Size = New System.Drawing.Size(29, 15)
+        Me.Label_SAB.Size = New System.Drawing.Size(32, 17)
         Me.Label_SAB.TabIndex = 64
         Me.Label_SAB.Text = "SAB"
         '
