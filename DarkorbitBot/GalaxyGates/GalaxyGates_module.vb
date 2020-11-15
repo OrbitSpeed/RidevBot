@@ -55,8 +55,9 @@ Public Class GalaxyGates_module
             Form_Tools.TextBox_uridiumGGS.Text = Regex.Match(WebClient_Data, "<money>(.*)<\/money>").Groups.Item(1).ToString 'Uridium
             Form_Tools.TextBox_ExtraEnergy_GGS.Text = Regex.Match(WebClient_Data, "<samples>(.*)<\/samples>").Groups.Item(1).ToString 'Eextra energy
             Form_Tools.Leaderprice.Text = Regex.Match(WebClient_Data, "<energy_cost mode=""standard"">(.*)<\/energy_cost>").Groups.Item(1).ToString + " U." 'Spin Price
-            Dim pourcentage_de_reduction = Regex.Match(WebClient_Data, "<spinSalePercentage>(.*)<\/spinSalePercentage").Groups.Item(1).ToString + " %. Reducted for 1 spin today" 'Spin Price
-            Dim Double_Win_day = Regex.Match(WebClient_Data, "<galaxyGateDay>(.*)<\/galaxyGateDay").Groups.Item(1).ToString + " ( double win day )" 'Spin Price
+            Dim pourcentage_de_reduction = Regex.Match(WebClient_Data, "<spinSalePercentage>(.*)<\/spinSalePercentage").Groups.Item(1).ToString + " %. Reducted for 1 spin today" 'spinSalePercentage
+            Dim Double_Win_day = Regex.Match(WebClient_Data, "<galaxyGateDay>(.*)<\/galaxyGateDay").Groups.Item(1).ToString + " ( double win day )" 'galaxyGateDay
+            Dim Gates_builder_chronos = Regex.Match(WebClient_Data, "<gatebuilders (.*)gate>").Groups.Item(1).ToString.Replace("<", "").Replace(">", "").Replace("/", "") 'gatebuilders
 
             If Double_Win_day.Contains("1") Then
                 Form_Tools.PictureBox_DoubleWinGGS.Visible = True
@@ -278,6 +279,17 @@ LABEL_BOUCLE:
             End If
         End If
 
+        If Form_Tools.CheckBox_when_stop_GGS.Checked = True Then
+            If Form_Tools.Leaderprice.Text <= Form_Tools.TextBox_when_stop_GGS.Text Then
+
+                Console.WriteLine("Price is correct")
+            Else
+                Console.WriteLine("Price is not correct")
+                Closing_Spinner()
+                Exit Sub
+
+            End If
+        End If
         If Form_Tools.CheckBox_simultaneous.Checked = True Then
             Simultaneous = "1"
 
@@ -684,7 +696,9 @@ LABEL_BOUCLE:
                 If Spin_Sample = 1 Then
                     GoTo LABEL_BOUCLE
                 Else
-                    Closing_Spinner()
+                    Form_Tools.Button_StartSpin.Enabled = True
+                    Form_Tools.Button_stopSpin.Enabled = False
+                    Form_Tools.ComboBox_autospin.Enabled = True
                     Exit Sub
                 End If
 
@@ -703,7 +717,9 @@ LABEL_BOUCLE:
                 If Spin_Sample = 1 Then
                     GoTo LABEL_BOUCLE
                 Else
-                    Closing_Spinner()
+                    Form_Tools.Button_StartSpin.Enabled = True
+                    Form_Tools.Button_stopSpin.Enabled = False
+                    Form_Tools.ComboBox_autospin.Enabled = True
                     Exit Sub
                 End If
 

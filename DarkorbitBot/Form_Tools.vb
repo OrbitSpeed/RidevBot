@@ -930,7 +930,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_base.Click
+    Private Sub Button_change_hangar_base_Click(sender As Object, e As EventArgs) Handles Button_change_hangar_base.Click
 
         Palladium_module.Hangartype_id = "1"
         Palladium_module.Hangar_resolver()
@@ -947,6 +947,7 @@ Public Class Form_Tools
         Next
 
 
+        Panel_autospin.Visible = False
         General_BOX.Visible = True
         Stats_BOX.Visible = False
         Bot_Settings_BOX.Visible = False
@@ -961,6 +962,7 @@ Public Class Form_Tools
         Stats_BOX.Visible = True
         Bot_Settings_BOX.Visible = False
         button_stats.PerformClick()
+        Panel_autospin.Visible = False
 
         PictureBox_delta_reward_day.Visible = False
         PictureBox_epsilon_reward_day.Visible = False
@@ -1156,7 +1158,4 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub CheckBox_simultaneous_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_simultaneous.CheckedChanged
-
-    End Sub
 End Class

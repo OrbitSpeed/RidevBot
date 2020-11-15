@@ -47,12 +47,11 @@ Public Class Palladium_module
             Form_Tools.ComboBox_5_3_Hangar.Items.Clear()
 Label_Base:
             If data_list.Count = Hangar_counter Then
-
             Else
+                Hangar_counter = Val(Hangar_counter) + 1
                 Form_Tools.ComboBox_Base_Hangar.Items.Add("Hangar " + Hangar_counter)
                 Form_Tools.ComboBox_collectable_Hangar.Items.Add("Hangar " + Hangar_counter)
                 Form_Tools.ComboBox_5_3_Hangar.Items.Add("Hangar " + Hangar_counter)
-                Hangar_counter = Val(Hangar_counter) + 1
                 GoTo Label_Base
 
             End If
@@ -63,48 +62,53 @@ Label_Base:
 
     Public Shared Sub Hangar_resolver()
 
-        If PLK.ToString.Contains("Wait to Update") Then
+        If PLK.ToString = ("Wait to Update") Then
 
             Console.WriteLine("Please Update Hangar in first")
             MessageBox.Show("Please Update Hangar in first")
+            Exit Sub
+        End If
 
+        If PLK.ToString = Nothing Then
+
+            Console.WriteLine("Please Update Hangar in first")
+            MessageBox.Show("Please Update Hangar in first")
+            Exit Sub
+        End If
+
+        If PLK.ToString = (" ") Then
+
+            Console.WriteLine("Please Update Hangar in first")
+            MessageBox.Show("Please Update Hangar in first")
+            Exit Sub
         End If
 
         If Hangartype_id = "1" Then
-            PLK = Form_Tools.ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            PLK = Form_Tools.ComboBox_Base_Hangar.Text.Replace("Hangar", "").Replace(" ", "") - 1
             Console.WriteLine(PLK)
             MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
             Console.WriteLine(MOUTON)
 
         ElseIf Hangartype_id = "2" Then
-            PLK = Form_Tools.ComboBox_collectable_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            PLK = Form_Tools.ComboBox_collectable_Hangar.Text.Replace("Hangar", "").Replace(" ", "") - 1
             Console.WriteLine(PLK)
             MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
             Console.WriteLine(MOUTON)
 
         ElseIf Hangartype_id = "3" Then
-            PLK = Form_Tools.ComboBox_5_3_Hangar.Text.Replace("Hangar", "").Replace(" ", "")
+            PLK = Form_Tools.ComboBox_5_3_Hangar.Text.Replace("Hangar", "").Replace(" ", "") - 1
             Console.WriteLine(PLK)
             MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
             Console.WriteLine(MOUTON)
 
         End If
 
-        Hangartype_id = Nothing
-
-        If PLK <> Nothing Then
-
-            WebClient_POST.Headers.Clear()
-            WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
-            Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
-            Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
-            Console.WriteLine("Hangar transfered successfully")
-            MessageBox.Show("Hangar transfered successfully")
-
-        Else
-            Console.WriteLine("No hangar selected")
-            MessageBox.Show("No hangar selected")
-        End If
+        WebClient_POST.Headers.Clear()
+        WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+        Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+        Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+        Console.WriteLine("Hangar transfered successfully")
+        MessageBox.Show("Hangar transfered successfully")
 
     End Sub
 
