@@ -1336,112 +1336,100 @@ Public Class Var
 #End Region
 #End Region
 
-#Region "Portail Galaxy Gates MMO"
+#Region "test general click"
 
-    Public Shared Async Function PORTAIL_ALPHA_MMO() As Task
+    Public Shared Async Function Goto_Next_portal(ByVal ReferenceGoto_X, ByVal ReferenceGoto_Y) As Task
 
-    End Function
-    Public Shared Async Function PORTAIL_BETA_MMO() As Task
+        If User_Stop_Bot Then Exit Function
 
-    End Function
-    Public Shared Async Function PORTAIL_GAMMA_MMO() As Task
+        Dim Chocolatine = Utils.GetPortalZone(ReferenceGoto_X, "x")
+        Dim pain_au_chocolat = Utils.GetPortalZone(ReferenceGoto_Y, "y")
 
-    End Function
-    Public Shared Async Function PORTAIL_DELTA_MMO() As Task
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Chocolatine, pain_au_chocolat)
+        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
 
-    End Function
-    Public Shared Async Function PORTAIL_EPSILON_MMO() As Task
+        Await Task.Delay(1500)
 
-    End Function
-    Public Shared Async Function PORTAIL_ZETA_MMO() As Task
+Return_On_Road:
+        Update_Screen()
+        Dim traveling_indication As Bitmap = My.Resources.traveling_indication
+        Dim traveling_indication_point As Point = Client_Screen.Contains(traveling_indication)
+        If traveling_indication_point <> Nothing Then
 
-    End Function
-    Public Shared Async Function PORTAIL_KAPPA_MMO() As Task
+            If User_Stop_Bot Then Exit Function
+            Console.WriteLine("On Road.. Traveling icon found.")
+            Await Dead.Load
+            Await Task.Delay(333)
+            Await Reconnect.Load
+            Await Task.Delay(333)
+            Await Dependency.Load
+            Await Task.Delay(334)
+            GoTo Return_On_Road
 
-    End Function
-    Public Shared Async Function PORTAIL_LAMBDA_MMO() As Task
+        Else
+            Console.WriteLine("Debug in progress.. Traveling icon not found.")
+            Console.WriteLine("Checking if portal is arround...")
 
-    End Function
-    Public Shared Async Function PORTAIL_HADES_MMO() As Task
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, Chocolatine, pain_au_chocolat)
+            AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
 
-    End Function
-    Public Shared Async Function PORTAIL_CHRONOS_MMO() As Task
+            Await Task.Delay(2000)
 
-    End Function
-    Public Shared Async Function PORTAIL_KUIPER_MMO() As Task
+            Update_Screen()
+            Dim traveling_indication_ref As Bitmap = My.Resources.traveling_indication
+            Dim traveling_indication_point_ref As Point = Client_Screen.Contains(traveling_indication_ref)
+            If traveling_indication_point_ref <> Nothing Then
 
-    End Function
+                If User_Stop_Bot Then Exit Function
+                Console.WriteLine("On Road.. Traveling icon found. _return not moved or distracted")
+                Await Dead.Load
+                Await Task.Delay(333)
+                Await Reconnect.Load
+                Await Task.Delay(333)
+                Await Dependency.Load
+                Await Task.Delay(334)
+                GoTo Return_On_Road
 
-#End Region
-#Region "Portail Galaxy Gates EIC"
+            Else
 
-    Public Shared Async Function PORTAIL_ALPHA_EIC() As Task
+                AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
+                AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
+                Console.WriteLine("Key Portal sended > Waiting 10s before new operation")
 
-    End Function
-    Public Shared Async Function PORTAIL_BETA_EIC() As Task
+                Await Task.Delay(10000)
 
-    End Function
-    Public Shared Async Function PORTAIL_GAMMA_EIC() As Task
+                Update_Screen()
+                Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
+                Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
+                Console.WriteLine(Map_actuelle_reconize)
+                Console.WriteLine(Map_roaming_reconize)
 
-    End Function
-    Public Shared Async Function PORTAIL_DELTA_EIC() As Task
+                If Map_actuelle_reconize <> Map_roaming_reconize Then
+                    Console.WriteLine("New operation in progress...")
 
-    End Function
-    Public Shared Async Function PORTAIL_EPSILON_EIC() As Task
+                    Await Dead.Load
+                    Await Task.Delay(100)
+                    Await Reconnect.Load
+                    Await Task.Delay(100)
+                    Await Dependency.Load
+                    Await Task.Delay(100)
+                    Traveling_module.Load()
 
-    End Function
-    Public Shared Async Function PORTAIL_ZETA_EIC() As Task
+                Else
+                    Console.WriteLine("Traveling success, checking, wait...")
 
-    End Function
-    Public Shared Async Function PORTAIL_KAPPA_EIC() As Task
+                    Await Dead.Load
+                    Await Task.Delay(100)
+                    Await Reconnect.Load
+                    Await Task.Delay(100)
+                    Await Dependency.Load
+                    Await Task.Delay(100)
+                    Traveling_module.Load()
 
-    End Function
-    Public Shared Async Function PORTAIL_LAMBDA_EIC() As Task
+                End If
+            End If
+        End If
 
-    End Function
-    Public Shared Async Function PORTAIL_HADES_EIC() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_CHRONOS_EIC() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_KUIPER_EIC() As Task
-
-    End Function
-#End Region
-#Region "Portail Galaxy Gates VRU"
-
-    Public Shared Async Function PORTAIL_ALPHA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_BETA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_GAMMA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_DELTA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_EPSILON_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_ZETA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_KAPPA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_LAMBDA_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_HADES_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_CHRONOS_VRU() As Task
-
-    End Function
-    Public Shared Async Function PORTAIL_KUIPER_VRU() As Task
 
     End Function
 #End Region
@@ -1451,15 +1439,15 @@ Public Class Var
         If User_Stop_Bot Then Exit Function
 
         Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
-        Dim Map_roaming_reconize = Form_tools.ComboBox_map_to_travel.Text
+        Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
         Console.WriteLine(Map_actuelle_reconize)
         Console.WriteLine(Map_roaming_reconize)
 
         If Map_actuelle_reconize <> Map_roaming_reconize Then
 
             AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_jump_key.Text))
-            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_tools.TextBox_jump_key.Text}")
+            AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
+            Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
 
             Await Task.Delay(1000)
             If User_Stop_Bot Then Exit Function
