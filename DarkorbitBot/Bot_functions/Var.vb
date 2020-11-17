@@ -1336,8 +1336,6 @@ Public Class Var
 #End Region
 #End Region
 
-#Region "test general click"
-
     Public Shared Async Function Goto_Next_portal(ByVal ReferenceGoto_X, ByVal ReferenceGoto_Y) As Task
 
         If User_Stop_Bot Then Exit Function
@@ -1399,12 +1397,11 @@ Return_On_Road:
                 Await Task.Delay(10000)
 
                 Update_Screen()
-                Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
-                Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
-                Console.WriteLine(Map_actuelle_reconize)
-                Console.WriteLine(Map_roaming_reconize)
 
-                If Map_actuelle_reconize <> Map_roaming_reconize Then
+                Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
+                Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+
+                If Map_actuelle <> Map_roaming Then
                     Console.WriteLine("New operation in progress...")
 
                     Await Dead.Load
@@ -1412,6 +1409,8 @@ Return_On_Road:
                     Await Reconnect.Load
                     Await Task.Delay(100)
                     Await Dependency.Load
+                    Await Task.Delay(100)
+                    Await Checking_map.Load()
                     Await Task.Delay(100)
                     Traveling_module.Load()
 
@@ -1424,6 +1423,8 @@ Return_On_Road:
                     Await Task.Delay(100)
                     Await Dependency.Load
                     Await Task.Delay(100)
+                    Await Checking_map.Load()
+                    Await Task.Delay(100)
                     Traveling_module.Load()
 
                 End If
@@ -1431,8 +1432,7 @@ Return_On_Road:
         End If
 
 
-    End Function
-#End Region
+    End Function ' tout remplacer par sa !
 
     Public Shared Async Function POINT_DE_CHUTE_DU_CLICK_TRAVELING() As Task
 
