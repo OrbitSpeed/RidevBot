@@ -35,7 +35,7 @@
                     Form_Tools.ComboBox_map_to_travel.Text = "3-1"
 
                 Else
-                    Console.WriteLine("Error : Le bot n'a pas pu lire la carte ou la firme get/reload ")
+                    Console.WriteLine("Error : Le bot n'a pas pu lire la carte ou la firme set/reload ")
                 End If
             End If
 
@@ -84,7 +84,7 @@
                             Map_roaming = "4-5") Then
                 Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-7 ---------- "
             ElseIf Map_actuelle = "1-7" And
                             (Map_roaming = "1-6" Or
@@ -126,7 +126,7 @@
                         Map_roaming = "4-5") Then
                 Var.Goto_Next_portal(760, 497) ' Haut Droite
 
-#End Region ' VALIDER ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-6 ---------- "
             ElseIf Map_actuelle = "1-6" And
                         (Map_roaming = "1-7" Or
@@ -168,7 +168,7 @@
                         Map_roaming = "4-5") Then
                 Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-5 ---------- "
             ElseIf Map_actuelle = "1-5" And
                         (Map_roaming = "1-7" Or
@@ -176,11 +176,9 @@
                         Map_roaming = "1-BL" Or
                         Map_roaming = "2-BL" Or
                         Map_roaming = "3-BL") Then
-
                 Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "1-5" And Map_roaming = "1-6" Then
-
                 Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "1-5" And
@@ -191,7 +189,7 @@
                         Map_roaming = "2-5" Or
                         Map_roaming = "3-5") Then
 
-                Var.PORTAIL_45_MMO()
+                Var.Goto_Next_portal(764, 534) ' 1-5 > 4-5 
 
             ElseIf Map_actuelle = "1-5" And
                             (Map_roaming = "1-1" Or
@@ -216,19 +214,19 @@
                             Map_roaming = "4-2" Or
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4") Then
+                Var.Goto_Next_portal(764, 517) ' 1-5 > 4-4
 
-                Var.PORTAIL_15_TO_44()
-#End Region ' VALIDER ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-8 ---------- "
 
             ElseIf Map_actuelle = "2-8" And Map_roaming = "2-6" Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "2-8" And
                                 (Map_roaming = "2-BL" Or
                                 Map_roaming = "3-BL" Or
                                 Map_roaming = "1-BL") Then
-                Var.PORTAIL_2BL_EIC()
+                Var.Goto_Next_portal(692, 563) ' 2BL EIC
 
             ElseIf Map_actuelle = "2-8" And
                                 (Map_roaming = "1-1" Or
@@ -261,9 +259,9 @@
                                 Map_roaming = "4-3" Or
                                 Map_roaming = "4-4" Or
                                 Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-7 ---------- "
 
             ElseIf Map_actuelle = "2-7" And
@@ -272,7 +270,7 @@
                     Map_roaming = "2-BL" Or
                     Map_roaming = "3-BL" Or
                     Map_roaming = "1-BL") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "2-7" And
                         (Map_roaming = "1-1" Or
@@ -304,9 +302,9 @@
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-6 ---------- "
 
             ElseIf Map_actuelle = "2-6" And
@@ -315,8 +313,7 @@
                             Map_roaming = "2-BL" Or
                             Map_roaming = "3-BL" Or
                             Map_roaming = "1-BL") Then
-
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "2-6" And
                         (Map_roaming = "1-1" Or
@@ -348,10 +345,9 @@
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
-                Var.PORTAIL_BAS_GAUCHE()
-
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-5 ---------- "
 
             ElseIf Map_actuelle = "2-5" And
@@ -360,10 +356,10 @@
                         Map_roaming = "2-BL" Or
                         Map_roaming = "3-BL" Or
                         Map_roaming = "1-BL") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "2-5" And Map_roaming = "2-6" Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "2-5" And
                        (Map_roaming = "4-5" Or
@@ -372,7 +368,7 @@
                         Map_roaming = "5-3" Or
                         Map_roaming = "3-5" Or
                         Map_roaming = "1-5") Then
-                Var.PORTAIL_45_EIC()
+                Var.Goto_Next_portal(760, 584) ' 2.5 > 4.5
 
             ElseIf Map_actuelle = "2-5" And
                            (Map_roaming = "1-1" Or
@@ -397,18 +393,18 @@
                             Map_roaming = "4-2" Or
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4") Then
-                Var.PORTAIL_25_TO_44()
+                Var.Goto_Next_portal(610, 569) ' 2.5 > 4.4
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-8 ---------- "
             ElseIf Map_actuelle = "3-8" And Map_roaming = "3-6" Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "3-8" And
                             (Map_roaming = "3-BL" Or
                             Map_roaming = "1-BL" Or
                             Map_roaming = "2-BL") Then
-                Var.PORTAIL_3BL_VRU()
+                Var.Goto_Next_portal(692, 562) ' 3BL vru
 
             ElseIf Map_actuelle = "3-8" And
                             (Map_roaming = "1-1" Or
@@ -441,9 +437,9 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
-                Var.PORTAIL_HAUT_GAUCHE()
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-7 ---------- "
 
             ElseIf Map_actuelle = "3-7" And
@@ -452,7 +448,7 @@
                     Map_roaming = "3-BL" Or
                     Map_roaming = "1-BL" Or
                     Map_roaming = "2-BL") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-7" And
                         (Map_roaming = "1-1" Or
@@ -484,9 +480,9 @@
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-6 ---------- "
 
             ElseIf Map_actuelle = "3-6" And
@@ -495,7 +491,7 @@
                  Map_roaming = "3-BL" Or
                  Map_roaming = "1-BL" Or
                  Map_roaming = "2-BL") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-6" And
                         (Map_roaming = "1-1" Or
@@ -527,9 +523,9 @@
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-5 ---------- "
 
             ElseIf Map_actuelle = "3-5" And
@@ -538,10 +534,10 @@
                         Map_roaming = "3-BL" Or
                         Map_roaming = "1-BL" Or
                         Map_roaming = "2-BL") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-5" And Map_roaming = "3-6" Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "3-5" And
                        (Map_roaming = "4-5" Or
@@ -551,7 +547,8 @@
                         Map_roaming = "3-5" Or
                         Map_roaming = "1-5" Or
                         Map_roaming = "2-5") Then
-                Var.PORTAIL_45_VRU()
+                Var.Goto_Next_portal(745, 493) ' 3.5 > 4.5
+
 
             ElseIf Map_actuelle = "3-5" And
                            (Map_roaming = "1-1" Or
@@ -578,9 +575,9 @@
                             Map_roaming = "4-2" Or
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4") Then
-                Var.PORTAIL_35_TO_44()
+                Var.Goto_Next_portal(610, 478) ' 3.5 > 4.4
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-5 ---------- "
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
@@ -597,7 +594,7 @@
                              Map_roaming = "4-3" Or
                              Map_roaming = "4-4" Or
                              Map_roaming = "1-BL") Then
-                Var.PORTAIL_45_to_15()
+                Var.Goto_Next_portal(623, 540) ' 4.5 > 1.5 mmo
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
                             (Map_roaming = "2-1" Or
@@ -613,7 +610,7 @@
                              Map_roaming = "4-1" Or
                              Map_roaming = "4-4" Or
                              Map_roaming = "2-BL") Then
-                Var.PORTAIL_45_to_25()
+                Var.Goto_Next_portal(717, 463) ' 4.5 > 2.5 eic
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
                             (Map_roaming = "1-1" Or
@@ -629,21 +626,27 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-2" Or
                             Map_roaming = "3-BL") Then
-                Var.PORTAIL_45_to_35()
+                Var.Goto_Next_portal(719, 596) ' 4.5 > 3.5 vru
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
-                            (Map_roaming = "5-1") Then
-                Var.PORTAIL_45_to_51_MMO()
+                            (Map_roaming = "5-1" Or
+                             Map_roaming = "5-2" Or
+                             Map_roaming = "5-3") Then
+                Var.Goto_Next_portal(647, 540) ' 4.5 > 5-1 mmo
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
-                            (Map_roaming = "5-1") Then
-                Var.PORTAIL_45_to_51_EIC()
+                            (Map_roaming = "5-1" Or
+                             Map_roaming = "5-2" Or
+                             Map_roaming = "5-3") Then
+                Var.Goto_Next_portal(705, 508) ' 4.5 > 5-1 eic
 
             ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
-                            (Map_roaming = "5-1") Then
-                Var.PORTAIL_45_to_51_VRU()
+                            (Map_roaming = "5-1" Or
+                             Map_roaming = "5-2" Or
+                             Map_roaming = "5-3") Then
+                Var.Goto_Next_portal(703, 550) ' 4.5 > 5-1 vru
 
-#End Region ' VALIDE 
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-4 ---------- "
 
             ElseIf Map_actuelle = "4-4" And
@@ -652,7 +655,7 @@
                             Map_roaming = "1-7" Or
                             Map_roaming = "1-8" Or
                             Map_roaming = "1-BL") Then
-                Var.PORTAIL_44_to_15()
+                Var.Goto_Next_portal(623, 540) ' 4.4 > 1.5 mmo
 
             ElseIf Map_actuelle = "4-4" And
                             (Map_roaming = "2-5" Or
@@ -660,7 +663,7 @@
                             Map_roaming = "2-7" Or
                             Map_roaming = "2-8" Or
                             Map_roaming = "2-BL") Then
-                Var.PORTAIL_44_to_25()
+                Var.Goto_Next_portal(719, 485) ' 4.4 > 2.5 eic
 
             ElseIf Map_actuelle = "4-4" And
                             (Map_roaming = "3-5" Or
@@ -668,30 +671,28 @@
                             Map_roaming = "3-7" Or
                             Map_roaming = "3-8" Or
                             Map_roaming = "3-BL") Then
-                Var.PORTAIL_44_to_35()
-
-                ' If mmo pour savoir par quel portail allez pour la 4-5
+                Var.Goto_Next_portal(719, 593) ' 4.4 > 3.5 vru
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
                             (Map_roaming = "4-5" Or
                             Map_roaming = "5-1" Or
                             Map_roaming = "5-2" Or
                             Map_roaming = "5-3") Then
-                Var.PORTAIL_44_to_15()
+                Var.Goto_Next_portal(623, 540) ' 4.4 > 1.5 + SP mmo
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
                             (Map_roaming = "4-5" Or
                             Map_roaming = "5-1" Or
                             Map_roaming = "5-2" Or
                             Map_roaming = "5-3") Then
-                Var.PORTAIL_44_to_25()
+                Var.Goto_Next_portal(719, 485) ' 4.4 > 2.5 + SP eic
 
             ElseIf Map_actuelle = "4-4" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
                             (Map_roaming = "4-5" Or
                             Map_roaming = "5-1" Or
                             Map_roaming = "5-2" Or
                             Map_roaming = "5-3") Then
-                Var.PORTAIL_44_to_35()
+                Var.Goto_Next_portal(719, 593) ' 4.4 > 3.5 + SP vru
 
 
             ElseIf Map_actuelle = "4-4" And
@@ -700,15 +701,15 @@
                             Map_roaming = "1-2" Or
                             Map_roaming = "1-3" Or
                             Map_roaming = "1-4") Then
-                Var.PORTAIL_44_to_41()
+                Var.Goto_Next_portal(679, 540) ' 4.4 > 4.1
 
             ElseIf Map_actuelle = "4-4" And
-                            (Map_roaming = "4-1" Or
+                            (Map_roaming = "4-2" Or
                             Map_roaming = "2-1" Or
                             Map_roaming = "2-2" Or
                             Map_roaming = "2-3" Or
                             Map_roaming = "2-4") Then
-                Var.PORTAIL_44_to_42()
+                Var.Goto_Next_portal(691, 533) ' 4.4 > 4.2
 
             ElseIf Map_actuelle = "4-4" And
                             (Map_roaming = "4-3" Or
@@ -716,10 +717,10 @@
                             Map_roaming = "3-2" Or
                             Map_roaming = "3-3" Or
                             Map_roaming = "3-4") Then
-                Var.PORTAIL_44_to_43()
+                Var.Goto_Next_portal(691, 545) ' 4.4 > 4.3
 
 
-#End Region ' BUG ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-3 ---------- "
 
             ElseIf Map_actuelle = "4-3" And
@@ -727,7 +728,7 @@
                             Map_roaming = "3-2" Or
                             Map_roaming = "3-3" Or
                             Map_roaming = "3-4") Then
-                Var.PORTAIL_43_to_34()
+                Var.Goto_Next_portal(764, 516) ' 4.3 > 3.4
 
             ElseIf Map_actuelle = "4-3" And
                             (Map_roaming = "1-1" Or
@@ -735,7 +736,7 @@
                             Map_roaming = "1-3" Or
                             Map_roaming = "1-4" Or
                             Map_roaming = "4-1") Then
-                Var.PORTAIL_43_to_41()
+                Var.Goto_Next_portal(610, 566) ' 4.3 > 4.1
 
             ElseIf Map_actuelle = "4-3" And
                             (Map_roaming = "2-1" Or
@@ -743,7 +744,7 @@
                             Map_roaming = "2-3" Or
                             Map_roaming = "2-4" Or
                             Map_roaming = "4-2") Then
-                Var.PORTAIL_43_to_42()
+                Var.Goto_Next_portal(610, 479) ' 4.3 > 4.2
 
             ElseIf Map_actuelle = "4-3" And
                         (Map_roaming = "1-5" Or
@@ -763,9 +764,9 @@
                         Map_roaming = "5-3" Or
                         Map_roaming = "4-5" Or
                         Map_roaming = "4-4") Then
-                Var.PORTAIL_43_to_44()
+                Var.Goto_Next_portal(685, 717) ' 4.3 > 4.4
 
-#End Region ' BUG ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-2 ---------- "
 
             ElseIf Map_actuelle = "4-2" And
@@ -773,7 +774,7 @@
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
                         Map_roaming = "2-4") Then
-                Var.PORTAIL_42_to_24()
+                Var.Goto_Next_portal(683, 475) ' 4.2 > 2.4
 
             ElseIf Map_actuelle = "4-2" And
                             (Map_roaming = "3-1" Or
@@ -781,7 +782,7 @@
                             Map_roaming = "3-3" Or
                             Map_roaming = "3-4" Or
                             Map_roaming = "4-3") Then
-                Var.PORTAIL_42_to_43()
+                Var.Goto_Next_portal(764, 516) ' 4.2 > 4.3
 
             ElseIf Map_actuelle = "4-2" And
                             (Map_roaming = "1-1" Or
@@ -789,7 +790,7 @@
                             Map_roaming = "1-3" Or
                             Map_roaming = "1-4" Or
                             Map_roaming = "4-1") Then
-                Var.PORTAIL_42_to_41()
+                Var.Goto_Next_portal(610, 566) ' 4.2 > 4.1
 
             ElseIf Map_actuelle = "4-2" And
                             (Map_roaming = "1-5" Or
@@ -809,9 +810,9 @@
                             Map_roaming = "5-3" Or
                             Map_roaming = "4-5" Or
                             Map_roaming = "4-4") Then
-                Var.PORTAIL_42_to_44()
+                Var.Goto_Next_portal(687, 522) ' 4.2 > 4.4
 
-#End Region ' BUG ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-1 ---------- "
 
             ElseIf Map_actuelle = "4-1" And
@@ -819,7 +820,7 @@
                             Map_roaming = "1-2" Or
                             Map_roaming = "1-3" Or
                             Map_roaming = "1-4") Then
-                Var.PORTAIL_41_to_14()
+                Var.Goto_Next_portal(606, 516) ' 4.1 > 1.4
 
             ElseIf Map_actuelle = "4-1" And
                             (Map_roaming = "2-1" Or
@@ -827,14 +828,15 @@
                             Map_roaming = "2-3" Or
                             Map_roaming = "2-4" Or
                             Map_roaming = "4-2") Then
-                Var.PORTAIL_41_to_42()
+                Var.Goto_Next_portal(760, 479) ' 4.1 > 4.2
 
             ElseIf Map_actuelle = "4-1" And
                             (Map_roaming = "3-1" Or
                             Map_roaming = "3-2" Or
                             Map_roaming = "3-3" Or
-                            Map_roaming = "3-4") Then
-                Var.PORTAIL_41_to_43()
+                            Map_roaming = "3-4" Or
+                            Map_roaming = "4-3") Then
+                Var.Goto_Next_portal(760, 566) ' 4.1 > 4.3
 
             ElseIf Map_actuelle = "4-1" And
                             (Map_roaming = "1-5" Or
@@ -854,16 +856,15 @@
                             Map_roaming = "5-3" Or
                             Map_roaming = "4-5" Or
                             Map_roaming = "4-4") Then
+                Var.Goto_Next_portal(687, 522) ' 4.1 > 4.4
 
-                Var.PORTAIL_41_to_44()
-
-#End Region ' BUG ( VALIDATION EN COURS TEST )
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-4 ---------- "
 
             ElseIf Map_actuelle = "1-4" And
                             (Map_roaming = "1-2" Or
                             Map_roaming = "1-1") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "1-4" And
                         (Map_roaming = "1-3" Or
@@ -871,14 +872,14 @@
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
                         Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "1-4" And
                                  (Map_roaming = "3-1" Or
                                  Map_roaming = "3-2" Or
                                  Map_roaming = "3-3" Or
                                  Map_roaming = "3-4") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "1-4" And
                             (Map_roaming = "1-5" Or
@@ -904,21 +905,22 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_14_to_41()
-#End Region ' VALIDER
+                Var.Goto_Next_portal(764, 517) ' 1.4 > 4.1
+
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-3 ---------- "
 
             ElseIf Map_actuelle = "1-3" And
                         (Map_roaming = "1-2" Or
                         Map_roaming = "1-1") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "1-3" And
                             (Map_roaming = "2-1" Or
                             Map_roaming = "2-2" Or
                             Map_roaming = "2-3" Or
                             Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "1-3" And
                             (Map_roaming = "3-1" Or
@@ -949,9 +951,9 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-2 ---------- "
 
             ElseIf Map_actuelle = "1-2" And
@@ -960,11 +962,11 @@
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
                         Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "1-2" And
                         (Map_roaming = "1-1") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "1-2" And
                             (Map_roaming = "3-1" Or
@@ -995,10 +997,10 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 1-1 ---------- "
 
             ElseIf Map_actuelle = "1-1" Then
@@ -1029,9 +1031,7 @@
 
                     End If
 
-                Else
-
-                    Var.PORTAIL_BAS_DROITE()
+                Else Var.Goto_Next_portal(760, 585) ' Bas Droite
                 End If
 
 #End Region ' VALIDATION EN COURS
@@ -1040,7 +1040,7 @@
             ElseIf Map_actuelle = "2-4" And
                             (Map_roaming = "2-2" Or
                             Map_roaming = "2-1") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "2-4" And
                     (Map_roaming = "2-3" Or
@@ -1048,14 +1048,14 @@
                     Map_roaming = "1-2" Or
                     Map_roaming = "1-3" Or
                     Map_roaming = "1-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "2-4" And
                             (Map_roaming = "3-1" Or
                             Map_roaming = "3-2" Or
                             Map_roaming = "3-3" Or
                             Map_roaming = "3-4") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "2-4" And
                             (Map_roaming = "1-5" Or
@@ -1081,21 +1081,22 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_24_to_42()
-#End Region ' VALIDER
+                Var.Goto_Next_portal(683, 570) ' 2.4 > 4.2
+
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-3 ---------- "
 
             ElseIf Map_actuelle = "2-3" And
                                       (Map_roaming = "2-2" Or
                                       Map_roaming = "2-1") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "2-3" And
                             (Map_roaming = "1-1" Or
                             Map_roaming = "1-2" Or
                             Map_roaming = "1-3" Or
                             Map_roaming = "1-4") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "2-3" And
                             (Map_roaming = "3-1" Or
@@ -1126,9 +1127,9 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-2 ---------- "
 
             ElseIf Map_actuelle = "2-2" And
@@ -1137,11 +1138,11 @@
                         Map_roaming = "1-2" Or
                         Map_roaming = "1-3" Or
                         Map_roaming = "1-4") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
             ElseIf Map_actuelle = "2-2" And
                         (Map_roaming = "2-1") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
 
             ElseIf Map_actuelle = "2-2" And
@@ -1173,9 +1174,9 @@
                         Map_roaming = "4-3" Or
                         Map_roaming = "4-4" Or
                         Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 2-1 ---------- "
 
             ElseIf Map_actuelle = "2-1" Then
@@ -1206,9 +1207,7 @@
 
                     End If
 
-                Else
-
-                    Var.PORTAIL_BAS_GAUCHE()
+                Else Var.Goto_Next_portal(610, 584) ' Bas Gauche
                 End If
 
 #End Region ' VALIDATION EN COURS
@@ -1217,7 +1216,7 @@
             ElseIf Map_actuelle = "3-4" And
                                         (Map_roaming = "3-2" Or
                                         Map_roaming = "3-1") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-4" And
                                   (Map_roaming = "3-3" Or
@@ -1225,14 +1224,14 @@
                                     Map_roaming = "2-2" Or
                                     Map_roaming = "2-3" Or
                                     Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "3-4" And
                              (Map_roaming = "1-1" Or
                              Map_roaming = "1-2" Or
                              Map_roaming = "1-3" Or
                              Map_roaming = "1-4") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "3-4" And
                             (Map_roaming = "1-5" Or
@@ -1258,21 +1257,21 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_34_to_43()
-#End Region ' VALIDER
+                Var.Goto_Next_portal(683, 493) ' 3.4 > 4.3 
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-3 ---------- "
 
             ElseIf Map_actuelle = "3-3" And
                           (Map_roaming = "3-2" Or
                           Map_roaming = "3-1") Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-3" And
                             (Map_roaming = "2-1" Or
                             Map_roaming = "2-2" Or
                             Map_roaming = "2-3" Or
                             Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
             ElseIf Map_actuelle = "3-3" And
                             (Map_roaming = "3-5" Or
@@ -1303,9 +1302,9 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_BAS_GAUCHE()
+                Var.Goto_Next_portal(610, 584) ' Bas Gauche
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-2 ---------- "
 
             ElseIf Map_actuelle = "3-2" And
@@ -1314,11 +1313,11 @@
                         Map_roaming = "2-2" Or
                         Map_roaming = "2-3" Or
                         Map_roaming = "2-4") Then
-                Var.PORTAIL_HAUT_DROITE()
+                Var.Goto_Next_portal(760, 497) ' Haut Droite
 
             ElseIf Map_actuelle = "3-2" And
                         Map_roaming = "3-1" Then
-                Var.PORTAIL_BAS_DROITE()
+                Var.Goto_Next_portal(760, 585) ' Bas Droite
 
             ElseIf Map_actuelle = "3-2" And
                             (Map_roaming = "1-1" Or
@@ -1349,9 +1348,9 @@
                             Map_roaming = "4-3" Or
                             Map_roaming = "4-4" Or
                             Map_roaming = "4-5") Then
-                Var.PORTAIL_HAUT_GAUCHE()
+                Var.Goto_Next_portal(610, 497) ' Haut Gauche
 
-#End Region ' VALIDER
+#End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 3-1 ---------- "
 
             ElseIf Map_actuelle = "3-1" Then
@@ -1382,9 +1381,7 @@
 
                     End If
 
-                Else
-
-                    Var.PORTAIL_HAUT_GAUCHE()
+                Else Var.Goto_Next_portal(610, 497) ' Haut Gauche
                 End If
 #End Region ' VALIDATION EN COURS
 
