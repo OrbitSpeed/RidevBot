@@ -2,7 +2,7 @@
 
     Public Shared Gates_in_times As String
     Public Shared Gates_process As String
-    Public Shared Async Function Load() As Task
+    Public Shared Function Load() As Task
 
         If Var.User_Stop_Bot Then Exit Function
 
@@ -10,7 +10,7 @@
         Var.Update_Screen()
 
         Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
-        Dim Map_roaming = Form_tools.ComboBox_map_to_travel.Text
+        Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
 
         Console.WriteLine(Map_actuelle)
         Console.WriteLine(Map_roaming)
@@ -1393,7 +1393,7 @@
         Else
 
             Console.WriteLine("Traveling success get/set")
-            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_tools.TextBox_Attack.Text))
+            Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_Attack.Text))
             Var.security_T_backup = 1
             Running.Start()
         End If
