@@ -580,7 +580,7 @@
 #End Region ' VALIDER ( VALIDATION EN COURS TEST ) V2
 #Region "MAP = 4-5 ---------- "
 
-            ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "mmo" And
+            ElseIf Map_actuelle = "4-5" And
                             (Map_roaming = "1-1" Or
                             Map_roaming = "1-2" Or
                             Map_roaming = "1-3" Or
@@ -596,7 +596,7 @@
                              Map_roaming = "1-BL") Then
                 Var.Goto_Next_portal(623, 540) ' 4.5 > 1.5 mmo
 
-            ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "eic" And
+            ElseIf Map_actuelle = "4-5" And
                             (Map_roaming = "2-1" Or
                             Map_roaming = "2-2" Or
                             Map_roaming = "2-3" Or
@@ -612,7 +612,7 @@
                              Map_roaming = "2-BL") Then
                 Var.Goto_Next_portal(717, 463) ' 4.5 > 2.5 eic
 
-            ElseIf Map_actuelle = "4-5" And Stats_module.WebClient_GET_Ship_compagny_reg = "vru" And
+            ElseIf Map_actuelle = "4-5" And
                             (Map_roaming = "1-1" Or
                             Map_roaming = "1-2" Or
                             Map_roaming = "1-3" Or
