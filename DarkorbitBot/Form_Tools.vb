@@ -200,21 +200,32 @@ Public Class Form_Tools
     Private Sub Button_palladium_toolbar_Click(sender As Object, e As EventArgs) Handles button_palladium.Click
 
 
-        Panel_Gates_task.Visible = False
-        Panel_palladium_palladium.Visible = True
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_rex.Visible = False
+        If Utils.server = "" Then
 
-        Size = New Size(687, 436)
-        Bot_Settings_BOX.Size = New Size(687, 384)
-        Panel_autospin.Visible = False
+            Button_BOX_general.PerformClick()
 
-        PictureBox_delta_reward_day.Visible = False
-        PictureBox_epsilon_reward_day.Visible = False
-        PictureBox_zeta_reward_day.Visible = False
-        PictureBox_kappa_reward_day.Visible = False
+        Else
+
+            Palladium_module.Load()
+
+            Panel_Gates_task.Visible = False
+            Panel_palladium_palladium.Visible = True
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_GalaxyGates.Visible = False
+            Panel_rex.Visible = False
+
+            Size = New Size(687, 436)
+            Bot_Settings_BOX.Size = New Size(687, 384)
+            Panel_autospin.Visible = False
+
+            PictureBox_delta_reward_day.Visible = False
+            PictureBox_epsilon_reward_day.Visible = False
+            PictureBox_zeta_reward_day.Visible = False
+            PictureBox_kappa_reward_day.Visible = False
+
+        End If
+
 
     End Sub
 
@@ -309,7 +320,6 @@ Public Class Form_Tools
     Private Sub GalaxyGates_Button_Click(sender As Object, e As EventArgs) Handles button_gates_spinner.Click
 
         If Utils.server = "" Then
-            MessageBox.Show("You must first login to the game before you can access the page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Button_BOX_general.PerformClick()
 
@@ -926,6 +936,7 @@ Public Class Form_Tools
 
     Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
+
         Palladium_module.Load()
 
     End Sub
@@ -957,57 +968,80 @@ Public Class Form_Tools
 
     Private Sub Button_BOX_stats_Click(sender As Object, e As EventArgs) Handles Button_BOX_stats.Click
 
+        If Utils.server = "" Then
 
-        General_BOX.Visible = False
-        Stats_BOX.Visible = True
-        Bot_Settings_BOX.Visible = False
-        button_stats.PerformClick()
-        Panel_autospin.Visible = False
+            Button_BOX_general.PerformClick()
 
-        PictureBox_delta_reward_day.Visible = False
-        PictureBox_epsilon_reward_day.Visible = False
-        PictureBox_zeta_reward_day.Visible = False
-        PictureBox_kappa_reward_day.Visible = False
+        Else
+
+            General_BOX.Visible = False
+            Stats_BOX.Visible = True
+            Bot_Settings_BOX.Visible = False
+            button_stats.PerformClick()
+            Panel_autospin.Visible = False
+
+            PictureBox_delta_reward_day.Visible = False
+            PictureBox_epsilon_reward_day.Visible = False
+            PictureBox_zeta_reward_day.Visible = False
+            PictureBox_kappa_reward_day.Visible = False
+
+        End If
 
     End Sub
 
     Private Sub Button_BOX_botsettings_Click(sender As Object, e As EventArgs) Handles Button_BOX_botsettings.Click
 
-        General_BOX.Visible = False
-        Stats_BOX.Visible = False
-        Bot_Settings_BOX.Visible = True
-        button_pet.PerformClick()
+        If Utils.server = "" Then
 
-        PictureBox_delta_reward_day.Visible = False
-        PictureBox_epsilon_reward_day.Visible = False
-        PictureBox_zeta_reward_day.Visible = False
-        PictureBox_kappa_reward_day.Visible = False
+            Button_BOX_general.PerformClick()
+
+        Else
+
+            General_BOX.Visible = False
+            Stats_BOX.Visible = False
+            Bot_Settings_BOX.Visible = True
+            button_pet.PerformClick()
+
+            PictureBox_delta_reward_day.Visible = False
+            PictureBox_epsilon_reward_day.Visible = False
+            PictureBox_zeta_reward_day.Visible = False
+            PictureBox_kappa_reward_day.Visible = False
+
+        End If
+
 
     End Sub
 
     Private Sub button_gates_task_Click(sender As Object, e As EventArgs) Handles button_gates_task.Click
 
-        Panel_Gates_task.Visible = True
-        Panel_palladium_palladium.Visible = False
-        panel_npc_npc.Visible = False
-        Panel_collectable.Visible = False
-        Panel_GalaxyGates.Visible = False
-        Panel_rex.Visible = False
+        If Utils.server = "" Then
 
-        Size = New Size(687, 436)
-        Bot_Settings_BOX.Size = New Size(687, 384)
-        Panel_autospin.Visible = False
+            Button_BOX_general.PerformClick()
 
-        PictureBox_delta_reward_day.Visible = False
-        PictureBox_epsilon_reward_day.Visible = False
-        PictureBox_zeta_reward_day.Visible = False
-        PictureBox_kappa_reward_day.Visible = False
-
-        If ComboBox_map_to_travel.Text = "Gates" Then
-            Button_enable_gates_mode.Visible = False
         Else
-            Button_enable_gates_mode.Visible = True
+            Panel_Gates_task.Visible = True
+            Panel_palladium_palladium.Visible = False
+            panel_npc_npc.Visible = False
+            Panel_collectable.Visible = False
+            Panel_GalaxyGates.Visible = False
+            Panel_rex.Visible = False
+
+            Size = New Size(687, 436)
+            Bot_Settings_BOX.Size = New Size(687, 384)
+            Panel_autospin.Visible = False
+
+            PictureBox_delta_reward_day.Visible = False
+            PictureBox_epsilon_reward_day.Visible = False
+            PictureBox_zeta_reward_day.Visible = False
+            PictureBox_kappa_reward_day.Visible = False
+
+            If ComboBox_map_to_travel.Text = "Gates" Then
+                Button_enable_gates_mode.Visible = False
+            Else
+                Button_enable_gates_mode.Visible = True
+            End If
         End If
+
 
 
     End Sub

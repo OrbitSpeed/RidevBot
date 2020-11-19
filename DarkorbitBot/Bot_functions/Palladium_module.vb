@@ -110,6 +110,8 @@ Label_Base:
         Console.WriteLine("Hangar transfered successfully")
         MessageBox.Show("Hangar transfered successfully")
 
+        Load()
+
     End Sub
 
 
