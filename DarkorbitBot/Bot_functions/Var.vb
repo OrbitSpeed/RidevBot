@@ -183,6 +183,7 @@ Return_On_Road:
 
                 Dim Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
                 Dim Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+                Await Checking_map.Load()
 
                 If Map_actuelle <> Map_roaming Then
                     Console.WriteLine("New operation in progress...")
@@ -192,8 +193,6 @@ Return_On_Road:
                     Await Reconnect.Load
                     Await Task.Delay(250)
                     Await Dependency.Load
-                    Await Task.Delay(500)
-                    Await Checking_map.Load()
                     Await Task.Delay(100)
                     Traveling_module.Load()
 
@@ -205,8 +204,6 @@ Return_On_Road:
                     Await Reconnect.Load
                     Await Task.Delay(250)
                     Await Dependency.Load
-                    Await Task.Delay(500)
-                    Await Checking_map.Load()
                     Await Task.Delay(100)
                     Traveling_module.Load()
 
@@ -233,9 +230,7 @@ Return_On_Road:
             Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
 
             Await Dead.Load
-            Await Task.Delay(250)
             Await Reconnect.Load
-            Await Task.Delay(250)
             Await Dependency.Load
             Await Task.Delay(15000)
             If User_Stop_Bot Then Exit Function
@@ -247,9 +242,7 @@ Return_On_Road:
             Console.WriteLine("On relance Traveling par Point de chute")
 
             Await Dead.Load
-            Await Task.Delay(250)
             Await Reconnect.Load
-            Await Task.Delay(250)
             Await Dependency.Load
             Await Task.Delay(15000)
             If User_Stop_Bot Then Exit Function

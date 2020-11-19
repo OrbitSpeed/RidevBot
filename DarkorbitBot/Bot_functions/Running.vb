@@ -44,7 +44,6 @@ Recharge_functions:
         If Var.User_Stop_Bot Then Exit Sub
         Await Dead.Load
 
-
         If Var.User_Stop_Bot Then Exit Sub
         Await Reconnect.Load
 
