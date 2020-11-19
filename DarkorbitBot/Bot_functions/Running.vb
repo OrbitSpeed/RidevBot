@@ -62,6 +62,10 @@ Minimap_backup:
         Await Checking_map.Load
         Console.WriteLine("Map Loaded")
 
+        If Form_Tools.CheckBox_use_palladium.Checked = True Then
+            Await Palladium_module.Function_palladium_running
+        End If
+
         If Var.User_Stop_Bot Then Exit Sub
         Traveling_module.Load()
         Exit Sub

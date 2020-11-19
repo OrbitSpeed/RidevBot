@@ -208,6 +208,13 @@ Public Class Form_Tools
 
             Palladium_module.Load()
 
+            If CheckBox_collect_palladium.Checked = False Then
+
+                Button_palladium_collect.Visible = True
+            Else
+                Button_palladium_collect.Visible = False
+            End If
+
             Panel_Gates_task.Visible = False
             Panel_palladium_palladium.Visible = True
             panel_npc_npc.Visible = False
@@ -1192,4 +1199,28 @@ Public Class Form_Tools
 
     End Sub
 
+    Private Sub Button_palladium_collect_Click(sender As Object, e As EventArgs) Handles Button_palladium_collect.Click
+
+        CheckBox_collect_palladium.Checked = True
+        If CheckBox_collect_palladium.Checked = False Then
+
+
+        End If
+
+    End Sub
+
+    Private Sub CheckBox_use_palladium_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_use_palladium.CheckedChanged
+
+        If CheckBox_use_palladium.Checked = True AndAlso ComboBox_Base_Hangar.Text <> Nothing AndAlso ComboBox_collectable_Hangar.Text <> Nothing AndAlso ComboBox_5_3_Hangar.Text <> Nothing Then
+
+
+        Else
+
+            MessageBox.Show("")
+
+        End If
+
+
+
+    End Sub
 End Class

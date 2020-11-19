@@ -60,7 +60,7 @@ Label_Base:
 
     End Sub
 
-    Public Shared Sub Hangar_resolver()
+    Public Shared Async Sub Hangar_resolver()
 
         If PLK.ToString = ("Wait to Update") Then
 
@@ -110,11 +110,15 @@ Label_Base:
         Console.WriteLine("Hangar transfered successfully")
         MessageBox.Show("Hangar transfered successfully")
 
+        Await Task.Delay(1000)
         Load()
 
     End Sub
 
+    Public Shared Async Function Function_palladium_running() As Task
 
+
+    End Function
 
 
 End Class
