@@ -207,46 +207,6 @@ Return_On_Road:
 
     End Function ' tout remplacer par sa !
 
-    'Public Shared Async Function POINT_DE_CHUTE_DU_CLICK_TRAVELING() As Task
-
-    '    If User_Stop_Bot Then Exit Function
-
-    '    Dim Map_actuelle_reconize = Form_Game.Label_map_location.Text.Replace("Map : ", "")
-    '    Dim Map_roaming_reconize = Form_Tools.ComboBox_map_to_travel.Text
-    '    Console.WriteLine(Map_actuelle_reconize)
-    '    Console.WriteLine(Map_roaming_reconize)
-
-    '    If Map_actuelle_reconize <> Map_roaming_reconize Then
-
-    '        AutoIt.ControlClick("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", "left", 1, 400, 300)
-    '        AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_jump_key.Text))
-    '        Console.WriteLine($"Point de chute du click traveling atteint and Sended -- {Form_Tools.TextBox_jump_key.Text}")
-
-    '        Await Dead.Load
-    '        Await Reconnect.Load
-    '        Await Dependency.Load
-    '        Await Task.Delay(15000)
-    '        If User_Stop_Bot Then Exit Function
-    '        Await Checking_map.Load()
-    '        Traveling_module.Load()
-
-    '    Else
-
-    '        Console.WriteLine("On relance Traveling par Point de chute")
-
-    '        Await Dead.Load
-    '        Await Reconnect.Load
-    '        Await Dependency.Load
-    '        Await Task.Delay(15000)
-    '        If User_Stop_Bot Then Exit Function
-    '        Await Checking_map.Load()
-    '        Traveling_module.Load()
-
-
-    '    End If
-
-    'End Function
-
     Public Shared Function Update_Screen()
 
         Dim Client_primary = New Bitmap(Form_Game.WebBrowser_Game_Ridevbot.ClientSize.Width, Form_Game.WebBrowser_Game_Ridevbot.ClientSize.Height)

@@ -180,7 +180,7 @@ Public Class Form_Tools
         'End Try
 
         'If My.Settings.License_check <> "Your license here" Then
-        '    Button_license_verify_Click(Nothing, Nothing)
+        'Button_license_verify_Click(Nothing, Nothing)
         'End If
 
         If Form_Game.Visible = True Then
@@ -439,27 +439,29 @@ Public Class Form_Tools
 
     Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
-        If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
-            Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "Connecting..."
-            Clear_cookies()
-            Form_Game.Show()
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-
-        ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
-
-            Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
-            Button_LaunchGameRidevBrowser.Text = "Connecting..."
-            Reloader = 0
-            Clear_cookies()
-            Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
-            Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
-
-        Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
-        End If
-
         If Stats_module.WebClient_GET_Ship_compagny_reg = Nothing Then
             Stats_module.Load()
+        Else
+
+            If Button_LaunchGameRidevBrowser.Text = "Open RidevBot Browser" Then
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
+                Button_LaunchGameRidevBrowser.Text = "Connecting..."
+                Clear_cookies()
+                Form_Game.Show()
+                Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
+            ElseIf Button_LaunchGameRidevBrowser.Text = "Reload RidevBot Browser" Then
+
+                Button_LaunchGameRidevBrowser.Cursor = Cursors.WaitCursor
+                Button_LaunchGameRidevBrowser.Text = "Connecting..."
+                Reloader = 0
+                Clear_cookies()
+                Utils.InternetSetCookie("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalStart&prc=100", "dosid", Utils.dosid & ";")
+                Form_Game.WebBrowser_Game_Ridevbot.Navigate("https://" + Utils.server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution")
+
+            Else Button_LaunchGameRidevBrowser.Text = "Already connecting..."
+            End If
+
         End If
 
 
@@ -1213,14 +1215,18 @@ Public Class Form_Tools
 
         If CheckBox_use_palladium.Checked = True AndAlso ComboBox_Base_Hangar.Text <> Nothing AndAlso ComboBox_collectable_Hangar.Text <> Nothing AndAlso ComboBox_5_3_Hangar.Text <> Nothing Then
 
-
+            ComboBox_map_to_travel.Text = "5-3"
         Else
 
-            MessageBox.Show("")
+            MessageBox.Show("Select Hangar in first !")
 
         End If
 
 
+
+    End Sub
+
+    Private Sub panel_npc_npc_Paint(sender As Object, e As PaintEventArgs) Handles panel_npc_npc.Paint
 
     End Sub
 End Class

@@ -117,8 +117,45 @@ Label_Base:
 
     Public Shared Async Function Function_palladium_running() As Task
 
+        Dim Function_palladium_running_Map_actuelle = Form_Game.Label_map_location.Text.Split(" : ")(2)
+        Dim Function_palladium_running_Map_roaming = Form_Tools.ComboBox_map_to_travel.Text
+
+        Console.WriteLine(Function_palladium_running_Map_actuelle)
+        Console.WriteLine(Function_palladium_running_Map_roaming)
+        Console.WriteLine("Calcul de la selection des Hangar")
+
+        If Function_palladium_running_Map_actuelle <> Function_palladium_running_Map_roaming Then
+            If Form_Tools.CheckBox_use53_hangar_palladium.Checked = True Then
+
+                Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_Logout_key.Text))
+                Form_Game.Label_state_contain.Text = "Disconnecting.."
+                Await Task.Delay(20500)
+
+                PLK = Form_Tools.ComboBox_5_3_Hangar.Text.Replace("Hangar", "").Replace(" ", "") - 1
+                Console.WriteLine(PLK)
+                MOUTON = data_list(PLK).ToString.Replace("href=", "").Replace("""", "")
+                Console.WriteLine(MOUTON)
+                Form_Game.Label_state_contain.Text = "Selecting Hangar.."
+                WebClient_POST.Headers.Clear()
+                WebClient_POST.Headers.Add(HttpRequestHeader.Cookie, $"dosid={Utils.dosid};") 'POST / GET socket Information
+                Dim WebClient_Data = WebClient_POST.DownloadString("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+                Console.WriteLine("https://" + Utils.server + ".darkorbit.com/" + MOUTON)
+                Console.WriteLine("Hangar transfered successfully")
+                Form_Game.Label_state_contain.Text = "Hangar transfered successfully"
+                Await Task.Delay(1500)
+
+                Form_Tools.Button_LaunchGameRidevBrowser.PerformClick()
+
+                ' faire une fonction qui detecte la page de demarage
+
+
+            Else
+                Form_Tools.ComboBox_map_to_travel.Text = "5-3"
+                Exit Function
+            End If
+        Else
+            Console.WriteLine("Pret a recevoir une tache !")
+        End If
 
     End Function
-
-
 End Class

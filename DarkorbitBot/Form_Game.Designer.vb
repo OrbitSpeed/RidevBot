@@ -65,6 +65,8 @@ Partial Class Form_Game
         Me.Button27 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
+        Me.Label_State_explain = New System.Windows.Forms.Label()
+        Me.Label_state_contain = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -73,16 +75,19 @@ Partial Class Form_Game
         'Label_Title
         '
         Me.Label_Title.AutoSize = True
+        Me.Label_Title.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Title.Location = New System.Drawing.Point(0, -1)
+        Me.Label_Title.Location = New System.Drawing.Point(0, 0)
         Me.Label_Title.Name = "Label_Title"
-        Me.Label_Title.Size = New System.Drawing.Size(141, 20)
+        Me.Label_Title.Size = New System.Drawing.Size(129, 20)
         Me.Label_Title.TabIndex = 22
-        Me.Label_Title.Text = "RidevBot Browser | "
+        Me.Label_Title.Text = "RidevBot Browser"
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel7.Controls.Add(Me.Label_state_contain)
+        Me.Panel7.Controls.Add(Me.Label_State_explain)
         Me.Panel7.Controls.Add(Me.Button25)
         Me.Panel7.Controls.Add(Me.Button_cargobox)
         Me.Panel7.Controls.Add(Me.Label_PerformanceMemoire)
@@ -96,7 +101,7 @@ Partial Class Form_Game
         '
         'Button25
         '
-        Me.Button25.Location = New System.Drawing.Point(286, -1)
+        Me.Button25.Location = New System.Drawing.Point(582, -1)
         Me.Button25.Name = "Button25"
         Me.Button25.Size = New System.Drawing.Size(89, 19)
         Me.Button25.TabIndex = 36
@@ -106,7 +111,7 @@ Partial Class Form_Game
         '
         'Button_cargobox
         '
-        Me.Button_cargobox.Location = New System.Drawing.Point(463, -1)
+        Me.Button_cargobox.Location = New System.Drawing.Point(512, -1)
         Me.Button_cargobox.Name = "Button_cargobox"
         Me.Button_cargobox.Size = New System.Drawing.Size(64, 19)
         Me.Button_cargobox.TabIndex = 31
@@ -117,19 +122,22 @@ Partial Class Form_Game
         'Label_PerformanceMemoire
         '
         Me.Label_PerformanceMemoire.AutoSize = True
+        Me.Label_PerformanceMemoire.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_PerformanceMemoire.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(135, -1)
+        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(129, 0)
         Me.Label_PerformanceMemoire.Name = "Label_PerformanceMemoire"
-        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(96, 20)
+        Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(104, 20)
         Me.Label_PerformanceMemoire.TabIndex = 32
-        Me.Label_PerformanceMemoire.Text = "RAM Used: 0"
+        Me.Label_PerformanceMemoire.Text = "| RAM Used: 0"
         '
         'Label_map_location
         '
         Me.Label_map_location.AutoSize = True
+        Me.Label_map_location.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label_map_location.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_map_location.Location = New System.Drawing.Point(697, -1)
+        Me.Label_map_location.ForeColor = System.Drawing.Color.White
+        Me.Label_map_location.Location = New System.Drawing.Point(708, 0)
         Me.Label_map_location.Name = "Label_map_location"
         Me.Label_map_location.Size = New System.Drawing.Size(74, 20)
         Me.Label_map_location.TabIndex = 31
@@ -471,6 +479,30 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
         '
+        'Label_State_explain
+        '
+        Me.Label_State_explain.AutoSize = True
+        Me.Label_State_explain.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label_State_explain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label_State_explain.ForeColor = System.Drawing.Color.Black
+        Me.Label_State_explain.Location = New System.Drawing.Point(233, 0)
+        Me.Label_State_explain.Name = "Label_State_explain"
+        Me.Label_State_explain.Size = New System.Drawing.Size(59, 20)
+        Me.Label_State_explain.TabIndex = 129
+        Me.Label_State_explain.Text = "| State :"
+        '
+        'Label_state_contain
+        '
+        Me.Label_state_contain.AutoSize = True
+        Me.Label_state_contain.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label_state_contain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label_state_contain.ForeColor = System.Drawing.Color.White
+        Me.Label_state_contain.Location = New System.Drawing.Point(292, 0)
+        Me.Label_state_contain.Name = "Label_state_contain"
+        Me.Label_state_contain.Size = New System.Drawing.Size(47, 20)
+        Me.Label_state_contain.TabIndex = 130
+        Me.Label_state_contain.Text = "None"
+        '
         'Form_Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -542,4 +574,6 @@ Partial Class Form_Game
     Friend WithEvents Button26 As Button
     Friend WithEvents Button25 As Button
     Friend WithEvents Button27 As Button
+    Friend WithEvents Label_state_contain As Label
+    Friend WithEvents Label_State_explain As Label
 End Class
