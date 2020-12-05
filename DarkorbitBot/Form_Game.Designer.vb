@@ -25,6 +25,8 @@ Partial Class Form_Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Game))
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label_state_contain = New System.Windows.Forms.Label()
+        Me.Label_State_explain = New System.Windows.Forms.Label()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.Button_cargobox = New System.Windows.Forms.Button()
         Me.Label_PerformanceMemoire = New System.Windows.Forms.Label()
@@ -65,8 +67,6 @@ Partial Class Form_Game
         Me.Button27 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.WebBrowser_Game_Ridevbot = New System.Windows.Forms.WebBrowser()
-        Me.Label_State_explain = New System.Windows.Forms.Label()
-        Me.Label_state_contain = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -79,9 +79,9 @@ Partial Class Form_Game
         Me.Label_Title.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Title.Location = New System.Drawing.Point(0, 0)
         Me.Label_Title.Name = "Label_Title"
-        Me.Label_Title.Size = New System.Drawing.Size(129, 20)
+        Me.Label_Title.Size = New System.Drawing.Size(133, 20)
         Me.Label_Title.TabIndex = 22
-        Me.Label_Title.Text = "RidevBot Browser"
+        Me.Label_Title.Text = "RidevBot Browser "
         '
         'Panel7
         '
@@ -98,6 +98,30 @@ Partial Class Form_Game
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(800, 18)
         Me.Panel7.TabIndex = 27
+        '
+        'Label_state_contain
+        '
+        Me.Label_state_contain.AutoSize = True
+        Me.Label_state_contain.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label_state_contain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label_state_contain.ForeColor = System.Drawing.Color.White
+        Me.Label_state_contain.Location = New System.Drawing.Point(296, 0)
+        Me.Label_state_contain.Name = "Label_state_contain"
+        Me.Label_state_contain.Size = New System.Drawing.Size(47, 20)
+        Me.Label_state_contain.TabIndex = 130
+        Me.Label_state_contain.Text = "None"
+        '
+        'Label_State_explain
+        '
+        Me.Label_State_explain.AutoSize = True
+        Me.Label_State_explain.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label_State_explain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label_State_explain.ForeColor = System.Drawing.Color.Black
+        Me.Label_State_explain.Location = New System.Drawing.Point(237, 0)
+        Me.Label_State_explain.Name = "Label_State_explain"
+        Me.Label_State_explain.Size = New System.Drawing.Size(59, 20)
+        Me.Label_State_explain.TabIndex = 129
+        Me.Label_State_explain.Text = "| State :"
         '
         'Button25
         '
@@ -125,7 +149,7 @@ Partial Class Form_Game
         Me.Label_PerformanceMemoire.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label_PerformanceMemoire.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_PerformanceMemoire.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(129, 0)
+        Me.Label_PerformanceMemoire.Location = New System.Drawing.Point(133, 0)
         Me.Label_PerformanceMemoire.Name = "Label_PerformanceMemoire"
         Me.Label_PerformanceMemoire.Size = New System.Drawing.Size(104, 20)
         Me.Label_PerformanceMemoire.TabIndex = 32
@@ -478,30 +502,6 @@ Partial Class Form_Game
         Me.WebBrowser_Game_Ridevbot.ScrollBarsEnabled = False
         Me.WebBrowser_Game_Ridevbot.Size = New System.Drawing.Size(800, 600)
         Me.WebBrowser_Game_Ridevbot.TabIndex = 17
-        '
-        'Label_State_explain
-        '
-        Me.Label_State_explain.AutoSize = True
-        Me.Label_State_explain.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label_State_explain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label_State_explain.ForeColor = System.Drawing.Color.Black
-        Me.Label_State_explain.Location = New System.Drawing.Point(233, 0)
-        Me.Label_State_explain.Name = "Label_State_explain"
-        Me.Label_State_explain.Size = New System.Drawing.Size(59, 20)
-        Me.Label_State_explain.TabIndex = 129
-        Me.Label_State_explain.Text = "| State :"
-        '
-        'Label_state_contain
-        '
-        Me.Label_state_contain.AutoSize = True
-        Me.Label_state_contain.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label_state_contain.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label_state_contain.ForeColor = System.Drawing.Color.White
-        Me.Label_state_contain.Location = New System.Drawing.Point(292, 0)
-        Me.Label_state_contain.Name = "Label_state_contain"
-        Me.Label_state_contain.Size = New System.Drawing.Size(47, 20)
-        Me.Label_state_contain.TabIndex = 130
-        Me.Label_state_contain.Text = "None"
         '
         'Form_Game
         '

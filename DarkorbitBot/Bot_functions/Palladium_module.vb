@@ -130,6 +130,7 @@ Label_Base:
                 Var.AutoIt.ControlSend("RidevBot", "", "[CLASS:MacromediaFlashPlayerActiveX; INSTANCE:1]", (Form_Tools.TextBox_Logout_key.Text))
                 Form_Game.Label_state_contain.Text = "Disconnecting.."
                 Await Task.Delay(20500)
+                If Var.User_Stop_Bot Then Exit Function
 
                 PLK = Form_Tools.ComboBox_5_3_Hangar.Text.Replace("Hangar", "").Replace(" ", "") - 1
                 Console.WriteLine(PLK)
@@ -143,8 +144,9 @@ Label_Base:
                 Console.WriteLine("Hangar transfered successfully")
                 Form_Game.Label_state_contain.Text = "Hangar transfered successfully"
                 Await Task.Delay(1500)
+                If Var.User_Stop_Bot Then Exit Function
 
-                Form_Tools.Button_LaunchGameRidevBrowser.PerformClick()
+                Form_Tools.Button_LaunchGameRidevBrowser_Click(Nothing, Nothing)
 
                 ' faire une fonction qui detecte la page de demarage
 

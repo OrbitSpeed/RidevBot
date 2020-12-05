@@ -437,7 +437,7 @@ Public Class Form_Tools
     End Sub
 #End Region ' Ici se trouve tout les bouttons de la toolbar
 
-    Private Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
+    Public Sub Button_LaunchGameRidevBrowser_Click(sender As Object, e As EventArgs) Handles Button_LaunchGameRidevBrowser.Click
 
         If Stats_module.WebClient_GET_Ship_compagny_reg = Nothing Then
             Stats_module.Load()
@@ -943,8 +943,7 @@ Public Class Form_Tools
 
     End Sub
 
-    Private Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
-
+    Public Sub Button_update_hangar_Click(sender As Object, e As EventArgs) Handles Button_update_hangar.Click
 
         Palladium_module.Load()
 
